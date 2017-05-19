@@ -8,6 +8,6 @@ Many things have to be cleaned up yet.
 
 
 ## Installation
-install.packages("devtools")
-require(devtools)
-devtools::install_github('MPIBGC-TEE/SoilR-exp/pkg')
+* install.packages("devtools")
+* require(devtools)
+* devtools::install_github('MPIBGC-TEE/SoilR-exp/pkg')
