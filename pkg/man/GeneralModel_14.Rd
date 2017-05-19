@@ -1,0 +1,31 @@
+\name{GeneralModel_14}
+\alias{GeneralModel_14}
+\usage{GeneralModel_14(t,
+A,
+ivList,
+initialValF,
+inputFluxes,
+inputFc,
+Fc,
+di=-0.0001209681,
+lambda=-0.0001209681,
+solverfunc=deSolve.lsoda.wrapper,
+pass=FALSE,
+...)}
+\arguments{
+\item{t}{see the method arguments for details}
+\item{A}{see the method arguments for details}
+\item{ivList}{see the method arguments for details}
+\item{initialValF}{see the method arguments for details}
+\item{inputFluxes}{see the method arguments for details}
+\item{inputFc}{see the method arguments for details}
+\item{Fc}{see the method arguments for details}
+\item{di}{see the method arguments for details}
+\item{lambda}{see the method arguments for details}
+\item{solverfunc}{The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}
+\item{pass}{if TRUE Forces the constructor to create the model even if it is invalid}
+\item{...}{see the method arguments for details}
+}
+\title{A general constructor }
+\description{Creates a Model14 object from different sources
+Have a look at the methods for details.}

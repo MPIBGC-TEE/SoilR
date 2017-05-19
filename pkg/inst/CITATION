@@ -1,0 +1,18 @@
+citHeader("To cite package 'SoilR' in publications use:")
+
+citEntry(entry="Article",
+  title = "Models of soil organic matter decomposition: the SoilR package, version 1.0",
+  author = personList(as.person("Carlos A. Sierra"), 
+                      as.person("Markus Mueller"),
+                      as.person("Susan E. Trumbore")),
+  journal =	"Geoscientific Model Development",
+  volume =	"5",
+  number =	"4",
+  pages =	"1045--1060",
+  year = 	"2012",
+  URL =  	"http://www.geosci-model-dev.net/5/1045/2012/gmd-5-1045-2012.html",
+  textVersion =  paste("Sierra, C.A., M. Mueller, S.E. Trumbore (2012).
+  Models of soil organic matter decomposition: the SoilR package, version 1.0
+  Geoscientific Model Development, 5(4), 1045--1060.
+  URL http://www.geosci-model-dev.net/5/1045/2012/gmd-5-1045-2012.html.")
+)

@@ -1,0 +1,37 @@
+                                   
+				   Changes to version 1.1-29
+==============================================================================================
+- Two new functions were added to compute transit time and age densities for linear models.
+  These functions are systemAge and transitTime. 
+- Package expm is now required. It is used to calculate the matrix exponential in the
+  computation of system age and transit time distributions. 
+- The Century model was added.
+- Nonlinear microbial models were implemented. These include: AWBmodel, ThreepairMMmodel,
+  TwopMMmodel, and bacwaveModel.
+
+                                   Changes to version 1.1.
+==============================================================================================
+- The name structure of the SoilR internal classes has been changed. 
+  There are two new main virtual super classes, DecompOp and InFlux. 
+  DecompOp includes the subclasses ConstLinDecompOp and BoundLinDecompOp. 
+  ConstLinDecompOp implements time-invariant decomposition operators, while
+  BoundLinDecompOp implements time-dependent decomposition operators with time bounds. 
+  At the moment, InFlux only includes the subclass BoundInFlux, which is a time-bounded
+  input flux. 
+
+- The TimeMap class is now deprecated. It is replaced by the classes DecompOp and InFlux.
+   
+- The radiocarbon component of SoilR is now fully implemented.
+  The function GeneralModel_14 is the constructor of linear models 
+  that track the radiocarbon fraction in different pools. 
+
+- Two new classes were created for radiocarbon-related objects, ConstFc and BoundFc.
+  ConstFc takes a numeric argument and a unit argument specifying the units of radiocarbon 
+  reporting. BoundFc also takes these arguments plus two others specifying the time range
+  for which the values are valid. See help files of these classes for additional details.
+
+- New datasets were added with the concentration of radiocarbon in the atmosphere. These are
+  IntCal13 and Hua2013. 
+
+- SoilR now requires package parallel in addition to deSolve. 
+

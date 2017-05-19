@@ -1,0 +1,32 @@
+\name{predefinedModels}
+\alias{predefinedModels}
+\title{PREDEFINED MODELS}
+\description{
+	\tabular{l}{
+		\code{\link{GaudinskiModel14}}\cr
+		\code{\link{ICBMModel}}\cr
+		\code{\link{OnepModel}}\cr
+		\code{\link{OnepModel14}}\cr
+		\code{\link{RothCModel}}\cr
+		\code{\link{ThreepFeedbackModel}}\cr
+		\code{\link{ThreepFeedbackModel14}}\cr
+		\code{\link{ThreepParallelModel}}\cr
+		\code{\link{ThreepParallelModel14}}\cr
+		\code{\link{ThreepSeriesModel}}\cr
+		\code{\link{ThreepSeriesModel14}}\cr
+		\code{\link{TwopFeedbackModel}}\cr
+		\code{\link{TwopFeedbackModel14}}\cr
+		\code{\link{TwopParallelModel}}\cr
+		\code{\link{TwopParallelModel14}}\cr
+		\code{\link{TwopMMmodel}}\cr
+		\code{\link{ThreepairMMmodel}}\cr
+		\code{\link{TwopSeriesModel}}\cr
+		\code{\link{TwopSeriesModel14}}\cr
+		\code{\link{YassoModel}}\cr
+		\code{\link{bacwaveModel}}\cr
+		\code{\link{Yasso07Model}}\cr
+		\code{\link{SeriesLinearModel}}\cr
+		\code{\link{SeriesLinearModel14}}\cr
+		\code{\link{CenturyModel}}\cr
+	}
+}

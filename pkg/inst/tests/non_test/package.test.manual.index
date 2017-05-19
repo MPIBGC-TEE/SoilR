@@ -1,0 +1,24 @@
+test.introspection=function(){
+      t_start=0 
+      t_end=10 
+      tn=50
+      timestep=(t_end-t_start)/tn 
+      t=seq(t_start,t_end,timestep) 
+
+      Ex=TwopParallelModel(t,ks=c(k1=0.5,k2=0.2),C0=c(c10=100, c20=150),In=10,gam=0.7,xi=0.5)
+      Ct=getC(Ex)
+      
+      ##demonstrate plot
+      plot(Ex)
+      ##demonstrate $
+      Ex$times
+      ##demonstrate  []
+      Ex["C"]
+      print(Ex[c("times","C","ReleaseFlux","AccumulatedRelease")])
+      #demonstrate show
+      Ex 
+      #demonstrate print
+      print(Ex) 
+      #demonstrate summary
+      summary(Ex) 
+}

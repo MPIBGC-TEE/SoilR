@@ -1,0 +1,354 @@
+\documentclass[a4paper]{article}
+%\documentclass[gmd]{copernicus}
+%\documentclass[article,nojss]{jss}
+%\VignetteIndexEntry{ParameterEstimation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Add-on packages and fonts
+%\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{Sweave}
+\usepackage{color}
+\usepackage[round]{natbib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%\newcommand{\R}{\proglang{R }}
+\newcommand{\R}{\textsf{R }}
+\newcommand{\SoilR}{\texttt{SoilR}}
+\newcommand{\FME}{\texttt{FME}}
+\newcommand{\GeneralModel}{\texttt{GeneralModel}}
+\newcommand{\Model}{\texttt{Model}}
+\newcommand{\BoundInFlux}{\texttt{BoundInFlux}}
+\newcommand{\BoundLinDecompOp}{\texttt{BoundLinDecompOp}}
+\newcommand{\ConstLinDecompOp}{\texttt{ConstLinDecompOp}}
+\newcommand{\TimeMap}{\texttt{TimeMap}}
+\newcommand{\codestyle}[1]{{\texttt{#1}}}
+\newcommand{\figref}[1]{Fig: \ref{#1}}
+
+
+\title{Parameter Estimation of Compartment Models in \SoilR \, Using Classical and Bayesian Optimization}
+%\Plaintitle{Implementing Compartment Models in \SoilR}
+
+%\keywords{organic matter decomposition, compartment models, 
+%          linear dynamical systems}
+
+\author{Markus M\"uller\thanks{mamueller@bgc-jena.mpg.de} \ 
+     and Carlos A. Sierra\thanks{csierra@bgc-jena.mpg.de} \\ 
+         Max Planck Institute for \\
+         Biogeochemistry }
+
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\maketitle
+\SweaveOpts{engine=R,eps=FALSE}
+\SweaveOpts{keep.source=TRUE}
+
+\section*{Introduction}
+The objective of this document is to provide examples on how to use \SoilR \, in combination with package \FME \,
+to estimate parameter values of soil organic matter decomposition models using observed 
+data. We will not explain \FME \, functionality here, but strongly recommend to read the vignette for package \FME \, \citep{Soetaert}.
+Instead, we focus here on the application to the type of models implemented in \SoilR. 
+
+We present here two examples, one is the parameterization of a two-pool model with a feedback connection scheme applied to a soil incubation experiment. The other example uses observed radiocarbon data from CO$_2$ measurements conducted at Harvard Forest, USA. 
+
+\section*{Example 1: A soil incubation experiment}
+Measurements of evolved CO$_2$ from incubation experiments provide useful data for parameterizing soil organic matter decomopsition models and identify functionally distinct pools \citep{Schadel}. We present here data from an incubation experiment in which we measured the evoloved CO$_2$ from a forest soil. The dataset, {\tt eCO2}, is already included in \SoilR \, and includes data from an incubation experiment with a boreal forest soil. First, we load \SoilR \, into our \R \, session and extract the data from the boreal site into a separate object; column names need to be renamed for consistency with \FME.
+
+<<>>=
+library(SoilR)
+library(FME)
+library(MASS)
+library(lattice)
+BorealCO2=eCO2
+names(BorealCO2)<-c("time","eCO2","eCO2sd")
+@
+
+%We can plot the data with the command
+
+\begin{figure}
+  \centering
+<<echo=TRUE,fig=TRUE, print=FALSE>>=
+plot(BorealCO2[,1:2], xlab="Days", ylab="Evolved CO2 (mgC g-1 
+     soil day-1)",ylim=c(0,50))
+arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1], 
+       BorealCO2[,2]+BorealCO2[,3],code=3,angle=90,length=0.1)
+@
+  \caption{Cummulative evolved CO$_2$ from an incubation experiment with a boreal forest soil.}
+  \label{fig:eCO2}
+\end{figure}
+
+To this dataset, we are interested in finding parameters for a two-pool model with connection in feedback of the form \citep{SierraGMD}
+\begin{align} \label{Model}
+\frac{dC_1}{dt} &= I - k_1 C_1 + \alpha_{1,2} k_2 C_2 \notag \\
+\frac{dC_2}{dt} &= \alpha_{2,1} k_1 C_1 - k_2 C_2
+\end{align}
+so we are interested in finding the values of the decomposition rates $k_1$ and $k_2$ as well as the transfer coefficient to pool 2 from pool 1 ($\alpha_{2,1}$) and to pool 1 from pool 2 ($\alpha_{1,2}$). Given that the data comes from an incubation experiment, we assume that there are no inputs of carbon, so $I=0$. In addition, we are also interested in obtaining a value for the partitioning coefficient for the two fractions $\gamma$, so $C_1 = C_{total} \gamma$, and $C_2 = C_{total} (1- \gamma)$. 
+
+This model (equation \ref{Model}) is implemented in \SoilR \, with the function {\tt TwopFeedbackModel}. We will find first the best set of parameters that fit the data using classical optimization using the \FME \, package \citep{Soetaert}. For this, we need to create a function that takes arbitrary values of the parameters of the model, creates a model in \SoilR, calculates the daily respiration flux, and returns the output consistent with \FME \, requirements. We also need to create a vector of time steps in days and give the total amount of carbon in the soil at the begining of the experiment (soil dry weigh times the average C concentration from three replicates, units in g C). 
+
+<<>>=
+days=seq(0,35)
+Ctotal=mean(c(0.04683975, 0.04703255, 0.04687287))*450 #C concentration * 450 g soil
+BorealCO2=data.frame(time=BorealCO2[,1],BorealCO2[,2:3]*1e-06*Ctotal) #Changed units
+
+eCO2func=function(pars){
+  mod=TwopFeedbackModel(
+    t=days,
+    ks=pars[1:2],
+    a21=0,
+    a12=0, 
+    C0=Ctotal*c(pars[3],1-pars[3]), 
+    In=0,
+    pass=TRUE
+  )
+  Rt=getReleaseFlux(mod)
+  return(data.frame(time=days,eCO2=rowSums(Rt)))
+}
+
+@
+
+Notice that this function, {\tt eCO2func}, requires a vector of parameters {\tt pars} with the values of the two decomposition rates in positions 1 and 2, the values of the two transfer rates in position 3 and 4, and the partitioning coefficient $\gamma$ in position 5. This function returns a {\tt data.frame} with two columns, time in days and the sum of the cummulative release for the two pools. 
+
+The next step is to create a cost function according to \FME \, requirements. This cost function takes as arguments a function with the model, the set of observations, and a measure of the error in the observations. The function calculates sums of squared residuals from the model output and the observed data, which can be further minimized for optimization. 
+
+<<>>=
+eCO2cost=function(pars){
+  modelOutput=eCO2func(pars)
+  return(modCost(model=modelOutput, obs=BorealCO2, err="eCO2sd"))
+}
+@
+
+This function returns an object of class {\tt modCost}, which can be further used by \FME \, for local sensitivity analysis, multivariate parameter identifiability, and parameter optimization. We strongly recommend users to to read \FME \, documentation for sensitivity and identifiability analyses. The procedure for optimization consist first on given a set of initial parameter values and then run function {\tt modFit} for minimizing the cost function. {\tt modFit} can take as argument upper and lower limits for the parameter values and the optimization method, which for this example we use the Levenberg-Marquardt algorithm.
+
+
+<<>>=
+inipars=c(k1=1/20,k2=1/100,gamma=0.5)
+
+eCO2fit=modFit(f=eCO2cost,p=inipars,method="Marq",
+               upper=c(Inf,Inf,1),lower=c(0,0,0))
+
+@
+
+The best set of parameter values found by the function can be obtained by typing
+<<>>=
+eCO2fit$par
+@
+
+These set of parameters can be used now to run the model again and plot the obtained model against the observations
+
+<<>>=
+fitmod=eCO2func(eCO2fit$par)
+@
+
+\begin{figure}
+  \centering
+<<fig=TRUE,echo=TRUE,print=FALSE>>=
+plot(BorealCO2[,1:2], xlab="Days", ylab="Evolved CO2 (gC day-1)",ylim=c(0,9e-04))
+arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
+       BorealCO2[,2]+BorealCO2[,3],code=3,angle=90,length=0.1)
+lines(fitmod)
+@
+  \caption{Best fit curve and observed data of CO2 evolved from an incubation experiment.}
+  \label{fig:fit}
+\end{figure}
+
+The results from this optimization can be used for Bayesian parameter estimation with \FME. For details about the procedure please see \citet{Soetaert}. In our example, we need first to extract the variance from the prior optimization and used as the initial variance in the Bayesian procedure and to determine the {\it jump}, a value that determines how much a new parameter set is deviated from the old one. To avoid long compiling times in \SoilR \,  we only use 1000 iterations in this example, but this number can be much larger to guarantee convergence of the chains. 
+
+<<echo=false,results=hide>>=
+var0=eCO2fit$var_ms_unweighted
+
+eCO2mcmc=modMCMC(f=eCO2cost, p=eCO2fit$par, niter=3000, jump=NULL,  
+                 var0=var0, wvar0=NULL, updatecov=100, lower=c(0,0,0),
+                 upper=c(1,1,1))
+@
+
+The results of the MCMC procedure can be obtained with the function {\tt summary()}. The output gives the mean, standard deviation, min and max, and 25\% quantiles for all parameter values. It also produces summary statistics for the variance of the observed variable. 
+
+
+<<>>=
+summary(eCO2mcmc)
+@
+
+A plot with the posterior distribution of the obtained parameter values can be obtained with function {\tt pairs} (Figure \ref{fig:mcmc})
+
+\begin{figure}
+  \centering
+<<fig=TRUE,echo=TRUE,print=FALSE>>=
+pairs(eCO2mcmc)
+@
+  \caption{Histogram and scatter plots of the values obtained from the Markov chain Monte Carlo procedure.}
+  \label{fig:mcmc}
+\end{figure}
+
+For model prediction, it is also possible to use \FME \, and function {\tt sensRange} to obtain a graph of the model prediction with uncertainty ranges (Figure \ref{fig:sensRange}).
+
+\begin{figure}
+  \centering
+<<fig=TRUE,echo=TRUE,print=FALSE>>=
+predRange=sensRange(func=eCO2func, parInput=eCO2mcmc$par)
+plot(summary(predRange),ylim=c(0,9e-04),xlab="Days",
+     ylab="Evolved CO2 (g C day-1)",main="")
+points(BorealCO2)
+arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
+       BorealCO2[,2]+BorealCO2[,3],code=3,angle=90,length=0.1)
+@
+  \caption{Model predictions using the set of parameters obtained from the MCMC procedure.}
+  \label{fig:sensRange}
+\end{figure}
+
+\clearpage
+It is now obvious from this example that the workhorse of the parameter estimation procedure is the package \FME \, of \citet{Soetaert}. The main important task to learn about \SoilR \, is how to set up the function that runs the model and obtains the variable of interest.  
+
+\section*{Example 2: Radiocarbon in respired CO$_2$}
+\SoilR \, can also calculate the amount of radiocarbon in soils or in respired CO$_2$. Here, we take as an example a series of observations of radiocarbon in respired CO$_2$ conducted at Harvard Forest, USA. The dataset is also included in \SoilR, and can be visialized in Figure \ref{fig:radiocarbondata}.
+
+\begin{figure}
+  \centering
+<<fig=TRUE,echo=FALSE,print=FALSE>>=
+plot(D14C~Year,data=HarvardForest14CO2,
+     ylab=expression(paste(Delta^14,"C ","(\u2030)")))
+@
+  \caption{$\Delta^{14}$C value of the respired CO$_2$ in a temperate broadleave forest at Harvard Forest, USA.}
+  \label{fig:radiocarbondata}
+\end{figure}
+
+We are interested in fitting the following three-pool model to the data
+\begin{equation} \label{eq:HarvardForestModel}
+\frac{d {\bf C}(t)}{dt} = I \left( \begin{array}{c} \gamma_1 \\ \gamma_2 \\ 0 \end{array} \right) +
+\left( \begin{array}{ccc}
+-k_1 & 0 & 0 \\
+a_{21} & -k_2 & 0 \\
+a_{31} & 0 & -k_3
+\end{array} \right)
+\left( \begin{array}{c} C_1 \\ C_2 \\ C_3 \end{array} \right).
+\end{equation}
+where $\gamma_1$ and $\gamma_2$ are known. 
+
+For this task, we simply need to prepare a model object in \SoilR \, that can be further used by \FME \, for parameter estimation. 
+The radiocarbon content of CO$_2$ in the atmosphere is necessary for running the model, because it inform us about the concentration and rate of radiocarbon input to the soil. For this example we will use the dataset {\tt C14Atm\_ NH} provided with \SoilR, but other provided datasets such as {\tt Hua2013} can also be used. 
+
+First, we define the points in time to run the model from the atmospheric radicarbon dataset
+<<>>=
+time=C14Atm_NH$YEAR
+t_start=min(time)
+t_end=max(time)
+@
+
+To create the vector of input fluxes we need to create a new object of class {\tt InFlux}. For our particular model, input fluxes to the $C_1$ and $C_2$ pools are created by this command
+
+<<>>=
+inputFluxes=BoundInFlux(
+	function(t0){matrix(nrow=3,ncol=1,c(270,150,0))},
+	t_start,
+	t_end
+)
+@
+assuming that pool 1 receives 270 gC m$^{2}$ yr$^{-1}$ and pool 2 150 gC m$^{2}$ yr$^{-1}$. 
+
+The initial amount of carbon is created by aggregating the organic and mineral pools for this site reported in \citet{SierraBG}
+<<>>=
+C0=c(390,220+390+1376,90+1800+560) 
+@
+
+We now write a function that creates a {\tt Model} object in \SoilR \, that takes as arguments a set of parameters and returns the 
+$\Delta^{14}$C value of the respired carbon
+
+<<echo=false,results=hide>>=
+Fc=BoundFc(C14Atm_NH,lag=0,format="Delta14C")
+Mod1<-function(ks,pass=TRUE){
+  At=ConstLinDecompOp(
+           matrix(nrow=3,ncol=3,byrow=TRUE,c(ks[1],0,0,
+                                             ks[4],ks[2],0,
+                                             ks[5],0,ks[3]))
+  ) 
+  mod=GeneralModel_14(
+	t=time,
+	A=At,
+	ivList=C0,
+	initialValF=ConstFc(rep(0,3),"Delta14C"),
+	inputFluxes=inputFluxes,
+	inputFc=Fc,
+	pass=TRUE
+  ) 
+  R14t=getF14R(mod)
+  return(data.frame(time=time,R14t=R14t))
+}
+@
+
+The observed data needs to be orginazed in a dataframe of the form
+<<>>=
+DataR14t=cbind(time=HarvardForest14CO2[,1],
+               R14t=HarvardForest14CO2[,2],
+               sd=sd(HarvardForest14CO2[,2]))
+@
+
+
+With all these elements ready, we can now use \FME \, for the parameter optimization procedure. We will avoid a detailed explanation and present in the following the creation of the cost function, the initial optimization, and the final Bayesian parameter estimation. 
+
+<<echo=false,results=hide>>=
+#Create the cost function
+R14tCost <- function(pars){
+  R14t <- Mod1(pars)
+  return(modCost(model=R14t,obs=DataR14t,err="sd"))
+}
+
+#Fit the model to the observed data given some initial value for the parameters
+Fit <- modFit(f=R14tCost,p=c(-0.5,-0.9,-0.1,0.1,0.1))
+#
+# Run an MCMC using the variance and covariance results from the previous optimization
+var0 <- Fit$var_ms_unweighted
+cov0 <- summary(Fit)$cov.scaled 
+MCMC <- modMCMC(f=R14tCost, p = Fit$par, niter = 1000, jump = NULL, var0 = var0, wvar0 = 0, 
+                lower=c(-3,-3,-1,0,0),upper=c(0,0,0,1,1))
+
+#The sensitivity range is calculated from the output of the MCMC
+sR=sensRange(func=Mod1, parInput=MCMC$par)
+
+@
+
+The obtained posterior distributions of the parameters can now be assessed graphically (Figure \ref{fig:HFmcmc}). The final model with its uncertainty and how it compares to the data can now be obtained (Figure \ref{fig:HFmodel}). 
+\begin{figure}
+  \centering
+<<fig=TRUE,echo=TRUE,print=FALSE>>=
+pairs(MCMC,nsample=500)
+@
+  \caption{Posterior parameter distributions for the parameters of the model described by equation \ref{eq:HarvardForestModel}. p1= $k_1$, p2= $k_2$, p3= $k_4$, p4= $a_{21}$, p5= $a_{31}$. Numbers in the lower diagonal indicate the correlation coefficient between parameters.}
+  \label{fig:HFmcmc}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+<<fig=TRUE,echo=TRUE,print=FALSE>>=
+par(mar=c(5,5,4,1))
+plot(summary(sR),xlim=c(1950,2010),ylim=c(0,1000),xlab="Year",
+     ylab=expression(paste(Delta^14,"C ","(\u2030)")),main="")
+points(DataR14t,pch=20)
+lines(C14Atm_NH,col=4)
+@
+  \caption{Predictions of respired radiocarbon values from the model of equation \ref{eq:HarvardForestModel} versus observations. Model predictions include uncertainty range for the mean $\pm$ standard deviation, and the minimum-maximum range. Radiocarbon concentration in the atmosphere is depicted in blue.}
+  \label{fig:HFmodel}
+\end{figure}
+
+
+\clearpage
+\section*{Acknowledgements}
+We would like to thank Saadat Malghani for performing the laboratory incubation study. Susan E. Trumbore provided the radiocarbon data for Harvard Forest and gave important support and insights for the development of this project. Funding from the Max Planck Society. 
+
+\begin{thebibliography}{9}
+\bibitem[Schadel et al.(2013)]{Schadel} Sch{\"a}del, C., Y.~Luo, R.~David~Evans, S.~Fei, and S.~Schaeffer.
+\newblock Separating soil {CO$_2$} efflux into {C}-pool-specific decay rates
+  via inverse analysis of soil incubation data. {\it Oecologia} \newblock 171: 721--732.
+
+\bibitem[Sierra et al.(2012)]{SierraGMD} Sierra, C.A., M.~M\"uller, and S.~E. Trumbore. 2012. \newblock Models of soil organic matter decomposition: the {SoilR} package, version 1.0. \newblock {\em Geosci. Model Dev.}, 5: 1045--1060.
+
+\bibitem[Sierra et al.(2012)]{SierraBG} Sierra, C.A., S.~E. Trumbore, E.~A. Davidson, S.~D. Frey, K.~E. Savage, and  F.~M. Hopkins. 2012.
+\newblock Predicting decadal trends and transient responses of radiocarbon storage and fluxes in a temperate forest soil.
+\newblock {\em Biogeosciences}, 9: 3013--3028.
+
+\bibitem[Soetaert \& Petzoldt(2010)]{Soetaert} Soetaert K. and T.~Petzoldt. 2010. \newblock Inverse modelling, sensitivity and monte carlo analysis in R using   package FME. \newblock {\em Journal of Statistical Software}, 33: 1--28.
+
+\end{thebibliography}
+
+\end{document}

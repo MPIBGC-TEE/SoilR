@@ -1,0 +1,6 @@
+\name{BoundInFlux-class}
+\alias{BoundInFlux-class}
+\docType{class}
+\description{defines a time dependent inputrate as function of time and including the domain where the function is well defined. This can be used to avoid interpolations out of range when mixing different time dependent data sets}
+\section{Methods}{No methods defined with class BoundInFlux in the signature.}
+\title{BoundInFlux S4 class}
