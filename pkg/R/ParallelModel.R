@@ -1,6 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-ParallelModel=structure(function
+ParallelModel=structure(function # models for unconnected pools
 ### This function creates a (linear) numerical model for n independent (parallel) pools that can be queried afterwards. 
 ### It is used by the convinient wrapper functions \code{\link{TwopParallelModel}} and \code{\link{ThreepParallelModel}}
 ### but can also be used independently.
