@@ -515,7 +515,7 @@ class RExample:
         require(\"methods\") \n \
         require(\"deSolve\") \n \
         require(\"parallel\") \n \
-        prefix=\"${soilrRepoBase}/RPackages/SoilR/pkg/R/\" \n \
+        prefix=\"${soilrRepoBase}/pkg/R/\" \n \
         globstring=paste(prefix,\"*.R\",sep=\"\") \n \
         auto_paths=Sys.glob(globstring) \n \
          \n \
