@@ -397,8 +397,9 @@ if __name__ == '__main__':
     #concurrent_suite = ConcurrentTestSuite(suite, fork_for_tests(16))
     concurrent_suite = ConcurrentTestSuite(suite, fork_for_tests(1))
     runner = unittest.TextTestRunner()
-    runner.run(concurrent_suite)
-
+    res = runner.run(concurrent_suite)
+    if len(res.errors) + len(res.failures) > 0:
+        sys.exit(1)
     #unittest.main()
  
  

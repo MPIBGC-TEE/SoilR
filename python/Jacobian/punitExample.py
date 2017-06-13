@@ -367,4 +367,6 @@ class TestFrameworkFunctionality(unittest.TestCase):
         
 
 if __name__ == '__main__':
-    unittest.main()
+    res=unittest.main()
+    if len(res.errors) + len(res.failures) > 0:
+        sys.exit(1)
