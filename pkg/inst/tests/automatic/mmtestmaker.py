@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 from C14example import *
 from Manzoniexample import *
 #########################################################################
@@ -98,22 +98,22 @@ Manzoniexample(\
         meanTransitTime,
         subslist
     ).write2file()
-################################################################################
-c1,k1=symbols("c1,k1")
-subslist=[
-        (c1,1),
-        (k1,Rational(1,10))
-        ]
-meanTransitTime=1/k1
-Manzoniexample(\
-        "op",
-        Matrix(1,1,
-            [
-                     -k1
-            ]
-        ),
-        Matrix(1,1,[c1]),
-        meanTransitTime,
-        subslist
-    ).write2file()
-################################################################################
+#################################################################################
+#c1,k1=symbols("c1,k1")
+#subslist=[
+#        (c1,1),
+#        (k1,Rational(1,10))
+#        ]
+#meanTransitTime=1/k1
+#Manzoniexample(\
+#        "op",
+#        Matrix(1,1,
+#            [
+#                     -k1
+#            ]
+#        ),
+#        Matrix(1,1,[c1]),
+#        meanTransitTime,
+#        subslist
+#    ).write2file()
+#################################################################################

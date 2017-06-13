@@ -1,7 +1,7 @@
-# This test function is automatically produced by the python script:/home/mm/SoilR/RPackages/SoilR/pkg/inst/tests/automatic/Rexample.py
+# This test function is automatically produced by the python script:/home/mm/SoilR-exp/pkg/inst/tests/automatic/Rexample.py
 test.ThreepSerial_2=function(){
    require(RUnit)
-   t_start=0
+   t_start=0.0
    t_end=2
    tn=100
    tol=.02/tn

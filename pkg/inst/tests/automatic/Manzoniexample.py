@@ -23,8 +23,9 @@ class Manzoniexample(Rexample):
             tup=self.subslist[i]
             print(tup)
             Text+=(self.shift+str(tup[0])+"="+str(tup[1])+"\n")
+        # we start not at zero since some of the analytical solutions yield NaN for t=0
         Text+="\
-   t_start=0\n\
+   t_start=0.0\n\
    t_end=2\n\
    tn=100\n\
    tol=.02/tn\n\
@@ -48,6 +49,8 @@ class Manzoniexample(Rexample):
         t= Symbol("t")
         tau= Symbol("tau")
         self.anls=(m*t).exp()*c_sym+((m*tau).exp()*inputrates).integrate((tau,0,t))
+        print(self.anls)
+        print(self.anls.subs({t:0}))
         testvec=ones(1,n)
         respcoeffs=-testvec*m
         print("respcoeff=\n",respcoeffs)

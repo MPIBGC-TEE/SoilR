@@ -88,19 +88,22 @@ Rexample(\
         [3,2,1],
         ThreePoolConstantInputRate
     ).write2file()
-Rexample(\
-        "FourpSerial_1",
-        Matrix(4,4,
-            [
-               -1, 0, 0, 0,
-                1,-2, 0, 0,  
-                0, 1,-2, 1,   
-                0, 1, 1,-1   
-            ]
-        ),
-        [3,2,1,0],
-        FourPoolConstantInputRate
-    ).write2file()
+#fixme:mm
+# The analytical solution yields nan for t=0
+# which leads to trouble afterwards in R plotting
+#Rexample(\
+#        "FourpSerial_1",
+#        Matrix(4,4,
+#            [
+#               -1, 0, 0, 0,
+#                1,-2, 0, 0,  
+#                0, 1,-2, 1,   
+#                0, 1, 1,-1   
+#            ]
+#        ),
+#        [3,2,1,0],
+#        FourPoolConstantInputRate
+#    ).write2file()
 C14example(\
         "OnePool_C14_ZeroDecay_Zero",
         Matrix(1,1,
@@ -223,18 +226,19 @@ subslist=[
         (k2,Rational(1,5)),
         (f,1)]
 meanTransitTime=((1-r)*k1+k2)/(r*k1*k2)
-Manzoniexample(\
-        "TwopFeedback",
-        Matrix(2,2,
-            [
-                     -k1, f*k2, 
-                (1-r)*k1,  -k2
-            ]
-        ),
-        Matrix(2,1,[c1,c2]),
-        meanTransitTime,
-        subslist
-    ).write2file()
+# unfortunately the analytical solution yields na for t=0 which leads to subsequent problems with R plotting
+#Manzoniexample(\
+#        "TwopFeedback",
+#        Matrix(2,2,
+#            [
+#                     -k1, f*k2, 
+#                (1-r)*k1,  -k2
+#            ]
+#        ),
+#        Matrix(2,1,[c1,c2]),
+#        meanTransitTime,
+#        subslist
+#    ).write2file()
 ################################################################################
 c1,k1=symbols("c1,k1")
 subslist=[

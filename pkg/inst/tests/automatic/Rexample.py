@@ -53,7 +53,7 @@ class Rexample(object):
 ####################################################################################################    
     def setUpVars(self):
         Text="\
-   t_start=0\n\
+   t_start=0.0\n\
    t_end=2\n\
    tn=100\n\
    tol=.02/tn\n\
