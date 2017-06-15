@@ -21,4 +21,3 @@ pass=FALSE)}
 \item{pass}{: of class missing}
 }
 \description{A wrapper for \code{\link{Model_14}} with pass=FALSE}
-\value{A model object that can be further queried. }

@@ -22,4 +22,3 @@ pass=FALSE)}
 }
 \description{This method is a wrapper 
 with solverfunc set to \code{deSolve.lsoda.wrapper}}
-\value{A Model_14 object that can be further queried. }

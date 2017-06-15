@@ -8,4 +8,3 @@
 }
 \description{This method handles the case that no actual conversion is necessary since
 the argument is already of a subclass of InFlux }
-\value{the unchanged argument}

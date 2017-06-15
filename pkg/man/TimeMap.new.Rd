@@ -9,5 +9,6 @@ f)}
 \item{f}{The time dependent function definition (a function in R's sense)}
 }
 \title{deprecated constructor of the class TimeMap.}
-\description{use the generic TimeMap(...) instead}
+\description{deprecated functions        ####################
+use the generic TimeMap(...) instead}
 \value{An object of class TimeMap that can be used to describe models.}

@@ -8,4 +8,3 @@
 }
 \description{Calculates the radiocarbon fraction for each pool at each time step.
 }
-\value{A matrix of dimension n x m; i.e. n time steps as rows and m pools as columns.}

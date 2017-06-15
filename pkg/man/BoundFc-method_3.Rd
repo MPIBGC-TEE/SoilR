@@ -15,4 +15,3 @@ the second one is interpreted as atmospheric C14 fraction in the format mentione
 \item{interpolation}{: of class function, A function that  returns a function  the default is splinefun. Other possible values are the linear interpolation approxfun or any self made function with the same interface.}
 }
 \description{the method constructs an object from a dataframe a timelag format using the given interpolating function}
-\value{An object  that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag}

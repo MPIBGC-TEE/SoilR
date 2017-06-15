@@ -19,8 +19,8 @@ pass=FALSE)}
 \item{t}{A vector containing the points in time where the solution is sought. It must be specified within the same period for which the Delta 14 C of the atmosphere is provided. The default period in the provided dataset \code{\link{C14Atm_NH}} is 1900-2010.}
 \item{ks}{A vector of length 3 containing the decomposition rates for the 3 pools.}
 \item{C0}{A vector of length 3 containing the initial amount of carbon for the 3 pools.}
-\item{F0_Delta14C}{#The format will be assumed to be Delta14C, so please take care that it is.
-A vector of length 3 containing the initial fraction of radiocarbon for the 3 pools in Delta14C format.}
+\item{F0_Delta14C}{A vector of length 3 containing the initial fraction of radiocarbon for the 3 pools in Delta14C format.
+#The format will be assumed to be Delta14C, so please take care that it is.}
 \item{In}{A scalar or a data.frame object specifying the amount of litter inputs by time.}
 \item{a21}{A scalar with the value of the transfer rate from pool 1 to pool 2.}
 \item{a12}{A scalar with the value of the transfer rate from pool 2 to pool 1.}

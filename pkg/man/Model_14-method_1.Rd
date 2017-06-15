@@ -25,4 +25,3 @@ pass=FALSE)}
 \description{This method tries to create an object from any combination of arguments 
 that can be converted into  the required set of building blocks for the Model_14
 for n arbitrarily connected pools.}
-\value{A model object that can be further queried. }

@@ -11,4 +11,3 @@ interpolation)}
 \item{interpolation}{: of class function, function used for interpolation}
 }
 \description{This function is another constructor of the class BoundInFlux.}
-\value{An object of class BoundInFlux that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag}
