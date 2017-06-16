@@ -7,15 +7,15 @@ setClass(# decomposition operator
     contains="VIRTUAL"
 )
 setMethod(
-  f="DecompOp",
+  f="DecompOpSubClassInstance",
   signature=signature(object="DecompOp"),
-  def=function # pass through constructor
+  def=function # pass through factory 
   ### This method handles the case that no actual construction is necessary since
   ### the argument is already of a subclass of DecompOp 
   ##<<details This is useful to simplify argument handling of functions which rely on 
   ## the presence of a DecompOp. 
   ## Due to this method those functions can always
-  ## call DecompOp(something) without having to check if 
+  ## call DecompOpSubClassInstance(something) without having to check if 
   ## it is necessary.
   (object){
     object
@@ -23,7 +23,7 @@ setMethod(
   }
 )
 setMethod(
-  "DecompOp",
+  "DecompOpSubClassInstance",
   signature(object="matrix"),
   #valueClass="ConstLinDecompOp",
   def=function # creates a ConstanDecompOp from a matrix
@@ -34,7 +34,7 @@ setMethod(
   }
 )
 setMethod(
-  f="DecompOp",
+  f="DecompOpSubClassInstance",
   signature=signature(object="TimeMap"),
   #valueClass="BoundLinDecompOp",
   def=function # creates a BoundLinDecompOp from a TimeMap object

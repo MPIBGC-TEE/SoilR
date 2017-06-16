@@ -6,3 +6,7 @@
 \section{Methods}{  \describe{
     \item{InFlux}{\code{signature(object = "InFlux")}: ... } \code{\link{InFlux,InFlux-method}}
 	 }}
+\section{Subclasses}{\describe{
+	\code{\link{BoundInFlux-class}}\cr
+	\code{\link{ConstInFlux-class}}\cr
+}}

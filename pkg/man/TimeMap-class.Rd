@@ -12,3 +12,9 @@ defines a (time dependent) mapping including the function definition and the ###
     \item{getFunctionDefinition}{\code{signature(object = "TimeMap")}: ... } \code{\link{getFunctionDefinition,TimeMap-method}}
     \item{getTimeRange}{\code{signature(object = "TimeMap")}: ... } \code{\link{getTimeRange,TimeMap-method}}
 	 }}
+\section{Subclasses}{\describe{
+	\code{\link{BoundInFlux-class}}\cr
+	\code{\link{TransportDecompositionOperator-class}}\cr
+	\code{\link{BoundLinDecompOp-class}}\cr
+	\code{\link{BoundFc-class}}\cr
+}}

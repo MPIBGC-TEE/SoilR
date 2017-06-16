@@ -184,7 +184,7 @@ Model<-function #general  constructor for class \code{\link{Model}}
    pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid 
    )
   {
-     obj=new(Class="Model",t,DecompOp(A),ivList,InFlux(inputFluxes),solverfunc,pass)
+     obj=new(Class="Model",t,DecompOpSubClassInstance(A),ivList,InFlux(inputFluxes),solverfunc,pass)
      return(obj)
      ### A model object that can be further queried. 
      ##seealso<< \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} 

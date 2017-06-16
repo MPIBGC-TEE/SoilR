@@ -524,17 +524,17 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="DecompOp",
-	 def=function # Generic constructor and converter 
+	 name="DecompOpSubClassInstance",
+	 def=function # Generic function to create an object of one of the subclasses of DevompOp
 	 ### If the argument is already of a subclass of class DecompOp 
 	 ### the function returns the unchanged object.
-	 ### Ohterwise it creates an object of a subclass of DecompOp.
+	 ### Otherwise it creates an object of a subclass of DecompOp.
 	 ### Note that the actual class of the output depends on the argument.
 	 ### For examples, please look at the methods of this function.
 	 (object)
 	 {
 	 ### create a DecompositonOperator from different sources
-	     standardGeneric("DecompOp")
+	     standardGeneric("DecompOpSubClassInstance")
 	 }
 )
 setGeneric(

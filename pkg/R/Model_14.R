@@ -185,7 +185,7 @@ setMethod(f="Model_14",
    pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid 
    )
   {
-     obj=new(Class="Model_14",t,DecompOp(A),ivList, initialValF,InFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=solverfunc,pass=pass)
+     obj=new(Class="Model_14",t,DecompOpSubClassInstance(A),ivList, initialValF,InFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=solverfunc,pass=pass)
      return(obj)
      ### A model object that can be further queried. 
      ##seealso<< \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} 
@@ -218,7 +218,7 @@ setMethod(f="Model_14",
    pass=FALSE  
    )
   {
-     obj=Model_14(t,DecompOp(A),ivList, initialValF,InFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=deSolve.lsoda.wrapper,pass=pass)
+     obj=Model_14(t,DecompOpSubClassInstance(A),ivList, initialValF,InFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=deSolve.lsoda.wrapper,pass=pass)
      return(obj)
      ### A Model_14 object that can be further queried. 
      ##seealso<< \code{\link{TwopParallelModel14}}, \code{\link{TwopSeriesModel14}}, \code{\link{TwopFeedbackModel14}} and so on. 

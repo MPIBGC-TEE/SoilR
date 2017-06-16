@@ -11,3 +11,6 @@ serves as a fence to the interface of SoilR functions. So that later implementat
     \item{getReleaseFlux}{\code{signature(object = "Model")}: ... } \code{\link{getReleaseFlux,Model-method}}
     \item{getTimes}{\code{signature(object = "Model")}: ... } \code{\link{getTimes,Model-method}}
 	 }}
+\section{Subclasses}{\describe{
+	\code{\link{Model_14-class}}\cr
+}}
