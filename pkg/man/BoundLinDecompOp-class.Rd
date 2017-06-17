@@ -4,3 +4,4 @@
 \alias{BoundLinDecompOp-class}
 \docType{class}
 \section{Methods}{No methods defined with class BoundLinDecompOp in the signature.}
+\section{Constructors}{	\code{\link{BoundLinDecompOp}}\cr}

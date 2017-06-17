@@ -4,6 +4,7 @@
 \arguments{
 \item{object}{see the method arguments for details}
 }
+\section{Methods}{	\code{\link{getC14,Model_14-method}}\cr}
 \title{Calculates the mass of radiocarbon (14C fraction times C stock) in all pools}
 \description{This function computes the mass of 14C (14C fraction times C stock) for all pools as function of time.
 Have a look at the methods for details.}

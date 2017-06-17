@@ -12,5 +12,7 @@ interpolation)}
 \item{lag}{see the method arguments for details}
 \item{interpolation}{see the method arguments for details}
 }
+\section{Methods}{	\code{\link{TimeMap,data.frame,missing,missing-method}}\cr
+	\code{\link{TimeMap,function,numeric,numeric-method}}\cr}
 \title{generic constructor}
 \description{create a TimeMap object from different sources}

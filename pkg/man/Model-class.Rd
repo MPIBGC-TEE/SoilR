@@ -14,3 +14,4 @@ serves as a fence to the interface of SoilR functions. So that later implementat
 \section{Subclasses}{\describe{
 	\code{\link{Model_14-class}}\cr
 }}
+\section{Constructors}{	\code{\link{Model}}\cr}

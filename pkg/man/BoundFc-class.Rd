@@ -4,3 +4,4 @@
 \alias{BoundFc-class}
 \docType{class}
 \section{Methods}{No methods defined with class BoundFc in the signature.}
+\section{Constructors}{	\code{\link{BoundFc}}\cr}

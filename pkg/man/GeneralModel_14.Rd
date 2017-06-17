@@ -26,6 +26,12 @@ pass=FALSE,
 \item{pass}{if TRUE Forces the constructor to create the model even if it is invalid}
 \item{...}{see the method arguments for details}
 }
+\section{Methods}{	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,missing,missing,missing,logical-method}}\cr
+	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,function,logical-method}}\cr
+	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,function,missing-method}}\cr
+	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,logical-method}}\cr
+	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method}}\cr
+	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,missing,ANY,numeric,missing,missing,missing-method}}\cr}
 \title{A general constructor }
 \description{Creates a Model14 object from different sources
 Have a look at the methods for details.}

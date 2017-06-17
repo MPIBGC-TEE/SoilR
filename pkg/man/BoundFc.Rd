@@ -14,5 +14,11 @@ interpolation)}
 \item{format}{see the method arguments for details}
 \item{interpolation}{see the method arguments for details}
 }
+\section{Methods}{	\code{\link{BoundFc,data.frame,missing,missing,missing,character,function-method}}\cr
+	\code{\link{BoundFc,data.frame,missing,missing,missing,character,missing-method}}\cr
+	\code{\link{BoundFc,data.frame,missing,missing,numeric,character,function-method}}\cr
+	\code{\link{BoundFc,data.frame,missing,missing,numeric,character,missing-method}}\cr
+	\code{\link{BoundFc,function,numeric,numeric,missing,character,missing-method}}\cr
+	\code{\link{BoundFc,function,numeric,numeric,numeric,character,missing-method}}\cr}
 \title{generic constructor}
 \description{create a BoundFc object from different sources}

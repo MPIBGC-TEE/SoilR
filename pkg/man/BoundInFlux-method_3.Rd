@@ -1,13 +1,13 @@
 \docType{methods}
-\name{BoundInFlux,data.frame,missing,missing,numeric,function-method}
-\title{BoundInFlux,data.frame,missing,missing,numeric,function-method}
-\alias{BoundInFlux,data.frame,missing,missing,numeric,function-method}
-\usage{\S4method{BoundInFlux}{data.frame,missing,missing,numeric,function}(map,
-lag,
-interpolation)}
+\name{BoundInFlux,function,numeric,numeric,missing,missing-method}
+\title{BoundInFlux,function,numeric,numeric,missing,missing-method}
+\alias{BoundInFlux,function,numeric,numeric,missing,missing-method}
+\usage{\S4method{BoundInFlux}{function,numeric,numeric,missing,missing}(map,
+starttime,
+endtime)}
 \arguments{
-\item{map}{: of class data.frame, A data frame; the first column is interpreted as time}
-\item{lag}{: of class numeric, lag time}
-\item{interpolation}{: of class function, function used for interpolation}
+\item{map}{: of class function}
+\item{starttime}{: of class numeric}
+\item{endtime}{: of class numeric}
 }
-\description{This function is another constructor of the class BoundInFlux.}
+\description{the method constructs an object from its basic ingredients}

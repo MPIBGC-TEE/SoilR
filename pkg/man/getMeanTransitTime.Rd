@@ -6,6 +6,7 @@ inputDistribution)}
 \item{object}{a DecompOp Object.}
 \item{inputDistribution}{a vector of length equal to the number of pools. The entries are weights, which must sum to 1.}
 }
+\section{Methods}{	\code{\link{getMeanTransitTime,ConstLinDecompOp-method}}\cr}
 \title{Access to the mean transit time}
 \description{This generic function assembles methods to 
 compute mean transit times.

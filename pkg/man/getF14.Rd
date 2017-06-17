@@ -4,6 +4,7 @@
 \arguments{
 \item{object}{see the method arguments for details}
 }
+\section{Methods}{	\code{\link{getF14,Model_14-method}}\cr}
 \title{Calculates the 14C fraction of all pools}
 \description{This function computes the radiocarbon fraction for all pools as funtion of time.
 Have a look at the methods for details.}

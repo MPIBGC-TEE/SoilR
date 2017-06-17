@@ -10,3 +10,4 @@
     \item{getTimeRange}{\code{signature(object = "ConstLinDecompOp")}: ... } \code{\link{getTimeRange,ConstLinDecompOp-method}}
     \item{getTransitTimeDistributionDensity}{\code{signature(object = "ConstLinDecompOp")}: ... } \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
 	 }}
+\section{Constructors}{	\code{\link{ConstLinDecompOp}}\cr}

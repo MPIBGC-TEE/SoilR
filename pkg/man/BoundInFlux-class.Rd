@@ -5,3 +5,4 @@ defines a time dependent inputrate as function of time and including the domain 
 \alias{BoundInFlux-class}
 \docType{class}
 \section{Methods}{No methods defined with class BoundInFlux in the signature.}
+\section{Constructors}{	\code{\link{BoundInFlux}}\cr}

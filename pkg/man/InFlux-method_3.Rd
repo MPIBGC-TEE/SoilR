@@ -1,9 +1,12 @@
 \docType{methods}
-\name{InFlux,numeric-method}
-\title{InFlux,numeric-method}
-\alias{InFlux,numeric-method}
-\usage{\S4method{InFlux}{numeric}(object)}
+\name{InFlux,TimeMap-method}
+\title{InFlux,TimeMap-method}
+\alias{InFlux,TimeMap-method}
+\usage{\S4method{InFlux}{TimeMap}(object)}
 \arguments{
-\item{object}{: of class numeric}
+\item{object}{: of class TimeMap}
 }
-\description{This method enables the model creating functions to handle constant input streams }
+\description{The method is used to ensure backward compatibility with the now deprecated
+TimeMap class.
+The resulting BoundInFlux is created by a call to
+the constructor BoundInFlux(object) of that class.}

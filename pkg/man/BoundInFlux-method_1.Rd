@@ -1,9 +1,9 @@
 \docType{methods}
-\name{BoundInFlux,TimeMap,missing,missing,missing,missing-method}
-\title{BoundInFlux,TimeMap,missing,missing,missing,missing-method}
-\alias{BoundInFlux,TimeMap,missing,missing,missing,missing-method}
-\usage{\S4method{BoundInFlux}{TimeMap,missing,missing,missing,missing}(map)}
+\name{BoundInFlux,data.frame,missing,missing,missing,missing-method}
+\title{BoundInFlux,data.frame,missing,missing,missing,missing-method}
+\alias{BoundInFlux,data.frame,missing,missing,missing,missing-method}
+\usage{\S4method{BoundInFlux}{data.frame,missing,missing,missing,missing}(map)}
 \arguments{
-\item{map}{: of class TimeMap}
+\item{map}{: of class data.frame, A data frame; the first column is interpreted as time}
 }
-\description{The method is used internally to convert TimeMap objects to BoundInFlux objects, since the use of TimeMap objects is now deprecated.}
+\description{This function is another constructor of the class BoundInFlux.}
