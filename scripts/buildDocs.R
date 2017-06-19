@@ -1,0 +1,5 @@
+require(devtools)
+install('~/linkeddocs/pkg')
+require(linkeddocs)
+package.skeleton.dx_3('~/SoilR-exp/pkg')
+install('~/SoilR-exp/pkg/')

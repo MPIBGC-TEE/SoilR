@@ -1,8 +1,8 @@
 \docType{methods}
-\name{InFlux,TimeMap-method}
-\title{InFlux,TimeMap-method}
-\alias{InFlux,TimeMap-method}
-\usage{\S4method{InFlux}{TimeMap}(object)}
+\name{InFluxSubClassInstance,TimeMap-method}
+\title{InFluxSubClassInstance,TimeMap-method}
+\alias{InFluxSubClassInstance,TimeMap-method}
+\usage{\S4method{InFluxSubClassInstance}{TimeMap}(object)}
 \arguments{
 \item{object}{: of class TimeMap}
 }

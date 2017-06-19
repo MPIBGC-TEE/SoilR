@@ -175,17 +175,17 @@ setMethod(f="Model_14",
   ### for n arbitrarily connected pools.
   
   (t,			##<< A vector containing the points in time where the solution is sought.
-   A,			##<< something that can be converted to any of the available DecompositionOperator classes
+   A,			##<< something that can be converted by \link{DecompOpSubClassInstance} to any of the available subclasses of \code{\link{DecompOp-class}}. 
    ivList,		##<< A vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by an internal  function. 
    initialValF, ##<< An object equal or equivalent to class ConstFc containing a vector with the initial values of the radiocarbon fraction for each pool and a format string describing in which format the values are given.
-   inputFluxes, ##<<  something that can be converted to any of the available InFlux classes
+   inputFluxes, ##<<  something that can be converted by \link{InFluxSubClassInstance} to any of the available subclasses of \link{InFlux-class}.
    inputFc,##<< An object describing the fraction of C_14 in per mille (different formats are possible)
    c14DecayRate,## << the rate at which C_14 decays radioactivly. If you don't provide a value here we assume the following value: k=-0.0001209681 y^-1 . This has the side effect that all your time related data are treated as if the time unit was year. Thus beside time itself it also  affects decay rates the inputrates and the output 
    solverfunc,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
    pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid 
    )
   {
-     obj=new(Class="Model_14",t,DecompOpSubClassInstance(A),ivList, initialValF,InFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=solverfunc,pass=pass)
+     obj=new(Class="Model_14",t,DecompOpSubClassInstance(A),ivList, initialValF,InFluxSubClassInstance(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=solverfunc,pass=pass)
      return(obj)
      ### A model object that can be further queried. 
      ##seealso<< \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} 
@@ -218,7 +218,7 @@ setMethod(f="Model_14",
    pass=FALSE  
    )
   {
-     obj=Model_14(t,DecompOpSubClassInstance(A),ivList, initialValF,InFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=deSolve.lsoda.wrapper,pass=pass)
+     obj=Model_14(t,DecompOpSubClassInstance(A),ivList, initialValF,InFluxSubClassInstance(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=deSolve.lsoda.wrapper,pass=pass)
      return(obj)
      ### A Model_14 object that can be further queried. 
      ##seealso<< \code{\link{TwopParallelModel14}}, \code{\link{TwopSeriesModel14}}, \code{\link{TwopFeedbackModel14}} and so on. 

@@ -18,7 +18,7 @@ pass=FALSE)}
 \item{gam2}{A scalar representing the partitioning coefficient, i.e. the proportion from the total amount of inputs that goes to pool 2.}
 \item{xi}{A scalar or a data.frame specifying the external (environmental and/or edaphic) effects on decomposition rates.}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
-\item{pass}{see the method arguments for details}
+\item{pass}{Logical that forces the Model to be created even if the chect suggest problems.}
 }
 \title{Implementation of a three pool model with parallel structure}
 \description{The function creates a model for three independent (parallel) pools. It is a wrapper for the more general function

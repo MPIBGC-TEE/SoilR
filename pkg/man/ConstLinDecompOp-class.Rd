@@ -10,4 +10,5 @@
     \item{getTimeRange}{\code{signature(object = "ConstLinDecompOp")}: ... } \code{\link{getTimeRange,ConstLinDecompOp-method}}
     \item{getTransitTimeDistributionDensity}{\code{signature(object = "ConstLinDecompOp")}: ... } \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
 	 }}
-\section{Constructors}{	\code{\link{ConstLinDecompOp}}\cr}
+\section{Constructors found by naming convention}{	\code{\link{ConstLinDecompOp}}\cr
+ Please also look at constructors of non virtual subclasses }

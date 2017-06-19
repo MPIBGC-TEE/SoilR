@@ -4,4 +4,5 @@
 \alias{BoundFc-class}
 \docType{class}
 \section{Methods}{No methods defined with class BoundFc in the signature.}
-\section{Constructors}{	\code{\link{BoundFc}}\cr}
+\section{Constructors found by naming convention}{	\code{\link{BoundFc}}\cr
+ Please also look at constructors of non virtual subclasses }

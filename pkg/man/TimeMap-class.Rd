@@ -11,7 +11,7 @@ defines a (time dependent) mapping including the function definition and the ###
     \item{DecompOpSubClassInstance}{\code{signature(object = "TimeMap")}: ... } \code{\link{DecompOpSubClassInstance,TimeMap-method}}
     \item{getFunctionDefinition}{\code{signature(object = "TimeMap")}: ... } \code{\link{getFunctionDefinition,TimeMap-method}}
     \item{getTimeRange}{\code{signature(object = "TimeMap")}: ... } \code{\link{getTimeRange,TimeMap-method}}
-    \item{InFlux}{\code{signature(object = "TimeMap")}: ... } \code{\link{InFlux,TimeMap-method}}
+    \item{InFluxSubClassInstance}{\code{signature(object = "TimeMap")}: ... } \code{\link{InFluxSubClassInstance,TimeMap-method}}
 	 }}
 \section{Subclasses}{\describe{
 	\code{\link{BoundInFlux-class}}\cr
@@ -19,4 +19,5 @@ defines a (time dependent) mapping including the function definition and the ###
 	\code{\link{BoundLinDecompOp-class}}\cr
 	\code{\link{BoundFc-class}}\cr
 }}
-\section{Constructors}{	\code{\link{TimeMap}}\cr}
+\section{Constructors found by naming convention}{	\code{\link{TimeMap}}\cr
+ Please also look at constructors of non virtual subclasses }

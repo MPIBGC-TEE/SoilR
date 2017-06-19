@@ -14,7 +14,7 @@ ThreepParallelModel=structure(
        gam2,   ##<< A scalar representing the partitioning coefficient, i.e. the proportion from the total amount of inputs that goes to pool 2.
        xi=1,   ##<< A scalar or a data.frame specifying the external (environmental and/or edaphic) effects on decomposition rates. 
        solver=deSolve.lsoda.wrapper, 	##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.
-       pass=FALSE
+       pass=FALSE ##<< Logical that forces the Model to be created even if the chect suggest problems.
       )
       {
         t_start=min(t)

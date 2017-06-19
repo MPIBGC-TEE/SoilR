@@ -177,14 +177,14 @@ Model<-function #general  constructor for class \code{\link{Model}}
   ### for n arbitrarily connected pools.
   ### It does so by converting 
   (t,			##<< A vector containing the points in time where the solution is sought.
-   A,			##<< something that can be converted to any of the available subclasses of \code{\link{DecompOp-class}}. 
+   A,			##<< something that can be converted by \link{DecompOpSubClassInstance} to any of the available subclasses of \code{\link{DecompOp-class}}. 
    ivList,		##<< A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools .This is checked by an internal  function. 
-   inputFluxes, ##<<  something that can be converted to any of the available subclasses of \code{\link{InFlux}}.
+   inputFluxes, ##<<  something that can be converted by \link{InFluxSubClassInstance} to any of the available subclasses of \link{InFlux-class}.
    solverfunc=deSolve.lsoda.wrapper,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
    pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid 
    )
   {
-     obj=new(Class="Model",t,DecompOpSubClassInstance(A),ivList,InFlux(inputFluxes),solverfunc,pass)
+     obj=new(Class="Model",t,DecompOpSubClassInstance(A),ivList,InFluxSubClassInstance(inputFluxes),solverfunc,pass)
      return(obj)
      ### A model object that can be further queried. 
      ##seealso<< \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} 

@@ -11,4 +11,7 @@
 	\code{\link{DecompositionOperator-class}}\cr
 	\code{\link{ConstLinDecompOp-class}}\cr
 }}
-\section{Constructors}{	\code{\link{DecompOpSubClassInstance}}\cr}
+\section{Constructors found by naming convention}{Since the class is virtual it can not be instanciated directly, but a function:
+	\code{\link{DecompOpSubClassInstance}}\cr
+has been found, that produces instances of subclasses.
+             Please also look at constructors of non virtual subclasses }

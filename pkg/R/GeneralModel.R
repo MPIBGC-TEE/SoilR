@@ -1,22 +1,14 @@
 #
 ## vim:set ff=unix expandtab ts=2 sw=2:
-#setMethod(f="GeneralModel",
-#  signature=c(
-#    "numeric",
-#    "ANY",
-#    "numeric"#,
-#    #"ANY"
-#  ),
-#  definition=function # the old  function to create Models
-GeneralModel<-function # the old  function to create Models
+GeneralModel <- function # the old  function to create Models
   ### In previous SoilR Version GeneralModel was the main function to create models,
-  ### a task now fulfilled by the generic function \code{\link{Model}}.
+  ### a task now fulfilled by the function \code{\link{Model}}.
   ### To ensure backward compatibility this function remains as a wrapper.
   ### It creates a Model object from any combination of arguments 
   ### that can be converted into  the required set of building blocks for a model
   ### for n arbitrarily connected pools.
   (t,			##<< A vector containing the points in time where the solution is sought.
-   A,			##<< something that can be converted to any of the available DecompositionOperator classes
+   A,			##<< Anything that can be converted by \link{DecompOpSubClassInstance} to any of the available DecompositionOperator classes
    ivList,		##<< A vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by an internal  function. 
    inputFluxes, ##<<  something that can be converted to any of the available InFlux classes
    solverfunc=deSolve.lsoda.wrapper,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 

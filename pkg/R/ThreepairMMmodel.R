@@ -10,7 +10,7 @@ ThreepairMMmodel<- structure(
       r, ##<< a vector of length 3 representing the respired carbon fraction (unitless)
       Af=1, ##<< a scalar representing the Activity factor; i.e. a temperature and moisture modifier (unitless)
       ADD, ##<< a vector of length 3 representing the annual C input to the soil (g m-3 d-1)
-      ival # a vector of length 6 with the initial values of the SOM pools and the microbial biomass pools (g m-3)
+      ival ##<< a vector of length 6 with the initial values of the SOM pools and the microbial biomass pools (g m-3)
      )
      {
           t_start=min(t)

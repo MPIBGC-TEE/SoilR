@@ -14,4 +14,5 @@ serves as a fence to the interface of SoilR functions. So that later implementat
 \section{Subclasses}{\describe{
 	\code{\link{Model_14-class}}\cr
 }}
-\section{Constructors}{	\code{\link{Model}}\cr}
+\section{Constructors found by naming convention}{	\code{\link{Model}}\cr
+ Please also look at constructors of non virtual subclasses }

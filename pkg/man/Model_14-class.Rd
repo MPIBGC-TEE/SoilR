@@ -11,4 +11,5 @@ defines a representation of a 14C model}
     \item{getF14}{\code{signature(object = "Model_14")}: ... } \code{\link{getF14,Model_14-method}}
     \item{getReleaseFlux14}{\code{signature(object = "Model_14")}: ... } \code{\link{getReleaseFlux14,Model_14-method}}
 	 }}
-\section{Constructors}{	\code{\link{Model_14}}\cr}
+\section{Constructors found by naming convention}{	\code{\link{Model_14}}\cr
+ Please also look at constructors of non virtual subclasses }
