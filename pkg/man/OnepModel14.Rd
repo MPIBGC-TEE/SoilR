@@ -26,4 +26,6 @@ pass=FALSE)}
 }
 \title{Implementation of a one-pool C14 model}
 \description{This function creates a model for one pool. It is a wrapper for the more general function \code{\link{GeneralModel_14}}. }
+\seealso{\code{\link{OnepModel}}, \code{\link{TwopParallelModel14}}, 
+\code{\link{TwopFeedbackModel14}} }
 \value{A Model Object that can be further queried }

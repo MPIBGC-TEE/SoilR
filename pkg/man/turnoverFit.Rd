@@ -21,4 +21,6 @@ by=0.5)}
 \title{Estimation of the turnover time from a soil radiocarbon sample.}
 \description{This function finds the best possible value of turnover time from a soil radiocarbon
 sample assuming a one pool model and annual litter inputs. }
+\details{This algorithm takes the observed values and a given amount of litter inputs, runs \code{\link{OnepModel14}}, calculates the squared difference between predictions and observations, and uses \code{\link{optimize}} to find the minimum difference.
+If the turnover time is relatively short (< 50 yrs), it is safe to assume C0=0 because the soil will reach steady state within the simulation time. However, for longer turnover times it is recommended to use a value of C0 close to the steady state value.  }
 \value{A scalar with the value of the turnover time that minimizes the difference between the prediction of a one pool model and the observed radiocarbon value.}

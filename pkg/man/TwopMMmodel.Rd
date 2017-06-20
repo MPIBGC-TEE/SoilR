@@ -20,6 +20,7 @@ ival)}
 }
 \title{Implementation of a two-pool Michaelis-Menten model}
 \description{This function implements a two-pool Michaelis-Meneten model with a microbial biomass and a substrate pool.}
+\details{This implementation is similar to the model described in Manzoni and Porporato (2007). }
 \references{Manzoni, S, A. Porporato (2007). A theoretical analysis of nonlinearities and feedbacks in soil carbon and nitrogen cycles.
 Soil Biology and Biochemistry 39: 1542-1556.}
 \value{An object of class NlModel that can be further queried.}

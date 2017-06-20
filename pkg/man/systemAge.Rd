@@ -12,4 +12,5 @@ q=c(0.05, 0.5, 0.95))}
 }
 \title{System and pool age for compartment models}
 \description{Computes the density distribution and mean for the system and pool ages of a SoilR model or a matrix representation of a compartmental model}
+\seealso{\code{\link{transitTime}}}
 \value{A list with 5 objects: mean system age, system age distribution, quantiles of system age distribution, mean pool-age, and pool-age distribution.}

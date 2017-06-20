@@ -29,4 +29,5 @@ pass=FALSE)}
 \title{Implementation of a two-pool C14 model with series structure}
 \description{This function creates a model for two pools connected in series. 
 It is a wrapper for the more general function \code{\link{GeneralModel_14}} that can handle an arbitrary number of pools.}
+\seealso{\code{\link{TwopParallelModel14}}, \code{\link{TwopFeedbackModel14}} }
 \value{A Model Object that can be further queried }

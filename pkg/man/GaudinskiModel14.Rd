@@ -31,4 +31,5 @@ pass=FALSE)}
 \description{This function creates a model as described in Gaudinski et al. 2000. 
 It is a wrapper for the more general functions  \code{\link{GeneralModel_14}} that can handle an arbitrary number of pools.}
 \references{Gaudinski JB, Trumbore SE, Davidson EA, Zheng S (2000) Soil carbon cycling in a temperate forest: radiocarbon-based estimates of residence times, sequestration rates and partitioning fluxes. Biogeochemistry 51: 33-69}
+\seealso{\code{\link{ThreepParallelModel14}}, \code{\link{ThreepFeedbackModel14}} }
 \value{A Model Object that can be further queried }

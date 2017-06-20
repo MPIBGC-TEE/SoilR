@@ -171,19 +171,20 @@ setMethod(
 #    #"ANY"
 #  ),
 #  definition=function #general  constructor for class Model
-Model<-function #general  constructor for class \code{\link{Model}}
-  ### This method tries to create a Model object from any combination of arguments 
+Model<-function #Constructor for class \code{\link{Model-class}}
+  ### This function creates a Model object from any combination of arguments 
   ### that can be converted into  the required set of building blocks for a model
   ### for n arbitrarily connected pools.
-  ### It does so by converting 
   (t,			##<< A vector containing the points in time where the solution is sought.
    A,			##<< something that can be converted by \link{DecompOpSubClassInstance} to any of the available subclasses of \code{\link{DecompOp-class}}. 
    ivList,		##<< A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools .This is checked by an internal  function. 
    inputFluxes, ##<<  something that can be converted by \link{InFluxSubClassInstance} to any of the available subclasses of \link{InFlux-class}.
    solverfunc=deSolve.lsoda.wrapper,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
-   pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid 
+   pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid  
    )
   {
+  ##details<< The function calls \link{DecompOpSubClassInstance} on its \code{A} argument and  \link{InFluxSubClassInstance} on its \code{inputFluxes} argument. Both are generic functions with several methods for different classes of objects. Any combination of those classes can be used here. Follow the links to see a list of the available method.
+  
      obj=new(Class="Model",t,DecompOpSubClassInstance(A),ivList,InFluxSubClassInstance(inputFluxes),solverfunc,pass)
      return(obj)
      ### A model object that can be further queried. 

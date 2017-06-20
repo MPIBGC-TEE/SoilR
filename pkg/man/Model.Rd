@@ -14,9 +14,10 @@ pass=FALSE)}
 \item{solverfunc}{The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}
 \item{pass}{Forces the constructor to create the model even if it is invalid}
 }
-\title{general  constructor for class \code{\link{Model}}}
-\description{This method tries to create a Model object from any combination of arguments 
+\title{Constructor for class \code{\link{Model-class}}}
+\description{This function creates a Model object from any combination of arguments 
 that can be converted into  the required set of building blocks for a model
-for n arbitrarily connected pools.
-It does so by converting }
+for n arbitrarily connected pools.}
+\details{The function calls \link{DecompOpSubClassInstance} on its \code{A} argument and  \link{InFluxSubClassInstance} on its \code{inputFluxes} argument. Both are generic functions with several methods for different classes of objects. Any combination of those classes can be used here. Follow the links to see a list of the available method.}
+\seealso{\code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} }
 \value{A model object that can be further queried. }

@@ -31,4 +31,5 @@ pass=FALSE)}
 \title{Implementation of a three-pool C14 model with series structure}
 \description{This function creates a model for three pools connected in series. 
 It is a wrapper for the more general function \code{\link{GeneralModel_14}} that can handle an arbitrary number of pools.}
+\seealso{\code{\link{ThreepParallelModel14}}, \code{\link{ThreepFeedbackModel14}} }
 \value{A Model Object that can be further queried }

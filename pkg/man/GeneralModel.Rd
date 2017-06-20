@@ -21,4 +21,5 @@ To ensure backward compatibility this function remains as a wrapper.
 It creates a Model object from any combination of arguments 
 that can be converted into  the required set of building blocks for a model
 for n arbitrarily connected pools.}
+\seealso{\code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} }
 \value{A model object that can be further queried. }

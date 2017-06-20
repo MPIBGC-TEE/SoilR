@@ -27,4 +27,5 @@ solver=deSolve.lsoda.wrapper)}
 \references{Parton, W.J, D.S. Schimel, C.V. Cole, and D.S. Ojima. 1987. Analysis of factors controlling soil organic matter levels in Great Plain grasslands.
 Soil Science Society of America Journal 51: 1173--1179.
 Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.}
+\seealso{\code{\link{RothCModel}} }
 \value{A Model Object that can be further queried }

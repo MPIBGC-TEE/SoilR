@@ -27,4 +27,5 @@ pass=FALSE)}
 \references{Jenkinson, D. S., S. P. S. Andrew, J. M. Lynch, M. J. Goss, and P. B. Tinker. 1990. The Turnover of Organic Carbon and Nitrogen in Soil. 
 Philosophical Transactions: Biological Sciences 329:361-368.
 Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.}
+\seealso{\code{\link{ICBMModel}} }
 \value{A Model Object that can be further queried }

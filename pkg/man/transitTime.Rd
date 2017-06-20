@@ -12,4 +12,5 @@ q=c(0.05, 0.5, 0.95))}
 }
 \title{Transit times for compartment models}
 \description{Computes the density distribution and mean for the transit time of a compartmental model}
+\seealso{\code{\link{systemAge}}}
 \value{A list with 3 objects: mean transit time, transit time density distribution, and quantiles.}

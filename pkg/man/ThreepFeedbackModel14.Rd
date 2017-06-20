@@ -36,4 +36,5 @@ pass=FALSE)}
 \title{Implementation of a three-pool C14 model with feedback structure}
 \description{This function creates a model for three pools connected with feedback. 
 It is a wrapper for the more general function \code{\link{GeneralModel_14}} that can handle an arbitrary number of pools with arbitrary connection. \code{\link{GeneralModel_14}} can also handle input data in different formats, while this function requires its input as Delta14C. Look at it as an example how to use the more powerful tool \code{\link{GeneralModel_14}} or as a shortcut for a standard task! }
+\seealso{\code{\link{GeneralModel_14}} \code{\link{ThreepSeriesModel14}}, \code{\link{ThreepParallelModel14}} }
 \value{A Model Object that can be further queried }

@@ -19,4 +19,5 @@ pass=FALSE)}
 \title{Implementation of a one pool model }
 \description{This function creates a model for one pool. It is a wrapper for the more general function \code{\link{GeneralModel}}.}
 \references{Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.}
+\seealso{\code{\link{TwopParallelModel}},\code{\link{TwopFeedbackModel}} }
 \value{A Model Object that can be further queried }

@@ -44,6 +44,7 @@ I_D=0.005)}
 }
 \title{Implementation of the microbial model AWB (Allison, Wallenstein, Bradford, 2010)}
 \description{This function implements the microbial model AWB (Allison, Wallenstein, Bradford, 2010), a four-pool model with a microbial biomass, enzyme, SOC and DOC pools. It is a special case of the general nonlinear model.}
+\details{This implementation containts default parameters presented in Allison et al. (2010). }
 \references{Allison, S.D., M.D. Wallenstein, M.A. Bradford. 2010. Soil-carbon response to warming dependent on microbial physiology.
 Nature Geoscience 3: 336-340.}
 \value{An object of class NlModel that can be further queried.}

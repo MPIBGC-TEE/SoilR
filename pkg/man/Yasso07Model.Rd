@@ -28,4 +28,5 @@ pass=FALSE)}
 \description{This function creates a model for five pools as described in Tuomi et al. (2009)}
 \references{Tuomi, M., Thum, T., Jarvinen, H., Fronzek, S., Berg, B., Harmon, M., Trofymow, J., Sevanto, S., and Liski, J. (2009).
 Leaf litter decomposition-estimates of global variability based on Yasso07 model. Ecological Modelling, 220:3362 - 3371.}
+\seealso{\code{\link{ICBMModel}}, \code{\link{RothCModel}}}
 \value{A Model Object that can be further queried }

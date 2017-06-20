@@ -30,4 +30,5 @@ pass=FALSE)}
 \description{This function creates a model for seven pools as described in Liski et al. (2005). Model not yet implemented due to lack of data in original publication: values of vector p not completely described in paper. 0.1 was assumed. }
 \references{Liski, J., Palosuo, T., Peltoniemi, M., and Sievanen, R. (2005).
 Carbon and decomposition model Yasso for forest soils. Ecological Modelling, 189:168-182.}
+\seealso{\code{\link{ThreepParallelModel}}, \code{\link{ThreepSeriesModel}}}
 \value{A Model Object that can be further queried }
