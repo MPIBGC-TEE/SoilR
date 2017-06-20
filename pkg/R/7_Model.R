@@ -162,6 +162,9 @@ setMethod(
         ### an Object of class Model
     }
 )
+
+#------------------------------------------------------------------------------------
+#                               Constructors
 #------------------------------------------------------------------------------------
 #setMethod(f="Model",
 #  signature=c(
@@ -171,26 +174,45 @@ setMethod(
 #    #"ANY"
 #  ),
 #  definition=function #general  constructor for class Model
-Model<-function #Constructor for class \code{\link{Model-class}}
-  ### This function creates a Model object from any combination of arguments 
-  ### that can be converted into  the required set of building blocks for a model
-  ### for n arbitrarily connected pools.
+Model<-function #Constructor for class \link{Model-class} 
+  ### This function creates an object of class \link{Model-class}, 
+  ### The arguments can be given in different form as long as they can 
+  ### be converted to the necessary internal building blocks. 
+  ### (See the links)
+
   (t,			##<< A vector containing the points in time where the solution is sought.
    A,			##<< something that can be converted by \link{DecompOpSubClassInstance} to any of the available subclasses of \code{\link{DecompOp-class}}. 
    ivList,		##<< A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools .This is checked by an internal  function. 
    inputFluxes, ##<<  something that can be converted by \link{InFluxSubClassInstance} to any of the available subclasses of \link{InFlux-class}.
-   solverfunc=deSolve.lsoda.wrapper,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
-   pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid  
+   solverfunc=deSolve.lsoda.wrapper,		##<< The function used to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
+   pass=FALSE  ##<< Forces the constructor to create the model even if it does not pass internal sanity checks  
    )
   {
-  ##details<< The function calls \link{DecompOpSubClassInstance} on its \code{A} argument and  \link{InFluxSubClassInstance} on its \code{inputFluxes} argument. Both are generic functions with several methods for different classes of objects. Any combination of those classes can be used here. Follow the links to see a list of the available method.
+  ##details<< The internal constructor of class \link{Model-class} requires the argument \code{A} to be of class \link{DecompOp-class} and argument \code{inputFluxes} to be of  class \link{InFlux-class}.
+  ## Before calling the internal constructor this function calls \link{DecompOpSubClassInstance} on its argument \code{A} and  \link{InFluxSubClassInstance} on its argument \code{inputFluxes} to convert them into
+  ## the required classes.
+  ## Both are generic functions. Follow the links to see for which kind of inputs conversion methods are available.
+  ## The attempted conversion allows great flexibility with respect to arguments and independence from the actual implementation.
+  ## However if your code uses the wrong argument the error will most
+  ## likely occur in the delegate functions. 
+  ## If this happens use \code{traceback()} to see which function was called
+  ## and try to call the constructor of the desired subclass 
+  ## explicitly with your arguments. 
+  ## The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.
+
+  
+
+  
   
      obj=new(Class="Model",t,DecompOpSubClassInstance(A),ivList,InFluxSubClassInstance(inputFluxes),solverfunc,pass)
      return(obj)
-     ### A model object that can be further queried. 
-     ##seealso<< \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} 
+     ### An object of class \link{Model-class} that can be queried by many methods 
+     ### to be found there.
+     ##seealso<< This function is called by many of the \link{predefinedModels} 
   }
 #)
+#------------------------------------------------------------------------------------
+#                               Methods
 #------------------------------------------------------------------------------------
 setMethod(
    f= "plot",
