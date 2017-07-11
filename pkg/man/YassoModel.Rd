@@ -26,9 +26,9 @@ pass=FALSE)}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
 \item{pass}{if TRUE forces the constructor to create the model even if it is invalid}
 }
-\title{Implementation of the Yasso model.}
 \description{This function creates a model for seven pools as described in Liski et al. (2005). Model not yet implemented due to lack of data in original publication: values of vector p not completely described in paper. 0.1 was assumed. }
 \references{Liski, J., Palosuo, T., Peltoniemi, M., and Sievanen, R. (2005).
 Carbon and decomposition model Yasso for forest soils. Ecological Modelling, 189:168-182.}
 \seealso{\code{\link{ThreepParallelModel}}, \code{\link{ThreepSeriesModel}}}
+\title{Implementation of the Yasso model.}
 \value{A Model Object that can be further queried }

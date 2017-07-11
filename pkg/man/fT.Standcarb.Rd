@@ -12,8 +12,8 @@ Q10=2)}
 \item{Tshape}{A scalar that determines the shape of the response curve.}
 \item{Q10}{A scalar. Temperature coefficient Q10.}
 }
-\title{Effects of temperature on decomposition rates according to the StandCarb model}
 \description{Calculates the effects of temperature on decomposition rates according to the StandCarb model.}
 \references{Harmon, M. E., and J. B. Domingo (2001), A users guide to STANDCARB version 2.0: 
 A model to simulate carbon stores in forest stands. Oregon State University, Corvallis.}
+\title{Effects of temperature on decomposition rates according to the StandCarb model}
 \value{A scalar or a vector containing the effects of temperature on decomposition rates (unitless).}

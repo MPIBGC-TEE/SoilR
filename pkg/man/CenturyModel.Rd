@@ -22,13 +22,7 @@ solver=deSolve.lsoda.wrapper)}
 \item{xi}{A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
 }
-\title{Implementation of the Century model}
 \description{This function implements the Century model as described in Parton et al. (1987).}
-\references{Parton, W.J, D.S. Schimel, C.V. Cole, and D.S. Ojima. 1987. Analysis of factors controlling soil organic matter levels in Great Plain grasslands.
-Soil Science Society of America Journal 51: 1173--1179.
-Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.}
-\seealso{\code{\link{RothCModel}} }
-\value{A Model Object that can be further queried }
 \examples{t=seq(0,52*200,1) #200 years  
 LNcorn=0.17/0.004 # Values for corn clover reported in Parton et al. 1987
 Ex=CenturyModel(t,LN=0.5,Ls=0.1,In=0.1)
@@ -47,3 +41,9 @@ lines(t,rowSums(Rt),lwd=2)
 legend("topright", c("Structural litter","Metabolic litter",
 "Active SOM","Slow SOM","Passive SOM","Total Respiration"),
 lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")}
+\references{Parton, W.J, D.S. Schimel, C.V. Cole, and D.S. Ojima. 1987. Analysis of factors controlling soil organic matter levels in Great Plain grasslands.
+Soil Science Society of America Journal 51: 1173--1179.
+Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.}
+\seealso{\code{\link{RothCModel}} }
+\title{Implementation of the Century model}
+\value{A Model Object that can be further queried }

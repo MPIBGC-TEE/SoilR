@@ -15,8 +15,8 @@ pass=FALSE)}
 \item{solverfunc}{The function used to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}
 \item{pass}{if TRUE forces the constructor to create the model even if it is invalid}
 }
-\title{models for unconnected pools}
 \description{This function creates a (linear) numerical model for n independent (parallel) pools that can be queried afterwards. 
 It is used by the convinient wrapper functions \code{\link{TwopParallelModel}} and \code{\link{ThreepParallelModel}}
 but can also be used independently.}
+\title{models for unconnected pools}
 \value{a model object}

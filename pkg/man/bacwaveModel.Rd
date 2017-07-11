@@ -26,9 +26,9 @@ ExuT=0.8)}
 \item{ExuM}{a scalar representing the maximal exudation rate (ug C/(hr cm3 soil))}
 \item{ExuT}{a scalar representing the  time constant for exudation, responsible for duration of exudation (1/hr).}
 }
-\title{Implementation of the microbial model Bacwave (bacterial waves)}
 \description{This function implements the microbial model Bacwave (bacterial waves), a two-pool model with a bacterial and a substrate pool. It is a special case of the general nonlinear model.}
 \details{This implementation containts default parameters presented in Zelenev et al. (2000). It produces nonlinear damped oscillations in the form of a stable focus.}
 \references{Zelenev, V.V., A.H.C. van Bruggen, A.M. Semenov. 2000. ``BACWAVE,'' a spatial-temporal model for traveling waves of bacterial populations
 in response to a moving carbon source in soil. Microbail Ecology 40: 260-272.}
+\title{Implementation of the microbial model Bacwave (bacterial waves)}
 \value{An object of class NlModel that can be further queried.}

@@ -10,6 +10,6 @@ Re=8.3144621)}
 \item{Ea}{A scalar defining the activation energy in units of J mol^-1.}
 \item{Re}{A scalar defining the universal gas contant in units of J K^-1 mol^-1.}
 }
-\title{Effects of temperature on decomposition rates according the Arrhenius equation}
 \description{Calculates the effects of temperature on decomposition rates according to the Arrhenius equation.}
+\title{Effects of temperature on decomposition rates according the Arrhenius equation}
 \value{A scalar or a vector containing the effects of temperature on decomposition rates (unitless).}

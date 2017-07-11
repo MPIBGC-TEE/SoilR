@@ -18,6 +18,6 @@ ival)}
 \item{ADD}{a vector of length 3 representing the annual C input to the soil (g m-3 d-1)}
 \item{ival}{a vector of length 6 with the initial values of the SOM pools and the microbial biomass pools (g m-3)}
 }
-\title{Implementation of a 6-pool Michaelis-Menten model}
 \description{This function implements a 6-pool Michaelis-Meneten model with pairs of microbial biomass and substrate pools.}
+\title{Implementation of a 6-pool Michaelis-Menten model}
 \value{An object of class NlModel that can be further queried.}

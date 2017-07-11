@@ -22,10 +22,10 @@ pass=FALSE)}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
 \item{pass}{if TRUE forces the constructor to create the model even if it is invalid}
 }
-\title{Implementation of the RothCModel}
 \description{This function implements the RothC model of Jenkinson et al. It is a wrapper for the more general function \code{\link{GeneralModel}}.}
 \references{Jenkinson, D. S., S. P. S. Andrew, J. M. Lynch, M. J. Goss, and P. B. Tinker. 1990. The Turnover of Organic Carbon and Nitrogen in Soil. 
 Philosophical Transactions: Biological Sciences 329:361-368.
 Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.}
 \seealso{\code{\link{ICBMModel}} }
+\title{Implementation of the RothCModel}
 \value{A Model Object that can be further queried }

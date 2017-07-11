@@ -24,8 +24,8 @@ pass=FALSE)}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
 \item{pass}{if TRUE Forces the constructor to create the model even if it is invalid}
 }
-\title{Implementation of a one-pool C14 model}
 \description{This function creates a model for one pool. It is a wrapper for the more general function \code{\link{GeneralModel_14}}. }
 \seealso{\code{\link{OnepModel}}, \code{\link{TwopParallelModel14}}, 
 \code{\link{TwopFeedbackModel14}} }
+\title{Implementation of a one-pool C14 model}
 \value{A Model Object that can be further queried }

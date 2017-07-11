@@ -28,8 +28,8 @@ pass=FALSE)}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
 \item{pass}{if TRUE Forces the constructor to create the model even if it is invalid}
 }
-\title{General m-pool linear C14 model with series structure}
 \description{This function creates a radiocarbon model for m number of pools connected in series. It is a wrapper for the more general function \code{\link{GeneralModel_14}}.}
 \references{Sierra, C.A., M. Mueller, S.E. Trumbore. 2014. Modeling radiocarbon dynamics in soils: SoilR version 1.1. Geoscientific Model Development 7, 1919-1931.}
 \seealso{\code{\link{GeneralModel_14}}, \code{\link{SeriesLinearModel}} }
+\title{General m-pool linear C14 model with series structure}
 \value{A Model Object that can be further queried }

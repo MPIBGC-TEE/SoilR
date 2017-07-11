@@ -9,9 +9,9 @@ startValues)}
 point in time and a column vector y.}
 \item{startValues}{A column vector with the starting values.}
 }
-\title{deSolve.lsoda.wrapper}
 \description{The function serves as a wrapper for lsoda using a much simpler interface which allows the use 
 of matrices in the definition of the derivative. 
 To use lsoda we have to convert our vectors to lists, define tolerances and so on.
 This function does this for us , so we don't need to bother about it.}
+\title{deSolve.lsoda.wrapper}
 \value{A matrix. Every column represents a pool and every row a point in time}

@@ -42,12 +42,8 @@ I_D=0.005)}
 \item{I_S}{a scalar with the inputs to the SOC pool (mg cm-3 h-1).}
 \item{I_D}{a scalar with the inputs to the DOC pool (mg cm-3 h-1).}
 }
-\title{Implementation of the microbial model AWB (Allison, Wallenstein, Bradford, 2010)}
 \description{This function implements the microbial model AWB (Allison, Wallenstein, Bradford, 2010), a four-pool model with a microbial biomass, enzyme, SOC and DOC pools. It is a special case of the general nonlinear model.}
 \details{This implementation containts default parameters presented in Allison et al. (2010). }
-\references{Allison, S.D., M.D. Wallenstein, M.A. Bradford. 2010. Soil-carbon response to warming dependent on microbial physiology.
-Nature Geoscience 3: 336-340.}
-\value{An object of class NlModel that can be further queried.}
 \examples{hours=seq(0,800,0.1)
 
 #Run the model with default parameter values
@@ -59,3 +55,7 @@ Cpools=getC(bcmodel)
 matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
 ##State-space diagram
 plot(as.data.frame(Cpools))}
+\references{Allison, S.D., M.D. Wallenstein, M.A. Bradford. 2010. Soil-carbon response to warming dependent on microbial physiology.
+Nature Geoscience 3: 336-340.}
+\title{Implementation of the microbial model AWB (Allison, Wallenstein, Bradford, 2010)}
+\value{An object of class NlModel that can be further queried.}

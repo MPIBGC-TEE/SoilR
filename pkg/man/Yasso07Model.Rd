@@ -24,9 +24,9 @@ pass=FALSE)}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
 \item{pass}{if TRUE forces the constructor to create the model even if it is invalid}
 }
-\title{Implementation of the Yasso07 model}
 \description{This function creates a model for five pools as described in Tuomi et al. (2009)}
 \references{Tuomi, M., Thum, T., Jarvinen, H., Fronzek, S., Berg, B., Harmon, M., Trofymow, J., Sevanto, S., and Liski, J. (2009).
 Leaf litter decomposition-estimates of global variability based on Yasso07 model. Ecological Modelling, 220:3362 - 3371.}
 \seealso{\code{\link{ICBMModel}}, \code{\link{RothCModel}}}
+\title{Implementation of the Yasso07 model}
 \value{A Model Object that can be further queried }

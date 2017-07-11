@@ -27,9 +27,51 @@ pass=FALSE)}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or  any other user provided function with the same interface.}
 \item{pass}{if TRUE Forces the constructor to create the model even if it is invalid}
 }
-\title{Implementation of a the six-pool C14 model proposed by Gaudinski et al. 2000}
 \description{This function creates a model as described in Gaudinski et al. 2000. 
 It is a wrapper for the more general functions  \code{\link{GeneralModel_14}} that can handle an arbitrary number of pools.}
+\examples{years=seq(1901,2010,by=0.5)
+
+Ex=GaudinskiModel14(
+t=years,
+ks=c(kr=1/3, koi=1/1.5, koeal=1/4, koeah=1/80, kA1=1/3, kA2=1/75, kM=1/110),
+inputFc=C14Atm_NH
+)
+R14m=getF14R(Ex)
+C14m=getF14C(Ex)
+
+plot(
+C14Atm_NH,
+type="l",
+xlab="Year",
+ylab=expression(paste(Delta^14,"C ","(\u2030)")),
+xlim=c(1940,2010)
+) 
+lines(years,C14m,col=4)
+points(HarvardForest14CO2[1:11,1],HarvardForest14CO2[1:11,2],pch=19,cex=0.5)
+points(HarvardForest14CO2[12:173,1],HarvardForest14CO2[12:173,2],pch=19,col=2,cex=0.5)
+points(HarvardForest14CO2[158,1],HarvardForest14CO2[158,2],pch=19,cex=0.5)
+lines(years,R14m,col=2)
+legend(
+"topright",
+c("Delta 14C Atmosphere",
+"Delta 14C SOM", 
+"Delta 14C Respired"
+),
+lty=c(1,1,1), 
+col=c(1,4,2),
+bty="n"
+)
+## We now show how to bypass soilR s parameter sanity check if nacessary 
+## (e.g in for parameter estimation ) in functions
+## wchich might call it with unreasonable parameters
+years=seq(1800,2010,by=0.5)
+Ex=GaudinskiModel14(
+t=years,
+ks=c(kr=1/3,koi=1/1.5,koeal=1/4,koeah=1/80,kA1=1/3,kA2=1/75,kM=1/110),
+inputFc=C14Atm_NH,
+pass=TRUE
+)}
 \references{Gaudinski JB, Trumbore SE, Davidson EA, Zheng S (2000) Soil carbon cycling in a temperate forest: radiocarbon-based estimates of residence times, sequestration rates and partitioning fluxes. Biogeochemistry 51: 33-69}
 \seealso{\code{\link{ThreepParallelModel14}}, \code{\link{ThreepFeedbackModel14}} }
+\title{Implementation of a the six-pool C14 model proposed by Gaudinski et al. 2000}
 \value{A Model Object that can be further queried }

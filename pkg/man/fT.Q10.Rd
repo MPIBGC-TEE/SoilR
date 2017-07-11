@@ -10,6 +10,6 @@ Q10=2)}
 \item{T_ref}{A scalar representing the reference temperature.}
 \item{Q10}{A scalar. Temperature coefficient Q10.}
 }
-\title{Effects of temperature on decomposition rates according to a Q10 function}
 \description{Calculates the effects of temperature on decomposition rates according to the modified Van't Hoff function (Q10 function).}
+\title{Effects of temperature on decomposition rates according to a Q10 function}
 \value{A scalar or a vector containing the effects of temperature on decomposition rates (unitless).}

@@ -16,8 +16,8 @@ DiffuseLag=4)}
 \item{DiffuseShape}{A scalar that determines the range of moisture contents where diffusion is not limiting.}
 \item{DiffuseLag}{A scalar used to shift the point when moisture begins to limit diffusion.}
 }
-\title{Effects of moisture on decomposition rates according to the StandCarb model}
 \description{Calculates the effects of moisture on decomposition rates according to the StandCarb model.}
 \references{Harmon, M. E., and J. B. Domingo (2001), A users guide to STANDCARB version 2.0: 
 A model to simulate carbon stores in forest stands. Oregon State University, Corvallis.}
+\title{Effects of moisture on decomposition rates according to the StandCarb model}
 \value{A data frame with limitation due to water potential (MatricLimit), limitation due to oxygen diffusion (DiffuseLimit), and the overall limitation of moisture on decomposition rates (MoistDecayIndex).}

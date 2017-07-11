@@ -10,7 +10,7 @@ q=c(0.05, 0.5, 0.95))}
 \item{a}{A sequence of ages to calculate density functions}
 \item{q}{Vector of probabilities to calculate quantiles of the transit time distribution}
 }
-\title{Transit times for compartment models}
 \description{Computes the density distribution and mean for the transit time of a compartmental model}
 \seealso{\code{\link{systemAge}}}
+\title{Transit times for compartment models}
 \value{A list with 3 objects: mean transit time, transit time density distribution, and quantiles.}

@@ -14,7 +14,6 @@ pass=FALSE)}
 \item{solverfunc}{The function used to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}
 \item{pass}{Forces the constructor to create the model even if it does not pass internal sanity checks}
 }
-\title{Constructor for class \link{Model-class} }
 \description{This function creates an object of class \link{Model-class}, 
 The arguments can be given in different form as long as they can 
 be converted to the necessary internal building blocks. 
@@ -31,5 +30,6 @@ and try to call the constructor of the desired subclass
 explicitly with your arguments. 
 The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.}
 \seealso{This function is called by many of the \link{predefinedModels} }
+\title{Constructor for class \link{Model-class} }
 \value{An object of class \link{Model-class} that can be queried by many methods 
 to be found there.}

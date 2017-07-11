@@ -16,8 +16,8 @@ pass=FALSE)}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
 \item{pass}{if TRUE forces the constructor to create the model even if it is invalid}
 }
-\title{Implementation of a one pool model }
 \description{This function creates a model for one pool. It is a wrapper for the more general function \code{\link{GeneralModel}}.}
 \references{Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.}
 \seealso{\code{\link{TwopParallelModel}},\code{\link{TwopFeedbackModel}} }
+\title{Implementation of a one pool model }
 \value{A Model Object that can be further queried }

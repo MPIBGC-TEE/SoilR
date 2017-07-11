@@ -18,8 +18,8 @@ width=1)}
 \item{bulkd}{Bulk density of soil layer (g/cm^3).}
 \item{width}{Thickness of a soil layer (cm).}
 }
-\title{Effects of moisture on decomposition rates according to the DAYCENT model}
 \description{Calculates the effects of Soil Water Content on decomposition rates according to the Daycent Model.}
 \references{Kelly, R. H., W. J. Parton, M. D. Hartman, L. K. Stretch, D. S. Ojima, and D. S. Schimel (2000), 
 Intra-annual and interannual variability of ecosystem processes in shortgrass steppe, J. Geophys. Res., 105.}
+\title{Effects of moisture on decomposition rates according to the DAYCENT model}
 \value{A data frame with values of water filled pore space (wfps) and effects of soil water content on decomposition rates. Both vectors are unitless. }

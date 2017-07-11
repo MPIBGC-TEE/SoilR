@@ -18,9 +18,9 @@ pass=FALSE)}
 \item{solver}{A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.}
 \item{pass}{if TRUE forces the constructor to create the model even if it is invalid}
 }
-\title{Implementation of the Introductory Carbon Balance Model (ICBM)}
 \description{This function is an implementation of the Introductory Carbon Balance Model (ICBM).
 This is simply a two pool model connected in series.}
 \references{Andren, O. and T. Katterer. 1997. ICBM: The Introductory Carbon Balance Model 
 for Exploration of Soil Carbon Balances. Ecological Applications 7:1226-1236.}
 \seealso{\code{\link{TwopSeriesModel}} }
+\title{Implementation of the Introductory Carbon Balance Model (ICBM)}

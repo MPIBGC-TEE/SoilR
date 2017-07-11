@@ -12,5 +12,5 @@ col,
 \item{col}{A color palette specifying color lines for each pool (columns of \code{mat}).}
 \item{...}{Other arguments passed to \code{plot}.}
 }
-\title{Plots the output of \code{\link{getF14}} for each pool over time}
 \description{This function produces a plot with the Delta14C in the atmosphere and the Delta14C of each pool obtained after a call to \code{\link{getF14}}.}
+\title{Plots the output of \code{\link{getF14}} for each pool over time}
