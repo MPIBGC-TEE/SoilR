@@ -48,3 +48,14 @@ I_D=0.005)}
 \references{Allison, S.D., M.D. Wallenstein, M.A. Bradford. 2010. Soil-carbon response to warming dependent on microbial physiology.
 Nature Geoscience 3: 336-340.}
 \value{An object of class NlModel that can be further queried.}
+\examples{hours=seq(0,800,0.1)
+
+#Run the model with default parameter values
+bcmodel=AWBmodel(t=hours)
+Cpools=getC(bcmodel)
+##Time solution
+# fixme mm:
+# the next line causes trouble on Rforge Windows patched build
+matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
+##State-space diagram
+plot(as.data.frame(Cpools))}

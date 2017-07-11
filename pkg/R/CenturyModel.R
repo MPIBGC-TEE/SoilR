@@ -1,7 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-CenturyModel<-structure(
-  function #Implementation of the Century model
+CenturyModel<- function #Implementation of the Century model
   ### This function implements the Century model as described in Parton et al. (1987).
   ##references<< Parton, W.J, D.S. Schimel, C.V. Cole, and D.S. Ojima. 1987. Analysis of factors controlling soil organic matter levels in Great Plain grasslands.
   ##Soil Science Society of America Journal 51: 1173--1179.
@@ -85,28 +84,26 @@ CenturyModel<-structure(
     Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver,pass=FALSE)
     return(Mod)
     ### A Model Object that can be further queried 
+    ##examples<<
+    ##    t=seq(0,52*200,1) #200 years  
+    ##    LNcorn=0.17/0.004 # Values for corn clover reported in Parton et al. 1987
+    ##    Ex=CenturyModel(t,LN=0.5,Ls=0.1,In=0.1)
+    ##    Ct=getC(Ex)
+    ##    Rt=getReleaseFlux(Ex)
+    ##    
+    ##    matplot(t,Ct,type="l", col=1:5,lty=1,ylim=c(0,max(Ct)*2.5),
+    ##      ylab=expression(paste("Carbon stores (kg C", ha^-1,")")),xlab="Time (weeks)") 
+    ##    lines(t,rowSums(Ct),lwd=2)
+    ##    legend("topright", c("Structural litter","Metabolic litter",
+    ##        "Active SOM","Slow SOM","Passive SOM","Total Carbon"),
+    ##      lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
+    ##    
+    ##    matplot(t,Rt,type="l",lty=1,ylim=c(0,max(Rt)*3),ylab="Respiration (kg C ha-1 week-1)",xlab="Time") 
+    ##    lines(t,rowSums(Rt),lwd=2) 
+    ##    legend("topright", c("Structural litter","Metabolic litter",
+    ##                         "Active SOM","Slow SOM","Passive SOM","Total Respiration"),
+    ##           lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
     ##seealso<< \code{\link{RothCModel}} 
   }
-  ,
-  ex=function(){
-#    t=seq(0,52*200,1) #200 years  
-#    LNcorn=0.17/0.004 # Values for corn clover reported in Parton et al. 1987
-#    Ex=CenturyModel(t,LN=0.5,Ls=0.1,In=0.1)
-#    Ct=getC(Ex)
-#    Rt=getReleaseFlux(Ex)
-#    
-#    matplot(t,Ct,type="l", col=1:5,lty=1,ylim=c(0,max(Ct)*2.5),
-#      ylab=expression(paste("Carbon stores (kg C", ha^-1,")")),xlab="Time (weeks)") 
-#    lines(t,rowSums(Ct),lwd=2)
-#    legend("topright", c("Structural litter","Metabolic litter",
-#        "Active SOM","Slow SOM","Passive SOM","Total Carbon"),
-#      lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
-#    
-#    matplot(t,Rt,type="l",lty=1,ylim=c(0,max(Rt)*3),ylab="Respiration (kg C ha-1 week-1)",xlab="Time") 
-#    lines(t,rowSums(Rt),lwd=2) 
-#    legend("topright", c("Structural litter","Metabolic litter",
-#                         "Active SOM","Slow SOM","Passive SOM","Total Respiration"),
-#           lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
     
-  }
-)
+

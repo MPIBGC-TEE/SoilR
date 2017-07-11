@@ -1,7 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-AWBmodel<-structure(
-  function # Implementation of the microbial model AWB (Allison, Wallenstein, Bradford, 2010)
+AWBmodel<- function # Implementation of the microbial model AWB (Allison, Wallenstein, Bradford, 2010)
   ### This function implements the microbial model AWB (Allison, Wallenstein, Bradford, 2010), a four-pool model with a microbial biomass, enzyme, SOC and DOC pools. It is a special case of the general nonlinear model.
   ##details<< This implementation containts default parameters presented in Allison et al. (2010). 
   ##references<< Allison, S.D., M.D. Wallenstein, M.A. Bradford. 2010. Soil-carbon response to warming dependent on microbial physiology.
@@ -82,26 +81,19 @@ AWBmodel<-structure(
     
     return(modnl)
     ### An object of class NlModel that can be further queried.
-  }
-,
-ex=function(){
-  
-  hours=seq(0,800,0.1)
-  
-  #Run the model with default parameter values
-  bcmodel=AWBmodel(t=hours)
-
-  # fixme mm:
-  # the next line causes trouble on Rforge Windows patched build
-
-  #Cpools=getC(bcmodel)
-  #
-  ##Time solution
-  #matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
-  #legend("topleft",c("B", "E", "S", "D"),lty=1,col=c(1:4),bty="n")
-  #
-  ##State-space diagram
-  #plot(as.data.frame(Cpools))
-  
+    ##examples<< 
+    ## hours=seq(0,800,0.1)
+    ## 
+    ## #Run the model with default parameter values
+    ## bcmodel=AWBmodel(t=hours)
+    ## Cpools=getC(bcmodel)
+    ## ##Time solution
+    ## # fixme mm:
+    ## # the next line causes trouble on Rforge Windows patched build
+    ## matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
+    ## ##State-space diagram
+    ## plot(as.data.frame(Cpools))
+    
 }
-)
+
+  
