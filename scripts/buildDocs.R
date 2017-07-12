@@ -1,3 +1,4 @@
+#!/usr/bin/Rscript
 require(devtools)
 install('~/linkeddocs/pkg')
 require(linkeddocs)

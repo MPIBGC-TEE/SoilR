@@ -5,8 +5,8 @@
 \item{object}{see the method arguments for details}
 }
 \section{Methods}{	\code{\link{InFluxSubClassInstance,InFlux-method}}\cr
-	\code{\link{InFluxSubClassInstance,TimeMap-method}}\cr
-	\code{\link{InFluxSubClassInstance,numeric-method}}\cr}
+	\code{\link{InFluxSubClassInstance,numeric-method}}\cr
+	\code{\link{InFluxSubClassInstance,TimeMap-method}}\cr}
 \title{Generic constructor and converter }
 \description{If the argument is already of a subclass of class InFlux
 the function returns the unchanged object.

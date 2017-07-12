@@ -5,13 +5,13 @@ defines a (time dependent) mapping including the function definition and the ###
 \alias{TimeMap-class}
 \docType{class}
 \section{Methods}{  \describe{
+    \item{as.character}{\code{signature(x = "TimeMap")}: ... } \code{\link{as.character,TimeMap-method}}
     \item{BoundInFlux}{\code{signature(map = "TimeMap", starttime = "missing", endtime = "missing", lag = "missing", interpolation = "missing")}: ... } \code{\link{BoundInFlux,TimeMap,missing,missing,missing,missing-method}}
     \item{BoundLinDecompOp}{\code{signature(map = "TimeMap", starttime = "missing", endtime = "missing")}: ... } \code{\link{BoundLinDecompOp,TimeMap,missing,missing-method}}
     \item{DecompOpSubClassInstance}{\code{signature(object = "TimeMap")}: ... } \code{\link{DecompOpSubClassInstance,TimeMap-method}}
-    \item{InFluxSubClassInstance}{\code{signature(object = "TimeMap")}: ... } \code{\link{InFluxSubClassInstance,TimeMap-method}}
-    \item{as.character}{\code{signature(x = "TimeMap")}: ... } \code{\link{as.character,TimeMap-method}}
     \item{getFunctionDefinition}{\code{signature(object = "TimeMap")}: ... } \code{\link{getFunctionDefinition,TimeMap-method}}
     \item{getTimeRange}{\code{signature(object = "TimeMap")}: ... } \code{\link{getTimeRange,TimeMap-method}}
+    \item{InFluxSubClassInstance}{\code{signature(object = "TimeMap")}: ... } \code{\link{InFluxSubClassInstance,TimeMap-method}}
 	 }}
 \section{Subclasses}{\describe{
 	\code{\link{BoundInFlux-class}}\cr
