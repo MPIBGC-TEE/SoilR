@@ -1,7 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-OnepModel<-structure(
-    function #Implementation of a one pool model 
+OnepModel<- function #Implementation of a one pool model 
     ### This function creates a model for one pool. It is a wrapper for the more general function \code{\link{GeneralModel}}.
     ##references<< Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.
      (t,  		##<< A vector containing the points in time where the solution is sought.
@@ -50,53 +49,50 @@ OnepModel<-structure(
         t_end
       )
       Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,solver,pass)
-     return(Mod)
-### A Model Object that can be further queried 
+      return(Mod)
+      ### A Model Object that can be further queried 
       ##seealso<< \code{\link{TwopParallelModel}},\code{\link{TwopFeedbackModel}} 
+			##    examples<<
+			##      t_start=0 
+			##      t_end=10 
+			##      tn=50
+			##      timestep=(t_end-t_start)/tn 
+			##      t=seq(t_start,t_end,timestep) 
+			##      k=0.8
+			##      C0=100
+			##      In = 30
+			##      
+			##    
+			##      Ex=OnepModel(t,k,C0,In)
+			##      Ct=getC(Ex)
+			##      Rt=getReleaseFlux(Ex)
+			##      Rc=getAccumulatedRelease(Ex)
+			##      
+			##      plot(
+			##        t,
+			##        Ct,
+			##        type="l",
+			##        ylab="Carbon stocks (arbitrary units)",
+			##        xlab="Time (arbitrary units)",
+			##        lwd=2
+			##      ) 
+			##      
+			##      plot(
+			##        t,
+			##        Rt,
+			##        type="l",
+			##        ylab="Carbon released (arbitrary units)",
+			##        xlab="Time (arbitrary units)",
+			##        lwd=2
+			##      ) 
+			##      
+			##      plot(
+			##        t,
+			##        Rc,
+			##        type="l",
+			##        ylab="Cummulative carbon released (arbitrary units)",
+			##        xlab="Time (arbitrary units)",
+			##        lwd=2
+			##      ) 
     }
-    ,
-    ex=function(){
-      t_start=0 
-      t_end=10 
-      tn=50
-      timestep=(t_end-t_start)/tn 
-      t=seq(t_start,t_end,timestep) 
-      k=0.8
-      C0=100
-      In = 30
-      
-    
-      Ex=OnepModel(t,k,C0,In)
-      Ct=getC(Ex)
-      Rt=getReleaseFlux(Ex)
-      Rc=getAccumulatedRelease(Ex)
-      
-      plot(
-        t,
-        Ct,
-        type="l",
-        ylab="Carbon stocks (arbitrary units)",
-        xlab="Time (arbitrary units)",
-        lwd=2
-      ) 
-      
-      plot(
-        t,
-        Rt,
-        type="l",
-        ylab="Carbon released (arbitrary units)",
-        xlab="Time (arbitrary units)",
-        lwd=2
-      ) 
-      
-      plot(
-        t,
-        Rc,
-        type="l",
-        ylab="Cummulative carbon released (arbitrary units)",
-        xlab="Time (arbitrary units)",
-        lwd=2
-      ) 
 
-}
-)

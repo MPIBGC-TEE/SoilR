@@ -1,7 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-SeriesLinearModel14<-structure(
-  function #General m-pool linear C14 model with series structure
+SeriesLinearModel14<- function #General m-pool linear C14 model with series structure
   ### This function creates a radiocarbon model for m number of pools connected in series. It is a wrapper for the more general function \code{\link{GeneralModel_14}}.
   ##references<< Sierra, C.A., M. Mueller, S.E. Trumbore. 2014. Modeling radiocarbon dynamics in soils: SoilR version 1.1. Geoscientific Model Development 7, 1919-1931.
   (t,      ##<< A vector containing the points in time where the solution is sought.
@@ -66,41 +65,38 @@ SeriesLinearModel14<-structure(
     return(Mod)
     ### A Model Object that can be further queried 
     ##seealso<< \code{\link{GeneralModel_14}}, \code{\link{SeriesLinearModel}} 
+		##examples<<
+		##    
+		##    years=seq(1901,2009,by=0.5)
+		##    LitterInput=700 
+		##    
+		##    Ex=SeriesLinearModel14(
+		##      t=years,ki=c(k1=1/2.8, k2=1/35, k3=1/100), m.pools=3,
+		##      C0=c(200,5000,500), F0_Delta14C=c(0,0,0),
+		##      In=LitterInput, Tij=c(0.5, 0.1),inputFc=C14Atm_NH
+		##    )
+		##    R14m=getF14R(Ex)
+		##    C14m=getF14C(Ex)
+		##    C14t=getF14(Ex)
+		##    
+		##    par(mfrow=c(2,1))
+		##    plot(C14Atm_NH,type="l",xlab="Year",
+		##         ylab="Delta 14C (per mil)",xlim=c(1940,2010)) 
+		##    lines(years, C14t[,1], col=4)
+		##    lines(years, C14t[,2],col=4,lwd=2)
+		##    lines(years, C14t[,3],col=4,lwd=3)
+		##    legend(
+		##      "topright",
+		##      c("Delta 14C Atmosphere", "Delta 14C pool 1", "Delta 14C pool 2", "Delta 14C pool 3"),
+		##      lty=rep(1,4),col=c(1,4,4,4),lwd=c(1,1,2,3),bty="n")
+		##    
+		##    plot(C14Atm_NH,type="l",xlab="Year",ylab="Delta 14C (per mil)",xlim=c(1940,2010)) 
+		##    lines(years,C14m,col=4)
+		##    lines(years,R14m,col=2)
+		##    legend("topright",c("Delta 14C Atmosphere","Delta 14C SOM", "Delta 14C Respired"),
+		##           lty=c(1,1,1), col=c(1,4,2),bty="n")
+		##    par(mfrow=c(1,1))
   }
-  ,
-  ex=function(){
-    
-    years=seq(1901,2009,by=0.5)
-    LitterInput=700 
-    
-    Ex=SeriesLinearModel14(
-      t=years,ki=c(k1=1/2.8, k2=1/35, k3=1/100), m.pools=3,
-      C0=c(200,5000,500), F0_Delta14C=c(0,0,0),
-      In=LitterInput, Tij=c(0.5, 0.1),inputFc=C14Atm_NH
-    )
-    R14m=getF14R(Ex)
-    C14m=getF14C(Ex)
-    C14t=getF14(Ex)
-    
-    par(mfrow=c(2,1))
-    plot(C14Atm_NH,type="l",xlab="Year",
-         ylab="Delta 14C (per mil)",xlim=c(1940,2010)) 
-    lines(years, C14t[,1], col=4)
-    lines(years, C14t[,2],col=4,lwd=2)
-    lines(years, C14t[,3],col=4,lwd=3)
-    legend(
-      "topright",
-      c("Delta 14C Atmosphere", "Delta 14C pool 1", "Delta 14C pool 2", "Delta 14C pool 3"),
-      lty=rep(1,4),col=c(1,4,4,4),lwd=c(1,1,2,3),bty="n")
-    
-    plot(C14Atm_NH,type="l",xlab="Year",ylab="Delta 14C (per mil)",xlim=c(1940,2010)) 
-    lines(years,C14m,col=4)
-    lines(years,R14m,col=2)
-    legend("topright",c("Delta 14C Atmosphere","Delta 14C SOM", "Delta 14C Respired"),
-           lty=c(1,1,1), col=c(1,4,2),bty="n")
-    par(mfrow=c(1,1))
-  }
-)
 
 
   

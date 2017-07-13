@@ -23,6 +23,27 @@ pass=FALSE)}
 \item{pass}{if TRUE forces the constructor to create the model even if it is invalid}
 }
 \description{This function implements the RothC model of Jenkinson et al. It is a wrapper for the more general function \code{\link{GeneralModel}}.}
+\examples{t=0:500 
+Ex=RothCModel(t)
+Ct=getC(Ex)
+Rt=getReleaseFlux(Ex)
+
+matplot(t,Ct,type="l",col=1:5, ylim=c(0,25),
+ylab=expression(paste("Carbon stores (Mg C ", ha^-1,")")),
+xlab="Time (years)", lty=1)
+lines(t,rowSums(Ct),lwd=2)
+legend("topleft",
+c("Pool 1, DPM",
+"Pool 2, RPM",
+"Pool 3, BIO",
+"Pool 4, HUM",
+"Pool 5, IOM",
+"Total Carbon"),
+lty=1,
+lwd=c(rep(1,5),2),
+col=c(1:5,1),
+bty="n"
+)}
 \references{Jenkinson, D. S., S. P. S. Andrew, J. M. Lynch, M. J. Goss, and P. B. Tinker. 1990. The Turnover of Organic Carbon and Nitrogen in Soil. 
 Philosophical Transactions: Biological Sciences 329:361-368.
 Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.}

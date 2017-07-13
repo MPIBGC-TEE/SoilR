@@ -103,6 +103,7 @@ transitTime,
 cycling
 )
 exportClasses(
+NlModel,
 Model,
 Model_14,
 TimeMap,
