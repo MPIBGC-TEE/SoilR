@@ -1,9 +1,9 @@
 #!/usr/bin/Rscript
 # vim:set ff=unix expandtab ts=2 sw=2:
 # extend Runit to check warnings
-library("RUnit")
-library("deSolve")
-library("parallel")
+require("parallel")
+require("RUnit")
+require("deSolve")
 source("testhelpers.R")
 dataPrefix="../../data/"
 dataPaths=Sys.glob(paste(dataPrefix,"*.rda",sep=""))

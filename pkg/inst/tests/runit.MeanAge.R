@@ -11,10 +11,10 @@ test.meanAge=function(){
    impulse=function(t){2*C0*dnorm(t,mean=0,sd=1e-8)}
    k=1/10
    I0=k*C0
-   #Odot=function(Y,t){-k*Y^8}
+   #Odot=function(Y,t){-k*Y^8}y
    Odot=function(Y,t){-k*Y}
    #Idot=function(Y,t){I0*(1+0.9*sin(t/50))}
-   Idot=function(Y,t){I0}#+impulse(t)}
+   Idot=function(Y,t){I0}#+impulse(t)u}
    Ydot=function(Y,t){Idot(Y,t)+Odot(Y,t)}
    t0=0
    tend=100

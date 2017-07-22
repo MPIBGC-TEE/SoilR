@@ -6,7 +6,7 @@ alltests <- defineTestSuite(
    name="allTests",
    #dirs=c("."),
    dirs=c(".","protected","automatic"),
-   testFileRegexp = "^runit.+\\.[rR]",
+   testFileRegexp = "^runit.+\\.[rR]$",
    testFuncRegexp = "^test.+",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
