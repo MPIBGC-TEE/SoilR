@@ -20,6 +20,17 @@ Temp2=20,
 ival=c(B = 2.19159, E = 0.0109579, S = 111.876, D = 0.00144928),
 I_S=0.005,
 I_D=0.005)}
+\examples{hours=seq(0,800,0.1)
+
+#Run the model with default parameter values
+bcmodel=AWBmodel(t=hours)
+Cpools=getC(bcmodel)
+##Time solution
+# fixme mm:
+# the next line causes trouble on Rforge Windows patched build
+matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
+##State-space diagram
+plot(as.data.frame(Cpools))}
 \arguments{
 \item{t}{vector of times (in hours) to calculate a solution.}
 \item{V_M}{a scalar representing the maximum rate of uptake (mg DOC cm-3 h-1). Equivalent to V_maxuptake0 in original paper.}
@@ -44,17 +55,6 @@ I_D=0.005)}
 }
 \description{This function implements the microbial model AWB (Allison, Wallenstein, Bradford, 2010), a four-pool model with a microbial biomass, enzyme, SOC and DOC pools. It is a special case of the general nonlinear model.}
 \details{This implementation containts default parameters presented in Allison et al. (2010). }
-\examples{hours=seq(0,800,0.1)
-
-#Run the model with default parameter values
-bcmodel=AWBmodel(t=hours)
-Cpools=getC(bcmodel)
-##Time solution
-# fixme mm:
-# the next line causes trouble on Rforge Windows patched build
-matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
-##State-space diagram
-plot(as.data.frame(Cpools))}
 \references{Allison, S.D., M.D. Wallenstein, M.A. Bradford. 2010. Soil-carbon response to warming dependent on microbial physiology.
 Nature Geoscience 3: 336-340.}
 \title{Implementation of the microbial model AWB (Allison, Wallenstein, Bradford, 2010)}

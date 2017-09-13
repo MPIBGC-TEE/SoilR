@@ -524,7 +524,7 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="DecompOpSubClassInstance",
+	 name="GeneralDecompOp",
 	 def=function # Generic function to create an object of one of the subclasses of DevompOp
 	 ### If the argument is already of a subclass of class DecompOp 
 	 ### the function returns the unchanged object.
@@ -534,11 +534,11 @@ setGeneric(
 	 (object)
 	 {
 	 ### create a DecompositonOperator from different sources
-	     standardGeneric("DecompOpSubClassInstance")
+	     standardGeneric("GeneralDecompOp")
 	 }
 )
 setGeneric(
-	 name="InFluxSubClassInstance",
+	 name="GeneralInFlux",
 	 def=function # Generic constructor and converter 
 	 ### If the argument is already of a subclass of class InFlux
 	 ### the function returns the unchanged object.
@@ -548,7 +548,7 @@ setGeneric(
 	 (object)
 	 {
 	 ### Creates a DecompositonOperator object from different sources
-	     standardGeneric("InFluxSubClassInstance")
+	     standardGeneric("GeneralInFlux")
 	 }
 )
 setGeneric(

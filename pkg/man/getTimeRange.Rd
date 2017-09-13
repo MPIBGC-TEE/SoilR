@@ -8,6 +8,6 @@
 	\code{\link{getTimeRange,ConstLinDecompOp-method}}\cr
 	\code{\link{getTimeRange,DecompositionOperator-method}}\cr
 	\code{\link{getTimeRange,TimeMap-method}}\cr}
-\title{getTimeRange generic function}
+\title{getTimeRange}
 \description{This function returns the time range of the given object. 
 Have a look at the methods for details.}

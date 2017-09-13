@@ -8,7 +8,7 @@ solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
 \arguments{
 \item{t}{A vector containing the points in time where the solution is sought.}
-\item{A}{Anything that can be converted by \link{DecompOpSubClassInstance} to any of the available DecompositionOperator classes}
+\item{A}{Anything that can be converted by \link{GeneralDecompOp} to any of the available DecompositionOperator classes}
 \item{ivList}{A vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by an internal  function.}
 \item{inputFluxes}{something that can be converted to any of the available InFlux classes}
 \item{solverfunc}{The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}

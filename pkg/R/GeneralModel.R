@@ -8,7 +8,7 @@ GeneralModel <- function # the old  function to create Models
   ### that can be converted into  the required set of building blocks for a model
   ### for n arbitrarily connected pools.
   (t,			##<< A vector containing the points in time where the solution is sought.
-   A,			##<< Anything that can be converted by \link{DecompOpSubClassInstance} to any of the available DecompositionOperator classes
+   A,			##<< Anything that can be converted by \link{GeneralDecompOp} to any of the available DecompositionOperator classes
    ivList,		##<< A vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by an internal  function. 
    inputFluxes, ##<<  something that can be converted to any of the available InFlux classes
    solverfunc=deSolve.lsoda.wrapper,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 

@@ -1,6 +1,5 @@
 \title{Model}
-\description{serves as a fence to the interface of SoilR functions. So that later implementations can differ	 
-serves as a fence to the interface of SoilR functions. So that later implementations can differ	 }
+\description{serves as a fence to the interface of SoilR functions. So that later implementations can differ	 }
 \name{Model-class}
 \alias{Model-class}
 \docType{class}

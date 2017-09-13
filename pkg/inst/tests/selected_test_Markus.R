@@ -4,8 +4,8 @@ source("prolog.R")
 #require(RUnit)
 alltests <- defineTestSuite(
    name="allTests",
-   dirs=c("."),
-   #dirs=c(".","protected","automatic"),
+   #dirs=c("."),
+   dirs=c(".","protected","automatic"),
    #dirs=c("automatic"),
    #testFileRegexp = "^runit.NonlinearAtmosphericModel.R",
    #testFileRegexp = "^runit.BoundFc.R",

@@ -1,6 +1,5 @@
 \title{ConstInFlux S4 class}
-\description{defines a constant inputrate 
-defines a constant inputrate }
+\description{defines a constant inputrate }
 \name{ConstInFlux-class}
 \alias{ConstInFlux-class}
 \docType{class}

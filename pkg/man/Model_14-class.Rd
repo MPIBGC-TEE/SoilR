@@ -1,6 +1,5 @@
 \title{Model_14}
-\description{defines a representation of a 14C model
-defines a representation of a 14C model}
+\description{defines a representation of a 14C model}
 \name{Model_14-class}
 \alias{Model_14-class}
 \docType{class}

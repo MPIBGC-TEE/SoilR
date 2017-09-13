@@ -181,15 +181,15 @@ Model<-function #Constructor for class \link{Model-class}
   ### (See the links)
 
   (t,			##<< A vector containing the points in time where the solution is sought.
-   A,			##<< something that can be converted by \link{DecompOpSubClassInstance} to any of the available subclasses of \code{\link{DecompOp-class}}. 
+   A,			##<< something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\link{DecompOp-class}}. 
    ivList,		##<< A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools .This is checked by an internal  function. 
-   inputFluxes, ##<<  something that can be converted by \link{InFluxSubClassInstance} to any of the available subclasses of \link{InFlux-class}.
+   inputFluxes, ##<<  something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \link{InFlux-class}.
    solverfunc=deSolve.lsoda.wrapper,		##<< The function used to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
    pass=FALSE  ##<< Forces the constructor to create the model even if it does not pass internal sanity checks  
    )
   {
   ##details<< The internal constructor of class \link{Model-class} requires the argument \code{A} to be of class \link{DecompOp-class} and argument \code{inputFluxes} to be of  class \link{InFlux-class}.
-  ## Before calling the internal constructor this function calls \link{DecompOpSubClassInstance} on its argument \code{A} and  \link{InFluxSubClassInstance} on its argument \code{inputFluxes} to convert them into
+  ## Before calling the internal constructor this function calls \link{GeneralDecompOp} on its argument \code{A} and  \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
   ## the required classes.
   ## Both are generic functions. Follow the links to see for which kind of inputs conversion methods are available.
   ## The attempted conversion allows great flexibility with respect to arguments and independence from the actual implementation.
@@ -204,7 +204,7 @@ Model<-function #Constructor for class \link{Model-class}
 
   
   
-     obj=new(Class="Model",t,DecompOpSubClassInstance(A),ivList,InFluxSubClassInstance(inputFluxes),solverfunc,pass)
+     obj=new(Class="Model",t,GeneralDecompOp(A),ivList,GeneralInFlux(inputFluxes),solverfunc,pass)
      return(obj)
      ### An object of class \link{Model-class} that can be queried by many methods 
      ### to be found there.

@@ -9,6 +9,6 @@
 	\code{\link{getFunctionDefinition,DecompositionOperator-method}}\cr
 	\code{\link{getFunctionDefinition,TimeMap-method}}\cr
 	\code{\link{getFunctionDefinition,TransportDecompositionOperator-method}}\cr}
-\title{getFunctionDefinition generic function}
+\title{getFunctionDefinition}
 \description{Extracts the function definition (the R-function) from the argument
 Have a look at the methods for details.}

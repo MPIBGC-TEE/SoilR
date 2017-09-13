@@ -2,11 +2,11 @@
 # vim:set ff=unix expandtab ts=2 sw=2:
 # This test checks the code published along with Sierra et al. (2012, Geos. Model Devel. 5: 1045)
 test.SoilRPaper1=function(){
-     DEACTIVATED("The examples have to be sourced out, linkeddocs had to learn this")
-#     require(RUnit)
-#     
-#     attr(ICBMModel,"ex") #Shows the code
-#     attr(ICBMModel,"ex")() #Runs the example and shows Figure 2
+     #DEACTIVATED("The examples have to be sourced out, linkeddocs had to learn this")
+     #require(RUnit)
+     
+     source(sprintf('%s/SoilR/examples/exICBMModel.R',.libPaths()[1])) 
+     exICBMModel_paper() #Runs the example and shows Figure 2
 #     
 #     #Figure 3
 #     attr(TwopFeedbackModel, "ex") #Shows the code
