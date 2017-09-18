@@ -1,4 +1,3 @@
-#!/usr/bin/Rscript
+#!/usr/bin/env Rscript
 require('devtools')
-install('~/SoilR-exp/pkg')
-require('SoilR')
+devtools::install('../../')

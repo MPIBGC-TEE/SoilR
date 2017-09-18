@@ -3,6 +3,7 @@
 # This test checks the code published with Sierra et al. (2013, Biogeosciences 10: 3455)
 test.LowVerticalRatesPaper=function(){
      require(RUnit)
+     require(SoilR)
 
      #Create new dataset with pre- and post-bomb data
      C14d=data.frame(AD=c(1950-IntCal09[1:(dim(IntCal09)[1]-1),1],C14Atm_NH[52:111,1]),D14C=c(IntCal09[1:(dim(IntCal09)[1]-1),4],C14Atm_NH[52:111,2]))
