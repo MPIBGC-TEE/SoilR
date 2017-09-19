@@ -11,7 +11,7 @@ Yasso07Model<-structure(
       C0,	##<< A vector containing the initial amount of carbon for the 5 pools. The length of this vector must be 5.
       In,     ##<< A single scalar or data.frame object specifying the amount of litter inputs by time
       xi=1,  ##<< A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.
-      solver=deSolve.lsoda.wrapper,  ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.
+      solver=deSolve.lsoda.wrapper,  ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.
       pass=FALSE  ##<< if TRUE forces the constructor to create the model even if it is invalid 
     )	
     { 

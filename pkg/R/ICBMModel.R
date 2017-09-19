@@ -12,7 +12,7 @@ ICBMModel<- function #Implementation of the Introductory Carbon Balance Model (I
      r=1.32, ##<< External (environmental or edaphic) factor. 
      c0=c(Y0=0.3,O0=3.96), ##<< A vector of length 2 with the initial value of carbon stocks in the young and old pool. 
      In=0,   ##<< Mean annual carbon input to the soil. 
-     solver=deSolve.lsoda.wrapper, ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.
+     solver=deSolve.lsoda.wrapper, ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.
      pass=FALSE  ##<< if TRUE forces the constructor to create the model even if it is invalid 
      )
     { 

@@ -11,7 +11,7 @@ TwopParallelModel<-structure(
      In,     ##<< A scalar or a data.frame object specifying the amount of litter inputs by time.
      gam,  ##<< A scalar representing the partitioning coefficient, i.e. the proportion from the total amount of inputs that goes to pool 1.
      xi=1,   ##<< A scalar or a data.frame specifying the external (environmental and/or edaphic) effects on decomposition rates. 
-     solver=deSolve.lsoda.wrapper, ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.
+     solver=deSolve.lsoda.wrapper, ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.
      pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid 
     )	
     { 

@@ -13,7 +13,7 @@ RothCModel<- function #Implementation of the RothCModel
       DR=1.44, ##<< A scalar representing the ratio of decomposable plant material to resistant plant material (DPM/RPM).
       clay=23.4, ##<< Percent clay in mineral soil. 
       xi=1,  ##<< A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.
-      solver=deSolve.lsoda.wrapper,  ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.
+      solver=deSolve.lsoda.wrapper,  ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.
       pass=FALSE  ##<< if TRUE forces the constructor to create the model even if it is invalid 
     )	
     { 

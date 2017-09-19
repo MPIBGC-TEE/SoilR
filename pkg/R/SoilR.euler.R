@@ -1,11 +1,11 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-SoilR.euler=function
+euler=function
 ### This function can solve arbitrary first order ode systems with the euler forward 
 ### method and an
 ### adaptive time-step size control given a tolerance for the deviation of a coarse and fine 
 ### estimate of the change in y for the next time step.
-### It is an alternative to \code{\link{ode}} and has the same interface.
+### It is an alternative to \code{\link{deSolve.lsoda.wrapper}} and has the same interface.
 ### It is much slower than ode and should probably be considered less capable in solving stiff ode systems.
 ### However it has one main advantage, which consists in its simplicity.
 ### It is quite easy to see what is going on inside it.

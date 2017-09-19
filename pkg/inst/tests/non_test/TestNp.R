@@ -14,7 +14,7 @@ TestNp=function(){
    c10=1
    c20=2
    target=TwopParallelAnalytical(times,k1,k2,c10,c20)
-   Yeuler	=TwopParallel(times,k1,k2,c10,c20,SoilR.euler)
+   Yeuler	=TwopParallel(times,k1,k2,c10,c20,euler)
    Yode	=TwopParallel(times,k1,k2,c10,c20,deSolve.lsoda.wrapper)
    checkEquals(target, Yode, "test numeric solution computed by deSolve.lsoda.wrapper function against analytical",
             #tolerance = .Machine$double.eps^0.5, 
@@ -26,7 +26,7 @@ TestNp=function(){
    k3=-0.5
    c30=3
    target=ThreepParallelAnalytical(times,k1,k2,k3,c10,c20,c30)
-   Yeuler=ThreepParallel(times,k1,k2,k3,c10,c20,c30,SoilR.euler)
+   Yeuler=ThreepParallel(times,k1,k2,k3,c10,c20,c30,euler)
    
    checkEquals(target, Yeuler, "test numeric solution computed by the euler mehtod against analytical",
             tolerance = tol,

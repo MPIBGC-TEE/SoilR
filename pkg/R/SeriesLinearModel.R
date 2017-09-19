@@ -10,7 +10,7 @@ SeriesLinearModel<- function #General m-pool linear model with series structure
       C0,	##<< A vector of length m containing the initial amount of carbon for the m pools.
       In,    ##<< A scalar or data.frame object specifying the amount of litter inputs by time. 
       xi=1,  ##<< A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.
-      solver=deSolve.lsoda.wrapper,  ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface.
+      solver=deSolve.lsoda.wrapper,  ##<< A function that solves the system of ODEs. This can be \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.
       pass=FALSE  ##<< if TRUE Forces the constructor to create the model even if it is invalid 
     )	
     { 

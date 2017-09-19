@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript
 require(devtools)
-install('~/linkeddocs/pkg')
+#install('~/linkeddocs/pkg')
 require(linkeddocs)
 pkgDir='~/SoilR-exp/pkg'
 package.skeleton.dx_3(pkgDir)

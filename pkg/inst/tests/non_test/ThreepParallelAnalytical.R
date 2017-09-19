@@ -41,7 +41,7 @@ ThreepParallelAnalytical=structure( function
    c30=3
    target=ThreepParallelAnalytical(times,k1,k2,k3,c10,c20,c30)
    
-   eulerMod=ThreepParallelModel(times,k1,k2,k3,c10,c20,c30,SoilR.euler)
+   eulerMod=ThreepParallelModel(times,k1,k2,k3,c10,c20,c30,euler)
    Yeuler=getCcontent(eulerMod)
    
    odeMod=ThreepParallelModel(times,k1,k2,k3,c10,c20,c30,deSolve.lsoda.wrapper)

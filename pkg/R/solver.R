@@ -9,7 +9,7 @@ solver=function
  ydot,			##<< The function used by the odesolver to compute the derivative. For an example how such a function should look like have a look at \code{\link{NpYdot}} which creates such a function for the n pool example. 
  startValues,		##<< a vector containing the initial amounts of carbon for the n pools. The length of this vector has to be equal to the number of pools and thus compatible with ydot. At the moment this is not checked by the function.
 
- solverFunc=deSolve.lsoda.wrapper		##<< The function used by to actually solve the ODE system. This can be \code{\link{euler}} or \code{\link{ode}} or any other user provided function with the same interface. 
+ solverFunc=deSolve.lsoda.wrapper		##<< The function used by to actually solve the ODE system. This can be \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
  )
  {
    Y=solverFunc(times,ydot,startValues) 
