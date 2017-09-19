@@ -121,6 +121,6 @@ GaudinskiModel14<- function #Implementation of a the six-pool C14 model proposed
     ##    inputFc=C14Atm_NH,
     ##    pass=TRUE
     ## )
-    ##seealso<< \code{\link{ThreepParallelModel14}}, \code{\link{ThreepFeedbackModel14}} 
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
   }
   

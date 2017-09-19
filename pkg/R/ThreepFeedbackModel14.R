@@ -2,12 +2,12 @@
 # vim:set ff=unix expandtab ts=2 sw=2:
 ThreepFeedbackModel14<- function #Implementation of a three-pool C14 model with feedback structure
   ### This function creates a model for three pools connected with feedback. 
-  ### It is a wrapper for the more general function \code{\link{GeneralModel_14}} that can handle an arbitrary number of pools with arbitrary connection. \code{\link{GeneralModel_14}} can also handle input data in different formats, while this function requires its input as Delta14C. Look at it as an example how to use the more powerful tool \code{\link{GeneralModel_14}} or as a shortcut for a standard task! 
+  ### It is a wrapper for the more general function \code{\link{GeneralModel_14}} that can handle an arbitrary number of pools with arbitrary connections. \code{\link{GeneralModel_14}} can also handle input data in different formats, while this function requires its input as Delta14C. Look at it as an example how to use the more powerful tool \code{\link{GeneralModel_14}} or as a shortcut for a standard task! 
   (t,      ##<< A vector containing the points in time where the solution is sought. It must be specified within the same period for which the Delta 14 C of the atmosphere is provided. The default period in the provided dataset \code{\link{C14Atm_NH}} is 1900-2010.
    ks,	##<< A vector of length 3 containing the decomposition rates for the 3 pools. 
    C0,	##<< A vector of length 3 containing the initial amount of carbon for the 3 pools.
    F0_Delta14C,  ##<< A vector of length 3 containing the initial fraction of radiocarbon for the 3 pools in Delta14C format.
-        ####The format will be assumed to be Delta14C, so please take care that it is.
+        ### The format will be assumed to be Delta14C, so please take care that it is.
    In,     ##<< A scalar or a data.frame object specifying the amount of litter inputs by time.
    a21,  ##<< A scalar with the value of the transfer rate from pool 1 to pool 2.
    a12,  ##<< A scalar with the value of the transfer rate from pool 2 to pool 1.
@@ -67,7 +67,8 @@ ThreepFeedbackModel14<- function #Implementation of a three-pool C14 model with 
     
     mod=GeneralModel_14(t=t,A=At,ivList=C0,initialValF=ConstFc(F0_Delta14C,"Delta14C"),inputFluxes=inputFluxes,inputFc=Fc,di=lambda,solverfunc=solver,pass=pass)
     ### A Model Object that can be further queried 
-    ##seealso<<  \code{\link{GeneralModel_14}} \code{\link{ThreepSeriesModel14}}, \code{\link{ThreepParallelModel14}} 
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model_14}}.
+
 		##examples<<
 		##
 		##    years=seq(1901,2009,by=0.5)

@@ -69,9 +69,9 @@ OnepModel14<- function #Implementation of a one-pool C14 model
       pass=pass
     )
     ### A Model Object that can be further queried 
-    ##seealso<< \code{\link{OnepModel}}, \code{\link{TwopParallelModel14}}, 
-    ##\code{\link{TwopFeedbackModel14}} 
-		##  examples<<
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model_14}}.
+
+		##examples<<
 		##    
 		##    years=seq(1901,2009,by=0.5)
 		##    LitterInput=700 

@@ -58,7 +58,8 @@ ThreepFeedbackModel<- function #Implementation of a three pool model with feedba
       Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,solver,pass)
       return(Mod)
       ### A Model Object that can be further queried 
-      ##seealso<< \code{\link{ThreepParallelModel}}, \code{\link{ThreepSeriesModel}}
+       ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
+
 		  ##examples<<
 		  ##      t_start=0 
 		  ##      t_end=10 

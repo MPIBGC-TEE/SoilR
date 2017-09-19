@@ -64,7 +64,8 @@ SeriesLinearModel14<- function #General m-pool linear C14 model with series stru
     Mod=GeneralModel_14(t=t,A=Af,ivList=C0,initialValF=ConstFc(F0_Delta14C,"Delta14C"),inputFluxes=inputFluxes,Fc,di=lambda,pass=pass)
     return(Mod)
     ### A Model Object that can be further queried 
-    ##seealso<< \code{\link{GeneralModel_14}}, \code{\link{SeriesLinearModel}} 
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
+
 		##examples<<
 		##    
 		##    years=seq(1901,2009,by=0.5)

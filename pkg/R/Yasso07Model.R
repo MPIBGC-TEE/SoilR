@@ -1,7 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-Yasso07Model<-structure(
-    function #Implementation of the Yasso07 model
+Yasso07Model<- function #Implementation of the Yasso07 model
     ### This function creates a model for five pools as described in Tuomi et al. (2009)
     ##references<< Tuomi, M., Thum, T., Jarvinen, H., Fronzek, S., Berg, B., Harmon, M., Trofymow, J., Sevanto, S., and Liski, J. (2009).
     ##Leaf litter decomposition-estimates of global variability based on Yasso07 model. Ecological Modelling, 220:3362 - 3371.
@@ -61,25 +60,23 @@ Yasso07Model<-structure(
        }
       Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,solver,pass)
      return(Mod)
-### A Model Object that can be further queried 
-      ##seealso<< \code{\link{ICBMModel}}, \code{\link{RothCModel}}
-    }
-    ,
-    ex=function(){
-      years=seq(0,50,0.1) 
-      C0=rep(100,5)
-      In=0
-      
-      Ex1=Yasso07Model(t=years,C0=C0,In=In)
-      Ct=getC(Ex1)
-      Rt=getReleaseFlux(Ex1)
-      
-      plotCPool(years,Ct,col=1:5,xlab="years",ylab="C pool",
-                ylim=c(0,max(Ct)))
-      legend("topright",c("xA","xW","xE","xN","xH"),lty=1,col=1:5,bty="n")
-      
-      plotCPool(years,Rt,col=1:5,xlab="years",ylab="Respiration",ylim=c(0,50))
-      legend("topright",c("xA","xW","xE","xN","xH"),lty=1,col=1:5,bty="n")
+    ### A Model Object that can be further queried 
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
+
+    ##examples<<
+    ##   years=seq(0,50,0.1) 
+    ##   C0=rep(100,5)
+    ##   In=0
+    ##   
+    ##   Ex1=Yasso07Model(t=years,C0=C0,In=In)
+    ##   Ct=getC(Ex1)
+    ##   Rt=getReleaseFlux(Ex1)
+    ##   
+    ##   plotCPool(years,Ct,col=1:5,xlab="years",ylab="C pool",
+    ##             ylim=c(0,max(Ct)))
+    ##   legend("topright",c("xA","xW","xE","xN","xH"),lty=1,col=1:5,bty="n")
+    ##   
+    ##   plotCPool(years,Rt,col=1:5,xlab="years",ylab="Respiration",ylim=c(0,50))
+    ##   legend("topright",c("xA","xW","xE","xN","xH"),lty=1,col=1:5,bty="n")
 
 }
-)

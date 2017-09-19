@@ -103,7 +103,8 @@ CenturyModel<- function #Implementation of the Century model
     ##    legend("topright", c("Structural litter","Metabolic litter",
     ##                         "Active SOM","Slow SOM","Passive SOM","Total Respiration"),
     ##           lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
-    ##seealso<< \code{\link{RothCModel}} 
+    ##seealso<< \code{\link{RothCModel}}. There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
+
   }
     
 

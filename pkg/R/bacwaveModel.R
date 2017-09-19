@@ -1,7 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-bacwaveModel<-structure(
-  function # Implementation of the microbial model Bacwave (bacterial waves)
+bacwaveModel<- function # Implementation of the microbial model Bacwave (bacterial waves)
   ### This function implements the microbial model Bacwave (bacterial waves), a two-pool model with a bacterial and a substrate pool. It is a special case of the general nonlinear model.
   ##details<< This implementation containts default parameters presented in Zelenev et al. (2000). It produces nonlinear damped oscillations in the form of a stable focus.
   ##references<< Zelenev, V.V., A.H.C. van Bruggen, A.M. Semenov. 2000. ``BACWAVE,'' a spatial-temporal model for traveling waves of bacterial populations
@@ -60,28 +59,23 @@ bacwaveModel<-structure(
     
     return(modnl)
     ### An object of class NlModel that can be further queried.
-  }
-  ,
-  ex=function(){
-  
-    hours=seq(0,800,0.1)
     
-    #Run the model with default parameter values
-    bcmodel=bacwaveModel(t=hours)
-  # fixme mm:
-  # the next line causes trouble on Rforge Windows patched build
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
 
-  #  Cpools=getC(bcmodel)
-  #  
-  #  #Time solution
-  #  matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
-  #  legend("topleft",c("Substrate", "Microbial biomass"),lty=1,col=c(1,2),bty="n")
-  #  
-  #  #State-space diagram
-  #  plot(Cpools[,2],Cpools[,1],type="l",ylab="Substrate",xlab="Microbial biomass")
-  #  
-  #  #Microbial biomass over time
-  #  plot(hours,Cpools[,2],type="l",col=2,xlab="Hours",ylab="Microbial biomass")
-    
-  }
-)
+    ##examples<< 
+    ## hours=seq(0,800,0.1)
+    ## #
+    ## #Run the model with default parameter values
+    ## bcmodel=bacwaveModel(t=hours)
+    ## Cpools=getC(bcmodel)
+    ## #
+    ## #Time solution
+    ## matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
+    ## legend("topleft",c("Substrate", "Microbial biomass"),lty=1,col=c(1,2),bty="n")
+    ## #
+    ## #State-space diagram
+    ## plot(Cpools[,2],Cpools[,1],type="l",ylab="Substrate",xlab="Microbial biomass")
+    ## #
+    ## #Microbial biomass over time
+    ## plot(hours,Cpools[,2],type="l",col=2,xlab="Hours",ylab="Microbial biomass")
+}

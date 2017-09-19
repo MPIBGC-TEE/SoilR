@@ -51,8 +51,9 @@ OnepModel<- function #Implementation of a one pool model
       Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,solver,pass)
       return(Mod)
       ### A Model Object that can be further queried 
-      ##seealso<< \code{\link{TwopParallelModel}},\code{\link{TwopFeedbackModel}} 
-			##    examples<<
+      ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
+
+			##examples<<
 			##      t_start=0 
 			##      t_end=10 
 			##      tn=50

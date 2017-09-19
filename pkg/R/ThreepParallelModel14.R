@@ -62,7 +62,7 @@ ThreepParallelModel14<- function #Implementation of a three-pool C14 model with 
     mod=GeneralModel_14(t,At,ivList=C0,initialValF=ConstFc(F0_Delta14C,"Delta14C"),
                         inputFluxes=inputrates,Fc,di=lambda,pass=pass)
     ### A Model Object that can be further queried 
-    ##seealso<< \code{\link{TwopSeriesModel14}}, \code{\link{TwopFeedbackModel14}}  
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model_14}}.
 		##examples<<
 		##    
 		##    years=seq(1901,2009,by=0.5)

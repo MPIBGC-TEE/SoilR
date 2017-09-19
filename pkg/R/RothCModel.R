@@ -67,44 +67,45 @@ RothCModel<- function #Implementation of the RothCModel
       Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver,pass=pass)
      return(Mod)
 ### A Model Object that can be further queried 
-      ##seealso<< \code{\link{ICBMModel}} 
-      ##examples<<
-      ##t=0:500 
-      ##Ex=RothCModel(t)
-      ##Ct=getC(Ex)
-      ##Rt=getReleaseFlux(Ex)
-      ##
-      ##matplot(t,Ct,type="l",col=1:5, ylim=c(0,25),
-      ##  ylab=expression(paste("Carbon stores (Mg C ", ha^-1,")")),
-      ##  xlab="Time (years)", lty=1)
-      ##lines(t,rowSums(Ct),lwd=2)
-      ##legend("topleft",
-      ##  c("Pool 1, DPM",
-      ##    "Pool 2, RPM",
-      ##    "Pool 3, BIO",
-      ##    "Pool 4, HUM",
-      ##    "Pool 5, IOM",
-      ##    "Total Carbon"),
-      ##  lty=1,
-      ##  lwd=c(rep(1,5),2),
-      ##  col=c(1:5,1),
-      ##  bty="n"
-      ##)
+##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
 
-      ##matplot(t,Rt,type="l",ylim=c(0,2), lty=1,
-      ##        ylab=expression(paste("Respiration (Mg C ", ha^-1, yr^-1,")"))
-      ##        ,xlab="Time") 
-      ##lines(t,rowSums(Rt),lwd=2) 
-      ##legend("topleft",
-      ##   c("Pool 1, DPM", 
-      ##     "Pool 2, RPM",
-      ##     "Pool 3, BIO",
-      ##     "Pool 4, HUM",
-      ##     "Pool 5, IOM",
-      ##     "Total Respiration"), 
-      ##   lty=1,
-      ##   lwd=c(rep(1,5),2),
-      ##   col=c(1:5,1),
-      ##   bty="n"
-      ##
-    }
+##examples<<
+##t=0:500 
+##Ex=RothCModel(t)
+##Ct=getC(Ex)
+##Rt=getReleaseFlux(Ex)
+##
+##matplot(t,Ct,type="l",col=1:5, ylim=c(0,25),
+##  ylab=expression(paste("Carbon stores (Mg C ", ha^-1,")")),
+##  xlab="Time (years)", lty=1)
+##lines(t,rowSums(Ct),lwd=2)
+##legend("topleft",
+##  c("Pool 1, DPM",
+##    "Pool 2, RPM",
+##    "Pool 3, BIO",
+##    "Pool 4, HUM",
+##    "Pool 5, IOM",
+##    "Total Carbon"),
+##  lty=1,
+##  lwd=c(rep(1,5),2),
+##  col=c(1:5,1),
+##  bty="n"
+##)
+
+##matplot(t,Rt,type="l",ylim=c(0,2), lty=1,
+##        ylab=expression(paste("Respiration (Mg C ", ha^-1, yr^-1,")"))
+##        ,xlab="Time") 
+##lines(t,rowSums(Rt),lwd=2) 
+##legend("topleft",
+##   c("Pool 1, DPM", 
+##     "Pool 2, RPM",
+##     "Pool 3, BIO",
+##     "Pool 4, HUM",
+##     "Pool 5, IOM",
+##     "Total Respiration"), 
+##   lty=1,
+##   lwd=c(rep(1,5),2),
+##   col=c(1:5,1),
+##   bty="n"
+##
+}

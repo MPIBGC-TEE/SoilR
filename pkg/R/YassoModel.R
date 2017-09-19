@@ -1,7 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-YassoModel<-structure(
-  function #Implementation of the Yasso model.
+YassoModel<- function #Implementation of the Yasso model.
   ### This function creates a model for seven pools as described in Liski et al. (2005). Model not yet implemented due to lack of data in original publication: values of vector p not completely described in paper. 0.1 was assumed. 
   ##references<< Liski, J., Palosuo, T., Peltoniemi, M., and Sievanen, R. (2005).
   ##Carbon and decomposition model Yasso for forest soils. Ecological Modelling, 189:168-182.
@@ -58,22 +57,20 @@ YassoModel<-structure(
     Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,solver,pass)
     return(Mod)
     ### A Model Object that can be further queried 
-    ##seealso<< \code{\link{ThreepParallelModel}}, \code{\link{ThreepSeriesModel}}
-  }
-  ,
-  ex=function(){
-    years=seq(0,500,0.5) 
-    C0=rep(100,7)
-    
-    Ex1=YassoModel(t=years,C0=C0)
-    Ct=getC(Ex1)
-    Rt=getReleaseFlux(Ex1)
-    
-    plotCPool(years,Ct,col=1:7,xlab="years",ylab="C pool",ylim=c(0,200))
-    legend("topright",c("fwl","cwl","ext","cel","lig","hum1","hum2"),lty=1,col=1:7,bty="n")
-    
-    plotCPool(years,Rt,col=1:7,xlab="years",ylab="Respiration",ylim=c(0,50))
-    legend("topright",c("fwl","cwl","ext","cel","lig","hum1","hum2"),lty=1,col=1:7,bty="n")
-    
-  }
-)
+
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
+
+    ##examples<<
+    ## years=seq(0,500,0.5) 
+    ## C0=rep(100,7)
+    ## #
+    ## Ex1=YassoModel(t=years,C0=C0)
+    ## Ct=getC(Ex1)
+    ## Rt=getReleaseFlux(Ex1)
+    ## #
+    ## plotCPool(years,Ct,col=1:7,xlab="years",ylab="C pool",ylim=c(0,200))
+    ## legend("topright",c("fwl","cwl","ext","cel","lig","hum1","hum2"),lty=1,col=1:7,bty="n")
+    ## #
+    ## plotCPool(years,Rt,col=1:7,xlab="years",ylab="Respiration",ylim=c(0,50))
+    ## legend("topright",c("fwl","cwl","ext","cel","lig","hum1","hum2"),lty=1,col=1:7,bty="n")
+}

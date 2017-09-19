@@ -54,7 +54,8 @@ ThreepParallelModel <- function #Implementation of a three pool model with paral
         
      res=ParallelModel(t,coeffs_tm,startvalues=C0,inputrates_tm,solver,pass=pass)
     ### A  Model Object that can be further queried
-    ##seealso<< \code{\link{TwopParallelModel}} and \code{\link{ParallelModel}} 
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
+
 		##examples<<
 		##t_start=0 
 		##t_end=10 

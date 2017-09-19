@@ -63,8 +63,9 @@ SeriesLinearModel<- function #General m-pool linear model with series structure
       Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,pass=pass)
      return(Mod)
 ### A Model Object that can be further queried 
-      ##seealso<< \code{\link{GeneralModel}}, \code{\link{ThreepFeedbackModel}}, \code{\link{ParallelModel}} 
-			##    examples<<
+    ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
+
+			##examples<<
 			##      #A five-pool model
 			##      t_start=0 
 			##      t_end=10 
@@ -75,13 +76,13 @@ SeriesLinearModel<- function #General m-pool linear model with series structure
 			##      Ts=c(0.5,0.2,0.2,0.1)
 			##      C0=c(C10=100,C20=150, C30=50, C40=50, C50=10)
 			##      In = 50
-			##      
+			## #
 			##      Ex1=SeriesLinearModel(t=t,m.pools=5,ki=ks,Tij=Ts,C0=C0,In=In,xi=fT.Q10(15))
 			##      Ct=getC(Ex1)
-			##      
+			## #
 			##      matplot(t,Ct,type="l",col=2:6,lty=1,ylim=c(0,sum(C0)))
 			##      lines(t,rowSums(Ct),lwd=2)
 			##      legend("topright",c("Total C","C in pool 1", "C in pool 2","C in pool 3",
 			##                          "C in pool 4","C in pool 5"),
 			##             lty=1,col=1:6,lwd=c(2,rep(1,5)),bty="n")
-    }
+}

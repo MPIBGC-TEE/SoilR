@@ -33,7 +33,7 @@ ICBMModel<- function #Implementation of the Introductory Carbon Balance Model (I
      Mod=GeneralModel(t=t,A=Af,c0,inputFluxes,solver,pass)
      return(Mod)
  
-     ##seealso<< \code{\link{TwopSeriesModel}} 
+     ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model}}.
      
      ##exampleFunctionsFromFiles<< 
      ##inst/examples/exICBMModel.R exICBMModel_paper
