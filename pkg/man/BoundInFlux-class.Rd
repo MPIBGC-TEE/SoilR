@@ -4,5 +4,5 @@
 \alias{BoundInFlux-class}
 \docType{class}
 \section{Methods}{No methods defined with class BoundInFlux in the signature.}
-\section{Constructors found by naming convention}{	\code{\link{BoundInFlux}}\cr
+\section{Constructors}{	\code{\link{BoundInFlux}}\cr
  Please also look at constructors of non virtual subclasses }

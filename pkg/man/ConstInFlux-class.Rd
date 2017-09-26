@@ -7,5 +7,5 @@
     \item{getFunctionDefinition}{\code{signature(object = "ConstInFlux")}: ... } \code{\link{getFunctionDefinition,ConstInFlux-method}}
     \item{getTimeRange}{\code{signature(object = "ConstInFlux")}: ... } \code{\link{getTimeRange,ConstInFlux-method}}
 	 }}
-\section{Constructors found by naming convention}{	\code{\link{ConstInFlux}}\cr
+\section{Constructors}{	\code{\link{ConstInFlux}}\cr
  Please also look at constructors of non virtual subclasses }
