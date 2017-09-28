@@ -6,3 +6,4 @@
 \section{Methods}{  \describe{
     \item{getFunctionDefinition}{\code{signature(object = "TransportDecompositionOperator")}: ... } \code{\link{getFunctionDefinition,TransportDecompositionOperator-method}}
 	 }}
+\section{Exported superclasses}{\code{\link{TimeMap-class}}\cr}

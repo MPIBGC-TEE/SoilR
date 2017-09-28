@@ -7,5 +7,6 @@
     \item{getFunctionDefinition}{\code{signature(object = "ConstInFlux")}: ... } \code{\link{getFunctionDefinition,ConstInFlux-method}}
     \item{getTimeRange}{\code{signature(object = "ConstInFlux")}: ... } \code{\link{getTimeRange,ConstInFlux-method}}
 	 }}
+\section{Exported superclasses}{\code{\link{InFlux-class}}\cr}
 \section{Constructors}{	\code{\link{ConstInFlux}}\cr
  Please also look at constructors of non virtual subclasses }

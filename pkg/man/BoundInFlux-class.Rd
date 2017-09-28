@@ -4,5 +4,7 @@
 \alias{BoundInFlux-class}
 \docType{class}
 \section{Methods}{No methods defined with class BoundInFlux in the signature.}
+\section{Exported superclasses}{\code{\link{InFlux-class}}\cr
+\code{\link{TimeMap-class}}\cr}
 \section{Constructors}{	\code{\link{BoundInFlux}}\cr
  Please also look at constructors of non virtual subclasses }
