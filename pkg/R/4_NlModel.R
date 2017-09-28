@@ -1,6 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-correctnessOfNlModel=function
+correctnessOfNlModel <- function
 ### The parameters used have a biological meaning, and therefore cannot be arbitrary.
 ### This functions tests some of the obvious constraints of SOM (Soil Organinc Matter) decomposition models. 
 ### Up to now these are:

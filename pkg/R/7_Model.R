@@ -1,6 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-correctnessOfModel=function #check for unreasonable input parameters
+correctnessOfModel <- function #check for unreasonable input parameters
 ### The parameters used by the function \code{\link{GeneralModel}} in SoilR have a biological meaning, and therefore cannot be arbitrary.
 ### This functions tests some of the obvious constraints of the general model. 
 ### Up to now these are:
