@@ -1,5 +1,9 @@
 \title{InFlux S4 class}
-\description{no Description}
+\description{All models need to specify the influx of material to the pools.
+This parameter will be represented as an object of one of the subclasses of this class.
+The most general form of influx supported up to now is a  vector valued function of time represented by
+\code{\link{BoundInFlux-class}}. In the most simple case it is constant and represented by an object of class 
+\code{\link{ConstInFlux-class}}. Such an object can for instance be created from a numeric vector.}
 \name{InFlux-class}
 \alias{InFlux-class}
 \docType{class}
