@@ -83,7 +83,13 @@ is.negative=function(number){
    ### the function returns True if the argumente is negative
    return(number<0)
 }
-### serves as a fence to the interface of SoilR functions. So that later implementations can differ	 
+### The Model class is the focal point of SoilR. 
+### \itemize{
+### \item An object of this class (or one of its subclasses) collects all components that are needed to run a simulation. (See the section \code{Subclasses}.)\n
+###  These components of a model can be provided in many different ways.  (see the links under subsection \code{Constructors for this class or any of ist sublasses} for functions that create \code{Model} objects.)
+### \item Different functions are available to compute different results for the simulation. (See subsection \code{Methods}.)
+###}
+### 
 setClass(# Model
    Class="Model",
    representation=representation(
@@ -98,6 +104,8 @@ setClass(# Model
         solverfunc="function"
    ) , 
    validity=correctnessOfModel #set the validating function
+   ##<< details 
+   ## 
 )
 
 
@@ -331,7 +339,7 @@ setMethod(
       f=function(i){paste("ReleaseFlux",i,sep="")}
       #colnames(R)=sapply((1:ncol(R)),f)
       return(R)
-	    ##value<< A n x m matrix of release fluxes with m columns representing the number of pools, and n rows representing the time step as specified by the argument
+	    ##value<< A n x m matrix of release fluxes with m columns representing the number of pools, and n rows representing the values for each time step as specified by the argument
 	    ## \code{t} in \code{\link{Model}}, \code{\link{GeneralModel}} or another model creating function.
 	    ##details<< This function takes a Model object, which represents a system of ODEs 
 	    ## \deqn{\frac{d \mathbf{C}(t)}{dt} = \mathbf{I}(t) + \mathbf{A}(t) \mathbf{C}(t)}{dC(t)/dt = I(t) + A(t)C(t)} 

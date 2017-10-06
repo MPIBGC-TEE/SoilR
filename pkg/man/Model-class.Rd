@@ -1,5 +1,10 @@
 \title{Model}
-\description{serves as a fence to the interface of SoilR functions. So that later implementations can differ	 }
+\description{The Model class is the focal point of SoilR. 
+\itemize{
+\item An object of this class (or one of its subclasses) collects all components that are needed to run a simulation. (See the section \code{Subclasses}.)\n
+These components of a model can be provided in many different ways.  (see the links under subsection \code{Constructors for this class or any of ist sublasses} for functions that create \code{Model} objects.)
+\item Different functions are available to compute different results for the simulation. (See subsection \code{Methods}.)
+}}
 \name{Model-class}
 \alias{Model-class}
 \docType{class}

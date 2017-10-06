@@ -10,5 +10,5 @@ created by a call to a constructor e.g. \code{\link{Model}},
 }
 \description{The method computes the release of carbon per time for all points in time 
 specified in the Model objects time slot.}
-\value{A n x m matrix of release fluxes with m columns representing the number of pools, and n rows representing the time step as specified by the argument
+\value{A n x m matrix of release fluxes with m columns representing the number of pools, and n rows representing the values for each time step as specified by the argument
 \code{t} in \code{\link{Model}}, \code{\link{GeneralModel}} or another model creating function.}
