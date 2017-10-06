@@ -5,8 +5,8 @@
 \item{object}{see the method arguments for details}
 }
 \section{Methods}{	\code{\link{GeneralDecompOp,DecompOp-method}}\cr
-	\code{\link{GeneralDecompOp,matrix-method}}\cr
-	\code{\link{GeneralDecompOp,TimeMap-method}}\cr}
+	\code{\link{GeneralDecompOp,TimeMap-method}}\cr
+	\code{\link{GeneralDecompOp,matrix-method}}\cr}
 \title{Generic function to create an object of one of the subclasses of DevompOp}
 \description{If the argument is already of a subclass of class DecompOp 
 the function returns the unchanged object.

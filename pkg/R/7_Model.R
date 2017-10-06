@@ -104,8 +104,10 @@ setClass(# Model
         solverfunc="function"
    ) , 
    validity=correctnessOfModel #set the validating function
-   ##<< details 
-   ## 
+   ##details<< 
+   ## The class is essentian to  decouple implementation details from the user interface. 
+   ##exampleFunctionsFromFiles<< 
+   ## inst/examples/CorrectLinearModel.R CorrectLinearModel 
 )
 
 
