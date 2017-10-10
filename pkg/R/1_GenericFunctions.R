@@ -286,7 +286,7 @@ setGeneric(
 )
 setGeneric ( # This function 
 	name= "getReleaseFlux",
-  #valueClass='matrix',
+  valueClass='matrix',
 	def=function# Calculates the release of C from each pool
 	### This function computes carbon release from each pool of the given model as funtion of time 
 	### Have a look at the methods for details.
