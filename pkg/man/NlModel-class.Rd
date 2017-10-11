@@ -1,4 +1,3 @@
-\title{NlModel}
 \description{serves as a fence to the interface of SoilR functions. So that later implementations can differ	 }
 \name{NlModel-class}
 \alias{NlModel-class}
@@ -10,3 +9,4 @@
     \item{getReleaseFlux}{\code{signature(object = "NlModel")}: ... } \code{\link{getReleaseFlux,NlModel-method}}
     \item{getTimes}{\code{signature(object = "NlModel")}: ... } \code{\link{getTimes,NlModel-method}}
 	 }}
+\title{NlModel}

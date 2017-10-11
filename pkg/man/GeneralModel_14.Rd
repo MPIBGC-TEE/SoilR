@@ -1,3 +1,4 @@
+\description{no Description}
 \name{GeneralModel_14}
 \alias{GeneralModel_14}
 \usage{GeneralModel_14(t,
@@ -12,6 +13,7 @@ lambda=-0.0001209681,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE,
 ...)}
+\title{GeneralModel_14 S4 generic}
 \arguments{
 \item{t}{see the method arguments for details}
 \item{A}{see the method arguments for details}
@@ -32,6 +34,3 @@ pass=FALSE,
 	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,logical-method}}\cr
 	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method}}\cr
 	\code{\link{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,missing,ANY,numeric,missing,missing,missing-method}}\cr}
-\title{A general constructor }
-\description{Creates a Model14 object from different sources
-Have a look at the methods for details.}

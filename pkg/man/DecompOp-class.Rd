@@ -1,4 +1,3 @@
-\title{decomposition operator }
 \description{The decomposition operator is a necessary ingredient of any Model.
 Very generally it describes the fluxes between the pools and to the exterior 
 as functions of time and the pool contents. 
@@ -19,6 +18,7 @@ called constructors. (see the constructors section of this help page)}
 \section{Methods}{  \describe{
     \item{GeneralDecompOp}{\code{signature(object = "DecompOp")}: ... } \code{\link{GeneralDecompOp,DecompOp-method}}
 	 }}
+\title{decomposition operator }
 \section{Subclasses}{\describe{
 	\code{\link{BoundLinDecompOp-class}}\cr
 	\code{\link{DecompositionOperator-class}}\cr

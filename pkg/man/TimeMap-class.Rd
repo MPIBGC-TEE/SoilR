@@ -1,4 +1,3 @@
-\title{TimeMap S4 class}
 \description{defines a (time dependent) mapping including the function definition and the ### domain where the function is well defined.  This can be used to avoid interpolations out of range when mixing different time dependent data sets}
 \name{TimeMap-class}
 \alias{TimeMap-class}
@@ -12,6 +11,7 @@
     \item{getFunctionDefinition}{\code{signature(object = "TimeMap")}: ... } \code{\link{getFunctionDefinition,TimeMap-method}}
     \item{getTimeRange}{\code{signature(object = "TimeMap")}: ... } \code{\link{getTimeRange,TimeMap-method}}
 	 }}
+\title{TimeMap S4 class}
 \section{Subclasses}{\describe{
 	\code{\link{BoundInFlux-class}}\cr
 	\code{\link{TransportDecompositionOperator-class}}\cr

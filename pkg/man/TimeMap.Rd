@@ -1,3 +1,4 @@
+\description{no Description}
 \name{TimeMap}
 \alias{TimeMap}
 \usage{TimeMap(map,
@@ -5,6 +6,7 @@ starttime,
 endtime,
 lag,
 interpolation)}
+\title{TimeMap S4 generic}
 \arguments{
 \item{map}{see the method arguments for details}
 \item{starttime}{see the method arguments for details}
@@ -14,5 +16,3 @@ interpolation)}
 }
 \section{Methods}{	\code{\link{TimeMap,data.frame,missing,missing-method}}\cr
 	\code{\link{TimeMap,function,numeric,numeric-method}}\cr}
-\title{generic constructor}
-\description{create a TimeMap object from different sources}

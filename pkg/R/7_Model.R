@@ -85,7 +85,7 @@ is.negative=function(number){
 }
 ### The Model class is the focal point of SoilR. 
 ### \itemize{
-### \item An object of this class (or one of its subclasses) collects all components that are needed to run a simulation. (See the section \code{Subclasses}.)
+### \item An object of this class (see also the section \code{Subclasses})  collects all components that are needed to run a simulation. 
 ###  These components of a model can be provided in many different ways.  (see the links under subsection \code{Constructors for this class or any of ist sublasses} for functions that create \code{Model} objects.)
 ### \item Different functions are available to compute different results for the simulation. (See subsection \code{Methods}.)
 ###}

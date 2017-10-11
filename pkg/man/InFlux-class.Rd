@@ -1,4 +1,3 @@
-\title{InFlux S4 class}
 \description{All models need to specify the influx of material to the pools.
 This parameter will be represented as an object of one of the subclasses of this class.
 The most general form of influx supported up to now is a  vector valued function of time represented by
@@ -10,6 +9,7 @@ The most general form of influx supported up to now is a  vector valued function
 \section{Methods}{  \describe{
     \item{GeneralInFlux}{\code{signature(object = "InFlux")}: ... } \code{\link{GeneralInFlux,InFlux-method}}
 	 }}
+\title{InFlux S4 class}
 \section{Subclasses}{\describe{
 	\code{\link{BoundInFlux-class}}\cr
 	\code{\link{ConstInFlux-class}}\cr

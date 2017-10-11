@@ -1,1 +1,5 @@
-cd ~/linkeddocs/tests/ ; ./inst.R ; cd -
+cd ~/linkeddocs/tests/ 
+./inst.R
+es=$? 
+cd -
+exit $es

@@ -1,8 +1,10 @@
+\description{no Description}
 \name{BoundLinDecompOp}
 \alias{BoundLinDecompOp}
 \usage{BoundLinDecompOp(map,
 starttime,
 endtime)}
+\title{BoundLinDecompOp S4 generic}
 \arguments{
 \item{map}{see the method arguments for details}
 \item{starttime}{see the method arguments for details}
@@ -12,6 +14,3 @@ endtime)}
 	\code{\link{BoundLinDecompOp,TimeMap,missing,missing-method}}\cr
 	\code{\link{BoundLinDecompOp,data.frame,missing,missing-method}}\cr
 	\code{\link{BoundLinDecompOp,function,numeric,numeric-method}}\cr}
-\title{Generic constructor}
-\description{Creates a LinearDecompositonOperator from different sources.
-Please look at the methods to see what kind of input is supported. }

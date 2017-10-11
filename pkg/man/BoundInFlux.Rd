@@ -1,3 +1,4 @@
+\description{no Description}
 \name{BoundInFlux}
 \alias{BoundInFlux}
 \usage{BoundInFlux(map,
@@ -5,6 +6,7 @@ starttime,
 endtime,
 lag,
 interpolation)}
+\title{BoundInFlux S4 generic}
 \arguments{
 \item{map}{see the method arguments for details}
 \item{starttime}{see the method arguments for details}
@@ -17,5 +19,3 @@ interpolation)}
 	\code{\link{BoundInFlux,data.frame,missing,missing,numeric,function-method}}\cr
 	\code{\link{BoundInFlux,function,numeric,numeric,missing,missing-method}}\cr
 	\code{\link{BoundInFlux,function,numeric,numeric,numeric,missing-method}}\cr}
-\title{generic constructor}
-\description{create a BoundInFlux object from different sources}

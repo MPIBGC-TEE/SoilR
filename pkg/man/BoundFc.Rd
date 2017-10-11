@@ -1,3 +1,4 @@
+\description{no Description}
 \name{BoundFc}
 \alias{BoundFc}
 \usage{BoundFc(map,
@@ -6,6 +7,7 @@ endtime,
 lag,
 format,
 interpolation)}
+\title{BoundFc S4 generic}
 \arguments{
 \item{map}{see the method arguments for details}
 \item{starttime}{see the method arguments for details}
@@ -20,5 +22,3 @@ interpolation)}
 	\code{\link{BoundFc,data.frame,missing,missing,numeric,character,missing-method}}\cr
 	\code{\link{BoundFc,function,numeric,numeric,missing,character,missing-method}}\cr
 	\code{\link{BoundFc,function,numeric,numeric,numeric,character,missing-method}}\cr}
-\title{generic constructor}
-\description{create a BoundFc object from different sources}
