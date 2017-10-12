@@ -1,14 +1,19 @@
 
-# vim:set ff=unix set expandtab set ts=2 sw=2:
+# vim: ff=unix expandtab ts=2 sw=2:
 CorrectLinearModel <- function(){
-  ## We first specify the points in time where we want to compute results
-  t_start=0 
-  t_end=10 
-  tn=50
-  timestep <- (t_end-t_start)/tn 
-  times <- seq(t_start,t_end,timestep) 
+  # This example describes the creation and use of a Model object that 
+  # is defined by time dependent functions for decomposition and influx.
+  # Before we can call the constructor of the class we 
+  # create its arguments explicitly. 
+  # We start with the Decomposition Operator.
+  # For this example we assume that we are able to describe it 
+  # by explicit R functions and therefore choose the appropriate
+  # sub class BoundLinDecompOp
+  # of DecompOp explicitly.  (see ?'BoundLinDecompOp-class') 
   A=BoundLinDecompOp(
-    ## The first argument is a matrix-valued function of time
+    ## We call the generic constructor (see ?BoundLindDcompOp) 
+    ## which has a method  
+    ## that takes a matrix-valued function of time as its first argument.
     function(t){
       matrix(nrow=3,ncol=3,byrow=TRUE,
          c(
@@ -18,8 +23,12 @@ CorrectLinearModel <- function(){
         )
       )    
     },
-    ## The other two arguments describe the time interval where the function is valid (the domain of the function)
-    ## This interval must include all times specified in the \code{times} argument of the model. You can also use 
+    ## The other two arguments describe the time interval where the 
+    ## function is valid (the domain of the function)
+    ## The interval will be checked against the domain of the InFlux
+    ## argument of Model and against its 't' argument to avoid 
+    ## invalid computations outside the domain. 
+    ##  Inf and -Inf are possible values. 
     starttime=0,
     endtime=20
   )  
@@ -30,9 +39,23 @@ CorrectLinearModel <- function(){
            c(-1,    0,    0)
        )
      },
-     ## The other two arguments describe the time interval where the function is valid (the domain of the function)
-     t_start,
-     t_end
+     ## The other two arguments describe the time interval where the 
+     ## function is valid (the domain of the function)
+     starttime=0,
+     endtime=40
   )
-  res=Model(times,A,c(0,0,0),I)
+  ## No we specify the points in time where we want to compute results
+  t_start=0 
+  t_end=10 
+  tn=50
+  timestep <- (t_end-t_start)/tn 
+  times <- seq(t_start,t_end,timestep) 
+  ## and the start values
+  sv=c(0,0,0)
+  mod=Model(t=times,A,sv,I)
+
+  ## No we use the model to compute some results
+  getC(mod)
+  getReleaseFlux(mod)
+  #also look at the methods section of Model-class 
 }

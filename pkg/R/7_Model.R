@@ -83,13 +83,16 @@ is.negative=function(number){
    ### the function returns True if the argumente is negative
    return(number<0)
 }
-### The Model class is the focal point of SoilR. 
+### The class Model is the focal point of SoilR. 
 ### \itemize{
-### \item An object of this class (see also the section \code{Subclasses})  collects all components that are needed to run a simulation. 
-###  These components of a model can be provided in many different ways.  (see the links under subsection \code{Constructors for this class or any of ist sublasses} for functions that create \code{Model} objects.)
-### \item Different functions are available to compute different results for the simulation. (See subsection \code{Methods}.)
-###}
+### \item It combines all the components that are needed to solve the
+### initial value problem for the pool contents.
+### \eqn{\vec{C}}{C=(C_1,...C_n)^t, }. 
 ### 
+### \item It provides the single argument for the different functions 
+### that are available to compute various results from the solution of the initial value problem. 
+### (See subsection \code{Methods} and the examples.)
+###}
 setClass(# Model
    Class="Model",
    representation=representation(
@@ -104,8 +107,35 @@ setClass(# Model
         solverfunc="function"
    ) , 
    validity=correctnessOfModel #set the validating function
-   ##details<< 
-   ## The class is essentian to  decouple implementation details from the user interface. 
+    ##details<<
+    ## The initial value problem is given by:
+    ## \itemize{
+    ##   \item
+    ##     the ordinary differential equation
+    ##     \eqn{ \dot{\vec{C}} = \tens{A}(t) \vec{C} =\vec{I}(t)}{ d/dt C=A(t)C+I(t),}
+    ##   \item
+    ##     the intial Values \eqn{\vec{C}_0=\vec{C}(t_0)}{C_0=C(t_0),} 
+    ##   \item 
+    ##     for the times \eqn{\{t_0,....t_m\}}{{t_0,....,t_m}}.
+    ## }
+    ## In an object of class Model the components are represented as follows:
+    ## \itemize{
+    ##   \item
+    ##   The time-dependent matrix valued function \eqn{\vec{A}(t)}{A(t)} is represented by an object 
+    ##   of a class that inherits from class \code{DecompOp} \code{\link{DecompOp-class}}. 
+    ##   Such objects can be created in different ways from functions, matrices or data. 
+    ##   (see the subclasses of \code{\link{DecompOp-class}} and especially their \code{Constructors} sections.  
+    ##   and the \code{examples} section of this help page.
+    ##   \item 
+    ##   The vector-valued time-dependent function \eqn{\vec{I}(t)}{I(t)} is in SoilR represented by an object of a class that 
+    ##   inherits from class InFlux \code{\link{InFlux-class}}. 
+    ##   Such objects can be created from functions, constant vectors and data. 
+    ##   (see the subclasses of \code{\link{InFlux-class}} and especially their \code{Constructors} sections.  
+    ##   \item 
+    ##   The times for which the results are computed are represented by a numeric vector.
+    ##   \item 
+    ##   The initial values are represented by a numeric vector 
+    ## }
    ##exampleFunctionsFromFiles<< 
    ## inst/examples/CorrectLinearModel.R CorrectLinearModel 
 )
@@ -219,6 +249,9 @@ Model<-function #Constructor for class \link{Model-class}
      ### An object of class \link{Model-class} that can be queried by many methods 
      ### to be found there.
      ##seealso<< This function is called by many of the \link{predefinedModels} 
+
+     ##exampleFunctionsFromFiles<< 
+     ## inst/examples/CorrectLinearModel.R CorrectLinearModel 
   }
 #)
 #------------------------------------------------------------------------------------
