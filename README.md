@@ -2,7 +2,8 @@
 This is the development version of SoilR. It is a rapidly evolving version that may be less
 stable than the official stable version in [CRAN](https://cran.r-project.org/web/packages/SoilR/index.html).
 
-[## Documentation](https://mpibgc-tee.github.io/SoilR-exp/)
+## Documentation
+[latest build](https://mpibgc-tee.github.io/SoilR-exp/)
 
 ## Installation
 There are several options.
