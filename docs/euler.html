@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: euler</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for euler {SoilR}"><tr><td>euler {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>euler</h2>
+
+<h3>Description</h3>
+
+<p>This function can solve arbitrary first order ode systems with the euler forward 
+method and an
+adaptive time-step size control given a tolerance for the deviation of a coarse and fine 
+estimate of the change in y for the next time step.
+It is an alternative to <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> and has the same interface.
+It is much slower than ode and should probably be considered less capable in solving stiff ode systems.
+However it has one main advantage, which consists in its simplicity.
+It is quite easy to see what is going on inside it.
+Whenever you don't trust your implementation of another (more efficient but probably also more complex)
+ode solver, just compare the result to what this method computes.</p>
+
+
+<h3>Usage</h3>
+
+<pre>euler(times,
+ydot,
+startValues)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>times</code></td>
+<td>
+<p>A row vector containing the points in time where the solution is sought.</p>
+</td></tr>
+<tr valign="top"><td><code>ydot</code></td>
+<td>
+<p>The function of y and t that computes the derivative for a given point in time and a column vector y.</p>
+</td></tr>
+<tr valign="top"><td><code>startValues</code></td>
+<td>
+<p>A column vector with the initial values.</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

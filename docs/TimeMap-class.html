@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: TimeMap S4 class</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for TimeMap-class {SoilR}"><tr><td>TimeMap-class {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>TimeMap S4 class</h2>
+
+<h3>Description</h3>
+
+<p>defines a (time dependent) mapping including the function definition and the ### domain where the function is well defined.  This can be used to avoid interpolations out of range when mixing different time dependent data sets</p>
+
+
+<h3>Methods</h3>
+
+  
+<dl>
+<dt>BoundInFlux</dt><dd><p><code>signature(map = "TimeMap", starttime = "missing", endtime = "missing", lag = "missing", interpolation = "missing")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="BoundInFlux-method_cc2ab61a.html">BoundInFlux,TimeMap,missing,missing,missing,missing-method</a></code>
+</p>
+<dl>
+<dt>BoundLinDecompOp</dt><dd><p><code>signature(map = "TimeMap", starttime = "missing", endtime = "missing")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="BoundLinDecompOp-method_f1c3af50.html">BoundLinDecompOp,TimeMap,missing,missing-method</a></code>
+</p>
+<dl>
+<dt>GeneralDecompOp</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="GeneralDecompOp-method_7354b0d1.html">GeneralDecompOp,TimeMap-method</a></code>
+</p>
+<dl>
+<dt>GeneralInFlux</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="GeneralInFlux-method_7354b0d1.html">GeneralInFlux,TimeMap-method</a></code>
+</p>
+<dl>
+<dt>as.character</dt><dd><p><code>signature(x = "TimeMap")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="as.character-method_7354b0d1.html">as.character,TimeMap-method</a></code>
+</p>
+<dl>
+<dt>getFunctionDefinition</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="getFunctionDefinition-method_7354b0d1.html">getFunctionDefinition,TimeMap-method</a></code>
+</p>
+<dl>
+<dt>getTimeRange</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="getTimeRange-method_7354b0d1.html">getTimeRange,TimeMap-method</a></code>
+</p>
+
+
+<h3>Subclasses</h3>
+
+
+<p><code><a href="BoundInFlux-class.html">BoundInFlux-class</a></code><br />
+<code><a href="TransportDecompositionOperator-class.html">TransportDecompositionOperator-class</a></code><br />
+<code><a href="BoundLinDecompOp-class.html">BoundLinDecompOp-class</a></code><br />
+<code><a href="BoundFc-class.html">BoundFc-class</a></code><br />
+</p>
+
+
+<h3>Constructors</h3>
+
+	<p><code><a href="TimeMap.html">TimeMap</a></code><br />
+Please also look at constructors of non virtual subclasses </p>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,45 +1,14 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
 require(RUnit)
-#test.OnepModel=function(){
-#   attr(OnepModel,"ex")()
-#}
-#test.TwopParallelModel=function(){
-#   attr(TwopParallelModel,"ex")()
-#}
-#test.TwopSeriesModel=function(){
-#   attr(TwopSeriesModel,"ex")()
-#}
-#test.TwopFeedbackModel=function(){
-#   attr(TwopFeedbackModel,"ex")()
-#}
-#test.ThreepParallelModel=function(){
-#   attr(ThreepParallelModel,"ex")()
-#}
-#test.ThreepFeedbackModel=function(){
-#   attr(ThreepFeedbackModel,"ex")()
-#}
-#test.ThreepSeriesModel=function(){
-#   attr(ThreepSeriesModel,"ex")()
-#}
-#test.ParallelModel=function(){
-#  attr(ParallelModel,"ex")()
-#}
-###test.GeneralModel=function(){
-###  attr(GeneralModel,"ex")()
-###}
-#test.ICBMModel=function(){
-#  attr(ICBMModel,"ex")()
-#}
-#test.RothCModel=function(){
-#  attr(RothCModel,"ex")()
-#}
-#test.Yasso07Model=function(){
-#  attr(Yasso07Model,"ex")()
-#}
-#test.YassoModel=function(){
-#  attr(YassoModel,"ex")()
-#}
+# We present possible scenarios:
+# 1.) create an object from valid input
+# 2.) try to build an Model object with unsound parameters and 
+#     show the savety net in action.
+# 3.) force an unsound model to be created that would be rejected by default
+# 4.) show some other insensible models being rejected 
+#     
+#1.) we first create a sensible model
 test.correctnessOfModel.impossibleCoefficients=function(){
    t_start=0 
    t_end=10 

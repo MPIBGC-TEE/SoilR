@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: TimeMap.from.Dataframe</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for TimeMap.from.Dataframe {SoilR}"><tr><td>TimeMap.from.Dataframe {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>TimeMap.from.Dataframe</h2>
+
+<h3>Description</h3>
+
+<p>This function is a deprecated constructor of the class TimeMap.</p>
+
+
+<h3>Usage</h3>
+
+<pre>TimeMap.from.Dataframe(dframe,
+lag=0,
+interpolation=splinefun)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dframe</code></td>
+<td>
+<p>A data frame containing exactly two columns:
+the first one is interpreted as time</p>
+</td></tr>
+<tr valign="top"><td><code>lag</code></td>
+<td>
+<p>a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)</p>
+</td></tr>
+<tr valign="top"><td><code>interpolation</code></td>
+<td>
+<p>A function that  returns a function  the default is splinefun. Other possible values are the linear interpolation approxfun or any self made function with the same interface.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>An object of class TimeMap that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag
+this serves as a saveguard for Model which thus can check that all involved functions of time are actually defined for the times of interest  </p>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

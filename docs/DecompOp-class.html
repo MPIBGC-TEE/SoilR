@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: decomposition operator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DecompOp-class {SoilR}"><tr><td>DecompOp-class {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>decomposition operator </h2>
+
+<h3>Description</h3>
+
+<p>The decomposition operator is a necessary ingredient of any Model.
+Very generally it describes the fluxes between the pools and to the exterior 
+as functions of time and the pool contents. 
+SoilR arranges different  decomposition operators into  different classes, 
+to determine which computations can be performed with them (which methods can be called on them).
+The simplest and least general decomposition operator is <code><a href="ConstLinDecompOp-class.html">ConstLinDecompOp-class</a></code>
+which can be created from a constant reservoir matrix. 
+Since it is the least general (most specific) the additional information can be used to compute more 
+and more specific results (more methods)
+not available for the more abstract sub classes (for instance <code><a href="BoundLinDecompOp-class.html">BoundLinDecompOp-class</a></code> 
+that are necessary to model the more general situations where the decomposition and 
+transfer rates are functions of time.
+The different decomposition operators are created by class-specific functions, 
+called constructors. (see the constructors section of this help page)</p>
+
+
+<h3>Methods</h3>
+
+  
+<dl>
+<dt>GeneralDecompOp</dt><dd><p><code>signature(object = "DecompOp")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="GeneralDecompOp-method_82b08959.html">GeneralDecompOp,DecompOp-method</a></code>
+</p>
+
+
+<h3>Subclasses</h3>
+
+
+<p><code><a href="BoundLinDecompOp-class.html">BoundLinDecompOp-class</a></code><br />
+<code><a href="DecompositionOperator-class.html">DecompositionOperator-class</a></code><br />
+<code><a href="ConstLinDecompOp-class.html">ConstLinDecompOp-class</a></code><br />
+</p>
+
+
+<h3>Constructors</h3>
+
+<p>The class is abstract ( <code>contains "VIRTUAL"</code>).
+It can therefore not be instanciated directly.
+Look at non virtual subclasses and their constructors!
+</p>
+<p>There is also an <a href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">abstract factory</a> that produces instances of different subclasses depending on the input:
+</p>
+<p><code><a href="GeneralDecompOp.html">GeneralDecompOp</a></code><br /></p>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

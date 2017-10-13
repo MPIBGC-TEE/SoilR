@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Implementation of the Introductory Carbon Balance Model...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ICBMModel {SoilR}"><tr><td>ICBMModel {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Implementation of the Introductory Carbon Balance Model (ICBM)</h2>
+
+<h3>Description</h3>
+
+<p>This function is an implementation of the Introductory Carbon Balance Model (ICBM).
+This is simply a two pool model connected in series.</p>
+
+
+<h3>Usage</h3>
+
+<pre>ICBMModel(t,
+ks=c(k1 = 0.8, k2 = 0.00605),
+h=0.13,
+r=1.32,
+c0=c(Y0 = 0.3, O0 = 3.96),
+In=0,
+solver=deSolve.lsoda.wrapper,
+pass=FALSE)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>t</code></td>
+<td>
+<p>A vector containing the points in time where the solution is sougth.</p>
+</td></tr>
+<tr valign="top"><td><code>ks</code></td>
+<td>
+<p>A vector of length 2 with the decomposition rates for the young and the old pool.</p>
+</td></tr>
+<tr valign="top"><td><code>h</code></td>
+<td>
+<p>Humufication coefficient (transfer rate from young to old pool).</p>
+</td></tr>
+<tr valign="top"><td><code>r</code></td>
+<td>
+<p>External (environmental or edaphic) factor.</p>
+</td></tr>
+<tr valign="top"><td><code>c0</code></td>
+<td>
+<p>A vector of length 2 with the initial value of carbon stocks in the young and old pool.</p>
+</td></tr>
+<tr valign="top"><td><code>In</code></td>
+<td>
+<p>Mean annual carbon input to the soil.</p>
+</td></tr>
+<tr valign="top"><td><code>solver</code></td>
+<td>
+<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+</td></tr>
+<tr valign="top"><td><code>pass</code></td>
+<td>
+<p>if TRUE forces the constructor to create the model even if it is invalid</p>
+</td></tr>
+</table>
+
+
+<h3>References</h3>
+
+<p>Andren, O. and T. Katterer. 1997. ICBM: The Introductory Carbon Balance Model 
+for Exploration of Soil Carbon Balances. Ecological Applications 7:1226-1236.</p>
+
+
+<h3>See Also</h3>
+
+<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+
+
+<h3>Examples</h3>
+
+<pre># examples from external files
+# inst/examples/exICBMModel.R exICBMModel_paper:
+
+    # This example reproduces the simulations 
+    # presented in Table 1 of Andren and Katterer (1997).
+    # First, the model is run for different values of the 
+    # parameters representing different field experiments. 
+    times=seq(0,20,by=0.1)
+    Bare=ICBMModel(t=times) #Bare fallow
+    pNpS=ICBMModel(t=times, h=0.125, r=1,    c0=c(0.3,4.11),  In=0.19+0.095) #+N +Straw
+    mNpS=ICBMModel(t=times, h=0.125, r=1.22, c0=c(0.3, 4.05), In=0.19+0.058) #-N +Straw
+    mNmS=ICBMModel(t=times, h=0.125, r=1.17, c0=c(0.3, 3.99), In=0.057) #-N -Straw
+    pNmS=ICBMModel(t=times, h=0.125, r=1.07, c0=c(0.3, 4.02), In=0.091) #+N -Straw
+    FM=ICBMModel(t=times, h=0.250, r=1.10, c0=c(0.3, 3.99), In=0.19+0.082) #Manure
+    SwS=ICBMModel(t=times, h=0.340, r=0.97, c0=c(0.3, 4.14), In=0.19+0.106) #Sewage Sludge
+    SS=ICBMModel(t=times, h=0.125, r=1.00, c0=c(0.25, 4.16), In=0.2)  #Steady State
+
+    #The amount of carbon for each simulation is recovered with the function getC
+    CtBare=getC(Bare)
+    CtpNpS=getC(pNpS)
+    CtmNpS=getC(mNpS)
+    CtmNmS=getC(mNmS)
+    CtpNmS=getC(pNmS)
+    CtFM=getC(FM)
+    CtSwS=getC(SwS)
+    CtSS=getC(SS)
+
+    #This plot reproduces Figure 1 in Andren and Katterer (1997)
+    plot(times,
+      rowSums(CtBare),
+      type="l",
+      ylim=c(0,8),
+      xlim=c(0,20),
+      ylab="Topsoil carbon mass (kg m-2)",
+      xlab="Time (years)"
+    )
+    lines(times,rowSums(CtpNpS),lty=2)
+    lines(times,rowSums(CtmNpS),lty=3)
+    lines(times,rowSums(CtmNmS),lty=4)
+    lines(times,rowSums(CtpNmS),lwd=2)
+    lines(times,rowSums(CtFM),lty=2,lwd=2)
+    lines(times,rowSums(CtSwS),lty=3,lwd=2)
+    #lines(times,rowSums(CtSS),lty=4,lwd=2)
+    legend("topleft",
+      c("Bare fallow",
+        "+N +Straw",
+        "-N +Straw",
+        "-N -Straw",
+        "+N -Straw",
+        "Manure",
+       "Sludge"
+      ),
+      lty=c(1,2,3,4,1,2,3),
+      lwd=c(1,1,1,1,2,2,2),
+      bty="n"
+    )
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

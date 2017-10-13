@@ -137,7 +137,7 @@ setClass(# Model
     ##   The initial values are represented by a numeric vector 
     ## }
    ##exampleFunctionsFromFiles<< 
-   ## inst/examples/CorrectLinearModel.R CorrectLinearModel 
+   ## inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
 )
 
 
@@ -239,6 +239,21 @@ Model<-function #Constructor for class \link{Model-class}
   ## and try to call the constructor of the desired subclass 
   ## explicitly with your arguments. 
   ## The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.
+  ##
+  ## Note also that this functions checks its arguments quite elaborately 
+  ## and tries to detect accidental unreasonable combinations, 
+  ## especially concerning two kinds of error.
+  ## \enumerate{
+  ## \item 
+  ##  unintended extrapolation of time series data
+  ## \item
+  ##  violoations of massbalance by the DecompOp argument.
+  ##}
+  ## 
+  ## SoilR has a lot of unit tests which are installed i
+  ## with the package and are sometimes instructive as examples. 
+  ## To see example scenarios for parameter check look at:
+  ## \Sexpr[echo=TRUE,keep.source=TRUE,stage=render,results=verbatim]{system.file('tests','runit.correctness_of_Model.R',package='SoilR')}
 
   
 
@@ -250,8 +265,9 @@ Model<-function #Constructor for class \link{Model-class}
      ### to be found there.
      ##seealso<< This function is called by many of the \link{predefinedModels} 
 
+     ##examples<<
      ##exampleFunctionsFromFiles<< 
-     ## inst/examples/CorrectLinearModel.R CorrectLinearModel 
+     ## inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
   }
 #)
 #------------------------------------------------------------------------------------

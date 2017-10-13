@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Model-class {SoilR}"><tr><td>Model-class {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Model</h2>
+
+<h3>Description</h3>
+
+<p>The class Model is the focal point of SoilR. 
+</p>
+
+<ul>
+<li><p> It combines all the components that are needed to solve the
+initial value problem for the pool contents.
+<i>C=(C_1,...C_n)^t, </i>. 
+</p>
+</li>
+<li><p> It provides the single argument for the different functions 
+that are available to compute various results from the solution of the initial value problem. 
+See subsection <code>Methods</code> and the examples.)
+</p>
+</li></ul>
+
+
+<h3>Details</h3>
+
+<p>The initial value problem is given by:
+</p>
+
+<ul>
+<li>
+<p>the ordinary differential equation
+<i> d/dt C=A(t)C+I(t),</i>
+</p>
+</li>
+<li>
+<p>the intial Values <i>C_0=C(t_0),</i> 
+</p>
+</li>
+<li> 
+<p>for the times <i>{t_0,....,t_m}</i>.
+</p>
+</li></ul>
+
+<p>In an object of class Model the components are represented as follows:
+</p>
+
+<ul>
+<li>
+<p>The time-dependent matrix valued function <i>A(t)</i> is represented by an object 
+of a class that inherits from class <code>DecompOp</code> <code><a href="DecompOp-class.html">DecompOp-class</a></code>. 
+Such objects can be created in different ways from functions, matrices or data. 
+(see the subclasses of <code><a href="DecompOp-class.html">DecompOp-class</a></code> and especially their <code>Constructors</code> sections.  
+and the <code>examples</code> section of this help page.
+</p>
+</li>
+<li> 
+<p>The vector-valued time-dependent function <i>I(t)</i> is in SoilR represented by an object of a class that 
+inherits from class InFlux <code><a href="InFlux-class.html">InFlux-class</a></code>. 
+Such objects can be created from functions, constant vectors and data. 
+(see the subclasses of <code><a href="InFlux-class.html">InFlux-class</a></code> and especially their <code>Constructors</code> sections.  
+</p>
+</li>
+<li> 
+<p>The times for which the results are computed are represented by a numeric vector.
+</p>
+</li>
+<li> 
+<p>The initial values are represented by a numeric vector 
+</p>
+</li></ul>
+
+
+<h3>Methods</h3>
+
+  
+<dl>
+<dt>[</dt><dd><p><code>signature(x = "Model", i = "character", j = "missing", drop = "missing")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="z[-method_d68876f3.html">[,Model,character,missing,missing-method</a></code>
+</p>
+<dl>
+<dt>getAccumulatedRelease</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="getAccumulatedRelease-method_8d005323.html">getAccumulatedRelease,Model-method</a></code>
+</p>
+<dl>
+<dt>getC</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="getC-method_8d005323.html">getC,Model-method</a></code>
+</p>
+<dl>
+<dt>getReleaseFlux</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="getReleaseFlux-method_8d005323.html">getReleaseFlux,Model-method</a></code>
+</p>
+<dl>
+<dt>getTimes</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="getTimes-method_8d005323.html">getTimes,Model-method</a></code>
+</p>
+
+
+<h3>Subclasses</h3>
+
+
+<p><code><a href="Model_14-class.html">Model_14-class</a></code><br />
+</p>
+
+
+<h3>Constructors</h3>
+
+	<p><code><a href="Model.html">Model</a></code><br />
+Please also look at constructors of non virtual subclasses </p>
+
+
+<h3>Examples</h3>
+
+<pre># examples from external files
+# inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit:
+
+  # This example describes the creation and use of a Model object that 
+  # is defined by time dependent functions for decomposition and influx.
+  # The constructor of the Model-class  (see  ?Model) is a 'Generic' 
+  # function  that  has 'Methods' for different combinations of 
+  # arguments.
+  # In this example we will call the constructor whith arguments which 
+  # are of the same type as the current internal representations in the 
+  # Model object. and create these arguments explicitly beforehand. 
+  # See other examples for the generic constructor Model 
+  # We start with the Decomposition Operator.
+  # For this example we assume that we are able to describe it 
+  # by explicit R functions and therefore choose the appropriate
+  # sub class BoundLinDecompOp
+  # of DecompOp explicitly.  (see ?'BoundLinDecompOp-class') 
+  A=BoundLinDecompOp(
+    ## We call the generic constructor (see ?BoundLindDcompOp) 
+    ## which has a method  
+    ## that takes a matrix-valued function of time as its first argument.
+    function(t){
+      matrix(nrow=3,ncol=3,byrow=TRUE,
+         c(
+           -1,    0,        0,
+          0.5,   -2,        0,
+            0,    1, sin(t)-1 
+        )
+      )    
+    },
+    ## The other two arguments describe the time interval where the 
+    ## function is valid (the domain of the function)
+    ## The interval will be checked against the domain of the InFlux
+    ## argument of Model and against its 't' argument to avoid 
+    ## invalid computations outside the domain. 
+    ##  Inf and -Inf are possible values. 
+    starttime=0,
+    endtime=20
+  )  
+  I=BoundInFlux(
+     ## The first argument is a vector-valued function of time
+     function(t){
+       matrix(nrow=3,ncol=1,byrow=TRUE,
+           c(-1,    0,    0)
+       )
+     },
+     ## The other two arguments describe the time interval where the 
+     ## function is valid (the domain of the function)
+     starttime=0,
+     endtime=40
+  )
+  ## No we specify the points in time where we want 
+  ## to compute results
+  t_start=0 
+  t_end=10 
+  tn=50
+  timestep &lt;- (t_end-t_start)/tn 
+  times &lt;- seq(t_start,t_end,timestep) 
+  ## and the start values
+  sv=c(0,0,0)
+  mod=Model(t=times,A,sv,I)
+
+  ## No we use the model to compute some results
+  getC(mod)
+  getReleaseFlux(mod)
+  #also look at the methods section of Model-class 
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

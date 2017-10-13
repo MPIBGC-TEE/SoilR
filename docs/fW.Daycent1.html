@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Effects of moisture on decomposition rates according to the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fW.Daycent1 {SoilR}"><tr><td>fW.Daycent1 {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Effects of moisture on decomposition rates according to the DAYCENT model</h2>
+
+<h3>Description</h3>
+
+<p>Calculates the effects of Soil Water Content on decomposition rates according to the Daycent Model.</p>
+
+
+<h3>Usage</h3>
+
+<pre>fW.Daycent1(swc,
+a=0.6,
+b=1.27,
+c=0.0012,
+d=2.84,
+partd=2.65,
+bulkd=1,
+width=1)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>swc</code></td>
+<td>
+<p>A scalar or vector with soil water content of a soil layer (cm).</p>
+</td></tr>
+<tr valign="top"><td><code>a</code></td>
+<td>
+<p>Empirical coefficient. For fine textured soils a = 0.6. For coarse textured soils a = 0.55.</p>
+</td></tr>
+<tr valign="top"><td><code>b</code></td>
+<td>
+<p>Empirical coefficient. For fine textured soils b = 1.27. For coarse textured soils b = 1.70.</p>
+</td></tr>
+<tr valign="top"><td><code>c</code></td>
+<td>
+<p>Empirical coefficient. For fine textured soils c = 0.0012. For coarse textured soils c = -0.007.</p>
+</td></tr>
+<tr valign="top"><td><code>d</code></td>
+<td>
+<p>Empirical coefficient. For fine textured soils d = 2.84. For coarse textured soils d = 3.22.</p>
+</td></tr>
+<tr valign="top"><td><code>partd</code></td>
+<td>
+<p>Particle density of soil layer.</p>
+</td></tr>
+<tr valign="top"><td><code>bulkd</code></td>
+<td>
+<p>Bulk density of soil layer (g/cm^3).</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>Thickness of a soil layer (cm).</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A data frame with values of water filled pore space (wfps) and effects of soil water content on decomposition rates. Both vectors are unitless. </p>
+
+
+<h3>References</h3>
+
+<p>Kelly, R. H., W. J. Parton, M. D. Hartman, L. K. Stretch, D. S. Ojima, and D. S. Schimel (2000), 
+Intra-annual and interannual variability of ecosystem processes in shortgrass steppe, J. Geophys. Res., 105.</p>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

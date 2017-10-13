@@ -7,5 +7,5 @@
 \item{object}{see the method arguments for details}
 }
 \section{Methods}{	\code{\link{GeneralDecompOp,DecompOp-method}}\cr
-	\code{\link{GeneralDecompOp,matrix-method}}\cr
-	\code{\link{GeneralDecompOp,TimeMap-method}}\cr}
+	\code{\link{GeneralDecompOp,TimeMap-method}}\cr
+	\code{\link{GeneralDecompOp,matrix-method}}\cr}

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Implementation of a one pool model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for OnepModel {SoilR}"><tr><td>OnepModel {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Implementation of a one pool model </h2>
+
+<h3>Description</h3>
+
+<p>This function creates a model for one pool. It is a wrapper for the more general function <code><a href="GeneralModel.html">GeneralModel</a></code>.</p>
+
+
+<h3>Usage</h3>
+
+<pre>OnepModel(t,
+k,
+C0,
+In,
+xi=1,
+solver=deSolve.lsoda.wrapper,
+pass=FALSE)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>t</code></td>
+<td>
+<p>A vector containing the points in time where the solution is sought.</p>
+</td></tr>
+<tr valign="top"><td><code>k</code></td>
+<td>
+<p>A scalar with the decomposition rate of the pool.</p>
+</td></tr>
+<tr valign="top"><td><code>C0</code></td>
+<td>
+<p>A scalar containing the initial amount of carbon in the pool.</p>
+</td></tr>
+<tr valign="top"><td><code>In</code></td>
+<td>
+<p>A scalar or a data.frame object specifying the amount of litter inputs by time.</p>
+</td></tr>
+<tr valign="top"><td><code>xi</code></td>
+<td>
+<p>A scalar or a data.frame specifying the external (environmental and/or edaphic) effects on decomposition rates.</p>
+</td></tr>
+<tr valign="top"><td><code>solver</code></td>
+<td>
+<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+</td></tr>
+<tr valign="top"><td><code>pass</code></td>
+<td>
+<p>if TRUE forces the constructor to create the model even if it is invalid</p>
+</td></tr>
+</table>
+
+
+<h3>References</h3>
+
+<p>Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.</p>
+
+
+<h3>See Also</h3>
+
+<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+
+
+<h3>Examples</h3>
+
+<pre>t_start=0 
+t_end=10 
+tn=50
+timestep=(t_end-t_start)/tn 
+t=seq(t_start,t_end,timestep) 
+k=0.8
+C0=100
+In = 30
+
+
+Ex=OnepModel(t,k,C0,In)
+Ct=getC(Ex)
+Rt=getReleaseFlux(Ex)
+Rc=getAccumulatedRelease(Ex)
+
+plot(
+t,
+Ct,
+type="l",
+ylab="Carbon stocks (arbitrary units)",
+xlab="Time (arbitrary units)",
+lwd=2
+) 
+
+plot(
+t,
+Rt,
+type="l",
+ylab="Carbon released (arbitrary units)",
+xlab="Time (arbitrary units)",
+lwd=2
+) 
+
+plot(
+t,
+Rc,
+type="l",
+ylab="Cummulative carbon released (arbitrary units)",
+xlab="Time (arbitrary units)",
+lwd=2
+) </pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Implementation of the microbial model Bacwave (bacterial...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bacwaveModel {SoilR}"><tr><td>bacwaveModel {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Implementation of the microbial model Bacwave (bacterial waves)</h2>
+
+<h3>Description</h3>
+
+<p>This function implements the microbial model Bacwave (bacterial waves), a two-pool model with a bacterial and a substrate pool. It is a special case of the general nonlinear model.</p>
+
+
+<h3>Usage</h3>
+
+<pre>bacwaveModel(t,
+umax=0.063,
+ks=3,
+theta=0.23,
+Dmax=0.26,
+kd=14.5,
+kr=0.4,
+Y=0.44,
+ival=c(S0 = 0.5, X0 = 1.5),
+BGF=0.15,
+ExuM=8,
+ExuT=0.8)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>t</code></td>
+<td>
+<p>vector of times (in hours) to calculate a solution.</p>
+</td></tr>
+<tr valign="top"><td><code>umax</code></td>
+<td>
+<p>a scalar representing the maximum relative growth rate of bacteria (hr-1)</p>
+</td></tr>
+<tr valign="top"><td><code>ks</code></td>
+<td>
+<p>a scalar representing the substrate constant for growth (ug C /ml soil solution)</p>
+</td></tr>
+<tr valign="top"><td><code>theta</code></td>
+<td>
+<p>a scalar representing soil water content (ml solution/cm3 soil)</p>
+</td></tr>
+<tr valign="top"><td><code>Dmax</code></td>
+<td>
+<p>a scalar representing the maximal relative death rate of bacteria (hr-1)</p>
+</td></tr>
+<tr valign="top"><td><code>kd</code></td>
+<td>
+<p>a scalar representing the substrate constant for death of bacteria (ug C/ml soil solution)</p>
+</td></tr>
+<tr valign="top"><td><code>kr</code></td>
+<td>
+<p>a scalar representing the fraction of death biomass recycling to substrate (unitless)</p>
+</td></tr>
+<tr valign="top"><td><code>Y</code></td>
+<td>
+<p>a scalar representing the yield coefficient for bacteria (ug C/ugC)</p>
+</td></tr>
+<tr valign="top"><td><code>ival</code></td>
+<td>
+<p>a vector of length 2 with the initial values for the substrate and the bacterial pools (ug C/cm3)</p>
+</td></tr>
+<tr valign="top"><td><code>BGF</code></td>
+<td>
+<p>a scalar representing the constant background flux of substrate (ug C/cm3 soil/hr)</p>
+</td></tr>
+<tr valign="top"><td><code>ExuM</code></td>
+<td>
+<p>a scalar representing the maximal exudation rate (ug C/(hr cm3 soil))</p>
+</td></tr>
+<tr valign="top"><td><code>ExuT</code></td>
+<td>
+<p>a scalar representing the  time constant for exudation, responsible for duration of exudation (1/hr).</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>This implementation containts default parameters presented in Zelenev et al. (2000). It produces nonlinear damped oscillations in the form of a stable focus.</p>
+
+
+<h3>Value</h3>
+
+<p>An object of class NlModel that can be further queried.</p>
+
+
+<h3>References</h3>
+
+<p>Zelenev, V.V., A.H.C. van Bruggen, A.M. Semenov. 2000. &ldquo;BACWAVE,&rdquo; a spatial-temporal model for traveling waves of bacterial populations
+in response to a moving carbon source in soil. Microbail Ecology 40: 260-272.</p>
+
+
+<h3>See Also</h3>
+
+<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+
+
+<h3>Examples</h3>
+
+<pre>hours=seq(0,800,0.1)
+#
+#Run the model with default parameter values
+bcmodel=bacwaveModel(t=hours)
+Cpools=getC(bcmodel)
+#
+#Time solution
+matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
+legend("topleft",c("Substrate", "Microbial biomass"),lty=1,col=c(1,2),bty="n")
+#
+#State-space diagram
+plot(Cpools[,2],Cpools[,1],type="l",ylab="Substrate",xlab="Microbial biomass")
+#
+#Microbial biomass over time
+plot(hours,Cpools[,2],type="l",col=2,xlab="Hours",ylab="Microbial biomass")</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

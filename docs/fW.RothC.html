@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Effects of moisture on decomposition rates according to the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fW.RothC {SoilR}"><tr><td>fW.RothC {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Effects of moisture on decomposition rates according to the RothC model</h2>
+
+<h3>Description</h3>
+
+<p>Calculates the effects of moisture (precipitation and pan evaporation) on decomposition rates according to the RothC model.</p>
+
+
+<h3>Usage</h3>
+
+<pre>fW.RothC(P,
+E,
+S.Thick=23,
+pClay=23.4,
+pE=0.75,
+bare=FALSE)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>P</code></td>
+<td>
+<p>A vector with monthly precipitation (mm).</p>
+</td></tr>
+<tr valign="top"><td><code>E</code></td>
+<td>
+<p>A vector with same length with open pan evaporation or evapotranspiration (mm).</p>
+</td></tr>
+<tr valign="top"><td><code>S.Thick</code></td>
+<td>
+<p>Soil thickness in cm. Default for Rothamsted is 23 cm.</p>
+</td></tr>
+<tr valign="top"><td><code>pClay</code></td>
+<td>
+<p>Percent clay.</p>
+</td></tr>
+<tr valign="top"><td><code>pE</code></td>
+<td>
+<p>Evaporation coefficient. If open pan evaporation is used pE=0.75. If Potential evaporation is used, pE=1.0.</p>
+</td></tr>
+<tr valign="top"><td><code>bare</code></td>
+<td>
+<p>Logical. Under bare soil conditions, bare=TRUE. Dafault is set under vegetated soil.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A data.frame with accumulated top soil moisture deficit 
+(Acc.TSMD) and the rate modifying factor b. </p>
+
+
+<h3>References</h3>
+
+<p>Coleman, K., and D. S. Jenkinson (1999), RothC-26.3 A model for the turnover of carbon in soil: 
+model description and windows user guide (modified 2008), 47 pp, IACR Rothamsted, Harpenden.</p>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

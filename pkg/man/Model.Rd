@@ -7,12 +7,17 @@ inputFluxes,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
 \examples{# examples from external files
-# inst/examples/CorrectLinearModel.R CorrectLinearModel:
+# inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit:
 
   # This example describes the creation and use of a Model object that 
   # is defined by time dependent functions for decomposition and influx.
-  # Before we can call the constructor of the class we 
-  # create its arguments explicitly. 
+  # The constructor of the Model-class  (see  ?Model) is a 'Generic' 
+  # function  that  has 'Methods' for different combinations of 
+  # arguments.
+  # In this example we will call the constructor whith arguments which 
+  # are of the same type as the current internal representations in the 
+  # Model object. and create these arguments explicitly beforehand. 
+  # See other examples for the generic constructor Model 
   # We start with the Decomposition Operator.
   # For this example we assume that we are able to describe it 
   # by explicit R functions and therefore choose the appropriate
@@ -52,7 +57,8 @@ pass=FALSE)}
      starttime=0,
      endtime=40
   )
-  ## No we specify the points in time where we want to compute results
+  ## No we specify the points in time where we want 
+  ## to compute results
   t_start=0 
   t_end=10 
   tn=50
@@ -89,7 +95,22 @@ likely occur in the delegate functions.
 If this happens use \code{traceback()} to see which function was called
 and try to call the constructor of the desired subclass 
 explicitly with your arguments. 
-The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.}
+The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.
+
+Note also that this functions checks its arguments quite elaborately 
+and tries to detect accidental unreasonable combinations, 
+especially concerning two kinds of error.
+\enumerate{
+\item 
+unintended extrapolation of time series data
+\item
+violoations of massbalance by the DecompOp argument.
+}
+
+SoilR has a lot of unit tests which are installed i
+with the package and are sometimes instructive as examples. 
+To see example scenarios for parameter check look at:
+\Sexpr[echo=TRUE,keep.source=TRUE,stage=render,results=verbatim]{system.file('tests','runit.correctness_of_Model.R',package='SoilR')}}
 \seealso{This function is called by many of the \link{predefinedModels} }
 \title{Constructor for class \link{Model-class} }
 \value{An object of class \link{Model-class} that can be queried by many methods 

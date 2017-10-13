@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Implementation of a three pool model with parallel structure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ThreepParallelModel {SoilR}"><tr><td>ThreepParallelModel {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Implementation of a three pool model with parallel structure</h2>
+
+<h3>Description</h3>
+
+<p>The function creates a model for three independent (parallel) pools. It is a wrapper for the more general function
+<code><a href="ParallelModel.html">ParallelModel</a></code> that can handle an arbitrary number of pools.</p>
+
+
+<h3>Usage</h3>
+
+<pre>ThreepParallelModel(t,
+ks,
+C0,
+In,
+gam1,
+gam2,
+xi=1,
+solver=deSolve.lsoda.wrapper,
+pass=FALSE)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>t</code></td>
+<td>
+<p>A vector containing the points in time where the solution is sought.</p>
+</td></tr>
+<tr valign="top"><td><code>ks</code></td>
+<td>
+<p>A vector of length 3 containing the decomposition rates for the 3 pools.</p>
+</td></tr>
+<tr valign="top"><td><code>C0</code></td>
+<td>
+<p>A vector of length 3 containing the initial amount of carbon for the 3 pools.</p>
+</td></tr>
+<tr valign="top"><td><code>In</code></td>
+<td>
+<p>A scalar or a data.frame object specifying the amount of litter inputs by time.</p>
+</td></tr>
+<tr valign="top"><td><code>gam1</code></td>
+<td>
+<p>A scalar representing the partitioning coefficient, i.e. the proportion from the total amount of inputs that goes to pool 1.</p>
+</td></tr>
+<tr valign="top"><td><code>gam2</code></td>
+<td>
+<p>A scalar representing the partitioning coefficient, i.e. the proportion from the total amount of inputs that goes to pool 2.</p>
+</td></tr>
+<tr valign="top"><td><code>xi</code></td>
+<td>
+<p>A scalar or a data.frame specifying the external (environmental and/or edaphic) effects on decomposition rates.</p>
+</td></tr>
+<tr valign="top"><td><code>solver</code></td>
+<td>
+<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+</td></tr>
+<tr valign="top"><td><code>pass</code></td>
+<td>
+<p>Logical that forces the Model to be created even if the chect suggest problems.</p>
+</td></tr>
+</table>
+
+
+<h3>References</h3>
+
+<p>Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.</p>
+
+
+<h3>See Also</h3>
+
+<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+
+
+<h3>Examples</h3>
+
+<pre>t_start=0 
+t_end=10 
+tn=50
+timestep=(t_end-t_start)/tn 
+t=seq(t_start,t_end,timestep) 
+
+Ex=ThreepParallelModel(t,ks=c(k1=0.5,k2=0.2,k3=0.1),
+C0=c(c10=100, c20=150,c30=50),In=20,gam1=0.7,gam2=0.1,xi=0.5)
+Ct=getC(Ex)
+
+plot(t,rowSums(Ct),type="l",lwd=2,
+ylab="Carbon stocks (arbitrary units)",xlab="Time",ylim=c(0,sum(Ct[1,]))) 
+lines(t,Ct[,1],col=2)
+lines(t,Ct[,2],col=4)
+lines(t,Ct[,3],col=3)
+legend("topright",c("Total C","C in pool 1", "C in pool 2","C in pool 3"),
+lty=c(1,1,1,1),col=c(1,2,4,3),lwd=c(2,1,1,1),bty="n")
+
+Rt=getReleaseFlux(Ex)
+plot(t,rowSums(Rt),type="l",ylab="Carbon released (arbitrary units)",
+xlab="Time",lwd=2,ylim=c(0,sum(Rt[1,]))) 
+lines(t,Rt[,1],col=2)
+lines(t,Rt[,2],col=4)
+lines(t,Rt[,3],col=3)
+legend("topright",c("Total C release","C release from pool 1",
+"C release from pool 2","C release from pool 3"),
+lty=c(1,1,1,1),col=c(1,2,4,3),lwd=c(2,1,1,1),bty="n")</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

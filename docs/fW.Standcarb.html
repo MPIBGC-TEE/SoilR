@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Effects of moisture on decomposition rates according to the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for fW.Standcarb {SoilR}"><tr><td>fW.Standcarb {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Effects of moisture on decomposition rates according to the StandCarb model</h2>
+
+<h3>Description</h3>
+
+<p>Calculates the effects of moisture on decomposition rates according to the StandCarb model.</p>
+
+
+<h3>Usage</h3>
+
+<pre>fW.Standcarb(Moist,
+MatricShape=5,
+MatricLag=0,
+MoistMin=30,
+MoistMax=350,
+DiffuseShape=15,
+DiffuseLag=4)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>Moist</code></td>
+<td>
+<p>A scalar or vector containing values of moisture content of a litter or soil pool (%).</p>
+</td></tr>
+<tr valign="top"><td><code>MatricShape</code></td>
+<td>
+<p>A scalar that determines when matric limit is reduced to the point that decay can begin to occur.</p>
+</td></tr>
+<tr valign="top"><td><code>MatricLag</code></td>
+<td>
+<p>A scalar used to offset the curve to the left or right.</p>
+</td></tr>
+<tr valign="top"><td><code>MoistMin</code></td>
+<td>
+<p>A scalar determining the minimum moisture content.</p>
+</td></tr>
+<tr valign="top"><td><code>MoistMax</code></td>
+<td>
+<p>A scalar determining the maximum moisture content without diffusion limitations.</p>
+</td></tr>
+<tr valign="top"><td><code>DiffuseShape</code></td>
+<td>
+<p>A scalar that determines the range of moisture contents where diffusion is not limiting.</p>
+</td></tr>
+<tr valign="top"><td><code>DiffuseLag</code></td>
+<td>
+<p>A scalar used to shift the point when moisture begins to limit diffusion.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A data frame with limitation due to water potential (MatricLimit), limitation due to oxygen diffusion (DiffuseLimit), and the overall limitation of moisture on decomposition rates (MoistDecayIndex).</p>
+
+
+<h3>References</h3>
+
+<p>Harmon, M. E., and J. B. Domingo (2001), A users guide to STANDCARB version 2.0: 
+A model to simulate carbon stores in forest stands. Oregon State University, Corvallis.</p>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

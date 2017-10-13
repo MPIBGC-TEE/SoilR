@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: deSolve.lsoda.wrapper</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for deSolve.lsoda.wrapper {SoilR}"><tr><td>deSolve.lsoda.wrapper {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>deSolve.lsoda.wrapper</h2>
+
+<h3>Description</h3>
+
+<p>The function serves as a wrapper for lsoda using a much simpler interface which allows the use 
+of matrices in the definition of the derivative. 
+To use lsoda we have to convert our vectors to lists, define tolerances and so on.
+This function does this for us , so we don't need to bother about it.</p>
+
+
+<h3>Usage</h3>
+
+<pre>deSolve.lsoda.wrapper(t,
+ydot,
+startValues)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>t</code></td>
+<td>
+<p>A row vector containing the points in time where the solution is sought.</p>
+</td></tr>
+<tr valign="top"><td><code>ydot</code></td>
+<td>
+<p>The function of y and t that computes the derivative for a given
+point in time and a column vector y.</p>
+</td></tr>
+<tr valign="top"><td><code>startValues</code></td>
+<td>
+<p>A column vector with the starting values.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A matrix. Every column represents a pool and every row a point in time</p>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

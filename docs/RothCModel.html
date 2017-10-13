@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Implementation of the RothCModel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for RothCModel {SoilR}"><tr><td>RothCModel {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Implementation of the RothCModel</h2>
+
+<h3>Description</h3>
+
+<p>This function implements the RothC model of Jenkinson et al. It is a wrapper for the more general function <code><a href="GeneralModel.html">GeneralModel</a></code>.</p>
+
+
+<h3>Usage</h3>
+
+<pre>RothCModel(t,
+ks=c(k.DPM = 10, k.RPM = 0.3, k.BIO = 0.66, k.HUM = 0.02, k.IOM = 0),
+C0=c(0, 0, 0, 0, 2.7),
+In=1.7,
+FYM=0,
+DR=1.44,
+clay=23.4,
+xi=1,
+solver=deSolve.lsoda.wrapper,
+pass=FALSE)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>t</code></td>
+<td>
+<p>A vector containing the points in time where the solution is sought.</p>
+</td></tr>
+<tr valign="top"><td><code>ks</code></td>
+<td>
+<p>A vector of lenght 5 containing the values of the decomposition rates for the different pools</p>
+</td></tr>
+<tr valign="top"><td><code>C0</code></td>
+<td>
+<p>A vector of length 5 containing the initial amount of carbon for the 5 pools.</p>
+</td></tr>
+<tr valign="top"><td><code>In</code></td>
+<td>
+<p>A scalar or data.frame object specifying the amount of litter inputs by time.</p>
+</td></tr>
+<tr valign="top"><td><code>FYM</code></td>
+<td>
+<p>A scalar or data.frame object specifying the amount of Farm Yard Manure inputs by time.</p>
+</td></tr>
+<tr valign="top"><td><code>DR</code></td>
+<td>
+<p>A scalar representing the ratio of decomposable plant material to resistant plant material (DPM/RPM).</p>
+</td></tr>
+<tr valign="top"><td><code>clay</code></td>
+<td>
+<p>Percent clay in mineral soil.</p>
+</td></tr>
+<tr valign="top"><td><code>xi</code></td>
+<td>
+<p>A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.</p>
+</td></tr>
+<tr valign="top"><td><code>solver</code></td>
+<td>
+<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+</td></tr>
+<tr valign="top"><td><code>pass</code></td>
+<td>
+<p>if TRUE forces the constructor to create the model even if it is invalid</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A Model Object that can be further queried </p>
+
+
+<h3>References</h3>
+
+<p>Jenkinson, D. S., S. P. S. Andrew, J. M. Lynch, M. J. Goss, and P. B. Tinker. 1990. The Turnover of Organic Carbon and Nitrogen in Soil. 
+Philosophical Transactions: Biological Sciences 329:361-368.
+Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.</p>
+
+
+<h3>See Also</h3>
+
+<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+
+
+<h3>Examples</h3>
+
+<pre>t=0:500 
+Ex=RothCModel(t)
+Ct=getC(Ex)
+Rt=getReleaseFlux(Ex)
+
+matplot(t,Ct,type="l",col=1:5, ylim=c(0,25),
+ylab=expression(paste("Carbon stores (Mg C ", ha^-1,")")),
+xlab="Time (years)", lty=1)
+lines(t,rowSums(Ct),lwd=2)
+legend("topleft",
+c("Pool 1, DPM",
+"Pool 2, RPM",
+"Pool 3, BIO",
+"Pool 4, HUM",
+"Pool 5, IOM",
+"Total Carbon"),
+lty=1,
+lwd=c(rep(1,5),2),
+col=c(1:5,1),
+bty="n"
+)</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

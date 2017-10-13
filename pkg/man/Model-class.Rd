@@ -52,12 +52,17 @@ The initial values are represented by a numeric vector
 \section{Constructors}{	\code{\link{Model}}\cr
  Please also look at constructors of non virtual subclasses }
 \examples{# examples from external files
-# inst/examples/CorrectLinearModel.R CorrectLinearModel:
+# inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit:
 
   # This example describes the creation and use of a Model object that 
   # is defined by time dependent functions for decomposition and influx.
-  # Before we can call the constructor of the class we 
-  # create its arguments explicitly. 
+  # The constructor of the Model-class  (see  ?Model) is a 'Generic' 
+  # function  that  has 'Methods' for different combinations of 
+  # arguments.
+  # In this example we will call the constructor whith arguments which 
+  # are of the same type as the current internal representations in the 
+  # Model object. and create these arguments explicitly beforehand. 
+  # See other examples for the generic constructor Model 
   # We start with the Decomposition Operator.
   # For this example we assume that we are able to describe it 
   # by explicit R functions and therefore choose the appropriate
@@ -97,7 +102,8 @@ The initial values are represented by a numeric vector
      starttime=0,
      endtime=40
   )
-  ## No we specify the points in time where we want to compute results
+  ## No we specify the points in time where we want 
+  ## to compute results
   t_start=0 
   t_end=10 
   tn=50

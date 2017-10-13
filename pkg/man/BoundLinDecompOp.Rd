@@ -11,6 +11,6 @@ endtime)}
 \item{endtime}{see the method arguments for details}
 }
 \section{Methods}{	\code{\link{BoundLinDecompOp,ConstLinDecompOp,missing,missing-method}}\cr
+	\code{\link{BoundLinDecompOp,TimeMap,missing,missing-method}}\cr
 	\code{\link{BoundLinDecompOp,data.frame,missing,missing-method}}\cr
-	\code{\link{BoundLinDecompOp,function,numeric,numeric-method}}\cr
-	\code{\link{BoundLinDecompOp,TimeMap,missing,missing-method}}\cr}
+	\code{\link{BoundLinDecompOp,function,numeric,numeric-method}}\cr}

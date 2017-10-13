@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Binding of pre- and post-bomb Delta14C curves</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for bind.C14curves {SoilR}"><tr><td>bind.C14curves {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Binding of pre- and post-bomb Delta14C curves</h2>
+
+<h3>Description</h3>
+
+<p>This function takes a pre- and a post-bomb curve, binds them together, and reports the results back either in years BP or AD.</p>
+
+
+<h3>Usage</h3>
+
+<pre>bind.C14curves(prebomb,
+postbomb,
+time.scale)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>prebomb</code></td>
+<td>
+<p>A pre-bomb radiocarbon dataset. They could be either <code><a href="IntCal09.html">IntCal09</a></code> or <code><a href="IntCal13.html">IntCal13</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>postbomb</code></td>
+<td>
+<p>A post-bomb radiocarbon dataset. They could be any of the datasets in <code><a href="Hua2013.html">Hua2013</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>time.scale</code></td>
+<td>
+<p>A character indicating whether to report the results in years before present <code>BP</code> or anno domini <code>AD</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A <code>data.frame</code> with 3 columns: years in AD or BP, the atmospheric Delta14C value, the standard deviation of the Delta14C value.</p>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>

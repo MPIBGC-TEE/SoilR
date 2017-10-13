@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method {SoilR}"><tr><td>Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method</h2>
+
+<h3>Description</h3>
+
+<p>This method tries to create an object from any combination of arguments 
+that can be converted into  the required set of building blocks for the Model_14
+for n arbitrarily connected pools.</p>
+
+
+<h3>Usage</h3>
+
+<pre>## S4 method for signature 
+## 'numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical'
+Model_14(t,
+A,
+ivList,
+initialValF,
+inputFluxes,
+inputFc,
+c14DecayRate,
+solverfunc,
+pass=FALSE)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>t</code></td>
+<td>
+<p>: of class numeric, A vector containing the points in time where the solution is sought.</p>
+</td></tr>
+<tr valign="top"><td><code>A</code></td>
+<td>
+<p>: of class ANY, something that can be converted by <a href="GeneralDecompOp.html">GeneralDecompOp</a> to any of the available subclasses of <code><a href="DecompOp-class.html">DecompOp-class</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>ivList</code></td>
+<td>
+<p>: of class numeric, A vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by an internal  function.</p>
+</td></tr>
+<tr valign="top"><td><code>initialValF</code></td>
+<td>
+<p>: of class ConstFc, An object equal or equivalent to class ConstFc containing a vector with the initial values of the radiocarbon fraction for each pool and a format string describing in which format the values are given.</p>
+</td></tr>
+<tr valign="top"><td><code>inputFluxes</code></td>
+<td>
+<p>: of class ANY, something that can be converted by <a href="GeneralInFlux.html">GeneralInFlux</a> to any of the available subclasses of <a href="InFlux-class.html">InFlux-class</a>.</p>
+</td></tr>
+<tr valign="top"><td><code>inputFc</code></td>
+<td>
+<p>: of class ANY, An object describing the fraction of C_14 in per mille (different formats are possible)</p>
+</td></tr>
+<tr valign="top"><td><code>c14DecayRate</code></td>
+<td>
+<p>: of class numeric</p>
+</td></tr>
+<tr valign="top"><td><code>solverfunc</code></td>
+<td>
+<p>: of class function, The function used by to actually solve the ODE system. This can be <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+</td></tr>
+<tr valign="top"><td><code>pass</code></td>
+<td>
+<p>: of class logical, Forces the constructor to create the model even if it is invalid</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-36 <a href="00Index.html">Index</a>]</div>
+</body></html>
