@@ -44,7 +44,8 @@ CorrectLinearModel <- function(){
      starttime=0,
      endtime=40
   )
-  ## No we specify the points in time where we want to compute results
+  ## No we specify the points in time where we want 
+  ## to compute results
   t_start=0 
   t_end=10 
   tn=50
