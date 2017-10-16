@@ -39,6 +39,8 @@ test.correctnessOfModel.impossibleCoefficients=function(){
    mess="correctnessOfModel should returnFALSE because the matrix values indicate unbiological behavior (ruwsum should be smaller than zero)"
    checkException(Model(t,A,c(0,0,0),I),mess,silent=TRUE)
 }
+#2.)
+# Now we present some examples where the constructor protests
 test.correctnessOfModel.impossibleTimeRanges=function(){
    mess="correctnessOfModel should have returned FALSE, but has not"
    t_start=0 
@@ -170,7 +172,6 @@ test.correctnessOfModel.correctModel=function(){
      t_start,
      t_end
   )
-  #res=new("Model",t,A,c(0,0,0),I)
   mod=Model(t,A,c(0,0,0),I)
   res<-class(mod)
   checkTrue(res=="Model","correctnessOfModel should have returned TRUE because the model was correct, but has not")
