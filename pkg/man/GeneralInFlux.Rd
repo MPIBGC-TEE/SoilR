@@ -7,5 +7,5 @@
 \item{object}{see the method arguments for details}
 }
 \section{Methods}{	\code{\link{GeneralInFlux,InFlux-method}}\cr
-	\code{\link{GeneralInFlux,TimeMap-method}}\cr
-	\code{\link{GeneralInFlux,numeric-method}}\cr}
+	\code{\link{GeneralInFlux,numeric-method}}\cr
+	\code{\link{GeneralInFlux,TimeMap-method}}\cr}

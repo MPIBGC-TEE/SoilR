@@ -85,8 +85,8 @@ pass=FALSE)}
 The arguments can be given in different form as long as they can 
 be converted to the necessary internal building blocks. 
 (See the links)}
-\details{The internal constructor of class \link{Model-class} requires the argument \code{A} to be of class \link{DecompOp-class} and argument \code{inputFluxes} to be of  class \link{InFlux-class}.
-Before calling the internal constructor this function calls \link{GeneralDecompOp} on its argument \code{A} and  \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
+\details{This function \code{Model} wraps the internal constructor of class \link{Model-class}. The internal constructor requires the argument \code{A} to be of class \link{DecompOp-class} and argument \code{inputFluxes} to be of  class \link{InFlux-class}.
+Before calling the internal constructor \code{Model} calls \link{GeneralDecompOp} on its argument \code{A} and  \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
 the required classes.
 Both are generic functions. Follow the links to see for which kind of inputs conversion methods are available.
 The attempted conversion allows great flexibility with respect to arguments and independence from the actual implementation.

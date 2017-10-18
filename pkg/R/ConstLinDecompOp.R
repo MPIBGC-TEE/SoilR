@@ -30,6 +30,11 @@ setMethod(
       ### The operator is assumed to act on the vector of carbon stocks
       ### by multiplication of the (time invariant) matrix from the left.
       (mat){
+        r <- nrow(mat)
+        c <- ncol(mat)
+        if (r!=c){
+           stop(sprintf('The matrix has to be quadratic!. Your matrix has %s rows and %s columns',r,c))
+        }
       return(new("ConstLinDecompOp",mat=mat))
      }
 )

@@ -11,7 +11,7 @@ alltests <- defineTestSuite(
    rngNormalKind = "Kinderman-Ramage"
 )
 testResult <- runTestSuite(alltests)#,verbose=0)
-print(testResult)
+#print(testResult)
 printTextProtocol(testResult)
 #produce exitstatus ne 0 for buildbot to notice
 ef=getErrors(testResult)
