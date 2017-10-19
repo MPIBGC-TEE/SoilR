@@ -17,5 +17,6 @@ if(BrowserNotRunning){
 	system(sprintf('%s %s/SoilR/html/SoilR_package.html &',browserBin,.libPaths()[1]))
 }
 #system(sprintf('firefox %s/SoilR/html/00Index.html &',.libPaths()[1]))
+list.files(full.names=TRUE,sprintf('%s/SoilR/html/',.libPaths()[1]))
 
 

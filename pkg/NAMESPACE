@@ -104,6 +104,16 @@ CenturyModel,
 systemAge,
 transitTime,
 cycling
+,
+example.2DBoundInFluxFromFunction
+#,
+#example.2DConstInFluxFromVector
+#,
+#example.ConstlinDecompOpFromMatrix
+#,
+#example.2DBoundInFluxFromFunction
+#,
+#example.TimeMapFromArray
 )
 exportClasses(
 NlModel,

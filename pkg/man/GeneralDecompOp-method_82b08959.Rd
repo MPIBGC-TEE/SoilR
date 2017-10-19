@@ -7,4 +7,5 @@
 \item{object}{: of class DecompOp}
 }
 \description{This method handles the case that no actual construction is necessary since
-the argument is already of a subclass of DecompOp }
+the argument is already of a subclass of DecompOp.
+See the \code{subclasses} section of \code{\link{DecompOp-class}}}

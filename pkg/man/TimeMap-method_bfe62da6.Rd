@@ -1,8 +1,8 @@
 \docType{methods}
-\name{TimeMap,data.frame,missing,missing-method}
-\title{TimeMap,data.frame,missing,missing-method}
-\alias{TimeMap,data.frame,missing,missing-method}
-\usage{\S4method{TimeMap}{data.frame,missing,missing}(map,
+\name{TimeMap,data.frame,missing,missing,ANY,ANY-method}
+\title{TimeMap,data.frame,missing,missing,ANY,ANY-method}
+\alias{TimeMap,data.frame,missing,missing,ANY,ANY-method}
+\usage{\S4method{TimeMap}{data.frame,missing,missing,ANY,ANY}(map,
 lag=0,
 interpolation=splinefun)}
 \arguments{

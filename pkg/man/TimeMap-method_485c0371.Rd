@@ -1,8 +1,8 @@
 \docType{methods}
-\name{TimeMap,function,numeric,numeric-method}
-\title{TimeMap,function,numeric,numeric-method}
-\alias{TimeMap,function,numeric,numeric-method}
-\usage{\S4method{TimeMap}{function,numeric,numeric}(map,
+\name{TimeMap,function,numeric,numeric,ANY,ANY-method}
+\title{TimeMap,function,numeric,numeric,ANY,ANY-method}
+\alias{TimeMap,function,numeric,numeric,ANY,ANY-method}
+\usage{\S4method{TimeMap}{function,numeric,numeric,ANY,ANY}(map,
 starttime,
 endtime,
 lag=0)}

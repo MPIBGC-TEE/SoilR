@@ -255,8 +255,11 @@ Model<-function #Constructor for class \link{Model-class}
   ## To see example scenarios for parameter check look at:
   ## \Sexpr[echo=TRUE,keep.source=TRUE,stage=render,results=verbatim]{system.file('tests','runit.correctness_of_Model.R',package='SoilR')}
 
-  
-
+  #seealso<< \code{\link{example.2DBoundInFluxFromFunction}},
+  # \code{\link{example.2DConstInFluxFromVector}},
+  # \code{\link{example.ConstlinDecompOpFromMatrix}},
+  # \code{\link{example.2DBoundInFluxFromFunction}},
+  # \code{\link{example.TimeMapFromArray}}
   
   
      obj=new(Class="Model",t,GeneralDecompOp(A),ivList,GeneralInFlux(inputFluxes),solverfunc,pass)
@@ -267,9 +270,10 @@ Model<-function #Constructor for class \link{Model-class}
 
      ##examples<<
      ##exampleFunctionsFromFiles<< 
-     ## inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
+     ## inst/tests/runit.all_possible_Model_arguments.R test.all_possible_Model_arguments
   }
 #)
+     ## #inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
 #------------------------------------------------------------------------------------
 #                               Methods
 #------------------------------------------------------------------------------------

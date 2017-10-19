@@ -25,7 +25,8 @@ setMethod(
   signature=signature(object="DecompOp"),
   def=function # pass through factory 
   ### This method handles the case that no actual construction is necessary since
-  ### the argument is already of a subclass of DecompOp 
+  ### the argument is already of a subclass of DecompOp.
+  ### See the \code{subclasses} section of \code{\link{DecompOp-class}}
   ##<<details This is useful to simplify argument handling of functions which rely on 
   ## the presence of a DecompOp. 
   ## Due to this method those functions can always
