@@ -20,4 +20,5 @@ interpolation)}
 }
 \section{Methods}{	\code{\link{TimeMap,data.frame,missing,missing,ANY,ANY-method}}\cr
 	\code{\link{TimeMap,function,numeric,numeric,ANY,ANY-method}}\cr
+	\code{\link{TimeMap,list,ANY,ANY,ANY,ANY-method}}\cr
 	\code{\link{TimeMap,missing,missing,missing,array,numeric-method}}\cr}

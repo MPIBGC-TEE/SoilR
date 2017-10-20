@@ -8,5 +8,6 @@
 }
 \section{Methods}{	\code{\link{GeneralDecompOp,DecompOp-method}}\cr
 	\code{\link{GeneralDecompOp,function-method}}\cr
+	\code{\link{GeneralDecompOp,list-method}}\cr
 	\code{\link{GeneralDecompOp,matrix-method}}\cr
 	\code{\link{GeneralDecompOp,TimeMap-method}}\cr}

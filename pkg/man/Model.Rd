@@ -42,16 +42,16 @@ pass=FALSE)}
   I_ConstInFlux  =SoilR:::example.2DConstInFluxFromVector()
     # We can build a lot of  models from the possible combinations
 	   
-     #Model(t=times,A=GeneralDecompOp(A_matrix_func),ivList=iv,inputFluxes=I_vec) 
      Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec) 
-  models <- list()
+
+	models <- list()
       models <- append(models,Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_vec)) 
       models <- append(models,Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_BoundInFlux)) 
       models <- append(models,Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_ConstInFlux)) 
 
-      #models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec)) 
-      #models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_BoundInFlux)) 
-      #models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_ConstInFlux)) 
+      models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec)) 
+      models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_BoundInFlux)) 
+      models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_ConstInFlux)) 
 
       models <- append(models,Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_vec)) 
       models <- append(models,Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_BoundInFlux)) 

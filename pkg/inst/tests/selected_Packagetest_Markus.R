@@ -5,7 +5,7 @@ require('SoilR')
 alltests <- defineTestSuite(
    name="allTests",
    dirs=c(".","protected","automatic","requireSoilR"),
-   testFileRegexp = "^runit.all_possible_Model_arguments.R$",
+   testFileRegexp = "^runit.all_possible_GeneralDecompOp_arguments.R$",
    testFuncRegexp = "^test.*",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
