@@ -9,4 +9,5 @@
 \section{Methods}{	\code{\link{getTimeRange,ConstInFlux-method}}\cr
 	\code{\link{getTimeRange,ConstLinDecompOp-method}}\cr
 	\code{\link{getTimeRange,DecompositionOperator-method}}\cr
-	\code{\link{getTimeRange,TimeMap-method}}\cr}
+	\code{\link{getTimeRange,TimeMap-method}}\cr
+	\code{\link{getTimeRange,UnBoundLinDecompOp-method}}\cr}

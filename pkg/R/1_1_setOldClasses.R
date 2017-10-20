@@ -1,1 +1,2 @@
 setOldClass('matrix')
+setOldClass('function')

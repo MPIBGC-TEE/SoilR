@@ -93,6 +93,7 @@ bind.C14curves,
 GeneralDecompOp,
 ConstLinDecompOp,
 BoundLinDecompOp,
+UnBoundLinDecompOp,
 BoundFc,
 Model,
 Model_14,
@@ -103,17 +104,13 @@ TimeMap,
 CenturyModel,
 systemAge,
 transitTime,
-cycling
-,
-example.2DBoundInFluxFromFunction
-#,
-#example.2DConstInFluxFromVector
-#,
-#example.ConstlinDecompOpFromMatrix
-#,
-#example.2DBoundInFluxFromFunction
-#,
-#example.TimeMapFromArray
+cycling ,
+example.2DBoundInFluxFromFunction ,
+example.2DConstInFluxFromVector ,
+example.ConstlinDecompOpFromMatrix ,
+example.TimeMapFromArray,
+example.2DBoundLinDecompOpFromFunction,
+example.2DUnBoundLinDecompOpFromFunction
 )
 exportClasses(
 NlModel,
@@ -122,6 +119,7 @@ Model_14,
 TimeMap,
 ConstLinDecompOp,
 BoundLinDecompOp,
+UnBoundLinDecompOp,
 DecompositionOperator,
 DecompOp,
 ConstFc,

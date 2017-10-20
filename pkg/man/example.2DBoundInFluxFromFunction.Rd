@@ -5,3 +5,5 @@
 }
 \description{Create a 2-dimensionsonal example of a BoundInflux object}
 \title{example.2DBoundInFluxFromFunction}
+\value{The returned object represents a time dependentinflux into 
+a two pool model.}

@@ -13,4 +13,5 @@ endtime)}
 \section{Methods}{	\code{\link{BoundLinDecompOp,ConstLinDecompOp,missing,missing-method}}\cr
 	\code{\link{BoundLinDecompOp,data.frame,missing,missing-method}}\cr
 	\code{\link{BoundLinDecompOp,function,numeric,numeric-method}}\cr
-	\code{\link{BoundLinDecompOp,TimeMap,missing,missing-method}}\cr}
+	\code{\link{BoundLinDecompOp,TimeMap,missing,missing-method}}\cr
+	\code{\link{BoundLinDecompOp,UnBoundLinDecompOp,missing,missing-method}}\cr}

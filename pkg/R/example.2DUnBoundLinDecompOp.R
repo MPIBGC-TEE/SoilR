@@ -1,6 +1,6 @@
 
 # vim:set ff=unix ts=2 sw=2:
-example.BoundLinDecompOpFromFunction <- function (){
+example.2DUnBoundLinDecompOpFromFunction <- function (){
 	# The constructor BoundLinDecompOp has several Methods.
 	# A single Matrix can describe a constant linear decomposition operator.
 	# If the matrix varies with time it becomes a matrix valued function of time
@@ -15,6 +15,7 @@ example.BoundLinDecompOpFromFunction <- function (){
 		)
 	}
 	# which is valid on a certain interval of time.
+	res <- UnBoundLinDecompOp(matFunc)
 
-	return(BoundLinDecompOp(matFunc,0,10))
+	return(res)
 }

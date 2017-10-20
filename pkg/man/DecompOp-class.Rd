@@ -23,6 +23,7 @@ called constructors. (see the constructors section of this help page)}
 	\code{\link{BoundLinDecompOp-class}}\cr
 	\code{\link{DecompositionOperator-class}}\cr
 	\code{\link{ConstLinDecompOp-class}}\cr
+	\code{\link{UnBoundLinDecompOp-class}}\cr
 }}
 \section{Constructors}{The class is abstract ( \code{contains "VIRTUAL"}).
            It can therefore not be instanciated directly.

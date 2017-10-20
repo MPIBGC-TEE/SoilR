@@ -549,6 +549,15 @@ setGeneric(
 	 }
 )
 setGeneric(
+	 name="UnBoundLinDecompOp",
+	 def=function # Generic constructor
+	 ### Creates a time dependent decomposition Operator object. 
+	 (matFunc)
+	 {
+	     standardGeneric("UnBoundLinDecompOp")
+	 }
+)
+setGeneric(
 	 name="BoundLinDecompOp",
 	 def=function # Generic constructor
 	 ### Creates a LinearDecompositonOperator from different sources.

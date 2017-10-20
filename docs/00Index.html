@@ -39,6 +39,7 @@
 <a href="#R">R</a>
 <a href="#S">S</a>
 <a href="#T">T</a>
+<a href="#U">U</a>
 <a href="#Y">Y</a>
 <a href="#misc">misc</a>
 </p>
@@ -110,6 +111,8 @@
 <td>BoundLinDecompOp,data.frame,missing,missing-method</td></tr>
 <tr><td style="width: 25%;"><a href="BoundLinDecompOp-method_40455c2f.html">BoundLinDecompOp-method</a></td>
 <td>BoundLinDecompOp,ConstLinDecompOp,missing,missing-method</td></tr>
+<tr><td style="width: 25%;"><a href="BoundLinDecompOp-method_46f0c734.html">BoundLinDecompOp-method</a></td>
+<td>BoundLinDecompOp,UnBoundLinDecompOp,missing,missing-method</td></tr>
 <tr><td style="width: 25%;"><a href="BoundLinDecompOp-method_a817d759.html">BoundLinDecompOp-method</a></td>
 <td>BoundLinDecompOp,function,numeric,numeric-method</td></tr>
 <tr><td style="width: 25%;"><a href="BoundLinDecompOp-method_f1c3af50.html">BoundLinDecompOp-method</a></td>
@@ -169,6 +172,18 @@
 <td>Soil CO2 efflux from an incubation experiment</td></tr>
 <tr><td style="width: 25%;"><a href="euler.html">euler</a></td>
 <td>euler</td></tr>
+<tr><td style="width: 25%;"><a href="example.2DBoundInFluxFromFunction.html">example.2DBoundInFluxFromFunction</a></td>
+<td>example.2DBoundInFluxFromFunction</td></tr>
+<tr><td style="width: 25%;"><a href="example.2DBoundLinDecompOpFromFunction.html">example.2DBoundLinDecompOpFromFunction</a></td>
+<td>example.2DBoundLinDecompOpFromFunction</td></tr>
+<tr><td style="width: 25%;"><a href="example.2DConstInFluxFromVector.html">example.2DConstInFluxFromVector</a></td>
+<td>2D example for constant Influx</td></tr>
+<tr><td style="width: 25%;"><a href="example.2DUnBoundLinDecompOpFromFunction.html">example.2DUnBoundLinDecompOpFromFunction</a></td>
+<td>example.2DUnBoundLinDecompOpFromFunction</td></tr>
+<tr><td style="width: 25%;"><a href="example.ConstlinDecompOpFromMatrix.html">example.ConstlinDecompOpFromMatrix</a></td>
+<td>example.ConstlinDecompOpFromMatrix</td></tr>
+<tr><td style="width: 25%;"><a href="example.TimeMapFromArray.html">example.TimeMapFromArray</a></td>
+<td>create an example TimeFrame from 3D array</td></tr>
 </table>
 
 <h2><a name="F">-- F --</a></h2>
@@ -231,6 +246,8 @@
 <td>GeneralDecompOp S4 generic</td></tr>
 <tr><td style="width: 25%;"><a href="GeneralDecompOp-method_7354b0d1.html">GeneralDecompOp-method</a></td>
 <td>GeneralDecompOp,TimeMap-method</td></tr>
+<tr><td style="width: 25%;"><a href="GeneralDecompOp-method_763e1748.html">GeneralDecompOp-method</a></td>
+<td>GeneralDecompOp,function-method</td></tr>
 <tr><td style="width: 25%;"><a href="GeneralDecompOp-method_82b08959.html">GeneralDecompOp-method</a></td>
 <td>GeneralDecompOp,DecompOp-method</td></tr>
 <tr><td style="width: 25%;"><a href="GeneralDecompOp-method_9345d047.html">GeneralDecompOp-method</a></td>
@@ -297,6 +314,8 @@
 <td>getFunctionDefinition,TimeMap-method</td></tr>
 <tr><td style="width: 25%;"><a href="getFunctionDefinition-method_9b59a0e0.html">getFunctionDefinition-method</a></td>
 <td>getFunctionDefinition,ConstInFlux-method</td></tr>
+<tr><td style="width: 25%;"><a href="getFunctionDefinition-method_b4f16639.html">getFunctionDefinition-method</a></td>
+<td>getFunctionDefinition,UnBoundLinDecompOp-method</td></tr>
 <tr><td style="width: 25%;"><a href="getFunctionDefinition-method_df5be75f.html">getFunctionDefinition-method</a></td>
 <td>getFunctionDefinition,ConstLinDecompOp-method</td></tr>
 <tr><td style="width: 25%;"><a href="getMeanTransitTime.html">getMeanTransitTime</a></td>
@@ -321,6 +340,8 @@
 <td>getTimeRange,TimeMap-method</td></tr>
 <tr><td style="width: 25%;"><a href="getTimeRange-method_9b59a0e0.html">getTimeRange-method</a></td>
 <td>getTimeRange,ConstInFlux-method</td></tr>
+<tr><td style="width: 25%;"><a href="getTimeRange-method_b4f16639.html">getTimeRange-method</a></td>
+<td>getTimeRange,UnBoundLinDecompOp-method</td></tr>
 <tr><td style="width: 25%;"><a href="getTimeRange-method_df5be75f.html">getTimeRange-method</a></td>
 <td>getTimeRange,ConstLinDecompOp-method</td></tr>
 <tr><td style="width: 25%;"><a href="getTimes.html">getTimes</a></td>
@@ -455,10 +476,12 @@
 <td>TimeMap S4 generic</td></tr>
 <tr><td style="width: 25%;"><a href="TimeMap-class.html">TimeMap-class</a></td>
 <td>TimeMap S4 class</td></tr>
-<tr><td style="width: 25%;"><a href="TimeMap-method_1e2d556.html">TimeMap-method</a></td>
-<td>TimeMap,data.frame,missing,missing-method</td></tr>
-<tr><td style="width: 25%;"><a href="TimeMap-method_a817d759.html">TimeMap-method</a></td>
-<td>TimeMap,function,numeric,numeric-method</td></tr>
+<tr><td style="width: 25%;"><a href="TimeMap-method_485c0371.html">TimeMap-method</a></td>
+<td>TimeMap,function,numeric,numeric,ANY,ANY-method</td></tr>
+<tr><td style="width: 25%;"><a href="TimeMap-method_98289b46.html">TimeMap-method</a></td>
+<td>TimeMap,missing,missing,missing,array,numeric-method</td></tr>
+<tr><td style="width: 25%;"><a href="TimeMap-method_bfe62da6.html">TimeMap-method</a></td>
+<td>TimeMap,data.frame,missing,missing,ANY,ANY-method</td></tr>
 <tr><td style="width: 25%;"><a href="TimeMap.from.Dataframe.html">TimeMap.from.Dataframe</a></td>
 <td>TimeMap.from.Dataframe</td></tr>
 <tr><td style="width: 25%;"><a href="TimeMap.new.html">TimeMap.new</a></td>
@@ -483,6 +506,17 @@
 <td>Implementation of a two pool model with series structure</td></tr>
 <tr><td style="width: 25%;"><a href="TwopSeriesModel14.html">TwopSeriesModel14</a></td>
 <td>Implementation of a two-pool C14 model with series structure</td></tr>
+</table>
+
+<h2><a name="U">-- U --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="UnBoundLinDecompOp.html">UnBoundLinDecompOp</a></td>
+<td>UnBoundLinDecompOp S4 generic</td></tr>
+<tr><td style="width: 25%;"><a href="UnBoundLinDecompOp-class.html">UnBoundLinDecompOp-class</a></td>
+<td>constant decomposition operator</td></tr>
+<tr><td style="width: 25%;"><a href="UnBoundLinDecompOp-method_763e1748.html">UnBoundLinDecompOp-method</a></td>
+<td>UnBoundLinDecompOp,function-method</td></tr>
 </table>
 
 <h2><a name="Y">-- Y --</a></h2>

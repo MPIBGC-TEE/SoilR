@@ -10,4 +10,5 @@
 	\code{\link{getFunctionDefinition,ConstLinDecompOp-method}}\cr
 	\code{\link{getFunctionDefinition,DecompositionOperator-method}}\cr
 	\code{\link{getFunctionDefinition,TimeMap-method}}\cr
-	\code{\link{getFunctionDefinition,TransportDecompositionOperator-method}}\cr}
+	\code{\link{getFunctionDefinition,TransportDecompositionOperator-method}}\cr
+	\code{\link{getFunctionDefinition,UnBoundLinDecompOp-method}}\cr}

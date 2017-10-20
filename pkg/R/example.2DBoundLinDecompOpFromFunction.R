@@ -1,6 +1,6 @@
 
 # vim:set ff=unix ts=2 sw=2:
-example.BoundLinDecompOpFromFunction <- function (){
+example.2DBoundLinDecompOpFromFunction <- function (){
 	# The constructor BoundLinDecompOp has several Methods.
 	# A single Matrix can describe a constant linear decomposition operator.
 	# If the matrix varies with time it becomes a matrix valued function of time

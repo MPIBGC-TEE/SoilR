@@ -255,22 +255,23 @@ Model<-function #Constructor for class \link{Model-class}
   ## To see example scenarios for parameter check look at:
   ## \Sexpr[echo=TRUE,keep.source=TRUE,stage=render,results=verbatim]{system.file('tests','runit.correctness_of_Model.R',package='SoilR')}
 
-  #seealso<< \code{\link{example.2DBoundInFluxFromFunction}},
-  # \code{\link{example.2DConstInFluxFromVector}},
-  # \code{\link{example.ConstlinDecompOpFromMatrix}},
-  # \code{\link{example.2DBoundInFluxFromFunction}},
-  # \code{\link{example.TimeMapFromArray}}
   
   
      obj=new(Class="Model",t,GeneralDecompOp(A),ivList,GeneralInFlux(inputFluxes),solverfunc,pass)
      return(obj)
      ### An object of class \link{Model-class} that can be queried by many methods 
      ### to be found there.
-     ##seealso<< This function is called by many of the \link{predefinedModels} 
+     ##seealso<< This function is called by many of the \link{predefinedModels}. \cr 
+     ##Package functions called in the examples:\cr
+     ##\code{\link{example.2DBoundInFluxFromFunction}},\cr
+     ##\code{\link{example.2DConstInFluxFromVector}},\cr
+     ##\code{\link{example.ConstlinDecompOpFromMatrix}},\cr
+     ##\code{\link{example.2DBoundInFluxFromFunction}},\cr
+     ##\code{\link{example.TimeMapFromArray}}
 
      ##examples<<
      ##exampleFunctionsFromFiles<< 
-     ## inst/tests/runit.all_possible_Model_arguments.R test.all_possible_Model_arguments
+     ## inst/tests/requireSoilR/runit.all_possible_Model_arguments.R test.all_possible_Model_arguments
   }
 #)
      ## #inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
