@@ -10,7 +10,6 @@ package_tests <- defineTestSuite(
    # )
    #,
    dirs=c("protected","requireSoilR"),
-   #dirs=file.path(path.package(package="SoilR"), "tests","protected"),
    testFileRegexp = "^runit.+\\.[rR]",
    testFuncRegexp = "^test.+",
    rngKind = "Marsaglia-Multicarry",
