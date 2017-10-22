@@ -110,6 +110,7 @@ example.2DConstInFluxFromVector ,
 example.ConstlinDecompOpFromMatrix ,
 example.TimeMapFromArray,
 example.2DBoundLinDecompOpFromFunction,
+example.nestedTime2DMatrixList,
 example.2DUnBoundLinDecompOpFromFunction
 )
 exportClasses(
