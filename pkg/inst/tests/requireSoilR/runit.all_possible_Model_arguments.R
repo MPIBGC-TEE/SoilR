@@ -20,7 +20,11 @@ test.all_possible_Model_arguments <- function(){
   # Let us first look at the choeices for argument 'A'.
 
   A_matrix             <- matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2))
-  A_matrix_func				 <- function(t){matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2*(sin(t)+2)))}
+  A_matrix_func				 <- function(t){
+														matrix(
+															nrow=2,
+															byrow=TRUE,
+															c(-0.1,0,0,-0.2*(sin(t)+2)))}
   A_TimeMap            <- example.TimeMapFromArray()
   A_ConstlinDecompOp   <- example.ConstlinDecompOpFromMatrix()
   A_BoundLinDecompOp   <- example.2DBoundLinDecompOpFromFunction()
