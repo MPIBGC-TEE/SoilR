@@ -1,6 +1,6 @@
 
 # vim:set ff=unix ts=2 sw=2:
-example.TimeMapFromArray <- function # create an example TimeFrame from 3D array
+example.nestedTime3DArrayList <- function # create an example TimeFrame from 3D array
 (){
 # We could also imagine time series data stored in an array consisting of
 	# many stacked matrices, one for each time step.
@@ -12,5 +12,6 @@ example.TimeMapFromArray <- function # create an example TimeFrame from 3D array
 	a[2,1,] <-  0
 	a[1,2,] <-  0
 	a[2,2,] <- -0.2*(sin(times)+1.2)
-  return(TimeMap(data=a,times=times))
+
+  return(list(data=a,times=times))
 }
