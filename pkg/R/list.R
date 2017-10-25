@@ -55,3 +55,46 @@ setMethod(
 		TimeMap(map=arrFunc,min(times),max(times))
   }
 )
+############################################################################
+#setMethod(
+#    f="TimeMap",
+#    signature=c(
+#    map="missing",
+#    starttime="missing",
+#    endtime="missing",
+#    data='array',
+#    times='numeric'
+#    ),
+#    definition=function # constructor
+#    ### create a  TimeMap object from an array and a numeric vector of times
+#    (data, ### the lastdimension  is considered to correspond to time 
+#     ### the n-1 dimensions before represent n-1 dimensional array , each for each times step. 
+#    times,  ### a vector of times 
+#    lag=0 ##<< delay 
+#    ){
+#	dims <- dim(data)
+#	n <- dims[[1]]
+#	if (n!=dims[[2]]){
+#		stop(
+#			sprintf('The first two dimensions of the array must be equal.	Your array has dimensions: %s.',dims))
+#	}
+#	funcs <- list()
+#	for(i in 1:n){
+#		for(j in 1:n){
+#			index=sprintf('%s_%s',i,j)
+#			funcs[[index]] <- splinefun(times,data[i,j,])
+#		}
+#	}
+#	matFunc <- function(t){
+#		mat <- matrix(nrow=n,ncol=n)
+#		for(i in 1:n){
+#			for(j in 1:n){
+#				index=sprintf('%s_%s',i,j)
+#				mat[i,j] <- funcs[[index]](t)
+#			}
+#		}
+#		return(mat)
+#	}
+#    new("TimeMap",map=matFunc,starttime=min(times),endtime=max(times))
+#  }
+#)

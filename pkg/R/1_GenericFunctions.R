@@ -468,8 +468,6 @@ setGeneric(
 	   map,
 	   starttime,
 	   endtime,
-     data,
-     times,
 	   lag,
 	   interpolation)
 	 {

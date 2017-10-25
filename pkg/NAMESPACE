@@ -111,7 +111,8 @@ example.ConstlinDecompOpFromMatrix ,
 example.TimeMapFromArray,
 example.2DBoundLinDecompOpFromFunction,
 example.nestedTime2DMatrixList,
-example.2DUnBoundLinDecompOpFromFunction
+example.2DUnBoundLinDecompOpFromFunction,
+example.Time3DArrayList
 )
 exportClasses(
 NlModel,
