@@ -21,7 +21,7 @@ test.all_possible_Model_arguments <- function(){
 
   A_matrix             <- matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2))
   A_matrix_func				 <- function(t){matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2*(sin(t)+2)))}
-  A_TimeMap            <- TimeMap(example.Time3DArrayList())
+  #A_TimeMap            <- TimeMap(example.Time3DArrayList())
   A_TimeMap						 <- TimeMap(example.nestedTime2DMatrixList())
   A_ConstlinDecompOp   <- example.ConstlinDecompOpFromMatrix()
   A_BoundLinDecompOp   <- example.2DBoundLinDecompOpFromFunction()
