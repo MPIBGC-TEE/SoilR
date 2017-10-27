@@ -3,7 +3,7 @@
 \alias{UnBoundLinDecompOp-class}
 \docType{class}
 \section{Methods}{  \describe{
-    \item{BoundLinDecompOp}{\code{signature(map = "UnBoundLinDecompOp", starttime = "missing", endtime = "missing")}: ... } \code{\link{BoundLinDecompOp,UnBoundLinDecompOp,missing,missing-method}}
+    \item{BoundLinDecompOp}{\code{signature(map = "UnBoundLinDecompOp", starttime = "ANY", endtime = "ANY")}: ... } \code{\link{BoundLinDecompOp,UnBoundLinDecompOp,ANY,ANY-method}}
     \item{getFunctionDefinition}{\code{signature(object = "UnBoundLinDecompOp")}: ... } \code{\link{getFunctionDefinition,UnBoundLinDecompOp-method}}
     \item{getTimeRange}{\code{signature(object = "UnBoundLinDecompOp")}: ... } \code{\link{getTimeRange,UnBoundLinDecompOp-method}}
 	 }}

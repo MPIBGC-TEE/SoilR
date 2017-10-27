@@ -27,28 +27,10 @@ setClass(# Objects containing the atmospheric 14C fraction and the format it is 
       format="character" 
    )
 )
-    #,validity=correctnessOfBoundFc #set the validating function
-setMethod(
-    f="initialize",
-    signature="BoundFc",
-    definition=function #internal constructor (new)
-    ### The function is probably called internally only but used by all other constructors
-    ### It calls a sanity check on its arguments and initialized the object 
-    (.Object,map=function(t){t},starttime=numeric(),endtime=numeric(),lag=0,format="Delta14C",interpolation=splinefun){
-    #cat("-initializer at work-\n")
-    .Object@map=map
-    .Object@starttime=starttime
-    .Object@endtime=endtime
-    .Object@lag=lag
-    .Object@format=format
-    correctnessOfBoundFc(.Object)
-    return(.Object)
-    }
-)
 #------------------------ Constructors ---------------------------------
 setMethod(
   f="BoundFc",
-  signature=c(map="ANY",format="character"),
+  signature=c(map="ANY"),
   definition=function # constructor
   ### the method constructs an object from a function a timerange where it is valid and a format  
 (
@@ -68,7 +50,7 @@ setMethod(
 #------------------------ Constructors ---------------------------------
 setMethod(
   f="BoundFc",
-  signature=c(map="ANY",starttime='missing',endtime='missing',format="character"),
+  signature=c(map="ANY",starttime='missing',endtime='missing'),
   definition=function # constructor
   ### the method constructs an object from a function a timerange where it is valid and a format  
 (

@@ -560,7 +560,11 @@ setGeneric(
 	 def=function # Generic constructor
 	 ### Creates a LinearDecompositonOperator from different sources.
 	 ### Please look at the methods to see what kind of input is supported. 
-	 (map,starttime,endtime)
+	 (map,
+    starttime,
+    endtime,
+    lag,
+    interpolation)
 	 {
 	     standardGeneric("BoundLinDecompOp")
 	 }

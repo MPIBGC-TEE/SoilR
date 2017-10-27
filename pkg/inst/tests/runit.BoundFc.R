@@ -6,13 +6,6 @@ createDf=function(){
    tframe=data.frame(times=t,inputrates=inp)
    tframe
 }
-test.BoundFc_initialize=function(){
-   tstart=0
-   tend=0
-   f=function(t){2*t}
-   # test initializers
-   obj=new(Class="BoundFc",f,tstart,tend) 
-}
 #---------------------------------------------------------------------
 #                      constructors wiht dataframe
 #---------------------------------------------------------------------

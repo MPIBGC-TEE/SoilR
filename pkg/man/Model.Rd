@@ -29,7 +29,8 @@ pass=FALSE)}
 
   A_matrix             <- matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2))
   A_matrix_func				 <- function(t){matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2*(sin(t)+2)))}
-  A_TimeMap            <- example.TimeMapFromArray()
+  #A_TimeMap            <- TimeMap(example.Time3DArrayList())
+  A_TimeMap						 <- TimeMap(example.nestedTime2DMatrixList())
   A_ConstlinDecompOp   <- example.ConstlinDecompOpFromMatrix()
   A_BoundLinDecompOp   <- example.2DBoundLinDecompOpFromFunction()
   A_UnBoundLinDecompOp   <- example.2DUnBoundLinDecompOpFromFunction()
@@ -44,26 +45,42 @@ pass=FALSE)}
 	   
      Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec) 
 
-	models <- list()
-      models <- append(models,Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_vec)) 
-      models <- append(models,Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_BoundInFlux)) 
-      models <- append(models,Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_ConstInFlux)) 
+	models <- list(
+    Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_vec)
+		,
+    Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_BoundInFlux)
+		,
+    Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_ConstInFlux)
+		,
 
-      models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec)) 
-      models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_BoundInFlux)) 
-      models <- append(models,Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_ConstInFlux)) 
+    Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec)
+		,
+    Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_BoundInFlux)
+		,
+    Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_ConstInFlux)
+		
+		,
 
-      models <- append(models,Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_vec)) 
-      models <- append(models,Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_BoundInFlux)) 
-      models <- append(models,Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_ConstInFlux)) 
+    Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_vec)
+		,
+    #Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_BoundInFlux)
+		#,
+    #Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_ConstInFlux)
+		#,
 
-      models <- append(models,Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_vec)) 
-      models <- append(models,Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_BoundInFlux)) 
-      models <- append(models,Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_ConstInFlux)) 
+    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_vec)
+		,
+    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_BoundInFlux)
+		,
+    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_ConstInFlux)
+		,
 
-      models <- append(models,Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_vec)) 
-      models <- append(models,Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_BoundInFlux)) 
-      models <- append(models,Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_ConstInFlux)) 
+    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_vec)
+		,
+    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_BoundInFlux)
+		,
+    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_ConstInFlux)
+		)
   # lets check that we can compute something# 
   lapply(models,getC)
   
