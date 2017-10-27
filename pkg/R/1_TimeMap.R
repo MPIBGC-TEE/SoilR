@@ -138,19 +138,6 @@ setMethod(
 #########################################################
 #converters
 #########################################################
-setMethod(
-      f="BoundInFlux",
-      signature=c("TimeMap","missing","missing","missing","missing"),
-      definition=function # convert to BoundInFlux
-      ### The method is used internally to convert TimeMap objects to BoundInFlux objects, since the use of TimeMap objects is now deprecated.
-      (map){
-      starttime=map@starttime
-      endtime=map@endtime
-      map=map@map
-      return(BoundInFlux(map,starttime,endtime))
-     }
-     )
-#########################################################
 # helpers (to be used also by child classes)
 #########################################################
 setMethod(

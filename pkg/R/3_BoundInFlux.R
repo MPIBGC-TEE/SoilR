@@ -27,7 +27,20 @@ setClass(
     lag="numeric"
    )
 )
-##------------------------------ constructors------------------------------------------
+##------------------------constructors------------------------------------
+#---------------------------------------------------------------------
+setMethod(
+      f="BoundInFlux",
+      signature=c("TimeMap","missing","missing"),
+      definition=function # convert to BoundInFlux
+      ### The method is used internally to convert TimeMap objects to BoundInFlux objects, since the use of TimeMap objects is now deprecated.
+      (map){
+      starttime=map@starttime
+      endtime=map@endtime
+      map=map@map
+      return(BoundInFlux(map,starttime,endtime))
+     }
+)
 #setMethod(
 #    f="initialize",
 #    signature="BoundInFlux",
