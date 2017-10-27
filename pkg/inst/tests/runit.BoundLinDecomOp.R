@@ -51,7 +51,7 @@ test.BoundLinDecomOp_init_from_matrixfunc=function(){
   # data automatically and stores the result in an Object of class "TimeMap".
   # BoundLinDecompOp has a method that accepts TimeMap Objects
   # so we do not have to construct the matrix valued function ourselves. 
-  tm <- TimeMap(data=a,times=times)
+  tm <- TimeMap(list(times=times,data=a))
   A_bl_tm <- BoundLinDecompOp(tm)
 }
 #----------------------------------------------------------
