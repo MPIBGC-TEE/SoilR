@@ -18,153 +18,36 @@ setClass(
    Class="BoundInFlux",
    contains=c("InFlux","TimeMap"),
    slots=list(
-	starttime="numeric"
-    ,
-	endtime="numeric"
-    ,
-    map="function"
-    ,
-    lag="numeric"
    )
+)
+#---------------------------------------------------------------------
+setMethod(
+      f="BoundInFlux",
+      signature=c(map="ANY",starttime='missing',endtime='missing'),
+      definition=function # constructor for BoundInFlux
+      ### The method internally calls \code{\link{TimeMap}} and expects
+      ### the same kind of map argument
+      (map){
+        
+        if (inherits(map,'TimeMap')){
+         tm <-map
+        }else{
+          tm <- TimeMap(map)
+        }
+      return(as(tm,'BoundInFlux'))
+     }
 )
 ##------------------------constructors------------------------------------
 #---------------------------------------------------------------------
 setMethod(
       f="BoundInFlux",
-      signature=c("TimeMap","missing","missing"),
+      signature=c("ANY"),
       definition=function # convert to BoundInFlux
       ### The method is used internally to convert TimeMap objects to BoundInFlux objects, since the use of TimeMap objects is now deprecated.
-      (map){
-      starttime=map@starttime
-      endtime=map@endtime
-      map=map@map
-      return(BoundInFlux(map,starttime,endtime))
+      (map,
+       starttime,
+       endtime
+       ){
+      return(as(TimeMap(map,starttime,endtime),'BoundInFlux'))
      }
 )
-#setMethod(
-#    f="initialize",
-#    signature="BoundInFlux",
-#    definition=function # internal constructor
-#    ### This mehtod is intended for internal use only, it may change with the internal representation of the class. In user code please use the generic constructor \code{\link{BoundInFlux}} instead.
-#    (.Object,starttime=numeric(),endtime=numeric(),map=function(t){t},lag=0){
-#    #cat("-initializer at work-\n")
-#    .Object@starttime=starttime
-#    .Object@endtime=endtime
-#    .Object@map=map
-#    .Object@lag=lag
-#    return(.Object)
-#    }
-#)
-setMethod(
-  f="BoundInFlux",
-  signature=c(
-    map="function",
-    starttime="numeric",
-    endtime="numeric",
-    lag="numeric",
-    interpolation="missing"
-  ),
-  definition=function # constructor 
-  ### the method constructs an object from its basic ingredients
-  (
-    map,
-    starttime,
-    endtime,
-    lag
-    ){
-    new("BoundInFlux",map=map,starttime=starttime,endtime=endtime,lag=lag)
-  }
-)
-setMethod(
-  f="BoundInFlux",
-  signature=c(map="function",starttime="numeric",endtime="numeric",lag="missing",interpolation="missing"),
-  definition=function # constructor 
-  ### the method constructs an object from its basic ingredients
-  (map,starttime,endtime){
-    BoundInFlux(map=map,starttime=starttime,endtime=endtime,lag=0)
-  }
-)
-setMethod(
-  f="BoundInFlux",
-  signature=c(
-    map="data.frame",
-    starttime="missing",
-    endtime="missing",
-    lag="numeric",
-    interpolation="function"
-  ),
-  definition=function #constructor
-  ### This function is another constructor of the class BoundInFlux.
-  (
-    map ,##<<A data frame; the first column is interpreted as time
-    lag, ##<< lag time
-    interpolation ##<< function used for interpolation
-  ){
-      # build dummy object
-      obj=new(Class="BoundInFlux")
-      # use the method inherited from TimeMap
-      obj=fromDataFrame(obj,map,lag=lag,interpolation=interpolation)
-      return(obj)
-  return(obj)
-  ### An object of class BoundInFlux that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag
-  }
-)
-
-setMethod(
-  f="BoundInFlux",
-  signature=c(
-    map="data.frame",
-    starttime="missing",
-    endtime="missing",
-    lag="missing",
-    interpolation="missing"),
-  definition=function #constructor
-  ### This function is another constructor of the class BoundInFlux.
-  (map##<<A data frame; the first column is interpreted as time
-   ){
-     obj=BoundInFlux(map=map,lag=0,interpolation=splinefun) 
-  return(obj)
-  ### An object of class BoundInFlux that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag
-  }
-)
-##-------------------------------------------other methods---------------------------------------------------
-#setMethod(
-#    f="as.character",
-#    signature="BoundInFlux",
-#    definition=function # convert BoundInFlux Objects to something printable.
-#    ### returns a string describing the object
-#    (x, ##<< An object 
-#     ...
-#     ){
-#        return(
-#            paste( class(x),
-#                  "(\n map=",
-#                  x@map,
-#                  "(\n starttime=",
-#                  x@starttime,
-#                  "\n endtime=",
-#                  x@endtime,
-#                  ")",
-#                  sep=""
-#            )
-#        )
-#    }
-#)    
-#setMethod(
-#    f="getTimeRange",
-#    signature="BoundInFlux",
-#    definition=function # time domain of the function
-#    ### The method returns a vector containing the start and end time where the intepolation is valid.
-#    ( object){
-#        return(
-#               c("t_min"=object@starttime,"t_max"=object@endtime))
-#    }
-#)
-#setMethod(
-#    f="getFunctionDefinition",
-#    signature="BoundInFlux",
-#    definition=function(object){
-#    ### extract the function definition (the R-function) from the BoundInFlux 
-#        return(object@map)
-#    }
-#)

@@ -4,14 +4,6 @@
 setClass(# a decomposition operator described by a matrix valued function of time
     Class="BoundLinDecompOp",
     contains=c("DecompOp","TimeMap"),   
-    #slots=list(
-    #map="function"
-    #,
-    #starttime="numeric"
-    #,
-    #endtime="numeric"
-    #) 
-    
    )
 #---------------------------------------------------------------------
 setMethod(
