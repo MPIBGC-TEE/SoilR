@@ -5,9 +5,10 @@ require('SoilR')
 alltests <- defineTestSuite(
    name="selected_Packagetest_Markus",
    dirs=c(".","protected","automatic","requireSoilR"),
-   testFileRegexp = "^runit.TimeMap.R",
+   #testFileRegexp = "^runit.TimeMap.R",
+   #testFileRegexp = "^runit.*.R",
    #testFileRegexp = "runit.all_possible_GeneralDecompOp_arguments.R",
-   #testFileRegexp = "runit.all_possible_Model_arguments.R",
+   testFileRegexp = "runit.all_possible_Model_arguments.R",
    testFuncRegexp = "^test.*",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
