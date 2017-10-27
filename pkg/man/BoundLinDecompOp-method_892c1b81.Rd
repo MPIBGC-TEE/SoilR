@@ -1,0 +1,13 @@
+\docType{methods}
+\name{BoundLinDecompOp,ANY,missing,missing-method}
+\title{BoundLinDecompOp,ANY,missing,missing-method}
+\alias{BoundLinDecompOp,ANY,missing,missing-method}
+\usage{\S4method{BoundLinDecompOp}{ANY,missing,missing}(map,
+lag=0,
+interpolation=splinefun)}
+\arguments{
+\item{map}{: of class ANY, anything that can be used as a single \code{map} parameter}
+\item{lag}{:  a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)}
+\item{interpolation}{:  the interpolation function to be used}
+}
+\description{Creates a BoundLinDecompOp Object. }

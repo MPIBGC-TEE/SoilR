@@ -27,6 +27,10 @@ if(BrowserNotRunning){
 	system(sprintf('%s %s &',browserBin,SoilR.lib.dir.html))
 	#system(sprintf('firefox %s/SoilR/html/00Index.html &',.libPaths()[1]))
 }
+succrm <- lapply(
+	list.files(git.hubs.docs.dir),
+	function(fp){file.remove(fp)}
+)
 succall <- lapply(
 	list.files(full.names=TRUE,SoilR.lib.dir.html)
 	,

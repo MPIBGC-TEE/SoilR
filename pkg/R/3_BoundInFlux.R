@@ -27,12 +27,15 @@ setMethod(
       definition=function # constructor for BoundInFlux
       ### The method internally calls \code{\link{TimeMap}} and expects
       ### the same kind of map argument
-      (map){
+      (map,
+       lag=0,
+       interpolation
+       ){
         
         if (inherits(map,'TimeMap')){
          tm <-map
         }else{
-          tm <- TimeMap(map)
+          tm <- TimeMap(map,lag=lag,interpolation=interpolation)
         }
       return(as(tm,'BoundInFlux'))
      }
@@ -46,8 +49,12 @@ setMethod(
       ### The method is used internally to convert TimeMap objects to BoundInFlux objects, since the use of TimeMap objects is now deprecated.
       (map,
        starttime,
-       endtime
+       endtime,
+       lag=0,
+       interpolation
        ){
-      return(as(TimeMap(map,starttime,endtime),'BoundInFlux'))
+        
+        obj <- as(TimeMap(map,starttime,endtime,lag=lag,interpolation=interpolation),"BoundInFlux")
+        return(obj)
      }
 )
