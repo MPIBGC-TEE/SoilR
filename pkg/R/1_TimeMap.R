@@ -139,19 +139,6 @@ setMethod(
 #converters
 #########################################################
 setMethod(
-      f="BoundLinDecompOp",
-      signature=c(map="TimeMap",starttime="missing",endtime="missing"),
-      definition=function # create a BoundLinDecompOp from a TimeMap
-      ### The method is used internally to convert TimeMap objects to BoundLinDecompOp where the use of TimeMap is now deprecated.
-      (map){
-      starttime=map@starttime
-      endtime=map@endtime
-      map=map@map
-      return(BoundLinDecompOp(map,starttime,endtime))
-     }
-     )
-#########################################################
-setMethod(
       f="BoundInFlux",
       signature=c("TimeMap","missing","missing","missing","missing"),
       definition=function # convert to BoundInFlux
@@ -208,10 +195,8 @@ TimeMap.new=function# deprecated constructor of the class TimeMap.
  t_end,   ##<<A number the end of the time domain where the function is valid
  f        ##<<The time dependent function definition (a function in R's sense)
  ){
-   warning("This function is going deprecated for 2 reasons:\n
-      1.) There are new more specialized classes to replace it.( BoundedInFlux,BoundedLinDecompOp)\n
-          Please consider one of those if this is what you need.
-      2.) Constructors for SoilR classes have been renamed consistently to the name of the class (NameOfClass( ) instead of NameOfClass.new() )
+   warning("This function is going deprecated because:\n
+      Constructors for SoilR classes have been renamed consistently to the name of the class (NameOfClass( ) instead of NameOfClass.new() )
           
    ")
    # delegate to new constructor

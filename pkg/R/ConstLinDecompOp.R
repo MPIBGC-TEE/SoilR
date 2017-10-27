@@ -60,17 +60,17 @@ setMethod(
         return( c("t_min"=-Inf,"t_max"=Inf))
     }
 )
-setMethod(
-      f="BoundLinDecompOp",
-      signature=c(map="ConstLinDecompOp",starttime="missing",endtime="missing"),
-      definition=function # convert a ConstLinDecompOp to a BoundLinDecompOp
-      ### The method creates a BoundLinDecompOp consisting of a constant time dependent function 
-      ### and the limits of its domain (starttime and endtime) set to -Inf and Inf respectively
-      (map){
-      f=getFunctionDefinition(map)
-      return(BoundLinDecompOp(starttime=-Inf,endtime=Inf,map=f))
-     }
-)
+#setMethod(
+#      f="BoundLinDecompOp",
+#      signature=c(map="ConstLinDecompOp",starttime="missing",endtime="missing"),
+#      definition=function # convert a ConstLinDecompOp to a BoundLinDecompOp
+#      ### The method creates a BoundLinDecompOp consisting of a constant time dependent function 
+#      ### and the limits of its domain (starttime and endtime) set to -Inf and Inf respectively
+#      (map){
+#      f=getFunctionDefinition(map)
+#      return(BoundLinDecompOp(starttime=-Inf,endtime=Inf,map=f))
+#     }
+#)
 setMethod(
   f= "getMeanTransitTime",
     signature= "ConstLinDecompOp",

@@ -62,12 +62,15 @@ setMethod(
 )
 setMethod(
       f="BoundLinDecompOp",
-      signature=c(map="UnBoundLinDecompOp",starttime="missing",endtime="missing"),
+      signature=c(map="UnBoundLinDecompOp"),
       definition=function # convert a UnBoundLinDecompOp to a BoundLinDecompOp
       ### The method creates a BoundLinDecompOp consisting of a constant time dependent function 
       ### and the limits of its domain (starttime and endtime) set to -Inf and Inf respectively
-      (map){
+      (map,
+       starttime=-Inf,
+       endtime=Inf
+       ){
       f=getFunctionDefinition(map)
-      return(BoundLinDecompOp(starttime=-Inf,endtime=Inf,map=f))
+      return(BoundLinDecompOp(map=f,starttime,endtime))
      }
 )
