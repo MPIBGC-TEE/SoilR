@@ -26,6 +26,7 @@ setClass(# Objects containing the atmospheric 14C fraction and the format it is 
     slots=list(
       format="character" 
    )
+)
     #,validity=correctnessOfBoundFc #set the validating function
 setMethod(
     f="initialize",
@@ -44,142 +45,50 @@ setMethod(
     return(.Object)
     }
 )
+#------------------------ Constructors ---------------------------------
+setMethod(
+  f="BoundFc",
+  signature=c(map="ANY",format="character"),
+  definition=function # constructor
+  ### the method constructs an object from a function a timerange where it is valid and a format  
+(
+    map, ##<< anything that can be used as a single \code{map} parameter 
+  starttime,  ##<< the point in time from which map is a valid representation 
+  endtime,    ##<< the point in time until which map is a valid representation
+  lag=0,        ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
+  format,     ##<< a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
+  interpolation=splinefun  ##<< the interpolation function to be used
+){
+    obj <- as(TimeMap(map,starttime,endtime,lag,interpolation),"BoundFc")
+    obj@format=format
+    correctnessOfBoundFc(obj)
+    return(obj)
+}
 )
 #------------------------ Constructors ---------------------------------
 setMethod(
   f="BoundFc",
-  signature=c(map="ANY",lag="numeric",format="character"),
+  signature=c(map="ANY",starttime='missing',endtime='missing',format="character"),
   definition=function # constructor
   ### the method constructs an object from a function a timerange where it is valid and a format  
 (
-  map,        ##<< a function of one argument (time) 
-  starttime,  ##<< the point in time from which map is a valid representation 
-  endtime,    ##<< the point in time until which map is a valid representation
-  lag,        ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
+    map, ##<< anything that can be used as a single \code{map} parameter 
+  lag=0,        ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
   format,     ##<< a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
   interpolation=splinefun  ##<< the interpolation function to be used
 ){
-  obj=new(
-    Class="BoundFc",
-    map=map,
-    starttime=starttime,
-    endtime=endtime,
-    lag=lag,
-    format=format,
-  ) 
-return(obj)
+    if (inherits(map,'TimeMap')){
+     tm <-map
+    }else{
+      tm <- TimeMap(map,lag=lag,interpolation=interpolation)
+    }
+    obj <- as(tm,"BoundFc")
+    obj@format=format
+    correctnessOfBoundFc(obj)
+    return(obj)
 }
 )
-#setMethod(
-#  f="BoundFc",
-#  signature=c(map="function",starttime="numeric",endtime="numeric",lag="numeric",format="character",interpolation="missing"),
-#  definition=function # constructor
-#  ### the method constructs an object from a function a timerange where it is valid and a format  
-#(
-#  map,        ##<< a function of one argument (time) 
-#  starttime,  ##<< the point in time from which map is a valid representation 
-#  endtime,    ##<< the point in time until which map is a valid representation
-#  lag,        ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
-#  format     ##<< a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
-#){
-#  obj=new(
-#    Class="BoundFc",
-#    map=map,
-#    starttime=starttime,
-#    endtime=endtime,
-#    lag=lag,
-#    format=format,
-#  ) 
-#return(obj)
-#}
-#)
-##---------------------------------------------------------------------------------------------------------
-##---------------------------------------------------------------------------------------------------------
-#setMethod(
-#  f="BoundFc",
-#  signature=c(map="function",starttime="numeric",endtime="numeric",lag="missing",format="character",interpolation="missing"),
-#  definition=function # constructor
-#  ### wrapper with the assumption lag=0
-#  (
-#    map, 
-#    starttime,
-#    endtime,
-#    format 
-#  ){
-#    return(BoundFc(map,starttime,endtime,lag=0,format))
-#    ### An object  that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag
-#  }
-#)
-##----------------------------- Constructors with dataframe -------------------------------------------------
-##---------------------------------------------------------------------------------------------------------
-#setMethod(
-#  f="BoundFc",
-#  signature=c(map="data.frame",starttime="missing",endtime="missing",lag="numeric",format="character",interpolation="function"),
-#  definition=function # constructor 
-#  ### the method constructs an object from a dataframe a timelag format using the given interpolating function
-#(
-#  map,            ##<<A data frame containing exactly two columns:
-#                  ## the first one is interpreted as time
-#                  ## the second one is interpreted as atmospheric C14 fraction in the format mentioned
-#  lag=0,          ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
-#  format,         ##<< a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
-#  interpolation=splinefun   ##<<A function that  returns a function  the default is splinefun. Other possible values are the linear interpolation approxfun or any self made function with the same interface.
-#){
-#   # build dummy object
-#   obj=new(Class="BoundFc")
-#   # use the method inherited from TimeMap
-#   obj=fromDataFrame(obj,map,lag=lag,interpolation=interpolation)
-#   obj@format=format
-#   return(obj)
-#### An object  that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag
-#}
-#)
-##---------------------------------------------------------------------------------------------------------
-#setMethod(
-#  f="BoundFc",
-#  signature=c(map="data.frame",starttime="missing",endtime="missing",lag="numeric",format="character",interpolation="missing"),
-#  definition=function # constructor
-#  ### wrapper  with the assumption interpolation =splinefun
-#(map, 
-#lag,
-#format 
-#){
-#   obj=BoundFc(map,lag=lag,format=format,interpolation=splinefun) 
-#return(obj)
-#}
-#)
-##---------------------------------------------------------------------------------------------------------
-#setMethod(
-#  f="BoundFc",
-#  signature=c(map="data.frame",starttime="missing",endtime="missing",lag="missing",format="character",interpolation="function"),
-#  definition=function # constructor 
-#  ### wrapper  with the assumption lag=0
-#(map, 
-#format, 
-#interpolation
-#){
-#   obj=BoundFc(map,lag=0,format=format,interpolation=interpolation) 
-#return(obj)
-#}
-#)
-##---------------------------------------------------------------------------------------------------------
-#setMethod(
-#  f="BoundFc",
-#  signature=c(map="data.frame",starttime="missing",endtime="missing",lag="missing",format="character",interpolation="missing"),
-#  definition=function # constructor 
-#  ### wrapper with the assumption lag=0 interpolation = splinefun
-#  ### Start- and end time are determined from the data.frame 
-#(map, 
-#format, 
-#interpolation
-#){
-#   obj=BoundFc(map,lag=0,format=format,interpolation=splinefun) 
-#return(obj)
-#}
-#)
-#----------------------------- end Constructors ------------------------------------------------------------------
 
-#---------------------------------------------------------------------------------------------------------
 setMethod(
     f="getFormat",
     signature="BoundFc",
