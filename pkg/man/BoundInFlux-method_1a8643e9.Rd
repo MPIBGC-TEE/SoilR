@@ -8,10 +8,10 @@ endtime,
 lag=0,
 interpolation)}
 \arguments{
-\item{map}{: of class ANY}
-\item{starttime}{: of class ANY}
-\item{endtime}{: of class ANY}
-\item{lag}{}
-\item{interpolation}{}
+\item{map}{: of class ANY, see the same argument in  \code{\link{TimeMap}}}
+\item{starttime}{: of class ANY, see the same argument in  \code{\link{TimeMap}}}
+\item{endtime}{: of class ANY, see the same argument in  \code{\link{TimeMap}}}
+\item{lag}{:  see the same argument in  \code{\link{TimeMap}}}
+\item{interpolation}{:  see the same argument in  \code{\link{TimeMap}}}
 }
 \description{The method is used internally to convert TimeMap objects to BoundInFlux objects, since the use of TimeMap objects is now deprecated.}

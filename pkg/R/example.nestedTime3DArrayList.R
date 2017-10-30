@@ -2,6 +2,7 @@
 # vim:set ff=unix ts=2 sw=2:
 example.nestedTime3DArrayList <- function # create an example TimeFrame from 3D array
 (){
+### An example used in tests and other examples.
 # We could also imagine time series data stored in an array consisting of
 	# many stacked matrices, one for each time step.
 	# Let us sythesize such a dataset:

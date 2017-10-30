@@ -1,7 +1,5 @@
 \name{example.ConstlinDecompOpFromMatrix}
 \alias{example.ConstlinDecompOpFromMatrix}
 \usage{example.ConstlinDecompOpFromMatrix()}
-\arguments{
-}
-\description{}
+\description{An example used in tests and other examples.}
 \title{example.ConstlinDecompOpFromMatrix}

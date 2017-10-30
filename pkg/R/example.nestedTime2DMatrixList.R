@@ -1,5 +1,6 @@
 
 # vim:set ff=unix ts=2 sw=2:
+### An example used in tests and other examples.
 example.nestedTime2DMatrixList <- function # create an example nested list that can be 
 (){
 # We could imagine time series data stored in an array consisting of

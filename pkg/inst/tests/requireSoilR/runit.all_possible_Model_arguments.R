@@ -1,5 +1,5 @@
 
-# vim:set ff=unix ts=2 sw=2:
+# vim:set ff=unix expandtab ts=2 sw=2:
 test.all_possible_Model_arguments <- function(){
   # This example shows different kinds of arguments to the function Model.
   # The model objects we will build will share some common features.
@@ -20,59 +20,63 @@ test.all_possible_Model_arguments <- function(){
   # Let us first look at the choeices for argument 'A'.
 
   A_matrix             <- matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2))
-  A_matrix_func				 <- function(t){matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2*(sin(t)+2)))}
+  A_matrix_func         <- function(t){
+                            matrix(nrow=2,
+                              byrow=TRUE,
+                              c(-0.1,0,0,-0.2*(sin(t)+2)))}
   #A_TimeMap            <- TimeMap(example.Time3DArrayList())
-  A_TimeMap						 <- TimeMap(example.nestedTime2DMatrixList())
+  A_TimeMap             <- TimeMap(example.nestedTime2DMatrixList())
   A_ConstlinDecompOp   <- example.ConstlinDecompOpFromMatrix()
   A_BoundLinDecompOp   <- example.2DBoundLinDecompOpFromFunction()
   A_UnBoundLinDecompOp   <- example.2DUnBoundLinDecompOpFromFunction()
   
   
-  # Since "Model" will call "GeneralInFlux" on its "inputFluxes" argument there are again different choices
+  # Since "Model" will call "GeneralInFlux" on its "inputFluxes" 
+  # argument there are again different choices
   
   I_vec          =c(5,6) 
   I_BoundInFlux  =SoilR:::example.2DBoundInFluxFromFunction()
   I_ConstInFlux  =SoilR:::example.2DConstInFluxFromVector()
     # We can build a lot of  models from the possible combinations
-	   
+     
      Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec) 
 
-	models <- list(
+  models <- list(
     Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_vec)
-		,
+    ,
     Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_BoundInFlux)
-		,
+    ,
     Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_ConstInFlux)
-		,
+    ,
 
     Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec)
-		,
+    ,
     Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_BoundInFlux)
-		,
+    ,
     Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_ConstInFlux)
-		
-		,
+    
+    ,
 
     Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_vec)
-		,
+    ,
     #Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_BoundInFlux)
-		#,
+    #,
     #Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_ConstInFlux)
-		#,
+    #,
 
     Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_vec)
-		,
+    ,
     Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_BoundInFlux)
-		,
+    ,
     Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_ConstInFlux)
-		,
+    ,
 
     Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_vec)
-		,
+    ,
     Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_BoundInFlux)
-		,
+    ,
     Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_ConstInFlux)
-		)
+    )
   # lets check that we can compute something# 
   lapply(models,getC)
   

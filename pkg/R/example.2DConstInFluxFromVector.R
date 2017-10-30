@@ -1,6 +1,6 @@
 
 # vim:set ff=unix ts=2 sw=2:
-### For testing and documenting purposes only
+### An example used in tests and other examples.
 example.2DConstInFluxFromVector <- function # 2D example  for constant Influx
 (){
   ConstInFlux(c(1,2))

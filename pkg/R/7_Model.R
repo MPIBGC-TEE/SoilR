@@ -269,7 +269,6 @@ Model<-function #Constructor for class \link{Model-class}
      ##\code{\link{example.2DBoundInFluxFromFunction}},\cr
      ##\code{\link{example.TimeMapFromArray}}
 
-     ##examples<<
      ##exampleFunctionsFromFiles<< 
      ## inst/tests/requireSoilR/runit.all_possible_Model_arguments.R test.all_possible_Model_arguments
   }

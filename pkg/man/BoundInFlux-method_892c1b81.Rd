@@ -6,9 +6,9 @@
 lag=0,
 interpolation)}
 \arguments{
-\item{map}{: of class ANY}
-\item{lag}{}
-\item{interpolation}{}
+\item{map}{: of class ANY, see the same argument in  \code{\link{TimeMap}}}
+\item{lag}{:  see the same argument in  \code{\link{TimeMap}}}
+\item{interpolation}{:  see the same argument in  \code{\link{TimeMap}}}
 }
 \description{The method internally calls \code{\link{TimeMap}} and expects
 the same kind of map argument}

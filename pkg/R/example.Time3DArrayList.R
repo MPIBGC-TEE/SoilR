@@ -1,5 +1,6 @@
 
 # vim:set ff=unix ts=2 sw=2:
+### An example used in tests and other examples.
 example.Time3DArrayList<- function # create an example TimeFrame from 3D array
 (){
 # We could also imagine time series data stored in an array consisting of
