@@ -23,10 +23,6 @@ res <- system2(command='pgrep',args=browserBin,stdout=TRUE)
 BrowserNotRunning <- is.element("status",names(attributes(res)))
 # start a new Browser tab only if it is not running
 SoilR.lib.dir.html <- sprintf('%s/SoilR/html/',.libPaths()[1])
-if(BrowserNotRunning){
-	system(sprintf('%s %s &',browserBin,SoilR.lib.dir.html))
-	#system(sprintf('firefox %s/SoilR/html/00Index.html &',.libPaths()[1]))
-}
 succrm <- lapply(
 	list.files(git.hubs.docs.dir),
 	function(fp){file.remove(fp)}
@@ -42,5 +38,9 @@ succ <- file.copy(
 	to=file.path(git.hubs.docs.dir,'index.html'),
 	overwrite=TRUE
 )
+if(BrowserNotRunning){
+	system(sprintf('%s %s/index.html &',browserBin,git.hubs.docs.dir))
+	#system(sprintf('firefox %s/SoilR/html/00Index.html &',.libPaths()[1]))
+}
 
 

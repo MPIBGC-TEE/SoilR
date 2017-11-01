@@ -214,7 +214,7 @@ setMethod(
 #    #"ANY"
 #  ),
 #  definition=function #general  constructor for class Model
-Model<-function #Constructor for class \link{Model-class} 
+Model <- function #Constructor for class \link{Model-class} 
   ### This function creates an object of class \link{Model-class}, 
   ### The arguments can be given in different form as long as they can 
   ### be converted to the necessary internal building blocks. 
@@ -222,9 +222,9 @@ Model<-function #Constructor for class \link{Model-class}
 
   (t,			##<< A vector containing the points in time where the solution is sought.
    A,			##<< something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\link{DecompOp-class}}. 
-   ivList,		##<< A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools .This is checked by an internal  function. 
+   ivList,		##<< A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools. This is checked by an internal  function. 
    inputFluxes, ##<<  something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \link{InFlux-class}.
-   solverfunc=deSolve.lsoda.wrapper,		##<< The function used to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
+   solverfunc=deSolve.lsoda.wrapper,		##<< The function used to actually solve the ODE system. The default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your own function that provides the same interface. 
    pass=FALSE  ##<< Forces the constructor to create the model even if it does not pass internal sanity checks  
    )
   {
@@ -240,7 +240,7 @@ Model<-function #Constructor for class \link{Model-class}
   ## explicitly with your arguments. 
   ## The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.
   ##
-  ## Note also that this functions checks its arguments quite elaborately 
+  ## Note also that this function checks its arguments quite elaborately 
   ## and tries to detect accidental unreasonable combinations, 
   ## especially concerning two kinds of error.
   ## \enumerate{
@@ -270,7 +270,7 @@ Model<-function #Constructor for class \link{Model-class}
      ##\code{\link{example.TimeMapFromArray}}
 
      ##exampleFunctionsFromFiles<< 
-     ## inst/tests/requireSoilR/runit.all_possible_Model_arguments.R test.all_possible_Model_arguments
+     ## inst/tests/requireSoilR/runit.all.possible.Model.arguments.R test.all.possible.Model.arguments
   }
 #)
      ## #inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
