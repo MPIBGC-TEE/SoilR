@@ -7,7 +7,7 @@ inputFluxes,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
 \examples{# examples from external files
-# inst/tests/requireSoilR/runit.all_possible_Model_arguments.R test.all_possible_Model_arguments:
+# inst/tests/requireSoilR/runit.all.possible.Model.arguments.R test.all.possible.Model.arguments:
 
   # This example shows different kinds of arguments to the function Model.
   # The model objects we will build will share some common features.
@@ -27,63 +27,80 @@ pass=FALSE)}
   # We demonstrate some of the possibilities here.
   # Let us first look at the choeices for argument 'A'.
 
-  A_matrix             <- matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2))
-  A_matrix_func         <- function(t){
+  A.matrix              <- matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2))
+  A.matrix.func         <- function(t){
                             matrix(nrow=2,
                               byrow=TRUE,
                               c(-0.1,0,0,-0.2*(sin(t)+2)))}
-  #A_TimeMap            <- TimeMap(example.Time3DArrayList())
-  A_TimeMap             <- TimeMap(example.nestedTime2DMatrixList())
-  A_ConstlinDecompOp   <- example.ConstlinDecompOpFromMatrix()
-  A_BoundLinDecompOp   <- example.2DBoundLinDecompOpFromFunction()
-  A_UnBoundLinDecompOp   <- example.2DUnBoundLinDecompOpFromFunction()
+  A.list.array          <- example.Time3DArrayList()
+  A.list.mat.list       <- example.nestedTime2DMatrixList()
+  # Model will convert these to the classes it uses internally but 
+  # you can also create these object explicitly, which in some situations
+  # gives you more control.
+  A.TimeMap             <- TimeMap(example.nestedTime2DMatrixList())
+  A.ConstlinDecompOp    <- example.ConstlinDecompOpFromMatrix()
+  A.BoundLinDecompOp    <- example.2DBoundLinDecompOpFromFunction()
+  A.UnBoundLinDecompOp  <- example.2DUnBoundLinDecompOpFromFunction()
   
   
   # Since "Model" will call "GeneralInFlux" on its "inputFluxes" 
   # argument there are again different choices
   
-  I_vec          =c(5,6) 
-  I_BoundInFlux  =SoilR:::example.2DBoundInFluxFromFunction()
-  I_ConstInFlux  =SoilR:::example.2DConstInFluxFromVector()
+  I.vec          =c(5,6) 
+  I.BoundInFlux  =SoilR:::example.2DBoundInFluxFromFunction()
+  I.ConstInFlux  =SoilR:::example.2DConstInFluxFromVector()
     # We can build a lot of  models from the possible combinations
      
-     Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec) 
+     Model(t=times,A=A.matrix.func,ivList=iv,inputFluxes=I.vec) 
 
   models <- list(
-    Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_vec)
+    Model(t=times,A=A.matrix,ivList=iv,inputFluxes=I.vec)
     ,
-    Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_BoundInFlux)
+    Model(t=times,A=A.matrix,ivList=iv,inputFluxes=I.BoundInFlux)
     ,
-    Model(t=times,A=A_matrix,ivList=iv,inputFluxes=I_ConstInFlux)
-    ,
-
-    Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_vec)
-    ,
-    Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_BoundInFlux)
-    ,
-    Model(t=times,A=A_matrix_func,ivList=iv,inputFluxes=I_ConstInFlux)
-    
+    Model(t=times,A=A.matrix,ivList=iv,inputFluxes=I.ConstInFlux)
     ,
 
-    Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_vec)
+    Model(t=times,A=A.matrix.func,ivList=iv,inputFluxes=I.vec)
     ,
-    #Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_BoundInFlux)
-    #,
-    #Model(t=times,A=A_TimeMap,ivList=iv,inputFluxes=I_ConstInFlux)
-    #,
-
-    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_vec)
+    Model(t=times,A=A.matrix.func,ivList=iv,inputFluxes=I.BoundInFlux)
     ,
-    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_BoundInFlux)
-    ,
-    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_ConstInFlux)
+    Model(t=times,A=A.matrix.func,ivList=iv,inputFluxes=I.ConstInFlux)
     ,
 
-    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_vec)
+    Model(t=times,A=A.list.mat.list,ivList=iv,inputFluxes=I.vec)
     ,
-    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_BoundInFlux)
+    Model(t=times,A=A.list.mat,ivList=iv,inputFluxes=I.BoundInFlux)
     ,
-    Model(t=times,A=A_ConstlinDecompOp,ivList=iv,inputFluxes=I_ConstInFlux)
+    Model(t=times,A=A.list.mat,ivList=iv,inputFluxes=I.ConstInFlux)
+    ,
+
+    Model(t=times,A=A.list.array,ivList=iv,inputFluxes=I.vec)
+    ,
+    Model(t=times,A=A.list.array,ivList=iv,inputFluxes=I.BoundInFlux)
+    ,
+    Model(t=times,A=A.list.array,ivList=iv,inputFluxes=I.ConstInFlux)
+    ,
+
+    Model(t=times,A=A.TimeMap,ivList=iv,inputFluxes=I.vec)
+    ,
+    Model(t=times,A=A.TimeMap,ivList=iv,inputFluxes=I.BoundInFlux)
+    ,
+    Model(t=times,A=A.TimeMap,ivList=iv,inputFluxes=I.ConstInFlux)
+    ,
+
+    Model(t=times,A=A.ConstlinDecompOp,ivList=iv,inputFluxes=I.vec)
+    ,
+    Model(t=times,A=A.ConstlinDecompOp,ivList=iv,inputFluxes=I.BoundInFlux)
+    ,
+    Model(t=times,A=A.ConstlinDecompOp,ivList=iv,inputFluxes=I.ConstInFlux)
+    ,
+
+    Model(t=times,A=A.ConstlinDecompOp,ivList=iv,inputFluxes=I.vec)
+    ,
+    Model(t=times,A=A.ConstlinDecompOp,ivList=iv,inputFluxes=I.BoundInFlux)
+    ,
+    Model(t=times,A=A.ConstlinDecompOp,ivList=iv,inputFluxes=I.ConstInFlux)
     )
   # lets check that we can compute something# 
   lapply(models,getC)
@@ -94,7 +111,7 @@ pass=FALSE)}
 \item{A}{something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\link{DecompOp-class}}.}
 \item{ivList}{A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools. This is checked by an internal  function.}
 \item{inputFluxes}{something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \link{InFlux-class}.}
-\item{solverfunc}{The function used to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}
+\item{solverfunc}{The function used to actually solve the ODE system. The default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your own function that provides the same interface.}
 \item{pass}{Forces the constructor to create the model even if it does not pass internal sanity checks}
 }
 \description{This function creates an object of class \link{Model-class}, 
@@ -113,7 +130,7 @@ and try to call the constructor of the desired subclass
 explicitly with your arguments. 
 The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.
 
-Note also that this functions checks its arguments quite elaborately 
+Note also that this function checks its arguments quite elaborately 
 and tries to detect accidental unreasonable combinations, 
 especially concerning two kinds of error.
 \enumerate{
