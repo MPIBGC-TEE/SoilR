@@ -6,5 +6,5 @@
 \arguments{
 \item{object}{: of class function}
 }
-\description{The resulting operator is creted by a call to the constructor of class
+\description{The resulting operator is created by a call to the constructor of class
 UnBoundLinDecompOp}

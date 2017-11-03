@@ -112,6 +112,8 @@ example.TimeMapFromArray,
 example.2DBoundLinDecompOpFromFunction,
 example.nestedTime2DMatrixList,
 example.2DUnBoundLinDecompOpFromFunction,
+example.2DInFlux.Args,
+example.2DGeneralDecompOpArgs,
 example.Time3DArrayList
 )
 exportClasses(

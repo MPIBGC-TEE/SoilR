@@ -17,8 +17,6 @@ return(obj)
 setClass(
    Class="BoundInFlux",
    contains=c("InFlux","TimeMap"),
-   slots=list(
-   )
 )
 #---------------------------------------------------------------------
 setMethod(

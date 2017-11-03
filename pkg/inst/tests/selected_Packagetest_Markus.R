@@ -7,8 +7,9 @@ alltests <- defineTestSuite(
    dirs=c(".","protected","automatic","requireSoilR"),
    #testFileRegexp = "^runit.TimeMap.R",
    #testFileRegexp = "^runit.*.R",
-   #testFileRegexp = "runit.all_possible_GeneralDecompOp_arguments.R",
-   testFileRegexp = "runit.all_possible_Model_arguments.R",
+   #testFileRegexp = "runit.all.possible.GeneralDecompOp.arguments.R",
+   #testFileRegexp = "runit.all.possible.GeneralInflux.arguments.R",
+   testFileRegexp = "runit.all.possible.Model.arguments.R",
    testFuncRegexp = "^test.*",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"

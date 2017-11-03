@@ -13,6 +13,7 @@ The most general form of influx supported up to now is a  vector valued function
 \section{Subclasses}{\describe{
 	\code{\link{BoundInFlux-class}}\cr
 	\code{\link{ConstInFlux-class}}\cr
+	\code{\link{UnBoundInFlux-class}}\cr
 }}
 \section{Constructors}{The class is abstract ( \code{contains "VIRTUAL"}).
            It can therefore not be instanciated directly.

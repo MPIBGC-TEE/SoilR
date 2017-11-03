@@ -484,6 +484,15 @@ setGeneric(
 	 }
 )
 setGeneric(
+	 name="UnBoundInFlux",
+	 def=function # Generic constructor
+	 ### Creates a time dependent decomposition Operator object. 
+	 (map)
+	 {
+	     standardGeneric("UnBoundInFlux")
+	 }
+)
+setGeneric(
 	 name="BoundInFlux",
 	 def=function # generic constructor
 	 ### create a BoundInFlux object from different sources

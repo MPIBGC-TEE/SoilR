@@ -1,9 +1,21 @@
 
 # vim:set ff=unix expandtab ts=2 sw=2:
+#-----------------------------------------------------------
+setMethod(
+  f="GeneralInFlux",
+  signature=signature(object="list"),
+  def=function # creates a BoundInFlux from a nested list of a times vector 
+  ### an a list of vectors(a vector for each time step)
+  ### The resulting object is created by a call to the constructor of class
+  ### BoundInFlux
+  (object){
+    BoundInFlux(TimeMap(object))
+  }
+)
+#-----------------------------------------------------------
 setMethod(
   f="GeneralDecompOp",
   signature=signature(object="list"),
-  #valueClass="BoundLinDecompOp",
   def=function # creates a BoundLinDecompOp from a nested list of a times vector 
   ### an a list of matrices (a matrix for each time step)
   ### The resulting operator is creted by a call to the constructor of class
@@ -16,10 +28,11 @@ setMethod(
 setMethod(
   f="TimeMap",
   signature=signature(map="list"),
-  #valueClass="BoundLinDecompOp",
   def=function # creates a TimeMap from a nested list of a times vector 
   ### an a list of matrices or vectors (one matrix or vector for each time step)
   (map){
+    print('map')
+    print(map)
 	  if (length(map)<2){
 	  	stop('Your list has to have at least 2 elements: a vector usually labeled "times" and a list of arrays or matrices.')
 	  }
@@ -45,24 +58,37 @@ setMethod(
       
 		  arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
     }else{
-      if(inherits(data,'array')){
+      if(inherits(data,'array')){ 
         dd <- dim(data)
         srcDim <-dd[1:(length(dd)-1)] 
 		    flatDim=prod(srcDim)
 		    arr <- array(dim=c(flatDim,lt),data=as.vector(data))
 		    targetClass <-'array'
       }else{
-        if(inherits(data,'numeric')){
-        srcDim <- 1
-		    flatDim=prod(srcDim)
-		    arr <- array(dim=c(flatDim,lt),data=data)
-		    targetClass <-'numeric'
+        if(inherits(data,'matrix')){
+          # R insists that a 2D array is a matrix and NOT an array which is extremely weierd
+          # checkout: inherits(array(dim=c(2,2),'array')) which yields FALSE since
+          # class(array(dim=c(2,2)) yields 'matrix' while 
+          # class(array(dim=c(2)) and class(array(dim=c(2,2,2)) both yield 'array'
+          # se we have to allow the class 'matrix' here for the array in case somebody tried to create 2D array 
+          # ending up with a matrix ...
+          srcDim <-c(dim(data)[[1]])
+		      flatDim=prod(srcDim)
+		      arr <- data
+		      targetClass <-'numeric'
         }else{
-          stop(
-            sprintf(
-              'The data element of the list must be a list an array or a vector but
-               you provided an object of class %s.',
-              class(data)))
+          if(inherits(data,'numeric')){
+          srcDim <- 1
+		      flatDim=prod(srcDim)
+		      arr <- array(dim=c(flatDim,lt),data=data)
+		      targetClass <-'numeric'
+          }else{
+            stop(
+              sprintf(
+                'The data element of the list must be a list an array, matrix or a vector but
+                 you provided an object of class %s.',
+                class(data)))
+          }
         }
       }
     }
@@ -70,6 +96,9 @@ setMethod(
 		# cut out a time line for every index in the flattene vector
 		funcs <- lapply(seq(flatDim),funcMaker)
 		arrFunc <- function(t){
+      print(sprintf('data=%s',data))
+      print(sprintf('srcDim=%s',srcDim))
+      print(sprintf('targetClass=%s',targetClass))
 			as(
         array(dim=srcDim,data=unlist(lapply(funcs,function(f){f(t)}))),
         targetClass)
