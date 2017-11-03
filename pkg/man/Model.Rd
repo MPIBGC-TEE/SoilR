@@ -27,21 +27,6 @@ pass=FALSE)}
   # We demonstrate some of the possibilities here.
   # Let us first look at the choeices for argument 'A'.
   
-  #possibleAs <- list(
-  #  A.mat=matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2)),
-  #  A.matfunc=function(t){
-  #   matrix(nrow=2,
-  #     byrow=TRUE,
-  #     c(-0.1,0,0,-0.2*(sin(t)+2)))},
-  #  A.list.Times.Array=example.Time3DArrayList(),
-  #  A.list.Times.List=example.nestedTime2DMatrixList(),
-  #  # Model will convert these to the classes it uses internally but 
-  #  # you can also create these object explicitly, which in some situations
-  #  # gives you more control.
-  #  A.tm=TimeMap(example.nestedTime2DMatrixList()),
-  #  A.cdo=example.ConstlinDecompOpFromMatrix(),
-  #  A.bldo=example.2DBoundLinDecompOpFromFunction(),
-  #  A.ubldo=example.2DUnBoundLinDecompOpFromFunction()
   #) 
   possibleAs  <- example.2DGeneralDecompOpArgs()
   
@@ -114,11 +99,8 @@ To see example scenarios for parameter check look at:
 \Sexpr[echo=TRUE,keep.source=TRUE,stage=render,results=verbatim]{system.file('tests','runit.correctness_of_Model.R',package='SoilR')}}
 \seealso{This function is called by many of the \link{predefinedModels}. \cr 
 Package functions called in the examples:\cr
-\code{\link{example.2DBoundInFluxFromFunction}},\cr
-\code{\link{example.2DConstInFluxFromVector}},\cr
-\code{\link{example.ConstlinDecompOpFromMatrix}},\cr
-\code{\link{example.2DBoundInFluxFromFunction}},\cr
-\code{\link{example.TimeMapFromArray}}}
+\code{\link{example.2DInFlux.Args}},\cr
+\code{\link{example.2DGeneralDecompOpArgs}},\cr}
 \title{Constructor for class \link{Model-class} }
 \value{An object of class \link{Model-class} that can be queried by many methods 
 to be found there.}

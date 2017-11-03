@@ -31,8 +31,6 @@ setMethod(
   def=function # creates a TimeMap from a nested list of a times vector 
   ### an a list of matrices or vectors (one matrix or vector for each time step)
   (map){
-    print('map')
-    print(map)
 	  if (length(map)<2){
 	  	stop('Your list has to have at least 2 elements: a vector usually labeled "times" and a list of arrays or matrices.')
 	  }
@@ -46,17 +44,32 @@ setMethod(
     }
 		lt <- length(times)
     if(inherits(data,'list')){
-		  #remember the shape of the data elements
       fe <- data[[1]]
-		  srcDim <- dim(fe)
-		  flatDim=prod(srcDim)
 		  #remember the class of the data elements
 		  targetClass <- class(fe)
-		  # create a 2D  array 
-		  # with the elements of data flattened to vectors 
-		  # and  time as second dimension
-      
-		  arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+      if(inherits(fe,'numeric')){
+        # we have a list of vectors
+        srcDim <- c(length(fe))
+		    flatDim <- prod(srcDim)
+		    arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+      }else{
+        if(inherits(fe,'array')|inherits(fe,'matrix')){
+		      #remember the shape of the data elements
+		      srcDim <- dim(fe)
+		      flatDim=prod(srcDim)
+		      # create a 2D array 
+		      # with the elements of data flattened to vectors 
+		      # and  time as second dimension
+		      arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+        }else{
+          stop(
+            sprintf(
+              'The elements of the data list must be a arrays, matrices or vectors but you provided an object of class %s.',
+               class(fe)
+            )
+          )
+       }
+     }
     }else{
       if(inherits(data,'array')){ 
         dd <- dim(data)
@@ -96,9 +109,6 @@ setMethod(
 		# cut out a time line for every index in the flattene vector
 		funcs <- lapply(seq(flatDim),funcMaker)
 		arrFunc <- function(t){
-      print(sprintf('data=%s',data))
-      print(sprintf('srcDim=%s',srcDim))
-      print(sprintf('targetClass=%s',targetClass))
 			as(
         array(dim=srcDim,data=unlist(lapply(funcs,function(f){f(t)}))),
         targetClass)

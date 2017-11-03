@@ -263,11 +263,8 @@ Model <- function #Constructor for class \link{Model-class}
      ### to be found there.
      ##seealso<< This function is called by many of the \link{predefinedModels}. \cr 
      ##Package functions called in the examples:\cr
-     ##\code{\link{example.2DBoundInFluxFromFunction}},\cr
-     ##\code{\link{example.2DConstInFluxFromVector}},\cr
-     ##\code{\link{example.ConstlinDecompOpFromMatrix}},\cr
-     ##\code{\link{example.2DBoundInFluxFromFunction}},\cr
-     ##\code{\link{example.TimeMapFromArray}}
+     ##\code{\link{example.2DInFlux.Args}},\cr
+     ##\code{\link{example.2DGeneralDecompOpArgs}},\cr
 
      ##exampleFunctionsFromFiles<< 
      ## inst/tests/requireSoilR/runit.all.possible.Model.arguments.R test.all.possible.Model.arguments

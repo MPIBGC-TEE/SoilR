@@ -102,11 +102,8 @@ to be found there.</p>
 
 <p>This function is called by many of the <a href="TopLevelFunctions.html">predefinedModels</a>. <br /> 
 Package functions called in the examples:<br />
-<code><a href="example.2DBoundInFluxFromFunction.html">example.2DBoundInFluxFromFunction</a></code>,<br />
-<code><a href="example.2DConstInFluxFromVector.html">example.2DConstInFluxFromVector</a></code>,<br />
-<code><a href="example.ConstlinDecompOpFromMatrix.html">example.ConstlinDecompOpFromMatrix</a></code>,<br />
-<code><a href="example.2DBoundInFluxFromFunction.html">example.2DBoundInFluxFromFunction</a></code>,<br />
-<code><a href="example.TimeMapFromArray.html">example.TimeMapFromArray</a></code></p>
+<code><a href="example.2DInFlux.Args.html">example.2DInFlux.Args</a></code>,<br />
+<code><a href="example.2DGeneralDecompOpArgs.html">example.2DGeneralDecompOpArgs</a></code>,<br /></p>
 
 
 <h3>Examples</h3>
@@ -132,21 +129,6 @@ Package functions called in the examples:<br />
   # We demonstrate some of the possibilities here.
   # Let us first look at the choeices for argument 'A'.
   
-  #possibleAs &lt;- list(
-  #  A.mat=matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2)),
-  #  A.matfunc=function(t){
-  #   matrix(nrow=2,
-  #     byrow=TRUE,
-  #     c(-0.1,0,0,-0.2*(sin(t)+2)))},
-  #  A.list.Times.Array=example.Time3DArrayList(),
-  #  A.list.Times.List=example.nestedTime2DMatrixList(),
-  #  # Model will convert these to the classes it uses internally but 
-  #  # you can also create these object explicitly, which in some situations
-  #  # gives you more control.
-  #  A.tm=TimeMap(example.nestedTime2DMatrixList()),
-  #  A.cdo=example.ConstlinDecompOpFromMatrix(),
-  #  A.bldo=example.2DBoundLinDecompOpFromFunction(),
-  #  A.ubldo=example.2DUnBoundLinDecompOpFromFunction()
   #) 
   possibleAs  &lt;- example.2DGeneralDecompOpArgs()
   
