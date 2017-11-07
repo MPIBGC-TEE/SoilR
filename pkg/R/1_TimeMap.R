@@ -149,7 +149,7 @@ setMethod(
       map="data.frame"
     ),
     definition=function # assemble the objects components
-    ### The method is used internally to convert TimeMap objects to BoundInFlux objects, since the use of TimeMap objects is now deprecated.
+    ### The method is used internally to convert TimeMap objects to BoundInFlux objects.
     (
       .Object,
       map,

@@ -124,22 +124,30 @@ Please also look at constructors of non virtual subclasses </p>
 
   # This example describes the creation and use of a Model object that 
   # is defined by time dependent functions for decomposition and influx.
-  # The constructor of the Model-class  (see  ?Model) is a 'Generic' 
-  # function  that  has 'Methods' for different combinations of 
+  # The constructor of the Model-class  (see  ?Model) 
+  # works for different combinations of 
   # arguments.
-  # In this example we will call the constructor whith arguments which 
-  # are of the same type as the current internal representations in the 
-  # Model object. and create these arguments explicitly beforehand. 
-  # See other examples for the generic constructor Model 
+  # Although Model (the constructor function for objects of this class 
+  # accepts many many more convienient kinds of arguments,
+  # we will in this example call the constructor whith arguments which 
+  # are of the same type as one of hte current internal 
+  # representations in the 
+  # Model object and create these arguments explicitly beforehand 
+  # to demonstrate the approach with the most flexibility.
   # We start with the Decomposition Operator.
-  # For this example we assume that we are able to describe it 
-  # by explicit R functions and therefore choose the appropriate
-  # sub class BoundLinDecompOp
+  # For this example we assume that we are able to describe the
+  # decomposition ofperator  by explicit R functions that are valid 
+  # for a finite time interval.
+  # Therefore we choose the appropriate  sub class BoundLinDecompOp
   # of DecompOp explicitly.  (see ?'BoundLinDecompOp-class') 
   A=BoundLinDecompOp(
     ## We call the generic constructor (see ?BoundLindDcompOp) 
     ## which has a method  
     ## that takes a matrix-valued function of time as its first argument.
+    ## (Although Model accepts time series data directly and 
+    ## will derive the internally used interpolating for you, 
+    ## the function argument could for instance represent the result
+    ## of a very sophisticated interpolation performed by yourself)
     function(t){
       matrix(nrow=3,ncol=3,byrow=TRUE,
          c(
@@ -154,7 +162,12 @@ Please also look at constructors of non virtual subclasses </p>
     ## The interval will be checked against the domain of the InFlux
     ## argument of Model and against its 't' argument to avoid 
     ## invalid computations outside the domain. 
-    ##  Inf and -Inf are possible values. 
+    ## (Inf and -Inf are possible values, but should only be used 
+    ## if the function is really valid for all times, which is 
+    ## especially untrue for functions resulting from interpolations,
+    ## which are usually extremely misleading for arguments outside the 
+    ## domain covered by the data that has been used for the interpolation.)
+    ## This is a safety net against wrong results origination from unitendet EXTRApolation )
     starttime=0,
     endtime=20
   )  

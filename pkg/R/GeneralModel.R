@@ -1,7 +1,7 @@
 #
 ## vim:set ff=unix expandtab ts=2 sw=2:
 GeneralModel <- function # the old  function to create Models
-  ### In previous SoilR Version GeneralModel was the main function to create models,
+  ### In previous SoilR Version GeneralModel was the main function to create linear models,
   ### a task now fulfilled by the function \code{\link{Model}}.
   ### To ensure backward compatibility this function remains as a wrapper.
   ### It creates a Model object from any combination of arguments 

@@ -4,8 +4,7 @@
 setMethod(
   f="GeneralInFlux",
   signature=signature(object="list"),
-  def=function # creates a BoundInFlux from a nested list of a times vector 
-  ### an a list of vectors(a vector for each time step)
+  def=function # creates a BoundInFlux from a nested list of a times vector and a list of vectors (a vector for each time step)
   ### The resulting object is created by a call to the constructor of class
   ### BoundInFlux
   (object){
@@ -16,10 +15,10 @@ setMethod(
 setMethod(
   f="GeneralDecompOp",
   signature=signature(object="list"),
-  def=function # creates a BoundLinDecompOp from a nested list of a times vector 
-  ### an a list of matrices (a matrix for each time step)
+  def=function # creates a BoundLinDecompOp from a nested list of a times vector  and a  list of matrices (a matrix for each time step)
   ### The resulting operator is creted by a call to the constructor of class
   ### BoundLinDecompOp
+
   (object){
     BoundLinDecompOp(TimeMap(object))
   }
@@ -28,8 +27,7 @@ setMethod(
 setMethod(
   f="TimeMap",
   signature=signature(map="list"),
-  def=function # creates a TimeMap from a nested list of a times vector 
-  ### an a list of matrices or vectors (one matrix or vector for each time step)
+  def=function # creates a TimeMap from a nested list of a times vector and a list of matrices or vectors (one matrix or vector for each time step)
   (map){
 	  if (length(map)<2){
 	  	stop('Your list has to have at least 2 elements: a vector usually labeled "times" and a list of arrays or matrices.')

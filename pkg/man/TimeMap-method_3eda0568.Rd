@@ -6,4 +6,4 @@
 \arguments{
 \item{map}{: of class list}
 }
-\description{an a list of matrices or vectors (one matrix or vector for each time step)}
+\description{}

@@ -55,8 +55,6 @@ setMethod(
   def=function # creates a BoundLinDecompOp from a TimeMap object
   ### The resulting operator is creted by a call to the constructor of class
   ### BoundLinDecompOp
-  ### The method is used to ensure backward compatibility with the now deprecated
-  ### TimeMap class
   (object){
     BoundLinDecompOp(object)
   }

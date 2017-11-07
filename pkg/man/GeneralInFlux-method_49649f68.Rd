@@ -6,6 +6,5 @@
 \arguments{
 \item{object}{: of class list}
 }
-\description{an a list of vectors(a vector for each time step)
-The resulting object is created by a call to the constructor of class
+\description{The resulting object is created by a call to the constructor of class
 BoundInFlux}

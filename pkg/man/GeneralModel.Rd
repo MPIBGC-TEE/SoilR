@@ -14,7 +14,7 @@ pass=FALSE)}
 \item{solverfunc}{The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}
 \item{pass}{Forces the constructor to create the model even if it is invalid}
 }
-\description{In previous SoilR Version GeneralModel was the main function to create models,
+\description{In previous SoilR Version GeneralModel was the main function to create linear models,
 a task now fulfilled by the function \code{\link{Model}}.
 To ensure backward compatibility this function remains as a wrapper.
 It creates a Model object from any combination of arguments 

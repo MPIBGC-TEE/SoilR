@@ -129,6 +129,7 @@ DecompOp,
 ConstFc,
 ConstInFlux,
 BoundInFlux,
+UnBoundInFlux,
 TransportDecompositionOperator,
 InFlux,
 BoundFc

@@ -14,6 +14,11 @@ setMethod(
   f="GeneralInFlux",
   signature=signature(object="function"),
   def=function # creates a UnBoundInflux from a vector valued function  
+  ### The resulting operator is created by a call to the constructor of class
+  ### UnBoundInFlux. You should only use this if the domain of your function is the complete
+  ### time axis (-Inf,+Inf).
+  ### If your function has a finite domain create an object of class \code{\link{BoundInflux-class}}  ### by calling \code{\link{BoundInflux}}. This will activeate checks on that avoid 
+  ### unintended extrapolation.
   (object){
     UnBoundInFlux(object)
   }

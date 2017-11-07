@@ -6,7 +6,7 @@
 \arguments{
 \item{object}{: of class TimeMap}
 }
-\description{The method is used to ensure backward compatibility with the now deprecated
+\description{The method is used to ensure compatibility 
 TimeMap class.
 The resulting BoundInFlux is created by a call to
 the constructor BoundInFlux(object) of that class.}

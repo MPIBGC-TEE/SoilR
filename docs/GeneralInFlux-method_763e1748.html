@@ -7,6 +7,15 @@
 
 <h2>GeneralInFlux,function-method</h2>
 
+<h3>Description</h3>
+
+<p>The resulting operator is created by a call to the constructor of class
+UnBoundInFlux. You should only use this if the domain of your function is the complete
+time axis (-Inf,+Inf).
+If your function has a finite domain create an object of class <code>BoundInflux-class</code>  ### by calling <code>BoundInflux</code>. This will activeate checks on that avoid 
+unintended extrapolation.</p>
+
+
 <h3>Usage</h3>
 
 <pre>## S4 method for signature 'function'
