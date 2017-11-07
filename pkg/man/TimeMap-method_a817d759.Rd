@@ -1,6 +1,7 @@
 \docType{methods}
 \name{TimeMap,function,numeric,numeric-method}
-\title{TimeMap,function,numeric,numeric-method}
+\title{TimeMap,function,numeric,numeric-method 
+ constructor}
 \alias{TimeMap,function,numeric,numeric-method}
 \usage{\S4method{TimeMap}{function,numeric,numeric}(map,
 starttime,

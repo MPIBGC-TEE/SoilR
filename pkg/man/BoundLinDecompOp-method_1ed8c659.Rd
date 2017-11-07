@@ -1,6 +1,7 @@
 \docType{methods}
 \name{BoundLinDecompOp,UnBoundLinDecompOp,ANY,ANY-method}
-\title{BoundLinDecompOp,UnBoundLinDecompOp,ANY,ANY-method}
+\title{BoundLinDecompOp,UnBoundLinDecompOp,ANY,ANY-method 
+ convert a UnBoundLinDecompOp to a BoundLinDecompOp}
 \alias{BoundLinDecompOp,UnBoundLinDecompOp,ANY,ANY-method}
 \usage{\S4method{BoundLinDecompOp}{UnBoundLinDecompOp,ANY,ANY}(map,
 starttime=-Inf,

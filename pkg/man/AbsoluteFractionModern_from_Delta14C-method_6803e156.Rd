@@ -1,6 +1,7 @@
 \docType{methods}
 \name{AbsoluteFractionModern_from_Delta14C,numeric-method}
-\title{AbsoluteFractionModern_from_Delta14C,numeric-method}
+\title{AbsoluteFractionModern_from_Delta14C,numeric-method 
+ Converts from Delta14C to Absolute Fraction Modern}
 \alias{AbsoluteFractionModern_from_Delta14C,numeric-method}
 \usage{\S4method{AbsoluteFractionModern_from_Delta14C}{numeric}(delta14C)}
 \arguments{

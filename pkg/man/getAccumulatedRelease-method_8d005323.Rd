@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getAccumulatedRelease,Model-method}
-\title{getAccumulatedRelease,Model-method}
+\title{getAccumulatedRelease,Model-method 
+ time integrals of release fluxes per pool}
 \alias{getAccumulatedRelease,Model-method}
 \usage{\S4method{getAccumulatedRelease}{Model}(object)}
 \arguments{

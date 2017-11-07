@@ -1,6 +1,7 @@
 \docType{methods}
 \name{BoundFc,ANY,missing,missing-method}
-\title{BoundFc,ANY,missing,missing-method}
+\title{BoundFc,ANY,missing,missing-method 
+ constructor}
 \alias{BoundFc,ANY,missing,missing-method}
 \usage{\S4method{BoundFc}{ANY,missing,missing}(map,
 lag=0,

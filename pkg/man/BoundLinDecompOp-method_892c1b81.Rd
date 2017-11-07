@@ -1,6 +1,7 @@
 \docType{methods}
 \name{BoundLinDecompOp,ANY,missing,missing-method}
-\title{BoundLinDecompOp,ANY,missing,missing-method}
+\title{BoundLinDecompOp,ANY,missing,missing-method 
+ a constructor }
 \alias{BoundLinDecompOp,ANY,missing,missing-method}
 \usage{\S4method{BoundLinDecompOp}{ANY,missing,missing}(map,
 lag=0,

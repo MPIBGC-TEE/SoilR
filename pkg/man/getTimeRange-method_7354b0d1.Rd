@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getTimeRange,TimeMap-method}
-\title{getTimeRange,TimeMap-method}
+\title{getTimeRange,TimeMap-method 
+ ask for the boundaries of the underlying time interval}
 \alias{getTimeRange,TimeMap-method}
 \usage{\S4method{getTimeRange}{TimeMap}(object)}
 \arguments{

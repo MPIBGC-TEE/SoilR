@@ -1,6 +1,7 @@
 \docType{methods}
 \name{BoundInFlux,ANY,missing,missing-method}
-\title{BoundInFlux,ANY,missing,missing-method}
+\title{BoundInFlux,ANY,missing,missing-method 
+ constructor for BoundInFlux}
 \alias{BoundInFlux,ANY,missing,missing-method}
 \usage{\S4method{BoundInFlux}{ANY,missing,missing}(map,
 lag=0,

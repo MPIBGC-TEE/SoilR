@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralDecompOp,DecompOp-method}
-\title{GeneralDecompOp,DecompOp-method}
+\title{GeneralDecompOp,DecompOp-method 
+ pass through factory }
 \alias{GeneralDecompOp,DecompOp-method}
 \usage{\S4method{GeneralDecompOp}{DecompOp}(object)}
 \arguments{

@@ -1,6 +1,7 @@
 \docType{methods}
 \name{BoundInFlux,ANY,ANY,ANY-method}
-\title{BoundInFlux,ANY,ANY,ANY-method}
+\title{BoundInFlux,ANY,ANY,ANY-method 
+ convert to BoundInFlux}
 \alias{BoundInFlux,ANY,ANY,ANY-method}
 \usage{\S4method{BoundInFlux}{ANY,ANY,ANY}(map,
 starttime,

@@ -1,6 +1,7 @@
 \docType{methods}
 \name{Delta14C_from_AbsoluteFractionModern,matrix-method}
-\title{Delta14C_from_AbsoluteFractionModern,matrix-method}
+\title{Delta14C_from_AbsoluteFractionModern,matrix-method 
+ Converts Absolute Fraction Modern values to Delta14C}
 \alias{Delta14C_from_AbsoluteFractionModern,matrix-method}
 \usage{\S4method{Delta14C_from_AbsoluteFractionModern}{matrix}(AbsoluteFractionModern)}
 \arguments{

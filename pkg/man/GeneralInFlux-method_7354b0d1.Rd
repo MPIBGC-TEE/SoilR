@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralInFlux,TimeMap-method}
-\title{GeneralInFlux,TimeMap-method}
+\title{GeneralInFlux,TimeMap-method 
+ create a BoundInFlux from a TimeMap object}
 \alias{GeneralInFlux,TimeMap-method}
 \usage{\S4method{GeneralInFlux}{TimeMap}(object)}
 \arguments{

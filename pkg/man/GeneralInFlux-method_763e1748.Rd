@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralInFlux,function-method}
-\title{GeneralInFlux,function-method}
+\title{GeneralInFlux,function-method 
+ creates a UnBoundInflux from a vector valued function  }
 \alias{GeneralInFlux,function-method}
 \usage{\S4method{GeneralInFlux}{function}(object)}
 \arguments{

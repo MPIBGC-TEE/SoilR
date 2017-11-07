@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method}
-\title{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method}
+\title{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method 
+ a constructor for class Model}
 \alias{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method}
 \usage{\S4method{GeneralModel_14}{numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing}(t,
 A,

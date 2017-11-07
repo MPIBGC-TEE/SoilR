@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getFunctionDefinition,UnBoundInFlux-method}
-\title{getFunctionDefinition,UnBoundInFlux-method}
+\title{getFunctionDefinition,UnBoundInFlux-method 
+ creates a constant timedependent function and returns it}
 \alias{getFunctionDefinition,UnBoundInFlux-method}
 \usage{\S4method{getFunctionDefinition}{UnBoundInFlux}(object)}
 \arguments{

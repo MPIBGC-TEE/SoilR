@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getTimeRange,ConstInFlux-method}
-\title{getTimeRange,ConstInFlux-method}
+\title{getTimeRange,ConstInFlux-method 
+ time domain of the function}
 \alias{getTimeRange,ConstInFlux-method}
 \usage{\S4method{getTimeRange}{ConstInFlux}(object)}
 \arguments{

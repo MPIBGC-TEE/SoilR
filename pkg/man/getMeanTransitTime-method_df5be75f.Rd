@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getMeanTransitTime,ConstLinDecompOp-method}
-\title{getMeanTransitTime,ConstLinDecompOp-method}
+\title{getMeanTransitTime,ConstLinDecompOp-method 
+ compute the mean transit time }
 \alias{getMeanTransitTime,ConstLinDecompOp-method}
 \usage{\S4method{getMeanTransitTime}{ConstLinDecompOp}(object,
 inputDistribution)}

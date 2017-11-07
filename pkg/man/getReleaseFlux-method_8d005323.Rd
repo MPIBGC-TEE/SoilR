@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getReleaseFlux,Model-method}
-\title{getReleaseFlux,Model-method}
+\title{getReleaseFlux,Model-method 
+ get the release rate for all pools }
 \alias{getReleaseFlux,Model-method}
 \usage{\S4method{getReleaseFlux}{Model}(object)}
 \arguments{

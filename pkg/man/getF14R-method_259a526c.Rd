@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getF14R,Model_14-method}
-\title{getF14R,Model_14-method}
+\title{getF14R,Model_14-method 
+ average radiocarbon fraction weighted by carbonrelease }
 \alias{getF14R,Model_14-method}
 \usage{\S4method{getF14R}{Model_14}(object)}
 \arguments{

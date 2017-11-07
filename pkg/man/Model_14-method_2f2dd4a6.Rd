@@ -1,6 +1,7 @@
 \docType{methods}
 \name{Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method}
-\title{Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method}
+\title{Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method 
+ general  constructor for class Model_14}
 \alias{Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method}
 \usage{\S4method{Model_14}{numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical}(t,
 A,

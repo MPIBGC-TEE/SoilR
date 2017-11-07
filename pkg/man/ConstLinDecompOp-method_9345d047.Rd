@@ -1,6 +1,7 @@
 \docType{methods}
 \name{ConstLinDecompOp,matrix-method}
-\title{ConstLinDecompOp,matrix-method}
+\title{ConstLinDecompOp,matrix-method 
+ construct from matric}
 \alias{ConstLinDecompOp,matrix-method}
 \usage{\S4method{ConstLinDecompOp}{matrix}(mat)}
 \arguments{

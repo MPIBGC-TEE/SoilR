@@ -1,6 +1,7 @@
 \docType{methods}
 \name{BoundFc,ANY,ANY,ANY-method}
-\title{BoundFc,ANY,ANY,ANY-method}
+\title{BoundFc,ANY,ANY,ANY-method 
+ constructor}
 \alias{BoundFc,ANY,ANY,ANY-method}
 \usage{\S4method{BoundFc}{ANY,ANY,ANY}(map,
 starttime,

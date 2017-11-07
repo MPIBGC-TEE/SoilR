@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
-\title{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
+\title{getTransitTimeDistributionDensity,ConstLinDecompOp-method 
+ compute the TransitTimeDistributionDensity }
 \alias{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
 \usage{\S4method{getTransitTimeDistributionDensity}{ConstLinDecompOp}(object,
 inputDistribution,
