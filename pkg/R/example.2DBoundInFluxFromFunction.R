@@ -1,6 +1,6 @@
 
 # vim:set ff=unix ts=2 sw=2:
-### Create a 2-dimensionsonal example of a BoundInflux object
+### Create a 2-dimensionsonal example of a BoundInFlux object
 example.2DBoundInFluxFromFunction <- function
 # 2D finite time linear influx examplex
 (){
