@@ -58,7 +58,7 @@ setMethod(
     ##  of \code{times} and the second to contain the data referring to those times.
     ##  The \code{data} entry of the list can itself be a list with the same length as
     ##  the \code{times} entry or an array whose last dimension is equal to the length of 
-    ##  the \code(times} entry.
+    ##  the \code{times} entry.
     ##  If the \code{data} entry is a list the elements must 
     ##  be \code{vectors},\code{matrices} or \code{arrays}.
 	  if (length(map)<2){
@@ -164,7 +164,7 @@ setMethod(
       interpolation=splinefun ##<< the interpolating function
     ){
     # build dummy object
-    #obj <- new(Class="TimeMap")
+    obj <- new(Class="TimeMap")
     # use the method inherited from TimeMap
     obj <- fromDataFrame(obj,map,lag=0,interpolation=splinefun)
     return(obj)

@@ -14,6 +14,6 @@ If the entries are not named, the first one is supposed to be a numeric vector
 of \code{times} and the second to contain the data referring to those times.
 The \code{data} entry of the list can itself be a list with the same length as
 the \code{times} entry or an array whose last dimension is equal to the length of 
-the \code(times} entry.
+the \code{times} entry.
 If the \code{data} entry is a list the elements must 
 be \code{vectors},\code{matrices} or \code{arrays}.}
