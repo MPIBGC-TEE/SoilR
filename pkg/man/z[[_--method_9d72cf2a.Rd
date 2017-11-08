@@ -1,6 +1,7 @@
 \docType{methods}
 \name{[[<-,MCSim-method}
-\title{[[<-,MCSim-method}
+\title{[[<-,MCSim-method 
+ overloads the [[<- operator }
 \alias{[[<-,MCSim-method}
 \arguments{
 \item{x}{: of class MCSim, The simulator}

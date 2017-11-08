@@ -1,6 +1,7 @@
 \docType{methods}
 \name{ConstInFlux,numeric-method}
-\title{ConstInFlux,numeric-method}
+\title{ConstInFlux,numeric-method 
+ constructor }
 \alias{ConstInFlux,numeric-method}
 \usage{\S4method{ConstInFlux}{numeric}(map)}
 \arguments{

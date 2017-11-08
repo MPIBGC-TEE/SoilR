@@ -1,6 +1,7 @@
 \docType{methods}
 \name{UnBoundLinDecompOp,function-method}
-\title{UnBoundLinDecompOp,function-method}
+\title{UnBoundLinDecompOp,function-method 
+ construct from matrix valued function}
 \alias{UnBoundLinDecompOp,function-method}
 \usage{\S4method{UnBoundLinDecompOp}{function}(matFunc)}
 \arguments{

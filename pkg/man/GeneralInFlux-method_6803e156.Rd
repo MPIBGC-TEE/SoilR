@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralInFlux,numeric-method}
-\title{GeneralInFlux,numeric-method}
+\title{GeneralInFlux,numeric-method 
+ conversion of a vector to an object of class \code{\link{ConstInFlux}}}
 \alias{GeneralInFlux,numeric-method}
 \usage{\S4method{GeneralInFlux}{numeric}(object)}
 \arguments{

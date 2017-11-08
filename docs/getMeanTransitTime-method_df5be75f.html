@@ -1,11 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: getMeanTransitTime,ConstLinDecompOp-method</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: getMeanTransitTime,ConstLinDecompOp-method compute the mean...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for getMeanTransitTime,ConstLinDecompOp-method {SoilR}"><tr><td>getMeanTransitTime,ConstLinDecompOp-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>getMeanTransitTime,ConstLinDecompOp-method</h2>
+<h2>getMeanTransitTime,ConstLinDecompOp-method 
+compute the mean transit time </h2>
 
 <h3>Description</h3>
 
@@ -34,6 +35,26 @@ inputDistribution)</pre>
 <p>:  distribution of the inputs</p>
 </td></tr>
 </table>
+
+
+<h3>Details</h3>
+
+<p>To compute the mean transit time for the distribution we have to compute the integral
+</p>
+<p style="text-align: center;"><i>
+\bar{T} = \int_0^&infin; T \cdot S_r&le;ft( \frac{\vec{I}}{I},0,T\right)\; dT
+</i></p>
+
+<p>for the numerically computed density.
+To avoid issues with numerical integration  we dont use <i>&infin;</i> as upper limit but cut off the integragion interval prematurely.
+For this purpose we calculate a maximum response time of the system as <cite>Lasaga</cite>
+</p>
+<p style="text-align: center;"><i>
+&tau;_{cycle} = \frac{1}{|\min(&lambda;_i)|}
+</i></p>
+
+<p>where <i>&lambda;_i</i> are non-zero eigenvalues of the matrix 
+<i>{\bf A}</i>. </p>
 
 
 <h3>References</h3>

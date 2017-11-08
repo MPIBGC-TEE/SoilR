@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getFunctionDefinition,ConstLinDecompOp-method}
-\title{getFunctionDefinition,ConstLinDecompOp-method}
+\title{getFunctionDefinition,ConstLinDecompOp-method 
+ creates a constant timedependent function and returns it}
 \alias{getFunctionDefinition,ConstLinDecompOp-method}
 \usage{\S4method{getFunctionDefinition}{ConstLinDecompOp}(object)}
 \arguments{

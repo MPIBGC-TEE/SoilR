@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getTimeRange,UnBoundLinDecompOp-method}
-\title{getTimeRange,UnBoundLinDecompOp-method}
+\title{getTimeRange,UnBoundLinDecompOp-method 
+ return an (infinite) time range since the function is assumed to be valid for all times}
 \alias{getTimeRange,UnBoundLinDecompOp-method}
 \usage{\S4method{getTimeRange}{UnBoundLinDecompOp}(object)}
 \arguments{

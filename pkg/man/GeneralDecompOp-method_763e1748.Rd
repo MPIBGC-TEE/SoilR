@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralDecompOp,function-method}
-\title{GeneralDecompOp,function-method}
+\title{GeneralDecompOp,function-method 
+ creates a UnBoundLinDecompOp from a matrix valued function  }
 \alias{GeneralDecompOp,function-method}
 \usage{\S4method{GeneralDecompOp}{function}(object)}
 \arguments{

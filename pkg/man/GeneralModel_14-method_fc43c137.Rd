@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method}
-\title{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method}
+\title{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method 
+ a constructor for class Model}
 \alias{GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method}
 \usage{\S4method{GeneralModel_14}{numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing}(t,
 A,
@@ -21,3 +22,4 @@ pass=FALSE)}
 \item{pass}{: of class missing}
 }
 \description{A wrapper for \code{\link{Model_14}} with pass=FALSE}
+\seealso{\code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} }

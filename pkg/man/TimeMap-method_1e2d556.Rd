@@ -1,6 +1,7 @@
 \docType{methods}
 \name{TimeMap,data.frame,missing,missing-method}
-\title{TimeMap,data.frame,missing,missing-method}
+\title{TimeMap,data.frame,missing,missing-method 
+ constructor}
 \alias{TimeMap,data.frame,missing,missing-method}
 \usage{\S4method{TimeMap}{data.frame,missing,missing}(map,
 lag=0,

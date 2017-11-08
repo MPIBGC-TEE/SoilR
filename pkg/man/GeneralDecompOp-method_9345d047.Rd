@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralDecompOp,matrix-method}
-\title{GeneralDecompOp,matrix-method}
+\title{GeneralDecompOp,matrix-method 
+ creates a ConstanDecompOp from a matrix}
 \alias{GeneralDecompOp,matrix-method}
 \usage{\S4method{GeneralDecompOp}{matrix}(object)}
 \arguments{

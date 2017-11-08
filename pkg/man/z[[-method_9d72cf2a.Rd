@@ -1,6 +1,7 @@
 \docType{methods}
 \name{[[,MCSim-method}
-\title{[[,MCSim-method}
+\title{[[,MCSim-method 
+ overload the [[ operator }
 \alias{[[,MCSim-method}
 \usage{\S4method{[[}{MCSim}(x,
 i)}

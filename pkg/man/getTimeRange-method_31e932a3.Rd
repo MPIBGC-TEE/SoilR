@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getTimeRange,UnBoundInFlux-method}
-\title{getTimeRange,UnBoundInFlux-method}
+\title{getTimeRange,UnBoundInFlux-method 
+ return an (infinite) time range since the function is assumed to be valid for all times}
 \alias{getTimeRange,UnBoundInFlux-method}
 \usage{\S4method{getTimeRange}{UnBoundInFlux}(object)}
 \arguments{

@@ -1,11 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: getTransitTimeDistributionDensity,ConstLinDecompOp-method</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: getTransitTimeDistributionDensity,ConstLinDecompOp-method...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for getTransitTimeDistributionDensity,ConstLinDecompOp-method {SoilR}"><tr><td>getTransitTimeDistributionDensity,ConstLinDecompOp-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>getTransitTimeDistributionDensity,ConstLinDecompOp-method</h2>
+<h2>getTransitTimeDistributionDensity,ConstLinDecompOp-method 
+compute the TransitTimeDistributionDensity </h2>
 
 <h3>Description</h3>
 
@@ -37,6 +38,46 @@ times)</pre>
 <p>:  the points in time where the solution is sought</p>
 </td></tr>
 </table>
+
+
+<h3>Details</h3>
+
+<p>In a forthcoming paper <cite>SoilRv1.2</cite> 
+we derive the algorithm used in this implementation
+under the assumption of steady conditions having prevailed infinitely.
+We arrive at a formulation well known from the literature about 
+time invariant linlear systems, cited e.g. in <cite>ManzoniJGR</cite>.<br />
+The somehow amazing result is that the weight of the transit time density <i>&psi;(T)</i> 
+for a <em>transit time</em> <i>T</i> 
+for the steady state system is identical to the output <i>O(T)</i> 
+observed at time <i>T</i> of a <em>different</em> system which started with a normalized impulsive input 
+<i>\frac{\vec{I}}{I}</i> at time 
+<i>T=0</i>,
+where <i>I=&sum;_{k=1}^m i_k</i> is the cumulative input flux to all pools.
+<br />
+This fact simpliefies the computation considerably.
+Translated into the language of an ode solver an impulsive input becomes a start vector <i>\frac{\vec{I}}{I}</i> 
+at time <i>T=0</i> 
+and <i>O(T)</i> the respiration related to the solution of the initial value problem 
+observed at time <i>T</i>. 
+</p>
+<p style="text-align: center;"><i></i></p>
+
+<p>Note that from the perspective of the ode solver <i>S_r</i> depends on the decomposition operator and the distribution of the input among the pools only.
+It is therefor possible to implement the transit time distribution as a function of the decomposition operator and the fixed input flux distribution.
+To insure steady state conditions the decomposition operator is not allowed to be a true function of time.
+We therefor implement the method only for the subclass 
+<code>ConstLinDecompOp</code> 
+<br /> Remark:<br />
+The decision to implement this method for <code>transitTimeDensity</code> especially for 
+objects of class <code>ConstLinDecompOp</code>
+reflects the fact that an arbitrary  model in SoilR is by no means bound to end up in steady state. To insure this we would have to ignore the input part of a user created model which would be confusing. 
+<br /> Remark:<br />
+In future versions of SoilR it will be possible to compute a dynamic, time dependent transit time distribution 
+for objects of class <code> Model</code>
+with a time argument specifying for which time the distribution is sought. 
+The steady state results computed here could than be reproduced 
+with the user responsible for providing a model actually reaching it. </p>
 
 
 <h3>References</h3>

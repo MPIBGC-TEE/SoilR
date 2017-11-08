@@ -1,6 +1,7 @@
 \docType{methods}
 \name{as.character,TimeMap-method}
-\title{as.character,TimeMap-method}
+\title{as.character,TimeMap-method 
+ convert TimeMap Objects to something printable.}
 \alias{as.character,TimeMap-method}
 \usage{\S4method{as.character}{TimeMap}(x,
 ...)}

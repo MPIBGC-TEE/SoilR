@@ -1,6 +1,7 @@
 \docType{methods}
 \name{BoundLinDecompOp,ANY,ANY,ANY-method}
-\title{BoundLinDecompOp,ANY,ANY,ANY-method}
+\title{BoundLinDecompOp,ANY,ANY,ANY-method 
+ a constructor }
 \alias{BoundLinDecompOp,ANY,ANY,ANY-method}
 \usage{\S4method{BoundLinDecompOp}{ANY,ANY,ANY}(map,
 starttime,

@@ -1,6 +1,7 @@
 \docType{methods}
 \name{Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method}
-\title{Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method}
+\title{Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method 
+ general  constructor for class Model_14}
 \alias{Model_14,numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical-method}
 \usage{\S4method{Model_14}{numeric,ANY,numeric,ConstFc,ANY,ANY,numeric,function,logical}(t,
 A,
@@ -25,3 +26,4 @@ pass=FALSE)}
 \description{This method tries to create an object from any combination of arguments 
 that can be converted into  the required set of building blocks for the Model_14
 for n arbitrarily connected pools.}
+\seealso{\code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} }

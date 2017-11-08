@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getTimeRange,ConstLinDecompOp-method}
-\title{getTimeRange,ConstLinDecompOp-method}
+\title{getTimeRange,ConstLinDecompOp-method 
+ return an (infinite) time range since the operator is constant}
 \alias{getTimeRange,ConstLinDecompOp-method}
 \usage{\S4method{getTimeRange}{ConstLinDecompOp}(object)}
 \arguments{

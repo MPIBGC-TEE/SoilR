@@ -1,11 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: getReleaseFlux,Model-method</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: getReleaseFlux,Model-method get the release rate for all...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for getReleaseFlux,Model-method {SoilR}"><tr><td>getReleaseFlux,Model-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>getReleaseFlux,Model-method</h2>
+<h2>getReleaseFlux,Model-method 
+get the release rate for all pools </h2>
 
 <h3>Description</h3>
 
@@ -29,6 +30,17 @@ created by a call to a constructor e.g. <code><a href="Model.html">Model</a></co
 <code><a href="GeneralModel.html">GeneralModel</a></code>or other model creating functions.</p>
 </td></tr>
 </table>
+
+
+<h3>Details</h3>
+
+<p>This function takes a Model object, which represents a system of ODEs 
+</p>
+<p style="text-align: center;"><i>dC(t)/dt = I(t) + A(t)C(t)</i></p>
+ 
+<p>solves the system for <i>C(t)</i>, calculates the release coefficients <i>R(t)</i>, 
+and computes the release flux as <i>R(t) C(t)</i>.
+The numerical solver used can be specified in the model creating functions like e.g. <code><a href="Model.html">Model</a></code>.</p>
 
 
 <h3>Value</h3>

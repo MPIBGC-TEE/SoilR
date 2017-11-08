@@ -1,6 +1,7 @@
 \docType{methods}
 \name{$,NlModel-method}
-\title{$,NlModel-method}
+\title{$,NlModel-method 
+ overload the $ operator}
 \alias{$,NlModel-method}
 \usage{\S4method{$}{NlModel}(x,
 name)}

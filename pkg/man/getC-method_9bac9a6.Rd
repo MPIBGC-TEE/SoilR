@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getC,NlModel-method}
-\title{getC,NlModel-method}
+\title{getC,NlModel-method 
+ compute the solution for the content of the pools}
 \alias{getC,NlModel-method}
 \usage{\S4method{getC}{NlModel}(object,
 as.closures=FALSE)}

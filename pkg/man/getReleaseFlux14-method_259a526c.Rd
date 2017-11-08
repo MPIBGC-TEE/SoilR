@@ -1,6 +1,7 @@
 \docType{methods}
 \name{getReleaseFlux14,Model_14-method}
-\title{getReleaseFlux14,Model_14-method}
+\title{getReleaseFlux14,Model_14-method 
+ 14C respiration rate for all pools }
 \alias{getReleaseFlux14,Model_14-method}
 \usage{\S4method{getReleaseFlux14}{Model_14}(object)}
 \arguments{

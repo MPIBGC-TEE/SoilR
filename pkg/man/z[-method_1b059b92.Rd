@@ -1,6 +1,7 @@
 \docType{methods}
 \name{[,NlModel,character,ANY,ANY-method}
-\title{[,NlModel,character,ANY,ANY-method}
+\title{[,NlModel,character,ANY,ANY-method 
+ overloads the [] operator}
 \alias{[,NlModel,character,ANY,ANY-method}
 \usage{\S4method{[}{NlModel,character,ANY,ANY}(x,
 i)}

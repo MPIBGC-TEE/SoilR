@@ -4,7 +4,6 @@
 ### defines a (time dependent) mapping including the function definition and the ### domain where the function is well defined.  This can be used to avoid interpolations out of range when mixing different time dependent data sets
 setClass(
    Class="TimeMap",
-   #contains="UnlimitedTimeMap",
    slots=list(
       map="function"
       ,
@@ -41,6 +40,112 @@ setMethod(
     return(.Object)
     }
 )
+#-----------------------------------------------------------
+# fixme mm:
+# the method is doing a lot.
+# we could add two other constructors for TimeMap that have the elements of the list
+# as separated arguments where the first one is always a numeric vectors
+# and the second one either an array or a list.
+setMethod(
+  f="TimeMap",
+  signature=signature(map="list"),
+    ### The method creates an instance of \code{\link{TimeMap-class}}
+    ### from a list that contains data and a vector of times referring to it.
+  def=function # Create a TimeMap from a nested list 
+  (map){
+    ##details<< The list must have two entries
+    ##  If the entries are not named, the first one is supposed to be a numeric vector
+    ##  of \code{times} and the second to contain the data referring to those times.
+    ##  The \code{data} entry of the list can itself be a list with the same length as
+    ##  the \code{times} entry or an array whose last dimension is equal to the length of 
+    ##  the \code(times} entry.
+    ##  If the \code{data} entry is a list the elements must 
+    ##  be \code{vectors},\code{matrices} or \code{arrays}.
+	  if (length(map)<2){
+	  	stop('Your list has to have at least 2 elements: a vector usually labeled "times" and a list of arrays or matrices.')
+	  }
+    targetNames <- c('times','data')
+    if(identical(intersect(targetNames,names(map)),targetNames)){
+	    times <- map[['times']]
+	    data  <- map[['data']]
+    }else{
+	   times <- map[[1]]
+	   data  <- map[[2]]
+    }
+		lt <- length(times)
+    if(inherits(data,'list')){
+      fe <- data[[1]]
+		  #remember the class of the data elements
+		  targetClass <- class(fe)
+      if(inherits(fe,'numeric')){
+        # we have a list of vectors
+        srcDim <- c(length(fe))
+		    flatDim <- prod(srcDim)
+		    arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+      }else{
+        if(inherits(fe,'array')|inherits(fe,'matrix')){
+		      #remember the shape of the data elements
+		      srcDim <- dim(fe)
+		      flatDim=prod(srcDim)
+		      # create a 2D array 
+		      # with the elements of data flattened to vectors 
+		      # and  time as second dimension
+		      arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+        }else{
+          stop(
+            sprintf(
+              'The elements of the data list must be a arrays, matrices or vectors but you provided an object of class %s.',
+               class(fe)
+            )
+          )
+       }
+     }
+    }else{
+      if(inherits(data,'array')){ 
+        dd <- dim(data)
+        srcDim <-dd[1:(length(dd)-1)] 
+		    flatDim=prod(srcDim)
+		    arr <- array(dim=c(flatDim,lt),data=as.vector(data))
+		    targetClass <-'array'
+      }else{
+        if(inherits(data,'matrix')){
+          # R insists that a 2D array is a matrix and NOT an array which is extremely weierd
+          # checkout: inherits(array(dim=c(2,2),'array')) which yields FALSE since
+          # class(array(dim=c(2,2)) yields 'matrix' while 
+          # class(array(dim=c(2)) and class(array(dim=c(2,2,2)) both yield 'array'
+          # se we have to allow the class 'matrix' here for the array in case somebody tried to create 2D array 
+          # ending up with a matrix ...
+          srcDim <-c(dim(data)[[1]])
+		      flatDim=prod(srcDim)
+		      arr <- data
+		      targetClass <-'numeric'
+        }else{
+          if(inherits(data,'numeric')){
+          srcDim <- 1
+		      flatDim=prod(srcDim)
+		      arr <- array(dim=c(flatDim,lt),data=data)
+		      targetClass <-'numeric'
+          }else{
+            stop(
+              sprintf(
+                'The data element of the list must be a list an array, matrix or a vector but
+                 you provided an object of class %s.',
+                class(data)))
+          }
+        }
+      }
+    }
+    funcMaker <- function(i){splinefun(x=times,y=arr[i,])}
+		# cut out a time line for every index in the flattene vector
+		funcs <- lapply(seq(flatDim),funcMaker)
+		arrFunc <- function(t){
+			as(
+        array(dim=srcDim,data=unlist(lapply(funcs,function(f){f(t)}))),
+        targetClass)
+		}
+		return(TimeMap(map=arrFunc,min(times),max(times)))
+  }
+)
 ##########################################################################
 setMethod(
     f="TimeMap",
@@ -59,9 +164,9 @@ setMethod(
       interpolation=splinefun ##<< the interpolating function
     ){
     # build dummy object
-    obj=new(Class="TimeMap")
+    #obj <- new(Class="TimeMap")
     # use the method inherited from TimeMap
-    obj=fromDataFrame(obj,map,lag=0,interpolation=splinefun)
+    obj <- fromDataFrame(obj,map,lag=0,interpolation=splinefun)
     return(obj)
 ### An object of class TimeMap that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag
 ### this serves as a saveguard for Model which thus can check that all involved functions of time are actually defined for the times of interest  

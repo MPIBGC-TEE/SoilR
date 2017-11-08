@@ -1,6 +1,7 @@
 \docType{methods}
 \name{GeneralInFlux,InFlux-method}
-\title{GeneralInFlux,InFlux-method}
+\title{GeneralInFlux,InFlux-method 
+ pass through conversion}
 \alias{GeneralInFlux,InFlux-method}
 \usage{\S4method{GeneralInFlux}{InFlux}(object)}
 \arguments{
