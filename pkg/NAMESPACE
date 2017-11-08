@@ -6,6 +6,7 @@ importFrom(deSolve,lsoda)
 importFrom("graphics", "pairs")
 importFrom("utils", "tail")
 importFrom(expm,"expm")
+importFrom("stats", "approxfun")
 import(methods)
 import(RUnit)
 export(
