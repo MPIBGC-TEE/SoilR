@@ -1,9 +1,9 @@
 \docType{methods}
-\name{TimeMap,function,numeric,numeric-method}
-\title{TimeMap,function,numeric,numeric-method 
+\name{TimeMap,function,numeric,numeric,missing,missing-method}
+\title{TimeMap,function,numeric,numeric,missing,missing-method 
  constructor}
-\alias{TimeMap,function,numeric,numeric-method}
-\usage{\S4method{TimeMap}{function,numeric,numeric}(map,
+\alias{TimeMap,function,numeric,numeric,missing,missing-method}
+\usage{\S4method{TimeMap}{function,numeric,numeric,missing,missing}(map,
 starttime,
 endtime,
 lag=0)}

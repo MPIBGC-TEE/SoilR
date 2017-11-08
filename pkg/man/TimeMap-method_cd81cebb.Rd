@@ -1,9 +1,9 @@
 \docType{methods}
-\name{TimeMap,list,ANY,ANY-method}
-\title{TimeMap,list,ANY,ANY-method 
+\name{TimeMap,list,missing,missing,missing,missing-method}
+\title{TimeMap,list,missing,missing,missing,missing-method 
  Create a TimeMap from a nested list }
-\alias{TimeMap,list,ANY,ANY-method}
-\usage{\S4method{TimeMap}{list,ANY,ANY}(map)}
+\alias{TimeMap,list,missing,missing,missing,missing-method}
+\usage{\S4method{TimeMap}{list,missing,missing,missing,missing}(map)}
 \arguments{
 \item{map}{: of class list}
 }

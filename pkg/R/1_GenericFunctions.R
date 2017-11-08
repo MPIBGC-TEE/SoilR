@@ -468,8 +468,11 @@ setGeneric(
 	   map,
 	   starttime,
 	   endtime,
-	   lag,
-	   interpolation)
+     times,
+     data,
+	   lag=0,                  ##<< a time delay
+	   interpolation=splinefun ##<< the interpolating function
+     )
 	 {
 	     standardGeneric("TimeMap")
 	 }
@@ -478,7 +481,10 @@ setGeneric(
 	 name="BoundFc",
 	 def=function # generic constructor
 	 ### create a BoundFc object from different sources
-	 (map,starttime,endtime,lag,format,interpolation)
+	 (
+      format,
+      ...
+   )
 	 {
 	     standardGeneric("BoundFc")
 	 }
@@ -490,21 +496,6 @@ setGeneric(
 	 (map)
 	 {
 	     standardGeneric("UnBoundInFlux")
-	 }
-)
-setGeneric(
-	 name="BoundInFlux",
-	 def=function # generic constructor
-	 ### create a BoundInFlux object from different sources
-	 (
-	   map,
-	   starttime,
-	   endtime,
-	   lag,
-	   interpolation
-	  )
-	 {
-	     standardGeneric("BoundInFlux")
 	 }
 )
 setGeneric(
@@ -569,11 +560,10 @@ setGeneric(
 	 def=function # Generic constructor
 	 ### Creates a LinearDecompositonOperator from different sources.
 	 ### Please look at the methods to see what kind of input is supported. 
-	 (map,
-    starttime,
-    endtime,
-    lag,
-    interpolation)
+	 (
+    map,
+    ...
+   )
 	 {
 	     standardGeneric("BoundLinDecompOp")
 	 }
@@ -610,21 +600,6 @@ setGeneric(
 	     standardGeneric("GeneralModel_14")
 	 }
 )
-#setGeneric(
-#	 name="Model",
-#	 def=function # A constructor for class  \code{\link{Model-class}}
-#	 ### Creates a Model object from different sources 
-#	 ### To see which combinations of arguments are possible 
-#   ### have a look at the methods for details.
-#	 (t  ##<< the times for which the solutions are sought,
-#	   A, ##<< an object to describe the decomposition 
-#	   ivList, ##<< initial values (again look at the methods for possible realizations)
-#	   inputFluxes ##<< a,
-#	   ...
-#	   ){
-#	     standardGeneric("Model")
-#	 }
-#)
 setGeneric(
 	 name="Model_14",
 	 def=function # A general constructor 
@@ -643,22 +618,6 @@ setGeneric(
 	 ){
 	     standardGeneric("Model_14")
 	 }
-)
-setGeneric(
-  name="fromDataFrame",
-  def=function # an alternative initializer for TimeMap related classes
-  ### initializes an object of class TimeMap or one of its subclasses
-  ### from a data.frame
-  ( 
-	 .Object,
-	 map,
-	 starttime,
-	 endtime,
-	 lag,
-	 interpolation
-  ){
-	     standardGeneric("fromDataFrame")
-  }
 )
 	 
 	 

@@ -20,6 +20,7 @@ alltests <- defineTestSuite(
    #testFuncRegexp = "^test.SoilRPaper1",
    #testFuncRegexp = "^test.TwopFeedback",
    testFuncRegexp = "^test.+",
+   #testFuncRegexp = "^test.TimeMapFrom1Ddataframe",
    #testFuncRegexp = "^test.TimeMapFromListOfVectorAndList",
    #testFuncRegexp = "^test.TimeMapFromListOfVectorAndArray",
    #testFuncRegexp = "^test.correctnessOfModel.impossibleCoefficients",

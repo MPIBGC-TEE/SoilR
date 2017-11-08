@@ -30,41 +30,14 @@ setClass(# Objects containing the atmospheric 14C fraction and the format it is 
 #------------------------ Constructors ---------------------------------
 setMethod(
   f="BoundFc",
-  signature=c(map="ANY"),
+  signature=signature(format='character'),
   definition=function # constructor
   ### the method constructs an object from a function a timerange where it is valid and a format  
 (
-    map, ##<< anything that can be used as a single \code{map} parameter 
-  starttime,  ##<< the point in time from which map is a valid representation 
-  endtime,    ##<< the point in time until which map is a valid representation
-  lag=0,        ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
   format,     ##<< a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
-  interpolation=splinefun  ##<< the interpolation function to be used
+  ...         ## will be passed on to \code{\link{TimeMap}}
 ){
-    obj <- as(TimeMap(map,starttime,endtime,lag,interpolation),"BoundFc")
-    obj@format=format
-    correctnessOfBoundFc(obj)
-    return(obj)
-}
-)
-#------------------------ Constructors ---------------------------------
-setMethod(
-  f="BoundFc",
-  signature=c(map="ANY",starttime='missing',endtime='missing'),
-  definition=function # constructor
-  ### the method constructs an object from a function a timerange where it is valid and a format  
-(
-    map, ##<< anything that can be used as a single \code{map} parameter 
-  lag=0,        ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
-  format,     ##<< a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
-  interpolation=splinefun  ##<< the interpolation function to be used
-){
-    if (inherits(map,'TimeMap')){
-     tm <-map
-    }else{
-      tm <- TimeMap(map,lag=lag,interpolation=interpolation)
-    }
-    obj <- as(tm,"BoundFc")
+    obj <- as(TimeMap(...),"BoundFc")
     obj@format=format
     correctnessOfBoundFc(obj)
     return(obj)

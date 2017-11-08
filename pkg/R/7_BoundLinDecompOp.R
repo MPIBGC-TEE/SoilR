@@ -34,49 +34,21 @@ setMethod(
 #---------------------------------------------------------------------
 setMethod(
       f="BoundLinDecompOp",
-      signature=c(map="ANY",starttime='missing',endtime='missing'),
+      signature=signature(map="ANY"),
       definition=function # a constructor 
   ### Creates a BoundLinDecompOp Object. 
   (
-    map, ##<< anything that can be used as a single \code{map} parameter 
-  lag=0,        ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
-  interpolation=splinefun  ##<< the interpolation function to be used
+    map, ##<< passed on to TimeMap
+    ...  ##<< passed on to TimeMap
   ){
     ##<<details
-    ##The function  will first call \code{\link{TimeMap}} on its argument
+    ##The function  will first call \code{\link{TimeMap}} on its arguments
     ##which means that it can handle the same combinations of parameters. 
     ##The TimeMap object thus created might be further examined.
     ##It will only be accepted if the function defined by the TimeMap 
-    ##object has quadratic matrices as values.
-    if (inherits(map,'TimeMap')){
-     tm <-map
-    }else{
-      tm <- TimeMap(map,lag=lag,interpolation=interpolation)
-    }
+    ##object has quadratic matrices as values and is compartmental.
+    tm <- TimeMap(map,...)
     obj <- as(tm,"BoundLinDecompOp")
-    return(obj)
-    ### A BoundLindDecompOp object.
-  }
-)
-#---------------------------------------------------------------------
-setMethod(
-      f="BoundLinDecompOp",
-      signature=c(map="ANY"),
-      definition=function # a constructor 
-  ### Creates a BoundLinDecompOp Object. 
-  (
-    map, ##<< anything that can be used as the \code{map} parameter 
-    starttime, ##<<  for \code{\link{TimeMap}}
-    endtime, ##<<  for \code{\link{TimeMap}}
-    lag=0,        ##<< a scalar describing the time lag. Positive Values shift the argument of the interpolation function forward in time. (retard its effect)
-  interpolation=splinefun  ##<< the interpolation function to be used
-  ){
-    ##<<details
-    ##The function  will first call \code{\link{TimeMap}} on its arguments which means that it can handle the same combinations of parameters. 
-    ##The TimeMap object thus created will then be further examined.
-    ##It will only be accepted if the function defined by the TimeMap 
-    ##object has quadratic matrices as values.
-    obj <- as(TimeMap(map,starttime,endtime,lag,interpolation),"BoundLinDecompOp")
     return(obj)
     ### A BoundLindDecompOp object.
   }

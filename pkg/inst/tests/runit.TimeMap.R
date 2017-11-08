@@ -35,7 +35,7 @@ test.TimeMapFrom1Ddataframe=function(){
    t=1:20
    inp=seq(1.05,2,0.05)
    tframe=data.frame(times=t,inputrates=inp)
-   obj=TimeMap(tframe)# 1D 
+   obj <- TimeMap(tframe)# 1D 
    checkEquals(c("t_min"=1,"t_max"=20),getTimeRange(obj))
    matFunc <- getFunctionDefinition(obj)
 }

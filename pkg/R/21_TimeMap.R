@@ -48,11 +48,19 @@ setMethod(
 # and the second one either an array or a list.
 setMethod(
   f="TimeMap",
-  signature=signature(map="list"),
-    ### The method creates an instance of \code{\link{TimeMap-class}}
-    ### from a list that contains data and a vector of times referring to it.
+  signature=signature(
+    map="list" ,
+    starttime="missing",
+    endtime="missing",
+    times="missing",
+    data="missing"
+  ),
+  ### The method creates an instance of \code{\link{TimeMap-class}}
+  ### from a list that contains data and a vector of times referring to it.
   def=function # Create a TimeMap from a nested list 
-  (map){
+  (
+   map
+  ){
     ##details<< The list must have two entries
     ##  If the entries are not named, the first one is supposed to be a numeric vector
     ##  of \code{times} and the second to contain the data referring to those times.
@@ -149,25 +157,33 @@ setMethod(
 ##########################################################################
 setMethod(
     f="TimeMap",
-    signature=c(
+    signature=signature(
       map="data.frame",
       starttime="missing",
-      endtime="missing"
-      #lag="numeric",
-      #interpolation="function"
+      endtime="missing",
+      times="missing",
+      data="missing"
     ),
     definition=function # constructor
-    ### create a  TimeMap object by interpolating the data.frame 
+    ### create a  TimeMap object by interpolating 
+    ### the data.frame 
     (
       map,##<< a data frame containing two columns
       lag=0, ##<< a time delay
       interpolation=splinefun ##<< the interpolating function
     ){
     # build dummy object
-    obj <- new(Class="TimeMap")
-    # use the method inherited from TimeMap
-    obj <- fromDataFrame(obj,map,lag=0,interpolation=splinefun)
-    return(obj)
+     t=map[,1]  
+     y=map[,2]  
+     o=order(t)
+     tyo=cbind(t[o],y[o])
+     to=tyo[,1]
+     yo=tyo[,2]
+     t_start=min(to)
+     t_end=max(t)
+     func_map <- interpolation(to,yo)
+     obj <- new("TimeMap",map=func_map,starttime=t_start,endtime=t_end,lag=lag)
+     return(obj)
 ### An object of class TimeMap that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag
 ### this serves as a saveguard for Model which thus can check that all involved functions of time are actually defined for the times of interest  
 }
@@ -175,19 +191,34 @@ setMethod(
 ###########################################################################
 setMethod(
     f="TimeMap",
-    signature=c(
-    map="function",
-    starttime="numeric",
-    endtime="numeric"
+    signature=signature(
+      map="function",
+      starttime="numeric",
+      endtime="numeric",
+      times="missing",
+      data="missing"
     ),
     definition=function # constructor
     ### create a  TimeMap object from the function definition and the time interval  
     (map, ## the R function 
     starttime,  
     endtime,
-    lag=0 ##<< delay 
+    lag=0 ##<< delay
     ){
-    new("TimeMap",map=map,starttime=starttime,endtime=endtime)
+    new("TimeMap",map=map,starttime=starttime,endtime=endtime,lag=lag)
+  }
+)
+###########################################################################
+setMethod(
+    f="TimeMap",
+    signature=signature(
+      map="TimeMap"
+    ),
+    definition=function # pass through constructor
+    ### 
+    (map ##<< The function just returns its argument and helps to avoid a lot of checks if a conversion is necessary.
+    ){
+   map 
   }
 )
 ##########################################################################
@@ -245,39 +276,39 @@ setMethod(
 #########################################################
 # helpers (to be used also by child classes)
 #########################################################
-setMethod(
-    f="fromDataFrame",
-    signature=c(  
-      # the first Argument is just here to make the method inheritable
-      # by subclasses just like initilize
-      .Object="TimeMap",
-      map="data.frame"
-    ),
-    definition=function # assemble the objects components
-    ### The method is used internally to convert TimeMap objects to BoundInFlux objects.
-    (
-      .Object,
-      map,
-      lag=0,
-      interpolation=splinefun
-    ){
-     t=map[,1]  
-     y=map[,2]  
-     o=order(t)
-     tyo=cbind(t[o],y[o])
-     to=tyo[,1]
-     yo=tyo[,2]
-     t_start=min(to)
-     t_end=max(t)
-     func_map=interpolation(to,yo)
-
-    .Object@starttime=t_start
-    .Object@endtime=t_end
-    .Object@map=func_map
-    .Object@lag=lag
-    return(.Object)
-     }
-)
+#setMethod(
+#    f="fromDataFrame",
+#    signature=c(  
+#      # the first Argument is just here to make the method inheritable
+#      # by subclasses just like initilize
+#      .Object="TimeMap",
+#      map="data.frame"
+#    ),
+#    definition=function # assemble the objects components
+#    ### The method is used internally to convert TimeMap objects to BoundInFlux objects.
+#    (
+#      .Object,
+#      map,
+#      lag=0,
+#      interpolation=splinefun
+#    ){
+#     t=map[,1]  
+#     y=map[,2]  
+#     o=order(t)
+#     tyo=cbind(t[o],y[o])
+#     to=tyo[,1]
+#     yo=tyo[,2]
+#     t_start=min(to)
+#     t_end=max(t)
+#     func_map=interpolation(to,yo)
+#
+#    .Object@starttime=t_start
+#    .Object@endtime=t_end
+#    .Object@map=func_map
+#    .Object@lag=lag
+#    return(.Object)
+#     }
+#)
 #######################################################################
 ####################    deprecated functions        ####################
 ########################################################################
