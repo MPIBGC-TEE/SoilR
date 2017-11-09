@@ -6,7 +6,7 @@
 \usage{\S4method{BoundLinDecompOp}{ANY}(map,
 ...)}
 \arguments{
-\item{map}{: of class ANY, anything that can be used as a single \code{map} parameter}
-\item{...}{:  passed on to TimeMpa}
+\item{map}{: of class ANY, passed on to TimeMap}
+\item{...}{:  passed on to TimeMap}
 }
 \description{Creates a BoundLinDecompOp Object. }

@@ -6,7 +6,6 @@ initial.options <- commandArgs(trailingOnly = FALSE)
 file.arg.name <- "--file="
 script.name <- sub(file.arg.name, "", initial.options[grep(file.arg.name, initial.options)])
 script.basename <- dirname(script.name)
-script.basename='.'
 path.to.DESCRIPTION<- file.path(script.basename,'..','..','pkg','DESCRIPTION')
 DescriptionMatrix <- read.dcf(path.to.DESCRIPTION)
 
