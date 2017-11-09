@@ -1,31 +1,46 @@
 #!/usr/bin/Rscript
 # vim:set ff=unix expandtab ts=2 sw=2:
-soilrRepoBase <- Sys.getenv("soilrRepoBase") 
-ss=file.path(soilrRepoBase,"scripts")
-sr=file.path(soilrRepoBase,"RPackages","SoilR","pkg")
-#sR=file.path(sr,"R")
-#sC=file.path(sr,"..","C++")
-#sm=file.path(sr,"man")
-#si=file.path(sr,"inst")
-#sd=file.path(si,"doc")
-#sT=file.path(si,"tests")
-ignoreListPath<-  file.path(ss,"ignoredWords") 
-persDictPath <-  file.path(ss,"acceptedWords.rds") 
-saveRDS(readLines(ignoreListPath),persDictPath)
-inject <- function(targetFunc){
-  res <- targetFunc(
-    dir=sr,
-    control=list(
-      "--master=en_US", 
-      "--add-extra-dicts=en_GB"
-    )
+# find relative path to this script from the current wd
+pkgName <- 'SoilR'
+initial.options <- commandArgs(trailingOnly = FALSE)
+file.arg.name <- "--file="
+script.name <- sub(file.arg.name, "", initial.options[grep(file.arg.name, initial.options)])
+script.basename <- dirname(script.name)
+ss<- dirname(script.name)
+ignoreListPath<-  file.path(ss,"manually_maintained_list_of_ignored_words.txt") 
+manDictPath <-  file.path(ss,"acceptedWords.rds") 
+autoDictPath <-  file.path(ss,"SoilR_object_names.rds") 
+saveRDS(readLines(ignoreListPath),manDictPath)
+
+sr=file.path(script.basename,"..","..","pkg")
+# install pkg to be able to find the names of classes and functions
+if (!is.element('devtools',installed.packages())){
+	install.packages('devtools',repos='https://cran.uni-muenster.de')
+}
+require(devtools)
+install(sr)
+require(pkgName,character.only=TRUE)
+fqPkgName <- sprintf('package:%s',pkgName)
+print(fqPkgName)
+objectNames<- ls(as.environment(fqPkgName))
+print(objectNames)
+filter <- function(){
+  #do something with the object names here
+}
+
+#funcList=c(aspell_package_R_files,aspell_package_Rd_files,aspell_package_vignettes)
+res <- aspell_package_Rd_files(
+  dir=sr,
+  control=list(
+    "--master=en_US"
+    # if we add additional dictionaries less errors are reported
+    # since more words are "known".
     ,
-    dictionaries=persDictPath
+    "--add-extra-dicts=en_GB"
   )
-  res
-}
-funcList=c(aspell_package_R_files,aspell_package_Rd_files,aspell_package_vignettes)
-for (fun in funcList){
-  res=inject(fun)
-  print(res)
-}
+  ,
+  drop=c('\\author','\\name','\\alias')
+  ,
+  dictionaries=c(manDictPath)
+)
+print(res)
