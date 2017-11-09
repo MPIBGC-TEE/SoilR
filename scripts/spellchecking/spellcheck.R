@@ -42,5 +42,7 @@ res <- aspell_package_Rd_files(
   drop=c('\\author','\\name','\\alias')
   ,
   dictionaries=c(manDictPath)
+  ,
+  ignore=objectNames
 )
 print(res)
