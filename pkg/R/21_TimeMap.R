@@ -1,7 +1,23 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
 
-### defines a (time dependent) mapping including the function definition and the ### domain where the function is well defined.  This can be used to avoid interpolations out of range when mixing different time dependent data sets
+### This class enhances a time dependent function by information about its domain and a possible delay.
+### The information about the delay is especially usefull for functions that interpolate data. 
+### Assume that you are give time series data in two vectors \code{times}, \code{values}.
+### You can create an interpolating function with  \code{\link{splinefun}} or \code{\link{approxfun}}
+### \code{f  <- splinefun(x=times,y=values) } 
+### \code{f(t)} will yield sensible values for \eqn{$\min_{t \in times}\le t \le max_{t \in times}$}{min(times)<t<max(times)}.
+### but will produce unreasonable values for any t outside these limits.
+### Unfortunately the interpolating functions produced by 
+### \code{\link{splinefun}} or \code{\link{approxfun}} do not retain any information 
+### about their domain which makes it possible to accidentatly 
+### apply them to times not at all supported by the original data. 
+### This would not even cause errors in the code but silently corrupt the results.
+### To help you to keep track of the domains of the many time dependent functions used in SoilR's 
+### Models thss class \code{\link{TimeMap-class}} stores the \code{starttime} and \code{endtime} values
+### along with the function represented by \code{map}.
+### SoilR functions that accept time series data will normally convert it to 
+### subclasses  \code{TimeMap-class} automatically but you can do it explicitly.
 setClass(
    Class="TimeMap",
    slots=list(
@@ -215,8 +231,10 @@ setMethod(
       map="TimeMap"
     ),
     definition=function # pass through constructor
-    ### 
-    (map ##<< The function just returns its argument and helps to avoid a lot of checks if a conversion is necessary.
+    ### The function just returns its argument.
+    ### So any function that has to convert one of its argument can just call TimeMap on it 
+    ### even if the argument is allready one.
+    (map ##<< the object that will be returned unchanged
     ){
    map 
   }
@@ -271,44 +289,6 @@ setMethod(
     }
 )
 
-#########################################################
-#converters
-#########################################################
-# helpers (to be used also by child classes)
-#########################################################
-#setMethod(
-#    f="fromDataFrame",
-#    signature=c(  
-#      # the first Argument is just here to make the method inheritable
-#      # by subclasses just like initilize
-#      .Object="TimeMap",
-#      map="data.frame"
-#    ),
-#    definition=function # assemble the objects components
-#    ### The method is used internally to convert TimeMap objects to BoundInFlux objects.
-#    (
-#      .Object,
-#      map,
-#      lag=0,
-#      interpolation=splinefun
-#    ){
-#     t=map[,1]  
-#     y=map[,2]  
-#     o=order(t)
-#     tyo=cbind(t[o],y[o])
-#     to=tyo[,1]
-#     yo=tyo[,2]
-#     t_start=min(to)
-#     t_end=max(t)
-#     func_map=interpolation(to,yo)
-#
-#    .Object@starttime=t_start
-#    .Object@endtime=t_end
-#    .Object@map=func_map
-#    .Object@lag=lag
-#    return(.Object)
-#     }
-#)
 #######################################################################
 ####################    deprecated functions        ####################
 ########################################################################

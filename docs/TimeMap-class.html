@@ -9,7 +9,23 @@
 
 <h3>Description</h3>
 
-<p>defines a (time dependent) mapping including the function definition and the ### domain where the function is well defined.  This can be used to avoid interpolations out of range when mixing different time dependent data sets</p>
+<p>This class enhances a time dependent function by information about its domain and a possible delay.
+The information about the delay is especially usefull for functions that interpolate data. 
+Assume that you are give time series data in two vectors <code>times</code>, <code>values</code>.
+You can create an interpolating function with  <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code>
+<code>f  &lt;- splinefun(x=times,y=values) </code> 
+<code>f(t)</code> will yield sensible values for <i>min(times)&lt;t&lt;max(times)</i>.
+but will produce unreasonable values for any t outside these limits.
+Unfortunately the interpolating functions produced by 
+<code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code> do not retain any information 
+about their domain which makes it possible to accidentatly 
+apply them to times not at all supported by the original data. 
+This would not even cause errors in the code but silently corrupt the results.
+To help you to keep track of the domains of the many time dependent functions used in SoilR's 
+Models thss class <code><a href="TimeMap-class.html">TimeMap-class</a></code> stores the <code>starttime</code> and <code>endtime</code> values
+along with the function represented by <code>map</code>.
+SoilR functions that accept time series data will normally convert it to 
+subclasses  <code>TimeMap-class</code> automatically but you can do it explicitly.</p>
 
 
 <h3>Methods</h3>
@@ -62,5 +78,5 @@
 	<p><code><a href="TimeMap.html">TimeMap</a></code><br />
 Please also look at constructors of non virtual subclasses </p>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-40 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-41 <a href="00Index.html">Index</a>]</div>
 </body></html>

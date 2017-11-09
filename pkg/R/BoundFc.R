@@ -20,7 +20,9 @@ correctnessOfBoundFc=function#check for unreasonable parameters or unsupported f
 
 #---------------------------------------------------------------------------------------------------------
 setClass(# Objects containing the atmospheric 14C fraction and the format it is provided in. 
-    ### Objects of this class contain a time dependent function describing the Atmospheric \eqn{^{14}C}{14C} fraction and a format description, that allows to use the numeric valuest to be interpreted correctly in subsequent computations.
+    ### Objects of this class contain a time dependent function describing the Atmospheric 
+    ### \eqn{^{14}C}{14C} fraction and a format description, 
+    ### that allows to use the numeric valuest to be interpreted correctly in subsequent computations.
     Class="BoundFc",
     contains="TimeMap",
     slots=list(
@@ -31,11 +33,11 @@ setClass(# Objects containing the atmospheric 14C fraction and the format it is 
 setMethod(
   f="BoundFc",
   signature=signature(format='character'),
-  definition=function # constructor
-  ### the method constructs an object from a function a timerange where it is valid and a format  
+  ### The method constructs an object from a function a timerange where it is valid and a format  
+  definition=function # A constructor
 (
   format,     ##<< a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
-  ...         ## will be passed on to \code{\link{TimeMap}}
+  ...         ##<<  will be passed on to \code{\link{TimeMap}}
 ){
     obj <- as(TimeMap(...),"BoundFc")
     obj@format=format

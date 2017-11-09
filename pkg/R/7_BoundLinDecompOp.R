@@ -20,12 +20,12 @@ correctnessOfBoundDecompOp <- function(obj){
 setMethod(
       f="BoundLinDecompOp",
       signature=c(map="UnBoundLinDecompOp"),
-      definition=function # convert a UnBoundLinDecompOp to a BoundLinDecompOp
       ### The method creates a BoundLinDecompOp consisting of a constant time dependent function 
       ### and the limits of its domain (starttime and endtime) set to -Inf and Inf respectively
+      definition=function # convert a UnBoundLinDecompOp to a BoundLinDecompOp
       (map,
-       starttime=-Inf,
-       endtime=Inf
+       starttime=-Inf, ##<< the left hand boundary of the valid time interval
+       endtime=Inf   ##<< the right hand boundary of the valid time interval
        ){
       f=getFunctionDefinition(map)
       return(BoundLinDecompOp(map=f,starttime,endtime))
