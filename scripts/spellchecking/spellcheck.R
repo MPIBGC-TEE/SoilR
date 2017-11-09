@@ -24,12 +24,13 @@ fqPkgName <- sprintf('package:%s',pkgName)
 print(fqPkgName)
 objectNames<- ls(as.environment(fqPkgName))
 print(objectNames)
-filter <- function(){
+filter <- function(ifile,encoding){
+
   #do something with the object names here
 }
 
 #funcList=c(aspell_package_R_files,aspell_package_Rd_files,aspell_package_vignettes)
-res <- aspell_package_Rd_files(
+res <- aspell(
   dir=sr,
   control=list(
     "--master=en_US"
@@ -43,6 +44,6 @@ res <- aspell_package_Rd_files(
   ,
   dictionaries=c(manDictPath)
   ,
-  ignore=objectNames
+  filter=filter
 )
 print(res)
