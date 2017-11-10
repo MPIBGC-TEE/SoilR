@@ -1,1 +1,14 @@
-TimeMap
+# The entries in this file will be used to build a dictionary of accepted
+# words for spellchecking
+Bacwave
+DAYCENT
+EnzLoss
+EnzProd
+Gaudinski
+Jenkinson
+Kirschbaum
+Manzoni
+Menten
+Zelenev
+unitless
+volumetric
