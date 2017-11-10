@@ -50,8 +50,8 @@ print(names(formals(funcs[[1]])))
 argNames <- unique(as.character(unlist(lapply(funcs,function(fun){names(formals(fun))}))))
 objectNames <- c(objectNames,getClasses(fqPkgName))
 objectNames <- c(objectNames,pkgName)
-objectNames <- c(objectNames,argNames)
-
+#objectNames <- c(objectNames,argNames)
+print(objectNames)
 manDir <- file.path(packageDir,'man')
 files=list.files(path=manDir,pattern='.*.Rd')
 
