@@ -34,7 +34,7 @@ packageDir=file.path(ss,"..","..","pkg")
 if (!is.element('devtools',installed.packages())){
 	install.packages('devtools',repos='https://cran.uni-muenster.de')
 }
-install(packageDir)
+#install(packageDir)
 require(pkgName,character.only=TRUE)
 fqPkgName <- sprintf('package:%s',pkgName)
 print(fqPkgName)
@@ -46,26 +46,28 @@ for (fn in objectNames){
     funcs[[fn]]<-f
     }
 }
-print(names(formals(funcs[[1]])))
 argNames <- unique(as.character(unlist(lapply(funcs,function(fun){names(formals(fun))}))))
-writeLines(argNames,'argNames')
+
 objectNames <- c(objectNames,getClasses(fqPkgName))
 objectNames <- c(objectNames,pkgName)
-#objectNames <- c(objectNames,argNames)
-print(objectNames)
+objectNames <- unique(objectNames)
 manDir <- file.path(packageDir,'man')
 files=list.files(path=manDir,pattern='.*.Rd')
 
 myFilter <- function(
-  ifile,
-  encoding='unknown',
-  keepSpacing=TRUE,
-  drop=c('\\references')
-){
+    ifile,
+    encoding='unknown',
+    keepSpacing=TRUE,
+    drop=c('\\references')
+  ){
+  lines <- readLines(file.path(manDir,'AbsoluteFractionModern_from_Delta14C-method_6803e156.Rd'))
+  # remove function and class names
   lines <- RdTextFilter(ifile,encoding,keepSpacing,drop)
-  for (name in objectNames){
-    lines <- gsub(pattern=name,replacement='',x=lines)
-  }
+  p <- paste(objectNames,collapse='|')
+  lines <- gsub(pattern=p,replacement='',x=lines)
+  # remove function arguments
+  p<- sprintf('\\item\\{(%s)\\}',paste(argNames,collapse='|'))
+  lines <- gsub(pattern=p,replacement='',x=lines)
   return(lines)
 }
 res <- aspell(
