@@ -34,23 +34,27 @@ packageDir=file.path(ss,"..","..","pkg")
 if (!is.element('devtools',installed.packages())){
 	install.packages('devtools',repos='https://cran.uni-muenster.de')
 }
-#install(packageDir)
+install(packageDir)
 require(pkgName,character.only=TRUE)
-fqPkgName <- sprintf('package:%s',pkgName)
-print(fqPkgName)
-objectNames<- ls(as.environment(fqPkgName))
+  #fqPkgName <- sprintf('package:%s',pkgName)
+objectNames <- c()
+argNames  <- c()
 funcs<-list()
-for (fn in objectNames){
-  f<-eval(as.symbol(fn))
-  if (is.function(f)){
+for (pkg in head(search(),16)){
+  pkgObjects <- ls(pkg)
+  for (fn in pkgObjects){
+    f<-eval(as.symbol(fn))
+    if (is.function(f)){
     funcs[[fn]]<-f
     }
+  }
+  argNames <- c(argNames,unique(as.character(unlist(lapply(funcs,function(fun){names(formals(fun))})))))
+  objectNames<- c(objectNames, pkgObjects)
+  objectNames <- c(objectNames,getClasses(pkg))
+  #objectNames <- c(objectNames,pkg)
 }
-argNames <- unique(as.character(unlist(lapply(funcs,function(fun){names(formals(fun))}))))
 
-objectNames <- c(objectNames,getClasses(fqPkgName))
-objectNames <- c(objectNames,pkgName)
-objectNames <- unique(objectNames)
+
 manDir <- file.path(packageDir,'man')
 files=list.files(path=manDir,pattern='.*.Rd')
 
@@ -60,14 +64,19 @@ myFilter <- function(
     keepSpacing=TRUE,
     drop=c('\\references')
   ){
-  lines <- readLines(file.path(manDir,'AbsoluteFractionModern_from_Delta14C-method_6803e156.Rd'))
+  #lines <- readLines(file.path(manDir,'AbsoluteFractionModern_from_Delta14C-method_6803e156.Rd'))
   # remove function and class names
   lines <- RdTextFilter(ifile,encoding,keepSpacing,drop)
-  p <- paste(objectNames,collapse='|')
-  lines <- gsub(pattern=p,replacement='',x=lines)
+  #p <- paste(objectNames,collapse='|')
+  for (on in setdiff(objectNames,c('(','{','[' ,'[<-','[[','[[<-','[.AsIs','[<-.data.frame','[.data.frame','[[<-.data.frame','[[.data.frame'))){
+    #print(on)
+    lines <- gsub(pattern=on,replacement='',x=lines)
+  }
   # remove function arguments
-  p<- sprintf('\\item\\{(%s)\\}',paste(argNames,collapse='|'))
-  lines <- gsub(pattern=p,replacement='',x=lines)
+  #p<- sprintf('\\item\\{(%s)\\}',paste(argNames,collapse='|'))
+  for (an in argNames){
+   lines <- gsub(pattern=sprintf('\\itme\\{%s\\}',an),replacement='',x=lines)
+  }
   return(lines)
 }
 res <- aspell(
