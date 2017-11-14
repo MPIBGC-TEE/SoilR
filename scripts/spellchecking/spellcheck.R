@@ -48,6 +48,7 @@ for (fn in objectNames){
 }
 print(names(formals(funcs[[1]])))
 argNames <- unique(as.character(unlist(lapply(funcs,function(fun){names(formals(fun))}))))
+writeLines(argNames,'argNames')
 objectNames <- c(objectNames,getClasses(fqPkgName))
 objectNames <- c(objectNames,pkgName)
 #objectNames <- c(objectNames,argNames)
