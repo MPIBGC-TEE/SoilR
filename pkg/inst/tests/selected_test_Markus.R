@@ -13,6 +13,7 @@ alltests <- defineTestSuite(
    #testFileRegexp = "^runit.BoundLinDecomOp.R",
    #testFileRegexp = "^runit.Model.R",
    #testFileRegexp = "^runit.formatConversion",
+   #testFileRegexp = "^runit.check.pass.single.R",
    testFileRegexp = "^runit.check.pass.R",
    #testFileRegexp = "^runit.ThreepFeedback_MCSim.R",
    #testFileRegexp = "^runit.*.R$",

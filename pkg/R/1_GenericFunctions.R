@@ -568,58 +568,6 @@ setGeneric(
 	     standardGeneric("BoundLinDecompOp")
 	 }
 )
-#setGeneric(
-#	 name="GeneralModel",
-#	 def=function # A wrapper for different model constructors 
-#	 ### Creates a Model object from different sources
-#	 ### Have a look at the methods for details.
-#	 (t,A,ivList,inputFluxes,...){
-#	     standardGeneric("GeneralModel")
-#	 }
-#)
-setGeneric(
-	 name="GeneralModel_14",
-	 def=function # A general constructor 
-	 ### Creates a Model14 object from different sources
-	 ### Have a look at the methods for details.
-	 (
-	   t,	
-	   A,	
-	   ivList,
-	   initialValF, 
-	   inputFluxes, 
-	   inputFc,
-	   Fc,
-	   di=-0.0001209681, 
-	   lambda=-0.0001209681,
-	   solverfunc=deSolve.lsoda.wrapper,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
-	   pass=FALSE,  ##<< if TRUE Forces the constructor to create the model even if it is invalid 
-	   ...
-	 )
-	 {
-	     standardGeneric("GeneralModel_14")
-	 }
-)
-#setGeneric(
-#	 name="Model_14",
-#	 def=function # A general constructor 
-#	 ### Creates a Model_14 object from different sources
-#	 ### Have a look at the methods for details.
-#	 (
-#	   t, 
-#	   A,
-#	   ivList,
-#	   initialValF,
-#	   inputFluxes,
-#	   inputFc,
-#	   c14DecayRate,
-#	   solverfunc,
-#	   pass
-#	 ){
-#	     standardGeneric("Model_14")
-#	 }
-#)
-	 
 	 
  
  

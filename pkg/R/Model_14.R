@@ -169,19 +169,6 @@ setMethod(
     }
 )
 #------------------------------------------------------------------------------------
-#setMethod(f="Model_14",
-#  signature=c(
-#    t="numeric",
-#    A="ANY",
-#    ivList="numeric",
-#    initialValF="ConstFc",
-#    inputFluxes="ANY",
-#    inputFc="ANY",
-#    c14DecayRate="numeric",
-#    solverfunc="function",
-#    pass="logical"
-#  ),
-#  definition=
 Model_14 <- function #general  constructor for class Model_14
   ### This method tries to create an object from any combination of arguments 
   ### that can be converted into  the required set of building blocks for the Model_14
@@ -203,40 +190,6 @@ Model_14 <- function #general  constructor for class Model_14
      ### A model object that can be further queried. 
      ##seealso<< \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} 
   }
-#)
-#------------------------------------------------------------------------------------
-#setMethod(f="Model_14",
-#  signature=c(
-#    t="numeric",
-#    A="ANY",
-#    ivList="numeric",
-#    initialValF="ConstFc",
-#    inputFluxes="ANY",
-#    inputFc="ANY",
-#    c14DecayRate="numeric",
-#    solverfunc="missing",
-#    pass="logical"
-#  ),
-#  definition=function #constructor for class Model_14
-#  ### This method is a wrapper 
-#  ### with solverfunc set to \code{deSolve.lsoda.wrapper}
-#  
-#  (t,			
-#   A,		
-#   ivList,		
-#   initialValF,
-#   inputFluxes, 
-#   inputFc,
-#   c14DecayRate,
-#   pass=FALSE  
-#   )
-#  {
-#     obj=Model_14(t,GeneralDecompOp(A),ivList, initialValF,GeneralInFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=deSolve.lsoda.wrapper,pass=pass)
-#     return(obj)
-#     ### A Model_14 object that can be further queried. 
-#     ##seealso<< \code{\link{TwopParallelModel14}}, \code{\link{TwopSeriesModel14}}, \code{\link{TwopFeedbackModel14}} and so on. 
-#  }
-#)
 #------------------------------------------------------------------------------------
 setMethod(
    f= "getC14",

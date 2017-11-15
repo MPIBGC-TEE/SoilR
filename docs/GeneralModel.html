@@ -1,17 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: the old function to create Models</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: additional function to create Models</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for GeneralModel {SoilR}"><tr><td>GeneralModel {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>the old  function to create Models</h2>
+<h2>additional function to create Models</h2>
 
 <h3>Description</h3>
 
-<p>In previous SoilR Version GeneralModel was the main function to create linear models,
+<p>In previous SoilR Version GeneralModel was the function to create linear models,
 a task now fulfilled by the function <code><a href="Model.html">Model</a></code>.
-To ensure backward compatibility this function remains as a wrapper.
+To ensure backward compatibility this function remains as a wrapper. In future versions it might take on the role of an abstract factory that produces several classes of models (i.e linear or non-linear) depending on different combinations of arguments.
 It creates a Model object from any combination of arguments 
 that can be converted into  the required set of building blocks for a model
 for n arbitrarily connected pools.</p>

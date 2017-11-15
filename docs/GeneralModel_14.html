@@ -1,15 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: GeneralModel_14 S4 generic</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: a function to create objects of class Model_14</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for GeneralModel_14 {SoilR}"><tr><td>GeneralModel_14 {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>GeneralModel_14 S4 generic</h2>
+<h2>a function to create objects of class Model_14</h2>
 
 <h3>Description</h3>
 
-<p>no Description</p>
+<p>This method tries to create a Model object from any combination of arguments 
+that can be converted into  the required set of building blocks for a model
+for n arbitrarily connected pools.</p>
 
 
 <h3>Usage</h3>
@@ -19,13 +21,10 @@ A,
 ivList,
 initialValF,
 inputFluxes,
-inputFc,
 Fc,
 di=-0.0001209681,
-lambda=-0.0001209681,
 solverfunc=deSolve.lsoda.wrapper,
-pass=FALSE,
-...)</pre>
+pass=FALSE)</pre>
 
 
 <h3>Arguments</h3>
@@ -33,63 +32,43 @@ pass=FALSE,
 <table summary="R argblock">
 <tr valign="top"><td><code>t</code></td>
 <td>
-<p>see the method arguments for details</p>
+<p>A vector containing the points in time where the solution is sought.</p>
 </td></tr>
 <tr valign="top"><td><code>A</code></td>
 <td>
-<p>see the method arguments for details</p>
 </td></tr>
 <tr valign="top"><td><code>ivList</code></td>
 <td>
-<p>see the method arguments for details</p>
 </td></tr>
 <tr valign="top"><td><code>initialValF</code></td>
 <td>
-<p>see the method arguments for details</p>
 </td></tr>
 <tr valign="top"><td><code>inputFluxes</code></td>
 <td>
-<p>see the method arguments for details</p>
-</td></tr>
-<tr valign="top"><td><code>inputFc</code></td>
-<td>
-<p>see the method arguments for details</p>
 </td></tr>
 <tr valign="top"><td><code>Fc</code></td>
 <td>
-<p>see the method arguments for details</p>
 </td></tr>
 <tr valign="top"><td><code>di</code></td>
 <td>
-<p>see the method arguments for details</p>
-</td></tr>
-<tr valign="top"><td><code>lambda</code></td>
-<td>
-<p>see the method arguments for details</p>
 </td></tr>
 <tr valign="top"><td><code>solverfunc</code></td>
 <td>
-<p>The function used by to actually solve the ODE system. This can be <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
 <td>
-<p>if TRUE Forces the constructor to create the model even if it is invalid</p>
-</td></tr>
-<tr valign="top"><td><code>...</code></td>
-<td>
-<p>see the method arguments for details</p>
 </td></tr>
 </table>
 
 
-<h3>Methods</h3>
+<h3>Value</h3>
 
-	<p><code><a href="GeneralModel_14-method_665c63db.html">GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,missing,missing,missing,logical-method</a></code><br />
-<code><a href="GeneralModel_14-method_8f14ebb1.html">GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,function,logical-method</a></code><br />
-<code><a href="GeneralModel_14-method_4823c530.html">GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,function,missing-method</a></code><br />
-<code><a href="GeneralModel_14-method_3b74efb6.html">GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,logical-method</a></code><br />
-<code><a href="GeneralModel_14-method_fc43c137.html">GeneralModel_14,numeric,ANY,numeric,ANY,ANY,ANY,missing,numeric,missing,missing,missing-method</a></code><br />
-<code><a href="GeneralModel_14-method_b34356a.html">GeneralModel_14,numeric,ANY,numeric,ANY,ANY,missing,ANY,numeric,missing,missing,missing-method</a></code><br /></p>
+<p>A model object that can be further queried. </p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="TwopParallelModel.html">TwopParallelModel</a></code>, <code><a href="TwopSeriesModel.html">TwopSeriesModel</a></code>, <code><a href="TwopFeedbackModel.html">TwopFeedbackModel</a></code> </p>
 
 <hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-46 <a href="00Index.html">Index</a>]</div>
 </body></html>

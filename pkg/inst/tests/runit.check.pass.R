@@ -19,8 +19,10 @@ test.check.pass=function(){
 	globstring=paste(prefix,"*.R",sep="")
 	auto_paths=Sys.glob(globstring)
 	for (p in auto_paths){
+    print(p)
 		source(p,local=TRUE)
 	}
+  #stop('################################# mm #####################')
 	#create a vector of all the function names
 	X <- lsf.str()
 	#create a helper that checks for the pass argument in the functions 

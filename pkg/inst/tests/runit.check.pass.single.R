@@ -1,5 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
+test.single <- function(){
   t_start=1960
   t_end=2010
   tn=220
@@ -39,5 +40,5 @@
   # we assume a half life th=5730 years
   th=5730
   k=log(0.5)/th #note that k is negative and has the unit y^-1
-  m1 <- Model_14(t=t_fault,A=At,ivList=c0,initialValF=F0,inputFluxes=inputFluxes,inputFc=Fc,c14DecayRate=k,pass=TRUE)
-	#-----------------------------------------------------------------------------------------
+  m1 <- GeneralModel_14(t=t_fault,A=At,ivList=c0,initialValF=F0,inputFluxes=inputFluxes,inputFc=Fc,di=k,pass=TRUE)
+}
