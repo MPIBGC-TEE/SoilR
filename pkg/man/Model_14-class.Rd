@@ -1,4 +1,5 @@
-\description{This class  extends \code{\linkS4class{Model}, the focal point of SoilR. 
+\description{This class  extends \code{\linkS4class{Model}, 
+the focal point of SoilR. 
 by functionality required to represent \eqn{$^{14}C}[14C} contents.
 \itemize{
 \item It combines all the components that are needed to solve the

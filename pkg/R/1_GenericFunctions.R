@@ -600,25 +600,25 @@ setGeneric(
 	     standardGeneric("GeneralModel_14")
 	 }
 )
-setGeneric(
-	 name="Model_14",
-	 def=function # A general constructor 
-	 ### Creates a Model_14 object from different sources
-	 ### Have a look at the methods for details.
-	 (
-	   t, 
-	   A,
-	   ivList,
-	   initialValF,
-	   inputFluxes,
-	   inputFc,
-	   c14DecayRate,
-	   solverfunc,
-	   pass
-	 ){
-	     standardGeneric("Model_14")
-	 }
-)
+#setGeneric(
+#	 name="Model_14",
+#	 def=function # A general constructor 
+#	 ### Creates a Model_14 object from different sources
+#	 ### Have a look at the methods for details.
+#	 (
+#	   t, 
+#	   A,
+#	   ivList,
+#	   initialValF,
+#	   inputFluxes,
+#	   inputFc,
+#	   c14DecayRate,
+#	   solverfunc,
+#	   pass
+#	 ){
+#	     standardGeneric("Model_14")
+#	 }
+#)
 	 
 	 
  

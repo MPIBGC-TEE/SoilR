@@ -169,19 +169,20 @@ setMethod(
     }
 )
 #------------------------------------------------------------------------------------
-setMethod(f="Model_14",
-  signature=c(
-    t="numeric",
-    A="ANY",
-    ivList="numeric",
-    initialValF="ConstFc",
-    inputFluxes="ANY",
-    inputFc="ANY",
-    c14DecayRate="numeric",
-    solverfunc="function",
-    pass="logical"
-  ),
-  definition=function #general  constructor for class Model_14
+#setMethod(f="Model_14",
+#  signature=c(
+#    t="numeric",
+#    A="ANY",
+#    ivList="numeric",
+#    initialValF="ConstFc",
+#    inputFluxes="ANY",
+#    inputFc="ANY",
+#    c14DecayRate="numeric",
+#    solverfunc="function",
+#    pass="logical"
+#  ),
+#  definition=
+Model_14 <- function #general  constructor for class Model_14
   ### This method tries to create an object from any combination of arguments 
   ### that can be converted into  the required set of building blocks for the Model_14
   ### for n arbitrarily connected pools.
@@ -193,7 +194,7 @@ setMethod(f="Model_14",
    inputFluxes, ##<<  something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \linkS4class{InFlux}.
    inputFc,##<< An object describing the fraction of C_14 in per mille (different formats are possible)
    c14DecayRate,## << the rate at which C_14 decays radioactivly. If you don't provide a value here we assume the following value: k=-0.0001209681 y^-1 . This has the side effect that all your time related data are treated as if the time unit was year. Thus beside time itself it also  affects decay rates the inputrates and the output 
-   solverfunc,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
+   solverfunc=deSolve.lsoda.wrapper,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
    pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid 
    )
   {
@@ -202,40 +203,40 @@ setMethod(f="Model_14",
      ### A model object that can be further queried. 
      ##seealso<< \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} 
   }
-)
+#)
 #------------------------------------------------------------------------------------
-setMethod(f="Model_14",
-  signature=c(
-    t="numeric",
-    A="ANY",
-    ivList="numeric",
-    initialValF="ConstFc",
-    inputFluxes="ANY",
-    inputFc="ANY",
-    c14DecayRate="numeric",
-    solverfunc="missing",
-    pass="logical"
-  ),
-  definition=function #constructor for class Model_14
-  ### This method is a wrapper 
-  ### with solverfunc set to \code{deSolve.lsoda.wrapper}
-  
-  (t,			
-   A,		
-   ivList,		
-   initialValF,
-   inputFluxes, 
-   inputFc,
-   c14DecayRate,
-   pass=FALSE  
-   )
-  {
-     obj=Model_14(t,GeneralDecompOp(A),ivList, initialValF,GeneralInFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=deSolve.lsoda.wrapper,pass=pass)
-     return(obj)
-     ### A Model_14 object that can be further queried. 
-     ##seealso<< \code{\link{TwopParallelModel14}}, \code{\link{TwopSeriesModel14}}, \code{\link{TwopFeedbackModel14}} and so on. 
-  }
-)
+#setMethod(f="Model_14",
+#  signature=c(
+#    t="numeric",
+#    A="ANY",
+#    ivList="numeric",
+#    initialValF="ConstFc",
+#    inputFluxes="ANY",
+#    inputFc="ANY",
+#    c14DecayRate="numeric",
+#    solverfunc="missing",
+#    pass="logical"
+#  ),
+#  definition=function #constructor for class Model_14
+#  ### This method is a wrapper 
+#  ### with solverfunc set to \code{deSolve.lsoda.wrapper}
+#  
+#  (t,			
+#   A,		
+#   ivList,		
+#   initialValF,
+#   inputFluxes, 
+#   inputFc,
+#   c14DecayRate,
+#   pass=FALSE  
+#   )
+#  {
+#     obj=Model_14(t,GeneralDecompOp(A),ivList, initialValF,GeneralInFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=deSolve.lsoda.wrapper,pass=pass)
+#     return(obj)
+#     ### A Model_14 object that can be further queried. 
+#     ##seealso<< \code{\link{TwopParallelModel14}}, \code{\link{TwopSeriesModel14}}, \code{\link{TwopFeedbackModel14}} and so on. 
+#  }
+#)
 #------------------------------------------------------------------------------------
 setMethod(
    f= "getC14",
