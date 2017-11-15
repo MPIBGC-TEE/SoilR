@@ -122,15 +122,15 @@ setClass(# Model
     ## \itemize{
     ##   \item
     ##   The time-dependent matrix valued function \eqn{\vec{A}(t)}{A(t)} is represented by an object 
-    ##   of a class that inherits from class \code{DecompOp} \code{\link{DecompOp-class}}. 
+    ##   of a class that inherits from class  \code{\linkS4class{DecompOp}}. 
     ##   Such objects can be created in different ways from functions, matrices or data. 
-    ##   (see the subclasses of \code{\link{DecompOp-class}} and especially their \code{Constructors} sections.  
+    ##   (see the subclasses of \code{\linkS4class{DecompOp}} and especially their \code{Constructors} sections.  
     ##   and the \code{examples} section of this help page.
     ##   \item 
     ##   The vector-valued time-dependent function \eqn{\vec{I}(t)}{I(t)} is in SoilR represented by an object of a class that 
-    ##   inherits from class InFlux \code{\link{InFlux-class}}. 
+    ##   inherits from class InFlux \code{\linkS4class{InFlux}}. 
     ##   Such objects can be created from functions, constant vectors and data. 
-    ##   (see the subclasses of \code{\link{InFlux-class}} and especially their \code{Constructors} sections.  
+    ##   (see the subclasses of \code{\linkS4class{InFlux}} and especially their \code{Constructors} sections.  
     ##   \item 
     ##   The times for which the results are computed are represented by a numeric vector.
     ##   \item 
@@ -214,35 +214,35 @@ setMethod(
 #    #"ANY"
 #  ),
 #  definition=function #general  constructor for class Model
-Model <- function #Constructor for class \link{Model-class} 
-  ### This function creates an object of class \link{Model-class}, 
+Model <- function #Constructor for class \linkS4class{Model} 
+  ### This function creates an object of class \linkS4class{Model}, 
   ### The arguments can be given in different form as long as they can 
   ### be converted to the necessary internal building blocks. 
   ### (See the links)
 
   (t,			##<< A vector containing the points in time where the solution is sought.
-   A,			##<< something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\link{DecompOp-class}}. 
+   A,			##<< something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\linkS4class{DecompOp}}. 
    ivList,		##<< A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools. This is checked by an internal  function. 
-   inputFluxes, ##<<  something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \link{InFlux-class}.
-   solverfunc=deSolve.lsoda.wrapper,		##<< The function used to actually solve the ODE system. The default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your own function that provides the same interface. 
+   inputFluxes, ##<<  something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \linkS4class{InFlux}.
+   solverfunc=deSolve.lsoda.wrapper,		##<< The function used to actually solve the ODE system. The default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your own function that the same interface. 
    pass=FALSE  ##<< Forces the constructor to create the model even if it does not pass internal sanity checks  
    )
   {
-  ##details<< This function \code{Model} wraps the internal constructor of class \link{Model-class}. The internal constructor requires the argument \code{A} to be of class \link{DecompOp-class} and argument \code{inputFluxes} to be of  class \link{InFlux-class}.
+  ##details<< This function \code{Model} wraps the internal constructor of class \linkS4class{Model}. The internal constructor requires the argument \code{A} to be of class \linkS4class{DecompOp} and argument \code{inputFluxes} to be of  class \linkS4class{InFlux}.
   ## Before calling the internal constructor \code{Model} calls \link{GeneralDecompOp} on its argument \code{A} and  \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
   ## the required classes.
   ## Both are generic functions. Follow the links to see for which kind of inputs conversion methods are available.
   ## The attempted conversion allows great flexibility with respect to arguments and independence from the actual implementation.
   ## However if your code uses the wrong argument the error will most
   ## likely occur in the delegate functions. 
-  ## If this happens use \code{traceback()} to see which function was called
+  ## If this happens analyse the errormassage (or use \code{traceback()}) to see which function was called
   ## and try to call the constructor of the desired subclass 
   ## explicitly with your arguments. 
-  ## The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.
+  ## The subclasses are linked in the class documentation \linkS4class{DecompOp} or \linkS4class{InFlux} respectively.
   ##
   ## Note also that this function checks its arguments quite elaborately 
   ## and tries to detect accidental unreasonable combinations, 
-  ## especially concerning two kinds of error.
+  ## especially concerning two kinds of errors.
   ## \enumerate{
   ## \item 
   ##  unintended extrapolation of time series data
@@ -259,7 +259,7 @@ Model <- function #Constructor for class \link{Model-class}
   
      obj=new(Class="Model",t,GeneralDecompOp(A),ivList,GeneralInFlux(inputFluxes),solverfunc,pass)
      return(obj)
-     ### An object of class \link{Model-class} that can be queried by many methods 
+     ### An object of class \linkS4class{Model} that can be queried by many methods 
      ### to be found there.
      ##seealso<< This function is called by many of the \link{predefinedModels}. \cr 
      ##Package functions called in the examples:\cr
@@ -459,7 +459,7 @@ getSingleCol=function(x,slot_name){
 }
 setMethod("[",signature(x="Model",i="character",j="missing",drop="missing"), #since [] is a already defined generic the names of the arguments are not arbitrary 
         definition=function # overload the [ ] operator for models and character vector
-        ### This method overloads the [] operator for Model objects and acts as an alternative
+        ### This method is experimental and might change. User code should at the moment not rely on it. It overloads the [] operator for Model objects and acts as an alternative
         ### to the get methods
         ### so m["times"] is equivalent to getTimes(m), m["C"] to getC(m) and so on.
 

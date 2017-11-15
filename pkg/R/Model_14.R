@@ -79,7 +79,19 @@ res=correctnessOfModel(object)
 
 #------------------------------------------------------------------------------------
 
-    ### defines a representation of a 14C model
+    
+### This class  extends \code{\linkS4class{Model}, 
+### the focal point of SoilR. 
+### by functionality required to represent \eqn{$^{14}C}[14C} contents.
+### \itemize{
+### \item It combines all the components that are needed to solve the
+### initial value problem for the pool contents.
+### \eqn{\vec{C}}{C=(C_1,...C_n)^t, }. 
+### 
+### \item It provides the single argument for the different functions 
+### that are available to compute various results from the solution of the initial value problem. 
+### (See subsection \code{Methods} and the examples.)
+###}
 setClass(# Model_14
     Class="Model_14",
     contains="Model",
@@ -175,10 +187,10 @@ setMethod(f="Model_14",
   ### for n arbitrarily connected pools.
   
   (t,			##<< A vector containing the points in time where the solution is sought.
-   A,			##<< something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\link{DecompOp-class}}. 
+   A,			##<< something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\linkS4class{DecompOp}}. 
    ivList,		##<< A vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by an internal  function. 
    initialValF, ##<< An object equal or equivalent to class ConstFc containing a vector with the initial values of the radiocarbon fraction for each pool and a format string describing in which format the values are given.
-   inputFluxes, ##<<  something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \link{InFlux-class}.
+   inputFluxes, ##<<  something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \linkS4class{InFlux}.
    inputFc,##<< An object describing the fraction of C_14 in per mille (different formats are possible)
    c14DecayRate,## << the rate at which C_14 decays radioactivly. If you don't provide a value here we assume the following value: k=-0.0001209681 y^-1 . This has the side effect that all your time related data are treated as if the time unit was year. Thus beside time itself it also  affects decay rates the inputrates and the output 
    solverfunc,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 

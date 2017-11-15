@@ -61,31 +61,31 @@ pass=FALSE)}
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is sought.}
-\item{A}{something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\link{DecompOp-class}}.}
+\item{A}{something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\linkS4class{DecompOp}}.}
 \item{ivList}{A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools. This is checked by an internal  function.}
-\item{inputFluxes}{something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \link{InFlux-class}.}
-\item{solverfunc}{The function used to actually solve the ODE system. The default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your own function that provides the same interface.}
+\item{inputFluxes}{something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \linkS4class{InFlux}.}
+\item{solverfunc}{The function used to actually solve the ODE system. The default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your own function that the same interface.}
 \item{pass}{Forces the constructor to create the model even if it does not pass internal sanity checks}
 }
-\description{This function creates an object of class \link{Model-class}, 
+\description{This function creates an object of class \linkS4class{Model}, 
 The arguments can be given in different form as long as they can 
 be converted to the necessary internal building blocks. 
 (See the links)}
-\details{This function \code{Model} wraps the internal constructor of class \link{Model-class}. The internal constructor requires the argument \code{A} to be of class \link{DecompOp-class} and argument \code{inputFluxes} to be of  class \link{InFlux-class}.
+\details{This function \code{Model} wraps the internal constructor of class \linkS4class{Model}. The internal constructor requires the argument \code{A} to be of class \linkS4class{DecompOp} and argument \code{inputFluxes} to be of  class \linkS4class{InFlux}.
 Before calling the internal constructor \code{Model} calls \link{GeneralDecompOp} on its argument \code{A} and  \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
 the required classes.
 Both are generic functions. Follow the links to see for which kind of inputs conversion methods are available.
 The attempted conversion allows great flexibility with respect to arguments and independence from the actual implementation.
 However if your code uses the wrong argument the error will most
 likely occur in the delegate functions. 
-If this happens use \code{traceback()} to see which function was called
+If this happens analyse the errormassage (or use \code{traceback()}) to see which function was called
 and try to call the constructor of the desired subclass 
 explicitly with your arguments. 
-The subclasses are linked in the class documentation \link{DecompOp-class} or \link{InFlux-class} respectively.
+The subclasses are linked in the class documentation \linkS4class{DecompOp} or \linkS4class{InFlux} respectively.
 
 Note also that this function checks its arguments quite elaborately 
 and tries to detect accidental unreasonable combinations, 
-especially concerning two kinds of error.
+especially concerning two kinds of errors.
 \enumerate{
 \item 
 unintended extrapolation of time series data
@@ -101,6 +101,6 @@ To see example scenarios for parameter check look at:
 Package functions called in the examples:\cr
 \code{\link{example.2DInFlux.Args}},\cr
 \code{\link{example.2DGeneralDecompOpArgs}},\cr}
-\title{Constructor for class \link{Model-class} }
-\value{An object of class \link{Model-class} that can be queried by many methods 
+\title{Constructor for class \linkS4class{Model} }
+\value{An object of class \linkS4class{Model} that can be queried by many methods 
 to be found there.}

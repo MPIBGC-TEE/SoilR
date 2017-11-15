@@ -1,15 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Constructor for class Model-class</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Constructor for class Model</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for Model {SoilR}"><tr><td>Model {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Constructor for class <a href="Model-class.html">Model-class</a> </h2>
+<h2>Constructor for class <a href="Model-class.html">Model</a> </h2>
 
 <h3>Description</h3>
 
-<p>This function creates an object of class <a href="Model-class.html">Model-class</a>, 
+<p>This function creates an object of class <a href="Model-class.html">Model</a>, 
 The arguments can be given in different form as long as they can 
 be converted to the necessary internal building blocks. 
 (See the links)</p>
@@ -34,7 +34,7 @@ pass=FALSE)</pre>
 </td></tr>
 <tr valign="top"><td><code>A</code></td>
 <td>
-<p>something that can be converted by <a href="GeneralDecompOp.html">GeneralDecompOp</a> to any of the available subclasses of <code><a href="DecompOp-class.html">DecompOp-class</a></code>.</p>
+<p>something that can be converted by <a href="GeneralDecompOp.html">GeneralDecompOp</a> to any of the available subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code>.</p>
 </td></tr>
 <tr valign="top"><td><code>ivList</code></td>
 <td>
@@ -42,11 +42,11 @@ pass=FALSE)</pre>
 </td></tr>
 <tr valign="top"><td><code>inputFluxes</code></td>
 <td>
-<p>something that can be converted by <a href="GeneralInFlux.html">GeneralInFlux</a> to any of the available subclasses of <a href="InFlux-class.html">InFlux-class</a>.</p>
+<p>something that can be converted by <a href="GeneralInFlux.html">GeneralInFlux</a> to any of the available subclasses of <a href="InFlux-class.html">InFlux</a>.</p>
 </td></tr>
 <tr valign="top"><td><code>solverfunc</code></td>
 <td>
-<p>The function used to actually solve the ODE system. The default is <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> but you can also provide your own function that provides the same interface.</p>
+<p>The function used to actually solve the ODE system. The default is <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> but you can also provide your own function that the same interface.</p>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
 <td>
@@ -57,21 +57,21 @@ pass=FALSE)</pre>
 
 <h3>Details</h3>
 
-<p>This function <code>Model</code> wraps the internal constructor of class <a href="Model-class.html">Model-class</a>. The internal constructor requires the argument <code>A</code> to be of class <a href="DecompOp-class.html">DecompOp-class</a> and argument <code>inputFluxes</code> to be of  class <a href="InFlux-class.html">InFlux-class</a>.
+<p>This function <code>Model</code> wraps the internal constructor of class <a href="Model-class.html">Model</a>. The internal constructor requires the argument <code>A</code> to be of class <a href="DecompOp-class.html">DecompOp</a> and argument <code>inputFluxes</code> to be of  class <a href="InFlux-class.html">InFlux</a>.
 Before calling the internal constructor <code>Model</code> calls <a href="GeneralDecompOp.html">GeneralDecompOp</a> on its argument <code>A</code> and  <a href="GeneralInFlux.html">GeneralInFlux</a> on its argument <code>inputFluxes</code> to convert them into
 the required classes.
 Both are generic functions. Follow the links to see for which kind of inputs conversion methods are available.
 The attempted conversion allows great flexibility with respect to arguments and independence from the actual implementation.
 However if your code uses the wrong argument the error will most
 likely occur in the delegate functions. 
-If this happens use <code>traceback()</code> to see which function was called
+If this happens analyse the errormassage (or use <code>traceback()</code>) to see which function was called
 and try to call the constructor of the desired subclass 
 explicitly with your arguments. 
-The subclasses are linked in the class documentation <a href="DecompOp-class.html">DecompOp-class</a> or <a href="InFlux-class.html">InFlux-class</a> respectively.
+The subclasses are linked in the class documentation <a href="DecompOp-class.html">DecompOp</a> or <a href="InFlux-class.html">InFlux</a> respectively.
 </p>
 <p>Note also that this function checks its arguments quite elaborately 
 and tries to detect accidental unreasonable combinations, 
-especially concerning two kinds of error.
+especially concerning two kinds of errors.
 </p>
 
 <ol>
@@ -94,7 +94,7 @@ To see example scenarios for parameter check look at:
 
 <h3>Value</h3>
 
-<p>An object of class <a href="Model-class.html">Model-class</a> that can be queried by many methods 
+<p>An object of class <a href="Model-class.html">Model</a> that can be queried by many methods 
 to be found there.</p>
 
 
@@ -162,5 +162,5 @@ Package functions called in the examples:<br />
   lapply(models,getC)
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-41 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-46 <a href="00Index.html">Index</a>]</div>
 </body></html>

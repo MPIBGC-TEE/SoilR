@@ -19,19 +19,20 @@ subclasses  \code{TimeMap-class} automatically but you can do it explicitly.}
 \alias{TimeMap-class}
 \docType{class}
 \section{Methods}{  \describe{
+    \item{as.character}{\code{signature(x = "TimeMap")}: ... } \code{\link{as.character,TimeMap-method}}
     \item{GeneralDecompOp}{\code{signature(object = "TimeMap")}: ... } \code{\link{GeneralDecompOp,TimeMap-method}}
     \item{GeneralInFlux}{\code{signature(object = "TimeMap")}: ... } \code{\link{GeneralInFlux,TimeMap-method}}
-    \item{TimeMap}{\code{signature(map = "TimeMap", starttime = "ANY", endtime = "ANY", times = "ANY", data = "ANY")}: ... } \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
-    \item{as.character}{\code{signature(x = "TimeMap")}: ... } \code{\link{as.character,TimeMap-method}}
     \item{getFunctionDefinition}{\code{signature(object = "TimeMap")}: ... } \code{\link{getFunctionDefinition,TimeMap-method}}
     \item{getTimeRange}{\code{signature(object = "TimeMap")}: ... } \code{\link{getTimeRange,TimeMap-method}}
+    \item{TimeMap}{\code{signature(map = "TimeMap", starttime = "ANY", endtime = "ANY", times = "ANY", data = "ANY")}: ... } \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
 	 }}
 \title{TimeMap S4 class}
 \section{Subclasses}{\describe{
-	\code{\link{BoundInFlux-class}}\cr
-	\code{\link{TransportDecompositionOperator-class}}\cr
-	\code{\link{BoundLinDecompOp-class}}\cr
-	\code{\link{BoundFc-class}}\cr
+	\code{\linkS4class{BoundInFlux}}\cr
+	\code{\linkS4class{TransportDecompositionOperator}}\cr
+	\code{\linkS4class{BoundLinDecompOp}}\cr
+	\code{\linkS4class{BoundFc}}\cr
 }}
 \section{Constructors}{	\code{\link{TimeMap}}\cr
- Please also look at constructors of non virtual subclasses }
+ Please also look at constructors of non virtual subclasses: 
+\code{\link{BoundInFlux}}, \code{\link{TransportDecompositionOperator}}, \code{\link{BoundLinDecompOp}}, \code{\link{BoundFc}}.}

@@ -14,10 +14,10 @@ solverfunc,
 pass=FALSE)}
 \arguments{
 \item{t}{: of class numeric, A vector containing the points in time where the solution is sought.}
-\item{A}{: of class ANY, something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\link{DecompOp-class}}.}
+\item{A}{: of class ANY, something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\linkS4class{DecompOp}}.}
 \item{ivList}{: of class numeric, A vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by an internal  function.}
 \item{initialValF}{: of class ConstFc, An object equal or equivalent to class ConstFc containing a vector with the initial values of the radiocarbon fraction for each pool and a format string describing in which format the values are given.}
-\item{inputFluxes}{: of class ANY, something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \link{InFlux-class}.}
+\item{inputFluxes}{: of class ANY, something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \linkS4class{InFlux}.}
 \item{inputFc}{: of class ANY, An object describing the fraction of C_14 in per mille (different formats are possible)}
 \item{c14DecayRate}{: of class numeric}
 \item{solverfunc}{: of class function, The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}

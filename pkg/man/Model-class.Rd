@@ -21,15 +21,15 @@ In an object of class Model the components are represented as follows:
 \itemize{
 \item
 The time-dependent matrix valued function \eqn{\vec{A}(t)}{A(t)} is represented by an object 
-of a class that inherits from class \code{DecompOp} \code{\link{DecompOp-class}}. 
+of a class that inherits from class  \code{\linkS4class{DecompOp}}. 
 Such objects can be created in different ways from functions, matrices or data. 
-(see the subclasses of \code{\link{DecompOp-class}} and especially their \code{Constructors} sections.  
+(see the subclasses of \code{\linkS4class{DecompOp}} and especially their \code{Constructors} sections.  
 and the \code{examples} section of this help page.
 \item 
 The vector-valued time-dependent function \eqn{\vec{I}(t)}{I(t)} is in SoilR represented by an object of a class that 
-inherits from class InFlux \code{\link{InFlux-class}}. 
+inherits from class InFlux \code{\linkS4class{InFlux}}. 
 Such objects can be created from functions, constant vectors and data. 
-(see the subclasses of \code{\link{InFlux-class}} and especially their \code{Constructors} sections.  
+(see the subclasses of \code{\linkS4class{InFlux}} and especially their \code{Constructors} sections.  
 \item 
 The times for which the results are computed are represented by a numeric vector.
 \item 
@@ -47,10 +47,11 @@ The initial values are represented by a numeric vector
 	 }}
 \title{Model}
 \section{Subclasses}{\describe{
-	\code{\link{Model_14-class}}\cr
+	\code{\linkS4class{Model_14}}\cr
 }}
 \section{Constructors}{	\code{\link{Model}}\cr
- Please also look at constructors of non virtual subclasses }
+ Please also look at constructors of non virtual subclasses: 
+\code{\link{Model_14}}.}
 \examples{# examples from external files
 # inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit:
 

@@ -6,5 +6,4 @@
 \title{BoundInFlux S4 class}
 \section{Exported superclasses}{\code{\link{InFlux-class}}\cr
 \code{\link{TimeMap-class}}\cr}
-\section{Constructors}{	\code{\link{BoundInFlux}}\cr
- Please also look at constructors of non virtual subclasses }
+\section{Constructors}{	\code{\link{BoundInFlux}}\cr}

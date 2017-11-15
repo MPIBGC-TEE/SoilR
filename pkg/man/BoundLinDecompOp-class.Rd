@@ -6,5 +6,4 @@
 \title{a decomposition operator described by a matrix valued function of time}
 \section{Exported superclasses}{\code{\link{DecompOp-class}}\cr
 \code{\link{TimeMap-class}}\cr}
-\section{Constructors}{	\code{\link{BoundLinDecompOp}}\cr
- Please also look at constructors of non virtual subclasses }
+\section{Constructors}{	\code{\link{BoundLinDecompOp}}\cr}
