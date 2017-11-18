@@ -1,13 +1,59 @@
-\description{This class  extends \code{\linkS4class{Model}, 
-the focal point of SoilR. 
-by functionality required to represent \eqn{$^{14}C}[14C} contents.
+\description{This class  extends \code{\linkS4class{Model}}, 
+to represent \eqn{^{14}C}{14C} decay. 
+\enumerate{
+\item 
 \itemize{
-\item It combines all the components that are needed to solve the
+\item As \code{\linkS4class{Model}} it contains all the components 
+that are needed to solve the
 initial value problem for the pool contents.
 \eqn{\vec{C}}{C=(C_1,...C_n)^t, }. 
-\item It provides the single argument for the different functions 
-that are available to compute various results from the solution of the initial value problem. 
+\item It adds the components that are needed to solve the
+additional initial value problem for the 14C contents of the pools.
+\eqn{\vec{^{14}C}}{14C=(14C_1,...14C_n)^t, }. 
+} 
+\item 
+\itemize{
+\item 
+It provides the single argument for all the different functions 
+that are available for arguments of class \code{\linkS4class{Model}}.
+\item 
+and for additional functions 
+that are available to compute various results from the solution of the additional 
+initial value problem for \eqn{^{14}C}{14C}. 
 See subsection \code{Methods} and the examples.)
+}
+}}
+\details{The additional initial value problem is given by:
+\itemize{
+\item
+the ordinary differential equation
+\eqn{ \dot{^{14}\vec{C}} = \left(\mathbf{A}(t)+k\mathbf{1}\right) \vec{C} =\vec{I}(t)}{ d/dt 14C=(A(t)+kI) 14C+I(t),}
+\item
+the initial Values \eqn{\vec{C}_0=\vec{C}(t_0)}{C_0=C(t_0),} 
+\item
+the \eqn{^{14}C}{14C} fraction
+\item
+the \eqn{^{14}C}{14C} decay rate \eqn{k}{k}.
+\item 
+for the times \eqn{\{t_0,....t_m\}}{{t_0,....,t_m}}.
+}
+In an object of this class the components are represented as follows:
+\itemize{
+\item
+The time-dependent matrix valued function \eqn{\vec{A}(t)}{A(t)} is represented by an object 
+of a class that inherits from class  \code{\linkS4class{DecompOp}}. 
+Such objects can be created in different ways from functions, matrices or data. 
+(see the subclasses of \code{\linkS4class{DecompOp}} and especially their \code{Constructors} sections.  
+and the \code{examples} section of this help page.
+\item 
+The vector-valued time-dependent function \eqn{\vec{I}(t)}{I(t)} is in SoilR represented by an object of a class that 
+inherits from class InFlux \code{\linkS4class{InFlux}}. 
+Such objects can be created from functions, constant vectors and data. 
+(see the subclasses of \code{\linkS4class{InFlux}} and especially their \code{Constructors} sections.  
+\item 
+The times for which the results are computed are represented by a numeric vector.
+\item 
+The initial values are represented by a numeric vector 
 }}
 \name{Model_14-class}
 \alias{Model_14-class}

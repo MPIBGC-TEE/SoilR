@@ -84,7 +84,7 @@ is.negative=function(number){
    return(number<0)
 }
 ### The class Model is the focal point of SoilR. 
-### \itemize{
+### \enumerate{
 ### \item It combines all the components that are needed to solve the
 ### initial value problem for the pool contents.
 ### \eqn{\vec{C}}{C=(C_1,...C_n)^t, }. 
@@ -112,7 +112,7 @@ setClass(# Model
     ## \itemize{
     ##   \item
     ##     the ordinary differential equation
-    ##     \eqn{ \dot{\vec{C}} = \tens{A}(t) \vec{C} =\vec{I}(t)}{ d/dt C=A(t)C+I(t),}
+    ##     \eqn{ \dot{\vec{C}} = \mathbf{A}(t) \vec{C} =\vec{I}(t)}{ d/dt C=A(t)C+I(t),}
     ##   \item
     ##     the intial Values \eqn{\vec{C}_0=\vec{C}(t_0)}{C_0=C(t_0),} 
     ##   \item 

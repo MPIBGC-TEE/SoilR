@@ -5,15 +5,16 @@ require('tools')
 # find relative path to this script from the current wd
 initial.options <- commandArgs(trailingOnly = FALSE)
 file.arg.name <- "--file="
-cond <- any(grepl(pattern=file.arg.name,initial.options))
-if(cond){
+RScript_cond <- any(grepl(pattern=file.arg.name,initial.options))
+if(RScript_cond){
   script.name <- sub(file.arg.name, "", initial.options[grep(file.arg.name, initial.options)])
   ss<- dirname(script.name)
   print(sprintf('The script resides in %s.',ss))
 }else{
   ss<- '.'
 }
-
+arg.name='--args'
+RdTargetFileCond <- any(grepl(pattern=arg.name,initial.options))
 pkgName <- 'SoilR'
 ignoreListFn<- "manually_maintained_list_of_ignored_words.txt"
 trunk <- strsplit(ignoreListFn,split='\\.')[[1]][[1]]
@@ -29,6 +30,7 @@ manDictPath <-  file.path(ss,sprintf("%s.rds",trunk))
 print(manDictPath)
 saveRDS(words,manDictPath)
 
+
 packageDir=file.path(ss,"..","..","pkg")
 # install pkg to be able to find the names of classes and functions
 if (!is.element('devtools',installed.packages())){
@@ -40,7 +42,8 @@ require(pkgName,character.only=TRUE)
 objectNames <- c()
 argNames  <- c()
 funcs<-list()
-for (pkg in head(search(),16)){
+n <- length(search())
+for (pkg in head(search(),min(3,n))){
   pkgObjects <- ls(pkg)
   for (fn in pkgObjects){
     f<-eval(as.symbol(fn))
@@ -53,10 +56,17 @@ for (pkg in head(search(),16)){
   objectNames <- c(objectNames,getClasses(pkg))
   #objectNames <- c(objectNames,pkg)
 }
+print(objectNames)
 
 
 manDir <- file.path(packageDir,'man')
-files=list.files(path=manDir,pattern='.*.Rd')
+if(RdTargetFileCond){
+  RdTargetFileName<-initial.options[grep(pattern=arg.name,initial.options)+1]
+  files <- list(file.path(manDir,RdTargetFileName))
+}else{
+  files=list.files(path=manDir,pattern='.*.Rd',full.names=TRUE)
+}
+print(files)
 
 myFilter <- function(
     ifile,
@@ -64,23 +74,20 @@ myFilter <- function(
     keepSpacing=TRUE,
     drop=c('\\references')
   ){
-  #lines <- readLines(file.path(manDir,'AbsoluteFractionModern_from_Delta14C-method_6803e156.Rd'))
   # remove function and class names
   lines <- RdTextFilter(ifile,encoding,keepSpacing,drop)
-  #p <- paste(objectNames,collapse='|')
   for (on in setdiff(objectNames,c('(','{','[' ,'[<-','[[','[[<-','[.AsIs','[<-.data.frame','[.data.frame','[[<-.data.frame','[[.data.frame'))){
     #print(on)
-    lines <- gsub(pattern=on,replacement='',x=lines)
+    lines <- gsub(pattern=sprintf('(\\W)%s(\\W)',on),replacement='\\1 \\2',x=lines)
   }
   # remove function arguments
-  #p<- sprintf('\\item\\{(%s)\\}',paste(argNames,collapse='|'))
-  for (an in argNames){
-   lines <- gsub(pattern=sprintf('\\itme\\{%s\\}',an),replacement='',x=lines)
-  }
+  #for (an in argNames){
+  # lines <- gsub(pattern=sprintf('\\item\\{%s\\}',an),replacement=' ',x=lines)
+  #}
   return(lines)
 }
 res <- aspell(
-  files=list.files(path=manDir,pattern='.*.Rd',full.names=TRUE),
+  files=files,
   filter=myFilter,
   control=list( "--master=en_US" , "--add-extra-dicts=en_GB") ,
   dictionaries=c(manDictPath) 

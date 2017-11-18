@@ -14,6 +14,9 @@ require(linkeddocs)
 pkgDir='~/SoilR-exp/pkg'
 package.skeleton.dx_3(pkgDir)
 install(pkgDir,args=c('--html'))
+p='pkg.pdf'
+if(file.exists(p)){file.remove(p)}
+system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(pkgDir)))
 #check(pkgDir,document=FALSE,build_args = '--no-build-vignettes')
 browserBin <- 'firefox'
 # check if the browser is running 

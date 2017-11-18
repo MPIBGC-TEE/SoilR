@@ -9,20 +9,99 @@
 
 <h3>Description</h3>
 
-<p>This class  extends <code><a href="Model-class.html">Model</a>, 
-the focal point of SoilR. 
-by functionality required to represent <i>$^{14}C</i>[14C</code> contents.
+<p>This class  extends <code><a href="Model-class.html">Model</a></code>, 
+to represent <i>14C</i> decay. 
 </p>
 
+<ol>
+<li> 
+
 <ul>
-<li><p> It combines all the components that are needed to solve the
+<li><p> As <code><a href="Model-class.html">Model</a></code> it contains all the components 
+that are needed to solve the
 initial value problem for the pool contents.
 <i>C=(C_1,...C_n)^t, </i>. 
 </p>
 </li>
-<li><p> It provides the single argument for the different functions 
-that are available to compute various results from the solution of the initial value problem. 
+<li><p> It adds the components that are needed to solve the
+additional initial value problem for the 14C contents of the pools.
+<i>14C=(14C_1,...14C_n)^t, </i>. 
+</p>
+</li></ul>
+ 
+</li>
+<li> 
+
+<ul>
+<li> 
+<p>It provides the single argument for all the different functions 
+that are available for arguments of class <code><a href="Model-class.html">Model</a></code>.
+</p>
+</li>
+<li> 
+<p>and for additional functions 
+that are available to compute various results from the solution of the additional 
+initial value problem for <i>14C</i>. 
 See subsection <code>Methods</code> and the examples.)
+</p>
+</li></ul>
+
+</li></ol>
+
+
+<h3>Details</h3>
+
+<p>The additional initial value problem is given by:
+</p>
+
+<ul>
+<li>
+<p>the ordinary differential equation
+<i> d/dt 14C=(A(t)+kI) 14C+I(t),</i>
+</p>
+</li>
+<li>
+<p>the initial Values <i>C_0=C(t_0),</i> 
+</p>
+</li>
+<li>
+<p>the <i>14C</i> fraction
+</p>
+</li>
+<li>
+<p>the <i>14C</i> decay rate <i>k</i>.
+</p>
+</li>
+<li> 
+<p>for the times <i>{t_0,....,t_m}</i>.
+</p>
+</li></ul>
+
+<p>In an object of this class the components are represented as follows:
+</p>
+
+<ul>
+<li>
+<p>The time-dependent matrix valued function <i>A(t)</i> is represented by an object 
+of a class that inherits from class  <code><a href="DecompOp-class.html">DecompOp</a></code>. 
+Such objects can be created in different ways from functions, matrices or data. 
+(see the subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code> and especially their <code>Constructors</code> sections.  
+and the <code>examples</code> section of this help page.
+</p>
+</li>
+<li> 
+<p>The vector-valued time-dependent function <i>I(t)</i> is in SoilR represented by an object of a class that 
+inherits from class InFlux <code><a href="InFlux-class.html">InFlux</a></code>. 
+Such objects can be created from functions, constant vectors and data. 
+(see the subclasses of <code><a href="InFlux-class.html">InFlux</a></code> and especially their <code>Constructors</code> sections.  
+</p>
+</li>
+<li> 
+<p>The times for which the results are computed are represented by a numeric vector.
+</p>
+</li>
+<li> 
+<p>The initial values are represented by a numeric vector 
 </p>
 </li></ul>
 
