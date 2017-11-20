@@ -20,10 +20,10 @@ called constructors. (see the constructors section of this help page)}
 	 }}
 \title{decomposition operator }
 \section{Subclasses}{\describe{
-	\code{\linkS4class{UnBoundLinDecompOp}}\cr
-	\code{\linkS4class{BoundLinDecompOp}}\cr
-	\code{\linkS4class{DecompositionOperator}}\cr
-	\code{\linkS4class{ConstLinDecompOp}}\cr
+	\code{\link{UnBoundLinDecompOp-class}}\cr
+	\code{\link{BoundLinDecompOp-class}}\cr
+	\code{\link{DecompositionOperator-class}}\cr
+	\code{\link{ConstLinDecompOp-class}}\cr
 }}
 \section{Constructors}{The class is abstract ( \code{contains "VIRTUAL"}).
            It can therefore not be instanciated directly.

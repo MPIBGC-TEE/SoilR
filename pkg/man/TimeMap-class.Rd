@@ -28,11 +28,10 @@ subclasses  \code{TimeMap-class} automatically but you can do it explicitly.}
 	 }}
 \title{TimeMap S4 class}
 \section{Subclasses}{\describe{
-	\code{\linkS4class{BoundInFlux}}\cr
-	\code{\linkS4class{TransportDecompositionOperator}}\cr
-	\code{\linkS4class{BoundLinDecompOp}}\cr
-	\code{\linkS4class{BoundFc}}\cr
+	\code{\link{BoundInFlux-class}}\cr
+	\code{\link{TransportDecompositionOperator-class}}\cr
+	\code{\link{BoundLinDecompOp-class}}\cr
+	\code{\link{BoundFc-class}}\cr
 }}
 \section{Constructors}{	\code{\link{TimeMap}}\cr
- Please also look at constructors of non virtual subclasses: 
-\code{\link{BoundInFlux}}, \code{\link{TransportDecompositionOperator}}, \code{\link{BoundLinDecompOp}}, \code{\link{BoundFc}}.}
+ Please also look at constructors of non virtual subclasses }

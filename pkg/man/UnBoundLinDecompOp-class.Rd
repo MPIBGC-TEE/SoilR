@@ -9,4 +9,5 @@
 	 }}
 \title{constant decomposition operator }
 \section{Exported superclasses}{\code{\link{DecompOp-class}}\cr}
-\section{Constructors}{	\code{\link{UnBoundLinDecompOp}}\cr}
+\section{Constructors}{	\code{\link{UnBoundLinDecompOp}}\cr
+ Please also look at constructors of non virtual subclasses }

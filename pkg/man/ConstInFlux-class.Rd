@@ -8,4 +8,5 @@
 	 }}
 \title{ConstInFlux S4 class}
 \section{Exported superclasses}{\code{\link{InFlux-class}}\cr}
-\section{Constructors}{	\code{\link{ConstInFlux}}\cr}
+\section{Constructors}{	\code{\link{ConstInFlux}}\cr
+ Please also look at constructors of non virtual subclasses }
