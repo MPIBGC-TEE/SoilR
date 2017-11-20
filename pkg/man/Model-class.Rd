@@ -47,10 +47,11 @@ The initial values are represented by a numeric vector
 	 }}
 \title{Model}
 \section{Subclasses}{\describe{
-	\code{\link{Model_14-class}}\cr
+	\code{\linkS4class{Model_14}}\cr
 }}
 \section{Constructors}{	\code{\link{Model}}\cr
- Please also look at constructors of non virtual subclasses }
+ Please also look at constructors of non virtual subclasses: 
+\code{\link{Model_14}}.}
 \examples{# examples from external files
 # inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit:
 

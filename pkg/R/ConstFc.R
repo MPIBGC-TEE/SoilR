@@ -21,6 +21,7 @@ correctnessOfConstFc=function#check for unreasonable parameters or unsupported f
 
 setClass(
    Class="ConstFc",
+   contains="Fc",
    representation=representation(
 	values="numeric",
 	format="character"

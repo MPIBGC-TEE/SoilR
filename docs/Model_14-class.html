@@ -50,25 +50,17 @@ See subsection <code>Methods</code> and the examples.)
 
 <h3>Details</h3>
 
-<p>The additional initial value problem is given by:
+<p>The original initial value problem for <i>(C_1,...,C_n)^t)</i> as decribed in the docomentation of the superclass <code><a href="Model-class.html">Model</a></code>
+was given by:
 </p>
 
 <ul>
 <li>
-<p>the ordinary differential equation
-<i> d/dt 14C=(A(t)+kI) 14C+I(t),</i>
+<p><i>dC(t)/dt = I(t) + A(t)C(t) </i> 
 </p>
 </li>
 <li>
-<p>the initial Values <i>C_0=C(t_0),</i> 
-</p>
-</li>
-<li>
-<p>the <i>14C</i> fraction
-</p>
-</li>
-<li>
-<p>the <i>14C</i> decay rate <i>k</i>.
+<p>the initial Values <i>C_0=C(t_0)</i> 
 </p>
 </li>
 <li> 
@@ -76,7 +68,30 @@ See subsection <code>Methods</code> and the examples.)
 </p>
 </li></ul>
 
-<p>In an object of this class the components are represented as follows:
+<p>The additional initial value problem for <i>14C</i> is represented by additional parameters:
+</p>
+
+<ul>
+<li>
+<p>a second ordinary differential equation:
+</p>
+<p style="text-align: center;"><i>d 14C/dt = F I(t) + A(t)C(t)-k_14 C(t)</i></p>
+ 
+<p>which is related to the original system by <i>14C=F C</i> resulting in :
+</p>
+<p style="text-align: center;"><i>d 14C/dt = F ((A(t)C(t)-k_14) C(t)+I(t)</i></p>
+ 
+</li>
+<li>
+<p>the <i>14C</i> fraction <i>F</i> 
+</p>
+</li>
+<li>
+<p>the <i>14C</i> decay rate <i>k_14</i>.
+</p>
+</li></ul>
+
+<p>In an object of class <code>Model14</code>  the components are represented as follows:
 </p>
 
 <ul>
@@ -95,11 +110,13 @@ Such objects can also be created from functions, constant vectors and data.
 </p>
 </li>
 <li> 
-<p>The times for which the results are computed are represented by a numeric vector.
+<p>The initial values for <i>C</i> are represented by a numeric vector 
+(Note that the initial values for <i>14C</i> are given by
+<i>14C_0=F C_0</i>.) 
 </p>
 </li>
 <li> 
-<p>The initial values are represented by a numeric vector 
+<p>An object of a subclass of <code><a href="Fc-class.html">Fc</a></code> representing the <i>14C</i> fraction <i>F</i> and its unit. (Either &quot;Delta14C&quot; or &quot;afn&quot; for Absolute Fraction Normal)
 </p>
 </li></ul>
 
@@ -113,6 +130,11 @@ Such objects can also be created from functions, constant vectors and data.
 <p><code><a href="getC14-method_259a526c.html">getC14,Model_14-method</a></code>
 </p>
 <dl>
+<dt>getF14</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="getF14-method_259a526c.html">getF14,Model_14-method</a></code>
+</p>
+<dl>
 <dt>getF14C</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
 </dd> </dl>
 <p><code><a href="getF14C-method_259a526c.html">getF14C,Model_14-method</a></code>
@@ -121,11 +143,6 @@ Such objects can also be created from functions, constant vectors and data.
 <dt>getF14R</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
 </dd> </dl>
 <p><code><a href="getF14R-method_259a526c.html">getF14R,Model_14-method</a></code>
-</p>
-<dl>
-<dt>getF14</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getF14-method_259a526c.html">getF14,Model_14-method</a></code>
 </p>
 <dl>
 <dt>getReleaseFlux14</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
@@ -141,8 +158,7 @@ Such objects can also be created from functions, constant vectors and data.
 
 <h3>Constructors</h3>
 
-	<p><code><a href="Model_14.html">Model_14</a></code><br />
-Please also look at constructors of non virtual subclasses </p>
+	<p><code><a href="Model_14.html">Model_14</a></code><br /></p>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-46 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-47 <a href="00Index.html">Index</a>]</div>
 </body></html>

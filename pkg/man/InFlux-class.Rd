@@ -11,9 +11,9 @@ The most general form of influx supported up to now is a  vector valued function
 	 }}
 \title{InFlux S4 class}
 \section{Subclasses}{\describe{
-	\code{\link{BoundInFlux-class}}\cr
-	\code{\link{ConstInFlux-class}}\cr
-	\code{\link{UnBoundInFlux-class}}\cr
+	\code{\linkS4class{BoundInFlux}}\cr
+	\code{\linkS4class{ConstInFlux}}\cr
+	\code{\linkS4class{UnBoundInFlux}}\cr
 }}
 \section{Constructors}{The class is abstract ( \code{contains "VIRTUAL"}).
            It can therefore not be instanciated directly.

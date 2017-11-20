@@ -24,7 +24,7 @@ setClass(# Objects containing the atmospheric 14C fraction and the format it is 
     ### \eqn{^{14}C}{14C} fraction and a format description, 
     ### that allows to use the numeric valuest to be interpreted correctly in subsequent computations.
     Class="BoundFc",
-    contains="TimeMap",
+    contains=c("TimeMap","Fc"),
     slots=list(
       format="character" 
    )
