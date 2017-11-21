@@ -5,7 +5,8 @@ A,
 ivList,
 initialValF,
 inputFluxes,
-inputFc,
+Fc,
+inputFc=Fc,
 di=-0.0001209681,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
@@ -15,6 +16,7 @@ pass=FALSE)}
 \item{ivList}{}
 \item{initialValF}{}
 \item{inputFluxes}{}
+\item{Fc}{}
 \item{inputFc}{}
 \item{di}{}
 \item{solverfunc}{}
