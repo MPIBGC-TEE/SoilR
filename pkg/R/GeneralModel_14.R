@@ -9,7 +9,7 @@ GeneralModel_14  <- function # a function to create objects of class Model_14
  ivList,
  initialValF, 
  inputFluxes, 
- Fc,
+ inputFc,
  di=-0.0001209681, 
  solverfunc=deSolve.lsoda.wrapper,
  pass=FALSE  
@@ -21,7 +21,7 @@ GeneralModel_14  <- function # a function to create objects of class Model_14
     ivList=ivList,
     initialValF=initialValF,
     inputFluxes=inputFluxes,
-    inputFc=Fc,
+    inputFc=inputFc,
     c14DecayRate=di,
     solverfunc=solverfunc,
     pass=pass
