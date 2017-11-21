@@ -1,6 +1,6 @@
 \name{RespirationCoefficients}
 \alias{RespirationCoefficients}
-\usage{RespirationCoefficients(A)}
+\usage{RespirationCoefficients(A= )}
 \arguments{
 \item{A}{A matrix valued function representing the model.}
 }

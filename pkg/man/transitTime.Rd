@@ -1,7 +1,7 @@
 \name{transitTime}
 \alias{transitTime}
-\usage{transitTime(A,
-u,
+\usage{transitTime(A= ,
+u= ,
 a=seq(0, 100),
 q=c(0.05, 0.5, 0.95))}
 \arguments{

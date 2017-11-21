@@ -1,6 +1,6 @@
 \name{fT.Century2}
 \alias{fT.Century2}
-\usage{fT.Century2(Temp,
+\usage{fT.Century2(Temp= ,
 Tmax=45,
 Topt=35)}
 \arguments{

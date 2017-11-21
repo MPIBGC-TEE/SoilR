@@ -1,6 +1,6 @@
 \name{fW.Daycent2}
 \alias{fW.Daycent2}
-\usage{fW.Daycent2(W,
+\usage{fW.Daycent2(W= ,
 WP=0,
 FC=100)}
 \arguments{

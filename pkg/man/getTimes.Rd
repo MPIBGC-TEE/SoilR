@@ -1,7 +1,7 @@
 \description{no Description}
 \name{getTimes}
 \alias{getTimes}
-\usage{getTimes(object)}
+\usage{getTimes(object= )}
 \title{getTimes S4 generic}
 \arguments{
 \item{object}{see the method arguments for details}

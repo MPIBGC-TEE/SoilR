@@ -3,7 +3,7 @@
 \title{getF14,Model_14-method 
  radiocarbon}
 \alias{getF14,Model_14-method}
-\usage{\S4method{getF14}{Model_14}(object)}
+\usage{\S4method{getF14}{Model_14}(object= )}
 \arguments{
 \item{object}{: of class Model_14, The model}
 }

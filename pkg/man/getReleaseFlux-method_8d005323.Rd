@@ -3,7 +3,7 @@
 \title{getReleaseFlux,Model-method 
  get the release rate for all pools }
 \alias{getReleaseFlux,Model-method}
-\usage{\S4method{getReleaseFlux}{Model}(object)}
+\usage{\S4method{getReleaseFlux}{Model}(object= )}
 \arguments{
 \item{object}{: of class Model, an object of class Model
 created by a call to a constructor e.g. \code{\link{Model}}, 

@@ -1,6 +1,6 @@
 \name{fT.Q10}
 \alias{fT.Q10}
-\usage{fT.Q10(Temp,
+\usage{fT.Q10(Temp= ,
 k_ref=1,
 T_ref=10,
 Q10=2)}

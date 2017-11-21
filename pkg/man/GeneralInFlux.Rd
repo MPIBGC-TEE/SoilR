@@ -1,7 +1,7 @@
 \description{no Description}
 \name{GeneralInFlux}
 \alias{GeneralInFlux}
-\usage{GeneralInFlux(object)}
+\usage{GeneralInFlux(object= )}
 \title{GeneralInFlux S4 generic}
 \arguments{
 \item{object}{see the method arguments for details}

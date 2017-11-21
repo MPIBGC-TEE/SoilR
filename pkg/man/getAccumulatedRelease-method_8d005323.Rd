@@ -3,7 +3,7 @@
 \title{getAccumulatedRelease,Model-method 
  time integrals of release fluxes per pool}
 \alias{getAccumulatedRelease,Model-method}
-\usage{\S4method{getAccumulatedRelease}{Model}(object)}
+\usage{\S4method{getAccumulatedRelease}{Model}(object= )}
 \arguments{
 \item{object}{: of class Model}
 }

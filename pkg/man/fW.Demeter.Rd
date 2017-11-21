@@ -1,6 +1,6 @@
 \name{fW.Demeter}
 \alias{fW.Demeter}
-\usage{fW.Demeter(M,
+\usage{fW.Demeter(M= ,
 Msat=100)}
 \arguments{
 \item{M}{A scalar or vector containing values of soil moisture for which the effects on decomposition rates are calculated.}

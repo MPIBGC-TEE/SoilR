@@ -1,6 +1,6 @@
 \name{fW.Moyano}
 \alias{fW.Moyano}
-\usage{fW.Moyano(theta,
+\usage{fW.Moyano(theta= ,
 a=3.11,
 b=2.42)}
 \arguments{

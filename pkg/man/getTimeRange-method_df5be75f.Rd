@@ -3,7 +3,7 @@
 \title{getTimeRange,ConstLinDecompOp-method 
  return an (infinite) time range since the operator is constant}
 \alias{getTimeRange,ConstLinDecompOp-method}
-\usage{\S4method{getTimeRange}{ConstLinDecompOp}(object)}
+\usage{\S4method{getTimeRange}{ConstLinDecompOp}(object= )}
 \arguments{
 \item{object}{: of class ConstLinDecompOp}
 }

@@ -3,8 +3,8 @@
 \title{[[,MCSim-method 
  overload the [[ operator }
 \alias{[[,MCSim-method}
-\usage{\S4method{[[}{MCSim}(x,
-i)}
+\usage{\S4method{[[}{MCSim}(x= ,
+i= )}
 \arguments{
 \item{x}{: of class MCSim, the simulator}
 \item{i}{:  the index}

@@ -3,8 +3,8 @@
 \title{[,Model,character,missing,missing-method 
  overload the [ ] operator for models and character vector}
 \alias{[,Model,character,missing,missing-method}
-\usage{\S4method{[}{Model,character,missing,missing}(x,
-i)}
+\usage{\S4method{[}{Model,character,missing,missing}(x= ,
+i= )}
 \arguments{
 \item{x}{: of class Model}
 \item{i}{: of class character}

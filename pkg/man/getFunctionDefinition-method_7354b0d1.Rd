@@ -2,7 +2,7 @@
 \name{getFunctionDefinition,TimeMap-method}
 \title{getFunctionDefinition,TimeMap-method}
 \alias{getFunctionDefinition,TimeMap-method}
-\usage{\S4method{getFunctionDefinition}{TimeMap}(object)}
+\usage{\S4method{getFunctionDefinition}{TimeMap}(object= )}
 \arguments{
 \item{object}{: of class TimeMap}
 }

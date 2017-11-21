@@ -1,6 +1,6 @@
 \name{fT.Demeter}
 \alias{fT.Demeter}
-\usage{fT.Demeter(Temp,
+\usage{fT.Demeter(Temp= ,
 Q10=2)}
 \arguments{
 \item{Temp}{A scalar or vector containing values of temperature for which the effects on decomposition rates are calculated}

@@ -3,7 +3,7 @@
 \title{TimeMap,data.frame,missing,missing,missing,missing-method 
  constructor}
 \alias{TimeMap,data.frame,missing,missing,missing,missing-method}
-\usage{\S4method{TimeMap}{data.frame,missing,missing,missing,missing}(map,
+\usage{\S4method{TimeMap}{data.frame,missing,missing,missing,missing}(map= ,
 lag=0,
 interpolation=splinefun)}
 \arguments{

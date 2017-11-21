@@ -1,13 +1,13 @@
 \name{ThreepairMMmodel}
 \alias{ThreepairMMmodel}
-\usage{ThreepairMMmodel(t,
-ks,
-kb,
-Km,
-r,
+\usage{ThreepairMMmodel(t= ,
+ks= ,
+kb= ,
+Km= ,
+r= ,
 Af=1,
-ADD,
-ival)}
+ADD= ,
+ival= )}
 \examples{days=seq(0,1000)
 #Run the model with default parameter values
 MMmodel=ThreepairMMmodel(t=days,ival=rep(c(100,10),3),ks=c(0.1,0.05,0.01),

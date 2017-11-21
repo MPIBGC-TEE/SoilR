@@ -1,7 +1,7 @@
 \description{no Description}
 \name{getReleaseFlux14}
 \alias{getReleaseFlux14}
-\usage{getReleaseFlux14(object)}
+\usage{getReleaseFlux14(object= )}
 \title{This function }
 \arguments{
 \item{object}{see the method arguments for details}

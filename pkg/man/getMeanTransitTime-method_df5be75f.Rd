@@ -3,8 +3,8 @@
 \title{getMeanTransitTime,ConstLinDecompOp-method 
  compute the mean transit time }
 \alias{getMeanTransitTime,ConstLinDecompOp-method}
-\usage{\S4method{getMeanTransitTime}{ConstLinDecompOp}(object,
-inputDistribution)}
+\usage{\S4method{getMeanTransitTime}{ConstLinDecompOp}(object= ,
+inputDistribution= )}
 \arguments{
 \item{object}{: of class ConstLinDecompOp}
 \item{inputDistribution}{:  distribution of the inputs}

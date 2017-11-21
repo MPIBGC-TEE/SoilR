@@ -3,7 +3,7 @@
 \title{Delta14C_from_AbsoluteFractionModern,matrix-method 
  Converts Absolute Fraction Modern values to Delta14C}
 \alias{Delta14C_from_AbsoluteFractionModern,matrix-method}
-\usage{\S4method{Delta14C_from_AbsoluteFractionModern}{matrix}(AbsoluteFractionModern)}
+\usage{\S4method{Delta14C_from_AbsoluteFractionModern}{matrix}(AbsoluteFractionModern= )}
 \arguments{
 \item{AbsoluteFractionModern}{: of class matrix, An object of class matrix containing the values in Absolute Fraction Modern format}
 }

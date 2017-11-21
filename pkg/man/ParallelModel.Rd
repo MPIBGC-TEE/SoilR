@@ -1,9 +1,9 @@
 \name{ParallelModel}
 \alias{ParallelModel}
-\usage{ParallelModel(times,
-coeffs_tm,
-startvalues,
-inputrates,
+\usage{ParallelModel(times= ,
+coeffs_tm= ,
+startvalues= ,
+inputrates= ,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
 \examples{t_start=0 

@@ -1,10 +1,10 @@
 \name{TwopSeriesModel}
 \alias{TwopSeriesModel}
-\usage{TwopSeriesModel(t,
-ks,
-a21,
-C0,
-In,
+\usage{TwopSeriesModel(t= ,
+ks= ,
+a21= ,
+C0= ,
+In= ,
 xi=1,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}

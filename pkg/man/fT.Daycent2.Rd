@@ -1,6 +1,6 @@
 \name{fT.Daycent2}
 \alias{fT.Daycent2}
-\usage{fT.Daycent2(Temp)}
+\usage{fT.Daycent2(Temp= )}
 \arguments{
 \item{Temp}{A scalar or vector containing values of soil temperature for which the effects on decomposition rates are calculated.}
 }

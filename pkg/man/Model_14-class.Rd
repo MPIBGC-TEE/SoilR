@@ -44,7 +44,7 @@ the \eqn{^{14}C}{14C} fraction \eqn{F}{F}
 \item
 the \eqn{^{14}C}{14C} decay rate \eqn{k_{14}}{k_14}.
 }
-In an object of class \code{\linkS4class{Model14}}  the components are represented as follows:
+In an object of class \code{\linkS4class{Model_14}}  the components are represented as follows:
 \itemize{
 \item
 The time-dependent matrix valued function \eqn{\vec{A}(t)}{A(t)} is represented by an object 

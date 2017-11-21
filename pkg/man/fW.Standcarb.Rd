@@ -1,6 +1,6 @@
 \name{fW.Standcarb}
 \alias{fW.Standcarb}
-\usage{fW.Standcarb(Moist,
+\usage{fW.Standcarb(Moist= ,
 MatricShape=5,
 MatricLag=0,
 MoistMin=30,

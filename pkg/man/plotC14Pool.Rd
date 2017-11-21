@@ -1,10 +1,10 @@
 \name{plotC14Pool}
 \alias{plotC14Pool}
-\usage{plotC14Pool(t,
-mat,
-inputFc,
-col,
-...)}
+\usage{plotC14Pool(t= ,
+mat= ,
+inputFc= ,
+col= ,
+...= )}
 \arguments{
 \item{t}{A vector containing the time points for plotting.}
 \item{mat}{A matrix object obtained after a call to \code{\link{getF14}}}

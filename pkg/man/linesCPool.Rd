@@ -1,9 +1,9 @@
 \name{linesCPool}
 \alias{linesCPool}
-\usage{linesCPool(t,
-mat,
-col,
-...)}
+\usage{linesCPool(t= ,
+mat= ,
+col= ,
+...= )}
 \arguments{
 \item{t}{A vector containing the time points for plotting.}
 \item{mat}{A matrix object obtained after a call to \code{\link{getC14}}, \code{\link{getC}}, or \code{\link{getReleaseFlux}}.}

@@ -1,8 +1,8 @@
 \name{turnoverFit}
 \alias{turnoverFit}
-\usage{turnoverFit(obsC14,
-obsyr,
-In,
+\usage{turnoverFit(obsC14= ,
+obsyr= ,
+In= ,
 C0=0,
 yr0=1900,
 Zone=NHZone2,

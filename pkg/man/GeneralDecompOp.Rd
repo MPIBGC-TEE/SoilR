@@ -1,7 +1,7 @@
 \description{no Description}
 \name{GeneralDecompOp}
 \alias{GeneralDecompOp}
-\usage{GeneralDecompOp(object)}
+\usage{GeneralDecompOp(object= )}
 \title{GeneralDecompOp S4 generic}
 \arguments{
 \item{object}{see the method arguments for details}

@@ -3,7 +3,7 @@
 \title{ConstInFlux,numeric-method 
  constructor }
 \alias{ConstInFlux,numeric-method}
-\usage{\S4method{ConstInFlux}{numeric}(map)}
+\usage{\S4method{ConstInFlux}{numeric}(map= )}
 \arguments{
 \item{map}{: of class numeric}
 }

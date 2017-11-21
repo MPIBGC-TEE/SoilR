@@ -1,6 +1,6 @@
 \name{fW.Gompertz}
 \alias{fW.Gompertz}
-\usage{fW.Gompertz(theta,
+\usage{fW.Gompertz(theta= ,
 a=0.824,
 b=0.308)}
 \arguments{

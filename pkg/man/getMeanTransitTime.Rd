@@ -13,8 +13,8 @@ Eriksson, E.: Compartment Models and Reservoir Theory, Annual Review of Ecology
 and Systematics, 2, 67--84, 1971.}
 \name{getMeanTransitTime}
 \alias{getMeanTransitTime}
-\usage{getMeanTransitTime(object,
-inputDistribution)}
+\usage{getMeanTransitTime(object= ,
+inputDistribution= )}
 \title{This function }
 \arguments{
 \item{object}{a DecompOp Object.}

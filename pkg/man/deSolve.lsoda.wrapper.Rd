@@ -1,8 +1,8 @@
 \name{deSolve.lsoda.wrapper}
 \alias{deSolve.lsoda.wrapper}
-\usage{deSolve.lsoda.wrapper(t,
-ydot,
-startValues)}
+\usage{deSolve.lsoda.wrapper(t= ,
+ydot= ,
+startValues= )}
 \arguments{
 \item{t}{A row vector containing the points in time where the solution is sought.}
 \item{ydot}{The function of y and t that computes the derivative for a given

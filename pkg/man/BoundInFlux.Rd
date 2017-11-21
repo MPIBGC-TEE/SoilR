@@ -1,6 +1,6 @@
 \name{BoundInFlux}
 \alias{BoundInFlux}
-\usage{BoundInFlux(...)}
+\usage{BoundInFlux(...= )}
 \arguments{
 \item{...}{passed on to \code{\link{TimeMap}}}
 }

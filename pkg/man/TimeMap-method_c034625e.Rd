@@ -3,9 +3,9 @@
 \title{TimeMap,function,numeric,numeric,missing,missing-method 
  constructor}
 \alias{TimeMap,function,numeric,numeric,missing,missing-method}
-\usage{\S4method{TimeMap}{function,numeric,numeric,missing,missing}(map,
-starttime,
-endtime,
+\usage{\S4method{TimeMap}{function,numeric,numeric,missing,missing}(map= ,
+starttime= ,
+endtime= ,
 lag=0)}
 \arguments{
 \item{map}{: of class function}

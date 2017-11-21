@@ -3,7 +3,7 @@
 \title{getFunctionDefinition,UnBoundLinDecompOp-method 
  creates a constant timedependent function and returns it}
 \alias{getFunctionDefinition,UnBoundLinDecompOp-method}
-\usage{\S4method{getFunctionDefinition}{UnBoundLinDecompOp}(object)}
+\usage{\S4method{getFunctionDefinition}{UnBoundLinDecompOp}(object= )}
 \arguments{
 \item{object}{: of class UnBoundLinDecompOp}
 }

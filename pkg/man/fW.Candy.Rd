@@ -1,7 +1,7 @@
 \name{fW.Candy}
 \alias{fW.Candy}
-\usage{fW.Candy(theta,
-PV)}
+\usage{fW.Candy(theta= ,
+PV= )}
 \arguments{
 \item{theta}{A scalar or vector containing values of volumetric soil water content.}
 \item{PV}{A scalar or vector containing values of pore volume.}

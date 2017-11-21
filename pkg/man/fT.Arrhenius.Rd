@@ -1,6 +1,6 @@
 \name{fT.Arrhenius}
 \alias{fT.Arrhenius}
-\usage{fT.Arrhenius(Temp,
+\usage{fT.Arrhenius(Temp= ,
 A=1000,
 Ea=75000,
 Re=8.3144621)}

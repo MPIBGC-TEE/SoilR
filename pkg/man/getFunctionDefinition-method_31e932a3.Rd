@@ -3,7 +3,7 @@
 \title{getFunctionDefinition,UnBoundInFlux-method 
  creates a constant timedependent function and returns it}
 \alias{getFunctionDefinition,UnBoundInFlux-method}
-\usage{\S4method{getFunctionDefinition}{UnBoundInFlux}(object)}
+\usage{\S4method{getFunctionDefinition}{UnBoundInFlux}(object= )}
 \arguments{
 \item{object}{: of class UnBoundInFlux}
 }

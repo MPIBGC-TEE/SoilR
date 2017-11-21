@@ -3,7 +3,7 @@
 \title{getC,NlModel-method 
  compute the solution for the content of the pools}
 \alias{getC,NlModel-method}
-\usage{\S4method{getC}{NlModel}(object,
+\usage{\S4method{getC}{NlModel}(object= ,
 as.closures=FALSE)}
 \arguments{
 \item{object}{: of class NlModel, the model}

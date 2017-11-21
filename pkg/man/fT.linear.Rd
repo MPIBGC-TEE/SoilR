@@ -1,6 +1,6 @@
 \name{fT.linear}
 \alias{fT.linear}
-\usage{fT.linear(Temp,
+\usage{fT.linear(Temp= ,
 a=0.198306,
 b=0.036337)}
 \arguments{

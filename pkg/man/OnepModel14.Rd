@@ -1,12 +1,12 @@
 \name{OnepModel14}
 \alias{OnepModel14}
-\usage{OnepModel14(t,
-k,
-C0,
-F0_Delta14C,
-In,
+\usage{OnepModel14(t= ,
+k= ,
+C0= ,
+F0_Delta14C= ,
+In= ,
 xi=1,
-inputFc,
+inputFc= ,
 lambda=-0.0001209681,
 lag=0,
 solver=deSolve.lsoda.wrapper,

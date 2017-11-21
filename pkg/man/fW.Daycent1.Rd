@@ -1,6 +1,6 @@
 \name{fW.Daycent1}
 \alias{fW.Daycent1}
-\usage{fW.Daycent1(swc,
+\usage{fW.Daycent1(swc= ,
 a=0.6,
 b=1.27,
 c=0.0012,

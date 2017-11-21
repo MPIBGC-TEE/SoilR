@@ -1,6 +1,6 @@
 \name{bacwaveModel}
 \alias{bacwaveModel}
-\usage{bacwaveModel(t,
+\usage{bacwaveModel(t= ,
 umax=0.063,
 ks=3,
 theta=0.23,

@@ -2,7 +2,7 @@
 \name{getC14,Model_14-method}
 \title{getC14,Model_14-method}
 \alias{getC14,Model_14-method}
-\usage{\S4method{getC14}{Model_14}(object)}
+\usage{\S4method{getC14}{Model_14}(object= )}
 \arguments{
 \item{object}{: of class Model_14}
 }

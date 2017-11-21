@@ -1,9 +1,9 @@
 \name{OnepModel}
 \alias{OnepModel}
-\usage{OnepModel(t,
-k,
-C0,
-In,
+\usage{OnepModel(t= ,
+k= ,
+C0= ,
+In= ,
 xi=1,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}

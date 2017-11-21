@@ -1,7 +1,7 @@
 \description{no Description}
 \name{getC14}
 \alias{getC14}
-\usage{getC14(object)}
+\usage{getC14(object= )}
 \title{This function }
 \arguments{
 \item{object}{see the method arguments for details}

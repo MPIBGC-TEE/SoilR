@@ -3,7 +3,7 @@
 \title{getTimeRange,UnBoundInFlux-method 
  return an (infinite) time range since the function is assumed to be valid for all times}
 \alias{getTimeRange,UnBoundInFlux-method}
-\usage{\S4method{getTimeRange}{UnBoundInFlux}(object)}
+\usage{\S4method{getTimeRange}{UnBoundInFlux}(object= )}
 \arguments{
 \item{object}{: of class UnBoundInFlux}
 }

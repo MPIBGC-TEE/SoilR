@@ -1,9 +1,9 @@
 \name{GeneralModel}
 \alias{GeneralModel}
-\usage{GeneralModel(t,
-A,
-ivList,
-inputFluxes,
+\usage{GeneralModel(t= ,
+A= ,
+ivList= ,
+inputFluxes= ,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
 \arguments{

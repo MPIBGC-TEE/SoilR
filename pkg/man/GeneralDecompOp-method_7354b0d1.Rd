@@ -3,7 +3,7 @@
 \title{GeneralDecompOp,TimeMap-method 
  creates a BoundLinDecompOp from a TimeMap object}
 \alias{GeneralDecompOp,TimeMap-method}
-\usage{\S4method{GeneralDecompOp}{TimeMap}(object)}
+\usage{\S4method{GeneralDecompOp}{TimeMap}(object= )}
 \arguments{
 \item{object}{: of class TimeMap}
 }

@@ -1,8 +1,8 @@
 \name{euler}
 \alias{euler}
-\usage{euler(times,
-ydot,
-startValues)}
+\usage{euler(times= ,
+ydot= ,
+startValues= )}
 \arguments{
 \item{times}{A row vector containing the points in time where the solution is sought.}
 \item{ydot}{The function of y and t that computes the derivative for a given point in time and a column vector y.}

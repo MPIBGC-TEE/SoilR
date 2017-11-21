@@ -3,9 +3,9 @@
 Journal of Geophysical Research-Biogeosciences 114, DOI: 10.1029/2009JG001070.}
 \name{getTransitTimeDistributionDensity}
 \alias{getTransitTimeDistributionDensity}
-\usage{getTransitTimeDistributionDensity(object,
-inputDistribution,
-times)}
+\usage{getTransitTimeDistributionDensity(object= ,
+inputDistribution= ,
+times= )}
 \title{This function }
 \arguments{
 \item{object}{a protoDecompOp Object}

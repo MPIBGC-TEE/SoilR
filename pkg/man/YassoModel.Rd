@@ -1,6 +1,6 @@
 \name{YassoModel}
 \alias{YassoModel}
-\usage{YassoModel(t,
+\usage{YassoModel(t= ,
 ks=c(a_fwl = 0.54,
  a_cwl = 0.03, k_ext = 0.48, k_cel = 0.3, k_lig = 0.22, k_hum1 = 0.012, k_hum2 = 0.0012),
 p=c(fwl_ext = 0.1,
@@ -8,7 +8,7 @@ p=c(fwl_ext = 0.1,
  fwl_cel = 0.1,
  cwl_cel = 0.1,
  fwl_lig = 0.1, cwl_lig = 0.1, pext = 0.05, pcel = 0.24, plig = 0.77, phum1 = 0.51),
-C0,
+C0= ,
 In=c(u_fwl = 0.0758,
  u_cwl = 0.0866,
  u_nwl_cnwl_ext = 0.251 * 0.3,

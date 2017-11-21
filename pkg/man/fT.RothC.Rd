@@ -1,6 +1,6 @@
 \name{fT.RothC}
 \alias{fT.RothC}
-\usage{fT.RothC(Temp)}
+\usage{fT.RothC(Temp= )}
 \arguments{
 \item{Temp}{A scalar or vector containing values of temperature for which the effects on decomposition rates are calculated.}
 }

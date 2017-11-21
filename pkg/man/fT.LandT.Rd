@@ -1,6 +1,6 @@
 \name{fT.LandT}
 \alias{fT.LandT}
-\usage{fT.LandT(Temp)}
+\usage{fT.LandT(Temp= )}
 \arguments{
 \item{Temp}{A scalar or vector containing values of soil temperature for which the effects on decomposition rates are calculated}
 }

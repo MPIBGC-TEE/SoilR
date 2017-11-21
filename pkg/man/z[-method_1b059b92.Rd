@@ -3,8 +3,8 @@
 \title{[,NlModel,character,ANY,ANY-method 
  overloads the [] operator}
 \alias{[,NlModel,character,ANY,ANY-method}
-\usage{\S4method{[}{NlModel,character,ANY,ANY}(x,
-i)}
+\usage{\S4method{[}{NlModel,character,ANY,ANY}(x= ,
+i= )}
 \arguments{
 \item{x}{: of class NlModel, the model}
 \item{i}{: of class character, the property to access}

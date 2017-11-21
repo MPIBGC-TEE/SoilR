@@ -3,7 +3,7 @@
 \title{GeneralInFlux,TimeMap-method 
  create a BoundInFlux from a TimeMap object}
 \alias{GeneralInFlux,TimeMap-method}
-\usage{\S4method{GeneralInFlux}{TimeMap}(object)}
+\usage{\S4method{GeneralInFlux}{TimeMap}(object= )}
 \arguments{
 \item{object}{: of class TimeMap}
 }

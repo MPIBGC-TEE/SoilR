@@ -3,7 +3,7 @@
 \title{getTimeRange,UnBoundLinDecompOp-method 
  return an (infinite) time range since the function is assumed to be valid for all times}
 \alias{getTimeRange,UnBoundLinDecompOp-method}
-\usage{\S4method{getTimeRange}{UnBoundLinDecompOp}(object)}
+\usage{\S4method{getTimeRange}{UnBoundLinDecompOp}(object= )}
 \arguments{
 \item{object}{: of class UnBoundLinDecompOp}
 }

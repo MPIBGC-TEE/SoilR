@@ -2,7 +2,7 @@
 \value{A matrix. Every column represents a pool and every row a point in time}
 \name{getReleaseFlux}
 \alias{getReleaseFlux}
-\usage{getReleaseFlux(object)}
+\usage{getReleaseFlux(object= )}
 \title{This function }
 \arguments{
 \item{object}{An model object (the actual class depends on the method e.g. Model or  Model14}

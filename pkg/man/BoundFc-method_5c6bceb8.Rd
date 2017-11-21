@@ -3,8 +3,8 @@
 \title{BoundFc,character-method 
  A constructor}
 \alias{BoundFc,character-method}
-\usage{\S4method{BoundFc}{character}(format,
-...)}
+\usage{\S4method{BoundFc}{character}(format= ,
+...= )}
 \arguments{
 \item{format}{: of class character, a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation}
 \item{...}{:  will be passed on to \code{\link{TimeMap}}}

@@ -1,11 +1,11 @@
 \description{no Description}
 \name{TimeMap}
 \alias{TimeMap}
-\usage{TimeMap(map,
-starttime,
-endtime,
-times,
-data,
+\usage{TimeMap(map= ,
+starttime= ,
+endtime= ,
+times= ,
+data= ,
 lag=0,
 interpolation=splinefun)}
 \title{TimeMap S4 generic}

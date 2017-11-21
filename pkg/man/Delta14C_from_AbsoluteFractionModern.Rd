@@ -1,7 +1,7 @@
 \description{no Description}
 \name{Delta14C_from_AbsoluteFractionModern}
 \alias{Delta14C_from_AbsoluteFractionModern}
-\usage{Delta14C_from_AbsoluteFractionModern(AbsoluteFractionModern)}
+\usage{Delta14C_from_AbsoluteFractionModern(AbsoluteFractionModern= )}
 \title{Delta14C_from_AbsoluteFractionModern S4 generic}
 \arguments{
 \item{AbsoluteFractionModern}{A numeric object}

@@ -1,6 +1,6 @@
 \name{cycling}
 \alias{cycling}
-\usage{cycling(A)}
+\usage{cycling(A= )}
 \arguments{
 \item{A}{A compartmental linear square matrix with cycling rates in the diagonal and transfer rates in the off-diagonal.}
 }

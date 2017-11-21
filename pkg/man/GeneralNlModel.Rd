@@ -1,9 +1,9 @@
 \name{GeneralNlModel}
 \alias{GeneralNlModel}
-\usage{GeneralNlModel(t,
-TO,
-ivList,
-inputFluxes,
+\usage{GeneralNlModel(t= ,
+TO= ,
+ivList= ,
+inputFluxes= ,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
 \examples{t_start=0

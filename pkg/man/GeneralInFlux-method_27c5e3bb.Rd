@@ -3,7 +3,7 @@
 \title{GeneralInFlux,InFlux-method 
  pass through conversion}
 \alias{GeneralInFlux,InFlux-method}
-\usage{\S4method{GeneralInFlux}{InFlux}(object)}
+\usage{\S4method{GeneralInFlux}{InFlux}(object= )}
 \arguments{
 \item{object}{: of class InFlux}
 }

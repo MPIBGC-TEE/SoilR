@@ -2,7 +2,7 @@
 \name{getTimes,NlModel-method}
 \title{getTimes,NlModel-method}
 \alias{getTimes,NlModel-method}
-\usage{\S4method{getTimes}{NlModel}(object)}
+\usage{\S4method{getTimes}{NlModel}(object= )}
 \arguments{
 \item{object}{: of class NlModel}
 }

@@ -3,7 +3,7 @@
 \title{GeneralDecompOp,matrix-method 
  creates a ConstanDecompOp from a matrix}
 \alias{GeneralDecompOp,matrix-method}
-\usage{\S4method{GeneralDecompOp}{matrix}(object)}
+\usage{\S4method{GeneralDecompOp}{matrix}(object= )}
 \arguments{
 \item{object}{: of class matrix}
 }
