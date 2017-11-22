@@ -1,6 +1,6 @@
 \name{fW.Skopp}
 \alias{fW.Skopp}
-\usage{fW.Skopp(rwc= ,
+\usage{fW.Skopp(rwc,
 alpha=2,
 beta=2,
 f=1.3,

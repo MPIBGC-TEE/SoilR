@@ -1,7 +1,7 @@
 \name{fW.RothC}
 \alias{fW.RothC}
-\usage{fW.RothC(P= ,
-E= ,
+\usage{fW.RothC(P,
+E,
 S.Thick=23,
 pClay=23.4,
 pE=0.75,

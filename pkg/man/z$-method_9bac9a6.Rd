@@ -3,8 +3,8 @@
 \title{$,NlModel-method 
  overload the $ operator}
 \alias{$,NlModel-method}
-\usage{\S4method{$}{NlModel}(x= ,
-name= )}
+\usage{\S4method{$}{NlModel}(x,
+name)}
 \arguments{
 \item{x}{: of class NlModel, the model}
 \item{name}{:  the property to access}

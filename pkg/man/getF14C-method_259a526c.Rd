@@ -3,7 +3,7 @@
 \title{getF14C,Model_14-method 
  read access to the models F14C variable }
 \alias{getF14C,Model_14-method}
-\usage{\S4method{getF14C}{Model_14}(object= )}
+\usage{\S4method{getF14C}{Model_14}(object)}
 \arguments{
 \item{object}{: of class Model_14}
 }

@@ -1,11 +1,11 @@
 \description{no Description}
 \name{TimeMap}
 \alias{TimeMap}
-\usage{TimeMap(map= ,
-starttime= ,
-endtime= ,
-times= ,
-data= ,
+\usage{TimeMap(map,
+starttime,
+endtime,
+times,
+data,
 lag=0,
 interpolation=splinefun)}
 \title{TimeMap S4 generic}
@@ -18,7 +18,7 @@ interpolation=splinefun)}
 \item{lag}{a time delay}
 \item{interpolation}{the interpolating function}
 }
-\section{Methods}{	\code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}\cr
-	\code{\link{TimeMap,data.frame,missing,missing,missing,missing-method}}\cr
+\section{Methods}{	\code{\link{TimeMap,data.frame,missing,missing,missing,missing-method}}\cr
 	\code{\link{TimeMap,function,numeric,numeric,missing,missing-method}}\cr
-	\code{\link{TimeMap,list,missing,missing,missing,missing-method}}\cr}
+	\code{\link{TimeMap,list,missing,missing,missing,missing-method}}\cr
+	\code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}\cr}

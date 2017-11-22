@@ -1,9 +1,9 @@
 \name{plotCPool}
 \alias{plotCPool}
-\usage{plotCPool(t= ,
-mat= ,
-col= ,
-...= )}
+\usage{plotCPool(t,
+mat,
+col,
+...)}
 \arguments{
 \item{t}{A vector containing the time points for plotting.}
 \item{mat}{A matrix object obtained after a call to \code{\link{getC}} or \code{\link{getReleaseFlux}}}

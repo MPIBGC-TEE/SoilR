@@ -1,7 +1,7 @@
 \description{no Description}
 \name{getTimeRange}
 \alias{getTimeRange}
-\usage{getTimeRange(object= )}
+\usage{getTimeRange(object)}
 \title{getTimeRange S4 generic}
 \arguments{
 \item{object}{see the method arguments for details}

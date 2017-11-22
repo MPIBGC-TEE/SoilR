@@ -1,13 +1,13 @@
 \name{TwopMMmodel}
 \alias{TwopMMmodel}
-\usage{TwopMMmodel(t= ,
+\usage{TwopMMmodel(t,
 ks=1.8e-05,
 kb=0.007,
 Km=900,
 r=0.6,
 Af=1,
 ADD=3.2,
-ival= )}
+ival)}
 \examples{days=seq(0,1000,0.5)
 MMmodel=TwopMMmodel(t=days,ival=c(100,10))
 Cpools=getC(MMmodel)

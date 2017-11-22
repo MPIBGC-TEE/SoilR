@@ -7,5 +7,5 @@
     \item{getTimeRange}{\code{signature(object = "ConstInFlux")}: ... } \code{\link{getTimeRange,ConstInFlux-method}}
 	 }}
 \title{ConstInFlux S4 class}
-\section{Exported superclasses}{\code{\link{InFlux-class}}\cr}
+\section{Superclasses}{\code{\link{InFlux-class}}\cr}
 \section{Constructors}{	\code{\link{ConstInFlux}}\cr}

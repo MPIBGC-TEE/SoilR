@@ -3,9 +3,9 @@
 \title{getTransitTimeDistributionDensity,ConstLinDecompOp-method 
  compute the TransitTimeDistributionDensity }
 \alias{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
-\usage{\S4method{getTransitTimeDistributionDensity}{ConstLinDecompOp}(object= ,
-inputDistribution= ,
-times= )}
+\usage{\S4method{getTransitTimeDistributionDensity}{ConstLinDecompOp}(object,
+inputDistribution,
+times)}
 \arguments{
 \item{object}{: of class ConstLinDecompOp}
 \item{inputDistribution}{:  distribution of the inputs}

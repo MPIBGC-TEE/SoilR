@@ -3,7 +3,7 @@
 \title{getF14R,Model_14-method 
  average radiocarbon fraction weighted by carbonrelease }
 \alias{getF14R,Model_14-method}
-\usage{\S4method{getF14R}{Model_14}(object= )}
+\usage{\S4method{getF14R}{Model_14}(object)}
 \arguments{
 \item{object}{: of class Model_14, an object}
 }

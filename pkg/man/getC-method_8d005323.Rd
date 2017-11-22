@@ -2,7 +2,7 @@
 \name{getC,Model-method}
 \title{getC,Model-method}
 \alias{getC,Model-method}
-\usage{\S4method{getC}{Model}(object= )}
+\usage{\S4method{getC}{Model}(object)}
 \arguments{
 \item{object}{: of class Model}
 }

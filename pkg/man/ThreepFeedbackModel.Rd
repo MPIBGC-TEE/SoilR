@@ -1,13 +1,13 @@
 \name{ThreepFeedbackModel}
 \alias{ThreepFeedbackModel}
-\usage{ThreepFeedbackModel(t= ,
-ks= ,
-a21= ,
-a12= ,
-a32= ,
-a23= ,
-C0= ,
-In= ,
+\usage{ThreepFeedbackModel(t,
+ks,
+a21,
+a12,
+a32,
+a23,
+C0,
+In,
 xi=1,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}

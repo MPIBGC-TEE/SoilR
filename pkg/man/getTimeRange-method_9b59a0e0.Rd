@@ -3,7 +3,7 @@
 \title{getTimeRange,ConstInFlux-method 
  time domain of the function}
 \alias{getTimeRange,ConstInFlux-method}
-\usage{\S4method{getTimeRange}{ConstInFlux}(object= )}
+\usage{\S4method{getTimeRange}{ConstInFlux}(object)}
 \arguments{
 \item{object}{: of class ConstInFlux}
 }

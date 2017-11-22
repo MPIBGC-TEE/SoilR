@@ -3,7 +3,7 @@
 \title{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method 
  pass through constructor}
 \alias{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}
-\usage{\S4method{TimeMap}{TimeMap,ANY,ANY,ANY,ANY}(map= )}
+\usage{\S4method{TimeMap}{TimeMap,ANY,ANY,ANY,ANY}(map)}
 \arguments{
 \item{map}{: of class TimeMap, the object that will be returned unchanged}
 }

@@ -1,11 +1,11 @@
 \name{SeriesLinearModel}
 \alias{SeriesLinearModel}
-\usage{SeriesLinearModel(t= ,
-m.pools= ,
-ki= ,
-Tij= ,
-C0= ,
-In= ,
+\usage{SeriesLinearModel(t,
+m.pools,
+ki,
+Tij,
+C0,
+In,
 xi=1,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}

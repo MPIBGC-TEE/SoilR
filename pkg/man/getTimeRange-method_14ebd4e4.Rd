@@ -3,7 +3,7 @@
 \title{getTimeRange,DecompositionOperator-method 
  ask for the boundaries of the underlying time interval}
 \alias{getTimeRange,DecompositionOperator-method}
-\usage{\S4method{getTimeRange}{DecompositionOperator}(object= )}
+\usage{\S4method{getTimeRange}{DecompositionOperator}(object)}
 \arguments{
 \item{object}{: of class DecompositionOperator}
 }

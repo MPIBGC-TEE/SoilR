@@ -1,9 +1,9 @@
 \name{Model}
 \alias{Model}
-\usage{Model(t= ,
-A= ,
-ivList= ,
-inputFluxes= ,
+\usage{Model(t,
+A,
+ivList,
+inputFluxes,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
 \examples{# examples from external files

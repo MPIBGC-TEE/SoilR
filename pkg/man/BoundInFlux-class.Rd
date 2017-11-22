@@ -4,6 +4,6 @@
 \docType{class}
 \section{Methods}{No methods defined with class BoundInFlux in the signature.}
 \title{BoundInFlux S4 class}
-\section{Exported superclasses}{\code{\link{InFlux-class}}\cr
+\section{Superclasses}{\code{\link{InFlux-class}}\cr
 \code{\link{TimeMap-class}}\cr}
 \section{Constructors}{	\code{\link{BoundInFlux}}\cr}

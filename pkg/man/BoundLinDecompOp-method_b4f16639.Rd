@@ -3,7 +3,7 @@
 \title{BoundLinDecompOp,UnBoundLinDecompOp-method 
  convert a UnBoundLinDecompOp to a BoundLinDecompOp}
 \alias{BoundLinDecompOp,UnBoundLinDecompOp-method}
-\usage{\S4method{BoundLinDecompOp}{UnBoundLinDecompOp}(map= ,
+\usage{\S4method{BoundLinDecompOp}{UnBoundLinDecompOp}(map,
 starttime=-Inf,
 endtime=Inf)}
 \arguments{

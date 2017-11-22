@@ -3,7 +3,7 @@
 \title{Delta14C_from_AbsoluteFractionModern,numeric-method 
  Converts to Delta14C format}
 \alias{Delta14C_from_AbsoluteFractionModern,numeric-method}
-\usage{\S4method{Delta14C_from_AbsoluteFractionModern}{numeric}(AbsoluteFractionModern= )}
+\usage{\S4method{Delta14C_from_AbsoluteFractionModern}{numeric}(AbsoluteFractionModern)}
 \arguments{
 \item{AbsoluteFractionModern}{: of class numeric, A numeric object containing the values in Absolute Fraction Modern format}
 }

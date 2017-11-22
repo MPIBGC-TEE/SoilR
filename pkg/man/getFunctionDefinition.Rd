@@ -1,7 +1,7 @@
 \description{no Description}
 \name{getFunctionDefinition}
 \alias{getFunctionDefinition}
-\usage{getFunctionDefinition(object= )}
+\usage{getFunctionDefinition(object)}
 \title{getFunctionDefinition S4 generic}
 \arguments{
 \item{object}{see the method arguments for details}

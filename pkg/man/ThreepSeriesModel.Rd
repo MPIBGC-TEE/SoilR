@@ -1,11 +1,11 @@
 \name{ThreepSeriesModel}
 \alias{ThreepSeriesModel}
-\usage{ThreepSeriesModel(t= ,
-ks= ,
-a21= ,
-a32= ,
-C0= ,
-In= ,
+\usage{ThreepSeriesModel(t,
+ks,
+a21,
+a32,
+C0,
+In,
 xi=1,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}

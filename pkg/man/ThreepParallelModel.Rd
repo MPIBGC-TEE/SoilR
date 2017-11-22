@@ -1,11 +1,11 @@
 \name{ThreepParallelModel}
 \alias{ThreepParallelModel}
-\usage{ThreepParallelModel(t= ,
-ks= ,
-C0= ,
-In= ,
-gam1= ,
-gam2= ,
+\usage{ThreepParallelModel(t,
+ks,
+C0,
+In,
+gam1,
+gam2,
 xi=1,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}

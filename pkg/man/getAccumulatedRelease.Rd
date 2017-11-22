@@ -3,7 +3,7 @@
 \code{t} in \code{\link{GeneralModel}} or other model creating functions.}
 \name{getAccumulatedRelease}
 \alias{getAccumulatedRelease}
-\usage{getAccumulatedRelease(object= )}
+\usage{getAccumulatedRelease(object)}
 \title{getAccumulatedRelease S4 generic}
 \arguments{
 \item{object}{A Model object (e.g. of class Model or Model14)

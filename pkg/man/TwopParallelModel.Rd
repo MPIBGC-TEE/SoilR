@@ -1,10 +1,10 @@
 \name{TwopParallelModel}
 \alias{TwopParallelModel}
-\usage{TwopParallelModel(t= ,
-ks= ,
-C0= ,
-In= ,
-gam= ,
+\usage{TwopParallelModel(t,
+ks,
+C0,
+In,
+gam,
 xi=1,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}

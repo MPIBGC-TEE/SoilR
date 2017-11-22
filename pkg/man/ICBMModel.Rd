@@ -1,6 +1,6 @@
 \name{ICBMModel}
 \alias{ICBMModel}
-\usage{ICBMModel(t= ,
+\usage{ICBMModel(t,
 ks=c(k1 = 0.8, k2 = 0.00605),
 h=0.13,
 r=1.32,

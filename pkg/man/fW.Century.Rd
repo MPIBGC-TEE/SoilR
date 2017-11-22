@@ -1,7 +1,7 @@
 \name{fW.Century}
 \alias{fW.Century}
-\usage{fW.Century(PPT= ,
-PET= )}
+\usage{fW.Century(PPT,
+PET)}
 \arguments{
 \item{PPT}{A scalar or vector containing values of monthly precipitation.}
 \item{PET}{A scalar or vector containing values of potential evapotranspiration.}

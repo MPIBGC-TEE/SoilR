@@ -1,8 +1,8 @@
 \description{no Description}
 \name{BoundFc}
 \alias{BoundFc}
-\usage{BoundFc(format= ,
-...= )}
+\usage{BoundFc(format,
+...)}
 \title{BoundFc S4 generic}
 \arguments{
 \item{format}{see the method arguments for details}

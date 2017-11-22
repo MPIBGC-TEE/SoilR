@@ -7,4 +7,4 @@
     \item{getTimeRange}{\code{signature(object = "DecompositionOperator")}: ... } \code{\link{getTimeRange,DecompositionOperator-method}}
 	 }}
 \title{deprecated decomposition operator class }
-\section{Exported superclasses}{\code{\link{DecompOp-class}}\cr}
+\section{Superclasses}{\code{\link{DecompOp-class}}\cr}

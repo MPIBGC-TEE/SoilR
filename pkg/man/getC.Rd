@@ -3,7 +3,7 @@
 \code{t} in \code{\link{GeneralModel}} or another model creating function.}
 \name{getC}
 \alias{getC}
-\usage{getC(object= ,
+\usage{getC(object,
 as.closures=F)}
 \title{getC S4 generic}
 \arguments{

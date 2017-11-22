@@ -1,11 +1,11 @@
 \name{TwopFeedbackModel}
 \alias{TwopFeedbackModel}
-\usage{TwopFeedbackModel(t= ,
-ks= ,
-a21= ,
-a12= ,
-C0= ,
-In= ,
+\usage{TwopFeedbackModel(t,
+ks,
+a21,
+a12,
+C0,
+In,
 xi=1,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}

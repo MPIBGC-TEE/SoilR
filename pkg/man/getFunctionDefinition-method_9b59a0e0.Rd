@@ -2,7 +2,7 @@
 \name{getFunctionDefinition,ConstInFlux-method}
 \title{getFunctionDefinition,ConstInFlux-method}
 \alias{getFunctionDefinition,ConstInFlux-method}
-\usage{\S4method{getFunctionDefinition}{ConstInFlux}(object= )}
+\usage{\S4method{getFunctionDefinition}{ConstInFlux}(object)}
 \arguments{
 \item{object}{: of class ConstInFlux}
 }

@@ -9,5 +9,5 @@
     \item{getTransitTimeDistributionDensity}{\code{signature(object = "ConstLinDecompOp")}: ... } \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
 	 }}
 \title{constant decomposition operator }
-\section{Exported superclasses}{\code{\link{DecompOp-class}}\cr}
+\section{Superclasses}{\code{\link{DecompOp-class}}\cr}
 \section{Constructors}{	\code{\link{ConstLinDecompOp}}\cr}

@@ -1,8 +1,8 @@
 \name{bind.C14curves}
 \alias{bind.C14curves}
-\usage{bind.C14curves(prebomb= ,
-postbomb= ,
-time.scale= )}
+\usage{bind.C14curves(prebomb,
+postbomb,
+time.scale)}
 \arguments{
 \item{prebomb}{A pre-bomb radiocarbon dataset. They could be either \code{\link{IntCal09}} or \code{\link{IntCal13}}.}
 \item{postbomb}{A post-bomb radiocarbon dataset. They could be any of the datasets in \code{\link{Hua2013}}.}

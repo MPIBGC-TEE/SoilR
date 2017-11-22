@@ -1,8 +1,8 @@
 \description{no Description}
 \name{BoundLinDecompOp}
 \alias{BoundLinDecompOp}
-\usage{BoundLinDecompOp(map= ,
-...= )}
+\usage{BoundLinDecompOp(map,
+...)}
 \title{BoundLinDecompOp S4 generic}
 \arguments{
 \item{map}{see the method arguments for details}

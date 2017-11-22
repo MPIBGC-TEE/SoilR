@@ -7,4 +7,4 @@
     \item{getTimeRange}{\code{signature(object = "UnBoundInFlux")}: ... } \code{\link{getTimeRange,UnBoundInFlux-method}}
 	 }}
 \title{constant decomposition operator }
-\section{Exported superclasses}{\code{\link{InFlux-class}}\cr}
+\section{Superclasses}{\code{\link{InFlux-class}}\cr}

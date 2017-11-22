@@ -1,6 +1,6 @@
 \name{TimeMap.from.Dataframe}
 \alias{TimeMap.from.Dataframe}
-\usage{TimeMap.from.Dataframe(dframe= ,
+\usage{TimeMap.from.Dataframe(dframe,
 lag=0,
 interpolation=splinefun)}
 \arguments{

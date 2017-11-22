@@ -3,7 +3,7 @@
 \title{getFunctionDefinition,ConstLinDecompOp-method 
  creates a constant timedependent function and returns it}
 \alias{getFunctionDefinition,ConstLinDecompOp-method}
-\usage{\S4method{getFunctionDefinition}{ConstLinDecompOp}(object= )}
+\usage{\S4method{getFunctionDefinition}{ConstLinDecompOp}(object)}
 \arguments{
 \item{object}{: of class ConstLinDecompOp}
 }

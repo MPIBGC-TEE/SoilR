@@ -3,7 +3,7 @@
 \title{ConstLinDecompOp,matrix-method 
  construct from matric}
 \alias{ConstLinDecompOp,matrix-method}
-\usage{\S4method{ConstLinDecompOp}{matrix}(mat= )}
+\usage{\S4method{ConstLinDecompOp}{matrix}(mat)}
 \arguments{
 \item{mat}{: of class matrix}
 }

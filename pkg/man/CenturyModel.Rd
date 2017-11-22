@@ -1,11 +1,11 @@
 \name{CenturyModel}
 \alias{CenturyModel}
-\usage{CenturyModel(t= ,
+\usage{CenturyModel(t,
 ks=c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW = 0.0038, k.PAS = 0.00013),
 C0=c(0, 0, 0, 0, 0),
-In= ,
-LN= ,
-Ls= ,
+In,
+LN,
+Ls,
 clay=0.2,
 silt=0.45,
 xi=1,

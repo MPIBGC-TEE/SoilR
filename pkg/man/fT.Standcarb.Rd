@@ -1,6 +1,6 @@
 \name{fT.Standcarb}
 \alias{fT.Standcarb}
-\usage{fT.Standcarb(Temp= ,
+\usage{fT.Standcarb(Temp,
 Topt=45,
 Tlag=4,
 Tshape=15,

@@ -1,6 +1,6 @@
 \name{RothCModel}
 \alias{RothCModel}
-\usage{RothCModel(t= ,
+\usage{RothCModel(t,
 ks=c(k.DPM = 10, k.RPM = 0.3, k.BIO = 0.66, k.HUM = 0.02, k.IOM = 0),
 C0=c(0, 0, 0, 0, 2.7),
 In=1.7,

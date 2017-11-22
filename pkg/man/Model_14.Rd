@@ -1,12 +1,12 @@
 \name{Model_14}
 \alias{Model_14}
-\usage{Model_14(t= ,
-A= ,
-ivList= ,
-initialValF= ,
-inputFluxes= ,
-inputFc= ,
-c14DecayRate= ,
+\usage{Model_14(t,
+A,
+ivList,
+initialValF,
+inputFluxes,
+inputFc,
+c14DecayRate,
 solverfunc=deSolve.lsoda.wrapper,
 pass=FALSE)}
 \arguments{

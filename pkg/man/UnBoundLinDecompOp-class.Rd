@@ -8,5 +8,5 @@
     \item{getTimeRange}{\code{signature(object = "UnBoundLinDecompOp")}: ... } \code{\link{getTimeRange,UnBoundLinDecompOp-method}}
 	 }}
 \title{constant decomposition operator }
-\section{Exported superclasses}{\code{\link{DecompOp-class}}\cr}
+\section{Superclasses}{\code{\link{DecompOp-class}}\cr}
 \section{Constructors}{	\code{\link{UnBoundLinDecompOp}}\cr}

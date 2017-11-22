@@ -4,6 +4,6 @@
 \docType{class}
 \section{Methods}{No methods defined with class BoundFc in the signature.}
 \title{Objects containing the atmospheric 14C fraction and the format it is provided in. }
-\section{Exported superclasses}{\code{\link{TimeMap-class}}\cr
+\section{Superclasses}{\code{\link{TimeMap-class}}\cr
 \code{\link{Fc-class}}\cr}
 \section{Constructors}{	\code{\link{BoundFc}}\cr}

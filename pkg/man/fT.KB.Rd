@@ -1,6 +1,6 @@
 \name{fT.KB}
 \alias{fT.KB}
-\usage{fT.KB(Temp= )}
+\usage{fT.KB(Temp)}
 \arguments{
 \item{Temp}{a scalar or vector containing values of soil temperature for which the effects on decomposition rates are calculated}
 }

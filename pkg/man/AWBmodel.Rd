@@ -1,6 +1,6 @@
 \name{AWBmodel}
 \alias{AWBmodel}
-\usage{AWBmodel(t= ,
+\usage{AWBmodel(t,
 V_M=1e+08,
 V_m=1e+08,
 r_B=2e-04,

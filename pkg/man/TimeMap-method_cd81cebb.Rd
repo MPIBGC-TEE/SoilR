@@ -3,7 +3,7 @@
 \title{TimeMap,list,missing,missing,missing,missing-method 
  Create a TimeMap from a nested list }
 \alias{TimeMap,list,missing,missing,missing,missing-method}
-\usage{\S4method{TimeMap}{list,missing,missing,missing,missing}(map= )}
+\usage{\S4method{TimeMap}{list,missing,missing,missing,missing}(map)}
 \arguments{
 \item{map}{: of class list}
 }

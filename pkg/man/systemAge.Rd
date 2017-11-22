@@ -1,7 +1,7 @@
 \name{systemAge}
 \alias{systemAge}
-\usage{systemAge(A= ,
-u= ,
+\usage{systemAge(A,
+u,
 a=seq(0, 100),
 q=c(0.05, 0.5, 0.95))}
 \arguments{
