@@ -3,7 +3,7 @@
 
 ### This class enhances a time dependent function by information about its domain and a possible delay.
 ### The information about the delay is especially usefull for functions that interpolate data. 
-### Assume that you are give time series data in two vectors \code{times}, \code{values}.
+### Assume that you are given time series data in two vectors \code{times}, \code{values}.
 ### You can create an interpolating function with  \code{\link{splinefun}} or \code{\link{approxfun}}
 ### \code{f  <- splinefun(x=times,y=values) } 
 ### \code{f(t)} will yield sensible values for \eqn{$\min_{t \in times}\le t \le max_{t \in times}$}{min(times)<t<max(times)}.
