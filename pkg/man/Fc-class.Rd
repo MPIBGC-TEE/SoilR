@@ -5,7 +5,8 @@ In the most simple case it is constant real number plus format.}
 \name{Fc-class}
 \alias{Fc-class}
 \docType{class}
-\section{Methods}{No methods defined with class Fc in the signature.}
+\section{Methods}{No exported methods directly defined for class Fc:
+}
 \title{Fc S4 class}
 \section{Subclasses}{\describe{
 	\code{\linkS4class{BoundFc}}\cr

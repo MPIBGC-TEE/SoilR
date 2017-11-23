@@ -16,7 +16,7 @@ pass=FALSE)}
 \item{initialValF}{An object equal or equivalent to class ConstFc containing a vector with the initial values of the radiocarbon fraction for each pool and a format string describing in which format the values are given.}
 \item{inputFluxes}{something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \linkS4class{InFlux}.}
 \item{inputFc}{An object describing the fraction of C_14 in per mille (different formats are possible)}
-\item{c14DecayRate}{}
+\item{c14DecayRate}{the rate at which C_14 decays radioactivly. If you don't provide a value here we assume the following value: k=-0.0001209681 y^-1 . This has the side effect that all your time related data are treated as if the time unit was year. Thus beside time itself it also  affects decay rates the inputrates and the output}
 \item{solverfunc}{The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface.}
 \item{pass}{Forces the constructor to create the model even if it is invalid}
 }

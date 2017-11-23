@@ -6,7 +6,9 @@ The most general form of influx supported up to now is a  vector valued function
 \name{InFlux-class}
 \alias{InFlux-class}
 \docType{class}
-\section{Methods}{  \describe{
+\section{Methods}{Exported methods directly defined for class InFlux:
+
+  \describe{
     \item{GeneralInFlux}{\code{signature(object = "InFlux")}: ... } \code{\link{GeneralInFlux,InFlux-method}}
 	 }}
 \title{InFlux S4 class}

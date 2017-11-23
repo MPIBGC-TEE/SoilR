@@ -38,7 +38,9 @@ The initial values are represented by a numeric vector
 \name{Model-class}
 \alias{Model-class}
 \docType{class}
-\section{Methods}{  \describe{
+\section{Methods}{Exported methods directly defined for class Model:
+
+  \describe{
     \item{[}{\code{signature(x = "Model", i = "character", j = "missing", drop = "missing")}: ... } \code{\link{[,Model,character,missing,missing-method}}
     \item{getAccumulatedRelease}{\code{signature(object = "Model")}: ... } \code{\link{getAccumulatedRelease,Model-method}}
     \item{getC}{\code{signature(object = "Model")}: ... } \code{\link{getC,Model-method}}

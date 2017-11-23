@@ -66,12 +66,26 @@ An object of a subclass of \code{\linkS4class{Fc}} representing the \eqn{^{14}C}
 \name{Model_14-class}
 \alias{Model_14-class}
 \docType{class}
-\section{Methods}{  \describe{
+\section{Methods}{Exported methods directly defined for class Model_14:
+
+  \describe{
     \item{getC14}{\code{signature(object = "Model_14")}: ... } \code{\link{getC14,Model_14-method}}
-    \item{getF14}{\code{signature(object = "Model_14")}: ... } \code{\link{getF14,Model_14-method}}
     \item{getF14C}{\code{signature(object = "Model_14")}: ... } \code{\link{getF14C,Model_14-method}}
     \item{getF14R}{\code{signature(object = "Model_14")}: ... } \code{\link{getF14R,Model_14-method}}
+    \item{getF14}{\code{signature(object = "Model_14")}: ... } \code{\link{getF14,Model_14-method}}
     \item{getReleaseFlux14}{\code{signature(object = "Model_14")}: ... } \code{\link{getReleaseFlux14,Model_14-method}}
+	 }
+
+Methods inherited from superclasses:
+
+from class Model:
+
+  \describe{
+    \item{[}{\code{signature(x = "Model", i = "character", j = "missing", drop = "missing")}: ... } \code{\link{[,Model,character,missing,missing-method}}
+    \item{getAccumulatedRelease}{\code{signature(object = "Model")}: ... } \code{\link{getAccumulatedRelease,Model-method}}
+    \item{getC}{\code{signature(object = "Model")}: ... } \code{\link{getC,Model-method}}
+    \item{getReleaseFlux}{\code{signature(object = "Model")}: ... } \code{\link{getReleaseFlux,Model-method}}
+    \item{getTimes}{\code{signature(object = "Model")}: ... } \code{\link{getTimes,Model-method}}
 	 }}
 \title{Model_14}
 \section{Superclasses}{\code{\link{Model-class}}\cr}

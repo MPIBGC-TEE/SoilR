@@ -11,7 +11,7 @@
 
 <p>This class enhances a time dependent function by information about its domain and a possible delay.
 The information about the delay is especially usefull for functions that interpolate data. 
-Assume that you are give time series data in two vectors <code>times</code>, <code>values</code>.
+Assume that you are given time series data in two vectors <code>times</code>, <code>values</code>.
 You can create an interpolating function with  <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code>
 <code>f  &lt;- splinefun(x=times,y=values) </code> 
 <code>f(t)</code> will yield sensible values for <i>min(times)&lt;t&lt;max(times)</i>.
@@ -30,7 +30,14 @@ subclasses  <code>TimeMap-class</code> automatically but you can do it explicitl
 
 <h3>Methods</h3>
 
-  
+<p>Exported methods directly defined for class TimeMap:
+</p>
+
+<dl>
+<dt>as.character</dt><dd><p><code>signature(x = "TimeMap")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="as.character-method_7354b0d1.html">as.character,TimeMap-method</a></code>
+</p>
 <dl>
 <dt>GeneralDecompOp</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
 </dd> </dl>
@@ -42,16 +49,6 @@ subclasses  <code>TimeMap-class</code> automatically but you can do it explicitl
 <p><code><a href="GeneralInFlux-method_7354b0d1.html">GeneralInFlux,TimeMap-method</a></code>
 </p>
 <dl>
-<dt>TimeMap</dt><dd><p><code>signature(map = "TimeMap", starttime = "ANY", endtime = "ANY", times = "ANY", data = "ANY")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="TimeMap-method_188f349a.html">TimeMap,TimeMap,ANY,ANY,ANY,ANY-method</a></code>
-</p>
-<dl>
-<dt>as.character</dt><dd><p><code>signature(x = "TimeMap")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="as.character-method_7354b0d1.html">as.character,TimeMap-method</a></code>
-</p>
-<dl>
 <dt>getFunctionDefinition</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
 </dd> </dl>
 <p><code><a href="getFunctionDefinition-method_7354b0d1.html">getFunctionDefinition,TimeMap-method</a></code>
@@ -60,6 +57,11 @@ subclasses  <code>TimeMap-class</code> automatically but you can do it explicitl
 <dt>getTimeRange</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
 </dd> </dl>
 <p><code><a href="getTimeRange-method_7354b0d1.html">getTimeRange,TimeMap-method</a></code>
+</p>
+<dl>
+<dt>TimeMap</dt><dd><p><code>signature(map = "TimeMap", starttime = "ANY", endtime = "ANY", times = "ANY", data = "ANY")</code>: ... </p>
+</dd> </dl>
+<p><code><a href="TimeMap-method_188f349a.html">TimeMap,TimeMap,ANY,ANY,ANY,ANY-method</a></code>
 </p>
 
 

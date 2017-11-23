@@ -15,7 +15,9 @@ called constructors. (see the constructors section of this help page)}
 \name{DecompOp-class}
 \alias{DecompOp-class}
 \docType{class}
-\section{Methods}{  \describe{
+\section{Methods}{Exported methods directly defined for class DecompOp:
+
+  \describe{
     \item{GeneralDecompOp}{\code{signature(object = "DecompOp")}: ... } \code{\link{GeneralDecompOp,DecompOp-method}}
 	 }}
 \title{decomposition operator }

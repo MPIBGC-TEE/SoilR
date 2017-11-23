@@ -1,6 +1,6 @@
 \description{This class enhances a time dependent function by information about its domain and a possible delay.
 The information about the delay is especially usefull for functions that interpolate data. 
-Assume that you are give time series data in two vectors \code{times}, \code{values}.
+Assume that you are given time series data in two vectors \code{times}, \code{values}.
 You can create an interpolating function with  \code{\link{splinefun}} or \code{\link{approxfun}}
 \code{f  <- splinefun(x=times,y=values) } 
 \code{f(t)} will yield sensible values for \eqn{$\min_{t \in times}\le t \le max_{t \in times}$}{min(times)<t<max(times)}.
@@ -18,13 +18,15 @@ subclasses  \code{TimeMap-class} automatically but you can do it explicitly.}
 \name{TimeMap-class}
 \alias{TimeMap-class}
 \docType{class}
-\section{Methods}{  \describe{
+\section{Methods}{Exported methods directly defined for class TimeMap:
+
+  \describe{
+    \item{as.character}{\code{signature(x = "TimeMap")}: ... } \code{\link{as.character,TimeMap-method}}
     \item{GeneralDecompOp}{\code{signature(object = "TimeMap")}: ... } \code{\link{GeneralDecompOp,TimeMap-method}}
     \item{GeneralInFlux}{\code{signature(object = "TimeMap")}: ... } \code{\link{GeneralInFlux,TimeMap-method}}
-    \item{TimeMap}{\code{signature(map = "TimeMap", starttime = "ANY", endtime = "ANY", times = "ANY", data = "ANY")}: ... } \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
-    \item{as.character}{\code{signature(x = "TimeMap")}: ... } \code{\link{as.character,TimeMap-method}}
     \item{getFunctionDefinition}{\code{signature(object = "TimeMap")}: ... } \code{\link{getFunctionDefinition,TimeMap-method}}
     \item{getTimeRange}{\code{signature(object = "TimeMap")}: ... } \code{\link{getTimeRange,TimeMap-method}}
+    \item{TimeMap}{\code{signature(map = "TimeMap", starttime = "ANY", endtime = "ANY", times = "ANY", data = "ANY")}: ... } \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
 	 }}
 \title{TimeMap S4 class}
 \section{Subclasses}{\describe{
