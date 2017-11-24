@@ -9,7 +9,8 @@ alltests <- defineTestSuite(
    #testFileRegexp = "^runit.*.R",
    #testFileRegexp = "runit.all.possible.GeneralDecompOp.arguments.R",
    #testFileRegexp = "runit.all.possible.GeneralInflux.arguments.R",
-   testFileRegexp = "runit.all.possible.Model.arguments.R",
+   #testFileRegexp = "runit.all.possible.Model.arguments.R",
+   testFileRegexp = "runit.all.possible.Model_14.arguments.R",
    testFuncRegexp = "^test.*",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
