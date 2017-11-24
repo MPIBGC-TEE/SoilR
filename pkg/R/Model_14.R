@@ -127,11 +127,12 @@ setClass(# Model_14
     ## \itemize{
     ##   \item
     ##    a second ordinary differential equation:
-    ##    \deqn{\frac{d ^{14} \mathbf{C}(t)}{dt} = F \mathbf{I}(t) + \mathbf{A}(t) ^{14} \mathbf{C}(t)-k_{14}\; ^{14}\mathbf{C}(t) }{d 14C/dt = F I(t) + A(t)C(t)-k_14 C(t)} 
-    ##    which is related to the original system by \eqn{^{14}\mathbf{C}=F \mathbf{C}}{14C=F C} resulting in :
-    ##    \deqn{\frac{d ^{14} \mathbf{C}(t)}{dt} = F \left(\left(\mathbf{A}(t) ^{14} -k_{14} \mathbf{1} \right) \mathbf{C}(t) + \mathbf{I}(t)  \right)}{d 14C/dt = F ((A(t)C(t)-k_14) C(t)+I(t)} 
+    ##    \deqn{\frac{d ^{14} \mathbf{C}(t)}{dt} = F(t) \mathbf{I}(t) + \mathbf{A}(t) ^{14} \mathbf{C}(t)-k_{14}\; ^{14}\mathbf{C}(t) }{d 14C/dt = F(t) I(t) + A(t)C(t)-k_14 C(t)} 
+    ##    with initial values \eqn{^{14}\mathbf{C}_0=F_0 \mathbf{C}_0}{14C_0=F_0 C_0} with:
     ##      \item
-    ##        the \eqn{^{14}C}{14C} fraction \eqn{F}{F} 
+    ##        the time dependent \eqn{^{14}C}{14C} fraction \eqn{F(t)}{F(t)}, 
+    ##      \item
+    ##        the constant \eqn{^{14}C}{14C} fraction of the initial pool contents \eqn{F_0}{F_0},
     ##      \item
     ##        the \eqn{^{14}C}{14C} decay rate \eqn{k_{14}}{k_14}.
     ## }
@@ -149,10 +150,14 @@ setClass(# Model_14
     ##   (see the subclasses of \code{\linkS4class{InFlux}} and especially their \code{Constructors} sections.  
     ##   \item 
     ##   The initial values for \eqn{\mathbf{C}_0}{C} are represented by a numeric vector 
-    ##   (Note that the initial values for \eqn{^{14}\mathbf{C}}{14C} are given by
-    ##    \eqn{^{14}\mathbf{C}_0= F\; \mathbf{C}_0}{14C_0=F C_0}.) 
     ##   \item 
-    ##   An object of a subclass of \code{\linkS4class{Fc}} representing the \eqn{^{14}C}{14C} fraction \eqn{F}{F} and its unit. (Either "Delta14C" or "afn" for Absolute Fraction Normal)
+    ##   The value for the \eqn{^{14}\mathbf{C}}{14C} fraction of the initial \eqn{\mathbf{C}}{C} 
+    ##   is represented as an object of class \linkS4class{ConstFc} which is
+    ##   a subclass of \code{\linkS4class{Fc}} representing the \eqn{^{14}C}{14C} fraction \eqn{F}{F} and its unit. 
+    ##   (Either "Delta14C" or "afn" for Absolute Fraction Normal)
+    ##   \item 
+    ##   The value for the \eqn{^{14}\mathbf{C}}{14C} fraction of the input \eqn{\mathbf{I}(t)}{I(t)} is also represented
+    ##   as an object of a subclass of \code{\linkS4class{Fc}}. It can be time dependent or constant.
     ## }
 )
 #-------------------------------Constructors -----------------------------------------------------

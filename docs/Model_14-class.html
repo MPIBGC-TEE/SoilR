@@ -75,15 +75,17 @@ was given by:
 <li>
 <p>a second ordinary differential equation:
 </p>
-<p style="text-align: center;"><i>d 14C/dt = F I(t) + A(t)C(t)-k_14 C(t)</i></p>
+<p style="text-align: center;"><i>d 14C/dt = F(t) I(t) + A(t)C(t)-k_14 C(t)</i></p>
  
-<p>which is related to the original system by <i>14C=F C</i> resulting in :
+<p>with initial values <i>14C_0=F_0 C_0</i> with:
 </p>
-<p style="text-align: center;"><i>d 14C/dt = F ((A(t)C(t)-k_14) C(t)+I(t)</i></p>
- 
 </li>
 <li>
-<p>the <i>14C</i> fraction <i>F</i> 
+<p>the time dependent <i>14C</i> fraction <i>F(t)</i>, 
+</p>
+</li>
+<li>
+<p>the constant <i>14C</i> fraction of the initial pool contents <i>F_0</i>,
 </p>
 </li>
 <li>
@@ -111,12 +113,18 @@ Such objects can also be created from functions, constant vectors and data.
 </li>
 <li> 
 <p>The initial values for <i>C</i> are represented by a numeric vector 
-(Note that the initial values for <i>14C</i> are given by
-<i>14C_0=F C_0</i>.) 
 </p>
 </li>
 <li> 
-<p>An object of a subclass of <code><a href="Fc-class.html">Fc</a></code> representing the <i>14C</i> fraction <i>F</i> and its unit. (Either &quot;Delta14C&quot; or &quot;afn&quot; for Absolute Fraction Normal)
+<p>The value for the <i>14C</i> fraction of the initial <i>C</i> 
+is represented as an object of class <a href="ConstFc-class.html">ConstFc</a> which is
+a subclass of <code><a href="Fc-class.html">Fc</a></code> representing the <i>14C</i> fraction <i>F</i> and its unit. 
+(Either &quot;Delta14C&quot; or &quot;afn&quot; for Absolute Fraction Normal)
+</p>
+</li>
+<li> 
+<p>The value for the <i>14C</i> fraction of the input <i>I(t)</i> is also represented
+as an object of a subclass of <code><a href="Fc-class.html">Fc</a></code>. It can be time dependent or constant.
 </p>
 </li></ul>
 
