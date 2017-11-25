@@ -136,8 +136,8 @@ setClass(# Model
     ##   \item 
     ##   The initial values are represented by a numeric vector 
     ## }
-   ##exampleFunctionsFromFiles<< 
-   ## inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
+    ##exampleFunctionsFromFiles<< 
+    ## inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
 )
 
 
@@ -270,7 +270,7 @@ Model <- function #Constructor for class \linkS4class{Model}
      ## inst/tests/requireSoilR/runit.all.possible.Model.arguments.R test.all.possible.Model.arguments
   }
 #)
-     ## #inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
+     ## inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
 #------------------------------------------------------------------------------------
 #                               Methods
 #------------------------------------------------------------------------------------
