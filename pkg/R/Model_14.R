@@ -41,40 +41,25 @@
 #   }
 #)
 
-correctnessOfModel14=function#check for unreasonable input parameters to Model constructor
-### The parameters used by the function \code{\link{GeneralModel_14}} in SoilR have a biological meaning, and therefore cannot be arbitrary.
-### This functions tests some of the obvious constraints of the general model. 
-### by calling \code{\link{correctnessOfModel}} and additionally takes care of the
-### following 
+correctnessOfModel14=function#check for unreasonable input parameters to constructor
+### The parameters used by the function \code{\link{GeneralModel_14}} in SoilR have a physical meaning, 
+### and can therefore not be arbitrary.
+### This functions tests some of the obvious constraints 14C specific issues.
 (object ##<< the object to be tested
 )
 {
-# first check the Model14 specific issues
-supported_formats=c("Delta14C","AbsoluteFractionModern")
-atm_c14=object@c14Fraction
-if (class(atm_c14)!="BoundFc"){
-   stop(simpleError("The object describing the atmospheric c_14 fraction must be of class BoundFc containing information about the format in which the values are given"))
-}
-f=atm_c14@format
-if (!any(grepl(f,supported_formats))){
-   err_str=paste("The required format:",f," describing the atmospheric c_14 fraction is not supported.\n 
-	     The supported formats are: ",supported_formats,sep="")
-   stop(simpleError(err_str))
-}
+# check only the Model14 specific issues since initialize calls validObject which in turn calls the validity methods of the parent classes
 t_min=min(object@times)
 t_max=max(object@times)
+atm_c14 <- object@c14Fraction
 tA_min=getTimeRange(atm_c14)["t_min"]
 tA_max=getTimeRange(atm_c14)["t_max"]
     if (t_min<tA_min) {
-        stop(simpleError("You ordered a timeinterval that starts earlier than the interval your atmospheric 14C fraction is defined for. \n Have look at the timeMap object or the data it is created from")
-        )
+        stop(simpleError(sprintf("You ordered a timeinterval that starts earlier (t_min=%s) than the interval your atmospheric 14C fraction is defined for (tA_min=%s). \n Have look at the object or the data it is created from",t_min,tA_min)))
     }
     if (t_max>tA_max) {
-        stop(simpleError("You ordered a timeinterval that ends later than the interval your  your atmospheric 14C fraction is defined for. \n Have look at the timeMap object or the data it is created from")
-        )
+        stop(simpleError(sprintf("You ordered a timeinterval that ends later (tmax=%s) than the interval your  your atmospheric 14C fraction is defined for (tA_max=%s). \n Have look at the object or the data it is created from",t_max,tA_max)))
     }
-# now check the things common to all Model objects 
-res=correctnessOfModel(object)
 }
 
 #------------------------------------------------------------------------------------
@@ -213,15 +198,9 @@ setMethod(
      ){
         .Object <- callNextMethod(.Object,times,mat,initialValues,inputFluxes,solverfunc,pass=pass)
         .Object@initialValF=initialValF
-
         .Object@c14Fraction=c14Fraction
-         if (class(mat)=="TimeMap"){
-          warning(TimeMapWarningBoundFc())
-            # cast
-            c14Fraction <- BoundFc(c14Fraction)
-         }
         .Object@c14DecayRate=c14DecayRate
-        if (pass==FALSE) validObject(.Object) #call of the ispector if not explicitly disabled
+        if (pass==FALSE) validObject(.Object) #call of the ispector if not explicitly disabled (This will automatically call the inspectors of the superclasses and also correctnessOfModel14 since this function is 
         return(.Object)
     }
 )

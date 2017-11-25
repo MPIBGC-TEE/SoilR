@@ -8,7 +8,7 @@ test.all.possible.Model_14.arguments <- function(){
        iv<-  c(5,6)
 
   #  - times 
-       times <- seq(0,10,by=0.1)
+       times <- seq(1,10,by=0.1)
  
   #  - 14C decayrate
        c14DecayRate <- -0.0001209 #assumed unit is per y
