@@ -31,3 +31,14 @@ setClass(
     ,
     validity=correctnessOfFc 
 )
+
+setMethod(
+    f="getFormat",
+    signature="Fc",
+    definition=function(# extract the format string
+			object ##<< object of class ConstFc containing information aboutn the format that could be Delta14C or AFM (Absolute Fraction Modern) for instance
+			){
+       ### the function just yields the format as a string
+        return(object@format)
+    }
+)

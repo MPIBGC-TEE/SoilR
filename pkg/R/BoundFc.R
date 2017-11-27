@@ -26,17 +26,6 @@ setMethod(
 
 #---------------------------------------------------------------------------------------------------------
 setMethod(
-    f="getFormat",
-    signature="BoundFc",
-    definition=function# extract the format string
-    ### the function just yields the format as a string
-	  (object ##<< object  containing imformation about the format that could be Delta14C or AFM (Absolute Fraction Modern) for instance
-		){
-        return(object@format)
-    }
-)
-#---------------------------------------------------------------------------------------------------------
-setMethod(
    f= "Delta14C",
    signature("BoundFc"),
    definition=function# convert to Absolute Fraction Normal values  

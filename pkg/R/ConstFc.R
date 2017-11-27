@@ -8,16 +8,6 @@ setClass(
 )
 
 setMethod(
-    f="getFormat",
-    signature="ConstFc",
-    definition=function(# extract the format string
-			object ##<< object of class ConstFc containing information aboutn the format that could be Delta14C or AFM (Absolute Fraction Modern) for instance
-			){
-       ### the function just yields the format as a string
-        return(object@format)
-    }
-)
-setMethod(
     f="getValues",
     signature="ConstFc",
     definition=function# extract the format string
