@@ -40,6 +40,7 @@ test.all.possible.Model_14.arguments <- function(){
   # we have included a function in SoilR that produces 2D examples
   
   possibleInfluxes <- example.2DInFlux.Args()
+  possibleInitialValFs<- example.2DConstFc.Args()
   print(possibleInfluxes$I.vec)
   # We can build a lot of  models from the possible combinations
   # for instance   
@@ -58,7 +59,7 @@ test.all.possible.Model_14.arguments <- function(){
   models <- lapply(
               combinations,
               function(combi){
-                Model_14(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I,initialValF=initialValF,inputFc=inputFc)
+                Model_14(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I,initialValF=possibleInitialValFs[[1]],inputFc=inputFc)
               }
             )
   ## lets check that we can compute something# 

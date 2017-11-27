@@ -7,7 +7,7 @@ correctnessOfFc=function#check for unreasonable parameters or unsupported format
 )
 {
    res=TRUE
-   supported_formats=supported14CFractionFormats()
+   supported_formats <- c("Delta14C","AbsoluteFractionModern")
    f=object@format
 #   print(paste("format=",f))
    if (!any(grepl(f,supported_formats))){
