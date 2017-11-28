@@ -36,16 +36,14 @@ test.all.possible.Model.arguments <- function(){
   #        ivList=iv,
   #        inputFluxes=possibleInfluxes$I.vec) 
   ## We now produce that all combinations of As and InputFluxes
-  combinations <- unlist(recursive=FALSE,
-                    lapply(possibleAs,function(A){
-                      lapply(possibleInfluxes,function(I){
-                        list(A=A,I=I)})}))
+  combinations <- listProduct(possibleAs,possibleInfluxes)
   print(length(combinations))
   # an a Model for each
   models <- lapply(
               combinations,
               function(combi){
-                Model(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I)
+                #Model(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I)
+                Model(t=times,A=combi[[1]],ivList=iv,inputFluxes=combi[[2]])
               }
             )
   ## lets check that we can compute something# 

@@ -54,23 +54,7 @@ test.all.possible.Model_14.arguments <- function(){
   #tp(list(1,2),list("a",'b'))
   #tp(c(1,2),list("a",'b'))
   
-  combinations <- unlist(recursive=FALSE,
-                    lapply(possibleAs,
-                      function(A){
-                        unlist(recursive=FALSE,
-                          lapply(possibleInfluxes,
-                            function(I){
-                              lapply(possibleInitialValFs,
-                                function(IvFc){
-                                  list(A=A,I=I,IvFc=IvFc)
-                                }
-                              )
-                            }
-                          )
-                        )
-                      }
-                    )
-                  )
+  combinations <- SoilR::listProduct(possibleAs,possibleInfluxes,possibleInitialValFs)
   print(class(combinations))
   print(length(combinations))
   print(combinations[1])
@@ -79,7 +63,7 @@ test.all.possible.Model_14.arguments <- function(){
               combinations,
               function(combi){
                 #Model_14(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I,initialValF=possibleInitialValFs[[3]],inputFc=inputFc)
-                Model_14(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I,initialValF=combi$IvFc,inputFc=inputFc)
+                Model_14(t=times,A=combi[[1]],ivList=iv,inputFluxes=combi[[2]],initialValF=combi[[3]],inputFc=inputFc)
               }
             )
   ## lets check that we can compute something# 

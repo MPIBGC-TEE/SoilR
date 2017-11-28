@@ -36,9 +36,9 @@ listProduct_append <- function(lolol){
 }
 
 listProduct<- function(...){
-  # the function creates a list of tuples( which are implemented as lists)
-  # from a list of indexsets (also lists)
-  # the resulting tuples are
+  # the function creates a list of all combinations of the elements of the inputlists
+  # (like a "tensor product list' The list elements can be of any class
+  # look at the tests for example usage
   l <- list(...)
   if(!all(as.logical(lapply(l,function(sl){inherits(sl,'list')})))){
     stop('The parmeters of the listProduct have to be lists')
