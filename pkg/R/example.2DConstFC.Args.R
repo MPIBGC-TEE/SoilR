@@ -17,20 +17,20 @@ example.2DConstFc.Args <- function
 	# or a positive vector with length equal 
 	#to the number of pools and a format string
 
-	#Fc.vec_Delta14C_d 										<- ConstVecFc(c(5,6),'Delta14C')
-	#Fc.vec_Delta14C 											<- ConstVecFc(c(5,6),'Delta14C')
-	#Fc.vec_AbsoluteFractionModern 				<- ConstVecFc(c(5,6),'AbsoluteFractionModern')
+	Fc.vec_Delta14C_d 										<- ConstFc(c(5,6))
+	Fc.vec_Delta14C 											<- ConstFc(c(5,6),'Delta14C')
+	Fc.vec_AbsoluteFractionModern 				<- ConstFc(c(5,6),'AbsoluteFractionModern')
 
   # We return a list to be used in other examples and tests
 	 return(
 		list(
-			Fc.num_Delta14C_d = Fc.num_Delta14C ,
-			Fc.num_Delta14C 	= Fc.num_Delta14C ,
+			Fc.num_Delta14C_d 										= Fc.num_Delta14C ,
+			Fc.num_Delta14C 											= Fc.num_Delta14C ,
 			Fc.num_AbsoluteFractionModern 				= Fc.num_AbsoluteFractionModern 
-			#,
-			#Fc.vec_Delta14C_d = Fc.vec_Delta14C_d , 
-			#Fc.vec_Delta14C 	= Fc.vec_Delta14C , 
-			#Fc.vec_AbsoluteFractionModern 				= Fc.vec_AbsoluteFractionModern 
+			,
+			Fc.vec_Delta14C_d 										= Fc.vec_Delta14C_d , 
+			Fc.vec_Delta14C 											= Fc.vec_Delta14C , 
+			Fc.vec_AbsoluteFractionModern 				= Fc.vec_AbsoluteFractionModern 
 		)
 	)
 }

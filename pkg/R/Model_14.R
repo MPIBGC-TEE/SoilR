@@ -241,7 +241,7 @@ setMethod(
       Atm=object@mat
       A=getFunctionDefinition(Atm)
       # add the C14 decay to the matrix which is done by a diagonal matrix which does not vary over time
-      # we assume a half life of th=5730 years
+      # as default we assume a half life of th=5730 years
       k=object@c14DecayRate
       m=diag(rep(k,ns),nrow=ns) # Need to specify the dimension of the matrix otherwise doesn't work for n=1.
       A_C14=function(t){
@@ -250,19 +250,19 @@ setMethod(
           return(newA)
       }
       #get the Inputrate TimeMap 
-      itm=object@inputFluxes
-      input=getFunctionDefinition(itm)
+      itm   <- object@inputFluxes
+      input <- getFunctionDefinition(itm)
       #get the C14 fraction 
-      Fctm=object@c14Fraction
-      F0=object@initialValF
+      Fctm  <- object@c14Fraction
+      F0    <- object@initialValF
       # To do the computations we have to convert the atmospheric C14 fraction into 
       # a format that ensures that no negative values occur because this is assumed
       # by the algorithms that will blow up the solution if this assumption is not 
       # justified.
       # To this end we convert everything else to the "Absolute Fraction Modern" format
       # that ensures positive values
-      Fctm=AbsoluteFractionModern(Fctm)
-      F0=AbsoluteFractionModern(F0)
+      Fctm  <- AbsoluteFractionModern(Fctm)
+      F0    <- AbsoluteFractionModern(F0)
       
       Fc=getFunctionDefinition(Fctm)
       input_C14=function(t){
@@ -274,8 +274,9 @@ setMethod(
       #in the following computation they describe the intial amount of C_14
       #To do so we multiply them with the value of Fc at the begin of the computation 
       inivals=getValues(F0)
-      inivalsFormat=getFormat(F0)
-      sVmat=matrix(inivals*object@initialValues,nrow=ns,ncol=1) # We use here the Hadarmard (entry-wise) product instead of matrix multiplication
+      
+      sVmat=matrix(inivals*object@initialValues,nrow=ns,ncol=1) # We use here the Hadarmard (entry-wise) product instead of matrix multiplication. It works for both 
+      # cases where F0 is a scalar of vector
       Y=solver(object@times,ydot,sVmat,object@solverfunc) 
       ### A matrix. Every column represents a pool and every row a point in time
       return(Y)

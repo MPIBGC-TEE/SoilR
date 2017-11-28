@@ -50,16 +50,36 @@ test.all.possible.Model_14.arguments <- function(){
   #        ivList=iv,
   #        inputFluxes=possibleInfluxes$I.vec) 
   ## We now produce that all combinations of As and InputFluxes
+  #addCombinations <- function(vectorOfLists,newIndexSet){
+  #tp(list(1,2),list("a",'b'))
+  #tp(c(1,2),list("a",'b'))
+  
   combinations <- unlist(recursive=FALSE,
-                    lapply(possibleAs,function(A){
-                      lapply(possibleInfluxes,function(I){
-                        list(A=A,I=I)})}))
+                    lapply(possibleAs,
+                      function(A){
+                        unlist(recursive=FALSE,
+                          lapply(possibleInfluxes,
+                            function(I){
+                              lapply(possibleInitialValFs,
+                                function(IvFc){
+                                  list(A=A,I=I,IvFc=IvFc)
+                                }
+                              )
+                            }
+                          )
+                        )
+                      }
+                    )
+                  )
+  print(class(combinations))
   print(length(combinations))
+  print(combinations[1])
   # an a Model_14 for each
   models <- lapply(
               combinations,
               function(combi){
-                Model_14(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I,initialValF=possibleInitialValFs[[1]],inputFc=inputFc)
+                #Model_14(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I,initialValF=possibleInitialValFs[[3]],inputFc=inputFc)
+                Model_14(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I,initialValF=combi$IvFc,inputFc=inputFc)
               }
             )
   ## lets check that we can compute something# 
