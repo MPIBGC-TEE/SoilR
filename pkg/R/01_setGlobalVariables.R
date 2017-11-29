@@ -3,7 +3,7 @@
 #  turnoverFit: no visible binding for global variable 'Hua2013'
 # it is recommended by cran but considered a horrible hack (e.g. by Hadley)
 
-globalVariables(c("IntCal13", "Hua2013"))       
+globalVariables(c("IntCal13", "Hua2013","C14Atm_NH"))       
 
  
  
