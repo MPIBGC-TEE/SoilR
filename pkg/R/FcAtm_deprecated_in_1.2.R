@@ -10,17 +10,6 @@ interpolation=splinefun, ##<<A function that  returns a function  the default is
 format ##<< a string that specifies the format used to represent the atmospheric fracton. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
 ){
    warning("The class FcAtm is deprecated, you can use the generic constructor BoundFc with the same data.frame arguemten instead")
-   t=dframe[,1]  
-   y=dframe[,2]  
-   o=order(t)
-   tyo=cbind(t[o],y[o])
-   to=tyo[,1]+lag# account for the lag time
-   yo=tyo[,2]
-   t_start=min(to)
-   t_start=min(t)
-   t_end=max(t)
-   interpol=interpolation(to,yo)
-   warning(TimeMapWarningBoundFc())
    obj=BoundFc(dframe,lag=lag,format=format) 
 return(obj)
 ### An object of the new class BoundFc that replaces FcAtm 
