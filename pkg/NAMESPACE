@@ -117,6 +117,7 @@ example.2DUnBoundLinDecompOpFromFunction,
 example.2DInFlux.Args,
 example.2DGeneralDecompOpArgs,
 example.2DConstFc.Args,
+example.2DFc.Args,
 example.Time3DArrayList
 )
 exportClasses(

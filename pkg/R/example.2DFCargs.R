@@ -11,6 +11,13 @@ example.2DFc.Args <- function
 				2+sin(2*t)
 			)
 		}
+    Fc.BoundFc<- BoundFc(
+    	list(
+      	times=0:99,
+      	data=C14Atm_NH[1:100,2]
+     	),
+      format="Delta14C"
+    )
 #  	# that is valid in a time interval
 #		t.start<- 1
 #		t.end <- 10
@@ -52,7 +59,7 @@ example.2DFc.Args <- function
 		list(
 			#Fc.vec						=Fc.vec
 			#,
-			Fc.vecFunc				=Fc.vecFunc
+			#Fc.vecFunc				=Fc.vecFunc
 			#,
 			#I.list1					=I.list1
 			#,
@@ -61,7 +68,7 @@ example.2DFc.Args <- function
 			#I.timeMap				=I.timeMap,
 			#I.ConstFc		=I.ConstFc,
 			#I.UnBoundFc	=I.UnBoundFc,
-			#I.BoundFc		=I.BoundFc
+			Fc.BoundFc		=Fc.BoundFc
 		)
 	)
 }
