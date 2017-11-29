@@ -146,16 +146,14 @@ Package functions called in the examples:<br />
   #        ivList=iv,
   #        inputFluxes=possibleInfluxes$I.vec) 
   ## We now produce that all combinations of As and InputFluxes
-  combinations &lt;- unlist(recursive=FALSE,
-                    lapply(possibleAs,function(A){
-                      lapply(possibleInfluxes,function(I){
-                        list(A=A,I=I)})}))
+  combinations &lt;- listProduct(possibleAs,possibleInfluxes)
   print(length(combinations))
   # an a Model for each
   models &lt;- lapply(
               combinations,
               function(combi){
-                Model(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I)
+                #Model(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I)
+                Model(t=times,A=combi[[1]],ivList=iv,inputFluxes=combi[[2]])
               }
             )
   ## lets check that we can compute something# 

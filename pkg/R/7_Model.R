@@ -181,19 +181,9 @@ setMethod(
         ,
         pass=FALSE
         ){
-         if (class(mat)=="TimeMap"){
-          warning(TimeMapWarningOperators())
-            # cast
-            mat <- BoundLinDecompOp(mat)
-         }
         .Object@times=times
         .Object@mat=mat
         .Object@initialValues=initialValues
-         if (class(inputFluxes)=="TimeMap"){
-          warning(TimeMapWarningInFluxes())
-            # cast
-            inputFluxes<- BoundInFlux(inputFluxes)
-          }
         .Object@inputFluxes=inputFluxes
         .Object@solverfunc=solverfunc
         #if (pass==FALSE) validObject(.Object) #call of the ispector if not explicitly disabled
