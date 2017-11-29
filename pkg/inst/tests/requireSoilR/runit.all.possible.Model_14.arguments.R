@@ -13,17 +13,6 @@ test.all.possible.Model_14.arguments <- function(){
   #  - 14C decayrate
        c14DecayRate <- -0.0001209 #assumed unit is per y
 
-  ##  - 14C ratio of initial carbon 
-  #     initialValF  <- ConstFc(c(0,0))
-
-  ##  - 14C ratio of InFlux 
-  #     inputFc <- BoundFc(
-  #       list(
-  #         times=0:99,
-  #         data=C14Atm_NH[1:100,2]
-  #       ),
-  #       format="Delta14C"
-  #     )
 
   # The other parameters A, inputFluxes and inputFc will be different
   # The function Model_14 will transform these arguments 
