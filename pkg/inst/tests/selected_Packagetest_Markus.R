@@ -4,15 +4,19 @@ require('RUnit')
 require('SoilR')
 alltests <- defineTestSuite(
    name="selected_Packagetest_Markus",
-   dirs=c(".","protected","automatic","requireSoilR"),
-   #testFileRegexp = "^runit.TimeMap.R",
+   #dirs=c(".","protected","automatic","requireSoilR"),
+   dirs=c("protected","automatic","requireSoilR"),
+   testFileRegexp = "^runit.TimeMap.R",
    #testFileRegexp = "^runit.*.R",
    #testFileRegexp = "runit.all.possible.GeneralDecompOp.arguments.R",
    #testFileRegexp = "runit.all.possible.GeneralInflux.arguments.R",
    #testFileRegexp = "runit.all.possible.Model.arguments.R",
-   testFileRegexp = "runit.all.possible.Model_14.arguments.R",
+   #testFileRegexp = "runit.all.possible.Model_14.arguments.R",
+   #testFileRegexp = "runit.all.possible.BoundFc.arguments.R",
    #testFileRegexp = "runit.LowVerticalRatesPaper.R",
+   
    testFuncRegexp = "^test.*",
+   i#testFuncRegexp = "^test.TimeMapFromVectorAndArray",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
 )

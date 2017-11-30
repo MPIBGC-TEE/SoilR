@@ -11,13 +11,6 @@ example.2DFc.Args <- function
 				2+sin(2*t)
 			)
 		}
-    Fc.BoundFc<- BoundFc(
-    	list(
-      	times=0:99,
-      	data=C14Atm_NH[1:100,2]
-     	),
-      format="Delta14C"
-    )
 #  	# that is valid in a time interval
 #		t.start<- 1
 #		t.end <- 10
@@ -47,28 +40,42 @@ example.2DFc.Args <- function
 #	# from the time series data. 
 #		I.timeMap <- TimeMap(I.list1,interpolation=approxfun)
 #
-#	# GeneralInflux will convert the previous arguments to classes internally used by SOilR
+#	# BoundFc will convert the previous arguments to classes internally used by SOilR
 #	# but you can also create them directly yourself
-#		I.ConstFc=ConstFc(Fc.vec)
-#		I.BoundFc=BoundFc(Fc.vecFunc,starttime=t.start,endtime=t.end)
+    scalar_fraction<- BoundFc(
+    	list(
+      	times=0:99,
+      	data=C14Atm_NH[1:100,2]
+     	),
+      format="Delta14C"
+    )
+    saclar_fraction_scalar_delay<- BoundFc(
+    	list(
+      	times=0:99,
+      	data=C14Atm_NH[1:100,2],
+				lag=1.1
+     	),
+      format="Delta14C"
+    )
+    saclar_fraction_vector_delay<- BoundFc(
+    	list(
+      	times=0:99,
+      	data=C14Atm_NH[1:100,2],
+				lag=c(1.1,2.1)
+     	),
+      format="Delta14C"
+    )
 #
 #
 #
 #  # We return a list to be used in other examples and tests
 	 return(
 		list(
-			#Fc.vec						=Fc.vec
+			#scalar_fraction=scalar_fraction
 			#,
-			#Fc.vecFunc				=Fc.vecFunc
+			#saclar_fraction_scalar_delay=saclar_fraction_scalar_delay
 			#,
-			#I.list1					=I.list1
-			#,
-		 	#I.list2					=I.list2
-			#,
-			#I.timeMap				=I.timeMap,
-			#I.ConstFc		=I.ConstFc,
-			#I.UnBoundFc	=I.UnBoundFc,
-			Fc.BoundFc		=Fc.BoundFc
+			saclar_fraction_vector_delay=saclar_fraction_vector_delay
 		)
 	)
 }

@@ -1,12 +1,23 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-
+arrFuncMaker <- function(times,arr,srcDim,targetClass,interpolation){
+  funcMaker <- function(i){ interpolation(x=times,y=arr[i,])}
+  flatDim <- dim(arr)[[1]]
+	# cut out a time line for every index in the flattene vector
+	funcs <- lapply(seq(flatDim),funcMaker)
+	arrFunc <- function(t){
+		as(
+      array(dim=srcDim,data=unlist(lapply(funcs,function(f){f(t)}))),
+      targetClass)
+	}
+  return(arrFunc)
+}
 ### This class enhances a time dependent function by information about its domain and a possible delay.
 ### The information about the delay is especially usefull for functions that interpolate data. 
 ### Assume that you are given time series data in two vectors \code{times}, \code{values}.
 ### You can create an interpolating function with  \code{\link{splinefun}} or \code{\link{approxfun}}
 ### \code{f  <- splinefun(x=times,y=values) } 
-### \code{f(t)} will yield sensible values for \eqn{$\min_{t \in times}\le t \le max_{t \in times}$}{min(times)<t<max(times)}.
+### \code{f(t)} will yield sensible values for \eqn{$\min_{t \in times}\le t \le max_{t \in times}$.}{min(times)<t<max(times).} 
 ### but will produce unreasonable values for any t outside these limits.
 ### Unfortunately the interpolating functions produced by 
 ### \code{\link{splinefun}} or \code{\link{approxfun}} do not retain any information 
@@ -14,7 +25,8 @@
 ### apply them to times not at all supported by the original data. 
 ### This would not even cause errors in the code but silently corrupt the results.
 ### To help you to keep track of the domains of the many time dependent functions used in SoilR's 
-### Models thss class \code{\link{TimeMap-class}} stores the \code{starttime} and \code{endtime} values
+### Models this class \code{\linkS4class{TimeMap}} stores the \code{starttime} 
+### and \code{endtime} values
 ### along with the function represented by \code{map}.
 ### SoilR functions that accept time series data will normally convert it to 
 ### subclasses  \code{TimeMap-class} automatically but you can do it explicitly.
@@ -57,45 +69,24 @@ setMethod(
     }
 )
 #-----------------------------------------------------------
-# fixme mm:
-# the method is doing a lot.
-# we could add two other constructors for TimeMap that have the elements of the list
-# as separated arguments where the first one is always a numeric vectors
-# and the second one either an array or a list.
 setMethod(
   f="TimeMap",
   signature=signature(
-    map="list" ,
+    map="missing" ,
     starttime="missing",
     endtime="missing",
-    times="missing",
-    data="missing"
+    times="numeric",
+    data="list"
   ),
   ### The method creates an instance of \code{\link{TimeMap-class}}
   ### from a list that contains data and a vector of times referring to it.
   def=function # Create a TimeMap from a nested list 
   (
-   map
+   times,
+   data,
+   lag=0,
+   interpolation=splinefun
   ){
-    ##details<< The list must have two entries
-    ##  If the entries are not named, the first one is supposed to be a numeric vector
-    ##  of \code{times} and the second to contain the data referring to those times.
-    ##  The \code{data} entry of the list can itself be a list with the same length as
-    ##  the \code{times} entry or an array whose last dimension is equal to the length of 
-    ##  the \code{times} entry.
-    ##  If the \code{data} entry is a list the elements must 
-    ##  be \code{vectors},\code{matrices} or \code{arrays}.
-	  if (length(map)<2){
-	  	stop('Your list has to have at least 2 elements: a vector usually labeled "times" and a list of arrays or matrices.')
-	  }
-    targetNames <- c('times','data')
-    if(identical(intersect(targetNames,names(map)),targetNames)){
-	    times <- map[['times']]
-	    data  <- map[['data']]
-    }else{
-	   times <- map[[1]]
-	   data  <- map[[2]]
-    }
 		lt <- length(times)
     if(inherits(data,'list')){
       fe <- data[[1]]
@@ -118,56 +109,145 @@ setMethod(
         }else{
           stop(
             sprintf(
-              'The elements of the data list must be a arrays, matrices or vectors but you provided an object of class %s.',
+              'The elements of the data list must be arrays, matrices or vectors but you provided an object of class %s.',
                class(fe)
             )
           )
        }
      }
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times)))
+  }
+  }
+)
+#-----------------------------------------------------------
+setMethod(
+  f="TimeMap",
+  signature=signature(
+    map="missing" ,
+    starttime="missing",
+    endtime="missing",
+    times="numeric",
+    data="numeric"
+  ),
+  ### The method creates an instance of \code{\link{TimeMap-class}}
+  ### from a  vector of times and an array referring to it.
+  def=function # Create a TimeMap from a nested list 
+  (
+   times,
+   data,
+   lag=0,
+   interpolation=splinefun
+  )
+  {
+		lt <- length(times)
+    srcDim <- 1
+		flatDim=prod(srcDim)
+		arr <- array(dim=c(flatDim,lt),data=data)
+		targetClass <-'numeric'
+
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times)))
+  }
+)
+#-----------------------------------------------------------
+setMethod(
+  f="TimeMap",
+  signature=signature(
+    map="missing" ,
+    starttime="missing",
+    endtime="missing",
+    times="numeric",
+    data="matrix"
+  ),
+  ### The method creates an instance of \code{\link{TimeMap-class}}
+  ### from a  vector of times and an array referring to it.
+  def=function # Create a TimeMap from a nested list 
+  (
+   times,
+   data,
+   lag=0,
+   interpolation=splinefun
+  ){
+    # R insists that a 2D array is a matrix and NOT an array which is extremely weierd
+    # checkout: inherits(array(dim=c(2,2),'array')) which yields FALSE since
+    # class(array(dim=c(2,2)) yields 'matrix' while 
+    # class(array(dim=c(2)) and class(array(dim=c(2,2,2)) both yield 'array'
+    # se we have to allow the class 'matrix' here for the array in case somebody tried to create 2D array 
+    # ending up with a matrix ...
+    srcDim <-c(dim(data)[[1]])
+		flatDim=prod(srcDim)
+		arr <- data
+		targetClass <-'numeric'
+
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times)))
+  }
+)
+#-----------------------------------------------------------
+setMethod(
+  f="TimeMap",
+  signature=signature(
+    map="missing" ,
+    starttime="missing",
+    endtime="missing",
+    times="numeric",
+    data="array"
+  ),
+  ### The method creates an instance of \code{\link{TimeMap-class}}
+  ### from a  vector of times and an array whose last dimension   ### is referring to it.
+  def=function # Create a TimeMap from times and array 
+  (
+   times,
+   data,
+   lag=0,
+   interpolation=splinefun
+  ){
+    lt <- length(times)
+    dd <- dim(data)
+    srcDim <-dd[1:(length(dd)-1)] 
+		flatDim=prod(srcDim)
+		arr <- array(dim=c(flatDim,lt),data=as.vector(data))
+		targetClass <-'array'
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times)))
+  }
+)
+#-----------------------------------------------------------
+setMethod(
+  f="TimeMap",
+  signature=signature(
+    map="list" ,
+    starttime="missing",
+    endtime="missing",
+    times="missing",
+    data="missing"
+  ),
+  ### The method creates an instance of \code{\link{TimeMap-class}}
+  ### from a list that contains data and a vector of times referring to it.
+  def=function # Create a TimeMap from a nested list 
+  (
+   map,
+   lag=0,
+   interpolation=splinefun
+  ){
+    ##details<< The list must have two entries
+    ##  If the entries are not named, the first one is supposed to be a numeric vector
+    ##  of \code{times} and the second to contain the data referring to those times.
+    ##  The \code{data} entry of the list can itself be a list with the same length as
+    ##  the \code{times} entry or an array whose last dimension is equal to the length of 
+    ##  the \code{times} entry.
+    ##  If the \code{data} entry is a list the elements must 
+    ##  be \code{vectors},\code{matrices} or \code{arrays}.
+	  if (length(map)<2){
+	  	stop('Your list has to have at least 2 elements: a vector usually labeled "times" and a list of arrays or matrices.')
+	  }
+    targetNames <- c('times','data')
+    if(identical(intersect(targetNames,names(map)),targetNames)){
+	    times <- map[['times']]
+	    data  <- map[['data']]
     }else{
-      if(inherits(data,'array')){ 
-        dd <- dim(data)
-        srcDim <-dd[1:(length(dd)-1)] 
-		    flatDim=prod(srcDim)
-		    arr <- array(dim=c(flatDim,lt),data=as.vector(data))
-		    targetClass <-'array'
-      }else{
-        if(inherits(data,'matrix')){
-          # R insists that a 2D array is a matrix and NOT an array which is extremely weierd
-          # checkout: inherits(array(dim=c(2,2),'array')) which yields FALSE since
-          # class(array(dim=c(2,2)) yields 'matrix' while 
-          # class(array(dim=c(2)) and class(array(dim=c(2,2,2)) both yield 'array'
-          # se we have to allow the class 'matrix' here for the array in case somebody tried to create 2D array 
-          # ending up with a matrix ...
-          srcDim <-c(dim(data)[[1]])
-		      flatDim=prod(srcDim)
-		      arr <- data
-		      targetClass <-'numeric'
-        }else{
-          if(inherits(data,'numeric')){
-          srcDim <- 1
-		      flatDim=prod(srcDim)
-		      arr <- array(dim=c(flatDim,lt),data=data)
-		      targetClass <-'numeric'
-          }else{
-            stop(
-              sprintf(
-                'The data element of the list must be a list an array, matrix or a vector but
-                 you provided an object of class %s.',
-                class(data)))
-          }
-        }
-      }
+	   times <- map[[1]]
+	   data  <- map[[2]]
     }
-    funcMaker <- function(i){splinefun(x=times,y=arr[i,])}
-		# cut out a time line for every index in the flattene vector
-		funcs <- lapply(seq(flatDim),funcMaker)
-		arrFunc <- function(t){
-			as(
-        array(dim=srcDim,data=unlist(lapply(funcs,function(f){f(t)}))),
-        targetClass)
-		}
-		return(TimeMap(map=arrFunc,min(times),max(times)))
+    # delegate to other mehtods that deal with the components
+    return(TimeMap(times=times,data=data,lag=lag))
   }
 )
 ##########################################################################
@@ -254,6 +334,8 @@ setMethod(
                   x@starttime,
                   "\n endtime=",
                   x@endtime,
+                  "\n lag=",
+                  x@lag,
                   ")",
                   sep=""
                   #fixme:lag is missing

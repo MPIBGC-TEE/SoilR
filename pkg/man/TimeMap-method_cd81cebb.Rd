@@ -3,9 +3,13 @@
 \title{TimeMap,list,missing,missing,missing,missing-method 
  Create a TimeMap from a nested list }
 \alias{TimeMap,list,missing,missing,missing,missing-method}
-\usage{\S4method{TimeMap}{list,missing,missing,missing,missing}(map)}
+\usage{\S4method{TimeMap}{list,missing,missing,missing,missing}(map,
+lag=0,
+interpolation=splinefun)}
 \arguments{
 \item{map}{: of class list}
+\item{lag}{}
+\item{interpolation}{}
 }
 \description{The method creates an instance of \code{\link{TimeMap-class}}
 from a list that contains data and a vector of times referring to it.}

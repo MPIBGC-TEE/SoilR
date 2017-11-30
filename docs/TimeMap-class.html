@@ -14,7 +14,7 @@ The information about the delay is especially usefull for functions that interpo
 Assume that you are given time series data in two vectors <code>times</code>, <code>values</code>.
 You can create an interpolating function with  <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code>
 <code>f  &lt;- splinefun(x=times,y=values) </code> 
-<code>f(t)</code> will yield sensible values for <i>min(times)&lt;t&lt;max(times)</i>.
+<code>f(t)</code> will yield sensible values for <i>min(times)&lt;t&lt;max(times).</i> 
 but will produce unreasonable values for any t outside these limits.
 Unfortunately the interpolating functions produced by 
 <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code> do not retain any information 
@@ -22,7 +22,8 @@ about their domain which makes it possible to accidentatly
 apply them to times not at all supported by the original data. 
 This would not even cause errors in the code but silently corrupt the results.
 To help you to keep track of the domains of the many time dependent functions used in SoilR's 
-Models thss class <code><a href="TimeMap-class.html">TimeMap-class</a></code> stores the <code>starttime</code> and <code>endtime</code> values
+Models this class <code><a href="TimeMap-class.html">TimeMap</a></code> stores the <code>starttime</code> 
+and <code>endtime</code> values
 along with the function represented by <code>map</code>.
 SoilR functions that accept time series data will normally convert it to 
 subclasses  <code>TimeMap-class</code> automatically but you can do it explicitly.</p>

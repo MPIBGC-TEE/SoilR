@@ -1,3 +1,10 @@
 pkg/inst/tests/runit.*.pdf
 .*.swp
-.*\.Rhistory
+.Rhistory
+builds/.Rhistory
+python/Jacobian/__pycache__
+buildbot/sympy/
+python/Jacobian/sympy/
+scripts/spellchecking/argNames
+scripts/spellchecking/manually_maintained_list_of_ignored_words.rds
+scripts/spellchecking/possibly_mis-spelled_words
