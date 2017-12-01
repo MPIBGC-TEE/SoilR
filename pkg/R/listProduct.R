@@ -52,6 +52,6 @@ listProduct<- function# tensor product of lists
   
   return(listProduct_append(l))
   ##examples<<
-  ## listproduct(list('a','b'),list(1,2))
+  ## listProduct(list('a','b'),list(1,2))
   ### a list of lists each containing one combinations of the elements of the input lists
 }

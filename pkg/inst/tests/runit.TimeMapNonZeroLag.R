@@ -11,53 +11,55 @@ checkListEqual <- function(matList,matList_int){
            norm(difference,type='F') }))), 0)
 }
 # test the zero lag functionality
-test.TimeMapInternZeroLag <- function(){
+test.TimeMapInternNonZeroLag <- function(){
    # dircet method not encouraged for user code
    tstart=0
    tend=10
+	 lag=1.5
    f=function(t){2*t} 
-   obj=new(Class="TimeMap",tstart,tend,f) 
-   checkEquals(c("t_min"=tstart,"t_max"=tend),getTimeRange(obj))
+   obj=new(Class="TimeMap",tstart,tend,f,lag=lag) 
+   checkEquals(c("t_min"=tstart+lag,"t_max"=tend+lag),getTimeRange(obj))
 }
 
-test.TimeMapDeprecatedConstructorZeroLag <- function(){
-   # deprecated  initializer 
-   tstart=0
-   tend=10
-   f=function(t){2*t} 
-   obj=TimeMap.new(tstart,tend,f) 
-   checkEquals(c("t_min"=tstart,"t_max"=tend),getTimeRange(obj))
-}
 
-test.TimeMapFrom1DdataframeZeroLag <- function(){
+test.TimeMapFrom1DdataframeNonZeroLag <- function(){
    # fixme mm: I would like to deprecate this constructors
    # since a list is better suited 
-   t=1:20
+   tstart=1
+   tend=20
+   t=tstart:tend
+	 lag=1.5
    inp=seq(1.05,2,0.05)
    tframe=data.frame(times=t,inputrates=inp)
-   obj <- TimeMap(tframe)# 1D 
-   checkEquals(c("t_min"=1,"t_max"=20),getTimeRange(obj))
+   obj <- TimeMap(map=tframe,lag=lag)# 1D 
+   checkEquals(c("t_min"=tstart+lag,"t_max"=tend+lag),getTimeRange(obj))
    matFunc <- getFunctionDefinition(obj)
 }
 
-test.TimeMapFromVectorAndVectorZeroLag <- function(){
+test.TimeMapFromVectorAndVectorNonZeroLag <- function(){
    tstart=0
    tend=10
+	 lag=1.5
    times  <-seq(tstart,tend,by=0.1)
    vec    <-sin(times)+2 
    # such a list can be converted into a TimeMap Object
-   obj=TimeMap(times=times,data=vec)
-   checkEquals(c("t_min"=min(times),"t_max"=max(times)),getTimeRange(obj))
+   obj <- TimeMap(times=times,data=vec,lag=lag)
+   tr <- getTimeRange(obj)
+   print('')
+   print('################################')
+   print(tr)
+   checkEquals(c("t_min"=tstart+lag,"t_max"=tend+lag),tr)
    # get the interpolation function and reproduce the data from the list
-   Func <- getFunctionDefinition(obj)
-   data_int<- unlist(lapply(times,Func))
-   print(data_int)
-   print(vec)
-   RUnit::checkIdentical(vec,data_int)
+   #Func <- getFunctionDefinition(obj)
+   #data_int<- unlist(lapply(times,Func))
+   #print(data_int)
+   #print(vec)
+   #RUnit::checkIdentical(vec,data_int)
 }
-test.TimeMapFromListOfVectorAndVectorZeroLag <- function(){
+test.TimeMapFromListOfVectorAndVectorNonZeroLag <- function(){
    tstart=0
    tend=10
+	 lag=1.5
    times  <-seq(tstart,tend,by=0.1)
    vec    <-sin(times)+2 
    l <- list(times,vec) 
@@ -70,7 +72,7 @@ test.TimeMapFromListOfVectorAndVectorZeroLag <- function(){
    RUnit::checkIdentical(vec,data_int)
 }
 
-test.TimeMapFromVectorAndArrayZeroLag <- function(){
+test.TimeMapFromVectorAndArrayNonZeroLag <- function(){
    l <- example.Time3DArrayList()
    times  <- l$times
    arr    <- l$data
@@ -85,7 +87,7 @@ test.TimeMapFromVectorAndArrayZeroLag <- function(){
    checkListEqual(matList,matList_int)
 }
 
-test.TimeMapFromVectorAndMatrixZeroLag <- function(){
+test.TimeMapFromVectorAndMatrixNonZeroLag <- function(){
    l <- example.Time2DArrayList()
    times  <- l$times
    arr    <- l$data
@@ -100,7 +102,7 @@ test.TimeMapFromVectorAndMatrixZeroLag <- function(){
    checkListEqual(vecList,matList_int)
 }
 
-test.TimeMapFromListOfVectorAndArrayZeroLag <- function(){
+test.TimeMapFromListOfVectorAndArrayNonZeroLag <- function(){
    l <- example.Time3DArrayList()
    times  <- l$times
    arr    <- l$data
@@ -115,7 +117,7 @@ test.TimeMapFromListOfVectorAndArrayZeroLag <- function(){
    checkListEqual(matList,matList_int)
 }
 
-test.TimeMapFromListOfVectorAndListZeroLag <- function(){
+test.TimeMapFromListOfVectorAndListNonZeroLag <- function(){
    # we use data provided by a SoilR function that
    # is only used in tests and examples
    l <- example.nestedTime2DMatrixList()

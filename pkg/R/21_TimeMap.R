@@ -115,7 +115,7 @@ setMethod(
           )
        }
      }
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times)))
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times),lag=lag))
   }
   }
 )
@@ -145,7 +145,7 @@ setMethod(
 		arr <- array(dim=c(flatDim,lt),data=data)
 		targetClass <-'numeric'
 
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times)))
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times),lag=lag))
   }
 )
 #-----------------------------------------------------------
@@ -178,7 +178,7 @@ setMethod(
 		arr <- data
 		targetClass <-'numeric'
 
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times)))
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times),lag=lag))
   }
 )
 #-----------------------------------------------------------
@@ -206,7 +206,7 @@ setMethod(
 		flatDim=prod(srcDim)
 		arr <- array(dim=c(flatDim,lt),data=as.vector(data))
 		targetClass <-'array'
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times)))
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times),lag=lag))
   }
 )
 #-----------------------------------------------------------
@@ -268,17 +268,8 @@ setMethod(
       lag=0, ##<< a time delay
       interpolation=splinefun ##<< the interpolating function
     ){
-    # build dummy object
-     t=map[,1]  
-     y=map[,2]  
-     o=order(t)
-     tyo=cbind(t[o],y[o])
-     to=tyo[,1]
-     yo=tyo[,2]
-     t_start=min(to)
-     t_end=max(t)
-     func_map <- interpolation(to,yo)
-     obj <- new("TimeMap",map=func_map,starttime=t_start,endtime=t_end,lag=lag)
+      # delegate to the vector vector mehtod
+      obj <- TimeMap(times=as.vector(map[,1]),data=as.vector(map[,2]),lag=lag,interpolation=interpolation)
      return(obj)
 ### An object of class TimeMap that contains the interpolation function and the limits of the time range where the function is valid. Note that the limits change according to the time lag
 ### this serves as a saveguard for Model which thus can check that all involved functions of time are actually defined for the times of interest  
@@ -355,10 +346,13 @@ setMethod(
     
     (object ##<< An object of class TimeMap or one that inherits from TimeMap
     ){
-        return( c("t_min"=object@starttime,"t_max"=object@endtime))
+        return( c("t_min"=object@starttime+max(object@lag),"t_max"=object@endtime+min(object@lag)))
         ### a vector of length two \code{ c(t_min,t_max) }
         ### containing start and end time of the time interval 
-        ### for which the TimeMap object has been defined.
+        ### for which the TimeMap object is well defined,
+        ### considering the initial timerange and the lag. 
+        ### To see how a (possibly vectorvalued lag) changes the definition
+        ### use plot on the object. 
     }
 )
 ###########################################################################
