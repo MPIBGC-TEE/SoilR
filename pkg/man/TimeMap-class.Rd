@@ -1,4 +1,4 @@
-\description{This class enhances a time dependent function by information about its domain and a possible delay.
+\description{This class enhances a time dependent function by information about its domain.
 The information about the delay is especially usefull for functions that interpolate data. 
 Assume that you are given time series data in two vectors \code{times}, \code{values}.
 You can create an interpolating function with  \code{\link{splinefun}} or \code{\link{approxfun}}

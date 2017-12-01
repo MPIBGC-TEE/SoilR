@@ -1,8 +1,13 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
-arrFuncMaker <- function(times,arr,srcDim,targetClass,interpolation){
-  funcMaker <- function(i){ interpolation(x=times,y=arr[i,])}
+arrFuncMaker <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
   flatDim <- dim(arr)[[1]]
+  if(length(lag)==1){
+    lag <- rep(lag,flatDim)
+  }
+  funcMaker <- function(i){
+    interpolation(x=times+lag[i],y=arr[i,])
+  }
 	# cut out a time line for every index in the flattene vector
 	funcs <- lapply(seq(flatDim),funcMaker)
 	arrFunc <- function(t){
@@ -12,7 +17,7 @@ arrFuncMaker <- function(times,arr,srcDim,targetClass,interpolation){
 	}
   return(arrFunc)
 }
-### This class enhances a time dependent function by information about its domain and a possible delay.
+### This class enhances a time dependent function by information about its domain.
 ### The information about the delay is especially usefull for functions that interpolate data. 
 ### Assume that you are given time series data in two vectors \code{times}, \code{values}.
 ### You can create an interpolating function with  \code{\link{splinefun}} or \code{\link{approxfun}}
@@ -58,13 +63,14 @@ setMethod(
     (.Object,
     starttime=numeric(),
     endtime=numeric(),
-    map=function(t){t},
-    lag=0
+    map=function(t){t}
+    #,
+    #lag=0
     ){
     .Object@starttime=starttime
     .Object@endtime=endtime
     .Object@map=map
-    .Object@lag=lag
+    #.Object@lag=lag
     return(.Object)
     }
 )
@@ -115,7 +121,7 @@ setMethod(
           )
        }
      }
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times),lag=lag))
+		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag),min(times),max(times)))
   }
   }
 )
@@ -145,7 +151,13 @@ setMethod(
 		arr <- array(dim=c(flatDim,lt),data=data)
 		targetClass <-'numeric'
 
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times),lag=lag))
+		return(
+      TimeMap(
+        map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag=lag),
+        min(times)+max(lag),
+        max(times)+min(lag)
+      )
+    )
   }
 )
 #-----------------------------------------------------------
@@ -167,18 +179,27 @@ setMethod(
    lag=0,
    interpolation=splinefun
   ){
+    print('##################################### matrix')
+    print(lag)
     # R insists that a 2D array is a matrix and NOT an array which is extremely weierd
     # checkout: inherits(array(dim=c(2,2),'array')) which yields FALSE since
     # class(array(dim=c(2,2)) yields 'matrix' while 
     # class(array(dim=c(2)) and class(array(dim=c(2,2,2)) both yield 'array'
-    # se we have to allow the class 'matrix' here for the array in case somebody tried to create 2D array 
-    # ending up with a matrix ...
+    # se we have to allow the class 'matrix' here for the array in case 
+    # some poor unsuspecting fellow tries to create 2D array 
+    # but ends up with a matrix ...
     srcDim <-c(dim(data)[[1]])
 		flatDim=prod(srcDim)
 		arr <- data
 		targetClass <-'numeric'
 
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times),lag=lag))
+		return(
+      TimeMap(
+        map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag=lag),
+        min(times)+max(lag),
+        max(times)+min(lag)
+      )
+    )
   }
 )
 #-----------------------------------------------------------
@@ -206,7 +227,13 @@ setMethod(
 		flatDim=prod(srcDim)
 		arr <- array(dim=c(flatDim,lt),data=as.vector(data))
 		targetClass <-'array'
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation),min(times),max(times),lag=lag))
+		return(
+      TimeMap(
+        map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag=lag),
+        min(times)+max(lag),
+        max(times)+min(lag)
+      )
+    )
   }
 )
 #-----------------------------------------------------------
@@ -227,6 +254,8 @@ setMethod(
    lag=0,
    interpolation=splinefun
   ){
+    print('#####################################list')
+    print(lag)
     ##details<< The list must have two entries
     ##  If the entries are not named, the first one is supposed to be a numeric vector
     ##  of \code{times} and the second to contain the data referring to those times.
@@ -247,7 +276,7 @@ setMethod(
 	   data  <- map[[2]]
     }
     # delegate to other mehtods that deal with the components
-    return(TimeMap(times=times,data=data,lag=lag))
+    return(TimeMap(times=times,data=data,lag=lag,interpolation=interpolation))
   }
 )
 ##########################################################################
@@ -289,10 +318,9 @@ setMethod(
     ### create a  TimeMap object from the function definition and the time interval  
     (map, ## the R function 
     starttime,  
-    endtime,
-    lag=0 ##<< delay
+    endtime
     ){
-    new("TimeMap",map=map,starttime=starttime,endtime=endtime,lag=lag)
+    new("TimeMap",map=map,starttime=starttime,endtime=endtime)
   }
 )
 ###########################################################################
@@ -325,11 +353,8 @@ setMethod(
                   x@starttime,
                   "\n endtime=",
                   x@endtime,
-                  "\n lag=",
-                  x@lag,
                   ")",
                   sep=""
-                  #fixme:lag is missing
             )
         )
     }
@@ -346,7 +371,7 @@ setMethod(
     
     (object ##<< An object of class TimeMap or one that inherits from TimeMap
     ){
-        return( c("t_min"=object@starttime+max(object@lag),"t_max"=object@endtime+min(object@lag)))
+        return( c("t_min"=object@starttime,"t_max"=object@endtime))
         ### a vector of length two \code{ c(t_min,t_max) }
         ### containing start and end time of the time interval 
         ### for which the TimeMap object is well defined,

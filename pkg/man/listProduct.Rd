@@ -1,7 +1,7 @@
 \name{listProduct}
 \alias{listProduct}
 \usage{listProduct(...)}
-\examples{listproduct(list('a','b'),list(1,2))}
+\examples{listProduct(list('a','b'),list(1,2))}
 \arguments{
 \item{...}{lists}
 }
