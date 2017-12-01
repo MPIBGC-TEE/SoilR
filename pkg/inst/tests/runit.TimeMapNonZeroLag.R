@@ -66,7 +66,7 @@ test.TimeMapFromVectorAndArrayNonZeroLag <- function(){
 	 lag=1.5
    # such a list can be converted into a TimeMap Object
    obj=TimeMap(times=times,data=arr,lag=lag)
-   #checkEquals(c("t_min"=min(times),"t_max"=max(times)),getTimeRange(obj))
+   checkEquals(c("t_min"=min(times)+lag,"t_max"=max(times)+lag),getTimeRange(obj))
    ## get the interpolation function and reproduce the data from the list
    #matFunc <- getFunctionDefinition(obj)
    #matList_int  <- lapply(l$times,matFunc)
@@ -106,6 +106,7 @@ test.TimeMapFromListOfVectorAndArrayNonZeroLag <- function(){
 }
 
 test.TimeMapFromListOfVectorAndListNonZeroLag <- function(){
+DEACTIVATED('data=listhas to be reimplemented')
    # we use data provided by a SoilR function that
    # is only used in tests and examples
    l <- example.nestedTime2DMatrixList()
