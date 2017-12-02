@@ -17,6 +17,16 @@ arrFuncMaker <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
 	}
   return(arrFunc)
 }
+flat_arr_TimeMap <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
+		return(
+      TimeMap(
+        map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag=lag),
+        min(times)+max(lag),
+        max(times)+min(lag)
+      )
+    )
+}
+  
 ### This class enhances a time dependent function by information about its domain.
 ### The information about the delay is especially usefull for functions that interpolate data. 
 ### Assume that you are given time series data in two vectors \code{times}, \code{values}.
@@ -85,7 +95,8 @@ setMethod(
     data="list"
   ),
   ### The method creates an instance of \code{\link{TimeMap-class}}
-  ### from a list that contains data and a vector of times referring to it.
+  ### from a vector of times and a list of the same length, 
+  ### containing vectors matrices or arrays 
   def=function # Create a TimeMap from a nested list 
   (
    times,
@@ -94,35 +105,35 @@ setMethod(
    interpolation=splinefun
   ){
 		lt <- length(times)
-    if(inherits(data,'list')){
-      fe <- data[[1]]
-		  #remember the class of the data elements
-		  targetClass <- class(fe)
-      if(inherits(fe,'numeric')){
-        # we have a list of vectors
-        srcDim <- c(length(fe))
-		    flatDim <- prod(srcDim)
+    fe <- data[[1]]
+		#remember the class of the data elements
+		targetClass <- class(fe)
+    if(inherits(fe,'numeric')){
+      # we have a list of vectors
+      srcDim <- c(length(fe))
+		  flatDim <- prod(srcDim)
+		  arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+    }else{
+      if(inherits(fe,'array')|inherits(fe,'matrix')){
+		    #remember the shape of the data elements
+		    srcDim <- dim(fe)
+		    flatDim=prod(srcDim)
+		    # create a 2D array 
+		    # with the elements of data flattened to vectors 
+		    # and  time as second dimension
 		    arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
       }else{
-        if(inherits(fe,'array')|inherits(fe,'matrix')){
-		      #remember the shape of the data elements
-		      srcDim <- dim(fe)
-		      flatDim=prod(srcDim)
-		      # create a 2D array 
-		      # with the elements of data flattened to vectors 
-		      # and  time as second dimension
-		      arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
-        }else{
-          stop(
-            sprintf(
-              'The elements of the data list must be arrays, matrices or vectors but you provided an object of class %s.',
-               class(fe)
-            )
+        stop(
+          sprintf(
+            'The elements of the data list must be arrays, matrices or vectors but you provided an object of class %s.',
+             class(fe)
           )
-       }
-     }
-		return(TimeMap(map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag),min(times),max(times)))
-  }
+        )
+      }
+    }
+		return(
+      flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
+    )
   }
 )
 #-----------------------------------------------------------
@@ -146,18 +157,47 @@ setMethod(
   )
   {
 		lt <- length(times)
-    srcDim <- 1
-		flatDim=prod(srcDim)
-		arr <- array(dim=c(flatDim,lt),data=data)
-		targetClass <-'numeric'
+    ll <- length(lag)
+    if (ll>1){
+      # Although we have only one datapoint per time step the
+      # a vector (matrix or array) lag makes the result a 
+      # vector(matri/array) valued function that yields values
+      # of the same dimension as lag.
+      # This is the same result as if the the data argument
+      # had been a matrix/array with identical entries.
+      # So we first create this matrix and then delegate to
+      # the method that takes a data argument of type matrix/array
+      ld <- dim(lag)
+      if(!is.null(ld)){
+        #lag was an array (or matrix for length dim=2)
+        srcDim <- ld
+		    flatDim=prod(srcDim)
+		    arr <- array(dim=c(flatDim,lt),as.vector(unlist(lapply(data,function(de){rep(de,flatDim)}))))
+        targetClass <- class(lag)
+		    return(
+          flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
+        )
+      }else{
+        #lag was a vector
+        srcDim <- ll
+		    flatDim=prod(srcDim)
+		    arr <- array(dim=c(flatDim,lt),as.vector(unlist(lapply(data,function(de){rep(de,flatDim)}))))
+        targetClass <- class(lag)
+		    return(
+          flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
+        )
+      }
+    }else{
+      # lag was a scalar 
+      srcDim <- 1
+		  flatDim=prod(srcDim)
+		  arr <- array(dim=c(flatDim,lt),data=data)
+		  targetClass <-'numeric'
 
-		return(
-      TimeMap(
-        map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag=lag),
-        min(times)+max(lag),
-        max(times)+min(lag)
+		  return(
+        flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
       )
-    )
+    }
   }
 )
 #-----------------------------------------------------------
@@ -179,11 +219,9 @@ setMethod(
    lag=0,
    interpolation=splinefun
   ){
-    print('##################################### matrix')
-    print(lag)
     # R insists that a 2D array is a matrix and NOT an array which is extremely weierd
     # checkout: inherits(array(dim=c(2,2),'array')) which yields FALSE since
-    # class(array(dim=c(2,2)) yields 'matrix' while 
+    #[MaR class(array(dim=c(2,2)) yields 'matrix' while 
     # class(array(dim=c(2)) and class(array(dim=c(2,2,2)) both yield 'array'
     # se we have to allow the class 'matrix' here for the array in case 
     # some poor unsuspecting fellow tries to create 2D array 
@@ -194,11 +232,7 @@ setMethod(
 		targetClass <-'numeric'
 
 		return(
-      TimeMap(
-        map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag=lag),
-        min(times)+max(lag),
-        max(times)+min(lag)
-      )
+      flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
     )
   }
 )
@@ -228,11 +262,7 @@ setMethod(
 		arr <- array(dim=c(flatDim,lt),data=as.vector(data))
 		targetClass <-'array'
 		return(
-      TimeMap(
-        map=arrFuncMaker(times,arr,srcDim,targetClass,interpolation,lag=lag),
-        min(times)+max(lag),
-        max(times)+min(lag)
-      )
+      flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
     )
   }
 )

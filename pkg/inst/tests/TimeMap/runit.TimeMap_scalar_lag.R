@@ -1,5 +1,6 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
+#-----------------------------------------------------------
 checkListEqual <- function(matList,matList_int){
    checkEquals(
     sum(
@@ -12,7 +13,8 @@ checkListEqual <- function(matList,matList_int){
 }
 # test the zero lag functionality
 
-test.TimeMapFrom1DdataframeNonZeroLag <- function(){
+#-----------------------------------------------------------
+test.TimeMap_from_1Ddataframe_scalar_lag <- function(){
    # fixme mm: I would like to deprecate this constructors
    # since a list is better suited 
    tstart=1
@@ -26,7 +28,8 @@ test.TimeMapFrom1DdataframeNonZeroLag <- function(){
    matFunc <- getFunctionDefinition(obj)
 }
 
-test.TimeMapFromVectorAndVectorNonZeroLag <- function(){
+#-----------------------------------------------------------
+test.TimeMap_from_Vector_and_Vector_scalar_lag <- function(){
    tstart=0
    tend=10
 	 lag=1.5
@@ -41,7 +44,7 @@ test.TimeMapFromVectorAndVectorNonZeroLag <- function(){
    data_int<- unlist(lapply(times+lag,Func))
    RUnit::checkIdentical(vec,data_int)
 }
-test.TimeMapFromListOfVectorAndVectorNonZeroLag <- function(){
+test.TimeMap_from_ListOfVector_and_Vector_scalar_lag <- function(){
    tstart=0
    tend=10
 	 lag=1.5
@@ -57,7 +60,8 @@ test.TimeMapFromListOfVectorAndVectorNonZeroLag <- function(){
    RUnit::checkIdentical(vec,data_int)
 }
 
-test.TimeMapFromVectorAndArrayNonZeroLag <- function(){
+#-----------------------------------------------------------
+test.TimeMap_from_Vector_and_Array_scalar_lag <- function(){
    l <- example.Time3DArrayList()
    times  <- l$times
    arr    <- l$data
@@ -67,13 +71,14 @@ test.TimeMapFromVectorAndArrayNonZeroLag <- function(){
    # such a list can be converted into a TimeMap Object
    obj=TimeMap(times=times,data=arr,lag=lag)
    checkEquals(c("t_min"=min(times)+lag,"t_max"=max(times)+lag),getTimeRange(obj))
-   ## get the interpolation function and reproduce the data from the list
-   #matFunc <- getFunctionDefinition(obj)
-   #matList_int  <- lapply(l$times,matFunc)
-   #checkListEqual(matList,matList_int)
+   # get the interpolation function and reproduce the data from the list
+   matFunc <- getFunctionDefinition(obj)
+   matList_int  <- lapply(l$times+lag,matFunc)
+   checkListEqual(matList,matList_int)
 }
 
-test.TimeMapFromVectorAndMatrixNonZeroLag <- function(){
+#-----------------------------------------------------------
+test.TimeMap_from_Vector_and_Matrix_scalar_lag <- function(){
    l <- example.Time2DArrayList()
    times  <- l$times
    arr    <- l$data
@@ -88,8 +93,27 @@ test.TimeMapFromVectorAndMatrixNonZeroLag <- function(){
    matList_int  <- lapply(l$times+lag,vecFunc)
    checkListEqual(vecList,matList_int)
 }
+#-----------------------------------------------------------
+test.TimeMap_from_Vector_and_List_scalar_lag <- function(){
+   l <- example.nestedTime2DMatrixList()
+   times   <- l$times
+   matList <- l$data
+   
+   # such a list can be converted into a TimeMap Object
+	 lag=1.5
+   obj=TimeMap(times=times,data=matList,lag=lag)
+   tr <- getTimeRange(obj)
+   print(tr)
+   checkEquals(c("t_min"=min(times)+lag,"t_max"=max(times)+lag),tr)
+   # get the interpolation function and reproduce the data from the list
+   matFunc <- getFunctionDefinition(obj)
+   matList_int  <- lapply(l$times+lag,matFunc)
+   checkListEqual(matList,matList_int)
+}
 
-test.TimeMapFromListOfVectorAndArrayNonZeroLag <- function(){
+
+#-----------------------------------------------------------
+test.TimeMap_from_ListOfVector_and_Array_scalar_lag <- function(){
    l <- example.Time3DArrayList()
    times  <- l$times
    arr    <- l$data
@@ -105,8 +129,8 @@ test.TimeMapFromListOfVectorAndArrayNonZeroLag <- function(){
    checkListEqual(matList,matList_int)
 }
 
-test.TimeMapFromListOfVectorAndListNonZeroLag <- function(){
-DEACTIVATED('data=listhas to be reimplemented')
+#-----------------------------------------------------------
+test.TimeMap_from_ListOfVector_and_List_scalar_lag <- function(){
    # we use data provided by a SoilR function that
    # is only used in tests and examples
    l <- example.nestedTime2DMatrixList()
@@ -117,12 +141,10 @@ DEACTIVATED('data=listhas to be reimplemented')
    # such a list can be converted into a TimeMap Object
    obj=TimeMap(l,lag=lag)
    tr <- getTimeRange(obj)
-   print('#############################################')
-   print(tr)
-   checkEquals(c("t_min"=min(times)+lag,"t_max"=max(times)+lag),getTimeRange(obj))
+   checkEquals(c("t_min"=min(times)+lag,"t_max"=max(times)+lag),tr)
    # get the interpolation function and reproduce the data from the list
-   #matFunc      <- getFunctionDefinition(obj)
-   #matList_int  <- lapply(l$times+lag,matFunc)
-   #checkListEqual(matList,matList_int)
+   matFunc      <- getFunctionDefinition(obj)
+   matList_int  <- lapply(l$times+lag,matFunc)
+   checkListEqual(matList,matList_int)
 }
 
