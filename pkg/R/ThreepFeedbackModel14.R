@@ -71,7 +71,8 @@ ThreepFeedbackModel14<- function #Implementation of a three-pool C14 model with 
 
 		##examples<<
 		##
-		##    years=seq(1901,2009,by=0.5)
+		##    #years=seq(1901,2009,by=0.5)
+		##    years=seq(1904,2009,by=0.5)
 		##    LitterInput=100
 		##    k1=1/2; k2=1/10; k3=1/50
 		##    a21=0.9*k1

@@ -158,10 +158,11 @@ setMethod(
   {
 		lt <- length(times)
     ll <- length(lag)
+    targetClass <- class(lag)
     if (ll>1){
       # Although we have only one datapoint per time step the
       # a vector (matrix or array) lag makes the result a 
-      # vector(matri/array) valued function that yields values
+      # vector(matrix/array) valued function that yields values
       # of the same dimension as lag.
       # This is the same result as if the the data argument
       # had been a matrix/array with identical entries.
@@ -169,35 +170,25 @@ setMethod(
       # the method that takes a data argument of type matrix/array
       ld <- dim(lag)
       if(!is.null(ld)){
-        #lag was an array (or matrix for length dim=2)
         srcDim <- ld
-		    flatDim=prod(srcDim)
-		    arr <- array(dim=c(flatDim,lt),as.vector(unlist(lapply(data,function(de){rep(de,flatDim)}))))
-        targetClass <- class(lag)
-		    return(
-          flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
-        )
       }else{
         #lag was a vector
         srcDim <- ll
-		    flatDim=prod(srcDim)
-		    arr <- array(dim=c(flatDim,lt),as.vector(unlist(lapply(data,function(de){rep(de,flatDim)}))))
-        targetClass <- class(lag)
-		    return(
-          flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
-        )
       }
+		  flatDim=prod(srcDim)
+		  arr <- array(
+        dim=c(flatDim,lt),
+        as.vector(unlist( lapply( data, function(de){rep(de,flatDim)})))
+      )
     }else{
       # lag was a scalar 
       srcDim <- 1
 		  flatDim=prod(srcDim)
 		  arr <- array(dim=c(flatDim,lt),data=data)
-		  targetClass <-'numeric'
-
-		  return(
-        flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
-      )
     }
+		return(
+      flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
+    )
   }
 )
 #-----------------------------------------------------------

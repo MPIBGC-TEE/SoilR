@@ -65,7 +65,7 @@ ThreepParallelModel14<- function #Implementation of a three-pool C14 model with 
     ##seealso<< There are other \code{\link{predefinedModels}} and also more general functions like \code{\link{Model_14}}.
 		##examples<<
 		##    
-		##    years=seq(1901,2009,by=0.5)
+		##    years=seq(1903,2009,by=0.5) # note that we 
 		##    LitterInput=700 
 		##    
 		##    Ex=ThreepParallelModel14(
