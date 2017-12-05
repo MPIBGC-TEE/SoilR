@@ -81,11 +81,5 @@ setMethod(
             stop("conversion not implemented for this format")
      }	 
 )
-#---------------------------------------------------------------------------------------------------------
-#setMethod(
-#  f= "plot",
-#      signature=c(x="BoundFc"),
-#  def=function(x,...){}
-#)
 
 

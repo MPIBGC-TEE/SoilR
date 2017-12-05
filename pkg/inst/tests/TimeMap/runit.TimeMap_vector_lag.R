@@ -27,11 +27,9 @@ test.TimeMap_from_Vector_and_Vector_scalar_lag <- function(){
    fe <- Func(tstart+max(lag))
    # since lag now is a vector (although the data is still scalar we now expect a vector valued function)
    checkEquals(length(fe),2)
-   data_int<- unlist(lapply(times+lag,Func))
-   print('###############################################################################################')
-   print('###############################################################################################')
-   print('###############################################################################################')
-   pp("data_int",environment())
+   #data_int<- lapply(times+lag,Func)
+   #pp("data_int",environment())
+   plot(obj)
    #RUnit::checkIdentical(vec,data_int)
 }
 
@@ -39,8 +37,6 @@ test.TimeMap_from_Vector_and_Vector_scalar_lag <- function(){
 #-----------------------------------------------------------
 test.TimeMap_from_1Ddataframe_vector_lag <- function(){
    DEACTIVATED('NOT IMPLEMENTED YET')
-   # fixme mm: I would like to deprecate this constructors
-   # since a list is better suited 
    tstart=1
    tend=20
    t=tstart:tend

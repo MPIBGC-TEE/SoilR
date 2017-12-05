@@ -14,15 +14,3 @@ dev.off()
 res=system(command=paste("qpdf --check ",fileName,sep=""))
 checkEquals(attr(res,"status"),NULL)
 }
-#####################################################################################################
-pp=function(# print out an 
-### This function is used to print out a value of a variable together with its name and is helpful for debugging
-string,env){
-print(paste(string,"="))
-print(get(string,env))
-}
-#####################################################################################################
-pe=function(string,env){
-print(string)
-print(eval(string,env))
-}
