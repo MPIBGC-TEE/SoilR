@@ -476,10 +476,7 @@ setMethod(
     plot(0,0,
       type='n',
       xlab='time',
-      ylab='values'
-    #)
-    #plot.window(
-      ,
+      ylab='values',
       xlim=tr,
       ylim=c(resMin,resMax+resMax-resMin)
     )
@@ -487,6 +484,36 @@ setMethod(
       y <- resultArr[i,]
       pe(quote(length(times)))
       pe(quote(length(y)))
+      lines(x=times,y=y,col=colors[[i]])
+    }
+    flatInds <- 1:flatDim
+    lapply(flatInds, plotFun)
+    legend(x=min(tr),y=2*resMax-resMin,lapply(flatInds,function(i){as.character(arrayInd(.dim=srcDim,i))}),colors)
+  }
+)
+#---------------------------------------------------------------------------------------------------------
+setMethod(
+  f= "add_plot",
+      signature=c(x="TimeMap"),
+  def=function(x,...){
+    lt <- 40
+    f <- getFunctionDefinition(x)
+    tr <- getTimeRange(x)
+    #tr <- c(tmin=1,tmax=4)
+    times <- seq(min(tr),max(tr),length.out=lt)
+    f_1 <- f(times[[1]]) #could be a scalar vector matrix or array
+    flatDim <- length(f_1)
+    srcDim <- dim(f_1)
+    if(is.null(srcDim)){ 
+      srcDim <- flatDim
+    }
+    resultArr<- array(dim=c(flatDim,lt),unlist(lapply(times,function(t){f(t)})))
+    resMin <- min(resultArr)
+    resMax <- max(resultArr)
+    colors <- rainbow(flatDim)
+
+    plotFun <- function(i){
+      y <- resultArr[i,]
       lines(x=times,y=y,col=colors[[i]])
     }
     flatInds <- 1:flatDim

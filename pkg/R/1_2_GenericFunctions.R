@@ -569,6 +569,19 @@ setGeneric(
 	 }
 )
 	 
+setGeneric(
+	 name="add_plot",
+	 def=function # Generic constructor
+	 ### Creates a LinearDecompositonOperator from different sources.
+	 ### Please look at the methods to see what kind of input is supported. 
+	 (
+    x,
+    ...
+   )
+	 {
+	     standardGeneric("add_plot")
+	 }
+)
  
  
  
