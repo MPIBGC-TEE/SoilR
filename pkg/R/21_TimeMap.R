@@ -246,16 +246,40 @@ setMethod(
    lag=0,
    interpolation=splinefun
   ){
-    lt <- length(times)
     dd <- dim(data)
+    dl <- dim(lag)
+    ll <- length(lag)
     srcDim <-dd[1:(length(dd)-1)] 
-		flatDim=prod(srcDim)
-		arr <- array(dim=c(flatDim,lt),data=as.vector(data))
-		targetClass <-'array'
-		return(
-      flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
-    )
+	  flatDim=prod(srcDim)
+    
+    if(ll>1){ #nonscalar lag
+      if(is.null(dl)){
+        stop(
+          sprintf('The lag element has to either be a scalar or  
+            have the same dimension as the array slices per time step.
+            You gave a lag argument that was a vector of length %s ,while  dim(data)[1:(length(dim(data))-1)]=%s',
+            ll,
+            toString(srcDim))
+          )
+      }else{
+        if(ll!=flatDim){
+        stop(
+          sprintf('The lag element has to either be a scalar or  
+            have the same dimension as the array slices per time step.
+            dim(lag)=%s, dim(data)[1:(length(dim(data))-1)]=%s',
+            dl,
+            toString(srcDim))
+        )
+      }
+    }
   }
+  lt <- length(times)
+	arr <- array(dim=c(flatDim,lt),data=as.vector(data))
+	targetClass <-'array'
+	return(
+    flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
+  )
+ }
 )
 #-----------------------------------------------------------
 setMethod(
@@ -275,8 +299,6 @@ setMethod(
    lag=0,
    interpolation=splinefun
   ){
-    print('#####################################list')
-    print(lag)
     ##details<< The list must have two entries
     ##  If the entries are not named, the first one is supposed to be a numeric vector
     ##  of \code{times} and the second to contain the data referring to those times.
