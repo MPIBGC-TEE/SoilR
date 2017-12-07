@@ -22,10 +22,9 @@ alltests <- defineTestSuite(
    #testFileRegexp = "^runit.*.R$",
    
    #testFuncRegexp = "test.TimeMap_from_Vector_and_List_nonzero_lag",
-   #testFuncRegexp = "test.TimeMap_from_Vector_and_Matrix_nonzero_lag",
+   #testFuncRegexp = "test.TimeMap_from_Vector_and_Matrix_nonscalar_lag",
    testFuncRegexp = "test.*",
-   #testFuncRegexp = "test.TimeMap_from_Vector_and_Matrix_vector_lag",
-   #testFuncRegexp = "test.TimeMap_from_Vector_and_Array_vector_lag",
+   #testFuncRegexp = "test.TimeMap_from_Vector_and_List_vector_lag",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
 )

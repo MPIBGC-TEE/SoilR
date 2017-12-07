@@ -189,39 +189,72 @@ test.TimeMap_from_Vector_and_Array_non_scalar_lags <- function(){
 }
 
 #-----------------------------------------------------------
-test.TimeMap_from_Vector_and_Matrix_vector_lag <- function(){
+test.TimeMap_from_Vector_and_Matrix_nonscalar_lag<- function(){
    l <- example.Time2DArrayList()
    times  <- l$times
-   arr    <- l$data
-   vecList <- lapply(seq_along(times),function(i){arr[,i]})
-	 lag <- c(1.5,2.5)
-
-   # such a list can be converted into a TimeMap Object
-   obj <- TimeMap(times=times,data=arr,lag=lag)
+   mat    <- l$data
+   vecList <- lapply(seq_along(times),function(i){mat[,i]})
+   
+   # for a vector(timeslice of mat)  3D array lag is not acceptable
+   checkException(TimeMap(times=times,data=mat,lag=array(dim=c(2,2,2),1:8)))
+   # for a vector(timeslice of mat) of length 2  a vector lag of lenght 3 ist not acceptable
+   checkException(TimeMap(times=times,data=mat,lag=c(2,2,2)))
+	 
+   lag <- c(1.5,2.5)
+   require(debugHelpers)
+   pe(quote(length(times+lag)))
+   obj <- TimeMap(times=times,data=mat,lag=lag)
    tr <- getTimeRange(obj)
    plot(obj)
    checkEquals(c("t_min"=min(times)+max(lag),"t_max"=max(times)+min(lag)),tr)
    # get the interpolation function and reproduce the data from the list
-   vecFunc <- getFunctionDefinition(obj)
-   matList_int  <- lapply(l$times+lag,vecFunc)
-   #checkListEqual(vecList,matList_int)
+   Func <- getFunctionDefinition(obj)
+   fe <- Func(min(times)+max(lag))
+   # we expect a vector valued function
+   checkEquals(length(fe),2)
+   lapply(
+    1:length(lag),
+    function(i){
+      real_times <- times+lag[[i]]
+      indices <- which(real_times>=min(tr)&real_times <=max(tr))
+      real_times_in_domain <- real_times[indices]
+      ref <- unlist(
+        lapply(
+          indices,
+          function(index){
+            Tupel <-matrix(nrow=1,c(i,index)) 
+            mat[Tupel]
+          }
+        )               
+      )
+      res <- unlist(
+        lapply(
+          real_times_in_domain,
+          function(t){Func(t)[[i]]}
+        )
+      )
+      RUnit::checkIdentical(ref,res)
+    }
+  )
 }
 #-----------------------------------------------------------
 test.TimeMap_from_Vector_and_List_vector_lag <- function(){
-   DEACTIVATED('NOT IMPLEMENTED YET')
+   DEACTIVATED('NOT complete YET')
    l <- example.nestedTime2DMatrixList()
    times   <- l$times
    matList <- l$data
    
-	 lag <- c(1.5,2.5)
-   obj=TimeMap(times=times,data=matList,lag=lag)
-   obj=TimeMap(times=times,data=matList,lag=lag)
-   obj=TimeMap(times=times,data=matList,lag=lag)
+	 # for a matrix a vector lag is not acceptable
+   checkException(TimeMap(times=times,data=matList,lag=c(1.5,2.5)),silent=TRUE)
+   # for a matrix a 3D array lag is not acceptable
+   checkException(TimeMap(times=times,data=matList,lag=array(dim=c(2,2,2),1:8)),silent=TRUE)
+   lag <- c(1,2,3,4)
+   obj=TimeMap(times=times,data=matList,lag=matrix(nrow=2,ncol=2,lag))
    tr <- getTimeRange(obj)
-   print(tr)
+   #print(tr)
    checkEquals(c("t_min"=min(times)+max(lag),"t_max"=max(times)+min(lag)),tr)
    # get the interpolation function and reproduce the data from the list
-   matFunc <- getFunctionDefinition(obj)
+   #matFunc <- getFunctionDefinition(obj)
 }
 
 

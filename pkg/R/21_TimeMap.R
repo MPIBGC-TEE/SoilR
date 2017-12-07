@@ -182,6 +182,7 @@ setMethod(
   ){
 		lt <- length(times)
     ll <- length(lag)
+    dl <- dim(lag)
     fe <- data[[1]]
 		#remember the class of the data elements
 		targetClass <- class(fe)
@@ -203,8 +204,36 @@ setMethod(
       }else{ #listelements are vectors
         srcDim <- c(length(fe))
 		    flatDim <- prod(srcDim)
-		    arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+        if(ll>1){ #nonscalar lag
+          if(is.null(dl)){ #vector lag (dim(c(1,2)) yields NULL)
+            if(ll!=flatDim){
+              stop(
+                sprintf('If data is a list of vectors, 
+                  the lag element has to be a scalar or a vector of the same legth as
+                  the elemenst of the data list. 
+                  You gave a lag argument that was a vector of length %s ,
+                  while the elements of the data list have length %s',
+                  ll,
+                  toString(flatDim)
+                )
+              )
+            }
+          }else{ # lag is a matrix or an array with dim != NULL
+            #fixme: mm
+            # we could allow matrices with 1 row or one column
+            stop(
+              sprintf('If data is a list of vectors 
+                the lag element has to be a scalar or a vector too.
+                You gave a lag argument that was an array or matrix of dimension %s ,
+                while the elements of the data list where vectors (dim=NULL)' ,
+                toString(srcDim)
+              )
+            )
+
+          }
+        }
       }
+		  arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
     }else{
       if(inherits(fe,'array')|inherits(fe,'matrix')){
 		    #remember the shape of the data elements
@@ -213,6 +242,34 @@ setMethod(
 		    # create a 2D array 
 		    # with the elements of data flattened to vectors 
 		    # and  time as second dimension
+
+        if(ll>1){ #nonscalar lag
+          if(is.null(dl)){ #vector lag (dim(c(1,2)) yields NULL)
+            stop(
+              sprintf('If data is a list of matrices or arrays, 
+                the lag element has to either be a scalar or  
+                a matrix or array of the same shape as the elemenst of the data list. 
+                You gave a lag argument that was a vector of length %s,
+                while the elements of the data list have dimension %s.',
+                ll,
+                toString(srcDim)
+              )
+            )
+          }else{
+            if(!identical(dl,srcDim)){
+              stop(
+                sprintf('If data is a list of matrices or arrays, 
+                  the lag element has to either be a scalar or  
+                  a matrix or array of the same shape as the elemenst of the data list. 
+                  You gave a lag argument of dimension %s,
+                  while the elements of the data list have dimension %s.',
+                  toString(dl),
+                  toString(srcDim)
+                )
+              )
+            }
+          }
+        }
 		    arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
       }else{
         stop(
@@ -221,35 +278,6 @@ setMethod(
              class(fe)
           )
         )
-      }
-    }
-
-    if(ll>1){ #nonscalar lag
-      if(is.null(dl)){ #vector lag (dim(c(1,2)) yields NULL)
-        if(ll!=flatDim){
-          stop(
-            sprintf('If data is not a list of scalars, 
-              the lag element has to either be a scalar or  
-              have the same dimension as the elemenst of the data list. 
-              You gave a lag argument that was a vector of length %s ,
-              while lenght(data[[1]])=%s',
-              ll,
-              toString(flatDim)
-            )
-          )
-        }
-      }else{ #array or matrix lag
-        if(dl!=srcDim){
-         stop(
-           sprintf('If data is not a list of scalars, 
-             the lag element has to either be a scalar or  
-             have the same dimension as the elements of the data list. 
-             dim(lag)=%s, dim(data[[1]]=%s',
-             dl,
-             toString(srcDim)
-           )
-         )
-        }
       }
     }
 		return(
@@ -341,11 +369,39 @@ setMethod(
     # some poor unsuspecting fellow tries to create 2D array 
     # but ends up with a matrix ...
     srcDim <-c(dim(data)[[1]])
-		flatDim=prod(srcDim)
-		arr <- data
-		targetClass <-'numeric'
-
-		return(
+    flatDim=prod(srcDim)
+    arr <- data
+    targetClass <-'numeric'
+    dl <- dim(lag)
+    ll <- length(lag)
+    if (ll>1){ #nonscalar lag
+      if (is.null(dl)){ #vector lag 
+          if (ll!=flatDim){
+            stop(
+              sprintf(
+                'The lenght of a column of the matrix (refering to one timestep) was %s while
+                the lag parameter had length %s.',
+                flatDim,
+                ll
+              )
+            )
+          }
+       }else{ #matrix or array lag
+         if(!identical(dl,c(flatDim,1))){
+          # the only matrix shapre we accept is a column vector written as matrix
+          stop(
+            sprintf(
+              'If data is a matrix then the slices for every timestep are vectors.
+               In this case lag has to be either scalar or a vector of the same size as the columns
+               of data. dim(lag)=%s, but should have been %s,1',
+               toString(dl),
+               flatDim
+            )
+          )
+        }
+      }
+    }
+    return(
       flat_arr_TimeMap(times,arr,srcDim,targetClass,interpolation,lag=lag)
     )
   }
