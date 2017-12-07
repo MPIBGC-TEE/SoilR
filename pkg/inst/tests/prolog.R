@@ -4,7 +4,7 @@
 require("parallel")
 require("RUnit")
 require("deSolve")
-require("debugHelpers")
+#require("debugHelpers")
 source("testhelpers.R")
 dataPrefix="../../data/"
 dataPaths=Sys.glob(paste(dataPrefix,"*.rda",sep=""))

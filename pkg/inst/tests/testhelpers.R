@@ -12,3 +12,11 @@ checkWarning <- function(expr,silent=TRUE) {
     ),
         "Warning not generated as expected\n")
 }             
+
+plotAndCheck=function(fileName,lexp,env){
+pdf(file=fileName)
+eval(lexp,env)
+dev.off()
+res=system(command=paste("qpdf --check ",fileName,sep=""))
+checkEquals(attr(res,"status"),NULL)
+}
