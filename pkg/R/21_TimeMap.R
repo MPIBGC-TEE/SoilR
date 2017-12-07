@@ -181,14 +181,30 @@ setMethod(
    interpolation=splinefun ##<< the interpolation method to be used 
   ){
 		lt <- length(times)
+    ll <- length(lag)
     fe <- data[[1]]
 		#remember the class of the data elements
 		targetClass <- class(fe)
     if(inherits(fe,'numeric')){
-      # we have a list of vectors
-      srcDim <- c(length(fe))
-		  flatDim <- prod(srcDim)
-		  arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+      # we have a list of scalars or vectors
+      if(length(fe)==1){ # list of scalars
+        # convert the list to a vector and delegate to the vector
+        # specific method which is especially usefull since this avoids
+        # the necessity to deal with the different cases for lag
+        # (scalar,vector,matrix,array) again here
+        return(
+          TimeMap(
+            times=times,
+            data=unlist(data),
+            lag=lag,
+            interpolation=interpolation
+          )
+        )
+      }else{ #listelements are vectors
+        srcDim <- c(length(fe))
+		    flatDim <- prod(srcDim)
+		    arr <- array(dim=c(flatDim,lt),data=unlist(lapply(data,as.vector)))
+      }
     }else{
       if(inherits(fe,'array')|inherits(fe,'matrix')){
 		    #remember the shape of the data elements
@@ -205,6 +221,35 @@ setMethod(
              class(fe)
           )
         )
+      }
+    }
+
+    if(ll>1){ #nonscalar lag
+      if(is.null(dl)){ #vector lag (dim(c(1,2)) yields NULL)
+        if(ll!=flatDim){
+          stop(
+            sprintf('If data is not a list of scalars, 
+              the lag element has to either be a scalar or  
+              have the same dimension as the elemenst of the data list. 
+              You gave a lag argument that was a vector of length %s ,
+              while lenght(data[[1]])=%s',
+              ll,
+              toString(flatDim)
+            )
+          )
+        }
+      }else{ #array or matrix lag
+        if(dl!=srcDim){
+         stop(
+           sprintf('If data is not a list of scalars, 
+             the lag element has to either be a scalar or  
+             have the same dimension as the elements of the data list. 
+             dim(lag)=%s, dim(data[[1]]=%s',
+             dl,
+             toString(srcDim)
+           )
+         )
+        }
       }
     }
 		return(
