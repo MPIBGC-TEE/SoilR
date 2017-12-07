@@ -1,5 +1,6 @@
 importFrom(parallel,mclapply,mcmapply,detectCores)
 importFrom(stats,"integrate", "optimize", "runif", "spline", "splinefun","uniroot")
+importFrom("grDevices", "rainbow")
 importFrom("graphics", "abline", "curve", "legend", "lines", "par", "points")
 importFrom("grDevices", "dev.off", "pdf")
 importFrom(deSolve,lsoda)

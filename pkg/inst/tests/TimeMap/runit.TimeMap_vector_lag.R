@@ -190,7 +190,6 @@ test.TimeMap_from_Vector_and_Array_non_scalar_lags <- function(){
 
 #-----------------------------------------------------------
 test.TimeMap_from_Vector_and_Matrix_vector_lag <- function(){
-   DEACTIVATED('NOT IMPLEMENTED YET')
    l <- example.Time2DArrayList()
    times  <- l$times
    arr    <- l$data
@@ -200,11 +199,14 @@ test.TimeMap_from_Vector_and_Matrix_vector_lag <- function(){
    # such a list can be converted into a TimeMap Object
    obj <- TimeMap(times=times,data=arr,lag=lag)
    tr <- getTimeRange(obj)
+   pdf('test.pdf')
+   plot(obj)
+   dev.off()
    checkEquals(c("t_min"=min(times)+max(lag),"t_max"=max(times)+min(lag)),tr)
    # get the interpolation function and reproduce the data from the list
    vecFunc <- getFunctionDefinition(obj)
    matList_int  <- lapply(l$times+lag,vecFunc)
-   checkListEqual(vecList,matList_int)
+   #checkListEqual(vecList,matList_int)
 }
 #-----------------------------------------------------------
 test.TimeMap_from_Vector_and_List_vector_lag <- function(){

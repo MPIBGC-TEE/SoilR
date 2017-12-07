@@ -584,6 +584,18 @@ setGeneric(
 )
  
  
+setGeneric(
+	 name="getSrcDim",
+	 def=function  
+	 ### 
+	 ### 
+	 (
+    obj
+   )
+	 {
+	     standardGeneric("getSrcDim")
+	 }
+)
  
  
  

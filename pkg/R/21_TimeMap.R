@@ -17,6 +17,7 @@ arrFuncMaker <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
 	}
   return(arrFunc)
 }
+#-----------------------------------------------------------
 flat_arr_TimeMap <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
 		return(
       TimeMap(
@@ -26,7 +27,83 @@ flat_arr_TimeMap <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
       )
     )
 }
-  
+
+#-----------------------------------------------------------
+CallWithPlotVars<- function(
+  obj,
+  workerFunc,
+  varNamesFromPackageEnv,
+  ...
+){
+    # this function provides the environment consisting 
+    # of some variables commonly used by
+    # different worker fuctions for plotting
+    lt <- 40
+    f <- getFunctionDefinition(obj)
+    tr <- getTimeRange(obj)
+    #tr <- c(tmin=1,tmax=4)
+    times <- seq(min(tr),max(tr),length.out=lt)
+    f_1 <- f(times[[1]]) #could be a scalar vector matrix or array
+    flatDim <- length(f_1)
+    srcDim <- dim(f_1)
+    if(is.null(srcDim)){ 
+      srcDim <- flatDim
+    }
+    values <- array(
+      dim=c(flatDim,lt),
+      unlist(
+        lapply(
+          times,
+          function(t){f(t)}
+        )
+      )
+    )
+    valMin <- min(values)
+    valMax <- max(values)
+	  e <- environment()
+	  valuesProvidedByThisFuntions <- as.list(e)[varNamesFromPackageEnv]
+ 
+    # transform the additional arguments into a list
+    valuesProvidedByCaller <- list(...)
+
+    # create the complete parameterlist for the function call
+	  values <- c( valuesProvidedByThisFuntions, valuesProvidedByCaller) 
+
+    #create the actual call
+  	funcCall <- as.call(append(list(workerFunc),values))
+  	res <- eval(funcCall)
+	
+  res
+}
+
+
+#-----------------------------------------------------------
+plotAll<- function(tr,valMin,valMax,times,values,srcDim){
+  plotCoordSystem(tr,valMin,valMax)
+  plotTrajectories(valMin,valMax,times,values,srcDim)
+}
+#-----------------------------------------------------------
+plotCoordSystem <- function(tr,valMin,valMax)
+      plot(0,0,
+      type='n',
+      xlab='time',
+      ylab='values',
+      xlim=tr,
+      ylim=c(valMin,valMax+valMax-valMin)
+    )
+#-----------------------------------------------------------
+plotTrajectories <- function(valMin,valMax,times,values,srcDim){
+    flatDim <- dim(values)[[1]]
+    colors <- rainbow(flatDim)
+
+    plotFun <- function(i){
+      y <- values[i,]
+      lines(x=times,y=y,col=colors[[i]])
+    }
+    flatInds <- 1:flatDim
+    lapply(flatInds, plotFun)
+    legend(x=min(times),y=2*valMax-valMin,lapply(flatInds,function(i){as.character(arrayInd(.dim=srcDim,i))}),colors)
+}
 ### This class enhances a time dependent function by information about its domain.
 ### The information about the delay is especially usefull for functions that interpolate data. 
 ### Assume that you are given time series data in two vectors \code{times}, \code{values}.
@@ -74,13 +151,10 @@ setMethod(
     starttime=numeric(),
     endtime=numeric(),
     map=function(t){t}
-    #,
-    #lag=0
     ){
     .Object@starttime=starttime
     .Object@endtime=endtime
     .Object@map=map
-    #.Object@lag=lag
     return(.Object)
     }
 )
@@ -99,10 +173,12 @@ setMethod(
   ### containing vectors matrices or arrays 
   def=function # Create a TimeMap from a nested list 
   (
-   times,
-   data,
-   lag=0,
-   interpolation=splinefun
+   times, ##<< A vector of times
+   data,  ##<< A list of the same length as times with every
+          ## list element refering to one time in times
+   lag=0, ##<< Either a scalar or an object of the same size as 
+          ## the list elements describing the time lag of the data
+   interpolation=splinefun ##<< the interpolation method to be used 
   ){
 		lt <- length(times)
     fe <- data[[1]]
@@ -152,8 +228,10 @@ setMethod(
   (
    times,
    data,
-   lag=0,
-   interpolation=splinefun
+   lag=0, ##<< a scalar or a vector,matrix or array describing how much 
+          ## the data lag behind the times.
+          ## If lag is a vector, matrix or array, the resulting          ## function will be vector, matrix or array valued accordingly.
+   interpolation=splinefun ##<< the interpolation method to be used 
   )
   {
 		lt <- length(times)
@@ -207,8 +285,8 @@ setMethod(
   (
    times,
    data,
-   lag=0,
-   interpolation=splinefun
+   lag=0,#a scalar or a vector describing how much the data is laging behind the times
+   interpolation=splinefun ##<< the interpolation method to be used 
   ){
     # R insists that a 2D array is a matrix and NOT an array which is extremely weierd
     # checkout: inherits(array(dim=c(2,2),'array')) which yields FALSE since
@@ -243,8 +321,10 @@ setMethod(
   (
    times,
    data,
-   lag=0,
-   interpolation=splinefun
+   lag=0, ##<< Either a scalar or an object of the same size as 
+          ## a slice of the array per timestep.
+          ## It describes the time lag of the array elements
+   interpolation=splinefun ##<< the interpolation method to be used 
   ){
     dd <- dim(data)
     dl <- dim(lag)
@@ -296,8 +376,8 @@ setMethod(
   def=function # Create a TimeMap from a nested list 
   (
    map,
-   lag=0,
-   interpolation=splinefun
+   lag=0, ##<<either a scalar or an element of the same shape as the elements of the data entry that refer to one time step
+   interpolation=splinefun ##<< the interpolation method to be used 
   ){
     ##details<< The list must have two entries
     ##  If the entries are not named, the first one is supposed to be a numeric vector
@@ -475,71 +555,37 @@ return(obj)
 #---------------------------------------------------------------------------------------------------------
 setMethod(
   f= "plot",
-      signature=c(x="TimeMap"),
-  def=function(x,...){
-    lt <- 40
-    f <- getFunctionDefinition(x)
-    tr <- getTimeRange(x)
-    #tr <- c(tmin=1,tmax=4)
-    times <- seq(min(tr),max(tr),length.out=lt)
-    f_1 <- f(times[[1]]) #could be a scalar vector matrix or array
-    flatDim <- length(f_1)
-    srcDim <- dim(f_1)
-    if(is.null(srcDim)){ 
-      srcDim <- flatDim
-    }
-    resultArr<- array(dim=c(flatDim,lt),unlist(lapply(times,function(t){f(t)})))
-    resMin <- min(resultArr)
-    resMax <- max(resultArr)
-    pp('f_1')
-    colors <- rainbow(flatDim)
-
-    #plot.new()
-    plot(0,0,
-      type='n',
-      xlab='time',
-      ylab='values',
-      xlim=tr,
-      ylim=c(resMin,resMax+resMax-resMin)
+  signature=c(x="TimeMap"),
+  ### The method adds a simple overview plot of a the scalar,
+  ### vector, matrix or arrayvalued function plotting all time dependent component.
+  def=function(
+    x,
+    ...
+    ){
+    CallWithPlotVars(
+      x,
+      workerFunc=plotAll,
+      varNamesFromPackageEnv=c('tr','valMin','valMax','times','values','srcDim')
     )
-    plotFun <- function(i){
-      y <- resultArr[i,]
-      pe(quote(length(times)))
-      pe(quote(length(y)))
-      lines(x=times,y=y,col=colors[[i]])
-    }
-    flatInds <- 1:flatDim
-    lapply(flatInds, plotFun)
-    legend(x=min(tr),y=2*resMax-resMin,lapply(flatInds,function(i){as.character(arrayInd(.dim=srcDim,i))}),colors)
+
   }
 )
 #---------------------------------------------------------------------------------------------------------
 setMethod(
   f= "add_plot",
-      signature=c(x="TimeMap"),
-  def=function(x,...){
-    lt <- 40
-    f <- getFunctionDefinition(x)
-    tr <- getTimeRange(x)
-    #tr <- c(tmin=1,tmax=4)
-    times <- seq(min(tr),max(tr),length.out=lt)
-    f_1 <- f(times[[1]]) #could be a scalar vector matrix or array
-    flatDim <- length(f_1)
-    srcDim <- dim(f_1)
-    if(is.null(srcDim)){ 
-      srcDim <- flatDim
-    }
-    resultArr<- array(dim=c(flatDim,lt),unlist(lapply(times,function(t){f(t)})))
-    resMin <- min(resultArr)
-    resMax <- max(resultArr)
-    colors <- rainbow(flatDim)
-
-    plotFun <- function(i){
-      y <- resultArr[i,]
-      lines(x=times,y=y,col=colors[[i]])
-    }
-    flatInds <- 1:flatDim
-    lapply(flatInds, plotFun)
-    legend(x=min(tr),y=2*resMax-resMin,lapply(flatInds,function(i){as.character(arrayInd(.dim=srcDim,i))}),colors)
+  signature=c(x="TimeMap"),
+  ### The method adds a simple overview plot of a the scalar,
+  ### vector, matrix or arrayvalued function plotting all time dependent component.
+  def=function #overview plot
+  (
+    x,  ##<< the TimeMap Object to be plotted
+    ... ##<< other plot parameters not implemented yet
+    ){
+    CallWithPlotVars(
+      x,
+      workerFunc=plotTrajectories,
+      varNamesFromPackageEnv=c('valMin','valMax','times','values','srcDim')
+    )
   }
 )
+##---------------------------------------------------------------------------------------------------------
