@@ -13,10 +13,14 @@ checkWarning <- function(expr,silent=TRUE) {
         "Warning not generated as expected\n")
 }             
 
+
 plotAndCheck=function(fileName,lexp,env){
-pdf(file=fileName)
-eval(lexp,env)
-dev.off()
-res=system(command=paste("qpdf --check ",fileName,sep=""))
-checkEquals(attr(res,"status"),NULL)
+  pdf(file=fileName)
+  eval(lexp,env)
+  dev.off()
+  # fixme mm:
+  # the following command does not work on all platforms (it relies on a 
+  # commandline tool qpdf
+  res=system(command=paste("qpdf --check ",fileName,sep=""))
+  checkEquals(attr(res,"status"),NULL)
 }
