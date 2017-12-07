@@ -199,9 +199,7 @@ test.TimeMap_from_Vector_and_Matrix_vector_lag <- function(){
    # such a list can be converted into a TimeMap Object
    obj <- TimeMap(times=times,data=arr,lag=lag)
    tr <- getTimeRange(obj)
-   pdf('test.pdf')
    plot(obj)
-   dev.off()
    checkEquals(c("t_min"=min(times)+max(lag),"t_max"=max(times)+min(lag)),tr)
    # get the interpolation function and reproduce the data from the list
    vecFunc <- getFunctionDefinition(obj)
@@ -215,16 +213,15 @@ test.TimeMap_from_Vector_and_List_vector_lag <- function(){
    times   <- l$times
    matList <- l$data
    
-   # such a list can be converted into a TimeMap Object
 	 lag <- c(1.5,2.5)
+   obj=TimeMap(times=times,data=matList,lag=lag)
+   obj=TimeMap(times=times,data=matList,lag=lag)
    obj=TimeMap(times=times,data=matList,lag=lag)
    tr <- getTimeRange(obj)
    print(tr)
    checkEquals(c("t_min"=min(times)+max(lag),"t_max"=max(times)+min(lag)),tr)
    # get the interpolation function and reproduce the data from the list
    matFunc <- getFunctionDefinition(obj)
-   matList_int  <- lapply(l$times+lag,matFunc)
-   checkListEqual(matList,matList_int)
 }
 
 

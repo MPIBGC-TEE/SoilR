@@ -284,8 +284,8 @@ setMethod(
   def=function # Create a TimeMap from a nested list 
   (
    times,
-   data,
-   lag=0,#a scalar or a vector describing how much the data is laging behind the times
+   data, ##<< a matrix, every column corresponds to one time step
+   lag=0,##<< a scalar or a vector describing how much the data is laging behind the times
    interpolation=splinefun ##<< the interpolation method to be used 
   ){
     # R insists that a 2D array is a matrix and NOT an array which is extremely weierd
