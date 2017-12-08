@@ -9,7 +9,7 @@ alltests <- defineTestSuite(
    #dirs=c("automatic"),
    #testFileRegexp = "^runit.NonlinearAtmosphericModel.R",
    #testFileRegexp = "^runit.BoundFc.R",
-   testFileRegexp = "^runit.TimeMap_vector_lag.R",
+   testFileRegexp = "^runit.TimeMap_non_scalar_lag.R",
    #testFileRegexp = "^runit.TimeMap.R",
    #testFileRegexp = "^runit.BoundLinDecomOp.R",
    #testFileRegexp = "^runit.Model.R",
