@@ -12,10 +12,11 @@ lambda=-0.0001209681,
 lag=0,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}
-\examples{years=seq(1901,2009,by=0.5)
+\examples{lag <- 2
+years=seq(1901+lag,2009,by=0.5)
 LitterInput=700 
 Ex=TwopParallelModel14(t=years,ks=c(k1=1/2.8, k2=1/35),C0=c(200,5000), 
-F0_Delta14C=c(0,0),In=LitterInput, gam=0.7,inputFc=C14Atm_NH,lag=2)
+F0_Delta14C=c(0,0),In=LitterInput, gam=0.7,inputFc=C14Atm_NH,lag=lag)
 R14m=getF14R(Ex)
 C14m=getF14C(Ex)
 C14t=getF14(Ex)

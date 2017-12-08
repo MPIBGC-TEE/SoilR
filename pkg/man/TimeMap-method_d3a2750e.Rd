@@ -10,8 +10,10 @@ interpolation=splinefun)}
 \arguments{
 \item{times}{: of class numeric}
 \item{data}{: of class numeric}
-\item{lag}{}
-\item{interpolation}{}
+\item{lag}{:  a scalar or a vector,matrix or array describing how much
+the data lag behind the times.
+If lag is a vector, matrix or array, the resulting          ## function will be vector, matrix or array valued accordingly.}
+\item{interpolation}{:  the interpolation method to be used}
 }
 \description{The method creates an instance of \code{\link{TimeMap-class}}
 from a  vector of times and an array referring to it.}

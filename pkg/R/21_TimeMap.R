@@ -109,7 +109,7 @@ plotTrajectories <- function(valMin,valMax,times,values,srcDim){
 ### Assume that you are given time series data in two vectors \code{times}, \code{values}.
 ### You can create an interpolating function with  \code{\link{splinefun}} or \code{\link{approxfun}}
 ### \code{f  <- splinefun(x=times,y=values) } 
-### \code{f(t)} will yield sensible values for \eqn{$\min_{t \in times}\le t \le max_{t \in times}$.}{min(times)<t<max(times).} 
+### \code{f(t)} will yield sensible values for \eqn{\min_{t \in times}\le t \le max_{t \in times}.}{min(times)<t<max(times).} 
 ### but will produce unreasonable values for any t outside these limits.
 ### Unfortunately the interpolating functions produced by 
 ### \code{\link{splinefun}} or \code{\link{approxfun}} do not retain any information 

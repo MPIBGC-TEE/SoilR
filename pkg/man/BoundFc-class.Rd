@@ -10,6 +10,7 @@ Methods inherited from superclasses:
 from class TimeMap:
 
   \describe{
+    \item{add_plot}{\code{signature(x = "TimeMap")}: ... } \code{\link{add_plot,TimeMap-method}}
     \item{as.character}{\code{signature(x = "TimeMap")}: ... } \code{\link{as.character,TimeMap-method}}
     \item{GeneralDecompOp}{\code{signature(object = "TimeMap")}: ... } \code{\link{GeneralDecompOp,TimeMap-method}}
     \item{GeneralInFlux}{\code{signature(object = "TimeMap")}: ... } \code{\link{GeneralInFlux,TimeMap-method}}

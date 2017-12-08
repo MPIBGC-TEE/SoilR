@@ -29,7 +29,6 @@ test.TwopSerial_linear_vs_nonlinear=function(){
   alpha[["1_to_2"]]=function(C,t){
     a21/k1
   }
-  #pe(quote(names(alpha)),environment())
   N=matrix( 
      nrow=nr,
      ncol=nr,

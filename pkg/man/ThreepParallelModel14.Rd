@@ -13,7 +13,7 @@ lambda=-0.0001209681,
 lag=0,
 solver=deSolve.lsoda.wrapper,
 pass=FALSE)}
-\examples{years=seq(1901,2009,by=0.5)
+\examples{years=seq(1903,2009,by=0.5) # note that we 
 LitterInput=700 
 
 Ex=ThreepParallelModel14(

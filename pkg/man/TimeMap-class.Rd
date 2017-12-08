@@ -3,7 +3,7 @@ The information about the delay is especially usefull for functions that interpo
 Assume that you are given time series data in two vectors \code{times}, \code{values}.
 You can create an interpolating function with  \code{\link{splinefun}} or \code{\link{approxfun}}
 \code{f  <- splinefun(x=times,y=values) } 
-\code{f(t)} will yield sensible values for \eqn{$\min_{t \in times}\le t \le max_{t \in times}$.}{min(times)<t<max(times).} 
+\code{f(t)} will yield sensible values for \eqn{\min_{t \in times}\le t \le max_{t \in times}.}{min(times)<t<max(times).} 
 but will produce unreasonable values for any t outside these limits.
 Unfortunately the interpolating functions produced by 
 \code{\link{splinefun}} or \code{\link{approxfun}} do not retain any information 
@@ -22,6 +22,7 @@ subclasses  \code{TimeMap-class} automatically but you can do it explicitly.}
 \section{Methods}{Exported methods directly defined for class TimeMap:
 
   \describe{
+    \item{add_plot}{\code{signature(x = "TimeMap")}: ... } \code{\link{add_plot,TimeMap-method}}
     \item{as.character}{\code{signature(x = "TimeMap")}: ... } \code{\link{as.character,TimeMap-method}}
     \item{GeneralDecompOp}{\code{signature(object = "TimeMap")}: ... } \code{\link{GeneralDecompOp,TimeMap-method}}
     \item{GeneralInFlux}{\code{signature(object = "TimeMap")}: ... } \code{\link{GeneralInFlux,TimeMap-method}}

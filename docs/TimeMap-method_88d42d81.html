@@ -11,7 +11,8 @@ Create a TimeMap from a nested list </h2>
 <h3>Description</h3>
 
 <p>The method creates an instance of <code><a href="TimeMap-class.html">TimeMap-class</a></code>
-from a list that contains data and a vector of times referring to it.</p>
+from a vector of times and a list of the same length, 
+containing vectors matrices or arrays </p>
 
 
 <h3>Usage</h3>
@@ -28,17 +29,21 @@ interpolation=splinefun)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>times</code></td>
 <td>
-<p>: of class numeric</p>
+<p>: of class numeric, A vector of times</p>
 </td></tr>
 <tr valign="top"><td><code>data</code></td>
 <td>
-<p>: of class list</p>
+<p>: of class list, A list of the same length as times with every
+list element refering to one time in times</p>
 </td></tr>
 <tr valign="top"><td><code>lag</code></td>
 <td>
+<p>:  Either a scalar or an object of the same size as
+the list elements describing the time lag of the data</p>
 </td></tr>
 <tr valign="top"><td><code>interpolation</code></td>
 <td>
+<p>:  the interpolation method to be used</p>
 </td></tr>
 </table>
 

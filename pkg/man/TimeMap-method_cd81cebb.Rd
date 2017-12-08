@@ -8,8 +8,8 @@ lag=0,
 interpolation=splinefun)}
 \arguments{
 \item{map}{: of class list}
-\item{lag}{}
-\item{interpolation}{}
+\item{lag}{:  either a scalar or an element of the same shape as the elements of the data entry that refer to one time step}
+\item{interpolation}{:  the interpolation method to be used}
 }
 \description{The method creates an instance of \code{\link{TimeMap-class}}
 from a list that contains data and a vector of times referring to it.}
