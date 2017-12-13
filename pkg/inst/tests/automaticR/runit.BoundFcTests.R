@@ -12,7 +12,7 @@ test.BoundFc.bfc_1 <- function(){
 			},
 	starttime = 1,
 	endtime = 10,
-	format = 'Delta14C'
+	format = "Delta14C"
 )
 plot(bfc_1)
 }
@@ -29,7 +29,7 @@ test.BoundFc.bfc_2 <- function(){
 			},
 	starttime = 1,
 	endtime = 10,
-	format = 'AbsoluteFractionModern'
+	format = "AbsoluteFractionModern"
 )
 plot(bfc_2)
 }
@@ -41,7 +41,7 @@ test.BoundFc.bfc_3 <- function(){
 	times = 0:99,
 	data = C14Atm_NH[1:100,2],
 	lag = c(1.1,1.2),
-	format = 'Delta14C'
+	format = "Delta14C"
 )
 plot(bfc_3)
 }
@@ -53,27 +53,35 @@ test.BoundFc.bfc_4 <- function(){
 	times = 0:99,
 	data = C14Atm_NH[1:100,2],
 	lag = c(1.1,1.2),
-	format = 'AbsoluteFractionModern'
+	format = "AbsoluteFractionModern"
 )
 plot(bfc_4)
 }
 test.BoundFc.bfc_5 <- function(){
-# We could also imagine time series data
-# stored in an array consisting of
-# many stacked vectors, one for each time step.
-# and combine both to a list. 
- 
-times <- seq(1,10,by=0.1)
-a <- array(dim=c(2,length(times)))
-a[1,] <- -0.1*(sin(times)+1.1)
-a[2,] <- -0.2*(sin(times)+1.2) 
+# a vector of times,a vector of scalar fractions per time step and a scalar lag 
+  
 
  bfc_5 <- BoundFc(
-	map = list(times=times,data=a)
+	times = 0:99,
+	data = C14Atm_NH[1:100,2],
+	lag = 1.1,
+	format = "Delta14C"
 )
 plot(bfc_5)
 }
 test.BoundFc.bfc_6 <- function(){
+# a vector of times,a vector of scalar fractions per time step and a scalar lag 
+  
+
+ bfc_6 <- BoundFc(
+	times = 0:99,
+	data = C14Atm_NH[1:100,2],
+	lag = 1.1,
+	format = "AbsoluteFractionModern"
+)
+plot(bfc_6)
+}
+test.BoundFc.bfc_7 <- function(){
 # We could also imagine time series data
 # stored in an array consisting of
 # many stacked vectors, one for each time step.
@@ -84,32 +92,24 @@ a <- array(dim=c(2,length(times)))
 a[1,] <- -0.1*(sin(times)+1.1)
 a[2,] <- -0.2*(sin(times)+1.2) 
 
- bfc_6 <- BoundFc(
-	map = list(times=times,data=a)
-)
-plot(bfc_6)
-}
-test.BoundFc.bfc_7 <- function(){
-# a vector of times,a vector of scalar fractions per time step and a scalar lag 
-  
-
  bfc_7 <- BoundFc(
-	times = 0:99,
-	data = C14Atm_NH[1:100,2],
-	lag = 1.1,
-	format = 'Delta14C'
+	map = list(times=times,data=a,format="Delta14C")
 )
 plot(bfc_7)
 }
 test.BoundFc.bfc_8 <- function(){
-# a vector of times,a vector of scalar fractions per time step and a scalar lag 
-  
+# We could also imagine time series data
+# stored in an array consisting of
+# many stacked vectors, one for each time step.
+# and combine both to a list. 
+ 
+times <- seq(1,10,by=0.1)
+a <- array(dim=c(2,length(times)))
+a[1,] <- -0.1*(sin(times)+1.1)
+a[2,] <- -0.2*(sin(times)+1.2) 
 
  bfc_8 <- BoundFc(
-	times = 0:99,
-	data = C14Atm_NH[1:100,2],
-	lag = 1.1,
-	format = 'AbsoluteFractionModern'
+	map = list(times=times,data=a,format="AbsoluteFractionModern")
 )
 plot(bfc_8)
 }

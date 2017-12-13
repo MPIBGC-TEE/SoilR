@@ -19,16 +19,3 @@
 	data = C14Atm_NH[1:100,2],
 	lag = c(1.1,1.2)
 )
-# We could also imagine time series data
-# stored in an array consisting of
-# many stacked vectors, one for each time step.
-# and combine both to a list. 
- 
-times <- seq(1,10,by=0.1)
-a <- array(dim=c(2,length(times)))
-a[1,] <- -0.1*(sin(times)+1.1)
-a[2,] <- -0.2*(sin(times)+1.2) 
-
- tm_3 <- TimeMap(
-	map = list(times=times,data=a)
-)

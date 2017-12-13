@@ -11,11 +11,12 @@ setClass(# Objects containing the atmospheric 14C fraction and the format it is 
 setMethod(
   f="BoundFc",
   signature=signature(format='character'),
-  ### The method constructs an object from a function a timerange where it is valid and a format  
+  ### The method constructs an object from a format string and other parameters which are passed on to
+  ### \code{\link{TimeMap}}
   definition=function # A constructor
 (
   format,     ##<< a string that specifies the format used to represent the atmospheric fraction. Possible values are "Delta14C" which is the default or "afn" the Absolute Fraction Normal representation 
-  ...         ##<<  will be passed on to \code{\link{TimeMap}}
+	   ...    ##<< passed on to TimeMap
 ){
     obj <- as(TimeMap(...),"BoundFc")
     obj@format=format
@@ -23,6 +24,48 @@ setMethod(
     return(obj)
 }
 )
+
+#---------------------------------------------------------------------------------------------------------
+setMethod(
+  f="BoundFc",
+  signature=signature(format='missing'),
+  ### The method constructs an object from a list
+  ### which must contain a 
+  definition=function # A constructor
+(
+  ... ##<<passed on to TimeMap
+){
+    l <- list(...)
+    obj <- as(TimeMap(...),"BoundFc")
+    obj@format=l$map$format
+    validObject(obj) # will recursively call validObject on the superclasses
+    return(obj)
+}
+)
+#BoundFc <- function # A constructor
+#(
+#  format='Delta14C',
+#  ... ##<<passed on to TimeMap
+#){
+#   # l <- list(...)
+#   # if(is.null(format)){
+#   # }else{
+#   #   if(is.null(map)){
+#   #     stop('If "format" is not a parameter "map" must be list with a 
+#   #          entry "format".')
+#   #     }else{
+#   #       if(! 'format' %in% names(l$map)){
+#   #         stop('format has to be a name in map')
+#   #       }else{
+#   #         form <- map$format
+#   #       }
+#   #     }
+#   # }
+#    obj <- as(TimeMap(...),"BoundFc")
+#    obj@format=format
+#    validObject(obj) # will recursively call validObject on the superclasses
+#    return(obj)
+#}
 
 #---------------------------------------------------------------------------------------------------------
 setMethod(

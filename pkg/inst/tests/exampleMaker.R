@@ -1,5 +1,6 @@
 
 # vim:set ff=unix ts=2 sw=2:
+require(stringr)
 argstring <- function(arglist){
 	argnames <- names(arglist)
 	paste(
@@ -24,7 +25,11 @@ Example <- function(targetSym='obj',targetFuncName,combi){
 		prolog <- ""
 	}
 	argList <- combi[['args']]
-	comm<- combi[['comm']]
+	if('comm' %in% names(combi)){
+		comm<- combi[['comm']]
+	}else{
+		comm<- ""
+	}
 	print(length(comm))
   argNames <- names(argList)
 	paste(
@@ -99,39 +104,62 @@ vectorValuedTimeMapArgs<- list(
 		),
 		comm='a vector of times, a vector of scalar fractions per time step and a vector lag'
 	)
-	,
-	list(
-		prolog='
-		times <- seq(1,10,by=0.1)
-		a <- array(dim=c(2,length(times)))
-		a[1,] <- -0.1*(sin(times)+1.1)
-		a[2,] <- -0.2*(sin(times)+1.2)'
-		,
-  	args=list(
-			map='list(times=times,data=a)'
-		),
-		comm=' We could also imagine time series data 
-		stored in an array consisting of
-	  many stacked vectors, one for each time step.
-		and combine both to a list.'
+)
+
+
+adds <- list('"Delta14C"','"AbsoluteFractionModern"')
+BoundFcListArgs <- lapply(	
+	adds,
+	function(add){
+		list(
+			prolog='
+			times <- seq(1,10,by=0.1)
+			a <- array(dim=c(2,length(times)))
+			a[1,] <- -0.1*(sin(times)+1.1)
+			a[2,] <- -0.2*(sin(times)+1.2)'
+			,
+  		args=list(
+				map=sprintf('list(times=times,data=a,format=%s)',add)
+			),
+			comm=' We could also imagine time series data 
+			stored in an array consisting of
+		  many stacked vectors, one for each time step.
+			and combine both to a list.'
+		)
+	}
+)
+
+#argstring(combi[[1]])
+TimeMapArgs <- c(vectorValuedTimeMapArgs,scalarValuedTimeMapArgs)
+
+BoundFcNonListArgs <-
+
+unlist(
+	recursive=FALSE,
+	lapply(
+		c(vectorValuedTimeMapArgs,scalarValuedTimeMapArgs),
+		function(combi){
+				lapply(
+					adds,
+					function(add){
+						combi[['args']] <- append(combi[['args']],list(format=add)) 
+						return(combi)
+					}
+			)
+		}
 	)
 )
-#argstring(combi[[1]])
-BoundFcArgs <- c(vectorValuedTimeMapArgs,scalarValuedTimeMapArgs)
-TimeMapArgs <- c(vectorValuedTimeMapArgs,scalarValuedTimeMapArgs)
+BoundFcArgs <-c( BoundFcNonListArgs, BoundFcListArgs) 
+#BoundFcArgs <-BoundFcListArgs 
+#BoundFcArgs <-BoundFcNonListArgs 
+print(BoundFcArgs)
+
 BoundFcExamples <- unlist(
   lapply(
 		BoundFcArgs,
 		function(combi){
-			adds <- list("'Delta14C'","'AbsoluteFractionModern'")
-			lapply(
-				adds,
-				function(add){
-					combi[[1]] <- append(combi[[1]],list(format=add)) 
-					targetSym <- 'x'
-					Example(targetSym,"BoundFc",combi)
-				}
-			)
+			targetSym <- 'x'
+			Example(targetSym,"BoundFc",combi)
 		}
 	)
 )
@@ -141,26 +169,17 @@ BoundFcTests<- unlist(
 		function(i){
 			combi <- BoundFcArgs[[i]]
 			targetFuncName <- 'BoundFc'
-			adds <- list("'Delta14C'","'AbsoluteFractionModern'")
-			lapply(
-				seq_along(adds),
-				function(j,i){
-					add <- adds[[j]]
-					combi[[1]] <- append(combi[[1]],list(format=add)) 
-					targetSym <- sprintf('bfc_%s',2*(i-1)+j)
-					exText <- Example(targetSym,targetFuncName,combi)
-					testText <- paste(
-							c(
-								sprintf('test.%s.%s <- function(){',targetFuncName,targetSym),
-								exText,
-								sprintf('plot(%s)',targetSym),
-								'}'
-							),
-						  collapse='\n'
-					)
-				}
-				,i
-			)
+			targetSym <- sprintf('bfc_%s',i)
+			exText <- Example(targetSym,targetFuncName,combi)
+			testText <- paste(
+				c(
+					sprintf('test.%s.%s <- function(){',targetFuncName,targetSym),
+					exText,
+					sprintf('plot(%s)',targetSym),
+					'}'
+				),
+				collapse='\n'
+				)
 		}
 	)
 )
@@ -195,7 +214,7 @@ TimeMapTests<- unlist(
 writeEx('TimeMapExamples')
 writeEx('BoundFcExamples')
 writeTests('BoundFcTests')
-writeTests('TimeMapTests')
+#writeTests('TimeMapTests')
 #writeExamples <- function(listOfExamples){
 #  lapply(listOfExamples,toString)
 #}
