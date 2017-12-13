@@ -33,6 +33,24 @@ setMethod(
   ### which must contain a 
   definition=function # A constructor
 (
+   format, ##<< If this method is called the format argument
+    ## was not present.
+    # fixme:mm
+    # If the 'format' argument is ommitted the code  still works
+    # but the documentation is no longer working 
+    # since the util::getSrcref will not find the source code.
+    # This is due that it calls methods::unRematchDefinition
+    # on the MethodDefinition before its starts looking.
+    # and unRematchDefinition introduces the format argument
+    # in the argument list of the function stored 
+    # in the definition=function
+    # This is weierd since our definition has to have a formal argument
+    # that will never be present since the method will only be chosen
+    # when it is 'missing'
+    # (methods::method.skeleton shows the same weierd behavior )
+    # A possible fix is to let linkeddocs find the source coude of our 
+    # methods without relying on utils::getSrcRef
+    
   ... ##<<passed on to TimeMap
 ){
     l <- list(...)

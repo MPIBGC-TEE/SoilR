@@ -1,6 +1,7 @@
 
 # vim:set ff=unix expandtab ts=2 sw=2:
 test.all.possible.Model_14.arguments <- function(){
+  DEACTIVATE('build the new function to replace example.2DFc.Args()')
   # This example shows different kinds of arguments to the function Model_14.
   # The model objects we will build will share some common features.
   #  - two pools 
