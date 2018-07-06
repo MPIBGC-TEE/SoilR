@@ -416,7 +416,7 @@ setGeneric(
    ## 
    ## # Now you can get properties of the decompostion operator e.g.
    ## 
-   ## func->getFunctionDefinition(op)
+   ## func <- getFunctionDefinition(op)
    ## 
    ## #func is a x valued funtion of time
    ## # In this example it is even constant, which is boring.
