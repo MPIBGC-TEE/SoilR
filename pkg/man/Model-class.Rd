@@ -44,6 +44,7 @@ The initial values are represented by a numeric vector
     \item{[}{\code{signature(x = "Model", i = "character", j = "missing", drop = "missing")}: ... } \code{\link{[,Model,character,missing,missing-method}}
     \item{getAccumulatedRelease}{\code{signature(object = "Model")}: ... } \code{\link{getAccumulatedRelease,Model-method}}
     \item{getC}{\code{signature(object = "Model")}: ... } \code{\link{getC,Model-method}}
+    \item{getDecompOp}{\code{signature(object = "Model")}: ... } \code{\link{getDecompOp,Model-method}}
     \item{getReleaseFlux}{\code{signature(object = "Model")}: ... } \code{\link{getReleaseFlux,Model-method}}
     \item{getTimes}{\code{signature(object = "Model")}: ... } \code{\link{getTimes,Model-method}}
 	 }}

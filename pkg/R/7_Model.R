@@ -312,6 +312,18 @@ setMethod(
 
 #------------------------------------------------------------------------------------
 setMethod(
+   f= "getDecompOp",
+      signature= "Model",
+      definition=function(object){
+	    ### Extracts the Operator from a model object
+      return(object@mat)
+   }
+   ### An \code{\link{DecompOp}} Object that can be further queried.
+
+
+)
+#------------------------------------------------------------------------------------
+setMethod(
    f= "getTimes",
       signature= "Model",
       definition=function(object){

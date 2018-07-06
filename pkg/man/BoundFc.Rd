@@ -1,8 +1,12 @@
+\description{no Description}
 \name{BoundFc}
 \alias{BoundFc}
-\usage{BoundFc(...)}
+\usage{BoundFc(format,
+...)}
+\title{BoundFc S4 generic}
 \arguments{
-\item{...}{passed on to TimeMap}
+\item{format}{see the method arguments for details}
+\item{...}{see the method arguments for details}
 }
-\description{}
-\title{A constructor}
+\section{Methods}{	\code{\link{BoundFc,character-method}}\cr
+	\code{\link{BoundFc,missing-method}}\cr}
