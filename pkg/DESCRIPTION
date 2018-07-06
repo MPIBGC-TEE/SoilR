@@ -1,6 +1,6 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.1-51
+Version: 1.1-52
 Date: 2017-05-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
@@ -10,4 +10,3 @@ License: GPL-3
 Depends: deSolve,methods,parallel,expm,RUnit
 Suggests: FME,lattice,MASS
 LazyData: TRUE
-
