@@ -30,7 +30,7 @@ devtools::install_github('MPIBGC-TEE/SoilR-exp/pkg')
 1. Clone the rpository [Source](#source)
   possibly change files and install the package 
   either 
-  * with directly with devtools
+  * directly with devtools
     ```r
     devtools::install('path/to/SoilR-exp/pkg')
     ```
