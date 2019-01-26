@@ -20,14 +20,16 @@ After installing `devtools`, you only need to run
 ```r
 devtools::install_github('MPIBGC-TEE/SoilR-exp/pkg')
 ```
-1. Download package file (this might be slightly older) 
+
+2. Download package file (this might be slightly older) 
   go to the [builds](https://github.com/MPIBGC-TEE/SoilR-exp/tree/master/builds) directory
   and download the latest SoilR_\*.tar.gz file
   and install it with 
   ```r
   install.packages("/path/to/the/downloaded/SoilR\*.tar.gz",repos=NULL)
   ```
-1. Clone the rpository [Source](#source)
+
+3. Clone the repository [Source](#source)
   possibly change files and install the package 
   either 
   * directly with devtools
