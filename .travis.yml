@@ -1,0 +1,8 @@
+language: r
+before_install:
+        - sudo apt-get update
+        - sudo apt-get install libssl-dev
+        - sudo apt-get install libcurl4-openssl-dev
+install: Rscript travis/inst.R
+script:  Rscript SoilR-exp/pkg/inst/tests/sall.R
+
