@@ -4,11 +4,6 @@ require("RUnit")
 require("SoilR")
 package_tests <- defineTestSuite(
    name="package_Tests",
-   #dirs = c(
-   # file.path(path.package(package="SoilR"), "tests","protected") ,
-   # file.path(path.package(package="SoilR"), "tests","requireSoilR")
-   # )
-   #,
    dirs=c("protected","requireSoilR"),
    testFileRegexp = "^runit.+\\.[rR]",
    testFuncRegexp = "^test.+",
