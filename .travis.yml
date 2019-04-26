@@ -7,3 +7,11 @@ before_install:
 install: Rscript travis/inst.R
 script:  ./travis_run_all_tests.sh
 
+notifications:
+  email:
+    recipients:
+      - hmetzler.bgc-jema.mpg.de
+      - csierra.bgc-jema.mpg.de
+      - vceball.bgc-jema.mpg.de
+    on_success: change # default: change
+    on_failure: always # default: always
