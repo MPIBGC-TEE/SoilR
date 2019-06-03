@@ -10,8 +10,9 @@ script:  ./travis_run_all_tests.sh
 notifications:
   email:
     recipients:
-      - hmetzler.bgc-jema.mpg.de
-      - csierra.bgc-jema.mpg.de
-      - vceball.bgc-jema.mpg.de
+      - mamueller.bgc-jena.mpg.de
+      - hmetzler.bgc-jena.mpg.de
+      - csierra.bgc-jena.mpg.de
+      - vceball.bgc-jena.mpg.de
     on_success: change # default: change
     on_failure: always # default: always
