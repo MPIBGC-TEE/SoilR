@@ -1,9 +1,7 @@
 language: r
 before_install:
         - sudo apt-get update
-        - sudo apt-get -y install libssl-dev
-        - sudo apt-get -y install python3-mpi4py
-        - sudo apt-get -y install libcurl4-openssl-dev
+        - sudo apt-get -y install libssl-dev python3-mpi4py libcurl4-openssl-dev libxml2-dev
 install: Rscript travis/inst.R
 script:  ./travis_run_all_tests.sh
 

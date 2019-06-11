@@ -3,7 +3,7 @@
 fromCran <- c( 'devtools', 'argparse', 'stringr')
 lapply(fromCran,install.packages,repos='https://cran.uni-muenster.de')
 
-fromGitHub <- c( 'R6Unit')
+fromGitHub <- c( 'R6Unit','debugHelpers')
 require(devtools)
 lapply(fromGitHub,function(name){devtools::install_github(sprintf("mamueller/%s/pkg",name))})
 

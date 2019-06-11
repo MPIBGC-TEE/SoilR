@@ -1,7 +1,12 @@
 #!/usr/bin/Rscript
 # vim:set ff=unix expandtab ts=2 sw=2:
-source("prolog.R")
+#source("prolog.R")
 tfr  <- "^runit\\..*\\.R"
+require("parallel")
+require("RUnit")
+require("deSolve")
+require("debugHelpers")
+source("testhelpers.R")
 #fl <- list.files(pattern=tfr)
 #for (fn in fl){
 #  print(fn)
@@ -9,7 +14,8 @@ tfr  <- "^runit\\..*\\.R"
 #}
 alltests <- defineTestSuite(
    name="allTests",
-   dirs=c(".","protected"),
+   #dirs=c(".","protected","requireSoilR"),
+   dirs=c("requireSoilR"),
    testFileRegexp = tfr,
    
    #testFuncRegexp = "test.Ident"
