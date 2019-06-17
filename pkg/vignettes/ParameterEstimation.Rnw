@@ -53,7 +53,7 @@ Instead, we focus here on the application to the type of models implemented in \
 We present here two examples, one is the parameterization of a two-pool model with a feedback connection scheme applied to a soil incubation experiment. The other example uses observed radiocarbon data from CO$_2$ measurements conducted at Harvard Forest, USA. 
 
 \section*{Example 1: A soil incubation experiment}
-Measurements of evolved CO$_2$ from incubation experiments provide useful data for parameterizing soil organic matter decomopsition models and identify functionally distinct pools \citep{Schadel}. We present here data from an incubation experiment in which we measured the evoloved CO$_2$ from a forest soil. The dataset, {\tt eCO2}, is already included in \SoilR \, and includes data from an incubation experiment with a boreal forest soil. First, we load \SoilR \, into our \R \, session and extract the data from the boreal site into a separate object; column names need to be renamed for consistency with \FME.
+Measurements of evolved CO$_2$ from incubation experiments provide useful data for parameterizing soil organic matter decomopsition models and identify functionally distinct pools \citep{Schadel}. We present here data from an incubation experiment in which we measured the evolved CO$_2$ from a forest soil. The dataset, {\tt eCO2}, is already included in \SoilR \, and includes data from an incubation experiment with a boreal forest soil. First, we load \SoilR \, into our \R \, session and extract the data from the boreal site into a separate object; column names need to be renamed for consistency with \FME.
 
 <<>>=
 library(SoilR)
@@ -130,7 +130,7 @@ eCO2fit=modFit(f=eCO2cost,p=inipars,method="Marq",
 
 @
 
-The best set of parameter values found by the function can be obtained by typing
+To see the best set of parameter values found by the function we can type:
 <<>>=
 eCO2fit$par
 @
@@ -201,7 +201,7 @@ arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
 It is now obvious from this example that the workhorse of the parameter estimation procedure is the package \FME \, of \citet{Soetaert}. The main important task to learn about \SoilR \, is how to set up the function that runs the model and obtains the variable of interest.  
 
 \section*{Example 2: Radiocarbon in respired CO$_2$}
-\SoilR \, can also calculate the amount of radiocarbon in soils or in respired CO$_2$. Here, we take as an example a series of observations of radiocarbon in respired CO$_2$ conducted at Harvard Forest, USA. The dataset is also included in \SoilR, and can be visialized in Figure \ref{fig:radiocarbondata}.
+\SoilR \, can also calculate the amount of radiocarbon in soils or in respired CO$_2$. Here, we take as an example a series of observations of radiocarbon in respired CO$_2$ conducted at Harvard Forest, USA. The dataset is also included in \SoilR, and is visualized in Figure \ref{fig:radiocarbondata}.
 
 \begin{figure}
   \centering
@@ -226,7 +226,7 @@ a_{31} & 0 & -k_3
 where $\gamma_1$ and $\gamma_2$ are known. 
 
 For this task, we simply need to prepare a model object in \SoilR \, that can be further used by \FME \, for parameter estimation. 
-The radiocarbon content of CO$_2$ in the atmosphere is necessary for running the model, because it inform us about the concentration and rate of radiocarbon input to the soil. For this example we will use the dataset {\tt C14Atm\_ NH} provided with \SoilR, but other provided datasets such as {\tt Hua2013} can also be used. 
+The radiocarbon content of CO$_2$ in the atmosphere is necessary for running the model, because it informs us about the concentration and rate of radiocarbon input to the soil. For this example we will use the dataset {\tt C14Atm\_ NH} provided with \SoilR, but other provided datasets such as {\tt Hua2013} can also be used. 
 
 First, we define the points in time to run the model from the atmospheric radicarbon dataset
 <<>>=
@@ -254,7 +254,8 @@ C0=c(390,220+390+1376,90+1800+560)
 We now write a function that creates a {\tt Model} object in \SoilR \, that takes as arguments a set of parameters and returns the 
 $\Delta^{14}$C value of the respired carbon
 
-<<echo=false,results=hide>>=
+%<<echo=false,results=hide>>=
+<<>>=
 Fc=BoundFc(C14Atm_NH,lag=0,format="Delta14C")
 Mod1<-function(ks,pass=TRUE){
   At=ConstLinDecompOp(
@@ -307,7 +308,7 @@ sR=sensRange(func=Mod1, parInput=MCMC$par)
 
 @
 
-The obtained posterior distributions of the parameters can now be assessed graphically (Figure \ref{fig:HFmcmc}). The final model with its uncertainty and how it compares to the data can now be obtained (Figure \ref{fig:HFmodel}). 
+The obtained posterior distributions of the parameters can now be assessed graphically (Figure \ref{fig:HFmcmc}). The final model with its uncertainty and how it compares to the data can now be shown(Figure \ref{fig:HFmodel}). 
 \begin{figure}
   \centering
 <<fig=TRUE,echo=TRUE,print=FALSE>>=

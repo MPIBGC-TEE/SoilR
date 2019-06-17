@@ -563,7 +563,7 @@ setGeneric(
 	 name="ConstLinDecompOp",
 	 def=function # Generic constructor
 	 ### Creates a ConstantDecompositonOperator object. 
-	 (mat)
+	 (mat,internal_flux_rates,out_flux_rates)
 	 {
 	     standardGeneric("ConstLinDecompOp")
 	 }
@@ -619,6 +619,32 @@ setGeneric(
 	 }
 )
  
+setGeneric(
+	 name="PoolIndex",
+	 def=function  
+	 ### 
+	 ### 
+	 (
+    number
+   )
+	 {
+	     standardGeneric("PoolIndex")
+	 }
+)
+setGeneric(
+	 name="ConstantInternalFluxRate",
+	 def=function  
+	 ### 
+	 ### 
+	 (
+     source
+    ,destination
+    ,rate_constant
+   )
+	 {
+	     standardGeneric("ConstantInternalFluxRate")
+	 }
+)
  
  
  

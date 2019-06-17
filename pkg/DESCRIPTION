@@ -1,12 +1,13 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.1-67
+Version: 1.1-68
 Date: 2017-05-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
 Description: Functions for modeling Soil Organic Matter decomposition
         in terrestrial ecosystems with linear and nonlinear models.
 License: GPL-3
-Depends: deSolve,methods,parallel,expm,RUnit
+Depends: deSolve,methods,parallel,expm,RUnit,sets
 Suggests: FME,lattice,MASS
 LazyData: TRUE
+Collate: 01_setGlobalVariables.R 1_1_setOldClasses.R 1_2_GenericFunctions.R PoolIndex.R In.R Out.R Internal.R ConstantInternalFluxRate.R 1_Fc.R 1_HelperFunctions.R 21_TimeMap.R 2_InFlux.R 3_BoundInFlux.R 3_ConstInFlux.R 3_deSolve.lsoda.wrapper.R 3_RespirationCoefficients.R 3_TransportDecompositionOperator.R 4_NlModel.R 4_SoilR.F0__deprecated_in_1.2.R 5_MCSim.R 6_DecopmOp.R 6_UnboundInflux.R 6_UnBoundLinDecompOp.R 7_BoundLinDecompOp.R 7_DecompositionOperator_deprecated_in_1.2.R 7_Model.R AWBmodel.R bacwaveModel.R bind.C14curves.R BoundFc.R CenturyModel.R ConstFc.R ConstLinDecompOp.R cycling.R euler.R example.2DBoundInFluxFromFunction.R example.2DBoundLinDecompOpFromFunction.R example.2DConstFC.Args.R example.2DConstInFluxFromVector.R example.2DGeneralDecompOpArgs.R example.2DInFlux.Args.R example.2DUnBoundLinDecompOp.R example.BoundLinDecompOpFromFunction.R example.ConstlinDecompOpFromMatrix.R example.nestedTime2DMatrixList.R example.nestedTime3DArrayList.R example.Time2DArrayList.R example.Time3DArrayList.R example.TimeMapFromArray.R FcAtm_deprecated_in_1.2.R fT.Arrhenius.R fT.Century1.R fT.Century2.R fT.Daycent1.R fT.Daycent2.R fT.Demeter.R fT.KB.R fT.LandT.R fT.linear.R fT.Q10.R fT.RothC.R fT.Standcarb.R function.R fW.Candy.R fW.Century.R fW.Daycent1.R fW.Daycent2.R fW.Demeter.R fW.Gompertz.R fW.Moyano.R fW.RothC.R fW.Skopp.R fW.Standcarb.R GaudinskiModel14.R GeneralModel.R GeneralModel_14.R GeneralNlModel.R ICBMModel.R linesCPool.R linMaker.R list.R listProduct.R MeanAge.R MeanTT.R Model_14.R NpYdot.R OnepModel.R OnepModel14.R ParallelModel.R plotC14Pool.R plotCPool.R RothCModel.R SeriesLinearModel.R SeriesLinearModel14.R solver.R spectralNorm.R systemAge.R ThreepairMMmodel.R ThreepFeedbackModel.R ThreepFeedbackModel14.R ThreepParallelModel.R ThreepParallelModel14.R ThreepSeriesModel.R ThreepSeriesModel14.R transitTime.R tupelList.R turnoverFit.R TwopFeedbackModel.R TwopFeedbackModel14.R TwopMMmodel.R TwopParallelModel.R TwopParallelModel14.R TwopSeriesModel.R TwopSeriesModel14.R vecFuncMaker.R warnings.R Yasso07Model.R YassoModel.R
