@@ -24,7 +24,12 @@ setMethod(
 setMethod(
       f="ConstLinDecompOp",
       ### 
-      signature=c(mat="matrix",internal_flux_rates='missing',out_flux_rates='missing'),
+      signature=c(
+         mat="matrix"
+        ,internal_flux_rates='missing'
+        ,out_flux_rates='missing'
+        ,numberOfPools='missing'
+      ),
       definition=function # construct from matric
       ### This method creates a ConstLinDecompOp from a matrix
       ### The operator is assumed to act on the vector of carbon stocks
@@ -38,39 +43,47 @@ setMethod(
       return(new("ConstLinDecompOp",mat=mat))
      }
 )
-#setMethod(
-#      f="ConstLinDecompOp",
-#      ### 
-#      signature=c(mat="missing",internal_flux_rates='list',out_flux_rates='list'),
-#      definition=function # construct from matric
-#      ### This method creates a ConstLinDecompOp from a list of 
-#      ### fluxrates indexed either by strings of the form "1_to_3" 
-#      ### (for a flux from the first to the third pool)
-#      ### or by sets::tuple(1,3)
-#      (mat){
-#
-#        alpha=object@alpha
-#        
-#        np=object@numberOfPools
-#        m=matrix(nrow=np,ncol=np,0)
-#        #print(np)
-#        for (i in 1:np){m[i,i]=-1}
-#        keys=names(alpha)
-#        # Tr is assembled from  alpha
-#        Tr=function(C,t){
-#          for (key in keys){
-#            m[getRecipient(key),getSender(key)]=alpha[[key]](C,t)
-#          }
-#          return(m)
-#        }  
-#        r <- nrow(mat)
-#        c <- ncol(mat)
-#        if (r!=c){
-#           stop(sprintf('The matrix has to be quadratic!. Your matrix has %s rows and %s columns',r,c))
-#        }
-#      return(new("ConstLinDecompOp",mat=mat))
-#     }
-#)
+setMethod(
+      f="ConstLinDecompOp",
+      ### 
+      signature=c(
+         mat="missing"
+        ,internal_flux_rates='vector'
+        ,out_flux_rates='vector'
+        ,numberOfPools='numeric'
+      ),
+      definition=function # construct from matric
+      ### This method creates a ConstLinDecompOp from a lists of 
+      ### fluxrates.
+      ### internal_flux_rates can either be a vector of objects of class \code{\link{ConstantInternalFluxRate-class}} 
+      ### or a vector of  numbers with names like list("1_to_3"=4.5,"5_to_3"=3.0,...) 
+      ### indicating source and destination of the flux whose rate is given.
+      (internal_flux_rates,out_flux_rates,numberOfPools){
+        np=PoolIndex(numberOfPools)
+        if (is.null(names(internal_flux_rates)) &   inherits(internal_flux_rates[[1]],'ConstantInternalFluxRate')){
+          m=matrix(nrow=np,ncol=np,0)
+          for (i in 1:np){m[i,i]=-1}
+          for (ifr in internal_flux_rates){
+            m[ifr@destination,ifr@source]=ifr@rate_constant
+          }
+          return(new('ConstLinDecompOp',mat=m))
+
+        }else{
+          if (inherits(internal_flux_rates,'numeric')){
+            # try to convert and recurse
+            keys=names(internal_flux_rates)
+            objectList=vector()
+            for (key in names(internal_flux_rates)){
+              objectList=append(objectList,ConstantInternalFluxRate(getSender(key),getRecipient(key),internal_flux_rates[[key]]))
+
+              return(ConstLinDecompOp(internal_flux_rates=objectList,out_flux_rates=out_flux_rates,numberOfPools=numberOfPools))
+            }
+          } else {
+            stop('internal_flux_rates must be either a numeric vector with names of the from "i_to_j" or a vector of instances of class ConstantInternalFluxRate')
+          }
+        }
+      }
+)
 
 ############################methods####################
 setMethod(
