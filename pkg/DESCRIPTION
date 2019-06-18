@@ -1,6 +1,6 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.1-69
+Version: 1.1-70
 Date: 2017-05-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
@@ -11,13 +11,14 @@ Depends: deSolve,methods,parallel,expm,RUnit,sets
 Suggests: FME,lattice,MASS
 LazyData: TRUE
 Collate: 01_setGlobalVariables.R 1_1_setOldClasses.R
-        1_2_GenericFunctions.R PoolIndex.R In.R Out.R PoolSystemInternal.R
-        ConstantInternalFluxRate.R 1_Fc.R 1_HelperFunctions.R
-        21_TimeMap.R 2_InFlux.R 3_BoundInFlux.R 3_ConstInFlux.R
-        3_deSolve.lsoda.wrapper.R 3_RespirationCoefficients.R
-        3_TransportDecompositionOperator.R 4_NlModel.R
-        4_SoilR.F0__deprecated_in_1.2.R 5_MCSim.R 6_DecopmOp.R
-        6_UnboundInflux.R 6_UnBoundLinDecompOp.R 7_BoundLinDecompOp.R
+        1_2_GenericFunctions.R PoolIndex.R In.R Out.R
+        PoolSystemInternal.R ConstantOutFluxRate.R ConstantInternalFluxRate.R 1_Fc.R
+        1_HelperFunctions.R 21_TimeMap.R 2_InFlux.R 3_BoundInFlux.R
+        3_ConstInFlux.R 3_deSolve.lsoda.wrapper.R
+        3_RespirationCoefficients.R 3_TransportDecompositionOperator.R
+        4_NlModel.R 4_SoilR.F0__deprecated_in_1.2.R 5_MCSim.R
+        6_DecopmOp.R 6_UnboundInflux.R 6_UnBoundLinDecompOp.R
+        7_BoundLinDecompOp.R
         7_DecompositionOperator_deprecated_in_1.2.R 7_Model.R
         AWBmodel.R bacwaveModel.R bind.C14curves.R BoundFc.R
         CenturyModel.R ConstFc.R ConstLinDecompOp.R cycling.R euler.R

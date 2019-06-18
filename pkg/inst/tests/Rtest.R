@@ -14,8 +14,10 @@ source("testhelpers.R")
 #}
 alltests <- defineTestSuite(
    name="allTests",
-   #dirs=c(".","protected","requireSoilR"),
    dirs=c("requireSoilR"),
+   #dirs=c(".","protected","requireSoilR"),
+   #dirs=c("."),
+   #dirs=c("requireSoilR"),
    testFileRegexp = tfr,
    
    #testFuncRegexp = "test.Ident"
@@ -24,7 +26,7 @@ alltests <- defineTestSuite(
    #"^test.TwopFeedback"
    #"^test.TimeMapInterface"
    #"^test.LowVerticalRatesPaper" 
-   "^test.check.pass"
+   #"^test.check.pass"
    #"test.ModelInit"
    #"ptest.ModelOperators"
    #"test.ParallelModel"
@@ -40,6 +42,7 @@ alltests <- defineTestSuite(
    #"test.Deprecation"
    #"test.GaudinskiModel14"
    #"test.MC"
+   "test.ConstLinDecompOp"
 )
 
 testResult <- runTestSuite(alltests)

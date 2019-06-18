@@ -1,0 +1,41 @@
+setClass(
+  Class="ConstantOutFluxRate",
+  contains="Out",
+  slots=c(rate_constant='numeric')
+)
+# constructors
+setMethod(
+  f="ConstantOutFluxRate",
+  signature=c(source='numeric',rate_constant='numeric'),
+  def=function(source,rate_constant){
+    source_ind=PoolIndex(source)
+    if (rate_constant<0){
+      error(
+        "Negative rate constant. 
+        A rate_constant defines a flux = rate_constant*pool_content. 
+        Since fluxes have to be positive and pool contents are positive
+        rate constants have to be positive too."
+      )
+    }
+    return(
+      new(
+        'ConstantOutFluxRate'
+        ,source=source_ind
+        ,rate_constant=rate_constant
+      )
+    )
+  }
+)
+setMethod(
+  f="ConstantOutFluxRate",
+  signature=c(source='character',rate_constant='numeric'),
+  def=function(source,rate_constant){
+    require('debugHelpers')
+    print(class(source))
+    src_ind<-as.integer(source)
+    print(class(src_ind))
+    print(src_ind)
+    # call the main constructor after converting the name to an int
+    return(ConstantOutFluxRate(src_ind,rate_constant))
+  }
+)

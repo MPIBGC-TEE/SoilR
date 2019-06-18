@@ -52,7 +52,7 @@ setMethod(
         ,out_flux_rates='vector'
         ,numberOfPools='numeric'
       ),
-      definition=function # construct from matric
+      definition=function # construct from fluxlists
       ### This method creates a ConstLinDecompOp from a lists of 
       ### fluxrates.
       ### internal_flux_rates can either be a vector of objects of class \code{\link{ConstantInternalFluxRate-class}} 
@@ -60,29 +60,86 @@ setMethod(
       ### indicating source and destination of the flux whose rate is given.
       (internal_flux_rates,out_flux_rates,numberOfPools){
         np=PoolIndex(numberOfPools)
-        if (is.null(names(internal_flux_rates)) &   inherits(internal_flux_rates[[1]],'ConstantInternalFluxRate')){
-          m=matrix(nrow=np,ncol=np,0)
-          for (i in 1:np){m[i,i]=-1}
-          for (ifr in internal_flux_rates){
-            m[ifr@destination,ifr@source]=ifr@rate_constant
-          }
-          return(new('ConstLinDecompOp',mat=m))
 
-        }else{
+        # first check if the internal flux rate list is given as a list of rate instances  
+        # if not convert it and recursively call this function again
+        if (
+            !(
+              is.null(names(internal_flux_rates)) 
+              & inherits(
+                  internal_flux_rates[[1]] 
+                  ,'ConstantInternalFluxRate'
+                )
+            )
+        )
+        {
           if (inherits(internal_flux_rates,'numeric')){
-            # try to convert and recurse
+            # try to convert and call your self again 
             keys=names(internal_flux_rates)
-            objectList=vector()
+            rates=vector()
             for (key in names(internal_flux_rates)){
-              objectList=append(objectList,ConstantInternalFluxRate(getSender(key),getRecipient(key),internal_flux_rates[[key]]))
+              rates=append(
+                          rates 
+                          ,ConstantInternalFluxRate(
+                             src_to_dest=key,
+                            ,rate_constant=internal_flux_rates[[key]]
+                          )
+              )
 
-              return(ConstLinDecompOp(internal_flux_rates=objectList,out_flux_rates=out_flux_rates,numberOfPools=numberOfPools))
+              return(
+                ConstLinDecompOp(
+                   internal_flux_rates=rates
+                  ,out_flux_rates=out_flux_rates
+                  ,numberOfPools=numberOfPools))
             }
           } else {
             stop('internal_flux_rates must be either a numeric vector with names of the from "i_to_j" or a vector of instances of class ConstantInternalFluxRate')
           }
+        } 
+        # now check if the out flux rate list is given as a list of rates or 
+        if (
+            !(
+              is.null(names(out_flux_rates)) 
+              &inherits(out_flux_rates[[1]],'ConstantOutFluxRate')
+            )
+        )
+        {
+          if (inherits(out_flux_rates,'numeric')){
+            # try to convert and call your self again 
+            keys=names(out_flux_rates)
+            rates=vector()
+            for (key in names(out_flux_rates)){
+              rates=append(rates,ConstantOutFluxRate(key,out_flux_rates[[key]]))
+
+              return(ConstLinDecompOp(internal_flux_rates=internal_flux_rates,out_flux_rates=rates,numberOfPools=numberOfPools))
+            }
+          } else {
+            stop('If out_flux_rates is a vector it must be either a vector of instances of class ConstantOutFluxRate or a numeric vector with names of the from "i" representing pool i')
+          }
+        } 
+        N=matrix(nrow=np,ncol=np,0)
+        for (ofr in out_flux_rates){
+            src=ofr@source
+            if (src> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
+            N[src,src]=ofr@rate_constant
         }
+        for (ifr in internal_flux_rates){
+          dest<-ifr@destination
+          src<-ifr@source
+          if (dest> numberOfPools){stop("The index of the destination pool must be smaller than the number of pools")}
+          if (src> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
+          
+          N[src,src]=N[src,src]+ifr@rate_constant
+        }
+        
+        #normalize The To entries by N
+        To=diag(nrow=np,-1)
+        for (ifr in internal_flux_rates){
+          To[dest,src]=ifr@rate_constant/N[src,src]
+        }
+        return(new('ConstLinDecompOp',mat=To%*%N))
       }
+
 )
 
 ############################methods####################

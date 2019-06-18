@@ -636,10 +636,24 @@ setGeneric(
 	 (
      source
     ,destination
+    ,src_to_dest
     ,rate_constant
    )
 	 {
 	     standardGeneric("ConstantInternalFluxRate")
+	 }
+)
+setGeneric(
+	 name="ConstantOutFluxRate",
+	 def=function  
+	 ### 
+	 ### 
+	 (
+     source
+    ,rate_constant
+   )
+	 {
+	     standardGeneric("ConstantOutFluxRate")
 	 }
 )
  
