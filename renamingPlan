@@ -1,0 +1,47 @@
+
+4_SoilR.F0__deprecated_in_1.2
+5_MCSim
+TransportDecompositionOperator ???
+
+
+classes to be renamed:
+
+UnBoundLinDecompOp 	LinOp
+BoundLinDecompOp 	TimeIntervalLinOp
+ConstLinDecompOp	ConstLinOp
+DecompOp		Op
+TimeMap			TimeIntervalFunction
+InFlux			InFluxVector
+BoundInFlux		TimeIntervalInfluxVectorFunction
+ConstInFlux		ConstInfluxVector
+NlModel			NonlinearNonautonomousModel
+UnboundInflux		InFluxVector
+BoundFc			TimeIntervalFc
+ConstantInternalFluxRate
+ConstantOutFluxRate
+ConstFc
+In			WithDestination
+Out			WithSource
+PoolSystemInternal	WithSourceAndDestination
+OnepModel
+OnepModel14
+ParallelModel
+SeriesLinearModel
+SeriesLinearModel14
+
+Functions to be renamed
+
+GeneralModel		Model
+GeneralModel_14		Model14
+GeneralNlModel		NonlinearModel
+			NonlinearNonAutonomousModel
+
+Functions to be rewritten
+MeanAge
+MeanTT
+transitTime
+systemAge
+turnoverFit
+
+
+
