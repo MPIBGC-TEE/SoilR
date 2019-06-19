@@ -8,7 +8,7 @@ require("deSolve")
 source("testhelpers.R")
 require('devtools')
 devtools::install('../../',quick=TRUE)
-devtools::install('~/debugHelpers/pkg',quick=TRUE)
+#devtools::install('~/debugHelpers/pkg',quick=TRUE)
 require("debugHelpers")
 #fl <- list.files(pattern=tfr)
 #for (fn in fl){
