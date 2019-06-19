@@ -14,6 +14,7 @@ export(
 AbsoluteFractionModern_from_Delta14C,
 ConstLinDecompOp,
 Delta14C_from_AbsoluteFractionModern,
+Delta14C,
 euler,
 GaudinskiModel14,
 GeneralNlModel,

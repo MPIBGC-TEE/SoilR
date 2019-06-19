@@ -1,12 +1,15 @@
 #!/usr/bin/Rscript
 # vim:set ff=unix expandtab ts=2 sw=2:
 #options(warn=-1)
-source("prolog.R")
+#source("prolog.R")
+require("RUnit")
+source("testhelpers.R")
 alltests <- defineTestSuite(
    name="allTests",
    #dirs=c("."),
    #dirs=c(".","protected","automatic"),
-   dirs=c(".","automatic","automaticR","TimeMap"),
+   #dirs=c(".","automatic","automaticR","TimeMap"),
+   dirs=c("src"),
    testFileRegexp = "^runit.+\\.[rR]$",
    testFuncRegexp = "^test.+",
    rngKind = "Marsaglia-Multicarry",

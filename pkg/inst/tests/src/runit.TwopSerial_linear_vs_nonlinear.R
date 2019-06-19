@@ -2,7 +2,25 @@
 # vim:set ff=unix expandtab ts=2 sw=2:
 # This test usese the non linear model approach for a linear problem to show that the results are consistent
 test.TwopSerial_linear_vs_nonlinear_old_TimeMap_interface=function(){
-  require(RUnit)
+  require('FME')
+  require('parallel')
+  sourcePackageFiles(c(
+     'genericFunctions.R'
+    ,'deSolve.lsoda.wrapper.R'
+    ,'NpYdot.R'
+    ,'solver.R'
+    ,'RespirationCoefficients.R'
+    ,'TimeMap.R'
+    ,'InFlux.R'
+    ,'BoundInFlux.R'
+    ,'DecompOp.R'
+    ,'ConstLinDecompOp.R'
+    ,'TransportDecompositionOperator.R'
+    ,'NlModel.R'
+    ,'GeneralModel.R'
+    ,'Model.R'
+    ,'GeneralNlModel.R')
+  )
   t_start=0
   t_end=20
   tn=100

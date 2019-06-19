@@ -10,16 +10,16 @@ License: GPL-3
 Depends: deSolve,methods,parallel,expm,RUnit,sets
 Suggests: FME,lattice,MASS
 LazyData: TRUE
-Collate: 01_setGlobalVariables.R 1_1_setOldClasses.R
-        1_2_GenericFunctions.R PoolIndex.R In.R Out.R
-        PoolSystemInternal.R ConstantOutFluxRate.R ConstantInternalFluxRate.R 1_Fc.R
-        1_HelperFunctions.R 21_TimeMap.R 2_InFlux.R 3_BoundInFlux.R
-        3_ConstInFlux.R 3_deSolve.lsoda.wrapper.R
-        3_RespirationCoefficients.R 3_TransportDecompositionOperator.R
-        4_NlModel.R 4_SoilR.F0__deprecated_in_1.2.R 5_MCSim.R
-        6_DecopmOp.R 6_UnboundInflux.R 6_UnBoundLinDecompOp.R
-        7_BoundLinDecompOp.R
-        7_DecompositionOperator_deprecated_in_1.2.R 7_Model.R
+Collate: setGlobalVariables.R setOldClasses.R
+        genericFunctions.R PoolIndex.R In.R Out.R
+        PoolSystemInternal.R ConstantOutFluxRate.R ConstantInternalFluxRate.R Fc.R
+        HelperFunctions.R TimeMap.R InFlux.R BoundInFlux.R
+        ConstInFlux.R deSolve.lsoda.wrapper.R
+        RespirationCoefficients.R TransportDecompositionOperator.R
+        NlModel.R SoilR.F0__deprecated_in_1.2.R MCSim.R
+        DecompOp.R UnboundInflux.R UnBoundLinDecompOp.R
+        BoundLinDecompOp.R
+        DecompositionOperator_deprecated_in_1.2.R Model.R
         AWBmodel.R bacwaveModel.R bind.C14curves.R BoundFc.R
         CenturyModel.R ConstFc.R ConstLinDecompOp.R cycling.R euler.R
         example.2DBoundInFluxFromFunction.R
