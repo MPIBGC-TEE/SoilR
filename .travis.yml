@@ -9,6 +9,7 @@ notifications:
   email:
     recipients:
       - mamueller@bgc-jena.mpg.de
+      - markus.mueller.1.g@googlemail.com
       - hmetzler@bgc-jena.mpg.de
       - csierra@bgc-jena.mpg.de
       - vceball@bgc-jena.mpg.de
