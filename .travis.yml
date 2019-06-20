@@ -8,6 +8,7 @@ script:  ./travis_run_all_tests.sh
 notifications:
   email:
     recipients:
+      - mamueller@bgc-jena.mpg.de
       - hmetzler@bgc-jena.mpg.de
       - csierra@bgc-jena.mpg.de
       - vceball@bgc-jena.mpg.de
