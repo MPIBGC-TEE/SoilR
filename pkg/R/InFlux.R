@@ -1,4 +1,4 @@
-#GeneralInFlux
+#InFlux
 # vim:set ff=unix expandtab ts=2 sw=2:
 ### All models need to specify the influx of material to the pools.
 ### This parameter will be represented as an object of one of the subclasses of this class.
@@ -10,7 +10,7 @@ setClass(
    contains="VIRTUAL"
 )
 setMethod(
-  f="GeneralInFlux",
+  f="InFlux",
   signature(object="TimeMap"),
   def=function #create a BoundInFlux from a TimeMap object
   ### The method is used to ensure compatibility 
@@ -24,7 +24,7 @@ setMethod(
 
 )
 setMethod(
-  f="GeneralInFlux",
+  f="InFlux",
   signature=signature(object="InFlux"),
   def=function # pass through conversion
   ### This method handles the case that no actual conversion is necessary since
@@ -32,7 +32,7 @@ setMethod(
   ##<<details This is useful to simplify argument handling of functions which rely on 
   ## the presence of some kind of an InFlux. 
   ## Due to this method those functions can 
-  ## call GeneralInFlux(something) without having to check if 
+  ## call InFlux(something) without having to check if 
   ## it is necessary.
   (object){
     object
@@ -40,7 +40,7 @@ setMethod(
   }
 )
 setMethod(
-  f="GeneralInFlux",
+  f="InFlux",
   signature=signature(object="numeric"),
   def=function # conversion of a vector to an object of class \code{\link{ConstInFlux}}
   ### This method enables the model creating functions to handle constant input streams 

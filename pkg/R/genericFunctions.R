@@ -546,7 +546,7 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="GeneralInFlux",
+	 name="InFlux",
 	 def=function # Generic constructor and converter 
 	 ### If the argument is already of a subclass of class InFlux
 	 ### the function returns the unchanged object.
@@ -556,7 +556,7 @@ setGeneric(
 	 (object)
 	 {
 	 ### Creates a DecompositonOperator object from different sources
-	     standardGeneric("GeneralInFlux")
+	     standardGeneric("InFlux")
 	 }
 )
 setGeneric(

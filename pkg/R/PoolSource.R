@@ -1,5 +1,5 @@
 setClass(
-   Class="Out",
+   Class="PoolSource",
    contains="VIRTUAL",
    slots=c(source='PoolIndex')
 )

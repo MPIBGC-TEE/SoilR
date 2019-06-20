@@ -213,13 +213,13 @@ Model <- function #Constructor for class \linkS4class{Model}
   (t,			##<< A vector containing the points in time where the solution is sought.
    A,			##<< something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\linkS4class{DecompOp}}. 
    ivList,		##<< A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools. This is checked by an internal  function. 
-   inputFluxes, ##<<  something that can be converted by \link{GeneralInFlux} to any of the available subclasses of \linkS4class{InFlux}.
+   inputFluxes, ##<<  something that can be converted by \link{InFlux} to any of the available subclasses of \linkS4class{InFlux}.
    solverfunc=deSolve.lsoda.wrapper,		##<< The function used to actually solve the ODE system. The default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your own function that the same interface. 
    pass=FALSE  ##<< Forces the constructor to create the model even if it does not pass internal sanity checks  
    )
   {
   ##details<< This function \code{Model} wraps the internal constructor of class \linkS4class{Model}. The internal constructor requires the argument \code{A} to be of class \linkS4class{DecompOp} and argument \code{inputFluxes} to be of  class \linkS4class{InFlux}.
-  ## Before calling the internal constructor \code{Model} calls \link{GeneralDecompOp} on its argument \code{A} and  \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
+  ## Before calling the internal constructor \code{Model} calls \link{GeneralDecompOp} on its argument \code{A} and  \link{InFlux} on its argument \code{inputFluxes} to convert them into
   ## the required classes.
   ## Both are generic functions. Follow the links to see for which kind of inputs conversion methods are available.
   ## The attempted conversion allows great flexibility with respect to arguments and independence from the actual implementation.
@@ -247,7 +247,7 @@ Model <- function #Constructor for class \linkS4class{Model}
 
   
   
-     obj=new(Class="Model",t,GeneralDecompOp(A),ivList,GeneralInFlux(inputFluxes),solverfunc,pass)
+     obj=new(Class="Model",t,GeneralDecompOp(A),ivList,InFlux(inputFluxes),solverfunc,pass)
      return(obj)
      ### An object of class \linkS4class{Model} that can be queried by many methods 
      ### to be found there.

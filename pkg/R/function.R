@@ -11,7 +11,7 @@ setMethod(
   }
 )
 setMethod(
-  f="GeneralInFlux",
+  f="InFlux",
   signature=signature(object="function"),
   def=function # creates a UnBoundInFlux from a vector valued function  
   ### The resulting operator is created by a call to the constructor of class

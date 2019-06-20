@@ -22,7 +22,7 @@ test.all.possible.Model.arguments <- function(){
   #) 
   possibleAs  <- example.2DGeneralDecompOpArgs()
   
-  # Since "Model" will call "GeneralInFlux" on its "inputFluxes" 
+  # Since "Model" will call "InFlux" on its "inputFluxes" 
   # argument there are again different choices
   # we have included a function in SoilR that produces 2D examples
   

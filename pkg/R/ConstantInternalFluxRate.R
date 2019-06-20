@@ -1,6 +1,6 @@
 setClass(
   Class="ConstantInternalFluxRate",
-  contains="PoolSystemInternal",
+  contains="PoolConnection",
   slots=c(rate_constant='numeric')
 )
 # constructors
@@ -11,7 +11,7 @@ setMethod(
     source_ind=PoolIndex(source)
     destination_ind=PoolIndex(destination)
     if (rate_constant<0){
-      error(
+      stop(
         "Negative rate constant. 
         A rate_constant defines a flux = rate_constant*pool_content. 
         Since fluxes have to be positive and pool contents are positive

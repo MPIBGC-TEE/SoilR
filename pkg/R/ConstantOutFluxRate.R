@@ -1,6 +1,6 @@
 setClass(
   Class="ConstantOutFluxRate",
-  contains="Out",
+  contains="PoolSource",
   slots=c(rate_constant='numeric')
 )
 # constructors
@@ -31,10 +31,7 @@ setMethod(
   signature=c(source='character',rate_constant='numeric'),
   def=function(source,rate_constant){
     require('debugHelpers')
-    print(class(source))
     src_ind<-as.integer(source)
-    print(class(src_ind))
-    print(src_ind)
     # call the main constructor after converting the name to an int
     return(ConstantOutFluxRate(src_ind,rate_constant))
   }

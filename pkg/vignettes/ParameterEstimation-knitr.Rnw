@@ -7,7 +7,7 @@
 %\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage{Sweave}
+
 \usepackage{color}
 \usepackage[round]{natbib}
 
@@ -40,9 +40,30 @@
 
 \begin{document}
 \maketitle
-\SweaveOpts{concordance=TRUE}
-\SweaveOpts{engine=R,eps=FALSE}
-\SweaveOpts{keep.source=TRUE}
+
+<<include=FALSE>>=
+library(knitr)
+opts_chunk$set(
+concordance=TRUE
+)
+@
+
+
+<<include=FALSE>>=
+library(knitr)
+opts_chunk$set(
+engine='R'
+)
+@
+
+
+<<include=FALSE>>=
+library(knitr)
+opts_chunk$set(
+tidy=FALSE
+)
+@
+
 
 \section*{Introduction}
 The objective of this document is to provide examples on how to use \SoilR \, in combination with package \FME \,
@@ -68,7 +89,7 @@ names(BorealCO2)<-c("time","eCO2","eCO2sd")
 
 \begin{figure}
   \centering
-<<echo=TRUE,fig=TRUE, print=FALSE>>=
+<<echo=TRUE>>=
 plot(BorealCO2[,1:2], xlab="Days", ylab="Evolved CO2 (mgC g-1 
      soil day-1)",ylim=c(0,50))
 arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1], 
@@ -143,7 +164,7 @@ fitmod=eCO2func(eCO2fit$par)
 
 \begin{figure}
   \centering
-<<fig=TRUE,echo=TRUE,print=FALSE>>=
+<<echo=TRUE>>=
 plot(BorealCO2[,1:2], xlab="Days", ylab="Evolved CO2 (gC day-1)",ylim=c(0,9e-04))
 arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
        BorealCO2[,2]+BorealCO2[,3],code=3,angle=90,length=0.1)
@@ -155,7 +176,7 @@ lines(fitmod)
 
 The results from this optimization can be used for Bayesian parameter estimation with \FME. For details about the procedure please see \citet{Soetaert}. In our example, we need first to extract the variance from the prior optimization and used as the initial variance in the Bayesian procedure and to determine the {\it jump}, a value that determines how much a new parameter set is deviated from the old one. To avoid long compiling times in \SoilR \,  we only use 1000 iterations in this example, but this number can be much larger to guarantee convergence of the chains. 
 
-<<echo=false,results=hide>>=
+<<echo=FALSE,results='hide'>>=
 var0=eCO2fit$var_ms_unweighted
 
 eCO2mcmc=modMCMC(f=eCO2cost, p=eCO2fit$par, niter=3000, jump=NULL,  
@@ -174,7 +195,7 @@ A plot with the posterior distribution of the obtained parameter values can be o
 
 \begin{figure}
   \centering
-<<fig=TRUE,echo=TRUE,print=FALSE>>=
+<<echo=TRUE>>=
 pairs(eCO2mcmc)
 @
   \caption{Histogram and scatter plots of the values obtained from the Markov chain Monte Carlo procedure.}
@@ -185,7 +206,7 @@ For model prediction, it is also possible to use \FME \, and function {\tt sensR
 
 \begin{figure}
   \centering
-<<fig=TRUE,echo=TRUE,print=FALSE>>=
+<<echo=TRUE>>=
 predRange=sensRange(func=eCO2func, parInput=eCO2mcmc$par)
 plot(summary(predRange),ylim=c(0,9e-04),xlab="Days",
      ylab="Evolved CO2 (g C day-1)",main="")
@@ -205,7 +226,7 @@ It is now obvious from this example that the workhorse of the parameter estimati
 
 \begin{figure}
   \centering
-<<fig=TRUE,echo=FALSE,print=FALSE>>=
+<<echo=FALSE>>=
 plot(D14C~Year,data=HarvardForest14CO2,
      ylab=expression(paste(Delta^14,"C ","(\u2030)")))
 @
@@ -287,7 +308,7 @@ DataR14t=cbind(time=HarvardForest14CO2[,1],
 
 With all these elements ready, we can now use \FME \, for the parameter optimization procedure. We will avoid a detailed explanation and present in the following the creation of the cost function, the initial optimization, and the final Bayesian parameter estimation. 
 
-<<echo=false,results=hide>>=
+<<echo=FALSE,results='hide'>>=
 #Create the cost function
 R14tCost <- function(pars){
   R14t <- Mod1(pars)
@@ -318,7 +339,7 @@ MCMC <- modMCMC(
 The obtained posterior distributions of the parameters can now be assessed graphically (Figure \ref{fig:HFmcmc}). The final model with its uncertainty and how it compares to the data can now be shown(Figure \ref{fig:HFmodel}). 
 \begin{figure}
   \centering
-<<fig=TRUE,echo=TRUE,print=FALSE>>=
+<<echo=TRUE>>=
 pairs(MCMC,nsample=floor(number_of_iterations/4))
 @
   \caption{Posterior parameter distributions for the parameters of the model described by equation \ref{eq:HarvardForestModel}. p1= $k_1$, p2= $k_2$, p3= $k_4$, p4= $a_{21}$, p5= $a_{31}$. Numbers in the lower diagonal indicate the correlation coefficient between parameters.}
@@ -328,7 +349,7 @@ pairs(MCMC,nsample=floor(number_of_iterations/4))
 
 \begin{figure}
   \centering
-<<fig=TRUE,echo=TRUE,print=FALSE>>=
+<<echo=TRUE>>=
 #The sensitivity range is calculated from the output of the MCMC
 sR=sensRange(func=Mod1, parInput=MCMC$par)
 par(mar=c(5,5,4,1))

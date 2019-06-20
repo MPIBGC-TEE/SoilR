@@ -11,8 +11,8 @@ Depends: deSolve,methods,parallel,expm,RUnit,sets
 Suggests: FME,lattice,MASS
 LazyData: TRUE
 Collate: setGlobalVariables.R setOldClasses.R
-        genericFunctions.R PoolIndex.R In.R Out.R
-        PoolSystemInternal.R ConstantOutFluxRate.R ConstantInternalFluxRate.R Fc.R
+        genericFunctions.R PoolIndex.R PoolTarget.R PoolSource.R
+        PoolConnection.R ConstantOutFluxRate.R ConstantInternalFluxRate.R Fc.R
         HelperFunctions.R TimeMap.R InFlux.R BoundInFlux.R
         ConstInFlux.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R

@@ -20,9 +20,6 @@ BoundFc			TimeIntervalFc
 ConstantInternalFluxRate
 ConstantOutFluxRate
 ConstFc
-In			WithDestination
-Out			WithSource
-PoolSystemInternal	WithSourceAndDestination
 OnepModel
 OnepModel14
 ParallelModel
