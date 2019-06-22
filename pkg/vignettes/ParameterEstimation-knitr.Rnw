@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 %\newcommand{\R}{\proglang{R }}
 \newcommand{\R}{\textsf{R }}
-\newcommand{\SoilR}{\texttt{SoilR}}
+\newcommand{\SoilR}{\texttt{SoilR }}
 \newcommand{\FME}{\texttt{FME}}
 \newcommand{\GeneralModel}{\texttt{GeneralModel}}
 \newcommand{\Model}{\texttt{Model}}
@@ -65,7 +65,7 @@ tidy=FALSE
 @
 
 
-\section*{Introduction}
+\section{Introduction}
 The objective of this document is to provide examples on how to use \SoilR \, in combination with package \FME \,
 to estimate parameter values of soil organic matter decomposition models using observed 
 data. We will not explain \FME \, functionality here, but strongly recommend to read the vignette for package \FME \, \citep{Soetaert}.
@@ -73,7 +73,7 @@ Instead, we focus here on the application to the type of models implemented in \
 
 We present here two examples, one is the parameterization of a two-pool model with a feedback connection scheme applied to a soil incubation experiment. The other example uses observed radiocarbon data from CO$_2$ measurements conducted at Harvard Forest, USA. 
 
-\section*{Example 1: A soil incubation experiment}
+\section{Example 1: A soil incubation experiment}
 Measurements of evolved CO$_2$ from incubation experiments provide useful data for parameterizing soil organic matter decomopsition models and identify functionally distinct pools \citep{Schadel}. We present here data from an incubation experiment in which we measured the evolved CO$_2$ from a forest soil. The dataset, {\tt eCO2}, is already included in \SoilR \, and includes data from an incubation experiment with a boreal forest soil. First, we load \SoilR \, into our \R \, session and extract the data from the boreal site into a separate object; column names need to be renamed for consistency with \FME.
 
 <<>>=
@@ -98,30 +98,48 @@ arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
   \caption{Cummulative evolved CO$_2$ from an incubation experiment with a boreal forest soil.}
   \label{fig:eCO2}
 \end{figure}
-
-To this dataset, we are interested in finding parameters for a two-pool model with connection in feedback of the form \citep{SierraGMD}
+Assume that we have some reasons to expect a two-pool model with feedback of the form \citep{SierraGMD} would be appropriate.
 \begin{align} \label{Model}
 \frac{dC_1}{dt} &= I - k_1 C_1 + \alpha_{1,2} k_2 C_2 \notag \\
 \frac{dC_2}{dt} &= \alpha_{2,1} k_1 C_1 - k_2 C_2
 \end{align}
-so we are interested in finding the values of the decomposition rates $k_1$ and $k_2$ as well as the transfer coefficient to pool 2 from pool 1 ($\alpha_{2,1}$) and to pool 1 from pool 2 ($\alpha_{1,2}$). Given that the data comes from an incubation experiment, we assume that there are no inputs of carbon, so $I=0$. In addition, we are also interested in obtaining a value for the partitioning coefficient for the two fractions $\gamma$, so $C_1 = C_{total} \gamma$, and $C_2 = C_{total} (1- \gamma)$. 
+To fit this model to our dataset we have to estimate the values of the decomposition rates $k_1$ and $k_2$ as well as the transfer coefficient to pool 2 from pool 1 ($\alpha_{2,1}$) and to pool 1 from pool 2 ($\alpha_{1,2}$). Given that the data comes from an incubation experiment, we assume that there are no inputs of carbon, so $I=0$. Additionally, we need a value for the partitioning coefficient for the two fractions $\gamma$, so $C_1 = C_{total} \gamma$, and $C_2 = C_{total} (1- \gamma)$. 
+\subsection{Principal identifiability of the model}
+Before we embroil ourselfes in technicalities we should think about the general possibility to identify the five parameters we are looking for from a single time line of the combined release of both pools.
+If we find a subset of parametes with similar or reverse effects on the model prediction we can not hope to uniquely identify them. 
+In our example this is indeed the case since for a given set of parameters we can find another symmetric configuration. (Exchange the values of $\gamma_1,k_1,\alpha_{2,1}$ and  $\gamma_2,k_2,\alpha_{1,2}$.) In this light the goal to determine all five parameters appears overly ambitious and the numerical results confirm this. We will therefore have to reduce the number of parameters.
+To break the symmetrie we remove the flux from pool 2 to pool 1 (represented by the parameter $\alpha_{1,2}$).  Numerical experiments show that this is still too ambitious. The algorithms compute very erratic results and get stuck in  local minima. It turns out that we can estimate only two paramters confidently. We choose the decomposition rate $k_{1}$ of the first pool and  $\alpha_{2,1}$.
 
-This model (equation \ref{Model}) is implemented in \SoilR \, with the function {\tt TwopFeedbackModel}. We will find first the best set of parameters that fit the data using classical optimization using the \FME \, package \citep{Soetaert}. For this, we need to create a function that takes arbitrary values of the parameters of the model, creates a model in \SoilR, calculates the daily respiration flux, and returns the output consistent with \FME \, requirements. We also need to create a vector of time steps in days and give the total amount of carbon in the soil at the begining of the experiment (soil dry weigh times the average C concentration from three replicates, units in g C). 
-
-<<>>=
+The model \eqref{Model} is implemented in \SoilR by the function {\tt TwopFeedbackModel}. 
+We want to find the best set of parameters that fit the data using classical optimization using the \FME \, package \citep{Soetaert}. For this, we need to create a function that takes arbitrary values of the parameters of the model, creates a model in \SoilR, calculates the daily respiration flux, and returns the output consistent with \FME \, requirements. We also need to create a vector of time steps in days and give the total amount of carbon in the soil at the begining of the experiment (soil dry weigh times the average C concentration from three replicates, units in g C). 
+Furthermore we have to ensure that the parameters tested by the optimization algorithms constitute valid models. 
+The \FME function we want to use is {\tt modFit}.
+It allows us to specify upper and lower limits for every paramter value. 
+We have to be sure that every parameter combination out ofthis n-dimensional rectangular set leads to a correct mass conserving model.
+For the parameters $alpha_{i,j}$ and $k_{i}$ this condition is indeed fulfilled.
+<<tidy=TRUE>>=
 days=seq(0,35)
-Ctotal=mean(c(0.04683975, 0.04703255, 0.04687287))*450 #C concentration * 450 g soil
-BorealCO2=data.frame(time=BorealCO2[,1],BorealCO2[,2:3]*1e-06*Ctotal) #Changed units
+#C concentration * 450 g soil
+Ctotal=mean(c(0.04683975, 0.04703255, 0.04687287))*450 
+#Changed units
+BorealCO2=data.frame(
+  time=BorealCO2[,1],
+  BorealCO2[,2:3]*1e-06*Ctotal
+) 
 
 eCO2func=function(pars){
+  k1=pars[1]
+  k2=1e-4*k1
+  alpha=pars[2]
+  gamma=.0001
   mod=TwopFeedbackModel(
-    t=days,
-    ks=pars[1:2],
-    a21=0,
-    a12=0, 
-    C0=Ctotal*c(pars[3],1-pars[3]), 
-    In=0,
-    pass=TRUE
+    t=days
+    ,ks=c(k1,k2)
+    ,a21=alpha
+    ,a12=0
+    ,C0=Ctotal*c(gamma,1-gamma) 
+    ,In=0
+    ,pass=TRUE
   )
   Rt=getReleaseFlux(mod)
   return(data.frame(time=days,eCO2=rowSums(Rt)))
@@ -129,7 +147,7 @@ eCO2func=function(pars){
 
 @
 
-Notice that this function, {\tt eCO2func}, requires a vector of parameters {\tt pars} with the values of the two decomposition rates in positions 1 and 2, the values of the two transfer rates in position 3 and 4, and the partitioning coefficient $\gamma$ in position 5. This function returns a {\tt data.frame} with two columns, time in days and the sum of the cummulative release for the two pools. 
+Notice that our function, {\tt eCO2func}, requires a vector of parameters {\tt pars} with the values of the first decomposition rate in positions 1 and the values of the transfered proportion $\alpha_{2,1}$ in position 2. This function returns a {\tt data.frame} with two columns, time in days and the sum of the cummulative release for the two pools. 
 
 The next step is to create a cost function according to \FME \, requirements. This cost function takes as arguments a function with the model, the set of observations, and a measure of the error in the observations. The function calculates sums of squared residuals from the model output and the observed data, which can be further minimized for optimization. 
 
@@ -140,15 +158,28 @@ eCO2cost=function(pars){
 }
 @
 
-This function returns an object of class {\tt modCost}, which can be further used by \FME \, for local sensitivity analysis, multivariate parameter identifiability, and parameter optimization. We strongly recommend users to to read \FME \, documentation for sensitivity and identifiability analyses. The procedure for optimization consist first on given a set of initial parameter values and then run function {\tt modFit} for minimizing the cost function. {\tt modFit} can take as argument upper and lower limits for the parameter values and the optimization method, which for this example we use the Levenberg-Marquardt algorithm.
+This function returns an object of class {\tt modCost}, which can be further used by \FME. 
+We strongly recommend to to read \FME \, documentation for sensitivity and identifiability analyses. 
+We will use the function {\tt modFit}.
+It implements the optimization as an iterative process.
+First the cost function will be evaluated on the initial parameter values.
+Then the algorithm will try to guess new parameters, evaluate the cost function again and repeat this process until the cost is small enough or the number of permitted iterations exceeded. 
+We can choose the optimization method ( Levenberg-Marquardt in the example ) which determines how
+the algorithm arrives determines the next parameters.
 
 
 <<>>=
-inipars=c(k1=1/20,k2=1/100,gamma=0.5)
+inipars=c( 1/20 ,1/100)
+up=c(1,1)
+lo=c(0,0)
 
-eCO2fit=modFit(f=eCO2cost,p=inipars,method="Marq",
-               upper=c(Inf,Inf,1),lower=c(0,0,0))
-
+eCO2fit=modFit(
+    f=eCO2cost
+    ,p=inipars
+    ,method="Marq"
+    ,upper=up
+    ,lower=lo
+)
 @
 
 To see the best set of parameter values found by the function we can type:
@@ -179,9 +210,17 @@ The results from this optimization can be used for Bayesian parameter estimation
 <<echo=FALSE,results='hide'>>=
 var0=eCO2fit$var_ms_unweighted
 
-eCO2mcmc=modMCMC(f=eCO2cost, p=eCO2fit$par, niter=3000, jump=NULL,  
-                 var0=var0, wvar0=NULL, updatecov=100, lower=c(0,0,0),
-                 upper=c(1,1,1))
+eCO2mcmc=modMCMC(
+   f=eCO2cost
+  ,p=eCO2fit$par
+  ,niter=3000
+  ,jump=NULL  
+  ,var0=var0
+  ,wvar0=NULL
+  ,updatecov=10
+  ,upper=up
+  ,lower=lo
+)
 @
 
 The results of the MCMC procedure can be obtained with the function {\tt summary()}. The output gives the mean, standard deviation, min and max, and 25\% quantiles for all parameter values. It also produces summary statistics for the variance of the observed variable. 
@@ -189,6 +228,7 @@ The results of the MCMC procedure can be obtained with the function {\tt summary
 
 <<>>=
 summary(eCO2mcmc)
+sR1=sensRange(func=eCO2func, parInput=eCO2mcmc$par)
 @
 
 A plot with the posterior distribution of the obtained parameter values can be obtained with function {\tt pairs} (Figure \ref{fig:mcmc})
@@ -308,7 +348,7 @@ DataR14t=cbind(time=HarvardForest14CO2[,1],
 
 With all these elements ready, we can now use \FME \, for the parameter optimization procedure. We will avoid a detailed explanation and present in the following the creation of the cost function, the initial optimization, and the final Bayesian parameter estimation. 
 
-<<echo=FALSE,results='hide'>>=
+<<echo=FALSE,cache=TRUE,results='hide'>>=
 #Create the cost function
 R14tCost <- function(pars){
   R14t <- Mod1(pars)
@@ -321,16 +361,17 @@ Fit <- modFit(f=R14tCost,p=c(.1,.2,.3,.4,.5),lower=rep(0,nk))
 # Run an MCMC using the variance and covariance results from the previous optimization
 number_of_iterations=1000
 var0 <- Fit$var_ms_unweighted
-#cov0 <- summary(Fit)$cov.scaled 
+cov0 <- summary(Fit)$cov.scaled 
 MCMC <- modMCMC(
     f=R14tCost
    ,p = Fit$par
    ,niter = number_of_iterations
    ,jump = NULL
+   ,covscale= cov0
    ,var0 = var0
    ,wvar0 = 0
-   ,lower=rep(0,nk)
-   #,upper=c(0,0,0,1,1)
+   ,lower=lo
+   ,upper=up
 )
 
 

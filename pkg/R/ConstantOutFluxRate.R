@@ -30,7 +30,6 @@ setMethod(
   f="ConstantOutFluxRate",
   signature=c(source='character',rate_constant='numeric'),
   def=function(source,rate_constant){
-    require('debugHelpers')
     src_ind<-as.integer(source)
     # call the main constructor after converting the name to an int
     return(ConstantOutFluxRate(src_ind,rate_constant))

@@ -4,7 +4,7 @@
 ### code chunk number 1: ParameterEstimation.Rnw:58-64
 ###################################################
 require('pkgload')
-pkgload::load_all('..')
+pkgload::load_all('../../')
 library(SoilR)
 library(FME)
 library(MASS)
@@ -31,8 +31,6 @@ C0=c(390,220+390+1376,90+1800+560)
 Fc=BoundFc(C14Atm_NH,lag=0,format="Delta14C")
 np=3
 Mod1<-function(ks,pass=TRUE){
-  print(class(ks))
-  print(ks)
   At=ConstLinDecompOp(
        internal_flux_rates=c("1_to_2"=ks[[4]],"1_to_3"=ks[[5]])
       ,out_flux_rates=c("1"=ks[[1]],"2"=ks[[2]],"3"=ks[[3]])
