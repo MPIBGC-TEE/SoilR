@@ -15,7 +15,7 @@
 %\newcommand{\R}{\proglang{R }}
 \newcommand{\R}{\textsf{R }}
 \newcommand{\SoilR}{\texttt{SoilR }}
-\newcommand{\FME}{\texttt{FME}}
+\newcommand{\FME}{\texttt{FME }}
 \newcommand{\GeneralModel}{\texttt{GeneralModel}}
 \newcommand{\Model}{\texttt{Model}}
 \newcommand{\BoundInFlux}{\texttt{BoundInFlux}}
@@ -67,16 +67,16 @@ tidy=FALSE
 
 \section{Introduction}
 The objective of this document is to provide examples on how to use \SoilR \, in combination with package \FME \,
-to estimate parameter values of soil organic matter decomposition models using observed 
-data. We will not explain \FME \, functionality here, but strongly recommend to read the vignette for package \FME \, \citep{Soetaert}.
-Instead, we focus here on the application to the type of models implemented in \SoilR. 
-
-We present here two examples, one is the parameterization of a two-pool model with a feedback connection scheme applied to a soil incubation experiment. The other example uses observed radiocarbon data from CO$_2$ measurements conducted at Harvard Forest, USA. 
+to infer parameter values of soil organic matter decomposition models using observed data. 
+Parameter estimation for dynamical systems is an advanced topic of inverse modeling and as such is far beyond  the scope of this vignette. We will point to some principal questions and possible problems as they arise but this treatment will be far from comprehensive. 
+This document also does not replace  the documentation of package \FME \citep{Soetaert} which we strongly recommend to consult.
+Instead, we show firstly, how a thin wrapper function makes a \SoilR model available for the functions in  \FME and secondly how to choose the right parameterizations of \SoilR models to meet the requirements of the \FME algorithms.
+We present two examples. One is the parameterization of a two-pool model applied to a soil incubation experiment. The other example uses observed radiocarbon data from CO$_2$ measurements conducted at Harvard Forest, USA. 
 
 \section{Example 1: A soil incubation experiment}
-Measurements of evolved CO$_2$ from incubation experiments provide useful data for parameterizing soil organic matter decomopsition models and identify functionally distinct pools \citep{Schadel}. We present here data from an incubation experiment in which we measured the evolved CO$_2$ from a forest soil. The dataset, {\tt eCO2}, is already included in \SoilR \, and includes data from an incubation experiment with a boreal forest soil. First, we load \SoilR \, into our \R \, session and extract the data from the boreal site into a separate object; column names need to be renamed for consistency with \FME.
+Measurements of evolved CO$_2$ from incubation experiments can provide useful data for parameterizing soil organic matter decomopsition models and identify functionally distinct pools \citep{Schadel}. We present here data from an incubation experiment in which we measured the evolved CO$_2$ from a forest soil. The dataset, {\tt eCO2}, is already included in \SoilR \, and containes data from an incubation experiment with a boreal forest soil. First, we load \SoilR \, into our \R \, session and extract the data from the boreal site into a separate object; column names need to be renamed for consistency with \FME.
 
-<<>>=
+<<echo=TRUE,results='hide'>>=
 library(SoilR)
 library(FME)
 library(MASS)
@@ -98,21 +98,31 @@ arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
   \caption{Cummulative evolved CO$_2$ from an incubation experiment with a boreal forest soil.}
   \label{fig:eCO2}
 \end{figure}
-Assume that we have some reasons to expect a two-pool model with feedback of the form \citep{SierraGMD} would be appropriate.
-\begin{align} \label{Model}
-\frac{dC_1}{dt} &= I - k_1 C_1 + \alpha_{1,2} k_2 C_2 \notag \\
-\frac{dC_2}{dt} &= \alpha_{2,1} k_1 C_1 - k_2 C_2
-\end{align}
-To fit this model to our dataset we have to estimate the values of the decomposition rates $k_1$ and $k_2$ as well as the transfer coefficient to pool 2 from pool 1 ($\alpha_{2,1}$) and to pool 1 from pool 2 ($\alpha_{1,2}$). Given that the data comes from an incubation experiment, we assume that there are no inputs of carbon, so $I=0$. Additionally, we need a value for the partitioning coefficient for the two fractions $\gamma$, so $C_1 = C_{total} \gamma$, and $C_2 = C_{total} (1- \gamma)$. 
+%Assume that we have some reasons to expect a two-pool model with feedback of the form \citep{SierraGMD} would be appropriate.
+%\begin{align} \label{Model}
+%\frac{dC_1}{dt} &= I - k_1 C_1 + \alpha_{1,2} k_2 C_2 \notag \\
+%\frac{dC_2}{dt} &= \alpha_{2,1} k_1 C_1 - k_2 C_2
+%\end{align}
+%To fit this model to our dataset we have to estimate the values of the decomposition rates $k_1$ and $k_2$ as well as the transfer coefficient to pool 2 from pool 1 ($\alpha_{2,1}$) and to pool 1 from pool 2 ($\alpha_{1,2}$). Given that the data comes from an incubation experiment, we assume that there are no inputs of carbon, so $I=0$. Additionally, we need a value for the partitioning coefficient for the two fractions $\gamma$, so $C_1 = C_{total} \gamma$, and $C_2 = C_{total} (1- \gamma)$. 
 \subsection{Principal identifiability of the model}
-Before we embroil ourselfes in technicalities we should think about the general possibility to identify the five parameters we are looking for from a single time line of the combined release of both pools.
-If we find a subset of parametes with similar or reverse effects on the model prediction we can not hope to uniquely identify them. 
-In our example this is indeed the case since for a given set of parameters we can find another symmetric configuration. (Exchange the values of $\gamma_1,k_1,\alpha_{2,1}$ and  $\gamma_2,k_2,\alpha_{1,2}$.) In this light the goal to determine all five parameters appears overly ambitious and the numerical results confirm this. We will therefore have to reduce the number of parameters.
-To break the symmetrie we remove the flux from pool 2 to pool 1 (represented by the parameter $\alpha_{1,2}$).  Numerical experiments show that this is still too ambitious. The algorithms compute very erratic results and get stuck in  local minima. It turns out that we can estimate only two paramters confidently. We choose the decomposition rate $k_{1}$ of the first pool and  $\alpha_{2,1}$.
-
-The model \eqref{Model} is implemented in \SoilR by the function {\tt TwopFeedbackModel}. 
-We want to find the best set of parameters that fit the data using classical optimization using the \FME \, package \citep{Soetaert}. For this, we need to create a function that takes arbitrary values of the parameters of the model, creates a model in \SoilR, calculates the daily respiration flux, and returns the output consistent with \FME \, requirements. We also need to create a vector of time steps in days and give the total amount of carbon in the soil at the begining of the experiment (soil dry weigh times the average C concentration from three replicates, units in g C). 
-Furthermore we have to ensure that the parameters tested by the optimization algorithms constitute valid models. 
+Before we embroil ourselfes in technicalities we should think about the general possibility to identify the parameters from a single time line of the combined release of an yet unknown number of pools with yet unknown connections and fluxes.
+We face several challenges:
+\begin{emumerate}
+\item 
+	\label{accuracy} Find a class of models that is large enough to contain a model, capable of reproducing the observed data. If the class is to small we will ``underfit'' our data and the model will be ``biased''.
+\item 
+	\label{identifiability} Find a number of parameters that is small enough to be actually determined unambigiously from the data. If we have parameters whose effects enhance or cancel the effects of other parameters the parameterized model will be ``overfitted'' and make (possibly extremely) misleading predictions for data not included in the training set. (In our case the predicted timeline of an overfitted model could meet all the measurements very well but be completely unreasonable in between or beyond)
+\item 
+	\label{independence} Make sure that the parameters can at least be tested independently by the optimization procedure. (Even if they turn out to be not completely independent with respect to (w.r.t.) their effect on the resulting combined release flux they should form a \emph{valid} model. E.g. sn optimization algorithm that changes parameters independently should not accidentally test a model that brakes mass conservation.)
+\end{emumerate}
+We will start with the simplest model that fulfills conditions \ref{identifiability} and \ref{independence} and increase its complexity until we reach a desired degree of accuracy (\ref{accuracy})
+%If we find a subset of parametes with similar or reverse effects on the model prediction we can not hope to uniquely identify them. 
+%In our example this is indeed the case since for a given set of parameters we can find another symmetric configuration. (Exchange the values of $\gamma_1,k_1,\alpha_{2,1}$ and  $\gamma_2,k_2,\alpha_{1,2}$.) In this light the goal to determine all five parameters appears overly ambitious and the numerical results confirm this. We will therefore have to reduce the number of parameters.
+%To break the symmetrie we remove the flux from pool 2 to pool 1 (represented by the parameter $\alpha_{1,2}$).  Numerical experiments show that this is still too ambitious. The algorithms compute very erratic results and get stuck in  local minima. It turns out that we can estimate only two paramters confidently. We choose the decomposition rate $k_{1}$ of the first pool and  $\alpha_{2,1}$.
+%
+%The model \eqref{Model} is implemented in \SoilR by the function {\tt TwopFeedbackModel}. 
+%We want to find the best set of parameters that fit the data using classical optimization using the \FME \, package \citep{Soetaert}. For this, we need to create a function that takes arbitrary values of the parameters of the model, creates a model in \SoilR, calculates the daily respiration flux, and returns the output consistent with \FME \, requirements. We also need to create a vector of time steps in days and give the total amount of carbon in the soil at the begining of the experiment (soil dry weigh times the average C concentration from three replicates, units in g C). 
+%Furthermore we have to ensure that the parameters tested by the optimization algorithms constitute valid models. 
 The \FME function we want to use is {\tt modFit}.
 It allows us to specify upper and lower limits for every paramter value. 
 We have to be sure that every parameter combination out ofthis n-dimensional rectangular set leads to a correct mass conserving model.
