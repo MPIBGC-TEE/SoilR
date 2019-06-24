@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.17)  24 JUN 2019 20:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.17)  24 JUN 2019 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -239,91 +239,10 @@ File: figure/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-5-1.pdf>
 Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 145.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-
-
-! LaTeX Error: Environment emumerate undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.160 \begin{emumerate}
-                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.162 	\label
-             {accuracy} Find a class of models that is large enough to conta...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 162
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.164 	\label
-             {identifiability} Find a number of parameters that is small eno...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 164
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.166 	\label
-             {independence} Make sure that the parameters can at least be te...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 166
-[][]
- []
-
-
-! LaTeX Error: \begin{document} ended by \end{emumerate}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.167 \end{emumerate}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 Package color Info: Redefining color shadecolor on input line 181.
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 192
 .
-(/usr/share/R/share/texmf/tex/latex/omscmtt.fd
+ (/usr/share/R/share/texmf/tex/latex/omscmtt.fd
 File: omscmtt.fd 
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10> not available
@@ -357,17 +276,18 @@ File: figure/unnamed-chunk-14-1.pdf Graphic file (type pdf)
 Package pdftex.def Info: figure/unnamed-chunk-14-1.pdf  used on input line 334.
 
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+[5] [6 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-11-1.pd
+f>] [7 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-14-1.pd
+f>]
 Package color Info: Redefining color shadecolor on input line 346.
-<figure/unnamed-chunk-15-1.pdf, id=40, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-15-1.pdf, id=62, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-15-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-15-1.pdf>
 Package pdftex.def Info: figure/unnamed-chunk-15-1.pdf  used on input line 356.
 
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-[5] [6 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-11-1.pd
-f>] [7 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-14-1.pd
-f>] [8 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-15-1.pd
-f>]
+ [8] [9 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-15-1.p
+df>]
 Package color Info: Redefining color shadecolor on input line 372.
 Missing character: There is no â in font cmtt10!
 Missing character: There is no € in font cmtt10!
@@ -396,7 +316,7 @@ Missing character: There is no ° in font cmtt10!
 Missing character: There is no â in font cmtt10!
 Missing character: There is no € in font cmtt10!
 Missing character: There is no ° in font cmtt10!
-<figure/unnamed-chunk-16-1.pdf, id=72, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-16-1.pdf, id=75, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-16-1.pdf>
 Package pdftex.def Info: figure/unnamed-chunk-16-1.pdf  used on input line 396.
@@ -410,9 +330,9 @@ Package color Info: Redefining color shadecolor on input line 422.
 Package color Info: Redefining color shadecolor on input line 434.
 Package color Info: Redefining color shadecolor on input line 444.
 Package color Info: Redefining color shadecolor on input line 456.
-[9
+[10
 
-] [10 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-16-1.pdf
+] [11 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-16-1.pdf
 >]
 Package color Info: Redefining color shadecolor on input line 485.
 Package color Info: Redefining color shadecolor on input line 498.
@@ -430,15 +350,15 @@ r[]of[]iterations,
 
 Package color Info: Redefining color shadecolor on input line 514.
 Package color Info: Redefining color shadecolor on input line 530.
-[11] [12] [13
+[12] [13] [14
 
 ]
 (/home/mm/SoilR-exp/scripts/vignette_builds/ParameterEstimation-knitr.aux) ) 
 Here is how much of TeX's memory you used:
- 2644 strings out of 492982
- 36178 string characters out of 6134896
- 107189 words of memory out of 5000000
- 6161 multiletter control sequences out of 15000+600000
+ 2642 strings out of 492982
+ 36157 string characters out of 6134896
+ 107184 words of memory out of 5000000
+ 6159 multiletter control sequences out of 15000+600000
  11637 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,25p,688b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -461,10 +381,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt12.pfb>
-Output written on ParameterEstimation-knitr.pdf (13 pages, 251872 bytes).
+Output written on ParameterEstimation-knitr.pdf (14 pages, 253481 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
+ 163 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

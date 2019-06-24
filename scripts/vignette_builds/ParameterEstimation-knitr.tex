@@ -157,14 +157,14 @@ Measurements of evolved CO$_2$ from incubation experiments can provide useful da
 \subsection{Principal identifiability of the model}
 Before we embroil ourselfes in technicalities we should think about the general possibility to identify the parameters from a single time line of the combined release of an yet unknown number of pools with yet unknown connections and fluxes.
 We face several challenges:
-\begin{emumerate}
+\begin{enumerate}
 \item 
 	\label{accuracy} Find a class of models that is large enough to contain a model, capable of reproducing the observed data. If the class is to small we will ``underfit'' our data and the model will be ``biased''.
 \item 
-	\label{identifiability} Find a number of parameters that is small enough to be actually determined unambigiously from the data. If we have parameters whose effects enhance or cancel the effects of other parameters the parameterized model will be ``overfitted'' and make (possibly extremely) misleading predictions for data not included in the training set. (In our case the predicted timeline of an overfitted model could meet all the measurements very well but be completely unreasonable in between or beyond)
+	\label{identifiability} Find a number of parameters that is small enough to be actually determined unambigiously from the data. If we have parameters whose effects enhance or cancel the effects of other parameters the parameterized model will be ``overfitted'' and make (possibly extremely) misleading predictions for data not included in the training set. (In our case the predicted timeline of an overfitted model could meet all the measurements very well but be completely unreasonable in between or beyond the measurement times.)
 \item 
-	\label{independence} Make sure that the parameters can at least be tested independently by the optimization procedure. (Even if they turn out to be not completely independent with respect to (w.r.t.) their effect on the resulting combined release flux they should form a \emph{valid} model. E.g. sn optimization algorithm that changes parameters independently should not accidentally test a model that brakes mass conservation.)
-\end{emumerate}
+	\label{independence} Make sure that the parameters can at least be tested independently by the optimization procedure. (Even if they turn out to be not completely independent with respect to (w.r.t.) their effect on the resulting combined release flux they should form a \emph{valid} model. E.g. an optimization algorithm that changes parameters independently should not accidentally test a model that breakes mass conservation.)
+\end{enumerate}
 We will start with the simplest model that fulfills conditions \ref{identifiability} and \ref{independence} and increase its complexity until we reach a desired degree of accuracy (\ref{accuracy})
 %If we find a subset of parametes with similar or reverse effects on the model prediction we can not hope to uniquely identify them. 
 %In our example this is indeed the case since for a given set of parameters we can find another symmetric configuration. (Exchange the values of $\gamma_1,k_1,\alpha_{2,1}$ and  $\gamma_2,k_2,\alpha_{1,2}$.) In this light the goal to determine all five parameters appears overly ambitious and the numerical results confirm this. We will therefore have to reduce the number of parameters.
@@ -307,13 +307,13 @@ The results of the MCMC procedure can be obtained with the function {\tt summary
 \end{alltt}
 \begin{verbatim}
 ##               p1           p2    var_eCO2
-## mean 0.171608300 5.449933e-03 1.90553e-09
-## sd   0.004563301 5.829626e-03 0.00000e+00
-## min  0.155552673 1.707573e-09 1.90553e-09
-## max  0.186038036 4.337750e-02 1.90553e-09
-## q025 0.168657469 1.072713e-03 1.90553e-09
-## q050 0.171457509 3.634857e-03 1.90553e-09
-## q075 0.174651940 7.509722e-03 1.90553e-09
+## mean 0.171742320 4.753564e-03 1.90553e-09
+## sd   0.005054461 5.337544e-03 0.00000e+00
+## min  0.155402222 1.607528e-09 1.90553e-09
+## max  0.188101731 4.449453e-02 1.90553e-09
+## q025 0.168323527 7.999258e-04 1.90553e-09
+## q050 0.171855760 3.228580e-03 1.90553e-09
+## q075 0.175283895 6.902915e-03 1.90553e-09
 \end{verbatim}
 \begin{alltt}
 \hlstd{sR1}\hlkwb{=}\hlkwd{sensRange}\hlstd{(}\hlkwc{func}\hlstd{=eCO2func,} \hlkwc{parInput}\hlstd{=eCO2mcmc}\hlopt{$}\hlstd{par)}
