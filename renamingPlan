@@ -38,6 +38,8 @@ MeanAge
 MeanTT
 transitTime
 systemAge
+
+Functions to be removed:
 turnoverFit
 
 
