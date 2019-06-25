@@ -24,6 +24,7 @@
 \newcommand{\TimeMap}{\texttt{TimeMap}}
 \newcommand{\codestyle}[1]{{\texttt{#1}}}
 \newcommand{\figref}[1]{Fig: \ref{#1}}
+\newcommand{\emumref}[1]{\ref{#1}.}
 
 
 \title{Parameter Estimation of Compartment Models in \SoilR \, Using Classical and Bayesian Optimization}
@@ -105,17 +106,20 @@ arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
 %\end{align}
 %To fit this model to our dataset we have to estimate the values of the decomposition rates $k_1$ and $k_2$ as well as the transfer coefficient to pool 2 from pool 1 ($\alpha_{2,1}$) and to pool 1 from pool 2 ($\alpha_{1,2}$). Given that the data comes from an incubation experiment, we assume that there are no inputs of carbon, so $I=0$. Additionally, we need a value for the partitioning coefficient for the two fractions $\gamma$, so $C_1 = C_{total} \gamma$, and $C_2 = C_{total} (1- \gamma)$. 
 \subsection{Principal identifiability of the model}
-Before we embroil ourselfes in technicalities we should think about the general possibility to identify the parameters from a single time line of the combined release of an yet unknown number of pools with yet unknown connections and fluxes.
-We face several challenges:
+Before we embroil ourselfes in technicalities we should think about the general possibility to identify the parameters from a single time line of the combined release of an yet unknown number of pools with yet unknown connections and outlets. 
+We face several challenges, in particular we have to:
 \begin{enumerate}
 \item 
 	\label{accuracy} Find a class of models that is large enough to contain a model, capable of reproducing the observed data. If the class is to small we will ``underfit'' our data and the model will be ``biased''.
 \item 
 	\label{identifiability} Find a number of parameters that is small enough to be actually determined unambigiously from the data. If we have parameters whose effects enhance or cancel the effects of other parameters the parameterized model will be ``overfitted'' and make (possibly extremely) misleading predictions for data not included in the training set. (In our case the predicted timeline of an overfitted model could meet all the measurements very well but be completely unreasonable in between or beyond the measurement times.)
 \item 
-	\label{independence} Make sure that the parameters can at least be tested independently by the optimization procedure. (Even if they turn out to be not completely independent with respect to (w.r.t.) their effect on the resulting combined release flux they should form a \emph{valid} model. E.g. an optimization algorithm that changes parameters independently should not accidentally test a model that breakes mass conservation.)
+	\label{independence} Make sure that the parameters can at least be tested independently by the optimization procedure. 
+		(We refer here not to the desired independence of the parameters w.r.t (with respect to) the impact on the result as mentioned under \enumref{identifiability} but to the shape of the set of valid parameters. 
+		For n parameters the algorithms that we will use except n ranges and assume to be able to choose \emph{any} combination of parameters out of this n-dimensionalrectangular set to form a \emph{valid} model. E.g. an optimization algorithm that changes parameters independently should not accidentally create a model that breakes mass conservation.)
 \end{enumerate}
-We will start with the simplest model that fulfills conditions \ref{identifiability} and \ref{independence} and increase its complexity until we reach a desired degree of accuracy (\ref{accuracy})
+We will start with the simplest model that fulfills conditions \enumref{identifiability} and \enumref{independence} and increase and extend it to improve the degree of accuracy \enumref{accuracy} until we are satisfied or can no lnger guarantee \enumref{identifiability}.
+Note that the search for accurate and identifyable soil models is an open research question. The possible answers are limited only by your igenuity and the availability of data with the latter becoming obvious in our example.
 %If we find a subset of parametes with similar or reverse effects on the model prediction we can not hope to uniquely identify them. 
 %In our example this is indeed the case since for a given set of parameters we can find another symmetric configuration. (Exchange the values of $\gamma_1,k_1,\alpha_{2,1}$ and  $\gamma_2,k_2,\alpha_{1,2}$.) In this light the goal to determine all five parameters appears overly ambitious and the numerical results confirm this. We will therefore have to reduce the number of parameters.
 %To break the symmetrie we remove the flux from pool 2 to pool 1 (represented by the parameter $\alpha_{1,2}$).  Numerical experiments show that this is still too ambitious. The algorithms compute very erratic results and get stuck in  local minima. It turns out that we can estimate only two paramters confidently. We choose the decomposition rate $k_{1}$ of the first pool and  $\alpha_{2,1}$.
