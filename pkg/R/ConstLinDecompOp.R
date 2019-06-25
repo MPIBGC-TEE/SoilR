@@ -1,5 +1,66 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
+convert_to_out_flux_rates<-function(out_flux_rates){
+  if (length(out_flux_rates)==0){
+    warning('Compartmental system without outfluxes')
+    return(out_flux_rates)
+  } else 
+  {
+    if (
+        !(
+          is.null(names(out_flux_rates)) 
+          &inherits(out_flux_rates[[1]],'ConstantOutFluxRate')
+        )
+    )
+    {
+      if (inherits(out_flux_rates,'numeric')){
+        # try to convert and call your self again 
+        keys=names(out_flux_rates)
+        rates=vector()
+        for (key in names(out_flux_rates)){
+          rates=append(rates,ConstantOutFluxRate(key,out_flux_rates[[key]]))
+        }
+        return(rates)
+      } else {
+        stop('If out_flux_rates is a vector it must be either a vector of instances of class ConstantOutFluxRate or a numeric vector with names of the from "i" representing pool i')
+      }
+    } 
+  }
+}
+convert_to_internal_flux_rates<-function(internal_flux_rates){
+  if (length(internal_flux_rates)==0){
+    return(internal_flux_rates)
+  } else {
+    if (
+        !(
+            is.null(names(internal_flux_rates)) 
+            & inherits(
+                internal_flux_rates[[1]] ,'ConstantInternalFluxRate'
+              )
+        )
+    )
+    {
+      if (inherits(internal_flux_rates,'numeric')){
+
+        # try convert to a list of elements of class 'ConstantInternalFluxRate'
+        keys=names(internal_flux_rates)
+        rates=vector()
+        for (key in names(internal_flux_rates)){
+          rates=append(
+                      rates 
+                      ,ConstantInternalFluxRate(
+                         src_to_dest=key,
+                        ,rate_constant=internal_flux_rates[[key]]
+                      )
+          )
+        }
+        return(rates)
+      } else{
+          stop('internal_flux_rates must be either a numeric vector with names of the from "i_to_j" or a vector of instances of class ConstantInternalFluxRate')
+      }
+    }
+  }
+}
 correctnessOfDecompOp=function(object)
   A=object@mat
   
@@ -30,7 +91,7 @@ setMethod(
         ,out_flux_rates='missing'
         ,numberOfPools='missing'
       ),
-      definition=function # construct from matric
+      definition=function # construct from matrix
       ### This method creates a ConstLinDecompOp from a matrix
       ### The operator is assumed to act on the vector of carbon stocks
       ### by multiplication of the (time invariant) matrix from the left.
@@ -61,62 +122,9 @@ setMethod(
       (internal_flux_rates,out_flux_rates,numberOfPools){
         np=PoolIndex(numberOfPools)
 
-        # first check if the internal flux rate list is given as a list of rate instances  
-        # if not convert it and recursively call this function again
-        if (
-            !(
-              is.null(names(internal_flux_rates)) 
-              & inherits(
-                  internal_flux_rates[[1]] 
-                  ,'ConstantInternalFluxRate'
-                )
-            )
-        )
-        {
-          if (inherits(internal_flux_rates,'numeric')){
-            # try to convert and call your self again 
-            keys=names(internal_flux_rates)
-            rates=vector()
-            for (key in names(internal_flux_rates)){
-              rates=append(
-                          rates 
-                          ,ConstantInternalFluxRate(
-                             src_to_dest=key,
-                            ,rate_constant=internal_flux_rates[[key]]
-                          )
-              )
+        internal_flux_rates<-convert_to_internal_flux_rates(internal_flux_rates)
+        out_flux_rates<-convert_to_out_flux_rates(out_flux_rates)
 
-              return(
-                ConstLinDecompOp(
-                   internal_flux_rates=rates
-                  ,out_flux_rates=out_flux_rates
-                  ,numberOfPools=numberOfPools))
-            }
-          } else {
-            stop('internal_flux_rates must be either a numeric vector with names of the from "i_to_j" or a vector of instances of class ConstantInternalFluxRate')
-          }
-        } 
-        # now check if the out flux rate list is given as a list of rates or 
-        if (
-            !(
-              is.null(names(out_flux_rates)) 
-              &inherits(out_flux_rates[[1]],'ConstantOutFluxRate')
-            )
-        )
-        {
-          if (inherits(out_flux_rates,'numeric')){
-            # try to convert and call your self again 
-            keys=names(out_flux_rates)
-            rates=vector()
-            for (key in names(out_flux_rates)){
-              rates=append(rates,ConstantOutFluxRate(key,out_flux_rates[[key]]))
-
-              return(ConstLinDecompOp(internal_flux_rates=internal_flux_rates,out_flux_rates=rates,numberOfPools=numberOfPools))
-            }
-          } else {
-            stop('If out_flux_rates is a vector it must be either a vector of instances of class ConstantOutFluxRate or a numeric vector with names of the from "i" representing pool i')
-          }
-        } 
         N=matrix(nrow=np,ncol=np,0)
         for (ofr in out_flux_rates){
             src=ofr@source
@@ -137,11 +145,73 @@ setMethod(
         for (ifr in internal_flux_rates){
           To[dest,src]=ifr@rate_constant/N[src,src]
         }
-        return(new('ConstLinDecompOp',mat=To%*%N))
+        B<-To%*%N
+        return(new('ConstLinDecompOp',mat=B))
       }
 
 )
-
+setMethod(
+      f="ConstLinDecompOp",
+      ### 
+      signature=c(
+         mat="missing"
+        ,internal_flux_rates='missing'
+        ,out_flux_rates='vector'
+        ,numberOfPools='numeric'
+      ),
+      definition=function # construct from fluxlists
+      (out_flux_rates,numberOfPools){
+        ##fill in an empty list and delegate to the constructor for the complete list   
+        return(
+          ConstLinDecompOp(
+            internal_flux_rates=numeric()
+            ,out_flux_rates=out_flux_rates
+            ,numberOfPools=numberOfPools
+          )
+        )
+      }
+)
+setMethod(
+      f="ConstLinDecompOp",
+      ### 
+      signature=c(
+         mat="missing"
+        ,internal_flux_rates='vector'
+        ,out_flux_rates='missing'
+        ,numberOfPools='numeric'
+      ),
+      definition=function # construct from fluxlists
+      (internal_flux_rates,numberOfPools){
+        ##fill in an empty list and delegate to the constructor for the complete list   
+        return(
+          ConstLinDecompOp(
+            internal_flux_rates=internal_flux_rates
+            ,out_flux_rates=numeric()
+            ,numberOfPools=numberOfPools
+          )
+        )
+      }
+)
+setMethod(
+      f="ConstLinDecompOp",
+      ### 
+      signature=c(
+         mat="missing"
+        ,internal_flux_rates='missing'
+        ,out_flux_rates='missing'
+        ,numberOfPools='numeric'
+      ),
+      definition=function # construct 
+      (numberOfPools){
+        return(
+          ConstLinDecompOp(
+            internal_flux_rates=numeric()
+            ,out_flux_rates=numeric()
+            ,numberOfPools=numberOfPools
+          )
+        )
+      }
+)
 ############################methods####################
 setMethod(
     f="getFunctionDefinition",

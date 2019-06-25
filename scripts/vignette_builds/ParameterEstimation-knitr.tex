@@ -74,6 +74,7 @@
 \newcommand{\TimeMap}{\texttt{TimeMap}}
 \newcommand{\codestyle}[1]{{\texttt{#1}}}
 \newcommand{\figref}[1]{Fig: \ref{#1}}
+\newcommand{\enumref}[1]{\ref{#1}.}
 
 
 \title{Parameter Estimation of Compartment Models in \SoilR \, Using Classical and Bayesian Optimization}
@@ -155,17 +156,28 @@ Measurements of evolved CO$_2$ from incubation experiments can provide useful da
 %\end{align}
 %To fit this model to our dataset we have to estimate the values of the decomposition rates $k_1$ and $k_2$ as well as the transfer coefficient to pool 2 from pool 1 ($\alpha_{2,1}$) and to pool 1 from pool 2 ($\alpha_{1,2}$). Given that the data comes from an incubation experiment, we assume that there are no inputs of carbon, so $I=0$. Additionally, we need a value for the partitioning coefficient for the two fractions $\gamma$, so $C_1 = C_{total} \gamma$, and $C_2 = C_{total} (1- \gamma)$. 
 \subsection{Principal identifiability of the model}
-Before we embroil ourselfes in technicalities we should think about the general possibility to identify the parameters from a single time line of the combined release of an yet unknown number of pools with yet unknown connections and fluxes.
-We face several challenges:
+Before we embroil ourselfes in technicalities we should think about the general possibility to identify the parameters from a single time line of the combined release of an yet unknown number of pools with yet unknown connections and outlets. 
+We face several challenges, in particular we have to:
 \begin{enumerate}
 \item 
 	\label{accuracy} Find a class of models that is large enough to contain a model, capable of reproducing the observed data. If the class is to small we will ``underfit'' our data and the model will be ``biased''.
 \item 
 	\label{identifiability} Find a number of parameters that is small enough to be actually determined unambigiously from the data. If we have parameters whose effects enhance or cancel the effects of other parameters the parameterized model will be ``overfitted'' and make (possibly extremely) misleading predictions for data not included in the training set. (In our case the predicted timeline of an overfitted model could meet all the measurements very well but be completely unreasonable in between or beyond the measurement times.)
 \item 
-	\label{independence} Make sure that the parameters can at least be tested independently by the optimization procedure. (Even if they turn out to be not completely independent with respect to (w.r.t.) their effect on the resulting combined release flux they should form a \emph{valid} model. E.g. an optimization algorithm that changes parameters independently should not accidentally test a model that breakes mass conservation.)
+	\label{independence} Make sure that the parameters can at least be tested independently by the optimization procedure. 
+		(We refer here not to the desired independence of the parameters w.r.t (with respect to) the impact on the result as mentioned under \enumref{identifiability} but to the shape of the set of valid parameters. 
+		For n parameters the algorithms that we will use except 
+		n ranges and assume to be able to choose \emph{any} combination 
+		of parameters out of this n-dimensional rectangular set to form a \emph{valid} model.
+		E.g. an optimization algorithm that changes parameters independently should 
+		not accidentally create a model that breakes mass conservation or produces negative fluxes.
+		\SoilR allows many ways to specify models, including functions whose arguments include matrices whose parameters are \emph{not} independent.
+		Since it allways checks that the specified model is a valid compartmental system, it would actually stop the optimization procedure from trying 
+		unreasonable parameters.)
 \end{enumerate}
-We will start with the simplest model that fulfills conditions \ref{identifiability} and \ref{independence} and increase its complexity until we reach a desired degree of accuracy (\ref{accuracy})
+We will start with the simplest model that fulfills conditions \enumref{identifiability} and \enumref{independence} and extend it to improve the degree of accuracy until we are either satisfied or more likely can no longer guarantee \enumref{identifiability}.
+Note that the search for accurate and identifyable soil models is an open research question \cite{Sierra2015SBB}. 
+The possible answers are limited only by your igenuity and more severly by the availability of data as the example will demonstrate.
 %If we find a subset of parametes with similar or reverse effects on the model prediction we can not hope to uniquely identify them. 
 %In our example this is indeed the case since for a given set of parameters we can find another symmetric configuration. (Exchange the values of $\gamma_1,k_1,\alpha_{2,1}$ and  $\gamma_2,k_2,\alpha_{1,2}$.) In this light the goal to determine all five parameters appears overly ambitious and the numerical results confirm this. We will therefore have to reduce the number of parameters.
 %To break the symmetrie we remove the flux from pool 2 to pool 1 (represented by the parameter $\alpha_{1,2}$).  Numerical experiments show that this is still too ambitious. The algorithms compute very erratic results and get stuck in  local minima. It turns out that we can estimate only two paramters confidently. We choose the decomposition rate $k_{1}$ of the first pool and  $\alpha_{2,1}$.
@@ -173,10 +185,7 @@ We will start with the simplest model that fulfills conditions \ref{identifiabil
 %The model \eqref{Model} is implemented in \SoilR by the function {\tt TwopFeedbackModel}. 
 %We want to find the best set of parameters that fit the data using classical optimization using the \FME \, package \citep{Soetaert}. For this, we need to create a function that takes arbitrary values of the parameters of the model, creates a model in \SoilR, calculates the daily respiration flux, and returns the output consistent with \FME \, requirements. We also need to create a vector of time steps in days and give the total amount of carbon in the soil at the begining of the experiment (soil dry weigh times the average C concentration from three replicates, units in g C). 
 %Furthermore we have to ensure that the parameters tested by the optimization algorithms constitute valid models. 
-The \FME function we want to use is {\tt modFit}.
-It allows us to specify upper and lower limits for every paramter value. 
-We have to be sure that every parameter combination out ofthis n-dimensional rectangular set leads to a correct mass conserving model.
-For the parameters $alpha_{i,j}$ and $k_{i}$ this condition is indeed fulfilled.
+The \FME function we want to use is {\tt modFit}. Our first attempt to model the data is a one pool model with a constant decomposition rate k.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -307,13 +316,13 @@ The results of the MCMC procedure can be obtained with the function {\tt summary
 \end{alltt}
 \begin{verbatim}
 ##               p1           p2    var_eCO2
-## mean 0.171742320 4.753564e-03 1.90553e-09
-## sd   0.005054461 5.337544e-03 0.00000e+00
-## min  0.155402222 1.607528e-09 1.90553e-09
-## max  0.188101731 4.449453e-02 1.90553e-09
-## q025 0.168323527 7.999258e-04 1.90553e-09
-## q050 0.171855760 3.228580e-03 1.90553e-09
-## q075 0.175283895 6.902915e-03 1.90553e-09
+## mean 0.171720039 4.618881e-03 1.90553e-09
+## sd   0.004700158 5.383253e-03 0.00000e+00
+## min  0.158077194 1.860336e-09 1.90553e-09
+## max  0.188593651 3.467826e-02 1.90553e-09
+## q025 0.168401008 6.690192e-04 1.90553e-09
+## q050 0.171847915 2.996371e-03 1.90553e-09
+## q075 0.175018284 6.496190e-03 1.90553e-09
 \end{verbatim}
 \begin{alltt}
 \hlstd{sR1}\hlkwb{=}\hlkwd{sensRange}\hlstd{(}\hlkwc{func}\hlstd{=eCO2func,} \hlkwc{parInput}\hlstd{=eCO2mcmc}\hlopt{$}\hlstd{par)}
@@ -563,9 +572,13 @@ The obtained posterior distributions of the parameters can now be assessed graph
 We would like to thank Saadat Malghani for performing the laboratory incubation study. Susan E. Trumbore provided the radiocarbon data for Harvard Forest and gave important support and insights for the development of this project. Funding from the Max Planck Society. 
 
 \begin{thebibliography}{9}
-\bibitem[Schadel et al.(2013)]{Schadel} Sch{\"a}del, C., Y.~Luo, R.~David~Evans, S.~Fei, and S.~Schaeffer.
+\bibitem[Schadel et al.(2013)]{Schadel} Sch{\"a}del, C., Y.~Luo, R.~David~Evans, S.~Fei, and S.~Schaeffer. 2013
 \newblock Separating soil {CO$_2$} efflux into {C}-pool-specific decay rates
   via inverse analysis of soil incubation data. {\it Oecologia} \newblock 171: 721--732.
+
+\bibitem[Sierra et al.(2015)]{Sierra2015SBB} Sierra, C.A., Saadatullah Malghani and  M.~M\"uller. 2015 
+	\newblock{ Model structure and parameter identification of soil organic matter models} 
+	\newblock {\em Soil Biology and Biochemistry}, 90: 197-203.
 
 \bibitem[Sierra et al.(2012)]{SierraGMD} Sierra, C.A., M.~M\"uller, and S.~E. Trumbore. 2012. \newblock Models of soil organic matter decomposition: the {SoilR} package, version 1.0. \newblock {\em Geosci. Model Dev.}, 5: 1045--1060.
 

@@ -46,3 +46,47 @@ test.ConstLinDecompOp=function(){
     )
   )
 }
+test.ConstLinDecompOpWithoutInternalFluxes=function(){
+  n<-3
+  k<-3
+  B=ConstLinDecompOp(
+     out_flux_rates=c("1"=k)
+    ,numberOfPools = n
+  )@mat
+  print(B)
+  checkEquals(
+     B
+    ,matrix(
+       nrow=n
+      ,ncol=n
+      ,byrow=TRUE
+      ,c( 
+         -3,0,0
+         ,0,0,0
+         ,0,0,0
+      )
+    )
+  )
+}
+test.ConstLinDecompOpWithoutOutFluxes=function(){
+  n<-3
+  k<-3
+  B=ConstLinDecompOp(
+    internal_flux_rates=c("1_to_2"=k)
+    ,numberOfPools = n
+  )@mat
+  print(B)
+  checkEquals(
+     B
+    ,matrix(
+       nrow=n
+      ,ncol=n
+      ,byrow=TRUE
+      ,c( 
+         -3,0,0
+         ,3,0,0
+         ,0,0,0
+      )
+    )
+  )
+}

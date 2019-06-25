@@ -10,7 +10,7 @@ setMethod(
   def=function(source,rate_constant){
     source_ind=PoolIndex(source)
     if (rate_constant<0){
-      error(
+      stop(
         "Negative rate constant. 
         A rate_constant defines a flux = rate_constant*pool_content. 
         Since fluxes have to be positive and pool contents are positive

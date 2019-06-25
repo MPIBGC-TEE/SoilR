@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.17)  24 JUN 2019 20:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.17)  25 JUN 2019 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -136,18 +136,18 @@ tim
 (/home/mm/SoilR-exp/scripts/vignette_builds/ParameterEstimation-knitr.aux)
 \openout1 = `ParameterEstimation-knitr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -218,45 +218,46 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
-Package color Info: Redefining color shadecolor on input line 114.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
+Package color Info: Redefining color shadecolor on input line 115.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 116.
-Package color Info: Redefining color shadecolor on input line 137.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 117.
+Package color Info: Redefining color shadecolor on input line 138.
 <figure/unnamed-chunk-5-1.pdf, id=17, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 145.
+Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 146.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-Package color Info: Redefining color shadecolor on input line 181.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 192
+Package color Info: Redefining color shadecolor on input line 190.
+ [2] [3 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-5-1.pd
+f>]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 201
 .
- (/usr/share/R/share/texmf/tex/latex/omscmtt.fd
+
+(/usr/share/R/share/texmf/tex/latex/omscmtt.fd
 File: omscmtt.fd 
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 192.
- [2] [3 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-5-1.pd
-f>]
-Package color Info: Redefining color shadecolor on input line 218.
-Package color Info: Redefining color shadecolor on input line 239.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 201.
+Package color Info: Redefining color shadecolor on input line 227.
  [4]
-Package color Info: Redefining color shadecolor on input line 258.
-Package color Info: Redefining color shadecolor on input line 271.
-Package color Info: Redefining color shadecolor on input line 281.
+Package color Info: Redefining color shadecolor on input line 248.
+Package color Info: Redefining color shadecolor on input line 267.
+Package color Info: Redefining color shadecolor on input line 280.
+Package color Info: Redefining color shadecolor on input line 290.
 
-Overfull \hbox (80.24629pt too wide) in paragraph at lines 283--283
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 292--292
 [][]\OT1/cmtt/m/n/10 plot[][](BorealCO2[,[][]1[][]:[][]2[][]],[] []xlab[][]=[][
 ]"Days"[][],[] []ylab[][]=[][]"Evolved CO2 (gC day-1)"[][],[][]ylim[][]=[][]c[]
 []([][]0[][],[][]9e-04[][]))[][] 
@@ -265,30 +266,29 @@ Overfull \hbox (80.24629pt too wide) in paragraph at lines 283--283
 <figure/unnamed-chunk-11-1.pdf, id=38, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-11-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-11-1.pdf  used on input line 289.
+Package pdftex.def Info: figure/unnamed-chunk-11-1.pdf  used on input line 298.
 
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-Package color Info: Redefining color shadecolor on input line 304.
-Package color Info: Redefining color shadecolor on input line 329.
-<figure/unnamed-chunk-14-1.pdf, id=39, 505.89pt x 505.89pt>
+Package color Info: Redefining color shadecolor on input line 313.
+[5] [6 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-11-1.pd
+f>]
+Package color Info: Redefining color shadecolor on input line 338.
+<figure/unnamed-chunk-14-1.pdf, id=51, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-14-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-14-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-14-1.pdf  used on input line 334.
+Package pdftex.def Info: figure/unnamed-chunk-14-1.pdf  used on input line 343.
 
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-[5] [6 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-11-1.pd
-f>] [7 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-14-1.pd
-f>]
-Package color Info: Redefining color shadecolor on input line 346.
-<figure/unnamed-chunk-15-1.pdf, id=62, 505.89pt x 505.89pt>
+Package color Info: Redefining color shadecolor on input line 355.
+<figure/unnamed-chunk-15-1.pdf, id=52, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-15-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-15-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-15-1.pdf  used on input line 356.
+Package pdftex.def Info: figure/unnamed-chunk-15-1.pdf  used on input line 365.
 
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
- [8] [9 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-15-1.p
-df>]
-Package color Info: Redefining color shadecolor on input line 372.
+ [7 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-14-1.pdf>]
+ [8 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-15-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 381.
 Missing character: There is no â in font cmtt10!
 Missing character: There is no € in font cmtt10!
 Missing character: There is no ° in font cmtt10!
@@ -316,49 +316,49 @@ Missing character: There is no ° in font cmtt10!
 Missing character: There is no â in font cmtt10!
 Missing character: There is no € in font cmtt10!
 Missing character: There is no ° in font cmtt10!
-<figure/unnamed-chunk-16-1.pdf, id=75, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-16-1.pdf, id=72, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-16-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-16-1.pdf  used on input line 396.
+Package pdftex.def Info: figure/unnamed-chunk-16-1.pdf  used on input line 405.
 
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
 
-LaTeX Warning: Float too large for page by 56.89302pt on input line 401.
+LaTeX Warning: Float too large for page by 56.89302pt on input line 410.
 
-Package color Info: Redefining color shadecolor on input line 422.
-Package color Info: Redefining color shadecolor on input line 434.
-Package color Info: Redefining color shadecolor on input line 444.
-Package color Info: Redefining color shadecolor on input line 456.
-[10
+Package color Info: Redefining color shadecolor on input line 431.
+Package color Info: Redefining color shadecolor on input line 443.
+Package color Info: Redefining color shadecolor on input line 453.
+Package color Info: Redefining color shadecolor on input line 465.
+[9
 
-] [11 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-16-1.pdf
+] [10 </home/mm/SoilR-exp/scripts/vignette_builds/figure/unnamed-chunk-16-1.pdf
 >]
-Package color Info: Redefining color shadecolor on input line 485.
-Package color Info: Redefining color shadecolor on input line 498.
+Package color Info: Redefining color shadecolor on input line 494.
+Package color Info: Redefining color shadecolor on input line 507.
 
-Overfull \hbox (22.4968pt too wide) in paragraph at lines 501--502
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 510--511
 []\OT1/cmtt/m/n/10 ## Error in modFit(f = R14tCost, p = c(0.1, 0.2, 0.3, 0.4, 0
 .5), lower
  []
 
 
-Overfull \hbox (51.05652pt too wide) in paragraph at lines 507--507
+Overfull \hbox (51.05652pt too wide) in paragraph at lines 516--516
 []\OT1/cmtt/m/n/10 ## Error in modMCMC(f = R14tCost, p = Fit$par, niter = numbe
 r[]of[]iterations,
  []
 
-Package color Info: Redefining color shadecolor on input line 514.
-Package color Info: Redefining color shadecolor on input line 530.
-[12] [13] [14
+Package color Info: Redefining color shadecolor on input line 523.
+Package color Info: Redefining color shadecolor on input line 539.
+[11] [12] [13
 
 ]
 (/home/mm/SoilR-exp/scripts/vignette_builds/ParameterEstimation-knitr.aux) ) 
 Here is how much of TeX's memory you used:
- 2642 strings out of 492982
- 36157 string characters out of 6134896
- 107184 words of memory out of 5000000
- 6159 multiletter control sequences out of 15000+600000
+ 2646 strings out of 492982
+ 36227 string characters out of 6134896
+ 107223 words of memory out of 5000000
+ 6163 multiletter control sequences out of 15000+600000
  11637 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,25p,688b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -381,10 +381,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt12.pfb>
-Output written on ParameterEstimation-knitr.pdf (14 pages, 253481 bytes).
+Output written on ParameterEstimation-knitr.pdf (13 pages, 253196 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 160 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
