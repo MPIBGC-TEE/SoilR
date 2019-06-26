@@ -1,3 +1,5 @@
+%\VignetteEngine{knitr::knitr} 
+%\VignetteEncoding{UTF-8}
 \documentclass[a4paper]{article}
 %\documentclass[article,nojss]{jss}
 %\VignetteIndexEntry{GeneralModel}
