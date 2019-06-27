@@ -1,3 +1,5 @@
+%\VignetteEngine{knitr::knitr} 
+%\VignetteEncoding{UTF-8}
 \documentclass[a4paper]{article}
 %\documentclass[gmd]{copernicus}
 %\documentclass[article,nojss]{jss}
@@ -44,26 +46,20 @@
 
 <<include=FALSE>>=
 library(knitr)
-opts_chunk$set(
-concordance=TRUE
-)
+opts_chunk$set(concordance=TRUE)
+opts_chunk$set( engine='R')
+opts_chunk$set( tidy=FALSE)
 @
 
 
-<<include=FALSE>>=
-library(knitr)
-opts_chunk$set(
-engine='R'
-)
-@
-
-
-<<include=FALSE>>=
-library(knitr)
-opts_chunk$set(
-tidy=FALSE
-)
-@
+#<<include=FALSE>>=
+#library(knitr)
+#@
+#
+#
+#<<include=FALSE>>=
+#library(knitr)
+#@
 
 
 \section{Introduction}
@@ -75,7 +71,7 @@ Instead, we show firstly, how a thin wrapper function makes a \SoilR model avail
 We present two examples. One is the parameterization of a two-pool model applied to a soil incubation experiment. The other example uses observed radiocarbon data from CO$_2$ measurements conducted at Harvard Forest, USA. 
 
 \section{Example 1: A soil incubation experiment}
-Measurements of evolved CO$_2$ from incubation experiments can provide useful data for parameterizing soil organic matter decomopsition models and identify functionally distinct pools \citep{Schadel}. We present here data from an incubation experiment in which we measured the evolved CO$_2$ from a forest soil. The dataset, {\tt eCO2}, is already included in \SoilR \, and containes data from an incubation experiment with a boreal forest soil. First, we load \SoilR \, into our \R \, session and extract the data from the boreal site into a separate object; column names need to be renamed for consistency with \FME.
+Measurements of evolved CO$_2$ from incubation experiments can provide useful data for parameterizing soil organic matter decomopsition models and identify functionally distinct pools \citep{Schadel}. We present here data from an incubation experiment in which we measured the evolved CO$_2$ from a forest soil. The dataset, {\tt eCO2}, is already included in \SoilR \, and containes data from an incubation experiment with a boreal forest soil. First, we load \SoilR \, into our \R \, session and extract the data from the boreal site into a separate object. To be able to run our simulation we will need the total amount of carbon. 
 
 <<echo=TRUE,results='hide'>>=
 library(SoilR)
@@ -95,6 +91,13 @@ plot(BorealCO2[,1:2], xlab="Days", ylab="Evolved CO2 (mgC g-1
      soil day-1)",ylim=c(0,50))
 arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1], 
        BorealCO2[,2]+BorealCO2[,3],code=3,angle=90,length=0.1)
+#C concentration * 450 g soil
+Ctotal=mean(c(0.04683975, 0.04703255, 0.04687287))*450 
+#Changed units
+BorealCO2=data.frame(
+  time=BorealCO2[,1],
+  BorealCO2[,2:3]*1e-06*Ctotal
+) 
 @
   \caption{Cummulative evolved CO$_2$ from an incubation experiment with a boreal forest soil.}
   \label{fig:eCO2}
@@ -123,28 +126,28 @@ We face several challenges, in particular we have to:
 		not accidentally create a model that breakes mass conservation or produces negative fluxes.
 		\SoilR allows many ways to specify models, including functions whose arguments include matrices whose parameters are \emph{not} independent.
 		Since it allways checks that the specified model is a valid compartmental system, it would actually stop the optimization procedure from trying 
-		unreasonable parameters.)
+		parameters that can not possibly constitute a soil model. We will choose parameterizations that avoid this situation.)
 \end{enumerate}
-We will start with the simplest model that fulfills conditions \enumref{identifiability} and \enumref{independence} and extend it to improve the degree of accuracy until we are either satisfied or more likely can no longer guarantee \enumref{identifiability}.
-Note that the search for accurate and identifyable soil models is an open research question \cite{Sierra2015SBB}. 
-The possible answers are limited only by your igenuity and more severly by the availability of data as the example will demonstrate.
-%If we find a subset of parametes with similar or reverse effects on the model prediction we can not hope to uniquely identify them. 
-%In our example this is indeed the case since for a given set of parameters we can find another symmetric configuration. (Exchange the values of $\gamma_1,k_1,\alpha_{2,1}$ and  $\gamma_2,k_2,\alpha_{1,2}$.) In this light the goal to determine all five parameters appears overly ambitious and the numerical results confirm this. We will therefore have to reduce the number of parameters.
-%To break the symmetrie we remove the flux from pool 2 to pool 1 (represented by the parameter $\alpha_{1,2}$).  Numerical experiments show that this is still too ambitious. The algorithms compute very erratic results and get stuck in  local minima. It turns out that we can estimate only two paramters confidently. We choose the decomposition rate $k_{1}$ of the first pool and  $\alpha_{2,1}$.
-%
-%The model \eqref{Model} is implemented in \SoilR by the function {\tt TwopFeedbackModel}. 
-%We want to find the best set of parameters that fit the data using classical optimization using the \FME \, package \citep{Soetaert}. For this, we need to create a function that takes arbitrary values of the parameters of the model, creates a model in \SoilR, calculates the daily respiration flux, and returns the output consistent with \FME \, requirements. We also need to create a vector of time steps in days and give the total amount of carbon in the soil at the begining of the experiment (soil dry weigh times the average C concentration from three replicates, units in g C). 
-%Furthermore we have to ensure that the parameters tested by the optimization algorithms constitute valid models. 
-The \FME function we want to use is {\tt modFit}. Our first attempt to model the data is a one pool model with a constant decomposition rate k.
+We will start with a simple model that fulfills conditions \enumref{identifiability} 
+and \enumref{independence} and extend it to improve the degree of accuracy 
+until we can no longer guarantee \enumref{identifiability}.
+Note that the search for accurate and identifyable soil models is an open research question. 
+A recent study \cite{Sierra2015SBB} suggests that for the possibilites to uniquely identify parameters from incubation data are severly limited.
+We can usually only hope to identify 2 or maybe 3 parameters.
+Our first attempt to model the data is therefore a very modest one pool model with a constant decomposition rate k.
+The first \FME function that we want to use is {\tt modFit}. A look at its documentation:
 <<tidy=TRUE>>=
-days=seq(0,35)
-#C concentration * 450 g soil
-Ctotal=mean(c(0.04683975, 0.04703255, 0.04687287))*450 
-#Changed units
-BorealCO2=data.frame(
-  time=BorealCO2[,1],
-  BorealCO2[,2:3]*1e-06*Ctotal
-) 
+? modFit
+@
+suggests that we at least have to provide a function {\tt f} to be minimized a vector of start values for the parameters and in our case a lower limit for
+the parameter $k$ since we know that a negative value would create an invalid (not mass conserving) model. 
+The function {\tt f} will be a ``costfunction'' that will actually 
+need to evaluate the model as a function of the parameter(s) at the times where we have data and compare the output to the measured data.
+It will return a vetor of residuals (one entry for every measurement time) possibly weighted by the accuaracy of our data.
+To help us write such a function \FME provides the function {\tt modCost} to create to automatically compare the result of our model run with our data and compute the residuals weghted by the measurement errors if available. 
+We create a function of the parameter(s) that produces the release flux for the times in our dataset.
+<<tidy=TRUE>>=
+
 
 eCO2func=function(pars){
   k1=pars[1]
@@ -152,7 +155,7 @@ eCO2func=function(pars){
   alpha=pars[2]
   gamma=.0001
   mod=TwopFeedbackModel(
-    t=days
+    t=BorealCO2[,'time']
     ,ks=c(k1,k2)
     ,a21=alpha
     ,a12=0

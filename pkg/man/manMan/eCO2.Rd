@@ -9,12 +9,14 @@ A dataset with soil CO2 efflux measurements from a laboratory incubation at cont
 }
 \usage{data(eCO2)}
 \format{
-  A data frame with the following 3 variables.
+  \code{eCO2} is a data frame with the following 3 variables.
   \describe{
     \item{\code{Days}}{A numeric vector with the day of measurement after the experiment started.}
     \item{\code{eCO2mean}}{A numeric vector with the release flux of CO2. Units in ug C g-1 soil day-1.}
     \item{\code{eCO2sd}}{A numeric vector with the standard deviation of the release flux of CO2-C. Units in ug C g-1 soil day-1.}
   }
+  \code{soil_mass} is the mass of the soil in g
+  \code{c_concentrations} is a vector containing the measurement for the concentration of total carbon in the soil.
 }
 \details{
 A laboratory incubation experiment was performed in March 2014 for a period of 35 days under controlled conditions of temperature (15 degrees Celsius), moisture (30 percent soil water content), and oxygen levels (20 percent). Soil CO2 measurements were taken using an automated system for gas sampling connected to an infrared gas analyzer. The soil was sampled at a boreal forest site (Caribou Poker Research Watershed, Alaska, USA). This dataset presents the mean and standard deviation of 4 replicates.
