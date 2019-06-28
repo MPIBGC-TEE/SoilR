@@ -1,20 +1,24 @@
-#
-# vim:set ff=unix expandtab ts=2 sw=2:
+#' Effects of moisture on decomposition rates according to the Candy model
+#' 
+#' Calculates the effects of water content and pore volume on decomposition
+#' rates.
+#' 
+#' 
+#' @param theta A scalar or vector containing values of volumetric soil water
+#' content.
+#' @param PV A scalar or vector containing values of pore volume.
+#' @references J. Bauer, M. Herbst, J.A. Huisman, L. Weiherm\"uller, H.
+#' Vereecken. 2008. Sensitivity of simulated soil heterotrophic respiration to
+#' temperature and moisture reduction functions. Geoderma, Volume 145, Issues
+#' 1-2, 15 May 2008, Pages 17-27.
 fW.Candy<- structure(
-  function #Effects of moisture on decomposition rates according to the Candy model
-  ### Calculates the effects of water content and pore volume on decomposition rates.
-  ##references<< J. Bauer, M. Herbst, J.A. Huisman, L. Weiherm\"uller, H. Vereecken. 2008.
-  ##Sensitivity of simulated soil heterotrophic respiration to temperature and moisture reduction functions.
-  ##Geoderma, Volume 145, Issues 1-2, 15 May 2008, Pages 17-27.
-  
-  (theta,     ##<< A scalar or vector containing values of volumetric soil water content.
-   PV   ##<< A scalar or vector containing values of pore volume.
+  function 
+  (theta,     
+   PV   
   )
   {
-    Mi=theta/PV # Moisture index
-    
+    Mi=theta/PV 
     fw=ifelse(Mi<=0.5, 4*Mi*(1-Mi),1)
-    
     return(fw)
   }
 ,

@@ -1,54 +1,7 @@
-#
-# vim:set ff=unix expandtab ts=2 sw=2:
-#setMethod(
-#   f= "getAccumulatedRelease14",
-#      ### This function integrates the release Flux over time
-#      signature= "Model_14",
-#      definition=function(object){
-#      times=object@times
-#      R=getReleaseFlux14(object)
-#      n=ncol(R)
-#      #transform the array to a list of functions of time by
-#      #intepolating it with splines
-#      if (n==1) {
-#          Rfuns=list(splinefun(times,R))
-#      }
-#      else{
-#        Rfuns=list(splinefun(times,R[,1]))
-#        for (i in 2:n){
-#            Rf=splinefun(times,R[,i])
-#            Rfuns=append(Rfuns,Rf)
-#        }
-#      }
-#      #test=Rfuns[[1]]
-#      #now we can construct the derivative of the respiration as function of time
-#      #as needed by the ode solver
-#      rdot=function(y,t0){
-#           # the simples possible case for an ode solver is that the ode is
-#           # just an integral and does not depend on the value but only on t
-#           # This is the case here
-#           rv=matrix(nrow=n,ncol=1)
-#           for (i in 1:n){
-#               #print(Rfuns[i])
-#               rv[i,1]=Rfuns[[i]](t0)
-#           }
-#           return(rv)
-#      }
-#      sVmat=matrix(0,nrow=n,ncol=1)
-#      Y=solver(object@times,rdot,sVmat,object@solverfunc)
-#      #### A matrix. Every column represents a pool and every row a point in time
-#      return(Y)
-#   }
-#)
-
-correctnessOfModel14=function#check for unreasonable input parameters to constructor
-### The parameters used by the function \code{\link{GeneralModel_14}} in SoilR have a physical meaning, 
-### and can therefore not be arbitrary.
-### This functions tests some of the obvious constraints 14C specific issues.
-(object ##<< the object to be tested
+correctnessOfModel14=function
+(object 
 )
 {
-# check only the Model14 specific issues since initialize calls validObject which in turn calls the validity methods of the parent classes
 t_min=min(object@times)
 t_max=max(object@times)
 atm_c14 <- object@c14Fraction
@@ -61,118 +14,27 @@ tA_max=getTimeRange(atm_c14)["t_max"]
         stop(simpleError(sprintf("You ordered a timeinterval that ends later (tmax=%s) than the interval your  your atmospheric 14C fraction is defined for (tA_max=%s). \n Have look at the object or the data it is created from",t_max,tA_max)))
     }
 }
-
-#------------------------------------------------------------------------------------
-### This class  extends \code{\linkS4class{Model}}, 
-### to represent \eqn{^{14}C}{14C} decay. 
-### \enumerate{
-###  \item 
-###  \itemize{
-###   \item As \code{\linkS4class{Model}} it contains all the components 
-###     that are needed to solve the
-###     initial value problem for the pool contents \eqn{\vec{C}}{C=(C_1,...C_n)^t}. 
-###   \item It adds the components that are needed to solve the
-###   additional initial value problem for the \eqn{^{14}C}{14C} contents of the pools
-###   \eqn{\vec{^{14}C}}{14C=(14C_1,...,14C_n)^t}. 
-###  } 
-###  \item 
-###  \itemize{
-###   \item 
-###   It provides the single argument for all the functions 
-###   that are available for an argument of class \code{\linkS4class{Model}}.
-###   \item 
-###   and for additional functions 
-###   that are available to compute various results from the solution of the additional 
-###   initial value problem for \eqn{^{14}C}{14C}. 
-###   (See subsection \code{Methods} and the examples.)
-###  }
-###}
-setClass(# Model_14
+setClass(
     Class="Model_14",
     contains="Model",
     representation=representation(
-        #"Model",                          
         c14Fraction="BoundFc",
         c14DecayRate="numeric",
         initialValF="ConstFc"
     ) , 
-    validity=correctnessOfModel14 #set the validating function
-    ##details<<
-    ##    The original initial value problem for \eqn{\vec{C}}{(C_1,...,C_n)^t)} as decribed in the docomentation of the superclass \code{\linkS4class{Model}}
-    ##    was given by:
-    ## \itemize{
-    ##   \item
-    ##    \eqn{ \frac{d \mathbf{C}(t)}{dt} = \mathbf{I}(t) + \mathbf{A}(t) \mathbf{C}(t)}{dC(t)/dt = I(t) + A(t)C(t) } 
-    ##   \item
-    ##     the initial Values \eqn{\vec{C}_0=\vec{C}(t_0)}{C_0=C(t_0)} 
-    ##   \item 
-    ##     for the times \eqn{\{t_0,....t_m\}}{{t_0,....,t_m}}.
-    ##  }
-    ##The additional initial value problem for \eqn{^{14}C}{14C} is represented by additional parameters:
-    ## \itemize{
-    ##   \item
-    ##    a second ordinary differential equation:
-    ##    \deqn{\frac{d ^{14} \mathbf{C}(t)}{dt} = F(t) \mathbf{I}(t) + \mathbf{A}(t) ^{14} \mathbf{C}(t)-k_{14}\; ^{14}\mathbf{C}(t) }{d 14C/dt = F(t) I(t) + A(t)C(t)-k_14 C(t)} 
-    ##    with initial values \eqn{^{14}\mathbf{C}_0=F_0 \mathbf{C}_0}{14C_0=F_0 C_0} with:
-    ##      \item
-    ##        the time dependent \eqn{^{14}C}{14C} fraction \eqn{F(t)}{F(t)}, 
-    ##      \item
-    ##        the constant \eqn{^{14}C}{14C} fraction of the initial pool contents \eqn{F_0}{F_0},
-    ##      \item
-    ##        the \eqn{^{14}C}{14C} decay rate \eqn{k_{14}}{k_14}.
-    ## }
-    ## In an object of class \code{\linkS4class{Model_14}}  the components are represented as follows:
-    ## \itemize{
-    ##   \item
-    ##   The time-dependent matrix valued function \eqn{\vec{A}(t)}{A(t)} is represented by an object 
-    ##   of a subclass of \code{\linkS4class{DecompOp}} (for decomposition operator). 
-    ##   Such objects can be created in different ways from functions, matrices or data. 
-    ##   (see the subclasses of \code{\linkS4class{DecompOp}} and especially their \code{Constructors} sections.  
-    ##   and the \code{examples} section of this help page.
-    ##   \item 
-    ##   The vector-valued time-dependent function \eqn{\vec{I}(t)}{I(t)} is in SoilR represented by an object of a subclass of class \code{\linkS4class{InFlux}}. 
-    ##   Such objects can also be created from functions, constant vectors and data. 
-    ##   (see the subclasses of \code{\linkS4class{InFlux}} and especially their \code{Constructors} sections.  
-    ##   \item 
-    ##   The initial values for \eqn{\mathbf{C}_0}{C} are represented by a numeric vector 
-    ##   \item 
-    ##   The value for the \eqn{^{14}\mathbf{C}}{14C} fraction of the initial \eqn{\mathbf{C}}{C} 
-    ##   is represented as an object of class \linkS4class{ConstFc} which is
-    ##   a subclass of \code{\linkS4class{Fc}} representing the \eqn{^{14}C}{14C} fraction \eqn{F}{F} and its unit. 
-    ##   (Either "Delta14C" or "afn" for Absolute Fraction Normal)
-    ##   \item 
-    ##   The value for the \eqn{^{14}\mathbf{C}}{14C} fraction of the input \eqn{\mathbf{I}(t)}{I(t)} is also represented
-    ##   as an object of a subclass of \code{\linkS4class{Fc}}. It can be time dependent or constant.
-    ## }
+    validity=correctnessOfModel14 
 )
-#-------------------------------Constructors -----------------------------------------------------
 setMethod(
     f="initialize",
     signature=c("Model_14"),
-    definition=function #An internal constructor for \code{Model_14} objects not recommended to be used directly in user code.
-    ### This method implements R's initialize generic for objects of class \code{Model_14} and is not intended as part of the public interface to SoilR. 
-    ### It may change in the future as the classes implementing SoilR may
-    ### It is called whenever a new object of this class is created by a call to \code{new} with the first argument \code{Model_14}.
-    ### It performs some sanity checks of its arguments and in case those tests pass returns an object of class \code{Model_14} 
-    ### The checks can be turned off.( see arguments)
-
-    ##details<<  Due to the mechanism of S4 object initialization (package "methods")
-    ## \code{new} always calls \code{initialize}. 
-    ## (see the help pages for initialize and initialize-methods for details)  
-    
-    ## All other constructors of class \code{Model_14} have to call \code{new("Model_14,..) at some point and thus call this method indirectly. 
-    ## Accordingly this method is the place to perform those checks \emph{all} objects of class \code{Model_14} should pass.
-    ## Some of those checks are explained in the examples below.
-    ## In some (rare) circumstances it might be necessary to override the checks and force the object to be created 
-    ## although it does not seem meaningfull to the internal sanity checks. 
-    ## You can use the "pass" argument to enforce this.
+    definition=function 
     (
-        .Object,              ##<< the Model_14 object itself
-        times=c(0,1),         ##<< The points in time where the solution is sought 
-        mat=ConstLinDecompOp(matrix(nrow=1,ncol=1,0)),##<< A decomposition Operator of some kind 
+        .Object,              
+        times=c(0,1),         
+        mat=ConstLinDecompOp(matrix(nrow=1,ncol=1,0)),
         initialValues=numeric()
         ,
-        initialValF=ConstFc(values=c(0),format="Delta14C")      ##<< An object of class ConstFc containing a vector with the initial values of the radiocarbon fraction for each pool and a format string describing in which format the values are given.
+        initialValF=ConstFc(values=c(0),format="Delta14C")      
         ,
         inputFluxes= BoundInFlux(
             function(t){
@@ -188,7 +50,7 @@ setMethod(
             },
             0,
             1
-        )   ##<< A BoundFc object consisting of  a function describing the fraction of C_14 in per mille.
+        )   
         ,
         c14DecayRate=0
         ,
@@ -200,181 +62,285 @@ setMethod(
         .Object@initialValF=initialValF
         .Object@c14Fraction=c14Fraction
         .Object@c14DecayRate=c14DecayRate
-        if (pass==FALSE) validObject(.Object) #call of the ispector if not explicitly disabled (This will automatically call the inspectors of the superclasses and also correctnessOfModel14 since this function is 
+        if (pass==FALSE) validObject(.Object) 
         return(.Object)
     }
 )
-#------------------------------------------------------------------------------------
-Model_14 <- function #general  constructor for class Model_14
-  ### This method tries to create an object from any combination of arguments 
-  ### that can be converted into  the required set of building blocks for the Model_14
-  ### for n arbitrarily connected pools.
-  
-  (t,			##<< A vector containing the points in time where the solution is sought.
-   A,			##<< something that can be converted by \link{GeneralDecompOp} to any of the available subclasses of \code{\linkS4class{DecompOp}}. 
-   ivList,		##<< A vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by an internal  function. 
-   initialValF, ##<< An object equal or equivalent to class ConstFc containing a vector with the initial values of the radiocarbon fraction for each pool and a format string describing in which format the values are given.
-   inputFluxes, ##<<  something that can be converted by \link{InFlux} to any of the available subclasses of \linkS4class{InFlux}.
-   inputFc,##<< An object describing the fraction of C_14 in per mille (different formats are possible)
-   c14DecayRate =-0.0001209681 ,  ##<< the rate at which C_14 decays radioactivly. If you don't provide a value here we assume the following value: k=-0.0001209681 y^-1 . This has the side effect that all your time related data are treated as if the time unit was year. Thus beside time itself it also  affects decay rates the inputrates and the output 
-   solverfunc=deSolve.lsoda.wrapper,		##<< The function used by to actually solve the ODE system. This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided function with the same interface. 
-   pass=FALSE  ##<< Forces the constructor to create the model even if it is invalid 
+
+
+
+
+
+
+#' general constructor for class Model_14
+#' 
+#' This method tries to create an object from any combination of arguments that
+#' can be converted into the required set of building blocks for the Model_14
+#' for n arbitrarily connected pools.
+#' 
+#' 
+#' @param t A vector containing the points in time where the solution is
+#' sought.
+#' @param A something that can be converted by \link{GeneralDecompOp} to any of
+#' the available subclasses of \code{\linkS4class{DecompOp}}.
+#' @param ivList A vector containing the initial amount of carbon for the n
+#' pools. The length of this vector is equal to the number of pools and thus
+#' equal to the length of k. This is checked by an internal function.
+#' @param initialValF An object equal or equivalent to class ConstFc containing
+#' a vector with the initial values of the radiocarbon fraction for each pool
+#' and a format string describing in which format the values are given.
+#' @param inputFluxes something that can be converted by \link{GeneralInFlux}
+#' to any of the available subclasses of \linkS4class{InFlux}.
+#' @param inputFc An object describing the fraction of C_14 in per mille
+#' (different formats are possible)
+#' @param c14DecayRate the rate at which C_14 decays radioactivly. If you don't
+#' provide a value here we assume the following value: k=-0.0001209681 y^-1 .
+#' This has the side effect that all your time related data are treated as if
+#' the time unit was year. Thus beside time itself it also affects decay rates
+#' the inputrates and the output
+#' @param solverfunc The function used by to actually solve the ODE system.
+#' This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided
+#' function with the same interface.
+#' @param pass Forces the constructor to create the model even if it is invalid
+#' @return A model object that can be further queried.
+#' @seealso \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}},
+#' \code{\link{TwopFeedbackModel}}
+#' @examples
+#' # examples from external files
+#' # inst/tests/requireSoilR/runit.all.possible.Model.arguments.R test.all.possible.Model.arguments:
+#' 
+#'   # This example shows different kinds of arguments to the function Model.
+#'   # The model objects we will build will share some common features.
+#'   #  - two pools 
+#'   #  - initial values 
+#' 
+#'        iv<-  c(5,6)
+#' 
+#'   #  - times 
+#' 
+#'        times <- seq(1,10,by=0.1)
+#' 
+#'   # The other parameters A and inputFluxes will be different
+#'   # The function Model will transform these arguments 
+#'   # into objects of the classes required by the internal constructor.
+#'   # This leads to a number of possible argument types. 
+#'   # We demonstrate some of the possibilities here.
+#'   # Let us first look at the choeices for argument 'A'.
+#'   
+#'   #) 
+#'   possibleAs  <- example.2DGeneralDecompOpArgs()
+#'   
+#'   # Since "Model" will call "GeneralInFlux" on its "inputFluxes" 
+#'   # argument there are again different choices
+#'   # we have included a function in SoilR that produces 2D examples
+#'   
+#'   possibleInfluxes <- example.2DInFlux.Args()
+#'  print(possibleInfluxes$I.vec)
+#'   # We can build a lot of  models from the possible combinations
+#'   # for instance   
+#'   #m1 <- Model(
+#'   #        t=times,
+#'   #        A=matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2)),
+#'   #        ivList=iv,
+#'   #        inputFluxes=possibleInfluxes$I.vec) 
+#'   ## We now produce that all combinations of As and InputFluxes
+#'   combinations <- listProduct(possibleAs,possibleInfluxes)
+#'   print(length(combinations))
+#'   # an a Model for each
+#'   models <- lapply(
+#'               combinations,
+#'               function(combi){
+#'                 #Model(t=times,A=combi$A,ivList=iv,inputFluxes=combi$I)
+#'                 Model(t=times,A=combi[[1]],ivList=iv,inputFluxes=combi[[2]])
+#'               }
+#'             )
+#'   ## lets check that we can compute something# 
+#'   lapply(models,getC)
+#' 
+#' # inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit:
+#' 
+#'   # This example describes the creation and use of a Model object that 
+#'   # is defined by time dependent functions for decomposition and influx.
+#'   # The constructor of the Model-class  (see  ?Model) 
+#'   # works for different combinations of 
+#'   # arguments.
+#'   # Although Model (the constructor function for objects of this class 
+#'   # accepts many many more convienient kinds of arguments,
+#'   # we will in this example call the constructor whith arguments which 
+#'   # are of the same type as one of hte current internal 
+#'   # representations in the 
+#'   # Model object and create these arguments explicitly beforehand 
+#'   # to demonstrate the approach with the most flexibility.
+#'   # We start with the Decomposition Operator.
+#'   # For this example we assume that we are able to describe the
+#'   # decomposition ofperator  by explicit R functions that are valid 
+#'   # for a finite time interval.
+#'   # Therefore we choose the appropriate  sub class BoundLinDecompOp
+#'   # of DecompOp explicitly.  (see ?'BoundLinDecompOp-class') 
+#'   A=BoundLinDecompOp(
+#'     ## We call the generic constructor (see ?BoundLindDcompOp) 
+#'     ## which has a method  
+#'     ## that takes a matrix-valued function of time as its first argument.
+#'     ## (Although Model accepts time series data directly and 
+#'     ## will derive the internally used interpolating for you, 
+#'     ## the function argument could for instance represent the result
+#'     ## of a very sophisticated interpolation performed by yourself)
+#'     function(t){
+#'       matrix(nrow=3,ncol=3,byrow=TRUE,
+#'          c(
+#'            -1,    0,        0,
+#'           0.5,   -2,        0,
+#'             0,    1, sin(t)-1 
+#'         )
+#'       )    
+#'     },
+#'     ## The other two arguments describe the time interval where the 
+#'     ## function is valid (the domain of the function)
+#'     ## The interval will be checked against the domain of the InFlux
+#'     ## argument of Model and against its 't' argument to avoid 
+#'     ## invalid computations outside the domain. 
+#'     ## (Inf and -Inf are possible values, but should only be used 
+#'     ## if the function is really valid for all times, which is 
+#'     ## especially untrue for functions resulting from interpolations,
+#'     ## which are usually extremely misleading for arguments outside the 
+#'     ## domain covered by the data that has been used for the interpolation.)
+#'     ## This is a safety net against wrong results origination from unitendet EXTRApolation )
+#'     starttime=0,
+#'     endtime=20
+#'   )  
+#'   I=BoundInFlux(
+#'      ## The first argument is a vector-valued function of time
+#'      function(t){
+#'        matrix(nrow=3,ncol=1,byrow=TRUE,
+#'            c(-1,    0,    0)
+#'        )
+#'      },
+#'      ## The other two arguments describe the time interval where the 
+#'      ## function is valid (the domain of the function)
+#'      starttime=0,
+#'      endtime=40
+#'   )
+#'   ## No we specify the points in time where we want 
+#'   ## to compute results
+#'   t_start=0 
+#'   t_end=10 
+#'   tn=50
+#'   timestep <- (t_end-t_start)/tn 
+#'   times <- seq(t_start,t_end,timestep) 
+#'   ## and the start values
+#'   sv=c(0,0,0)
+#'   mod=Model(t=times,A,sv,I)
+#' 
+#'   ## No we use the model to compute some results
+#'   getC(mod)
+#'   getReleaseFlux(mod)
+#'   #also look at the methods section of Model-class 
+#' 
+Model_14 <- function 
+  (t,			
+   A,			
+   ivList,		
+   initialValF, 
+   inputFluxes, 
+   inputFc,
+   c14DecayRate =-0.0001209681 ,  
+   solverfunc=deSolve.lsoda.wrapper,		
+   pass=FALSE  
    )
   {
      obj=new(Class="Model_14",t,GeneralDecompOp(A),ivList, initialValF,InFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=solverfunc,pass=pass)
      return(obj)
-     ### A model object that can be further queried. 
-     ##seealso<< \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}}, \code{\link{TwopFeedbackModel}} 
-     
-     ##exampleFunctionsFromFiles<< 
-     ## inst/tests/requireSoilR/runit.all.possible.Model.arguments.R test.all.possible.Model.arguments
-     ## inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit 
   }
-#------------------------------------------------------------------------------------
 setMethod(
    f= "getC14",
       signature= "Model_14",
       definition=function(object){
-      ### This function computes the value for \eqn{^{14}C}{14C} (mass or concentration ) as function of time
       ns=length(object@initialValues)
-      #get the coefficient matrix TimeMap 
       Atm=object@mat
       A=getFunctionDefinition(Atm)
-      # add the C14 decay to the matrix which is done by a diagonal matrix which does not vary over time
-      # as default we assume a half life of th=5730 years
       k=object@c14DecayRate
-      m=diag(rep(k,ns),nrow=ns) # Need to specify the dimension of the matrix otherwise doesn't work for n=1.
+      m=diag(rep(k,ns),nrow=ns) 
       A_C14=function(t){
           Aorg=A(t)
           newA=Aorg+m
           return(newA)
       }
-      #get the Inputrate TimeMap 
       itm   <- object@inputFluxes
       input <- getFunctionDefinition(itm)
-      #get the C14 fraction 
       Fctm  <- object@c14Fraction
       F0    <- object@initialValF
-      # To do the computations we have to convert the atmospheric C14 fraction into 
-      # a format that ensures that no negative values occur because this is assumed
-      # by the algorithms that will blow up the solution if this assumption is not 
-      # justified.
-      # To this end we convert everything else to the "Absolute Fraction Modern" format
-      # that ensures positive values
       Fctm  <- AbsoluteFractionModern(Fctm)
       F0    <- AbsoluteFractionModern(F0)
-      
       Fc=getFunctionDefinition(Fctm)
       input_C14=function(t){
-          #we compute the C14 fraction of the input
           return(Fc(t)*input(t))
       }
       ydot=NpYdot(A_C14,input_C14)
-      #the initial Values have to be adopted also because
-      #in the following computation they describe the intial amount of C_14
-      #To do so we multiply them with the value of Fc at the begin of the computation 
       inivals=getValues(F0)
-      
-      sVmat=matrix(inivals*object@initialValues,nrow=ns,ncol=1) # We use here the Hadarmard (entry-wise) product instead of matrix multiplication. It works for both 
-      # cases where F0 is a scalar of vector
+      sVmat=matrix(inivals*object@initialValues,nrow=ns,ncol=1) 
       Y=solver(object@times,ydot,sVmat,object@solverfunc) 
-      ### A matrix. Every column represents a pool and every row a point in time
       return(Y)
    }
 )
 setMethod(
    f= "getF14",
       signature= "Model_14",
-      definition=function #radiocarbon
-      ### Calculates the radiocarbon fraction for each pool at each time step.
-      ### 
+      definition=function 
       (
-      object ##<< The model 
+      object 
       ){
-      C=getC(object) ### we use the C here
-      C14=getC14(object) ### we use the C14 here
+      C=getC(object) 
+      C14=getC14(object) 
       fr=C14/C
-      ##<< description  since the result is always in AbsoluteFractionModern we have to convert it to Delta14C
       fr=Delta14C_from_AbsoluteFractionModern(fr)
       return(fr)
-      ### A matrix of dimension n x m; i.e. n time steps as rows and m pools as columns.
    }
 )
 setMethod(
    f= "getReleaseFlux14",
       signature= "Model_14",
-      definition=function # 14C respiration rate for all pools 
-      ### 
-      ### The function computes the \eqn{^{14}C}{14C} release flux ( mass per time ) for all pools.
-      ### Note that the respiration coefficients for \eqn{^{14}C}{14C} 
-      ### do not change in comparison to the total C case.
-      ### The fraction of \eqn{^{14}C}{14C} lost by respiration 
-      ### is not greater for \eqn{^{14}C}{14C} 
-      ### although the decay is faster due to the contribution of radioactivity.
+      definition=function 
       (
-        object ##<< the model.
+        object 
       )
       {
-      C14=getC14(object) ### we use the C14 here
+      C14=getC14(object) 
       times=object@times
       Atm=object@mat
       A=getFunctionDefinition(Atm)
       n=length(object@initialValues)
-      #print(n)
       rfunc=RespirationCoefficients(A)
-      #rfunc is vector valued function of time
       if (n==1) { r=matrix(ncol=n,sapply(times,rfunc))}
       else {r=t(sapply(times,rfunc))}
-      #print("dim(r)=")
-      #print(dim(r))
       R=r*C14
-      # now compute the sum of every row
-      
-
-      ### A matrix. Every column represents a pool and every row a point in time
       return(R)
    }
 )
-
-
-#Added by C. Sierra, 28/4/2012
 setMethod(
   f= "getF14R",
   signature= "Model_14",
-  definition=function # average radiocarbon fraction weighted by carbonrelease 
-    ### Calculates the average radiocarbon fraction weighted by the amount of carbon release at each time step. 
+  definition=function 
     (
-     object ##<< an object
-
+     object 
      ){
-    R=getReleaseFlux(object) ### we use the C14 here
-    R14=getReleaseFlux14(object) ### we use the C14 here
+    R=getReleaseFlux(object) 
+    R14=getReleaseFlux14(object) 
     fr=rowSums(R14)/rowSums(R)
-    ##description<<  \eqn{\overline{F_R}=\frac{\sum_{i=1}^{n}{^{14}R_i}}{\sum_{i=1}^{n}{R_i}}}{(14R_1(t)+...+14R_n(t)) )/(R_1(t)+...R_n(t)))}
-    ##description<< Where \eqn{^{14}R_i(t)}{14R_i(t)} is the time dependent release of \eqn{^{14}C}{14C} of pool \eqn{i} and \eqn{R_i(t)}{R_i(t)} the release of all carbon isotops of pool \eqn{i}.   
-    ##description<< Since the result is always in Absolute Fraction Modern format wie have to convert it to Delta14C
     fr=Delta14C_from_AbsoluteFractionModern(fr)
-    #print(dim(C))
     return(fr)
-    ### A vector  of length n with the value of \eqn{\overline{F_R}}{FR} for each time step.
   }
   )
 setMethod(
   f= "getF14C",
   signature= "Model_14",
-  definition=function# read access to the models F14C variable 
-  ### The model was created with a F14C object to describe the atmospheric 14C content. This method serves to investigate those settings from the model.
+  definition=function
   (
   object
-  ### a Model_14 object
   ){
-    C=getC(object) ### we use the C14 here
-    C14=getC14(object) ### we use the C14 here
+    C=getC(object) 
+    C14=getC14(object) 
     fr=rowSums(C14)/rowSums(C)
     fr=Delta14C_from_AbsoluteFractionModern(fr)
-    #print(dim(C))
-    ### A matrix. Every column represents a pool and every row a point in time
     return(fr)
   }
   )
-

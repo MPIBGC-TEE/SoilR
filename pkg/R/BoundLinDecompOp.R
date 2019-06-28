@@ -1,7 +1,4 @@
-#
-# vim:set ff=unix expandtab ts=2 sw=2:
-
-setClass(# a decomposition operator described by a matrix valued function of time
+setClass(
     Class="BoundLinDecompOp",
     contains=c("DecompOp","TimeMap"),   
    )
@@ -16,40 +13,28 @@ correctnessOfBoundDecompOp <- function(obj){
   if (valDims[[1]]!=valDims[[2]]){
     stop(sprintf('The function must return a quadratic object (qudratic Matrix). Your input leads to a function that return an object with dim(object)=%s',valDims))}
 }
-############################constructors####################
 setMethod(
       f="BoundLinDecompOp",
       signature=c(map="UnBoundLinDecompOp"),
-      ### The method creates a BoundLinDecompOp consisting of a constant time dependent function 
-      ### and the limits of its domain (starttime and endtime) set to -Inf and Inf respectively
-      definition=function # convert a UnBoundLinDecompOp to a BoundLinDecompOp
+      definition=function 
       (map,
-       starttime=-Inf, ##<< the left hand boundary of the valid time interval
-       endtime=Inf   ##<< the right hand boundary of the valid time interval
+       starttime=-Inf, 
+       endtime=Inf   
        ){
       f=getFunctionDefinition(map)
       return(BoundLinDecompOp(map=f,starttime,endtime))
      }
 )
-#---------------------------------------------------------------------
 setMethod(
       f="BoundLinDecompOp",
       signature=signature(map="ANY"),
-      definition=function # a constructor 
-  ### Creates a BoundLinDecompOp Object. 
+      definition=function 
   (
-    map, ##<< passed on to TimeMap
-    ...  ##<< passed on to TimeMap
+    map, 
+    ...  
   ){
-    ##<<details
-    ##The function  will first call \code{\link{TimeMap}} on its arguments
-    ##which means that it can handle the same combinations of parameters. 
-    ##The TimeMap object thus created might be further examined.
-    ##It will only be accepted if the function defined by the TimeMap 
-    ##object has quadratic matrices as values and is compartmental.
     tm <- TimeMap(map,...)
     obj <- as(tm,"BoundLinDecompOp")
     return(obj)
-    ### A BoundLindDecompOp object.
   }
 )

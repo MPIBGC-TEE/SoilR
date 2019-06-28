@@ -1,8 +1,4 @@
-#
-# vim:set ff=unix expandtab ts=2 sw=2:
-#correctnessOfDecompOp=function(object){ A=object@mat}
-  
-setClass(# constant decomposition operator 
+setClass(
     Class="UnBoundLinDecompOp",
     contains=c("DecompOp"),
     slots=list( matFunc="function")
@@ -10,24 +6,17 @@ setClass(# constant decomposition operator
 setMethod(
      f="initialize",
      signature="UnBoundLinDecompOp",
-     definition=function #internal constructor 
-     ### This mehtod is intendet to be used internally. It may change in the future.
-     ### For user code it is recommended to use one of the generic constructor \code{UnBoundLinDecompOp} instead.
+     definition=function 
      (.Object,matFunc=function(){})
      {
         .Object@matFunc=matFunc
      return(.Object)
      }
 )
-############################constructors####################
 setMethod(
       f="UnBoundLinDecompOp",
-      ### 
       signature=c(matFunc="function"),
-      definition=function # construct from matrix valued function
-      ### This method creates a UnBoundLinDecompOp from a matrix
-      ### The operator is assumed to act on the vector of carbon stocks
-      ### by multiplication of the (time dependent) matrix from the left.
+      definition=function 
       (matFunc){
         mat <- matFunc(0)
         r <- nrow(mat)
@@ -38,13 +27,10 @@ setMethod(
       return(new("UnBoundLinDecompOp",matFunc=matFunc))
      }
 )
-
-############################methods####################
 setMethod(
     f="getFunctionDefinition",
     signature="UnBoundLinDecompOp",
-    definition=function # creates a constant timedependent function and returns it
-      ### The method creates a timedependent function from the existing matrix describing the operator 
+    definition=function 
     (object){
       return(object@matFunc)
     }
@@ -52,9 +38,7 @@ setMethod(
 setMethod(
     f="getTimeRange",
     signature="UnBoundLinDecompOp",
-    definition=function # return an (infinite) time range since the function is assumed to be valid for all times
-    ### some functions dealing with DecompOps in general rely on this
-    ### so we have to implement it even though the timerange is always the same: (-inf,inf)
+    definition=function 
     (object)
     {
         return( c("t_min"=-Inf,"t_max"=Inf))

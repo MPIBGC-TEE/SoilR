@@ -1,12 +1,10 @@
-
-# vim:set ff=unix ts=2 sw=2:
-### An example used in tests and other examples.
-example.Time3DArrayList<- function # create an example TimeFrame from 3D array
+#' create an example TimeFrame from 3D array
+#' 
+#' An example used in tests and other examples.
+#' 
+#' 
+example.Time3DArrayList<- function 
 (){
-# We could also imagine time series data stored in an array consisting of
-	# many stacked matrices, one for each ti`me step.
-	# Let us sythesize such a dataset:
-
 	times <- seq(1,10,by=.1)
 	a <- array(dim=c(2,2,length(times)))
 	a[1,1,] <- -0.1 *(sin(times)+1.1)

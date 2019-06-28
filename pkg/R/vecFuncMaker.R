@@ -1,11 +1,8 @@
-#
-# vim:set ff=unix expandtab ts=2 sw=2:
-vecFuncMaker=function# creates a vector valued function from the functions for the components
-### The function is a helper to create a vector valued function of two arguments which is very useful to create systems of ode
+vecFuncMaker=function
 (
-funcs,	##<< The list of functions computing the vector components
-arg1,   ##<< The first argument of the component functions
-arg2	##<< The second argument of the component functions
+funcs,	
+arg1,   
+arg2	
 )
 {
 	function(arg1,arg2){
@@ -17,6 +14,4 @@ arg2	##<< The second argument of the component functions
 			)
 		)
 	}
-	### A vector valued function with the vector size equal to the number of 
-	### functions in the first argument
 }

@@ -1,8 +1,11 @@
-
-# vim:set ff=unix ts=2 sw=2:
-### Create a 2-dimensionsonal example of a BoundInFlux object
+#' example.2DBoundInFluxFromFunction
+#' 
+#' Create a 2-dimensionsonal example of a BoundInFlux object
+#' 
+#' 
+#' @return The returned object represents a time dependent Influx into a two
+#' pool model.
 example.2DBoundInFluxFromFunction <- function
-# 2D finite time linear influx examplex
 (){
 	BoundInFlux(
 		function(t){
@@ -14,7 +17,4 @@ example.2DBoundInFluxFromFunction <- function
 		0,
 		10
 	)
-	### The returned object represents a time dependent Influx into 
-	### a two pool model.
 }
-

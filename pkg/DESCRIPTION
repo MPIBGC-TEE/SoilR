@@ -1,6 +1,6 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.1-76
+Version: 1.1-77
 Date: 2017-05-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
@@ -11,7 +11,7 @@ Depends: deSolve,methods,parallel,expm,RUnit,sets
 Suggests: FME,lattice,MASS,knitr
 LazyData: TRUE
 VignetteBuilder: knitr
-Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
+Collate:pkg-package.R setGlobalVariables.R setOldClasses.R genericFunctions.R
         PoolIndex.R PoolTarget.R PoolSource.R PoolConnection.R
         ConstantOutFluxRate.R ConstantInternalFluxRate.R Fc.R
         HelperFunctions.R TimeMap.R InFlux.R BoundInFlux.R
@@ -51,3 +51,5 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         TwopParallelModel.R TwopParallelModel14.R TwopSeriesModel.R
         TwopSeriesModel14.R vecFuncMaker.R warnings.R Yasso07Model.R
         YassoModel.R
+RoxygenNote: 6.1.1.9000
+Encoding: UTF-8

@@ -3,7 +3,6 @@ setClass(
   contains="PoolConnection",
   slots=c(rate_constant='numeric')
 )
-# constructors
 setMethod(
   f="ConstantInternalFluxRate",
   signature=c(source='numeric',destination='numeric',src_to_dest='missing',rate_constant='numeric'),
@@ -27,7 +26,6 @@ setMethod(
   def=function(src_to_dest,rate_constant){
     source<-getSender(src_to_dest)
     destination<-getRecipient(src_to_dest)
-    # call the main constructor
     return(ConstantInternalFluxRate(source=source,destination=destination,rate_constant=rate_constant))
   }
 )

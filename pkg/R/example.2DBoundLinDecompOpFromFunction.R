@@ -1,10 +1,9 @@
-
-# vim:set ff=unix ts=2 sw=2:
+#' example.2DBoundLinDecompOpFromFunction
+#' 
+#' An example used in tests and other examples.
+#' 
+#' 
 example.2DBoundLinDecompOpFromFunction <- function (){
-	### An example used in tests and other examples.
-	# The constructor BoundLinDecompOp has several Methods.
-	# A single Matrix can describe a constant linear decomposition operator.
-	# If the matrix varies with time it becomes a matrix valued function of time
 	matFunc<- function(t){
 		matrix(
 			nrow=2,
@@ -15,7 +14,5 @@ example.2DBoundLinDecompOpFromFunction <- function (){
 			)
 		)
 	}
-	# which is valid on a certain interval of time.
-
 	return(BoundLinDecompOp(matFunc,0,10))
 }

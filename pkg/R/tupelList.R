@@ -1,6 +1,3 @@
-
-# vim:set ff=unix ts=2 sw=2:
-### This is a recursive function which creates all the indextupels in a multidimensional array or matrix
 tupels<- function(dims){
 		n <- length(dims)
 		lastDimIndeces <-  1:dims[[n]]
@@ -18,5 +15,4 @@ tupels<- function(dims){
 		}	
 		return(tupels)
 }
-
 test <- tupels(c(2,3,4))
