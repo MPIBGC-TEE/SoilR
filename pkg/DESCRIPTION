@@ -1,6 +1,6 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.1-77
+Version: 1.1-78
 Date: 2017-05-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
@@ -11,13 +11,13 @@ Depends: deSolve,methods,parallel,expm,RUnit,sets
 Suggests: FME,lattice,MASS,knitr
 LazyData: TRUE
 VignetteBuilder: knitr
-Collate:pkg-package.R setGlobalVariables.R setOldClasses.R genericFunctions.R
-        PoolIndex.R PoolTarget.R PoolSource.R PoolConnection.R
-        ConstantOutFluxRate.R ConstantInternalFluxRate.R Fc.R
-        HelperFunctions.R TimeMap.R InFlux.R BoundInFlux.R
-        ConstInFlux.R deSolve.lsoda.wrapper.R RespirationCoefficients.R
-        TransportDecompositionOperator.R NlModel.R
-        SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
+Collate: pkg-package.R setGlobalVariables.R setOldClasses.R
+        genericFunctions.R PoolIndex.R PoolTarget.R PoolSource.R
+        PoolConnection.R ConstantOutFluxRate.R
+        ConstantInternalFluxRate.R Fc.R HelperFunctions.R TimeMap.R
+        InFlux.R BoundInFlux.R ConstInFlux.R deSolve.lsoda.wrapper.R
+        RespirationCoefficients.R TransportDecompositionOperator.R
+        NlModel.R SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
         UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R
         DecompositionOperator_deprecated_in_1.2.R Model.R AWBmodel.R
         bacwaveModel.R bind.C14curves.R BoundFc.R CenturyModel.R

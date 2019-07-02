@@ -1,9 +1,11 @@
 #!/usr/bin/Rscript
+require('SoilR')
 require('pkgload')
 pkgDir=file.path('..','..','pkg')
+
 trunks=c('ParameterEstimation-knitr')
 
-pkgload::load_all(pkgDir)
+#pkgload::load_all(pkgDir)
 require('knitr')
 for (t in trunks){
   texfileName=file.path(paste(t,'tex',sep='.'))

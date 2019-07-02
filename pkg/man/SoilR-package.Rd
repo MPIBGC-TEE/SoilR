@@ -9,12 +9,8 @@
 The package allows you to study compartmental Soil models.
 }
 \details{
-The typical workflow consists of the following steps: 
-\itemize{ 
-    \item Create a model 
-    \item Inspect it 
-} 
-The simplest way of creating a model is to use one
+The typical workflow consists of the following steps: \itemize{ \itemCreate
+a model \itemInspect it } The simplest way of creating a model is to use one
 of the top level functions for predefined models:
 \code{\link{predefinedModels}}. \cr The objects returned by these functions
 can be of different type, usually either \code{Model} or \code{Model14}.  To
