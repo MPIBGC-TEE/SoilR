@@ -108,8 +108,17 @@ BorealCO2<-data.frame(
 # rename the columns
 names(BorealCO2)<-c("time","eCO2","eCO2sd")
 # create a function for later plots
-add_data_plot<-function(){
-    points(BorealCO2)
+plot_with_data<-function(x){
+    plot(
+    	x=x
+    	,xlab="Days" 
+	,ylab="Evolved CO2 (gC/day)" 
+	,ylim=c(0 ,9e-04)
+	,type='l'
+    )
+    points(
+       	 BorealCO2
+    )
     arrows(
         BorealCO2[,1]
         ,BorealCO2[,2]-BorealCO2[,3]
@@ -196,10 +205,10 @@ eCO2P1cost=function(pars){
  )
 }
 @
-Having defined the cost function we can finally use the function {\tt modFit}.
- It implements the optimization as an iterative process.
- First the cost function will be evaluated on the initial parameter values.
- Then the algorithm will try to guess new parameters, evaluate the cost function again and repeat this process until the cost is small enough or the number of permitted iterations exceeded. 
+Having defined the cost function we only need initial values ({\tt inivars}) and (optional) lower and upper bounds ({\tt upP1, loP1})  for the parameters to  finally use the function {\tt modFit}.
+It implements the optimization as an iterative process.
+First the cost function will be evaluated on the initial parameter values.
+Then the algorithm will try to guess new parameters, evaluate the cost function again and repeat this process until the cost is small enough or the number of permitted iterations exceeded. 
 % We can choose the optimization method ( Levenberg-Marquardt in the example ) which determines how
 % the algorithm arrives determines the next parameters.
 % 
@@ -217,88 +226,135 @@ eCO2P1fit=modFit(
    ,lower=loP1
 )
 
-plot(eCO2P1(eCO2P1fit$par))
 @
-% 
-% To see the best set of parameter values found by the function we can type:
-% <<>>=
-% eCO2fit$par
-% @
-% 
-% These set of parameters can be used now to run the model again and plot the obtained model against the observations
-% 
-% <<>>=
-% fitmod=eCO2func(eCO2fit$par)
-% @
-% 
-% \begin{figure}
-%   \centering
-% <<echo=TRUE>>=
-% plot(BorealCO2[,1:2], xlab="Days", ylab="Evolved CO2 (gC day-1)",ylim=c(0,9e-04))
-% arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
-%        BorealCO2[,2]+BorealCO2[,3],code=3,angle=90,length=0.1)
-% lines(fitmod)
-% @
-%   \caption{Best fit curve and observed data of CO2 evolved from an incubation experiment.}
-%   \label{fig:fit}
-% \end{figure}
-% 
-% The results from this optimization can be used for Bayesian parameter estimation with \FME. For details about the procedure please see \citet{Soetaert}. In our example, we need first to extract the variance from the prior optimization and used as the initial variance in the Bayesian procedure and to determine the {\it jump}, a value that determines how much a new parameter set is deviated from the old one. To avoid long compiling times in \SoilR \,  we only use 1000 iterations in this example, but this number can be much larger to guarantee convergence of the chains. 
-% 
-% <<echo=FALSE,results='hide'>>=
-% var0=eCO2fit$var_ms_unweighted
-% 
-% eCO2mcmc=modMCMC(
-%    f=eCO2cost
-%   ,p=eCO2fit$par
-%   ,niter=3000
-%   ,jump=NULL  
-%   ,var0=var0
-%   ,wvar0=NULL
-%   ,updatecov=10
-%   ,upper=up
-%   ,lower=lo
-% )
-% @
-% 
-% The results of the MCMC procedure can be obtained with the function {\tt summary()}. The output gives the mean, standard deviation, min and max, and 25\% quantiles for all parameter values. It also produces summary statistics for the variance of the observed variable. 
-% 
-% 
-% <<>>=
-% summary(eCO2mcmc)
-% sR1=sensRange(func=eCO2func, parInput=eCO2mcmc$par)
-% @
-% 
-% A plot with the posterior distribution of the obtained parameter values can be obtained with function {\tt pairs} (Figure \ref{fig:mcmc})
-% 
-% \begin{figure}
-%   \centering
-% <<echo=TRUE>>=
-% pairs(eCO2mcmc)
-% @
-%   \caption{Histogram and scatter plots of the values obtained from the Markov chain Monte Carlo procedure.}
-%   \label{fig:mcmc}
-% \end{figure}
-% 
-% For model prediction, it is also possible to use \FME \, and function {\tt sensRange} to obtain a graph of the model prediction with uncertainty ranges (Figure \ref{fig:sensRange}).
-% 
-% \begin{figure}
-%   \centering
-% <<echo=TRUE>>=
-% predRange=sensRange(func=eCO2func, parInput=eCO2mcmc$par)
-% plot(summary(predRange),ylim=c(0,9e-04),xlab="Days",
-%      ylab="Evolved CO2 (g C day-1)",main="")
-% points(BorealCO2)
-% arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1],
-%        BorealCO2[,2]+BorealCO2[,3],code=3,angle=90,length=0.1)
-% @
-%   \caption{Model predictions using the set of parameters obtained from the MCMC procedure.}
-%   \label{fig:sensRange}
-% \end{figure}
-% 
-% \clearpage
-% It is now obvious from this example that the workhorse of the parameter estimation procedure is the package \FME \, of \citet{Soetaert}. The main important task to learn about \SoilR \, is how to set up the function that runs the model and obtains the variable of interest.  
-% 
+To see the best set of parameter values found by the function we can type:
+This set of parameters can be used now to run the model again and plot the obtained model against the observations
+<<echo=TRUE>>=
+eCO2P1fit$par
+plot_with_data(eCO2P1(eCO2P1fit$par))
+@
+It is obvious that this model is too simple. We probably can improve the fit significantly if we allow a second parameter determining how much of the total carbon is accessible for decomposition.
+<<>>= 
+eCO2P1a=function(pars){
+  At=ConstLinDecompOp(
+      out_flux_rates=c("1"=pars[[1]])
+      ,numberOfPools =1 
+  ) 
+  mod=GeneralModel(
+     t=BorealCO2[,'time']
+    ,A=At
+    ,ivList=c(Ctotal*pars[2])
+    ,inputFluxes=0
+    #,pass=TRUE
+  )
+  Rt<-getReleaseFlux(mod)
+  return(data.frame(time=BorealCO2[,'time'],eCO2=rowSums(Rt)))
+}
+
+eCO2P1acost=function(pars){
+  return(
+    modCost(
+      model=eCO2P1a(pars)
+      ,obs=BorealCO2
+      ,err="eCO2sd"
+    )
+  )
+}
+upP1a=c(1,1)
+loP1a=c(0,0)
+
+initPars=c(0.023284236, 0.001191257 )
+eCO2P1afit=modFit(
+    f=eCO2P1acost
+    ,p=initPars
+    ,method="Marq"
+    ,upper=upP1a
+    ,lower=loP1a
+)
+print(initPars)
+print(eCO2P1afit$par)
+
+
+plot_with_data(eCO2P1a(eCO2P1afit$par))
+@
+The results from this optimization can be used for Bayesian parameter estimation with \FME. For details about the procedure please see \citet{Soetaert}. In our example, we need first to extract the variance from the prior optimization and used as the initial variance in the Bayesian procedure and to determine the {\it jump}, a value that determines how much a new parameter set is deviated from the old one. To avoid long runtimes in \SoilR \,  we only use 3000 iterations in this example, but this number can be much larger to guarantee convergence of the chains. 
+The results of the MCMC procedure can be obtained with the function {\tt summary()}. The output gives the mean, standard deviation, min and max, and 25\% quantiles for all parameter values. It also produces summary statistics for the variance of the observed variable. 
+A plot with the posterior distribution of the obtained parameter values can be obtained with function {\tt pairs} .
+<<>>=
+var0=eCO2P1afit$var_ms_unweighted
+ eCO2P1amcmc=modMCMC(
+    f=eCO2P1acost
+   ,p=eCO2P1afit$par
+   ,niter=3000
+   ,jump=NULL
+   ,var0=var0
+   ,wvar0=NULL
+   ,updatecov=10
+   ,upper=upP1a
+   ,lower=loP1a
+ )
+ summary(eCO2P1amcmc)
+ sR1=sensRange(func=eCO2P1a, parInput=eCO2P1amcmc$par)
+ predRange=sensRange(func=eCO2P1a, parInput=eCO2P1amcmc$par)
+ plot_with_data(
+  summary(predRange)
+  )
+ pairs(eCO2P1amcmc)
+@
+We can try to find a better model by allowing one more parameter, but numerical experiments (e.g. variation of the startvalues) show that the algorithms occaisionally get lost in local minima. 
+<<>>=
+eCO2P2=function(pars){
+   At=ConstLinDecompOp(
+       out_flux_rates=c("1"=pars[[1]],"2"=pars[[2]])
+       ,numberOfPools =2
+   )
+   gamma=pars[[3]]
+   mod=GeneralModel(
+      t=BorealCO2[,'time']
+     ,A=At
+     ,ivList=Ctotal*c(gamma,1-gamma)
+     ,inputFluxes=0
+     ,pass=TRUE
+   )
+   Rt<-getReleaseFlux(mod)
+   return(data.frame(time=BorealCO2[,'time'],eCO2=rowSums(Rt)))
+}
+#r=c(1:4,34:35)
+eCO2P2cost=function(pars){
+  return(
+    modCost(
+      model=eCO2P2(pars)
+      ,obs=BorealCO2
+      ,err="eCO2sd"
+    )
+  )
+}
+## ------------------------------------------------------------------------
+initPars=c(.02,.0001,0.999)
+upP2=c(.1,.1,1)
+loP2=c(0,0,0)
+eCO2P2fit=modFit(
+    f=eCO2P2cost
+    ,p=initPars
+    ,method="Marq"
+    ,upper=upP2
+    ,lower=loP2
+)
+# polt the resulting model
+plot_with_data( eCO2P2(eCO2P2fit$par))
+var0=eCO2P2fit$var_ms_unweighted
+eCO2P2mcmc=modMCMC(
+   f=eCO2P2cost
+  ,p=eCO2P2fit$par
+  ,niter=3000
+  ,jump=NULL
+  ,var0=var0
+  ,wvar0=NULL
+  ,updatecov=10
+  ,upper=upP2
+  ,lower=loP2
+)
+@
 % \section*{Example 2: Radiocarbon in respired CO$_2$}
 % \SoilR \, can also calculate the amount of radiocarbon in soils or in respired CO$_2$. Here, we take as an example a series of observations of radiocarbon in respired CO$_2$ conducted at Harvard Forest, USA. The dataset is also included in \SoilR, and is visualized in Figure \ref{fig:radiocarbondata}.
 % 
