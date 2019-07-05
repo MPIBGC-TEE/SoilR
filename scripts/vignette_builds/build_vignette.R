@@ -3,7 +3,9 @@ require('SoilR')
 require('pkgload')
 pkgDir=file.path('..','..','pkg')
 
-trunks=c('ParameterEstimation-knitr')
+trunks=c('GeneralModel-knitr')
+#trunks=c('ParameterEstimation-knitr','GeneralModel-knitr')
+#trunks=c('ParameterEstimation-knitr','GeneralModel-knitr')
 
 #pkgload::load_all(pkgDir)
 require('knitr')

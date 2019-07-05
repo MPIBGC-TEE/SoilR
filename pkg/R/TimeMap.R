@@ -23,6 +23,29 @@ flat_arr_TimeMap <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
       )
     )
 }
+plotAll<- function(tr,valMin,valMax,times,values,srcDim){
+  plotCoordSystem(tr,valMin,valMax)
+  plotTrajectories(valMin,valMax,times,values,srcDim)
+}
+plotCoordSystem <- function(tr,valMin,valMax)
+      plot(0,0,
+      type='n',
+      xlab='time',
+      ylab='values',
+      xlim=tr,
+      ylim=c(valMin,valMax+valMax-valMin)
+    )
+plotTrajectories <- function(valMin,valMax,times,values,srcDim){
+    flatDim <- dim(values)[[1]]
+    colors <- rainbow(flatDim)
+    plotFun <- function(i){
+      y <- values[i,]
+      lines(x=times,y=y,col=colors[[i]])
+    }
+    flatInds <- 1:flatDim
+    lapply(flatInds, plotFun)
+    legend(x=min(times),y=2*valMax-valMin,lapply(flatInds,function(i){as.character(arrayInd(.dim=srcDim,i))}),colors)
+}
 CallWithPlotVars<- function(
   obj,
   workerFunc,
@@ -57,29 +80,6 @@ CallWithPlotVars<- function(
   	funcCall <- as.call(append(list(workerFunc),values))
   	res <- eval(funcCall)
   res
-}
-plotAll<- function(tr,valMin,valMax,times,values,srcDim){
-  plotCoordSystem(tr,valMin,valMax)
-  plotTrajectories(valMin,valMax,times,values,srcDim)
-}
-plotCoordSystem <- function(tr,valMin,valMax)
-      plot(0,0,
-      type='n',
-      xlab='time',
-      ylab='values',
-      xlim=tr,
-      ylim=c(valMin,valMax+valMax-valMin)
-    )
-plotTrajectories <- function(valMin,valMax,times,values,srcDim){
-    flatDim <- dim(values)[[1]]
-    colors <- rainbow(flatDim)
-    plotFun <- function(i){
-      y <- values[i,]
-      lines(x=times,y=y,col=colors[[i]])
-    }
-    flatInds <- 1:flatDim
-    lapply(flatInds, plotFun)
-    legend(x=min(times),y=2*valMax-valMin,lapply(flatInds,function(i){as.character(arrayInd(.dim=srcDim,i))}),colors)
 }
 setClass(
    Class="TimeMap",
