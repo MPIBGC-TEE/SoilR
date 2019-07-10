@@ -342,7 +342,7 @@ setGeneric(
 )
 #' Generic constructor 
 #' 
-#' @eval makelink()
+#' @eval makelink('ConstLinDecompOp')
 setGeneric(
 	 name="ConstLinDecompOp",
 	 def=function 
