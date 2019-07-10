@@ -340,6 +340,9 @@ setGeneric(
 	     standardGeneric("InFlux")
 	 }
 )
+#' Generic constructor 
+#' 
+#' @eval makelink()
 setGeneric(
 	 name="ConstLinDecompOp",
 	 def=function 

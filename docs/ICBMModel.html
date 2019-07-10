@@ -9,20 +9,18 @@
 
 <h3>Description</h3>
 
-<p>This function is an implementation of the Introductory Carbon Balance Model (ICBM).
-This is simply a two pool model connected in series.</p>
+<p>This function is an implementation of the Introductory Carbon Balance Model
+(ICBM). This is simply a two pool model connected in series.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>ICBMModel(t,
-ks=c(k1 = 0.8, k2 = 0.00605),
-h=0.13,
-r=1.32,
-c0=c(Y0 = 0.3, O0 = 3.96),
-In=0,
-solver=deSolve.lsoda.wrapper,
-pass=FALSE)</pre>
+<pre>
+ICBMModel(t, ks = c(k1 = 0.8, k2 = 0.00605), h = 0.13, r = 1.32,
+  c0 = c(Y0 = 0.3, O0 = 3.96), In = 0,
+  solver = deSolve.lsoda.wrapper, pass = FALSE)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -30,11 +28,13 @@ pass=FALSE)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>t</code></td>
 <td>
-<p>A vector containing the points in time where the solution is sougth.</p>
+<p>A vector containing the points in time where the solution is
+sougth.</p>
 </td></tr>
 <tr valign="top"><td><code>ks</code></td>
 <td>
-<p>A vector of length 2 with the decomposition rates for the young and the old pool.</p>
+<p>A vector of length 2 with the decomposition rates for the young
+and the old pool.</p>
 </td></tr>
 <tr valign="top"><td><code>h</code></td>
 <td>
@@ -46,7 +46,8 @@ pass=FALSE)</pre>
 </td></tr>
 <tr valign="top"><td><code>c0</code></td>
 <td>
-<p>A vector of length 2 with the initial value of carbon stocks in the young and old pool.</p>
+<p>A vector of length 2 with the initial value of carbon stocks in
+the young and old pool.</p>
 </td></tr>
 <tr valign="top"><td><code>In</code></td>
 <td>
@@ -54,29 +55,37 @@ pass=FALSE)</pre>
 </td></tr>
 <tr valign="top"><td><code>solver</code></td>
 <td>
-<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+<p>A function that solves the system of ODEs. This can be
+<code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user
+provided function with the same interface.</p>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
 <td>
-<p>if TRUE forces the constructor to create the model even if it is invalid</p>
+<p>if TRUE forces the constructor to create the model even if it is
+invalid</p>
 </td></tr>
 </table>
 
 
 <h3>References</h3>
 
-<p>Andren, O. and T. Katterer. 1997. ICBM: The Introductory Carbon Balance Model 
-for Exploration of Soil Carbon Balances. Ecological Applications 7:1226-1236.</p>
+<p>Andren, O. and T. Katterer. 1997. ICBM: The Introductory Carbon
+Balance Model for Exploration of Soil Carbon Balances. Ecological
+Applications 7:1226-1236.
+</p>
 
 
 <h3>See Also</h3>
 
-<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+<p>There are other <code><a href="predefinedModels.html">predefinedModels</a></code> and also more
+general functions like <code><a href="Model.html">Model</a></code>.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre># examples from external files
+<pre>
+# examples from external files
 # inst/examples/exICBMModel.R exICBMModel_paper:
 
     # This example reproduces the simulations 
@@ -132,7 +141,8 @@ for Exploration of Soil Carbon Balances. Ecological Applications 7:1226-1236.</p
       lwd=c(1,1,1,1,2,2,2),
       bty="n"
     )
+
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

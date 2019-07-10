@@ -9,125 +9,106 @@
 
 <h3>Description</h3>
 
-<p>The class Model is the focal point of SoilR. 
-</p>
-
-<ol>
-<li><p> It combines all the components that are needed to solve the
-initial value problem for the pool contents.
-<i>C=(C_1,...C_n)^t, </i>. 
-</p>
+<p>The class Model is the focal point of SoilR.  </p>
+ <ol>
+<li><p> It combines
+all the components that are needed to solve the initial value problem for
+the pool contents. <i>C=(C_1,...C_n)^t, </i>.  </p>
 </li>
-<li><p> It provides the single argument for the different functions 
-that are available to compute various results from the solution of the initial value problem. 
-See subsection <code>Methods</code> and the examples.)
-</p>
+<li><p> It provides the
+single argument for the different functions that are available to compute
+various results from the solution of the initial value problem.  See
+subsection <code>Methods</code> and the examples.) </p>
 </li></ol>
+
 
 
 <h3>Details</h3>
 
-<p>The initial value problem is given by:
-</p>
-
-<ul>
-<li>
-<p>the ordinary differential equation
-<i> d/dt C=A(t)C+I(t),</i>
-</p>
+<p>The initial value problem is given by: </p>
+ <ul>
+<li><p> the ordinary
+differential equation <i> d/dt C=A(t)C+I(t),</i> </p>
 </li>
-<li>
-<p>the intial Values <i>C_0=C(t_0),</i> 
-</p>
+<li><p> the intial Values
+<i>C_0=C(t_0),</i> </p>
 </li>
-<li> 
-<p>for the times <i>{t_0,....,t_m}</i>.
-</p>
+<li><p> for the times
+<i>{t_0,....,t_m}</i>. </p>
+</li></ul>
+<p> In an object of class Model the
+components are represented as follows: </p>
+ <ul>
+<li><p> The time-dependent
+matrix valued function <i>A(t)</i> is represented by an object of
+a class that inherits from class <code><a href="DecompOp-class.html">DecompOp</a></code>.  Such
+objects can be created in different ways from functions, matrices or data.
+(see the subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code> and especially their
+<code>Constructors</code> sections.  and the <code>examples</code> section of this help
+page. </p>
+</li>
+<li><p> The vector-valued time-dependent function <i>I(t)</i>
+is in SoilR represented by an object of a class that inherits from class
+InFlux <code><a href="InFlux-class.html">InFlux</a></code>.  Such objects can be created from
+functions, constant vectors and data.  (see the subclasses of
+<code><a href="InFlux-class.html">InFlux</a></code> and especially their <code>Constructors</code>
+sections.  </p>
+</li>
+<li><p> The times for which the results are computed are
+represented by a numeric vector. </p>
+</li>
+<li><p> The initial values are represented by
+a numeric vector </p>
 </li></ul>
 
-<p>In an object of class Model the components are represented as follows:
-</p>
-
-<ul>
-<li>
-<p>The time-dependent matrix valued function <i>A(t)</i> is represented by an object 
-of a class that inherits from class  <code><a href="DecompOp-class.html">DecompOp</a></code>. 
-Such objects can be created in different ways from functions, matrices or data. 
-(see the subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code> and especially their <code>Constructors</code> sections.  
-and the <code>examples</code> section of this help page.
-</p>
-</li>
-<li> 
-<p>The vector-valued time-dependent function <i>I(t)</i> is in SoilR represented by an object of a class that 
-inherits from class InFlux <code><a href="InFlux-class.html">InFlux</a></code>. 
-Such objects can be created from functions, constant vectors and data. 
-(see the subclasses of <code><a href="InFlux-class.html">InFlux</a></code> and especially their <code>Constructors</code> sections.  
-</p>
-</li>
-<li> 
-<p>The times for which the results are computed are represented by a numeric vector.
-</p>
-</li>
-<li> 
-<p>The initial values are represented by a numeric vector 
-</p>
-</li></ul>
 
 
 <h3>Methods</h3>
 
 <p>Exported methods directly defined for class Model:
 </p>
-
-<dl>
-<dt>[</dt><dd><p><code>signature(x = "Model", i = "character", j = "missing", drop = "missing")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="z[-method_d68876f3.html">[,Model,character,missing,missing-method</a></code>
+ <dl>
+<dt>[</dt><dd><p><code>signature(x = "Model", i = "character", j =
+"missing", drop = "missing")</code>: ... </p>
+</dd>
+</dl>
+<p><code>[,Model,character,missing,missing-method</code>
 </p>
 <dl>
 <dt>getAccumulatedRelease</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getAccumulatedRelease-method_8d005323.html">getAccumulatedRelease,Model-method</a></code>
+</dd>
+</dl>
+<p><code><a href="getAccumulatedRelease-Model-method.html">getAccumulatedRelease,Model-method</a></code>
 </p>
 <dl>
 <dt>getC</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getC-method_8d005323.html">getC,Model-method</a></code>
-</p>
+</dd>
+</dl>
+<p><code><a href="getC-Model-method.html">getC,Model-method</a></code> </p>
 <dl>
-<dt>getDecompOp</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
+<dt>getDecompOp</dt><dd><p><code>signature(object =
+"Model")</code>: ... </p>
 </dd> </dl>
-<p><code><a href="getDecompOp-method_8d005323.html">getDecompOp,Model-method</a></code>
+<p><code><a href="getDecompOp-Model-method.html">getDecompOp,Model-method</a></code>
 </p>
 <dl>
 <dt>getReleaseFlux</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getReleaseFlux-method_8d005323.html">getReleaseFlux,Model-method</a></code>
+</dd>
+</dl>
+<p><code><a href="getReleaseFlux-Model-method.html">getReleaseFlux,Model-method</a></code>
 </p>
 <dl>
 <dt>getTimes</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getTimes-method_8d005323.html">getTimes,Model-method</a></code>
+</dd>
+</dl>
+<p><code><a href="getTimes-Model-method.html">getTimes,Model-method</a></code> 
 </p>
-
-
-<h3>Subclasses</h3>
-
-
-<p><code><a href="Model_14-class.html">Model_14</a></code><br />
-</p>
-
-
-<h3>Constructors</h3>
-
-	<p><code><a href="Model.html">Model</a></code><br />
-Please also look at constructors of non virtual subclasses: 
-<code><a href="Model_14.html">Model_14</a></code>.</p>
 
 
 <h3>Examples</h3>
 
-<pre># examples from external files
+<pre>
+# examples from external files
 # inst/examples/ModelExamples.R CorrectNonautonomousLinearModelExplicit:
 
   # This example describes the creation and use of a Model object that 
@@ -206,7 +187,8 @@ Please also look at constructors of non virtual subclasses:
   getC(mod)
   getReleaseFlux(mod)
   #also look at the methods section of Model-class 
+
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

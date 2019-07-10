@@ -5,35 +5,26 @@
 
 <table width="100%" summary="page for AWBmodel {SoilR}"><tr><td>AWBmodel {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Implementation of the microbial model AWB (Allison, Wallenstein, Bradford, 2010)</h2>
+<h2>Implementation of the microbial model AWB (Allison, Wallenstein, Bradford,
+2010)</h2>
 
 <h3>Description</h3>
 
-<p>This function implements the microbial model AWB (Allison, Wallenstein, Bradford, 2010), a four-pool model with a microbial biomass, enzyme, SOC and DOC pools. It is a special case of the general nonlinear model.</p>
+<p>This function implements the microbial model AWB (Allison, Wallenstein,
+Bradford, 2010), a four-pool model with a microbial biomass, enzyme, SOC and
+DOC pools. It is a special case of the general nonlinear model.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>AWBmodel(t,
-V_M=1e+08,
-V_m=1e+08,
-r_B=2e-04,
-r_E=5e-06,
-r_L=0.001,
-a_BS=0.5,
-epsilon_0=0.63,
-epsilon_s=-0.016,
-Km_0=500,
-Km_u0=0.1,
-Km_s=0.5,
-Km_us=0.1,
-Ea=47,
-R=0.008314,
-Temp1=20,
-Temp2=20,
-ival=c(B = 2.19159, E = 0.0109579, S = 111.876, D = 0.00144928),
-I_S=0.005,
-I_D=0.005)</pre>
+<pre>
+AWBmodel(t, V_M = 1e+08, V_m = 1e+08, r_B = 2e-04, r_E = 5e-06,
+  r_L = 0.001, a_BS = 0.5, epsilon_0 = 0.63, epsilon_s = -0.016,
+  Km_0 = 500, Km_u0 = 0.1, Km_s = 0.5, Km_us = 0.1, Ea = 47,
+  R = 0.008314, Temp1 = 20, Temp2 = 20, ival = c(B = 2.19159, E =
+  0.0109579, S = 111.876, D = 0.00144928), I_S = 0.005, I_D = 0.005)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -45,51 +36,63 @@ I_D=0.005)</pre>
 </td></tr>
 <tr valign="top"><td><code>V_M</code></td>
 <td>
-<p>a scalar representing the maximum rate of uptake (mg DOC cm-3 h-1). Equivalent to V_maxuptake0 in original paper.</p>
+<p>a scalar representing the maximum rate of uptake (mg DOC cm-3
+h-1). Equivalent to V_maxuptake0 in original paper.</p>
 </td></tr>
 <tr valign="top"><td><code>V_m</code></td>
 <td>
-<p>a scalar representing the maximum rate of decomposition of SOM (mg SOM cm-3 h-1). Equivalent to V_max0 in original paper.</p>
+<p>a scalar representing the maximum rate of decomposition of SOM
+(mg SOM cm-3 h-1). Equivalent to V_max0 in original paper.</p>
 </td></tr>
 <tr valign="top"><td><code>r_B</code></td>
 <td>
-<p>a scalar representing the rate constant of microbial death (h-1). Equivalent to r_death in original publication.</p>
+<p>a scalar representing the rate constant of microbial death (h-1).
+Equivalent to r_death in original publication.</p>
 </td></tr>
 <tr valign="top"><td><code>r_E</code></td>
 <td>
-<p>a scalar representing the rate constant of enzyme production (h-1). Equivalent to r_EnzProd in original publication.</p>
+<p>a scalar representing the rate constant of enzyme production
+(h-1). Equivalent to r_EnzProd in original publication.</p>
 </td></tr>
 <tr valign="top"><td><code>r_L</code></td>
 <td>
-<p>a scalar representing the rate constant of enzyme loss (h-1). Equivalent to r_EnzLoss in original publication.</p>
+<p>a scalar representing the rate constant of enzyme loss (h-1).
+Equivalent to r_EnzLoss in original publication.</p>
 </td></tr>
 <tr valign="top"><td><code>a_BS</code></td>
 <td>
-<p>a scalar representing the fraction of the dead microbial biomass incorporated to SOC. MICtoSOC in original publication.</p>
+<p>a scalar representing the fraction of the dead microbial biomass
+incorporated to SOC. MICtoSOC in original publication.</p>
 </td></tr>
 <tr valign="top"><td><code>epsilon_0</code></td>
 <td>
-<p>a scalar representing the intercept of the CUE function (mg mg-1). CUE_0 in original paper.</p>
+<p>a scalar representing the intercept of the CUE function (mg
+mg-1). CUE_0 in original paper.</p>
 </td></tr>
 <tr valign="top"><td><code>epsilon_s</code></td>
 <td>
-<p>a scalar representing the slope of the CUE function (degree-1). CUE_slope in original paper.</p>
+<p>a scalar representing the slope of the CUE function
+(degree-1). CUE_slope in original paper.</p>
 </td></tr>
 <tr valign="top"><td><code>Km_0</code></td>
 <td>
-<p>a scalar representing the intercept of the half-saturation constant of SOC as a function of temperature (mg cm-3).</p>
+<p>a scalar representing the intercept of the half-saturation
+constant of SOC as a function of temperature (mg cm-3).</p>
 </td></tr>
 <tr valign="top"><td><code>Km_u0</code></td>
 <td>
-<p>a scalar representing the intercept of the half saturation constant of uptake as a function of temperature (mg cm-3).</p>
+<p>a scalar representing the intercept of the half saturation
+constant of uptake as a function of temperature (mg cm-3).</p>
 </td></tr>
 <tr valign="top"><td><code>Km_s</code></td>
 <td>
-<p>a scalar representing the slope of the half saturation constant of SOC as a function of temperature (mg cm-3 degree-1).</p>
+<p>a scalar representing the slope of the half saturation constant
+of SOC as a function of temperature (mg cm-3 degree-1).</p>
 </td></tr>
 <tr valign="top"><td><code>Km_us</code></td>
 <td>
-<p>a scalar representing the slope of the half saturation constant of uptake as a function of temperature (mg cm-3 degree-1).</p>
+<p>a scalar representing the slope of the half saturation constant
+of uptake as a function of temperature (mg cm-3 degree-1).</p>
 </td></tr>
 <tr valign="top"><td><code>Ea</code></td>
 <td>
@@ -109,7 +112,8 @@ I_D=0.005)</pre>
 </td></tr>
 <tr valign="top"><td><code>ival</code></td>
 <td>
-<p>a vector of length 4 with the initial values for the pools (mg cm-3).</p>
+<p>a vector of length 4 with the initial values for the pools (mg
+cm-3).</p>
 </td></tr>
 <tr valign="top"><td><code>I_S</code></td>
 <td>
@@ -124,23 +128,29 @@ I_D=0.005)</pre>
 
 <h3>Details</h3>
 
-<p>This implementation containts default parameters presented in Allison et al. (2010). </p>
+<p>This implementation containts default parameters presented in Allison et al.
+(2010).
+</p>
 
 
 <h3>Value</h3>
 
-<p>An object of class NlModel that can be further queried.</p>
+<p>An object of class NlModel that can be further queried.
+</p>
 
 
 <h3>References</h3>
 
-<p>Allison, S.D., M.D. Wallenstein, M.A. Bradford. 2010. Soil-carbon response to warming dependent on microbial physiology.
-Nature Geoscience 3: 336-340.</p>
+<p>Allison, S.D., M.D. Wallenstein, M.A. Bradford. 2010.
+Soil-carbon response to warming dependent on microbial physiology. Nature
+Geoscience 3: 336-340.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre>hours=seq(0,800,0.1)
+<pre>
+hours=seq(0,800,0.1)
 
 #Run the model with default parameter values
 bcmodel=AWBmodel(t=hours)
@@ -150,7 +160,8 @@ Cpools=getC(bcmodel)
 # the next line causes trouble on Rforge Windows patched build
 matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
 ##State-space diagram
-plot(as.data.frame(Cpools))</pre>
+plot(as.data.frame(Cpools))
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

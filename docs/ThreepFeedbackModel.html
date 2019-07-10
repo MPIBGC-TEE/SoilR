@@ -9,22 +9,17 @@
 
 <h3>Description</h3>
 
-<p>This function creates a model for three pools connected with feedback. It is a wrapper for the more general function <code><a href="GeneralModel.html">GeneralModel</a></code>.</p>
+<p>This function creates a model for three pools connected with feedback. It is
+a wrapper for the more general function <code><a href="GeneralModel.html">GeneralModel</a></code>.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>ThreepFeedbackModel(t,
-ks,
-a21,
-a12,
-a32,
-a23,
-C0,
-In,
-xi=1,
-solver=deSolve.lsoda.wrapper,
-pass=FALSE)</pre>
+<pre>
+ThreepFeedbackModel(t, ks, a21, a12, a32, a23, C0, In, xi = 1,
+  solver = deSolve.lsoda.wrapper, pass = FALSE)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -32,64 +27,82 @@ pass=FALSE)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>t</code></td>
 <td>
-<p>A vector containing the points in time where the solution is sought.</p>
+<p>A vector containing the points in time where the solution is
+sought.</p>
 </td></tr>
 <tr valign="top"><td><code>ks</code></td>
 <td>
-<p>A vector of lenght 3 containing the values of the decomposition rates for pools 1, 2, and 3.</p>
+<p>A vector of lenght 3 containing the values of the decomposition
+rates for pools 1, 2, and 3.</p>
 </td></tr>
 <tr valign="top"><td><code>a21</code></td>
 <td>
-<p>A scalar with the value of the transfer rate from pool 1 to pool 2.</p>
+<p>A scalar with the value of the transfer rate from pool 1 to pool
+2.</p>
 </td></tr>
 <tr valign="top"><td><code>a12</code></td>
 <td>
-<p>A scalar with the value of the transfer rate from pool 2 to pool 1.</p>
+<p>A scalar with the value of the transfer rate from pool 2 to pool
+1.</p>
 </td></tr>
 <tr valign="top"><td><code>a32</code></td>
 <td>
-<p>A scalar with the value of the transfer rate from pool 2 to pool 3.</p>
+<p>A scalar with the value of the transfer rate from pool 2 to pool
+3.</p>
 </td></tr>
 <tr valign="top"><td><code>a23</code></td>
 <td>
-<p>A scalar with the value of the transfer rate from pool 3 to pool 2.</p>
+<p>A scalar with the value of the transfer rate from pool 3 to pool
+2.</p>
 </td></tr>
 <tr valign="top"><td><code>C0</code></td>
 <td>
-<p>A vector containing the initial concentrations for the 3 pools. The length of this vector is 3</p>
+<p>A vector containing the initial concentrations for the 3 pools.
+The length of this vector is 3</p>
 </td></tr>
 <tr valign="top"><td><code>In</code></td>
 <td>
-<p>A data.frame object specifying the amount of litter inputs by time.</p>
+<p>A data.frame object specifying the amount of litter inputs by
+time.</p>
 </td></tr>
 <tr valign="top"><td><code>xi</code></td>
 <td>
-<p>A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.</p>
+<p>A scalar or data.frame object specifying the external
+(environmental and/or edaphic) effects on decomposition rates.</p>
 </td></tr>
 <tr valign="top"><td><code>solver</code></td>
 <td>
-<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+<p>A function that solves the system of ODEs. This can be
+<code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user
+provided function with the same interface.</p>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
 <td>
-<p>if TRUE forces the constructor to create the model even if it is invalid</p>
+<p>if TRUE forces the constructor to create the model even if it is
+invalid</p>
 </td></tr>
 </table>
 
 
 <h3>References</h3>
 
-<p>Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.</p>
+<p>Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil
+organic matter decomposition: the SoilR package version 1.0. Geoscientific
+Model Development 5, 1045-1060.
+</p>
 
 
 <h3>See Also</h3>
 
-<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+<p>There are other <code><a href="predefinedModels.html">predefinedModels</a></code> and also more
+general functions like <code><a href="Model.html">Model</a></code>.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre>t_start=0 
+<pre>
+t_start=0 
 t_end=10 
 tn=50
 timestep=(t_end-t_start)/tn 
@@ -187,7 +200,8 @@ c("Total C release",
 lty=c(1,1,1,1),
 col=c(1,2,4,3),
 lwd=c(2,1,1,1),
-bty="n")</pre>
+bty="n")
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

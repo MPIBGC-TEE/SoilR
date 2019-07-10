@@ -9,21 +9,18 @@
 
 <h3>Description</h3>
 
-<p>This function implements the Century model as described in Parton et al. (1987).</p>
+<p>This function implements the Century model as described in Parton et al.
+(1987).
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>CenturyModel(t,
-ks=c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW = 0.0038, k.PAS = 0.00013),
-C0=c(0, 0, 0, 0, 0),
-In,
-LN,
-Ls,
-clay=0.2,
-silt=0.45,
-xi=1,
-solver=deSolve.lsoda.wrapper)</pre>
+<pre>
+CenturyModel(t, ks = c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW =
+  0.0038, k.PAS = 0.00013), C0 = c(0, 0, 0, 0, 0), In, LN, Ls,
+  clay = 0.2, silt = 0.45, xi = 1, solver = deSolve.lsoda.wrapper)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -31,27 +28,33 @@ solver=deSolve.lsoda.wrapper)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>t</code></td>
 <td>
-<p>A vector containing the points in time where the solution is sought.</p>
+<p>A vector containing the points in time where the solution is
+sought.</p>
 </td></tr>
 <tr valign="top"><td><code>ks</code></td>
 <td>
-<p>A vector of lenght 5 containing the values of the decomposition rates for the different pools. Units in per week.</p>
+<p>A vector of lenght 5 containing the values of the decomposition
+rates for the different pools. Units in per week.</p>
 </td></tr>
 <tr valign="top"><td><code>C0</code></td>
 <td>
-<p>A vector of length 5 containing the initial amount of carbon for the 5 pools.</p>
+<p>A vector of length 5 containing the initial amount of carbon for
+the 5 pools.</p>
 </td></tr>
 <tr valign="top"><td><code>In</code></td>
 <td>
-<p>A scalar or data.frame object specifying the amount of litter inputs by time (mass per area per week).</p>
+<p>A scalar or data.frame object specifying the amount of litter
+inputs by time (mass per area per week).</p>
 </td></tr>
 <tr valign="top"><td><code>LN</code></td>
 <td>
-<p>A scalar representing the lignin to nitrogen ratio of the plant residue inputs.</p>
+<p>A scalar representing the lignin to nitrogen ratio of the plant
+residue inputs.</p>
 </td></tr>
 <tr valign="top"><td><code>Ls</code></td>
 <td>
-<p>A scalar representing the fraction of structural material that is lignin.</p>
+<p>A scalar representing the fraction of structural material that is
+lignin.</p>
 </td></tr>
 <tr valign="top"><td><code>clay</code></td>
 <td>
@@ -63,35 +66,47 @@ solver=deSolve.lsoda.wrapper)</pre>
 </td></tr>
 <tr valign="top"><td><code>xi</code></td>
 <td>
-<p>A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.</p>
+<p>A scalar or data.frame object specifying the external
+(environmental and/or edaphic) effects on decomposition rates.</p>
 </td></tr>
 <tr valign="top"><td><code>solver</code></td>
 <td>
-<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+<p>A function that solves the system of ODEs. This can be
+<code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user
+provided function with the same interface.</p>
 </td></tr>
 </table>
 
 
 <h3>Value</h3>
 
-<p>A Model Object that can be further queried </p>
+<p>A Model Object that can be further queried
+</p>
 
 
 <h3>References</h3>
 
-<p>Parton, W.J, D.S. Schimel, C.V. Cole, and D.S. Ojima. 1987. Analysis of factors controlling soil organic matter levels in Great Plain grasslands.
-Soil Science Society of America Journal 51: 1173&ndash;1179.
-Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.</p>
+<p>Parton, W.J, D.S. Schimel, C.V. Cole, and D.S. Ojima. 1987.
+Analysis of factors controlling soil organic matter levels in Great Plain
+grasslands. Soil Science Society of America Journal 51: 1173&ndash;1179. Sierra,
+C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter
+decomposition: the SoilR package version 1.0. Geoscientific Model
+Development 5, 1045-1060.
+</p>
 
 
 <h3>See Also</h3>
 
-<p><code><a href="RothCModel.html">RothCModel</a></code>. There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+<p><code><a href="RothCModel.html">RothCModel</a></code>. There are other
+<code><a href="predefinedModels.html">predefinedModels</a></code> and also more general functions like
+<code><a href="Model.html">Model</a></code>.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre>t=seq(0,52*200,1) #200 years  
+<pre>
+t=seq(0,52*200,1) #200 years  
 LNcorn=0.17/0.004 # Values for corn clover reported in Parton et al. 1987
 Ex=CenturyModel(t,LN=0.5,Ls=0.1,In=0.1)
 Ct=getC(Ex)
@@ -108,7 +123,8 @@ matplot(t,Rt,type="l",lty=1,ylim=c(0,max(Rt)*3),ylab="Respiration (kg C ha-1 wee
 lines(t,rowSums(Rt),lwd=2) 
 legend("topright", c("Structural litter","Metabolic litter",
 "Active SOM","Slow SOM","Passive SOM","Total Respiration"),
-lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")</pre>
+lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

@@ -9,19 +9,17 @@
 
 <h3>Description</h3>
 
-<p>This function implements a two-pool Michaelis-Meneten model with a microbial biomass and a substrate pool.</p>
+<p>This function implements a two-pool Michaelis-Meneten model with a microbial
+biomass and a substrate pool.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>TwopMMmodel(t,
-ks=1.8e-05,
-kb=0.007,
-Km=900,
-r=0.6,
-Af=1,
-ADD=3.2,
-ival)</pre>
+<pre>
+TwopMMmodel(t, ks = 1.8e-05, kb = 0.007, Km = 900, r = 0.6,
+  Af = 1, ADD = 3.2, ival)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -49,7 +47,8 @@ ival)</pre>
 </td></tr>
 <tr valign="top"><td><code>Af</code></td>
 <td>
-<p>a scalar representing the Activity factor; i.e. a temperature and moisture modifier (unitless)</p>
+<p>a scalar representing the Activity factor; i.e. a temperature and
+moisture modifier (unitless)</p>
 </td></tr>
 <tr valign="top"><td><code>ADD</code></td>
 <td>
@@ -57,35 +56,44 @@ ival)</pre>
 </td></tr>
 <tr valign="top"><td><code>ival</code></td>
 <td>
-<p>a vector of length 2 with the initial values of the SOM pool and the microbial biomass pool (g m-3)</p>
+<p>a vector of length 2 with the initial values of the SOM pool and
+the microbial biomass pool (g m-3)</p>
 </td></tr>
 </table>
 
 
 <h3>Details</h3>
 
-<p>This implementation is similar to the model described in Manzoni and Porporato (2007). </p>
+<p>This implementation is similar to the model described in Manzoni and
+Porporato (2007).
+</p>
 
 
 <h3>Value</h3>
 
-<p>Microbial biomass over time</p>
+<p>Microbial biomass over time
+</p>
 
 
 <h3>References</h3>
 
-<p>Manzoni, S, A. Porporato (2007). A theoretical analysis of nonlinearities and feedbacks in soil carbon and nitrogen cycles.
-Soil Biology and Biochemistry 39: 1542-1556.</p>
+<p>Manzoni, S, A. Porporato (2007). A theoretical analysis of
+nonlinearities and feedbacks in soil carbon and nitrogen cycles. Soil
+Biology and Biochemistry 39: 1542-1556.
+</p>
 
 
 <h3>See Also</h3>
 
-<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+<p>There are other <code><a href="predefinedModels.html">predefinedModels</a></code> and also more
+general functions like <code><a href="Model.html">Model</a></code>.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre>days=seq(0,1000,0.5)
+<pre>
+days=seq(0,1000,0.5)
 MMmodel=TwopMMmodel(t=days,ival=c(100,10))
 Cpools=getC(MMmodel)
 matplot(days,Cpools,type="l",ylab="Concentrations",xlab="Days",lty=1,ylim=c(0,max(Cpools)*1.2))
@@ -116,7 +124,8 @@ legend("topleft",c("SOM-C", "Microbial biomass"),lty=1,col=c(1,2),bty="n")
 
 plot(Cpools[,2],Cpools[,1],type="l",ylab="SOM-C",xlab="Microbial biomass")
 
-plot(days,Cpools[,2],type="l",col=2,xlab="Days",ylab="Microbial biomass")</pre>
+plot(days,Cpools[,2],type="l",col=2,xlab="Days",ylab="Microbial biomass")
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

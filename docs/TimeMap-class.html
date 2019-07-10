@@ -9,83 +9,73 @@
 
 <h3>Description</h3>
 
-<p>This class enhances a time dependent function by information about its domain.
-The information about the delay is especially usefull for functions that interpolate data. 
-Assume that you are given time series data in two vectors <code>times</code>, <code>values</code>.
-You can create an interpolating function with  <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code>
-<code>f  &lt;- splinefun(x=times,y=values) </code> 
-<code>f(t)</code> will yield sensible values for <i>min(times)&lt;t&lt;max(times).</i> 
-but will produce unreasonable values for any t outside these limits.
-Unfortunately the interpolating functions produced by 
-<code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code> do not retain any information 
-about their domain which makes it possible to accidentatly 
-apply them to times not at all supported by the original data. 
-This would not even cause errors in the code but silently corrupt the results.
-To help you to keep track of the domains of the many time dependent functions used in SoilR's 
-Models this class <code><a href="TimeMap-class.html">TimeMap</a></code> stores the <code>starttime</code> 
-and <code>endtime</code> values
-along with the function represented by <code>map</code>.
-SoilR functions that accept time series data will normally convert it to 
-subclasses  <code>TimeMap-class</code> automatically but you can do it explicitly.</p>
+<p>This class enhances a time dependent function by information about its
+domain. The information about the delay is especially usefull for functions
+that interpolate data.  Assume that you are given time series data in two
+vectors <code>times</code>, <code>values</code>. You can create an interpolating
+function with <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code> <code>f &lt;-
+splinefun(x=times,y=values) </code> <code>f(t)</code> will yield sensible values for
+<i>min(times)&lt;t&lt;max(times).</i> but will produce unreasonable values for
+any t outside these limits. Unfortunately the interpolating functions
+produced by <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code> do not retain
+any information about their domain which makes it possible to accidentatly
+apply them to times not at all supported by the original data.  This would
+not even cause errors in the code but silently corrupt the results. To help
+you to keep track of the domains of the many time dependent functions used
+in SoilR's Models this class <code><a href="TimeMap-class.html">TimeMap</a></code> stores the
+<code>starttime</code> and <code>endtime</code> values along with the function
+represented by <code>map</code>. SoilR functions that accept time series data will
+normally convert it to subclasses <code>TimeMap-class</code> automatically but you
+can do it explicitly.
+</p>
 
 
 <h3>Methods</h3>
 
 <p>Exported methods directly defined for class TimeMap:
 </p>
-
-<dl>
-<dt>GeneralDecompOp</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
+ <dl>
+<dt>GeneralDecompOp</dt><dd><p><code>signature(object = "TimeMap")</code>: ...
+</p>
 </dd> </dl>
-<p><code><a href="GeneralDecompOp-method_7354b0d1.html">GeneralDecompOp,TimeMap-method</a></code>
+<p><code><a href="GeneralDecompOp-TimeMap-method.html">GeneralDecompOp,TimeMap-method</a></code>
 </p>
 <dl>
 <dt>GeneralInFlux</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="GeneralInFlux-method_7354b0d1.html">GeneralInFlux,TimeMap-method</a></code>
+</dd>
+</dl>
+<p><code><a href="GeneralInFlux-TimeMap-method.html">GeneralInFlux,TimeMap-method</a></code>
 </p>
 <dl>
-<dt>TimeMap</dt><dd><p><code>signature(map = "TimeMap", starttime = "ANY", endtime = "ANY", times = "ANY", data = "ANY")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="TimeMap-method_188f349a.html">TimeMap,TimeMap,ANY,ANY,ANY,ANY-method</a></code>
+<dt>TimeMap</dt><dd><p><code>signature(map = "TimeMap", starttime = "ANY", endtime =
+"ANY", times = "ANY", data = "ANY")</code>: ... </p>
+</dd>
+</dl>
+<p><code><a href="TimeMap-TimeMap-ANY-ANY-ANY-ANY-method.html">TimeMap,TimeMap,ANY,ANY,ANY,ANY-method</a></code>
 </p>
 <dl>
 <dt>add_plot</dt><dd><p><code>signature(x = "TimeMap")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="add_plot-method_7354b0d1.html">add_plot,TimeMap-method</a></code>
-</p>
+</dd>
+</dl>
+<p><code><a href="add_plot-TimeMap-method.html">add_plot,TimeMap-method</a></code> </p>
 <dl>
-<dt>as.character</dt><dd><p><code>signature(x = "TimeMap")</code>: ... </p>
+<dt>as.character</dt><dd><p><code>signature(x
+= "TimeMap")</code>: ... </p>
 </dd> </dl>
-<p><code><a href="as.character-method_7354b0d1.html">as.character,TimeMap-method</a></code>
+<p><code><a href="as.character-TimeMap-method.html">as.character,TimeMap-method</a></code>
 </p>
 <dl>
 <dt>getFunctionDefinition</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getFunctionDefinition-method_7354b0d1.html">getFunctionDefinition,TimeMap-method</a></code>
+</dd>
+</dl>
+<p><code><a href="getFunctionDefinition-TimeMap-method.html">getFunctionDefinition,TimeMap-method</a></code>
 </p>
 <dl>
 <dt>getTimeRange</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getTimeRange-method_7354b0d1.html">getTimeRange,TimeMap-method</a></code>
+</dd>
+</dl>
+<p><code><a href="getTimeRange-TimeMap-method.html">getTimeRange,TimeMap-method</a></code> 
 </p>
 
-
-<h3>Subclasses</h3>
-
-
-<p><code><a href="BoundInFlux-class.html">BoundInFlux</a></code><br />
-<code><a href="TransportDecompositionOperator-class.html">TransportDecompositionOperator</a></code><br />
-<code><a href="BoundLinDecompOp-class.html">BoundLinDecompOp</a></code><br />
-<code><a href="BoundFc-class.html">BoundFc</a></code><br />
-</p>
-
-
-<h3>Constructors</h3>
-
-	<p><code><a href="TimeMap.html">TimeMap</a></code><br />
-Please also look at constructors of non virtual subclasses: 
-<code><a href="BoundInFlux.html">BoundInFlux</a></code>, , <code><a href="BoundLinDecompOp.html">BoundLinDecompOp</a></code>, <code><a href="BoundFc.html">BoundFc</a></code>.</p>
-
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

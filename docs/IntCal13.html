@@ -5,68 +5,60 @@
 
 <table width="100%" summary="page for IntCal13 {SoilR}"><tr><td>IntCal13 {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Atmospheric radiocarbon for the 0-50,000 yr BP period
-</h2>
+<h2>Atmospheric radiocarbon for the 0-50,000 yr BP period</h2>
 
 <h3>Description</h3>
 
-<p>Atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP. This is the most recent update to the internationally agreed calibration curve and superseds <code><a href="IntCal09.html">IntCal09</a></code>.
+<p>Atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP.
+This is the most recent update to the internationally agreed calibration
+curve and superseds <code><a href="IntCal09.html">IntCal09</a></code>.
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>data(IntCal13)</pre>
 
 
 <h3>Format</h3>
 
 <p>A data frame with 5140 observations on the following 5 variables.
 </p>
-
-<dl>
-<dt><code>CAL.BP</code></dt><dd><p>Calibrated age in years Before Present (BP).</p>
+ <dl>
+<dt>list(&quot;CAL.BP&quot;)</dt><dd><p>Calibrated age in years Before Present
+(BP).</p>
+</dd> <dt>list(&quot;C14.age&quot;)</dt><dd><p>C14 age in years BP.</p>
 </dd>
-<dt><code>C14.age</code></dt><dd><p>C14 age in years BP.</p>
+<dt>list(&quot;Error&quot;)</dt><dd><p>Error estimate for <code>C14.age</code>.</p>
 </dd>
-<dt><code>Error</code></dt><dd><p>Error estimate for <code>C14.age</code>.</p>
+<dt>list(&quot;Delta.14C&quot;)</dt><dd><p>Delta.14C value in per mil.</p>
 </dd>
-<dt><code>Delta.14C</code></dt><dd><p>Delta.14C value in per mil.</p>
-</dd>
-<dt><code>Sigma</code></dt><dd><p>Standard deviation of <code>Delta.14C</code> in per mil.</p>
-</dd>
-</dl>
-
+<dt>list(&quot;Sigma&quot;)</dt><dd><p>Standard deviation of <code>Delta.14C</code> in per mil.</p>
+</dd> </dl>
 
 
 <h3>Details</h3>
 
-<p><code>Deltal.14C</code> is age-corrected as per Stuiver and Polach (1977). All details about the derivation of this dataset are provided in Reimer et al. (2013).
-</p>
-
-
-<h3>Source</h3>
-
-<p><a href="http://www.radiocarbon.org/IntCal13%20files/intcal13.14c">http://www.radiocarbon.org/IntCal13%20files/intcal13.14c</a>
+<p><code>Deltal.14C</code> is age-corrected as per Stuiver and Polach (1977). All
+details about the derivation of this dataset are provided in Reimer et al.
+(2013).
 </p>
 
 
 <h3>References</h3>
 
-<p>Reimer PJ, Bard E, Bayliss A, Beck JW, Blackwell PG, Bronk Ramsey C, Buck CE,
-Cheng H, Edwards RL, Friedrich M, Grootes PM, Guilderson TP, Haflidason H, 
-Hajdas I, Hatte C, Heaton TJ, Hogg AG, Hughen KA, Kaiser KF, Kromer B, 
-Manning SW, Niu M, Reimer RW, Richards DA, Scott EM, Southon JR, Turney CSM,
-van der Plicht J. 2013. IntCal13 and MARINE13 radiocarbon age calibration curves 0-50000 years calBP. Radiocarbon 55(4): 1869-1887. DOI: 10.2458/azu_js_rc.55.16947
+<p>Reimer PJ, Bard E, Bayliss A, Beck JW, Blackwell PG, Bronk
+Ramsey C, Buck CE, Cheng H, Edwards RL, Friedrich M, Grootes PM, Guilderson
+TP, Haflidason H, Hajdas I, Hatte C, Heaton TJ, Hogg AG, Hughen KA, Kaiser
+KF, Kromer B, Manning SW, Niu M, Reimer RW, Richards DA, Scott EM, Southon
+JR, Turney CSM, van der Plicht J. 2013. IntCal13 and MARINE13 radiocarbon
+age calibration curves 0-50000 years calBP. Radiocarbon 55(4): 1869-1887.
+DOI: 10.2458/azu_js_rc.55.16947
 </p>
-<p>M. Stuiver and H. A. Polach. 1977. Rerporting of C-14 data. Radiocarbon, 19(3):355 - 363.
+<p>M. Stuiver and H. A. Polach. 1977. Rerporting of C-14 data. Radiocarbon,
+19(3):355 - 363.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
+
 
 
      plot(IntCal13$CAL.BP,IntCal13$C14.age-IntCal13$Error,type="l",col=2,
@@ -77,7 +69,8 @@ van der Plicht J. 2013. IntCal13 and MARINE13 radiocarbon age calibration curves
           xlab="cal BP",ylab="Delta14C")
      lines(IntCal13$CAL.BP,IntCal13$Delta.14C-IntCal13$Sigma,col=2)
 
+
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

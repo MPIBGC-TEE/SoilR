@@ -9,202 +9,175 @@
 
 <h3>Description</h3>
 
-<p>This class  extends <code><a href="Model-class.html">Model</a></code>, 
-to represent <i>14C</i> decay. 
-</p>
-
-<ol>
-<li> 
-
-<ul>
-<li><p> As <code><a href="Model-class.html">Model</a></code> it contains all the components 
-that are needed to solve the
-initial value problem for the pool contents <i>C=(C_1,...C_n)^t</i>. 
-</p>
+<p>This class extends <code><a href="Model-class.html">Model</a></code>, to represent
+<i>14C</i> decay.  </p>
+ <ol>
+<li>  <ul>
+<li><p> As
+<code><a href="Model-class.html">Model</a></code> it contains all the components that are needed to
+solve the initial value problem for the pool contents
+<i>C=(C_1,...C_n)^t</i>.  </p>
 </li>
-<li><p> It adds the components that are needed to solve the
-additional initial value problem for the <i>14C</i> contents of the pools
-<i>14C=(14C_1,...,14C_n)^t</i>. 
-</p>
+<li><p> It adds the components that are
+needed to solve the additional initial value problem for the
+<i>14C</i> contents of the pools
+<i>14C=(14C_1,...,14C_n)^t</i>.  </p>
 </li></ul>
- 
+ </li>
+<li>  <ul>
+<li><p> It
+provides the single argument for all the functions that are available for an
+argument of class <code><a href="Model-class.html">Model</a></code>. </p>
 </li>
-<li> 
-
-<ul>
-<li> 
-<p>It provides the single argument for all the functions 
-that are available for an argument of class <code><a href="Model-class.html">Model</a></code>.
-</p>
-</li>
-<li> 
-<p>and for additional functions 
-that are available to compute various results from the solution of the additional 
-initial value problem for <i>14C</i>. 
-See subsection <code>Methods</code> and the examples.)
-</p>
+<li><p> and for additional
+functions that are available to compute various results from the solution of
+the additional initial value problem for <i>14C</i>.  See subsection
+<code>Methods</code> and the examples.) </p>
 </li></ul>
+ </li></ol>
 
-</li></ol>
 
 
 <h3>Details</h3>
 
-<p>The original initial value problem for <i>(C_1,...,C_n)^t)</i> as decribed in the docomentation of the superclass <code><a href="Model-class.html">Model</a></code>
-was given by:
-</p>
-
-<ul>
-<li>
-<p><i>dC(t)/dt = I(t) + A(t)C(t) </i> 
+<p>The original initial value problem for <i>(C_1,...,C_n)^t)</i> as
+decribed in the docomentation of the superclass <code><a href="Model-class.html">Model</a></code>
+was given by: </p>
+ <ul>
+<li> <p><i>dC(t)/dt = I(t) + A(t)C(t) </i>
 </p>
 </li>
-<li>
-<p>the initial Values <i>C_0=C(t_0)</i> 
+<li><p> the initial Values <i>C_0=C(t_0)</i> </p>
+</li>
+<li><p> for
+the times <i>{t_0,....,t_m}</i>. </p>
+</li></ul>
+<p> The additional initial
+value problem for <i>14C</i> is represented by additional parameters:
+</p>
+ <ul>
+<li><p> a second ordinary differential equation: </p>
+<p style="text-align: center;"><i>d 14C/dt = F(t) I(t) +
+A(t)C(t)-k_14 C(t)</i></p>
+<p> with initial values <i>14C_0=F_0 C_0</i> with: </p>
+</li>
+<li><p> the time dependent
+<i>14C</i> fraction <i>F(t)</i>, </p>
+</li>
+<li><p> the constant
+<i>14C</i> fraction of the initial pool contents <i>F_0</i>,
 </p>
 </li>
-<li> 
-<p>for the times <i>{t_0,....,t_m}</i>.
-</p>
+<li><p> the <i>14C</i> decay rate <i>k_14</i>. </p>
+</li></ul>
+<p> In an object of
+class <code><a href="Model_14-class.html">Model_14</a></code> the components are represented as
+follows: </p>
+ <ul>
+<li><p> The time-dependent matrix valued function
+<i>A(t)</i> is represented by an object of a subclass of
+<code><a href="DecompOp-class.html">DecompOp</a></code> (for decomposition operator).  Such objects
+can be created in different ways from functions, matrices or data.  (see the
+subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code> and especially their
+<code>Constructors</code> sections.  and the <code>examples</code> section of this help
+page. </p>
+</li>
+<li><p> The vector-valued time-dependent function <i>I(t)</i>
+is in SoilR represented by an object of a subclass of class
+<code><a href="InFlux-class.html">InFlux</a></code>.  Such objects can also be created from
+functions, constant vectors and data.  (see the subclasses of
+<code><a href="InFlux-class.html">InFlux</a></code> and especially their <code>Constructors</code>
+sections.  </p>
+</li>
+<li><p> The initial values for <i>C</i> are
+represented by a numeric vector </p>
+</li>
+<li><p> The value for the
+<i>14C</i> fraction of the initial <i>C</i> is
+represented as an object of class <a href="ConstFc-class.html">ConstFc</a> which is a subclass
+of <code><a href="Fc-class.html">Fc</a></code> representing the <i>14C</i> fraction
+<i>F</i> and its unit.  (Either &quot;Delta14C&quot; or &quot;afn&quot; for Absolute Fraction
+Normal) </p>
+</li>
+<li><p> The value for the <i>14C</i> fraction of the
+input <i>I(t)</i> is also represented as an object of a
+subclass of <code><a href="Fc-class.html">Fc</a></code>. It can be time dependent or constant. </p>
 </li></ul>
 
-<p>The additional initial value problem for <i>14C</i> is represented by additional parameters:
-</p>
-
-<ul>
-<li>
-<p>a second ordinary differential equation:
-</p>
-<p style="text-align: center;"><i>d 14C/dt = F(t) I(t) + A(t)C(t)-k_14 C(t)</i></p>
- 
-<p>with initial values <i>14C_0=F_0 C_0</i> with:
-</p>
-</li>
-<li>
-<p>the time dependent <i>14C</i> fraction <i>F(t)</i>, 
-</p>
-</li>
-<li>
-<p>the constant <i>14C</i> fraction of the initial pool contents <i>F_0</i>,
-</p>
-</li>
-<li>
-<p>the <i>14C</i> decay rate <i>k_14</i>.
-</p>
-</li></ul>
-
-<p>In an object of class <code><a href="Model_14-class.html">Model_14</a></code>  the components are represented as follows:
-</p>
-
-<ul>
-<li>
-<p>The time-dependent matrix valued function <i>A(t)</i> is represented by an object 
-of a subclass of <code><a href="DecompOp-class.html">DecompOp</a></code> (for decomposition operator). 
-Such objects can be created in different ways from functions, matrices or data. 
-(see the subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code> and especially their <code>Constructors</code> sections.  
-and the <code>examples</code> section of this help page.
-</p>
-</li>
-<li> 
-<p>The vector-valued time-dependent function <i>I(t)</i> is in SoilR represented by an object of a subclass of class <code><a href="InFlux-class.html">InFlux</a></code>. 
-Such objects can also be created from functions, constant vectors and data. 
-(see the subclasses of <code><a href="InFlux-class.html">InFlux</a></code> and especially their <code>Constructors</code> sections.  
-</p>
-</li>
-<li> 
-<p>The initial values for <i>C</i> are represented by a numeric vector 
-</p>
-</li>
-<li> 
-<p>The value for the <i>14C</i> fraction of the initial <i>C</i> 
-is represented as an object of class <a href="ConstFc-class.html">ConstFc</a> which is
-a subclass of <code><a href="Fc-class.html">Fc</a></code> representing the <i>14C</i> fraction <i>F</i> and its unit. 
-(Either &quot;Delta14C&quot; or &quot;afn&quot; for Absolute Fraction Normal)
-</p>
-</li>
-<li> 
-<p>The value for the <i>14C</i> fraction of the input <i>I(t)</i> is also represented
-as an object of a subclass of <code><a href="Fc-class.html">Fc</a></code>. It can be time dependent or constant.
-</p>
-</li></ul>
 
 
 <h3>Methods</h3>
 
 <p>Exported methods directly defined for class Model_14:
 </p>
-
-<dl>
+ <dl>
 <dt>getC14</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getC14-method_259a526c.html">getC14,Model_14-method</a></code>
-</p>
+</dd>
+</dl>
+<p><code><a href="getC14-Model_14-method.html">getC14,Model_14-method</a></code> </p>
 <dl>
-<dt>getF14</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
+<dt>getF14</dt><dd><p><code>signature(object =
+"Model_14")</code>: ... </p>
 </dd> </dl>
-<p><code><a href="getF14-method_259a526c.html">getF14,Model_14-method</a></code>
+<p><code><a href="getF14-Model_14-method.html">getF14,Model_14-method</a></code>
 </p>
 <dl>
 <dt>getF14C</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getF14C-method_259a526c.html">getF14C,Model_14-method</a></code>
-</p>
+</dd>
+</dl>
+<p><code><a href="getF14C-Model_14-method.html">getF14C,Model_14-method</a></code> </p>
 <dl>
-<dt>getF14R</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
+<dt>getF14R</dt><dd><p><code>signature(object
+= "Model_14")</code>: ... </p>
 </dd> </dl>
-<p><code><a href="getF14R-method_259a526c.html">getF14R,Model_14-method</a></code>
+<p><code><a href="getF14R-Model_14-method.html">getF14R,Model_14-method</a></code>
 </p>
 <dl>
 <dt>getReleaseFlux14</dt><dd><p><code>signature(object = "Model_14")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getReleaseFlux14-method_259a526c.html">getReleaseFlux14,Model_14-method</a></code>
-
+</dd>
+</dl>
+<p><code><a href="getReleaseFlux14-Model_14-method.html">getReleaseFlux14,Model_14-method</a></code> 
 </p>
 <p>Methods inherited from superclasses:
 </p>
 <p>from class Model:
 </p>
-
-<dl>
-<dt>[</dt><dd><p><code>signature(x = "Model", i = "character", j = "missing", drop = "missing")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="z[-method_d68876f3.html">[,Model,character,missing,missing-method</a></code>
+ <dl>
+<dt>[</dt><dd><p><code>signature(x = "Model", i = "character", j =
+"missing", drop = "missing")</code>: ... </p>
+</dd>
+</dl>
+<p><code>[,Model,character,missing,missing-method</code>
 </p>
 <dl>
 <dt>getAccumulatedRelease</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getAccumulatedRelease-method_8d005323.html">getAccumulatedRelease,Model-method</a></code>
+</dd>
+</dl>
+<p><code><a href="getAccumulatedRelease-Model-method.html">getAccumulatedRelease,Model-method</a></code>
 </p>
 <dl>
 <dt>getC</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getC-method_8d005323.html">getC,Model-method</a></code>
-</p>
+</dd>
+</dl>
+<p><code><a href="getC-Model-method.html">getC,Model-method</a></code> </p>
 <dl>
-<dt>getDecompOp</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
+<dt>getDecompOp</dt><dd><p><code>signature(object =
+"Model")</code>: ... </p>
 </dd> </dl>
-<p><code><a href="getDecompOp-method_8d005323.html">getDecompOp,Model-method</a></code>
+<p><code><a href="getDecompOp-Model-method.html">getDecompOp,Model-method</a></code>
 </p>
 <dl>
 <dt>getReleaseFlux</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getReleaseFlux-method_8d005323.html">getReleaseFlux,Model-method</a></code>
+</dd>
+</dl>
+<p><code><a href="getReleaseFlux-Model-method.html">getReleaseFlux,Model-method</a></code>
 </p>
 <dl>
 <dt>getTimes</dt><dd><p><code>signature(object = "Model")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="getTimes-method_8d005323.html">getTimes,Model-method</a></code>
+</dd>
+</dl>
+<p><code><a href="getTimes-Model-method.html">getTimes,Model-method</a></code> 
 </p>
 
-
-<h3>Superclasses</h3>
-
-<p><code><a href="Model-class.html">Model-class</a></code><br /></p>
-
-
-<h3>Constructors</h3>
-
-	<p><code><a href="Model_14.html">Model_14</a></code><br /></p>
-
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

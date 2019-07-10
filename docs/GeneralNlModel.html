@@ -9,19 +9,18 @@
 
 <h3>Description</h3>
 
-<p>The function creates a numerical model  for n arbitrarily connected pools.
-It is one of the constructors of class NlModel.                       
-It is used by some more specialized wrapper functions, but can also be used directly. </p>
+<p>The function creates a numerical model for n arbitrarily connected pools. It
+is one of the constructors of class NlModel.  It is used by some more
+specialized wrapper functions, but can also be used directly.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>GeneralNlModel(t,
-TO,
-ivList,
-inputFluxes,
-solverfunc=deSolve.lsoda.wrapper,
-pass=FALSE)</pre>
+<pre>
+GeneralNlModel(t, TO, ivList, inputFluxes,
+  solverfunc = deSolve.lsoda.wrapper, pass = FALSE)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -29,19 +28,25 @@ pass=FALSE)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>t</code></td>
 <td>
-<p>A vector containing the points in time where the solution is sought.</p>
+<p>A vector containing the points in time where the solution is
+sought.</p>
 </td></tr>
 <tr valign="top"><td><code>TO</code></td>
 <td>
-<p>A object describing the model decay rates for the n pools, connection and feedback coefficients. The number of pools n must be consistent with the number of initial values and input fluxes.</p>
+<p>A object describing the model decay rates for the n pools,
+connection and feedback coefficients. The number of pools n must be
+consistent with the number of initial values and input fluxes.</p>
 </td></tr>
 <tr valign="top"><td><code>ivList</code></td>
 <td>
-<p>A numeric vector containing the initial amount of carbon for the n pools. The length of this vector is equal to the number of pools.</p>
+<p>A numeric vector containing the initial amount of carbon for
+the n pools. The length of this vector is equal to the number of pools.</p>
 </td></tr>
 <tr valign="top"><td><code>inputFluxes</code></td>
 <td>
-<p>A TimeMap object consisting of a vector valued function describing the inputs to the pools as funtions of time <code><a href="TimeMap.new.html">TimeMap.new</a></code>.</p>
+<p>A TimeMap object consisting of a vector valued function
+describing the inputs to the pools as funtions of time
+<code><a href="TimeMap.new.html">TimeMap.new</a></code>.</p>
 </td></tr>
 <tr valign="top"><td><code>solverfunc</code></td>
 <td>
@@ -49,7 +54,10 @@ pass=FALSE)</pre>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
 <td>
-<p>Forces the constructor to create the model even if it is invalid. If set to TRUE, does not enforce the requirements for a biologically meaningful model, e.g. does not check if negative values of respiration are calculated.</p>
+<p>Forces the constructor to create the model even if it is
+invalid. If set to TRUE, does not enforce the requirements for a
+biologically meaningful model, e.g. does not check if negative values of
+respiration are calculated.</p>
 </td></tr>
 </table>
 
@@ -59,27 +67,27 @@ pass=FALSE)</pre>
 <p>Tr=getTransferMatrix(Anl) #this is a function of C and t
 </p>
 <p>#################################################################################
-# build the two models (linear and nonlinear)
-mod=GeneralModel( t, A,iv, inputrates, deSolve.lsoda.wrapper) 
-modnl=GeneralNlModel( t, Anl, iv, inputrates, deSolve.lsoda.wrapper)
+# build the two models (linear and nonlinear) mod=GeneralModel( t, A,iv,
+inputrates, deSolve.lsoda.wrapper) modnl=GeneralNlModel( t, Anl, iv,
+inputrates, deSolve.lsoda.wrapper)
 </p>
-<p>Ynonlin=getC(modnl) 
-lt1=2
-lt2=4
-plot(t,Ynonlin[,1],type=&quot;l&quot;,lty=lt1,col=1,
+<p>Ynonlin=getC(modnl) lt1=2 lt2=4 plot(t,Ynonlin[,1],type=&quot;l&quot;,lty=lt1,col=1,
 ylab=&quot;Concentrations&quot;,xlab=&quot;Time&quot;,ylim=c(min(Ynonlin),max(Ynonlin)))
-lines(t,Ynonlin[,2],type=&quot;l&quot;,lty=lt2,col=2)
-legend(&quot;topleft&quot;,c(&quot;Pool 1&quot;, &quot;Pool 2&quot;),lty=c(lt1,lt2),col=c(1,2))</p>
+lines(t,Ynonlin[,2],type=&quot;l&quot;,lty=lt2,col=2) legend(&quot;topleft&quot;,c(&quot;Pool 1&quot;,
+&quot;Pool 2&quot;),lty=c(lt1,lt2),col=c(1,2))
+</p>
 
 
 <h3>See Also</h3>
 
-<p><code><a href="GeneralModel.html">GeneralModel</a></code>.</p>
+<p><code><a href="GeneralModel.html">GeneralModel</a></code>.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre>t_start=0
+<pre>
+t_start=0
 t_end=20
 tn=100
 timestep=(t_end-t_start)/tn
@@ -119,7 +127,8 @@ c( 2,  2)
 ))})
 #################################################################################
 # we check if we can reproduce the linear decomposition operator from the
-# nonlinear one</pre>
+# nonlinear one
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

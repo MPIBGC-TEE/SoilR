@@ -9,17 +9,18 @@
 
 <h3>Description</h3>
 
-<p>The function serves as a wrapper for lsoda using a much simpler interface which allows the use 
-of matrices in the definition of the derivative. 
-To use lsoda we have to convert our vectors to lists, define tolerances and so on.
-This function does this for us , so we don't need to bother about it.</p>
+<p>The function serves as a wrapper for lsoda using a much simpler interface
+which allows the use of matrices in the definition of the derivative.  To
+use lsoda we have to convert our vectors to lists, define tolerances and so
+on. This function does this for us , so we don't need to bother about it.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>deSolve.lsoda.wrapper(t,
-ydot,
-startValues)</pre>
+<pre>
+deSolve.lsoda.wrapper(t, ydot, startValues)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -27,7 +28,8 @@ startValues)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>t</code></td>
 <td>
-<p>A row vector containing the points in time where the solution is sought.</p>
+<p>A row vector containing the points in time where the solution is
+sought.</p>
 </td></tr>
 <tr valign="top"><td><code>ydot</code></td>
 <td>
@@ -43,7 +45,9 @@ point in time and a column vector y.</p>
 
 <h3>Value</h3>
 
-<p>A matrix. Every column represents a pool and every row a point in time</p>
+<p>A matrix. Every column represents a pool and every row a point in
+time
+</p>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

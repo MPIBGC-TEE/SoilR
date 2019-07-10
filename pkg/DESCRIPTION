@@ -39,7 +39,7 @@ Collate: pkg-package.R setGlobalVariables.R setOldClasses.R
         fW.Demeter.R fW.Gompertz.R fW.Moyano.R fW.RothC.R fW.Skopp.R
         fW.Standcarb.R GaudinskiModel14.R GeneralModel.R
         GeneralModel_14.R GeneralNlModel.R ICBMModel.R linesCPool.R
-        linMaker.R list.R listProduct.R MeanAge.R MeanTT.R Model_14.R
+        linMaker.R list.R listProduct.R makelink.R MeanAge.R MeanTT.R Model_14.R
         NpYdot.R OnepModel.R OnepModel14.R ParallelModel.R
         plotC14Pool.R plotCPool.R RothCModel.R SeriesLinearModel.R
         SeriesLinearModel14.R solver.R spectralNorm.R systemAge.R

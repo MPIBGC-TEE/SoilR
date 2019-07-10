@@ -9,19 +9,16 @@
 
 <h3>Description</h3>
 
-<p>This function implements a 6-pool Michaelis-Meneten model with pairs of microbial biomass and substrate pools.</p>
+<p>This function implements a 6-pool Michaelis-Meneten model with pairs of
+microbial biomass and substrate pools.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>ThreepairMMmodel(t,
-ks,
-kb,
-Km,
-r,
-Af=1,
-ADD,
-ival)</pre>
+<pre>
+ThreepairMMmodel(t, ks, kb, Km, r, Af = 1, ADD, ival)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -33,7 +30,8 @@ ival)</pre>
 </td></tr>
 <tr valign="top"><td><code>ks</code></td>
 <td>
-<p>a vector of length 3 representing SOM decomposition rate (m3 d-1 (gCB)-1)</p>
+<p>a vector of length 3 representing SOM decomposition rate (m3 d-1
+(gCB)-1)</p>
 </td></tr>
 <tr valign="top"><td><code>kb</code></td>
 <td>
@@ -45,36 +43,44 @@ ival)</pre>
 </td></tr>
 <tr valign="top"><td><code>r</code></td>
 <td>
-<p>a vector of length 3 representing the respired carbon fraction (unitless)</p>
+<p>a vector of length 3 representing the respired carbon fraction
+(unitless)</p>
 </td></tr>
 <tr valign="top"><td><code>Af</code></td>
 <td>
-<p>a scalar representing the Activity factor; i.e. a temperature and moisture modifier (unitless)</p>
+<p>a scalar representing the Activity factor; i.e. a temperature and
+moisture modifier (unitless)</p>
 </td></tr>
 <tr valign="top"><td><code>ADD</code></td>
 <td>
-<p>a vector of length 3 representing the annual C input to the soil (g m-3 d-1)</p>
+<p>a vector of length 3 representing the annual C input to the soil
+(g m-3 d-1)</p>
 </td></tr>
 <tr valign="top"><td><code>ival</code></td>
 <td>
-<p>a vector of length 6 with the initial values of the SOM pools and the microbial biomass pools (g m-3)</p>
+<p>a vector of length 6 with the initial values of the SOM pools
+and the microbial biomass pools (g m-3)</p>
 </td></tr>
 </table>
 
 
 <h3>Value</h3>
 
-<p>An object of class NlModel that can be further queried.</p>
+<p>An object of class NlModel that can be further queried.
+</p>
 
 
 <h3>See Also</h3>
 
-<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+<p>There are other <code><a href="predefinedModels.html">predefinedModels</a></code> and also more
+general functions like <code><a href="Model.html">Model</a></code>.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre>days=seq(0,1000)
+<pre>
+days=seq(0,1000)
 #Run the model with default parameter values
 MMmodel=ThreepairMMmodel(t=days,ival=rep(c(100,10),3),ks=c(0.1,0.05,0.01),
 kb=c(0.005,0.001,0.0005),Km=c(100,150,200),r=c(0.9,0.9,0.9),
@@ -96,7 +102,8 @@ lines(Cpools[,6],Cpools[,5],col=3)
 legend("topright",c("Substrate-Enzyme pair 1","Substrate-Enzyme pair 2",
 "Substrate-Enzyme pair 3"),col=1:3,lty=1,bty="n")
 #Microbial biomass over time
-plot(days,Cpools[,2],type="l",col=2,xlab="Days",ylab="Microbial biomass")</pre>
+plot(days,Cpools[,2],type="l",col=2,xlab="Days",ylab="Microbial biomass")
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

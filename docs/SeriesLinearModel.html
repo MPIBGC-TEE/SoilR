@@ -9,20 +9,17 @@
 
 <h3>Description</h3>
 
-<p>This function creates a model for m number of pools connected in series. It is a wrapper for the more general function <code><a href="GeneralModel.html">GeneralModel</a></code>.</p>
+<p>This function creates a model for m number of pools connected in series. It
+is a wrapper for the more general function <code><a href="GeneralModel.html">GeneralModel</a></code>.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>SeriesLinearModel(t,
-m.pools,
-ki,
-Tij,
-C0,
-In,
-xi=1,
-solver=deSolve.lsoda.wrapper,
-pass=FALSE)</pre>
+<pre>
+SeriesLinearModel(t, m.pools, ki, Tij, C0, In, xi = 1,
+  solver = deSolve.lsoda.wrapper, pass = FALSE)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -30,7 +27,8 @@ pass=FALSE)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>t</code></td>
 <td>
-<p>A vector containing the points in time where the solution is sought.</p>
+<p>A vector containing the points in time where the solution is
+sought.</p>
 </td></tr>
 <tr valign="top"><td><code>m.pools</code></td>
 <td>
@@ -38,48 +36,62 @@ pass=FALSE)</pre>
 </td></tr>
 <tr valign="top"><td><code>ki</code></td>
 <td>
-<p>A vector of lenght m containing the values of the decomposition rates for each pool i.</p>
+<p>A vector of lenght m containing the values of the decomposition
+rates for each pool i.</p>
 </td></tr>
 <tr valign="top"><td><code>Tij</code></td>
 <td>
-<p>A vector of length m-1 with the transfer coefficients from pool j to pool i. The value of these coefficients must be in the range [0, 1].</p>
+<p>A vector of length m-1 with the transfer coefficients from pool j
+to pool i. The value of these coefficients must be in the range [0, 1].</p>
 </td></tr>
 <tr valign="top"><td><code>C0</code></td>
 <td>
-<p>A vector of length m containing the initial amount of carbon for the m pools.</p>
+<p>A vector of length m containing the initial amount of carbon for
+the m pools.</p>
 </td></tr>
 <tr valign="top"><td><code>In</code></td>
 <td>
-<p>A scalar or data.frame object specifying the amount of litter inputs by time.</p>
+<p>A scalar or data.frame object specifying the amount of litter
+inputs by time.</p>
 </td></tr>
 <tr valign="top"><td><code>xi</code></td>
 <td>
-<p>A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.</p>
+<p>A scalar or data.frame object specifying the external
+(environmental and/or edaphic) effects on decomposition rates.</p>
 </td></tr>
 <tr valign="top"><td><code>solver</code></td>
 <td>
-<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+<p>A function that solves the system of ODEs. This can be
+<code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user
+provided function with the same interface.</p>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
 <td>
-<p>if TRUE Forces the constructor to create the model even if it is invalid</p>
+<p>if TRUE Forces the constructor to create the model even if it is
+invalid</p>
 </td></tr>
 </table>
 
 
 <h3>References</h3>
 
-<p>Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter decomposition: the SoilR package version 1.0. Geoscientific Model Development 5, 1045-1060.</p>
+<p>Sierra, C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil
+organic matter decomposition: the SoilR package version 1.0. Geoscientific
+Model Development 5, 1045-1060.
+</p>
 
 
 <h3>See Also</h3>
 
-<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+<p>There are other <code><a href="predefinedModels.html">predefinedModels</a></code> and also more
+general functions like <code><a href="Model.html">Model</a></code>.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre>#A five-pool model
+<pre>
+#A five-pool model
 t_start=0 
 t_end=10 
 tn=50
@@ -97,7 +109,8 @@ matplot(t,Ct,type="l",col=2:6,lty=1,ylim=c(0,sum(C0)))
 lines(t,rowSums(Ct),lwd=2)
 legend("topright",c("Total C","C in pool 1", "C in pool 2","C in pool 3",
 "C in pool 4","C in pool 5"),
-lty=1,col=1:6,lwd=c(2,rep(1,5)),bty="n")</pre>
+lty=1,col=1:6,lwd=c(2,rep(1,5)),bty="n")
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

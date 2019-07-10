@@ -9,19 +9,19 @@
 
 <h3>Description</h3>
 
-<p>This function creates a (linear) numerical model for n independent (parallel) pools that can be queried afterwards. 
-It is used by the convinient wrapper functions <code><a href="TwopParallelModel.html">TwopParallelModel</a></code> and <code><a href="ThreepParallelModel.html">ThreepParallelModel</a></code>
-but can also be used independently.</p>
+<p>This function creates a (linear) numerical model for n independent
+(parallel) pools that can be queried afterwards.  It is used by the
+convinient wrapper functions <code><a href="TwopParallelModel.html">TwopParallelModel</a></code> and
+<code><a href="ThreepParallelModel.html">ThreepParallelModel</a></code> but can also be used independently.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>ParallelModel(times,
-coeffs_tm,
-startvalues,
-inputrates,
-solverfunc=deSolve.lsoda.wrapper,
-pass=FALSE)</pre>
+<pre>
+ParallelModel(times, coeffs_tm, startvalues, inputrates,
+  solverfunc = deSolve.lsoda.wrapper, pass = FALSE)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -29,35 +29,46 @@ pass=FALSE)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>times</code></td>
 <td>
-<p>A vector containing the points in time where the solution is sought.</p>
+<p>A vector containing the points in time where the solution is
+sought.</p>
 </td></tr>
 <tr valign="top"><td><code>coeffs_tm</code></td>
 <td>
-<p>A TimeMap object consisting of a vector valued function containing the decay rates for the n pools as function of time and the time range where this function is valid. The length of the vector is equal to the number of pools.</p>
+<p>A TimeMap object consisting of a vector valued function
+containing the decay rates for the n pools as function of time and the time
+range where this function is valid. The length of the vector is equal to the
+number of pools.</p>
 </td></tr>
 <tr valign="top"><td><code>startvalues</code></td>
 <td>
-<p>A vector containing the initial amount of carbon for the n pools.
-&lt;&lt;The length of this vector is equal to the number of pools and thus equal to the length of k. This is checked by the function.</p>
+<p>A vector containing the initial amount of carbon for the
+n pools. &lt;&lt;The length of this vector is equal to the number of pools and
+thus equal to the length of k. This is checked by the function.</p>
 </td></tr>
 <tr valign="top"><td><code>inputrates</code></td>
 <td>
-<p>An  object consisting of a vector valued function describing the inputs to the pools as funtions of time <code><a href="TimeMap.new.html">TimeMap.new</a></code></p>
+<p>An object consisting of a vector valued function
+describing the inputs to the pools as funtions of time
+<code><a href="TimeMap.new.html">TimeMap.new</a></code></p>
 </td></tr>
 <tr valign="top"><td><code>solverfunc</code></td>
 <td>
-<p>The function used to actually solve the ODE system. This can be <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+<p>The function used to actually solve the ODE system. This
+can be <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided
+function with the same interface.</p>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
 <td>
-<p>if TRUE forces the constructor to create the model even if it is invalid</p>
+<p>if TRUE forces the constructor to create the model even if it is
+invalid</p>
 </td></tr>
 </table>
 
 
 <h3>Examples</h3>
 
-<pre>t_start=0 
+<pre>
+t_start=0 
 t_end=10 
 tn=50
 timestep=(t_end-t_start)/tn 
@@ -95,7 +106,8 @@ Y=getAccumulatedRelease(mod)
 plot(t,Y[,1],type="l",lty=lt1,col=col1,ylab="C release",xlab="Time") 
 lines(t,Y[,2],lt2,type="l",lty=lt2,col=col2) 
 lines(t,Y[,3],type="l",lty=lt3,col=col3) 
-legend("topright",c("R1","R2","R3"),lty=c(lt1,lt2,lt3),col=c(col1,col2,col3))</pre>
+legend("topright",c("R1","R2","R3"),lty=c(lt1,lt2,lt3),col=c(col1,col2,col3))
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

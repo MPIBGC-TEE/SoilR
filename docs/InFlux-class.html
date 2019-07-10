@@ -9,43 +9,26 @@
 
 <h3>Description</h3>
 
-<p>All models need to specify the influx of material to the pools.
-This parameter will be represented as an object of one of the subclasses of this class.
-The most general form of influx supported up to now is a  vector valued function of time represented by
-<code><a href="BoundInFlux-class.html">BoundInFlux-class</a></code>. In the most simple case it is constant and represented by an object of class 
-<code><a href="ConstInFlux-class.html">ConstInFlux-class</a></code>. Such an object can for instance be created from a numeric vector.</p>
+<p>All models need to specify the influx of material to the pools. This
+parameter will be represented as an object of one of the subclasses of this
+class. The most general form of influx supported up to now is a vector
+valued function of time represented by <code><a href="BoundInFlux-class.html">BoundInFlux-class</a></code>. In
+the most simple case it is constant and represented by an object of class
+<code><a href="ConstInFlux-class.html">ConstInFlux-class</a></code>. Such an object can for instance be created
+from a numeric vector.
+</p>
 
 
 <h3>Methods</h3>
 
 <p>Exported methods directly defined for class InFlux:
 </p>
-
-<dl>
+ <dl>
 <dt>GeneralInFlux</dt><dd><p><code>signature(object = "InFlux")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="GeneralInFlux-method_27c5e3bb.html">GeneralInFlux,InFlux-method</a></code>
+</dd>
+</dl>
+<p><code><a href="GeneralInFlux-InFlux-method.html">GeneralInFlux,InFlux-method</a></code> 
 </p>
 
-
-<h3>Subclasses</h3>
-
-
-<p><code><a href="BoundInFlux-class.html">BoundInFlux</a></code><br />
-<code><a href="ConstInFlux-class.html">ConstInFlux</a></code><br />
-<code><a href="UnBoundInFlux-class.html">UnBoundInFlux</a></code><br />
-</p>
-
-
-<h3>Constructors</h3>
-
-<p>The class is abstract ( <code>contains "VIRTUAL"</code>).
-It can therefore not be instanciated directly.
-Look at non virtual subclasses and their constructors!
-</p>
-<p>There is also an <a href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">abstract factory</a> that produces instances of different subclasses depending on the input:
-</p>
-<p><code><a href="GeneralInFlux.html">GeneralInFlux</a></code><br /></p>
-
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

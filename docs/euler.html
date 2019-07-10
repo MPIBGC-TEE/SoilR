@@ -9,23 +9,24 @@
 
 <h3>Description</h3>
 
-<p>This function can solve arbitrary first order ode systems with the euler forward 
-method and an
-adaptive time-step size control given a tolerance for the deviation of a coarse and fine 
-estimate of the change in y for the next time step.
-It is an alternative to <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> and has the same interface.
-It is much slower than ode and should probably be considered less capable in solving stiff ode systems.
-However it has one main advantage, which consists in its simplicity.
-It is quite easy to see what is going on inside it.
-Whenever you don't trust your implementation of another (more efficient but probably also more complex)
-ode solver, just compare the result to what this method computes.</p>
+<p>This function can solve arbitrary first order ode systems with the euler
+forward method and an adaptive time-step size control given a tolerance for
+the deviation of a coarse and fine estimate of the change in y for the next
+time step. It is an alternative to <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> and
+has the same interface. It is much slower than ode and should probably be
+considered less capable in solving stiff ode systems. However it has one
+main advantage, which consists in its simplicity. It is quite easy to see
+what is going on inside it. Whenever you don't trust your implementation of
+another (more efficient but probably also more complex) ode solver, just
+compare the result to what this method computes.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>euler(times,
-ydot,
-startValues)</pre>
+<pre>
+euler(times, ydot, startValues)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -33,11 +34,13 @@ startValues)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>times</code></td>
 <td>
-<p>A row vector containing the points in time where the solution is sought.</p>
+<p>A row vector containing the points in time where the solution
+is sought.</p>
 </td></tr>
 <tr valign="top"><td><code>ydot</code></td>
 <td>
-<p>The function of y and t that computes the derivative for a given point in time and a column vector y.</p>
+<p>The function of y and t that computes the derivative for a given
+point in time and a column vector y.</p>
 </td></tr>
 <tr valign="top"><td><code>startValues</code></td>
 <td>
@@ -45,5 +48,5 @@ startValues)</pre>
 </td></tr>
 </table>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

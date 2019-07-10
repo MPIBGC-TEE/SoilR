@@ -9,25 +9,20 @@
 
 <h3>Description</h3>
 
-<p>This function creates a model for five pools as described in Tuomi et al. (2009)</p>
+<p>This function creates a model for five pools as described in Tuomi et al.
+(2009)
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>Yasso07Model(t,
-ks=c(kA = 0.66, kW = 4.3, kE = 0.35, kN = 0.22, kH = 0.0033),
-p=c(p1 = 0.32,
- p2 = 0.01,
- p3 = 0.93,
- p4 = 0.34,
- p5 = 0,
- p6 = 0,
- p7 = 0.035, p8 = 0.005, p9 = 0.01, p10 = 5e-04, p11 = 0.03, p12 = 0.92, pH = 0.04),
-C0,
-In,
-xi=1,
-solver=deSolve.lsoda.wrapper,
-pass=FALSE)</pre>
+<pre>
+Yasso07Model(t, ks = c(kA = 0.66, kW = 4.3, kE = 0.35, kN = 0.22, kH =
+  0.0033), p = c(p1 = 0.32, p2 = 0.01, p3 = 0.93, p4 = 0.34, p5 = 0, p6 =
+  0, p7 = 0.035, p8 = 0.005, p9 = 0.01, p10 = 5e-04, p11 = 0.03, p12 =
+  0.92, pH = 0.04), C0, In, xi = 1, solver = deSolve.lsoda.wrapper,
+  pass = FALSE)
+</pre>
 
 
 <h3>Arguments</h3>
@@ -35,58 +30,74 @@ pass=FALSE)</pre>
 <table summary="R argblock">
 <tr valign="top"><td><code>t</code></td>
 <td>
-<p>A vector containing the points in time where the solution is sought.</p>
+<p>A vector containing the points in time where the solution is
+sought.</p>
 </td></tr>
 <tr valign="top"><td><code>ks</code></td>
 <td>
-<p>A vector of lenght 5 containing the values of the decomposition rates for each pool.</p>
+<p>A vector of lenght 5 containing the values of the decomposition
+rates for each pool.</p>
 </td></tr>
 <tr valign="top"><td><code>p</code></td>
 <td>
-<p>A vector of length 13 containing transfer coefficients among different pools.</p>
+<p>A vector of length 13 containing transfer coefficients among
+different pools.</p>
 </td></tr>
 <tr valign="top"><td><code>C0</code></td>
 <td>
-<p>A vector containing the initial amount of carbon for the 5 pools. The length of this vector must be 5.</p>
+<p>A vector containing the initial amount of carbon for the 5 pools.
+The length of this vector must be 5.</p>
 </td></tr>
 <tr valign="top"><td><code>In</code></td>
 <td>
-<p>A single scalar or data.frame object specifying the amount of litter inputs by time</p>
+<p>A single scalar or data.frame object specifying the amount of
+litter inputs by time</p>
 </td></tr>
 <tr valign="top"><td><code>xi</code></td>
 <td>
-<p>A scalar or data.frame object specifying the external (environmental and/or edaphic) effects on decomposition rates.</p>
+<p>A scalar or data.frame object specifying the external
+(environmental and/or edaphic) effects on decomposition rates.</p>
 </td></tr>
 <tr valign="top"><td><code>solver</code></td>
 <td>
-<p>A function that solves the system of ODEs. This can be <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user provided function with the same interface.</p>
+<p>A function that solves the system of ODEs. This can be
+<code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user
+provided function with the same interface.</p>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
 <td>
-<p>if TRUE forces the constructor to create the model even if it is invalid</p>
+<p>if TRUE forces the constructor to create the model even if it is
+invalid</p>
 </td></tr>
 </table>
 
 
 <h3>Value</h3>
 
-<p>A Model Object that can be further queried </p>
+<p>A Model Object that can be further queried
+</p>
 
 
 <h3>References</h3>
 
-<p>Tuomi, M., Thum, T., Jarvinen, H., Fronzek, S., Berg, B., Harmon, M., Trofymow, J., Sevanto, S., and Liski, J. (2009).
-Leaf litter decomposition-estimates of global variability based on Yasso07 model. Ecological Modelling, 220:3362 - 3371.</p>
+<p>Tuomi, M., Thum, T., Jarvinen, H., Fronzek, S., Berg, B.,
+Harmon, M., Trofymow, J., Sevanto, S., and Liski, J. (2009). Leaf litter
+decomposition-estimates of global variability based on Yasso07 model.
+Ecological Modelling, 220:3362 - 3371.
+</p>
 
 
 <h3>See Also</h3>
 
-<p>There are other <code><a href="TopLevelFunctions.html">predefinedModels</a></code> and also more general functions like <code><a href="Model.html">Model</a></code>.</p>
+<p>There are other <code><a href="predefinedModels.html">predefinedModels</a></code> and also more
+general functions like <code><a href="Model.html">Model</a></code>.
+</p>
 
 
 <h3>Examples</h3>
 
-<pre>years=seq(0,50,0.1) 
+<pre>
+years=seq(0,50,0.1) 
 C0=rep(100,5)
 In=0
 
@@ -99,7 +110,8 @@ ylim=c(0,max(Ct)))
 legend("topright",c("xA","xW","xE","xN","xH"),lty=1,col=1:5,bty="n")
 
 plotCPool(years,Rt,col=1:5,xlab="years",ylab="Respiration",ylim=c(0,50))
-legend("topright",c("xA","xW","xE","xN","xH"),lty=1,col=1:5,bty="n")</pre>
+legend("topright",c("xA","xW","xE","xN","xH"),lty=1,col=1:5,bty="n")
+</pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-53 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
 </body></html>

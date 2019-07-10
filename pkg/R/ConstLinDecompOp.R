@@ -58,6 +58,10 @@ convert_to_internal_flux_rates<-function(internal_flux_rates){
 }
 correctnessOfDecompOp=function(object)
   A=object@mat
+
+#' An S4 class to represent constant (nonautonomuous) compartmental matrix 
+#'
+#' @family ConstlinDecompOp_constructor
 setClass(
     Class="ConstLinDecompOp",
     contains=c("DecompOp"),
@@ -73,6 +77,7 @@ setMethod(
      return(.Object)
      }
 )
+
 setMethod(
       f="ConstLinDecompOp",
       signature=c(
@@ -91,6 +96,7 @@ setMethod(
       return(new("ConstLinDecompOp",mat=mat))
      }
 )
+
 setMethod(
       f="ConstLinDecompOp",
       signature=c(
