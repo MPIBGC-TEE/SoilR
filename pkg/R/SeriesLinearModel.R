@@ -64,7 +64,7 @@ SeriesLinearModel<- function
       if(length(ki)!=m.pools) stop("ki must be of length = m.pools")
       if(length(C0)!=m.pools) stop("the vector with initial conditions must be of length = m.pools")
       if(length(In)==1){
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=m.pools,ncol=1,c(In,rep(0,m.pools-1)))},
             t_start,
             t_end
@@ -74,7 +74,7 @@ SeriesLinearModel<- function
          x=In[,1]  
          y=In[,2]  
          inputFlux=splinefun(x,y)
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=m.pools,ncol=1,c(inputFlux(t),rep(0,m.pools-1)))},
             min(x),
             max(x)

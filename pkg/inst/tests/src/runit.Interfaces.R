@@ -7,7 +7,7 @@ test.TimeMapInterface <- function(){
     "TransportDecompositionOperator",
     "BoundLinDecompOp",
     "ConstLinDecompOp",
-    "BoundInFlux",
+    "BoundInFluxes",
     "BoundFc")
   methodNames=c(
     "getTimeRange",

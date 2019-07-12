@@ -16,7 +16,7 @@ library(lattice)
 time=C14Atm_NH$YEAR
 t_start=min(time)
 t_end=max(time)
-inputFluxes=InFlux( c(270,150,0))
+inputFluxes=InFluxes( c(270,150,0))
 
 
 ###################################################

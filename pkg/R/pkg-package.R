@@ -191,24 +191,24 @@ NULL
 
 
 
-#' BoundInFlux S4 class
+#' BoundInFluxes S4 class
 #' 
 #' defines a time dependent inputrate as function of time and including the
 #' domain where the function is well defined. This can be used to avoid
 #' interpolations out of range when mixing different time dependent data sets
 #' 
 #' 
-#' @name BoundInFlux-class
+#' @name BoundInFluxes-class
 #' @docType class
 #' @section Methods: No exported methods directly defined for class
-#' BoundInFlux:
+#' BoundInFluxes:
 #' 
 #' Methods inherited from superclasses:
 #' 
-#' from class InFlux:
+#' from class InFluxes:
 #' 
-#' \describe{ \item{GeneralInFlux}{\code{signature(object = "InFlux")}: ... }
-#' \code{\link{GeneralInFlux,InFlux-method}} } from class TimeMap:
+#' \describe{ \item{GeneralInFlux}{\code{signature(object = "InFluxes")}: ... }
+#' \code{\link{GeneralInFlux,InFluxes-method}} } from class TimeMap:
 #' 
 #' \describe{ \item{GeneralDecompOp}{\code{signature(object = "TimeMap")}: ...
 #' } \code{\link{GeneralDecompOp,TimeMap-method}}
@@ -383,40 +383,40 @@ NULL
 
 
 
-#' ConstInFlux S4 class
+#' ConstInFluxes S4 class
 #' 
 #' defines a constant inputrate
 #' 
 #' 
-#' @name ConstInFlux-class
+#' @name ConstInFluxes-class
 #' @docType class
-#' @section Methods: Exported methods directly defined for class ConstInFlux:
+#' @section Methods: Exported methods directly defined for class ConstInFluxes:
 #' 
 #' \describe{ \item{getFunctionDefinition}{\code{signature(object =
-#' "ConstInFlux")}: ... }
-#' \code{\link{getFunctionDefinition,ConstInFlux-method}}
-#' \item{getTimeRange}{\code{signature(object = "ConstInFlux")}: ... }
-#' \code{\link{getTimeRange,ConstInFlux-method}} }
+#' "ConstInFluxes")}: ... }
+#' \code{\link{getFunctionDefinition,ConstInFluxes-method}}
+#' \item{getTimeRange}{\code{signature(object = "ConstInFluxes")}: ... }
+#' \code{\link{getTimeRange,ConstInFluxes-method}} }
 #' 
 #' Methods inherited from superclasses:
 #' 
-#' from class InFlux:
+#' from class InFluxes:
 #' 
-#' \describe{ \item{GeneralInFlux}{\code{signature(object = "InFlux")}: ... }
-#' \code{\link{GeneralInFlux,InFlux-method}} }
+#' \describe{ \item{GeneralInFlux}{\code{signature(object = "InFluxes")}: ... }
+#' \code{\link{GeneralInFlux,InFluxes-method}} }
 NULL
 
 
 
 
 
-#' ConstInFlux,numeric-method constructor
+#' ConstInFluxes,numeric-method constructor
 #' 
 #' the method converts a vector of constant input rates into an object of Class
-#' \code{\link{ConstInFlux}}.
+#' \code{\link{ConstInFluxes}}.
 #' 
 #' 
-#' @name ConstInFlux,numeric-method
+#' @name ConstInFluxes,numeric-method
 #' @docType methods
 #' @param map : of class numeric
 NULL
@@ -425,13 +425,13 @@ NULL
 
 
 
-#' ConstInFlux S4 generic
+#' ConstInFluxes S4 generic
 #' 
 #' no Description
 #' 
 #' 
 #' @param map see the method arguments for details
-#' @section Methods: \code{\link{ConstInFlux,numeric-method}}\cr
+#' @section Methods: \code{\link{ConstInFluxes,numeric-method}}\cr
 NULL
 
 
@@ -758,13 +758,13 @@ NULL
 
 
 
-#' GeneralInFlux,InFlux-method pass through conversion
+#' GeneralInFlux,InFluxes-method pass through conversion
 #' 
 #' This method handles the case that no actual conversion is necessary since
-#' the argument is already of a subclass of \link{InFlux-class}
+#' the argument is already of a subclass of \link{InFluxes-class}
 #' 
 #' 
-#' @name GeneralInFlux,InFlux-method
+#' @name GeneralInFlux,InFluxes-method
 #' @docType methods
 #' @param object : of class InFlux
 NULL
@@ -773,11 +773,11 @@ NULL
 
 
 
-#' GeneralInFlux,list-method creates a BoundInFlux from a nested list of a
+#' GeneralInFlux,list-method creates a BoundInFluxes from a nested list of a
 #' times vector and a list of vectors (a vector for each time step)
 #' 
 #' The resulting object is created by a call to the constructor of class
-#' BoundInFlux
+#' BoundInFluxes
 #' 
 #' 
 #' @name GeneralInFlux,list-method
@@ -790,7 +790,7 @@ NULL
 
 
 #' GeneralInFlux,numeric-method conversion of a vector to an object of class
-#' \code{\link{ConstInFlux}}
+#' \code{\link{ConstInFluxes}}
 #' 
 #' This method enables the model creating functions to handle constant input
 #' streams
@@ -805,10 +805,10 @@ NULL
 
 
 
-#' GeneralInFlux,TimeMap-method create a BoundInFlux from a TimeMap object
+#' GeneralInFlux,TimeMap-method create a BoundInFluxes from a TimeMap object
 #' 
 #' The method is used to ensure compatibility TimeMap class. The resulting
-#' BoundInFlux is created by a call to the constructor BoundInFlux(object) of
+#' BoundInFluxes is created by a call to the constructor BoundInFluxes(object) of
 #' that class.
 #' 
 #' 
@@ -821,14 +821,14 @@ NULL
 
 
 
-#' GeneralInFlux,function-method creates a UnBoundInFlux from a vector valued
+#' GeneralInFlux,function-method creates a UnBoundInFluxes from a vector valued
 #' function
 #' 
 #' The resulting operator is created by a call to the constructor of class
-#' UnBoundInFlux. You should only use this if the domain of your function is
+#' UnBoundInFluxes. You should only use this if the domain of your function is
 #' the complete time axis (-Inf,+Inf). If your function has a finite domain
-#' create an object of class \code{\link{BoundInFlux-class}} ### by calling
-#' \code{\link{BoundInFlux}}. This will activeate checks on that avoid
+#' create an object of class \code{\link{BoundInFluxes-class}} ### by calling
+#' \code{\link{BoundInFluxes}}. This will activeate checks on that avoid
 #' unintended extrapolation.
 #' 
 #' 
@@ -847,7 +847,7 @@ NULL
 #' 
 #' 
 #' @param object see the method arguments for details
-#' @section Methods: \code{\link{GeneralInFlux,InFlux-method}}\cr
+#' @section Methods: \code{\link{GeneralInFlux,InFluxes-method}}\cr
 #' \code{\link{GeneralInFlux,TimeMap-method}}\cr
 #' \code{\link{GeneralInFlux,function-method}}\cr
 #' \code{\link{GeneralInFlux,list-method}}\cr
@@ -1164,16 +1164,16 @@ NULL
 
 
 
-#' getFunctionDefinition,UnBoundInFlux-method creates a constant timedependent
+#' getFunctionDefinition,UnBoundInFluxes-method creates a constant timedependent
 #' function and returns it
 #' 
 #' The method creates a timedependent function from the existing matrix
 #' describing the operator
 #' 
 #' 
-#' @name getFunctionDefinition,UnBoundInFlux-method
+#' @name getFunctionDefinition,UnBoundInFluxes-method
 #' @docType methods
-#' @param object : of class UnBoundInFlux
+#' @param object : of class UnBoundInFluxes
 NULL
 
 
@@ -1194,14 +1194,14 @@ NULL
 
 
 
-#' getFunctionDefinition,ConstInFlux-method
+#' getFunctionDefinition,ConstInFluxes-method
 #' 
 #' create the (constant) function of time that is required by the models
 #' 
 #' 
-#' @name getFunctionDefinition,ConstInFlux-method
+#' @name getFunctionDefinition,ConstInFluxes-method
 #' @docType methods
-#' @param object : of class ConstInFlux
+#' @param object : of class ConstInFluxes
 #' @return A constant function of time that is used by the Models to represent
 #' the input fluxes.
 NULL
@@ -1248,12 +1248,12 @@ NULL
 #' 
 #' 
 #' @param object see the method arguments for details
-#' @section Methods: \code{\link{getFunctionDefinition,ConstInFlux-method}}\cr
+#' @section Methods: \code{\link{getFunctionDefinition,ConstInFluxes-method}}\cr
 #' \code{\link{getFunctionDefinition,ConstLinDecompOp-method}}\cr
 #' \code{\link{getFunctionDefinition,DecompositionOperator-method}}\cr
 #' \code{\link{getFunctionDefinition,TimeMap-method}}\cr
 #' \code{\link{getFunctionDefinition,TransportDecompositionOperator-method}}\cr
-#' \code{\link{getFunctionDefinition,UnBoundInFlux-method}}\cr
+#' \code{\link{getFunctionDefinition,UnBoundInFluxes-method}}\cr
 #' \code{\link{getFunctionDefinition,UnBoundLinDecompOp-method}}\cr
 NULL
 
@@ -1431,16 +1431,16 @@ NULL
 
 
 
-#' getTimeRange,UnBoundInFlux-method return an (infinite) time range since the
+#' getTimeRange,UnBoundInFluxes-method return an (infinite) time range since the
 #' function is assumed to be valid for all times
 #' 
 #' some functions dealing with DecompOps in general rely on this so we have to
 #' implement it even though the timerange is always the same: (-inf,inf)
 #' 
 #' 
-#' @name getTimeRange,UnBoundInFlux-method
+#' @name getTimeRange,UnBoundInFluxes-method
 #' @docType methods
-#' @param object : of class UnBoundInFlux
+#' @param object : of class UnBoundInFluxes
 NULL
 
 
@@ -1465,16 +1465,16 @@ NULL
 
 
 
-#' getTimeRange,ConstInFlux-method time domain of the function
+#' getTimeRange,ConstInFluxes-method time domain of the function
 #' 
 #' The method returns a vector containing the start and end time where the
-#' intepolation is valid. Since the class \code{\link{ConstInFlux}} represents
+#' intepolation is valid. Since the class \code{\link{ConstInFluxes}} represents
 #' an input stream constant in time it will return -infinity,+infinity
 #' 
 #' 
-#' @name getTimeRange,ConstInFlux-method
+#' @name getTimeRange,ConstInFluxes-method
 #' @docType methods
-#' @param object : of class ConstInFlux
+#' @param object : of class ConstInFluxes
 NULL
 
 
@@ -1519,11 +1519,11 @@ NULL
 #' 
 #' 
 #' @param object see the method arguments for details
-#' @section Methods: \code{\link{getTimeRange,ConstInFlux-method}}\cr
+#' @section Methods: \code{\link{getTimeRange,ConstInFluxes-method}}\cr
 #' \code{\link{getTimeRange,ConstLinDecompOp-method}}\cr
 #' \code{\link{getTimeRange,DecompositionOperator-method}}\cr
 #' \code{\link{getTimeRange,TimeMap-method}}\cr
-#' \code{\link{getTimeRange,UnBoundInFlux-method}}\cr
+#' \code{\link{getTimeRange,UnBoundInFluxes-method}}\cr
 #' \code{\link{getTimeRange,UnBoundLinDecompOp-method}}\cr
 NULL
 
@@ -1740,23 +1740,23 @@ NULL
 
 
 
-#' InFlux S4 class
+#' InFluxes S4 class
 #' 
 #' All models need to specify the influx of material to the pools. This
 #' parameter will be represented as an object of one of the subclasses of this
 #' class. The most general form of influx supported up to now is a vector
-#' valued function of time represented by \code{\link{BoundInFlux-class}}. In
+#' valued function of time represented by \code{\link{BoundInFluxes-class}}. In
 #' the most simple case it is constant and represented by an object of class
-#' \code{\link{ConstInFlux-class}}. Such an object can for instance be created
+#' \code{\link{ConstInFluxes-class}}. Such an object can for instance be created
 #' from a numeric vector.
 #' 
 #' 
-#' @name InFlux-class
+#' @name InFluxes-class
 #' @docType class
-#' @section Methods: Exported methods directly defined for class InFlux:
+#' @section Methods: Exported methods directly defined for class InFluxes:
 #' 
-#' \describe{ \item{GeneralInFlux}{\code{signature(object = "InFlux")}: ... }
-#' \code{\link{GeneralInFlux,InFlux-method}} }
+#' \describe{ \item{GeneralInFlux}{\code{signature(object = "InFluxes")}: ... }
+#' \code{\link{GeneralInFlux,InFluxes-method}} }
 NULL
 
 
@@ -1901,9 +1901,9 @@ NULL
 #' \code{Constructors} sections.  and the \code{examples} section of this help
 #' page. \item The vector-valued time-dependent function \eqn{\vec{I}(t)}{I(t)}
 #' is in SoilR represented by an object of a subclass of class
-#' \code{\linkS4class{InFlux}}.  Such objects can also be created from
+#' \code{\linkS4class{InFluxes}}.  Such objects can also be created from
 #' functions, constant vectors and data.  (see the subclasses of
-#' \code{\linkS4class{InFlux}} and especially their \code{Constructors}
+#' \code{\linkS4class{InFluxes}} and especially their \code{Constructors}
 #' sections.  \item The initial values for \eqn{\mathbf{C}_0}{C} are
 #' represented by a numeric vector \item The value for the
 #' \eqn{^{14}\mathbf{C}}{14C} fraction of the initial \eqn{\mathbf{C}}{C} is
@@ -1971,9 +1971,9 @@ NULL
 #' \code{Constructors} sections.  and the \code{examples} section of this help
 #' page. \item The vector-valued time-dependent function \eqn{\vec{I}(t)}{I(t)}
 #' is in SoilR represented by an object of a class that inherits from class
-#' InFlux \code{\linkS4class{InFlux}}.  Such objects can be created from
+#' InFluxes \code{\linkS4class{InFluxes}}.  Such objects can be created from
 #' functions, constant vectors and data.  (see the subclasses of
-#' \code{\linkS4class{InFlux}} and especially their \code{Constructors}
+#' \code{\linkS4class{InFluxes}} and especially their \code{Constructors}
 #' sections.  \item The times for which the results are computed are
 #' represented by a numeric vector. \item The initial values are represented by
 #' a numeric vector }
@@ -2047,7 +2047,7 @@ NULL
 #'     starttime=0,
 #'     endtime=20
 #'   )  
-#'   I=BoundInFlux(
+#'   I=BoundInFluxes(
 #'      ## The first argument is a vector-valued function of time
 #'      function(t){
 #'        matrix(nrow=3,ncol=1,byrow=TRUE,
@@ -2432,22 +2432,22 @@ NULL
 #' no Description
 #' 
 #' 
-#' @name UnBoundInFlux-class
+#' @name UnBoundInFluxes-class
 #' @docType class
-#' @section Methods: Exported methods directly defined for class UnBoundInFlux:
+#' @section Methods: Exported methods directly defined for class UnBoundInFluxes:
 #' 
 #' \describe{ \item{getFunctionDefinition}{\code{signature(object =
-#' "UnBoundInFlux")}: ... }
-#' \code{\link{getFunctionDefinition,UnBoundInFlux-method}}
-#' \item{getTimeRange}{\code{signature(object = "UnBoundInFlux")}: ... }
-#' \code{\link{getTimeRange,UnBoundInFlux-method}} }
+#' "UnBoundInFluxes")}: ... }
+#' \code{\link{getFunctionDefinition,UnBoundInFluxes-method}}
+#' \item{getTimeRange}{\code{signature(object = "UnBoundInFluxes")}: ... }
+#' \code{\link{getTimeRange,UnBoundInFluxes-method}} }
 #' 
 #' Methods inherited from superclasses:
 #' 
-#' from class InFlux:
+#' from class InFluxes:
 #' 
-#' \describe{ \item{GeneralInFlux}{\code{signature(object = "InFlux")}: ... }
-#' \code{\link{GeneralInFlux,InFlux-method}} }
+#' \describe{ \item{GeneralInFlux}{\code{signature(object = "InFluxes")}: ... }
+#' \code{\link{GeneralInFlux,InFluxes-method}} }
 NULL
 
 

@@ -321,21 +321,21 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="UnBoundInFlux",
+	 name="UnBoundInFluxes",
 	 def=function 
 	 (map)
 	 {
-	     standardGeneric("UnBoundInFlux")
+	     standardGeneric("UnBoundInFluxes")
 	 }
 )
 setGeneric(
-	 name="ConstInFlux",
+	 name="ConstInFluxes",
 	 def=function 
 	 (
 	   map
 	  )
 	 {
-	     standardGeneric("ConstInFlux")
+	     standardGeneric("ConstInFluxes")
 	 }
 )
 setGeneric(
@@ -347,11 +347,11 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="InFlux",
+	 name="InFluxes",
 	 def=function 
 	 (object)
 	 {
-	     standardGeneric("InFlux")
+	     standardGeneric("InFluxes")
 	 }
 )
 setGeneric(
@@ -359,7 +359,7 @@ setGeneric(
 	 def=function 
 	 (source,destination,src_to_dest,func)
 	 {
-	     standardGeneric("InTernlFlux")
+	     standardGeneric("InternalFlux")
 	 }
 )
 #' Generic constructor 

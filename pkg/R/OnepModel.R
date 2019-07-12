@@ -80,7 +80,7 @@ OnepModel<- function
       if(length(C0)!=1) stop("initial conditions must be of length = 1")
       C0=c(C0)
       if(length(In)==1){
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=1,ncol=1,In)},
             t_start,
             t_end
@@ -90,7 +90,7 @@ OnepModel<- function
          x=In[,1]  
          y=In[,2]  
          inputFlux=splinefun(x,y)
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=1,ncol=1,inputFlux(t))},
             min(x),
             max(x)

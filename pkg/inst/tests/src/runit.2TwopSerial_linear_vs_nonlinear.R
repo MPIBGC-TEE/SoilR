@@ -11,8 +11,8 @@ test.TwopSerial_linear_vs_nonlinear=function(){
     ,'solver.R'
     ,'RespirationCoefficients.R'
     ,'TimeMap.R'
-    ,'InFlux.R'
-    ,'BoundInFlux.R'
+    ,'InFluxes.R'
+    ,'BoundInFluxes.R'
     ,'DecompOp.R'
     ,'ConstLinDecompOp.R'
     ,'TransportDecompositionOperator.R'
@@ -72,7 +72,7 @@ test.TwopSerial_linear_vs_nonlinear=function(){
   c01=3
   c02=2
   iv=c(c01,c02)
-  inputrates=BoundInFlux(
+  inputrates=BoundInFluxes(
     function(t){return(matrix(
       nrow=nr,
       ncol=1,

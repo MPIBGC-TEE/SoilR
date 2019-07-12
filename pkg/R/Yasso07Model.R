@@ -60,14 +60,14 @@ Yasso07Model<- function
       if(length(C0)!=5) stop("the vector with initial conditions must be of length = 5")
       if(length(p)!=13) stop("The vector of transfer coefficients p must be of length = 13")
       if(length(In)==1){
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=5,ncol=1,c(In,0,0,0,0))},
             t_start,
             t_end
         )
       }
       if(class(In)=="data.frame"){
-       inputFluxes=BoundInFlux(In)
+       inputFluxes=BoundInFluxes(In)
       }
       A1=abs(diag(ks))
       Ap=diag(-1,5,5)

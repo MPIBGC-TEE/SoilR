@@ -18,7 +18,7 @@
 #' a vector with the initial values of the radiocarbon fraction for each pool
 #' and a format string describing in which format the values are given.
 #' @param inputFluxes something that can be converted by \link{GeneralInFlux}
-#' to any of the available subclasses of \linkS4class{InFlux}.
+#' to any of the available subclasses of \linkS4class{InFluxes}.
 #' @param Fc deprecated keyword argument, please use inputFc instead
 #' @param inputFc An object describing the fraction of C_14 in per mille
 #' (different formats are possible)

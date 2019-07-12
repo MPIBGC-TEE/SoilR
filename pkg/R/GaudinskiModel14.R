@@ -103,7 +103,7 @@ GaudinskiModel14<- function
     t_stop=max(t)
     if(length(ks)!=7) stop("ks must be of length = 7")
     if(length(C0)!=7) stop("the vector with initial conditions must be of length = 7")
-    if(length(LI)==1) inputFluxes=BoundInFlux(
+    if(length(LI)==1) inputFluxes=BoundInFluxes(
                                       function(t){
                                         matrix(
                                           nrow=7,ncol=1, c(RI,LI,0,0,0,0,0))
@@ -118,7 +118,7 @@ GaudinskiModel14<- function
       y2=RI[,2]  
       LitterFlux=function(t0){as.numeric(spline(x1,y1,xout=t0)[2])}
       RootFlux=function(t0){as.numeric(spline(x2,y2,xout=t0)[2])}
-      inputFluxes= BoundInFlux(map=function(t){matrix(nrow=7,ncol=1,c(RootFlux(t),LitterFlux(t),0,0,0,0,0))}, t_start, t_stop )   
+      inputFluxes= BoundInFluxes(map=function(t){matrix(nrow=7,ncol=1,c(RootFlux(t),LitterFlux(t),0,0,0,0,0))}, t_start, t_stop )   
     }
     if(length(xi)==1) fX=function(t){xi}
     if(class(xi)=="data.frame"){

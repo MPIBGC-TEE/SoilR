@@ -62,7 +62,7 @@ test.MC=function(){
   fac=1e1
   
   #inputrates=new("TimeMap",t_start,t_end,function(t){return(matrix(
-  inputrates=BoundInFlux(function(t){return(matrix(
+  inputrates=BoundInFluxes(function(t){return(matrix(
     nrow=nr,
     rep(
       c(

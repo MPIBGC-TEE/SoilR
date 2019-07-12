@@ -1,11 +1,11 @@
 setClass(
-    Class="UnBoundInFlux",
-    contains=c("InFlux"),
+    Class="UnBoundInFluxes",
+    contains=c("InFluxes"),
     slots=list( map="function")
 )
 setMethod(
      f="initialize",
-     signature="UnBoundInFlux",
+     signature="UnBoundInFluxes",
      definition=function 
      (.Object,map=function(){})
      {
@@ -14,16 +14,16 @@ setMethod(
      }
 )
 setMethod(
-      f="UnBoundInFlux",
+      f="UnBoundInFluxes",
       signature=c(map="function"),
       definition=function 
       (map){
-      return(new("UnBoundInFlux",map=map))
+      return(new("UnBoundInFluxes",map=map))
      }
 )
 setMethod(
     f="getFunctionDefinition",
-    signature="UnBoundInFlux",
+    signature="UnBoundInFluxes",
     definition=function 
     (object){
       return(object@map)
@@ -31,7 +31,7 @@ setMethod(
 )
 setMethod(
     f="getTimeRange",
-    signature="UnBoundInFlux",
+    signature="UnBoundInFluxes",
     definition=function 
     (object)
     {

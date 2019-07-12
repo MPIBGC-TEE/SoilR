@@ -18,7 +18,7 @@
 #' pools. The length of this vector is equal to the number of pools and thus
 #' equal to the length of k. This is checked by an internal function.
 #' @param inputFluxes something that can be converted to any of the available
-#' InFlux classes
+#' InFluxes classes
 #' @param solverfunc The function used by to actually solve the ODE system.
 #' This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided
 #' function with the same interface.

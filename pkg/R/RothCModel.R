@@ -74,7 +74,7 @@ RothCModel<- function
       if(length(C0)!=5) stop("the vector with initial conditions must be of length = 5")
       if(class(In)!=class(FYM)) stop("Inputs In and FYM must be of the same class, either scalars or data.frame")
       if(length(In)==1){
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=5,ncol=1,c(In*(DR/(DR+1))+(FYM*0.49),In*(1/(DR+1))+(FYM*0.49),0,(FYM*0.02),0))},
             t_start,
             t_end
@@ -83,7 +83,7 @@ RothCModel<- function
       if(class(In)=="data.frame"){
          inputFlux=splinefun(In[,1],In[,2])
          FYMflux=splinefun(FYM[,1],FYM[,2])
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=5,ncol=1,c(inputFlux(t)*(DR/(DR+1))+(FYMflux(t)*0.49),inputFlux(t)*(1/(DR+1))+(FYMflux(t)*0.49),0,FYMflux(t)*0.02,0))},
             min(In[,1]),
             max(In[,1])

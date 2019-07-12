@@ -32,7 +32,7 @@ setClass(
         ,
         initialValues="numeric"
         ,
-        inputFluxes="BoundInFlux"
+        inputFluxes="BoundInFluxes"
         ,
         solverfunc="function"
    )
@@ -57,7 +57,7 @@ setMethod(
         ,
         initialValues=numeric()
         ,
-        inputFluxes= BoundInFlux(
+        inputFluxes= BoundInFluxes(
             function(t){
                 return(matrix(nrow=1,ncol=1,1))
             },
@@ -74,12 +74,12 @@ setMethod(
          if (class(inputFluxes)=="TimeMap"){
           warning(
             "The use of object of class TimeMap for the inputFlux argument is deprecated.
-            At the moment we cast TimeMap objects to the new class BoundInFlux
+            At the moment we cast TimeMap objects to the new class BoundInFluxes
             which replaces TimeMap as class of the the inputFlux argument.
-            To get rid of this warning adapt your code to use a BoundInFlux instead of a TimeMap.
+            To get rid of this warning adapt your code to use a BoundInFluxes instead of a TimeMap.
             Other classes may be implemented in the future." 
             )
-            inputFluxes<- BoundInFlux(inputFluxes)
+            inputFluxes<- BoundInFluxes(inputFluxes)
          }
         .Object@initialValues=initialValues
         .Object@inputFluxes=inputFluxes

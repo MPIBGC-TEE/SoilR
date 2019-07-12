@@ -85,7 +85,7 @@ TwopMMmodel<- function
       1
     }
     Anl=new("TransportDecompositionOperator",t_start,Inf,nr,alpha,f)
-    inputrates=BoundInFlux(
+    inputrates=BoundInFluxes(
       function(t){
         matrix(
           nrow=nr,

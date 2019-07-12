@@ -99,7 +99,7 @@ ICBMModel<- function
      A=diag(-ks)
      A[2,1]=ks[1]*h
      Ar=A*r
-     inputFluxes=BoundInFlux(
+     inputFluxes=BoundInFluxes(
         function(t){matrix(nrow=nrow(A),ncol=1,c(In,0))},
         t_start,
         t_end

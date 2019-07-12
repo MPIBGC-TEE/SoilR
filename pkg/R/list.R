@@ -1,9 +1,9 @@
 setMethod(
-  f="InFlux",
+  f="InFluxes",
   signature=signature(object="list"),
   def=function 
   (object){
-    BoundInFlux(TimeMap(object))
+    BoundInFluxes(TimeMap(object))
   }
 )
 setMethod(

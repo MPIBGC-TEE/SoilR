@@ -7,10 +7,10 @@ setMethod(
   }
 )
 setMethod(
-  f="InFlux",
+  f="InFluxes",
   signature=signature(object="function"),
   def=function 
   (object){
-    UnBoundInFlux(object)
+    UnBoundInFluxes(object)
   }
 )

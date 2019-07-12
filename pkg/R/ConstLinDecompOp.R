@@ -248,7 +248,7 @@ setMethod(
       ){
       sVmat=inputDistribution
       n=length(inputDistribution)
-      inputFluxes=BoundInFlux(
+      inputFluxes=BoundInFluxes(
         map=function(t0){matrix(nrow=n,ncol=1,0)},
         starttime= -Inf, 
         endtime=+Inf 

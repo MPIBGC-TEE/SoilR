@@ -69,7 +69,7 @@ OnepModel14<- function
     if(length(F0_Delta14C)!=1) stop("initial 14C fraction must be of length = 1")
     C0=c(C0)
     F0_Delta14C=c(F0_Delta14C)
-    if(length(In)==1) inputFluxes=BoundInFlux(
+    if(length(In)==1) inputFluxes=BoundInFluxes(
                                       function(t){matrix(nrow=1,ncol=1,In)},
                                       t_start,
                                       t_stop
@@ -78,7 +78,7 @@ OnepModel14<- function
       x=In[,1]  
       y=In[,2]  
       inputFlux=function(t0){as.numeric(spline(x,y,xout=t0)[2])}
-      inputFluxes=BoundInFlux(
+      inputFluxes=BoundInFluxes(
                       function(t){matrix(nrow=1,ncol=1,inputFlux(t),0)},
                       t_start,
                       t_stop

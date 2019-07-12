@@ -76,7 +76,7 @@ setClass(
         ,
         initialValues="numeric"
         ,
-        inputFluxes="InFlux"
+        inputFluxes="InFluxes"
         ,
         solverfunc="function"
    ) , 
@@ -92,7 +92,7 @@ setMethod(
         mat=ConstLinDecompOp(matrix(nrow=1,ncol=1,0)), 
         initialValues=numeric()
         ,
-        inputFluxes= BoundInFlux(
+        inputFluxes= BoundInFluxes(
             function(t){
                 return(matrix(nrow=1,ncol=1,1))
             },
@@ -128,7 +128,7 @@ setMethod(
 #' This function \code{Model} wraps the internal constructor of class
 #' \linkS4class{Model}. The internal constructor requires the argument \code{A}
 #' to be of class \linkS4class{DecompOp} and argument \code{inputFluxes} to be
-#' of class \linkS4class{InFlux}. Before calling the internal constructor
+#' of class \linkS4class{InFluxes}. Before calling the internal constructor
 #' \code{Model} calls \link{GeneralDecompOp} on its argument \code{A} and
 #' \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
 #' the required classes. Both are generic functions. Follow the links to see
@@ -139,7 +139,7 @@ setMethod(
 #' If this happens analyse the errormassage (or use \code{traceback()}) to see
 #' which function was called and try to call the constructor of the desired
 #' subclass explicitly with your arguments.  The subclasses are linked in the
-#' class documentation \linkS4class{DecompOp} or \linkS4class{InFlux}
+#' class documentation \linkS4class{DecompOp} or \linkS4class{InFluxes}
 #' respectively.
 #' 
 #' Note also that this function checks its arguments quite elaborately and
@@ -160,7 +160,7 @@ setMethod(
 #' the n pools. The length of this vector is equal to the number of pools. This
 #' is checked by an internal function.
 #' @param inputFluxes something that can be converted by \link{GeneralInFlux}
-#' to any of the available subclasses of \linkS4class{InFlux}.
+#' to any of the available subclasses of \linkS4class{InFluxes}.
 #' @param solverfunc The function used to actually solve the ODE system. The
 #' default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your
 #' own function that the same interface.
@@ -233,7 +233,7 @@ Model <- function
    pass=FALSE  
    )
   {
-     obj=new(Class="Model",t,GeneralDecompOp(A),ivList,InFlux(inputFluxes),solverfunc,pass)
+     obj=new(Class="Model",t,GeneralDecompOp(A),ivList,InFluxes(inputFluxes),solverfunc,pass)
      return(obj)
   }
 setMethod(

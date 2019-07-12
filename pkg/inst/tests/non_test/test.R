@@ -43,7 +43,7 @@ c02=2
 iv=c(c01,c02)
 
 #-----------------------------------------
-inputrates=BoundInFlux(
+inputrates=BoundInFluxes(
   function(t){return(matrix(
     nrow=nr,
     ncol=1,

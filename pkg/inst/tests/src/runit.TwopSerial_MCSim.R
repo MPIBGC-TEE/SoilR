@@ -51,7 +51,7 @@ test.TwopSerial_MCSim=function(){
   }
   fac=2e3
   
-  inputrates=BoundInFlux(function(t){return(matrix(
+  inputrates=BoundInFluxes(function(t){return(matrix(
     nrow=nr,
     rep(
       c(

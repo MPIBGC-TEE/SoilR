@@ -23,7 +23,7 @@ test.all.possible.Model_14.arguments <- function(){
   # We have included a function in SoilR that produces 2D examples of decomposition operators
   possibleAs  <- example.2DGeneralDecompOpArgs()
   
-  # Since "Model_14" will call "InFlux" on its "inputFluxes" 
+  # Since "Model_14" will call "InFluxes" on its "inputFluxes" 
   # argument there are again different choices
   # We have included a function in SoilR that produces 2D examples
   

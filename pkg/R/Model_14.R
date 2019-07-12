@@ -36,7 +36,7 @@ setMethod(
         ,
         initialValF=ConstFc(values=c(0),format="Delta14C")      
         ,
-        inputFluxes= BoundInFlux(
+        inputFluxes= BoundInFluxes(
             function(t){
                 return(matrix(nrow=1,ncol=1,1))
             },
@@ -90,7 +90,7 @@ setMethod(
 #' a vector with the initial values of the radiocarbon fraction for each pool
 #' and a format string describing in which format the values are given.
 #' @param inputFluxes something that can be converted by \link{GeneralInFlux}
-#' to any of the available subclasses of \linkS4class{InFlux}.
+#' to any of the available subclasses of \linkS4class{InFluxes}.
 #' @param inputFc An object describing the fraction of C_14 in per mille
 #' (different formats are possible)
 #' @param c14DecayRate the rate at which C_14 decays radioactivly. If you don't
@@ -208,7 +208,7 @@ setMethod(
 #'     starttime=0,
 #'     endtime=20
 #'   )  
-#'   I=BoundInFlux(
+#'   I=BoundInFluxes(
 #'      ## The first argument is a vector-valued function of time
 #'      function(t){
 #'        matrix(nrow=3,ncol=1,byrow=TRUE,
@@ -248,7 +248,7 @@ Model_14 <- function
    pass=FALSE  
    )
   {
-     obj=new(Class="Model_14",t,GeneralDecompOp(A),ivList, initialValF,InFlux(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=solverfunc,pass=pass)
+     obj=new(Class="Model_14",t,GeneralDecompOp(A),ivList, initialValF,InFluxes(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=solverfunc,pass=pass)
      return(obj)
   }
 setMethod(

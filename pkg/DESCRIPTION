@@ -15,17 +15,17 @@ Collate: pkg-package.R setGlobalVariables.R setOldClasses.R
         genericFunctions.R PoolIndex.R PoolTarget.R PoolSource.R
         PoolConnection.R ConstantOutFluxRate.R
         ConstantInternalFluxRate.R Fc.R HelperFunctions.R TimeMap.R
-        InternalFlux.R InFlux.R BoundInFlux.R ConstInFlux.R deSolve.lsoda.wrapper.R
+        InternalFlux.R InFluxes.R BoundInFluxes.R ConstInFluxes.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R
         NlModel.R SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
         UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R UnBoundNonLinDecompOp.R
         DecompositionOperator_deprecated_in_1.2.R Model.R AWBmodel.R
         bacwaveModel.R bind.C14curves.R BoundFc.R CenturyModel.R
         ConstFc.R ConstLinDecompOp.R cycling.R euler.R
-        example.2DBoundInFluxFromFunction.R
+        example.2DBoundInFluxesFromFunction.R
         example.2DBoundLinDecompOpFromFunction.R
-        example.2DConstFC.Args.R example.2DConstInFluxFromVector.R
-        example.2DGeneralDecompOpArgs.R example.2DInFlux.Args.R
+        example.2DConstFC.Args.R example.2DConstInFluxesFromVector.R
+        example.2DGeneralDecompOpArgs.R example.2DInFluxes.Args.R
         example.2DUnBoundLinDecompOp.R
         example.BoundLinDecompOpFromFunction.R
         example.ConstlinDecompOpFromMatrix.R

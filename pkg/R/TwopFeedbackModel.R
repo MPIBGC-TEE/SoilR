@@ -87,7 +87,7 @@ TwopFeedbackModel<- function
       if(length(ks)!=2) stop("ks must be of length = 2")
       if(length(C0)!=2) stop("the vector with initial conditions must be of length = 2")
       if(length(In)==1){
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=2,ncol=1,c(In,0))},
             t_start,
             t_end
@@ -97,7 +97,7 @@ TwopFeedbackModel<- function
          x=In[,1]  
          y=In[,2]  
          inputFlux=splinefun(x,y)
-         inputFluxes=BoundInFlux(
+         inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=2,ncol=1,c(inputFlux(t),0))},
             min(x),
             max(x)

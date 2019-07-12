@@ -407,7 +407,7 @@ test.check.pass=function(){
   years_fault=seq(0,60,0.1) 
   n=5
   C0=rep(100,n)
-  LitterInput<-BoundInFlux(data.frame(years,rep(0,length(years))))
+  LitterInput<-BoundInFluxes(data.frame(years,rep(0,length(years))))
   op<-ConstLinDecompOp(diag(rep(-1,n)))
   l<-passCaller(call("Model",A=op,t=years_fault,ivList=C0,inputFluxes=LitterInput),l)
   

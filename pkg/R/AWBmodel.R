@@ -110,7 +110,7 @@ AWBmodel<- function
       epsilon_0+epsilon_s*Temp2
     }
     Anl=new("TransportDecompositionOperator",t_start,Inf,nr,alpha,f)
-    inputrates=BoundInFlux(
+    inputrates=BoundInFluxes(
       function(t){
         matrix(
           nrow=nr,

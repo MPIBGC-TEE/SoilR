@@ -151,7 +151,7 @@ ThreepFeedbackModel<- function
       if(length(ks)!=3) stop("ks must be of length = 3")
       if(length(C0)!=3) stop("the vector with initial conditions must be of length = 3")
       if(length(In)==1){
-          inputFluxes=BoundInFlux(
+          inputFluxes=BoundInFluxes(
             function(t){matrix(nrow=3,ncol=1,c(In,0,0))},
             t_start,
             t_end
@@ -161,7 +161,7 @@ ThreepFeedbackModel<- function
          x=In[,1]  
          y=In[,2]
          inputFlux=splinefun(x,y)
-         inputFluxes=BoundInFlux(
+         inputFluxes=BoundInFluxes(
           function(t){matrix(nrow=3,ncol=1,c(inputFlux(t),0,0))},
           t_start,
           t_end

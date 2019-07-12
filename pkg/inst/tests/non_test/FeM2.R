@@ -5,7 +5,7 @@ library("SoilR")
 #library("FME")
 n=1;
 t_start=0;t_end=20
-inputFluxes=new("InFlux",
+inputFluxes=new("InFluxes",
     t_start,
     t_end,
     function(t0){matrix(nrow=n,ncol=1,0.05)}

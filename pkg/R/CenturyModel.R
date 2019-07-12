@@ -72,7 +72,7 @@ CenturyModel<- function
     Fm=0.85-0.18*LN
     Fs=1-Fm
     if(length(In)==1){
-      inputFluxes=BoundInFlux(
+      inputFluxes=BoundInFluxes(
         function(t){matrix(nrow=5,ncol=1,c(In*Fm,In*Fs,0,0,0))},
         t_start,
         t_end
@@ -82,7 +82,7 @@ CenturyModel<- function
       x=In[,1]  
       y=In[,2]  
       inputFlux=splinefun(x,y)
-      inputFluxes=BoundInFlux(
+      inputFluxes=BoundInFluxes(
         function(t){matrix(nrow=5,ncol=1,c(inputFlux(t)*Fm,inputFlux(t)*Fs,0,0,0))},
         min(x),
         max(x)

@@ -50,7 +50,7 @@ CorrectNonautonomousLinearModelExplicit <- function(){
     starttime=0,
     endtime=20
   )  
-  I=BoundInFlux(
+  I=BoundInFluxes(
      ## The first argument is a vector-valued function of time
      function(t){
        matrix(nrow=3,ncol=1,byrow=TRUE,

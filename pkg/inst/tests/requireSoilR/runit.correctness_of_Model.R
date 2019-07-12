@@ -27,7 +27,7 @@ test.correctnessOfModel.impossibleCoefficients=function(){
       t_start,
       t_end
    )   
-   I=BoundInFlux(
+   I=BoundInFluxes(
       function(times){
         matrix(nrow=3,ncol=1,byrow=TRUE,
             c(-1,    0,    0)
@@ -64,7 +64,7 @@ test.correctnessOfModel.impossibleTimeRanges=function(){
       t_start+1/4*tdiff,
       t_end
    )   
-   I=BoundInFlux(
+   I=BoundInFluxes(
       function(times){
         matrix(nrow=3,ncol=1,byrow=TRUE,
             c(-1,    0,    0)
@@ -87,7 +87,7 @@ test.correctnessOfModel.impossibleTimeRanges=function(){
       t_start,
       t_end
    )   
-   I=BoundInFlux(
+   I=BoundInFluxes(
       function(times){
         matrix(nrow=3,ncol=1,byrow=TRUE,
             c(-1,    0,    0)
@@ -112,7 +112,7 @@ test.correctnessOfModel.impossibleTimeRanges=function(){
       t_start,
       t_end-1/4*tdiff
    )   
-   I=BoundInFlux(
+   I=BoundInFluxes(
       function(times){
         matrix(nrow=3,ncol=1,byrow=TRUE,
             c(-1,    0,    0)
@@ -135,7 +135,7 @@ test.correctnessOfModel.impossibleTimeRanges=function(){
       t_start,
       t_end
    )   
-   I=BoundInFlux(
+   I=BoundInFluxes(
       function(times){
         matrix(nrow=3,ncol=1,byrow=TRUE,
             c(-1,    0,    0)
@@ -163,7 +163,7 @@ test.correctnessOfModel.correctModel=function(){
      t_start,
      t_end
    )  
-   I=BoundInFlux(
+   I=BoundInFluxes(
      function(times){
        matrix(nrow=3,ncol=1,byrow=TRUE,
            c(-1,    0,    0)

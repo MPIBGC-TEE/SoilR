@@ -36,7 +36,7 @@
 #' )
 #' c0=c(1, 2, 3)
 #' #constant inputrates
-#' inputrates=BoundInFlux(
+#' inputrates=BoundInFluxes(
 #' function(t){matrix(nrow=3,ncol=1,c(1,1,1))},
 #' t_start,
 #' t_end

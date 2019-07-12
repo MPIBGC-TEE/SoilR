@@ -57,7 +57,7 @@ YassoModel<- function
     if(length(C0)!=7) stop("the vector with initial conditions must be of length = 7")
     if(length(p)!=10) stop("The vector of transfer coefficients p must be of length = 10")
     if(length(In)==7){
-      inputFluxes=BoundInFlux(
+      inputFluxes=BoundInFluxes(
         function(t){matrix(nrow=7,ncol=1,In)},
         t_start,
         t_end
