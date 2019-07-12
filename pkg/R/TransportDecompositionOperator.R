@@ -51,22 +51,15 @@ setMethod(
           NFunc<-function(C,t){
               outFluxVectorFunc=object@f
               outFluxVec=outFluxVectorFunc(C,t)
-              print('##############3 fvec ')
-              print(outFluxVec)
-              N<-diag(as.numeric(outFluxVec))
-              print('##############3 N ')
-              print(N)
+              n_vec=as.numeric(outFluxVec/C)
+              N <- diag(n_vec)
               N
           }
           TFunc=getTransferMatrixFunc(object)
           BFunc<-function(C,t){
               T <- TFunc(C,t)
               N <- NFunc(C,t)
-              print('##############3 T ')
-              print(T)
-              B<-T%*%N
-              print('##############3 B ')
-              print(B)
+              B <- T%*%N
               B
           }
       return(BFunc)

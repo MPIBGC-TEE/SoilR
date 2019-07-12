@@ -354,6 +354,14 @@ setGeneric(
 	     standardGeneric("InFlux")
 	 }
 )
+setGeneric(
+	 name="InternalFlux",
+	 def=function 
+	 (source,destination,src_to_dest,func)
+	 {
+	     standardGeneric("InTernlFlux")
+	 }
+)
 #' Generic constructor 
 #' 
 #' @eval makelink('ConstLinDecompOp')

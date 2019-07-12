@@ -2,13 +2,14 @@
 # vim:set ff=unix expandtab ts=2 sw=2:
 #source("prolog.R")
 tfr  <- "^runit\\..*\\.R"
+
+devtools::install('~/SoilR-exp/pkg',quick=TRUE)
 require("parallel")
 require("RUnit")
 require("deSolve")
-require("debugHelpers")
+#require("debugHelpers")
 require("devtools")
 require("SoilR")
-devtools::install('~/SoilR-exp/pkg')
 
 source("../testhelpers.R")
 #fl <- list.files(pattern=tfr)
@@ -32,7 +33,7 @@ alltests <- defineTestSuite(
    #"ptest.ModelOperators"
    #"test.ParallelModel"
    #"test.TwopSerial_MCSim"
-   "test.ThreepSerialFeedback_linear_vs_nonlinear"
+   "test.NonlinearOperators"
    #"test.TwopSerial_linear_vs_nonlinear"
    #"test.SoilRPaper1"
    #"test.FourpSerial_1"
