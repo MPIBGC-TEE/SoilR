@@ -17,7 +17,7 @@ test.ThreepSerialFeedback_linear_vs_nonlinear=function(){
   a23=1/6
   a21=1/9
   a32=1/6
-  A=new("ConstLinDecompOp",matrix(
+  Amat <- matrix(
     byrow=T,                                                           
     nrow=3,
     ncol=3,
@@ -27,7 +27,7 @@ test.ThreepSerialFeedback_linear_vs_nonlinear=function(){
        0,    a32,  -k3
     )
    )
-  )
+  A=new("ConstLinDecompOp",Amat)
   
   alpha=list()
   alpha[["2_to_1"]]=function(C,t){
@@ -54,16 +54,16 @@ test.ThreepSerialFeedback_linear_vs_nonlinear=function(){
   )
   f=function(C,t){
     # in this case the application of f can be expressed by a matrix multiplication
-    # f(C,t)=N C
-    # furthermorde the matrix N is actually completely linear and even constant
     # so we can write f(C,t)  as a Matrix product
-    # note however that we could anything we like with the components
-    # of C here. 
-    # The only thing to take care of is that we release a vector of the same
-    # size as C
+    # f(C,t)=N(C,t) C
+    # furthermore the matrix N is actually completely linear and even constant
+    # so we can further simplify to 
+    # f(C,t)=N C
+    #  
     return(N%*%C)
   }
   Anl=new("TransportDecompositionOperator",t_start,Inf,nr,alpha,f)
+  Anl2=UnBoundNonLinDecompOp(matFunc=function(C,t){Amat*N})
  
   
   c01=3
@@ -80,15 +80,23 @@ test.ThreepSerialFeedback_linear_vs_nonlinear=function(){
   #################################################################################
   # we check if we can reproduce the linear decomposition operator from the
   # nonlinear one
-  Tr=getTransferMatrix(Anl) #this is a function of C and t
-  T_00=Tr(matrix(nrow=nr,iv),0)
+  iv_mat=matrix(nrow=nr,iv)
+  Tr=getTransferMatrixFunc(Anl) #this is a function of C and t
+  T_00=Tr(iv_mat,0)
   af=getFunctionDefinition(A)
   af_0=af(0)
-  #pp("T_00",environment())
-  #pp("af_0",environment())
-  #pe(quote(T_00%*%N),environment())
   checkEquals(af_0,T_00%*%N)
   
+  # We can extract the CompartmentalMatrixFunc directly
+  AFunc=getCompartmentalMatrixFunc(A) #this is a function of t
+  A_0=AFunc(0)
+  BFunc=getCompartmentalMatrixFunc(Anl) #this is a function of C and t
+  B_iv_0=BFunc(iv_mat,0)
+  BFunc2=getCompartmentalMatrixFunc(Anl2) #this is a function of C and t
+  B2_iv_0=BFunc2(iv_mat,0)
+  checkEquals(af_0,A_0)
+  checkEquals(A_0,B_iv_0)
+  checkEquals(A_0,B2_iv_0)
           
   #################################################################################
   # build the two models (linear and nonlinear)
@@ -126,38 +134,11 @@ test.ThreepSerialFeedback_linear_vs_nonlinear=function(){
     )
   )
   plotAndCheck("runit.ThreepSerialFeedback_linear_vs_nonlinear.pdf",ex,environment())
-  #plot(t,R[,1],type="l",lty=lt1,col=1,ylab="Respirationfluxes",xlab="Time",ylim=c(min(R),max(R)))
-  #lines(t,Rnonlin[,1],type="l",lty=lt2,col=1)
-  #lines(t,R[,2],type="l",lty=lt1,col=2)
-  #lines(t,Rnonlin[,2],type="l",lty=lt2,col=2)
-  #lines(t,R[,3],type="l",lty=lt1,col=3)
-  #lines(t,Rnonlin[,3],type="l",lty=lt2,col=3)
-  #legend(
-  #"topright",
-  #  c(
-  #  "linear sol for pool 1",
-  #  "non linear sol for pool 1",
-  #  "linear sol for pool 2",
-  #  "non linear sol for pool 2",
-  #  "linear sol for pool 3",
-  #  "non linear sol for pool 3"
-  #  ),
-  #  lty=c(lt1,lt2),
-  #  col=c(1,1,2,2,3,3)
-  #)
-# end plots 
-# begin checks 
   checkEquals(
    Y,
    Ynonlin,
    "test non linear solution for C-Content computed by the ode mehtod against analytical",
    tolerance = tol,
   )
-  #checkEquals(
-  # R,
-  # Rnonlin,
-  # "test non linear solution for Respiration computed by the ode mehtod against analytical",
-  # tolerance = tol,
-  #)
 
  }

@@ -259,3 +259,11 @@ setMethod(
       return(TTD)
    }
 )
+
+setMethod(
+   f= "getCompartmentalMatrixFunc",
+      signature(object="ConstLinDecompOp"),
+      definition=function(object){
+          getFunctionDefinition(object)
+   }
+)

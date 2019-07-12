@@ -18,7 +18,7 @@ Collate: pkg-package.R setGlobalVariables.R setOldClasses.R
         InFlux.R BoundInFlux.R ConstInFlux.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R
         NlModel.R SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
-        UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R
+        UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R UnBoundNonLinDecompOp.R
         DecompositionOperator_deprecated_in_1.2.R Model.R AWBmodel.R
         bacwaveModel.R bind.C14curves.R BoundFc.R CenturyModel.R
         ConstFc.R ConstLinDecompOp.R cycling.R euler.R

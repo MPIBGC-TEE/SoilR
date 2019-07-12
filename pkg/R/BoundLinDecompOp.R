@@ -38,3 +38,11 @@ setMethod(
     return(obj)
   }
 )
+
+setMethod(
+   f= "getCompartmentalMatrixFunc",
+      signature(object="BoundLinDecompOp"),
+      definition=function(object){
+          getFunctionDefinition(object)
+   }
+)

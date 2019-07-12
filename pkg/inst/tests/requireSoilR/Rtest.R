@@ -32,7 +32,7 @@ alltests <- defineTestSuite(
    #"ptest.ModelOperators"
    #"test.ParallelModel"
    #"test.TwopSerial_MCSim"
-   #"test.ThreepSerial_linear_vs_nonlinear"
+   "test.ThreepSerialFeedback_linear_vs_nonlinear"
    #"test.TwopSerial_linear_vs_nonlinear"
    #"test.SoilRPaper1"
    #"test.FourpSerial_1"
@@ -43,7 +43,7 @@ alltests <- defineTestSuite(
    #"test.Deprecation"
    #"test.GaudinskiModel14"
    #"test.MC"
-   "test.ConstLinDecompOp"
+   #"test.ConstLinDecompOp"
 )
 
 testResult <- runTestSuite(alltests)

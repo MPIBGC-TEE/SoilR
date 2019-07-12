@@ -45,6 +45,34 @@ setMethod(
    }
 )
 setMethod(
+   f= "getCompartmentalMatrixFunc",
+      signature(object="TransportDecompositionOperator"),
+      definition=function(object){
+          NFunc<-function(C,t){
+              outFluxVectorFunc=object@f
+              outFluxVec=outFluxVectorFunc(C,t)
+              print('##############3 fvec ')
+              print(outFluxVec)
+              N<-diag(as.numeric(outFluxVec))
+              print('##############3 N ')
+              print(N)
+              N
+          }
+          TFunc=getTransferMatrixFunc(object)
+          BFunc<-function(C,t){
+              T <- TFunc(C,t)
+              N <- NFunc(C,t)
+              print('##############3 T ')
+              print(T)
+              B<-T%*%N
+              print('##############3 B ')
+              print(B)
+              B
+          }
+      return(BFunc)
+   }
+)
+setMethod(
    f= "getOutputReceivers",
    signature(object="TransportDecompositionOperator",i="numeric"),
    definition=function(object,i){
@@ -55,8 +83,17 @@ setMethod(
      return(js)
    }
 )
+#setMethod(
+#   f= "getTransferMatrix",
+#   signature(object="TransportDecompositionOperator"),
+#   definition=function(object){
+#        # fixme mm
+#        # add a deprecation warning in the generic
+#        return(getTransferMatrixFunc(object))
+#   }
+#)
 setMethod(
-   f= "getTransferMatrix",
+   f= "getTransferMatrixFunc",
       signature(object="TransportDecompositionOperator"),
       definition=function(object){
         alpha=object@alpha

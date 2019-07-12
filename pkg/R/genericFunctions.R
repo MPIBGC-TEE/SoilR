@@ -264,7 +264,21 @@ setGeneric(
 setGeneric(
 	 name="getTransferMatrix",
 	 def=function(object){
-	     standardGeneric("getTransferMatrix")
+         warning('The function has been renamed to "getTransferMatrixFunc".
+                 Please adapt your code to get rid of this warning.')
+	     getTransferMatrixFunc(object)
+	 }
+)
+setGeneric(
+	 name="getTransferMatrixFunc",
+	 def=function(object){
+	     standardGeneric("getTransferMatrixFunc")
+	 }
+)
+setGeneric(
+	 name="getCompartmentalMatrixFunc",
+	 def=function(object){
+	     standardGeneric("getCompartmentalMatrixFunc")
 	 }
 )
 setGeneric(
@@ -368,6 +382,14 @@ setGeneric(
    )
 	 {
 	     standardGeneric("BoundLinDecompOp")
+	 }
+)
+setGeneric(
+	 name="UnBoundNonLinDecompOp",
+	 def=function 
+	 (matFunc,internal_fluxes,out_fluxes,numberOfPools)
+	 {
+	     standardGeneric("UnBoundNonLinDecompOp")
 	 }
 )
 setGeneric(
