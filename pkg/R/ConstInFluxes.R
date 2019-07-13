@@ -1,0 +1,35 @@
+setClass(
+   Class="ConstInFluxes",
+   contains=c("InFluxes"),
+   slots=list(
+    map="numeric"
+   )
+)
+setMethod(
+  f="ConstInFluxes",
+  signature=c(
+    map="numeric"
+  ),
+  definition=function 
+  (
+    map
+    ){
+    new("ConstInFluxes",map=map)
+  }
+)
+setMethod(
+    f="getTimeRange",
+    signature="ConstInFluxes",
+    definition=function 
+    ( object){
+        return(
+               c("t_min"=-Inf,"t_max"=Inf))
+    }
+)
+setMethod(
+    f="getFunctionDefinition",
+    signature="ConstInFluxes",
+    definition=function(object){
+        return(function(t){object@map})
+    }
+)

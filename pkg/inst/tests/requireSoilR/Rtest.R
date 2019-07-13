@@ -2,8 +2,12 @@
 # vim:set ff=unix expandtab ts=2 sw=2:
 #source("prolog.R")
 tfr  <- "^runit\\..*\\.R"
+pkgDir<-'../../../'
+if (is.element('SoilR',installed.packages())){
+  devtools::uninstall(pkgDir)
+}
 
-devtools::install('~/SoilR-exp/pkg',quick=TRUE)
+devtools::install(pkgDir,quick=TRUE) # unfortunately does not stop on error therefore we uninstall first
 require("parallel")
 require("RUnit")
 require("deSolve")

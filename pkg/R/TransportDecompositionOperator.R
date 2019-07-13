@@ -52,8 +52,8 @@ setMethod(
               outFluxVectorFunc=object@f
               outFluxVec=outFluxVectorFunc(C,t)
               n_vec=as.numeric(outFluxVec/C)
-              N <- diag(n_vec)
-              N
+              Nmat <- diag(n_vec)
+              Nmat
           }
           TFunc=getTransferMatrixFunc(object)
           BFunc<-function(C,t){

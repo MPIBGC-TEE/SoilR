@@ -1,7 +1,7 @@
 #
 # vim:set ff=unix expandtab ts=2 sw=2:
 # This test usese the non linear model approach for a linear problem to show that the results are consistent
-#test.NonlinearOperators=function(){
+test.NonlinearOperators=function(){
   require(RUnit)
   t_start=0
   t_end=20
@@ -102,16 +102,13 @@
   af=getFunctionDefinition(A)
   af_0=af(0)
   checkEquals(af_0,Amat)
-  checkEquals(af_0,T_00%*%N)
+  checkEquals(T_00%*%N,Amat)
   
   # We can extract the CompartmentalMatrixFunc directly
-  AFunc=getCompartmentalMatrixFunc(A) #this is a function of t
-  A_0=AFunc(0)
-  BFunc=getCompartmentalMatrixFunc(Anl) #this is a function of C and t
-  B_iv_0=BFunc(iv_mat,0)
-  BFunc2=getCompartmentalMatrixFunc(Anl2) #this is a function of C and t
-  B2_iv_0=BFunc2(iv_mat,0)
-  checkEquals(af_0,A_0)
+  A_0     <-getCompartmentalMatrixFunc(A)(0)
+  B_iv_0  <-getCompartmentalMatrixFunc(Anl)(iv_mat,0)
+  B2_iv_0 <-getCompartmentalMatrixFunc(Anl2)(iv_mat,0)
+  checkEquals(A_0,Amat)
   checkEquals(A_0,B_iv_0)
   checkEquals(A_0,B2_iv_0)
   #        
@@ -158,4 +155,4 @@
   # tolerance = tol,
   #)
 
-# }
+}

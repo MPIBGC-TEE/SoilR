@@ -1,5 +1,5 @@
-#!/usr/bin/env Rscript
-install.packages('devtools')
 require('devtools')
-devtools::install('../../')
+pkgDir<-'../../'
+devtools::uninstall(pkgDir)
+devtools::install(pkgDir)
 #devtools::install('../../../../debugHelpers/pkg')

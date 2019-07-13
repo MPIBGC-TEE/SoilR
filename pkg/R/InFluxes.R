@@ -1,0 +1,29 @@
+setClass(
+   Class="InFluxes",
+   contains="VIRTUAL"
+)
+setMethod(
+  f="InFluxes",
+  signature(object="TimeMap"),
+  def=function 
+  (object)
+  {
+    BoundInFluxes(object)
+  }
+)
+setMethod(
+  f="InFluxes",
+  signature=signature(object="InFluxes"),
+  def=function 
+  (object){
+    object
+  }
+)
+setMethod(
+  f="InFluxes",
+  signature=signature(object="numeric"),
+  def=function 
+  (object){
+    ConstInFluxes(object)
+  }
+)
