@@ -9,8 +9,8 @@ pkgload::load_all('../../../')
 alltests <- defineTestSuite(
    name="selectedMarkus",
    dirs=c("."),
-   #testFileRegexp = "^runit.FluxRateConstructors.R$|^runit.FluxConstructors.R$|^runit.PoolConnectionConstructors.R$",
-   #testFileRegexp = "^runit.PoolConnectionConstructors.R$",
+   #testFileRegexp = "^runit.FluxRateConstructors.R$|^runit.FluxConstructors.R$|^runit.PoolTopologyConstructors.R$",
+   #testFileRegexp = "^runit.PoolTopologyConstructors.R$",
    #testFileRegexp = "^runit.FluxRateConstructors.R$",
    #testFileRegexp = "^runit.FluxConstructors.R$",
    #testFileRegexp = "^runit.NonlinearOperators.R$",

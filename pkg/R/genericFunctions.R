@@ -430,9 +430,9 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="PoolId",
+	 name="GeneralPoolId",
 	 def=function  (id) {
-	     standardGeneric("PoolId")
+	     standardGeneric("GeneralPoolId")
 	 }
 )
 setGeneric(
@@ -444,14 +444,14 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="PoolTarget",
-	 def=function( destination ){
-	     standardGeneric("PoolTarget")
+	 name="PoolName",
+	 def=function(id,...){
+	     standardGeneric("PoolName")
 	 }
 )
 setGeneric(
 	 name="PoolIndex",
-	 def=function(object,...){
+	 def=function(id,...){
 	     standardGeneric("PoolIndex")
 	 }
 )
@@ -459,5 +459,23 @@ setGeneric(
 	 name="check_pool_ids",
 	 def=function(obj,pools){
 	     standardGeneric("check_pool_ids")
+	 }
+)
+setGeneric(
+	 name="GeneralPoolId",
+	 def=function(id){
+	     standardGeneric("GeneralPoolId")
+	 }
+)
+setGeneric(
+	 name="by_PoolIndex",
+	 def=function(obj,poolNames){
+	     standardGeneric("by_PoolIndex")
+	 }
+)
+setGeneric(
+	 name="by_PoolName",
+	 def=function(obj,poolNames){
+	     standardGeneric("by_PoolName")
 	 }
 )

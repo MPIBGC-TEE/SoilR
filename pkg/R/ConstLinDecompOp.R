@@ -49,16 +49,16 @@ setClass(
     contains=c("DecompOp"),
     slots=list( mat="matrix")
 )
-#setMethod(
-#     f="initialize",
-#     signature="ConstLinDecompOp",
-#     definition=function 
-#     (.Object,mat=matrix())
-#     {
-#        .Object@mat=mat
-#     return(.Object)
-#     }
-#)
+setMethod(
+     f="initialize",
+     signature="ConstLinDecompOp",
+     definition=function 
+     (.Object,mat=matrix())
+     {
+        .Object@mat=mat
+     return(.Object)
+     }
+)
 
 setMethod(
       f="ConstLinDecompOp",

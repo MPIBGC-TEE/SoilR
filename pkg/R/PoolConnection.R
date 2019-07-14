@@ -1,14 +1,14 @@
 #' Objects that have a source and a destination
 #'
 #' Examples are internal Fluxex and Fluxrates
-#' Many sanity checks are implemented here rather than 
-#' in every function that uses Fluxes or rates
+#' Their 'topologic' part and many related sanity checks are implemented here rather than 
+#' in every function that uses fluxes or rates
 #' The methods are also essential for the translation from (internal) 
 #' flux lists
 #' to the respective parts of compartmental matrices and back
 setClass(
    Class="PoolConnection",
-   contains=c("PoolSource","PoolTarget"),
+   slots=c(sourceId='PoolId',destinationId='PoolId')
 )
 
 #' constructor from an ordered pair of PoolId objects
@@ -18,8 +18,8 @@ setMethod(
   def=function(source,destination){
     new(
         'PoolConnection'
-        ,sourceId=PoolId(source)
-        ,destinationId=PoolId(destination)
+        ,sourceId=GeneralPoolId(source)
+        ,destinationId=GeneralPoolId(destination)
     )
   }
 )
@@ -44,5 +44,33 @@ setMethod(
      src<-PoolIndex(obj@sourceId)
      if (dest> np){stop("The index of the destination pool must be smaller than the number of pools")}
      if (src> np){stop("The index of the source pool must be smaller than the number of pools")}
+  }
+)
+
+
+
+#' convert the source pool id to a number if necessary
+setMethod(
+  f="by_PoolIndex",
+  signature=c(obj='PoolConnection'),
+  def=function(obj,poolNames){
+    new(
+        'PoolConnection'
+        ,sourceId=PoolIndex(id=obj@sourceId,poolNames)
+        ,destinationId=PoolIndex(id=obj@destinationId,poolNames)
+    )
+  }
+)
+
+#' convert the source pool id to a name if necessary
+setMethod(
+  f="by_PoolName",
+  signature=c(obj='PoolConnection'),
+  def=function(obj,poolNames){
+    new(
+        'PoolConnection'
+        ,sourceId=PoolName(id=obj@sourceId,poolNames)
+        ,destinationId=PoolName(id=obj@destinationId,poolNames)
+    )
   }
 )
