@@ -23,29 +23,6 @@ test.ConstLinDecompOp_check_internal_flux_args=function(){
     ,silent=TRUE
   )
 }
-test.ConstLinDecompOp=function(){
-  n<-3
-  k<-3
-  B=ConstLinDecompOp(
-    internal_flux_rates=c("1_to_2"=k)
-    ,out_flux_rates=c("1"=k)
-    ,numberOfPools = n
-  )@mat
-  print(B)
-  checkEquals(
-     B
-    ,matrix(
-       nrow=n
-      ,ncol=n
-      ,byrow=TRUE
-      ,c( 
-         -6,0,0
-         ,3,0,0
-         ,0,0,0
-      )
-    )
-  )
-}
 test.ConstLinDecompOpWithoutInternalFluxes=function(){
   n<-3
   k<-3
@@ -89,4 +66,56 @@ test.ConstLinDecompOpWithoutOutFluxes=function(){
       )
     )
   )
+}
+test.ConstLinDecompOp=function(){
+  n<-3
+  k<-3
+  B=ConstLinDecompOp(
+    internal_flux_rates=c("1_to_2"=k)
+    ,out_flux_rates=c("1"=k)
+    ,numberOfPools = n
+  )@mat
+  print(B)
+  checkEquals(
+     B
+    ,matrix(
+       nrow=n
+      ,ncol=n
+      ,byrow=TRUE
+      ,c( 
+         -6,0,0
+         ,3,0,0
+         ,0,0,0
+      )
+    )
+  )
+}
+test.ConstLinDecompOpFromNamedFluxes=function(){
+  n<-3
+  k<-3
+  ifrs=c(
+    ConstantInternalFluxRate(source='barrel',destination='glass',rate_constant=k)
+  )
+  ofrs=c(
+    ConstantOutFluxRate(source='barrel',rate_constant=k)
+  )
+  B=ConstLinDecompOp(
+    internal_flux_rates=c("1_to_2"=k)
+    ,out_flux_rates=ofrs
+    ,poolNames=c('barrel','glass','belly')
+  )@mat
+  #print(B)
+  #checkEquals(
+  #   B
+  #  ,matrix(
+  #     nrow=n
+  #    ,ncol=n
+  #    ,byrow=TRUE
+  #    ,c( 
+  #       -6,0,0
+  #       ,3,0,0
+  #       ,0,0,0
+  #    )
+  #  )
+  #)
 }

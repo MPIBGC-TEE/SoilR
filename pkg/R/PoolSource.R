@@ -1,5 +1,7 @@
 setClass(
    Class="PoolSource",
-   contains="VIRTUAL",
-   slots=c(source='PoolIndex')
+   slots=c(sourceId='PoolId')
 )
+PoolSource=function(source){
+    new('PoolSource',sourceId=PoolId(id=source))
+}

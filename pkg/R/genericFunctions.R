@@ -357,9 +357,17 @@ setGeneric(
 setGeneric(
 	 name="InternalFlux",
 	 def=function 
-	 (source,destination,src_to_dest,func)
+	 (map,...)
 	 {
 	     standardGeneric("InternalFlux")
+	 }
+)
+setGeneric(
+	 name="OutFlux",
+	 def=function 
+	 (map,...)
+	 {
+	     standardGeneric("OutFlux")
 	 }
 )
 #' Generic constructor 
@@ -368,7 +376,7 @@ setGeneric(
 setGeneric(
 	 name="ConstLinDecompOp",
 	 def=function 
-	 (mat,internal_flux_rates,out_flux_rates,numberOfPools)
+	 (mat,internal_flux_rates,out_flux_rates,numberOfPools,poolNames)
 	 {
 	     standardGeneric("ConstLinDecompOp")
 	 }
@@ -422,33 +430,34 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="PoolIndex",
+	 name="PoolId",
+	 def=function  (id) {
+	     standardGeneric("PoolId")
+	 }
+)
+setGeneric(
+	 name="PoolConnection",
 	 def=function  
-	 (i) {
+	 ( source ,destination,src_to_dest)
+	 {
+	     standardGeneric("PoolConnection")
+	 }
+)
+setGeneric(
+	 name="PoolTarget",
+	 def=function( destination ){
+	     standardGeneric("PoolTarget")
+	 }
+)
+setGeneric(
+	 name="PoolIndex",
+	 def=function(object,...){
 	     standardGeneric("PoolIndex")
 	 }
 )
 setGeneric(
-	 name="ConstantInternalFluxRate",
-	 def=function  
-	 (
-     source
-    ,destination
-    ,src_to_dest
-    ,rate_constant
-   )
-	 {
-	     standardGeneric("ConstantInternalFluxRate")
-	 }
-)
-setGeneric(
-	 name="ConstantOutFluxRate",
-	 def=function  
-	 (
-     source
-    ,rate_constant
-   )
-	 {
-	     standardGeneric("ConstantOutFluxRate")
+	 name="check_pool_ids",
+	 def=function(obj,pools){
+	     standardGeneric("check_pool_ids")
 	 }
 )

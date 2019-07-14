@@ -3,21 +3,14 @@ setClass(
   contains="PoolConnection",
   slots=c(func='function')
 )
+
 setMethod(
   f="InternalFlux",
-  signature=c(source='numeric',destination='numeric',src_to_dest='missing',func='function'),
-  def=function(source,destination,func){
-    source_ind=PoolIndex(source)
-    destination_ind=PoolIndex(destination)
-    return(new('InternalFlux',source=source_ind,destination=destination_ind,funcn=func))
-  }
-)
-setMethod(
-  f="InternalFlux",
-  signature=c(source='missing',destination='missing',src_to_dest='character',func='function'),
-  def=function(src_to_dest,func){
-    source<-getSender(src_to_dest)
-    destination<-getRecipient(src_to_dest)
-    return(InternalFlux(source=source,destination=destination,func=func))
+  signature=c(map='function'),
+  def=function(map,...){
+    pc<-PoolConnection(...)
+    intFl=as(pc,'InternalFlux')
+    intFl@func<-map
+    return(intFl)
   }
 )

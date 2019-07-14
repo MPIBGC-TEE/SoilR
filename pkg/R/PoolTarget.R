@@ -1,5 +1,11 @@
 setClass(
    Class="PoolTarget",
-   contains="VIRTUAL",
-   slots=c(destination='PoolIndex')
+   slots=c(destinationId='PoolId')
+)
+setMethod(
+  f="PoolTarget",
+  signature=c(destination='numeric'),
+  def=function(destination){
+    new('PoolTarget',destinationId=PoolId(destination))
+  }
 )

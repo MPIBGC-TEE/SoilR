@@ -12,10 +12,10 @@ Suggests: FME,lattice,MASS,knitr
 LazyData: TRUE
 VignetteBuilder: knitr
 Collate: pkg-package.R setGlobalVariables.R setOldClasses.R
-        genericFunctions.R PoolIndex.R PoolTarget.R PoolSource.R
+        genericFunctions.R PoolId.R PoolTarget.R PoolSource.R
         PoolConnection.R ConstantOutFluxRate.R
         ConstantInternalFluxRate.R Fc.R HelperFunctions.R TimeMap.R
-        InternalFlux.R InFluxes.R BoundInFluxes.R ConstInFluxes.R deSolve.lsoda.wrapper.R
+        InternalFlux.R OutFlux.R InFluxes.R BoundInFluxes.R ConstInFluxes.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R
         NlModel.R SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
         UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R UnBoundNonLinDecompOp.R

@@ -27,7 +27,7 @@ test.NonlinearOperators=function(){
        0,    a32,  -k3
     )
    )
-  A=new("ConstLinDecompOp",Amat)
+  A=ConstLinDecompOp(Amat)
   
   alpha=list()
   alpha[["2_to_1"]]=function(C,t){
