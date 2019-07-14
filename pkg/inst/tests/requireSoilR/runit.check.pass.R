@@ -23,7 +23,6 @@ test.check.pass=function(){
 	ind=as.vector(sapply(X,has_pass))
 	#print(ind)
 	#extract the functions that have such an argument
-  pe('ind')
 	Xpass=X[ind]
 	#now we check if the "pass" argumet is handled correctly by those functions
 	#To this end we define a caller that keeps book over the actually tested

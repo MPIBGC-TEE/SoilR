@@ -1,3 +1,4 @@
+#!/usr/bin/Rscript
 require('devtools')
 pkgDir<-'../../'
 devtools::uninstall(pkgDir)

@@ -26,7 +26,7 @@ test.all.possible.Model.arguments <- function(){
   # argument there are again different choices
   # we have included a function in SoilR that produces 2D examples
   
-  possibleInfluxes <- example.2DInFlux.Args()
+  possibleInfluxes <- example.2DInFluxes.Args()
  print(possibleInfluxes$I.vec)
   # We can build a lot of  models from the possible combinations
   # for instance   

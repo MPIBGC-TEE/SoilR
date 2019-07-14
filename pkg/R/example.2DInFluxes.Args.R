@@ -1,4 +1,4 @@
-#' example.2DInFlux.Args
+#' example.2DInFluxes.Args
 #' 
 #' Create a 2-dimensionsonal examples of a Influx objects from different
 #' arguments
