@@ -57,7 +57,7 @@ test.corrado=function(){
   rsm   = 1 - 0.55 - rp
   
   # Time range and pool number
-  t_start = 0
+    t_start = 0
   t_end   = 20
   t       = seq(t_start, t_end, by = 1/ 365) # to check!!!
   
@@ -125,7 +125,7 @@ test.corrado=function(){
       
     } else {
       
-      if(phi(X) <= imm_max(X)) {
+      if(abs(phi(X)) <= imm_max(X)) {
         phi_mn(X) = 1
       } else {
         phi_mn(X) = -imm_max(X) / phi(X)
@@ -258,7 +258,7 @@ test.corrado=function(){
       N_am  <- X[11]
       C_mic <- X[8]
       N_mic <- X[18]
-      0.4 * ( (C_am(t) / N_am(t)) / (C_mic(t) / N_mic(t)) ) * kam * chi(t) * phi_mn(X)
+      0.4 * ( (C_am(t) / N_am(t)) / (C_mic(t) / N_mic(t)) ) * kam * chi(t) * phi_mn(X) * N_am(t)
     }
     
     # Nitrogen Flux from Abovegr. Metabolic to Inorganic N pool
@@ -267,7 +267,7 @@ test.corrado=function(){
       N_am  <- X[11]
       C_mic <- X[8]
       N_mic <- X[18]
-      ( 1 - 0.4 * ( (C_am(t) / N_am(t)) / (C_mic(t) / N_mic(t)) ) ) * kam * chi(t) * phi_mn(X)
+      ( 1 - 0.4 * ( (C_am(t) / N_am(t)) / (C_mic(t) / N_mic(t)) ) ) * kam * chi(t) * phi_mn(X) * N_am(t)
     }
     
     # Nitrogen Flux from Abovegr. Structural to Microbial SOM
@@ -276,7 +276,7 @@ test.corrado=function(){
       N_as  <- X[12]
       C_mic <- X[8]
       N_mic <- X[18]
-      0.4 * ( (C_as(t) / N_as(t)) / (C_mic(t) / N_mic(t)) ) * kas * chi(t) * phi_mn(X) * rmic
+      0.4 * ( (C_as(t) / N_as(t)) / (C_mic(t) / N_mic(t)) ) * kas * chi(t) * phi_mn(X) * rmic * N_as(t)
     }
     
     # Nitrogen Flux from Abovegr. Structural to Slow SOM
@@ -285,7 +285,7 @@ test.corrado=function(){
       N_as  <- X[12]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( (C_as(t) / N_as(t)) / (C_slo(t) / N_slo(t)) ) * kas * chi(t) * phi_mn(X) * rslo
+      ( (C_as(t) / N_as(t)) / (C_slo(t) / N_slo(t)) ) * kas * chi(t) * phi_mn(X) * rslo * N_as(t)
     }
     
     # Nitrogen Flux from Abovegr. Structural to Inorganic N pool
@@ -296,7 +296,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( 1 - 0.4 * ( (C_as(t) / N_as(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_as(t) / N_as(t)) / (C_slo(t) / N_slo(t)) ) ) * kas * chi(t) * phi_mn(X)
+      ( 1 - 0.4 * ( (C_as(t) / N_as(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_as(t) / N_as(t)) / (C_slo(t) / N_slo(t)) ) ) * kas * chi(t) * phi_mn(X) * N_as(t)
     }
     
     # Nitrogen Flux from Belowgr. Metabolic to Microbial SOM
@@ -305,7 +305,7 @@ test.corrado=function(){
       N_bm  <- X[13]
       C_mic <- X[8]
       N_mic <- X[18]
-      0.45 * ( (C_bm(t) / N_bm(t)) / (C_mic(t) / N_mic(t)) ) * kbm * chi(t) * phi_mn(X)
+      0.45 * ( (C_bm(t) / N_bm(t)) / (C_mic(t) / N_mic(t)) ) * kbm * chi(t) * phi_mn(X) * N_bm(t)
     }
     
     # Nitrogen Flux from Belowgr. Metabolic to Inorganic N pool
@@ -314,7 +314,7 @@ test.corrado=function(){
       N_bm  <- X[13]
       C_mic <- X[8]
       N_mic <- X[18]
-      ( 1 - 0.45 * ( (C_bm(t) / N_bm(t)) / (C_mic(t) / N_mic(t)) ) ) * kbm * chi(t) * phi_mn(X)
+      ( 1 - 0.45 * ( (C_bm(t) / N_bm(t)) / (C_mic(t) / N_mic(t)) ) ) * kbm * chi(t) * phi_mn(X) * N_bm(t)
     }
     
     # Nitrogen Flux from Belowgr. Structural to Microbial SOM
@@ -323,7 +323,7 @@ test.corrado=function(){
       N_bs  <- X[14]
       C_mic <- X[8]
       N_mic <- X[18]
-      0.45 * ( (C_bs(t) / N_bs(t)) / (C_mic(t) / N_mic(t)) ) * kbs * chi(t) * phi_mn(X) * rmic
+      0.45 * ( (C_bs(t) / N_bs(t)) / (C_mic(t) / N_mic(t)) ) * kbs * chi(t) * phi_mn(X) * rmic * N_bs(t)
     }
     
     # Nitrogen Flux from Belowgr. Structural to Slow SOM
@@ -332,7 +332,7 @@ test.corrado=function(){
       N_bs  <- X[14]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( (C_bs(t) / N_bs(t)) / (C_slo(t) / N_slo(t)) ) * kbs * chi(t) * phi_mn(X) * rslo
+      ( (C_bs(t) / N_bs(t)) / (C_slo(t) / N_slo(t)) ) * kbs * chi(t) * phi_mn(X) * rslo * N_bs(t)
     }
     
     # Nitrogen Flux from Belowgr. Structural to Inorganic N pool
@@ -343,7 +343,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( 1 - 0.4 * ( (C_bs(t) / N_bs(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_bs(t) / N_bs(t)) / (C_slo(t) / N_slo(t)) ) ) * kbs * chi(t) * phi_mn(X)
+      ( 1 - 0.4 * ( (C_bs(t) / N_bs(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_bs(t) / N_bs(t)) / (C_slo(t) / N_slo(t)) ) ) * kbs * chi(t) * phi_mn(X) * N_bs(t)
     }
     
     # Nitrogen Flux from Fine Wood to Microbial SOM
@@ -352,7 +352,7 @@ test.corrado=function(){
       N_fw  <- X[15]
       C_mic <- X[8]
       N_mic <- X[18]
-      0.45 * ( (C_fw(t) / N_fw(t)) / (C_mic(t) / N_mic(t)) ) * kfw * chi(t) * phi_mn(X) * rmic
+      0.45 * ( (C_fw(t) / N_fw(t)) / (C_mic(t) / N_mic(t)) ) * kfw * chi(t) * phi_mn(X) * rmic * N_fw(t)
     }
     
     # Nitrogen Flux from Fine Wood to Slow SOM
@@ -361,7 +361,7 @@ test.corrado=function(){
       N_fw  <- X[15]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( (C_fw(t) / N_fw(t)) / (C_slo(t) / N_slo(t)) ) * kfw * chi(t) * phi_mn(X) * rslo
+      ( (C_fw(t) / N_fw(t)) / (C_slo(t) / N_slo(t)) ) * kfw * chi(t) * phi_mn(X) * rslo * N_fw(t)
     }
     
     # Nitrogen Flux from Fine Wood to Inorganic N pool
@@ -372,7 +372,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( 1 - 0.4 * ( (C_fw(t) / N_fw(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_fw(t) / N_fw(t)) / (C_slo(t) / N_slo(t)) ) ) * kfw * chi(t) * phi_mn(X)
+      ( 1 - 0.4 * ( (C_fw(t) / N_fw(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_fw(t) / N_fw(t)) / (C_slo(t) / N_slo(t)) ) ) * kfw * chi(t) * phi_mn(X) * N_fw(t)
     }
     
     # Nitrogen Flux from Abovegr. Coarse Wood to Microbial SOM
@@ -381,7 +381,7 @@ test.corrado=function(){
       N_acw  <- X[16]
       C_mic <- X[8]
       N_mic <- X[18]
-      0.45 * ( (C_acw(t) / N_acw(t)) / (C_mic(t) / N_mic(t)) ) * kacw * chi(t) * phi_mn(X) * rmic
+      0.45 * ( (C_acw(t) / N_acw(t)) / (C_mic(t) / N_mic(t)) ) * kacw * chi(t) * phi_mn(X) * rmic * N_acw(t)
     }
     
     # Nitrogen Flux from Abovegr. Coarse Wood to Slow SOM
@@ -390,7 +390,7 @@ test.corrado=function(){
       N_acw  <- X[16]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( (C_acw(t) / N_acw(t)) / (C_slo(t) / N_slo(t)) ) * kacw * chi(t) * phi_mn(X) * rslo
+      ( (C_acw(t) / N_acw(t)) / (C_slo(t) / N_slo(t)) ) * kacw * chi(t) * phi_mn(X) * rslo * N_acw(t)
     }
     
     # Nitrogen Flux from Abovegr. Coarse Wood to Inorganic N pool
@@ -401,7 +401,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( 1 - 0.4 * ( (C_acw(t) / N_acw(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_acw(t) / N_acw(t)) / (C_slo(t) / N_slo(t)) ) ) * kacw * chi(t) * phi_mn(X)
+      ( 1 - 0.4 * ( (C_acw(t) / N_acw(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_acw(t) / N_acw(t)) / (C_slo(t) / N_slo(t)) ) ) * kacw * chi(t) * phi_mn(X) * N_acw(t)
     }
     
     # Nitrogen Flux from Belowgr. Coarse Wood to Microbial SOM
@@ -410,7 +410,7 @@ test.corrado=function(){
       N_bcw  <- X[17]
       C_mic <- X[8]
       N_mic <- X[18]
-      0.45 * ( (C_bcw(t) / N_bcw(t)) / (C_mic(t) / N_mic(t)) ) * kbcw * chi(t) * phi_mn(X) * rmic
+      0.45 * ( (C_bcw(t) / N_bcw(t)) / (C_mic(t) / N_mic(t)) ) * kbcw * chi(t) * phi_mn(X) * rmic * N_bcw(t)
     }
     
     # Nitrogen Flux from Belowgr. Coarse Wood to Slow SOM
@@ -419,7 +419,7 @@ test.corrado=function(){
       N_bcw  <- X[17]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( (C_bcw(t) / N_bcw(t)) / (C_slo(t) / N_slo(t)) ) * kbcw * chi(t) * phi_mn(X) * rslo
+      ( (C_bcw(t) / N_bcw(t)) / (C_slo(t) / N_slo(t)) ) * kbcw * chi(t) * phi_mn(X) * rslo * N_bcw(t)
     }
     
     # Nitrogen Flux from Belowgr. Coarse Wood to Inorganic N pool
@@ -430,7 +430,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_slo <- X[9]
       N_slo <- X[19]
-      ( 1 - 0.4 * ( (C_bcw(t) / N_bcw(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_bcw(t) / N_bcw(t)) / (C_slo(t) / N_slo(t)) ) ) * kbcw * chi(t) * phi_mn(X)
+      ( 1 - 0.4 * ( (C_bcw(t) / N_bcw(t)) / (C_mic(t) / N_mic(t)) ) * rmic - rslo * ( (C_bcw(t) / N_bcw(t)) / (C_slo(t) / N_slo(t)) ) ) * kbcw * chi(t) * phi_mn(X) * N_bcw(t)
     }
     
     # Nitrogen Flux from Microbial SOM to Slow SOM
@@ -439,7 +439,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_pas <- X[10]
       N_pas <- X[20]
-      ( 1 - 0.004 * ( (C_mic(t) / N_mic(t)) / (C_pas(t) / N_pas(t)) ) ) * kmic * chi(t) * phi_mn(X)
+      ( 1 - 0.004 * ( (C_mic(t) / N_mic(t)) / (C_pas(t) / N_pas(t)) ) ) * kmic * chi(t) * phi_mn(X) * N_mic(t)
     }
     
     # Nitrogen Flux from Microbial SOM to Passive SOM
@@ -448,7 +448,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_pas <- X[10]
       N_pas <- X[20]
-      0.004 * ( (C_mic(t) / N_mic(t)) / (C_pas(t) / N_pas(t)) ) * kmic * chi(t) * phi_mn(X)
+      0.004 * ( (C_mic(t) / N_mic(t)) / (C_pas(t) / N_pas(t)) ) * kmic * chi(t) * phi_mn(X) * N_mic(t)
     }
     
     # Nitrogen Flux from Slow SOM to Microbial SOM
@@ -457,7 +457,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_slo <- X[9]
       N_slo <- X[19]
-      rsm * ( (C_slo(t) / N_slo(t)) / (C_mic(t) / N_mic(t)) ) * kslo * chi(t) * phi_mn(X)
+      rsm * ( (C_slo(t) / N_slo(t)) / (C_mic(t) / N_mic(t)) ) * kslo * chi(t) * phi_mn(X) * N_slo(t)
     }
     
     # Nitrogen Flux from Slow SOM to Passive SOM
@@ -466,7 +466,7 @@ test.corrado=function(){
       N_slo <- X[19]
       C_pas <- X[10]
       N_pas <- X[20]
-      rp * ( (C_slo(t) / N_slo(t)) / (C_pas(t) / N_pas(t)) ) * kslo * chi(t) * phi_mn(X)
+      rp * ( (C_slo(t) / N_slo(t)) / (C_pas(t) / N_pas(t)) ) * kslo * chi(t) * phi_mn(X) * N_slo(t)
     }
     
     # Nitrogen Flux from Slow SOM to Inorganic N pool
@@ -477,7 +477,7 @@ test.corrado=function(){
       N_slo <- X[19]
       C_pas <- X[10]
       N_pas <- X[20]
-      ( 1 - rsm * ( (C_slo(t) / N_slo(t)) / (C_mic(t) / N_mic(t)) ) - rp * ( (C_slo(t) / N_slo(t)) / (C_pas(t) / N_pas(t)) ) ) * kslo * chi(t) * phi_mn(X)
+      ( 1 - rsm * ( (C_slo(t) / N_slo(t)) / (C_mic(t) / N_mic(t)) ) - rp * ( (C_slo(t) / N_slo(t)) / (C_pas(t) / N_pas(t)) ) ) * kslo * chi(t) * phi_mn(X) * N_slo(t)
     }
     
     # Nitrogen Flux from Passive SOM to Microbial SOM
@@ -486,7 +486,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_pas <- X[10]
       N_pas <- X[20]
-      0.45 * ( (C_pas(t) / N_pas(t)) / (C_mic(t) / N_mic(t)) ) * kpas * chi(t) * phi_mn(X)
+      0.45 * ( (C_pas(t) / N_pas(t)) / (C_mic(t) / N_mic(t)) ) * kpas * chi(t) * phi_mn(X) * N_pas(t)
     }
     
     # Nitrogen Flux from Passive SOM to Inorganic N pool
@@ -495,7 +495,7 @@ test.corrado=function(){
       N_mic <- X[18]
       C_pas <- X[10]
       N_pas <- X[20]
-      ( 1 - 0.45 * ( (C_pas(t) / N_pas(t)) / (C_mic(t) / N_mic(t)) ) ) * kpas * chi(t) * phi_mn(X)
+      ( 1 - 0.45 * ( (C_pas(t) / N_pas(t)) / (C_mic(t) / N_mic(t)) ) ) * kpas * chi(t) * phi_mn(X) * N_pas(t)
     }
   
   } else {
@@ -511,11 +511,11 @@ test.corrado=function(){
       
     }
   
-    # Case 3 (Immobilization with phi_mn = -imm_max(X) / phi(X)) (phi_mn alreay set in the phi_mn function)
+    # Case 3 (Immobilization with phi_mn = -imm_max(X) / phi(X)) (phi_mn already set in the phi_mn function)
     # Different Nitrogen fluxes
    
     
-     
+       
     
 }
       
