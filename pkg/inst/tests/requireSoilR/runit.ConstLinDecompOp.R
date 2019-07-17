@@ -11,6 +11,8 @@ test.ConstLinDecompOp_check_external_flux_args=function(){
     ,silent=TRUE
   )
 }
+
+
 test.ConstLinDecompOp_check_internal_flux_args=function(){
   mess='the internal flux pool index:5 exceeds the numberOfPools:4'
   checkException(
@@ -23,6 +25,8 @@ test.ConstLinDecompOp_check_internal_flux_args=function(){
     ,silent=TRUE
   )
 }
+
+
 test.ConstLinDecompOpWithoutInternalFluxes=function(){
   n<-3
   k<-3
@@ -45,6 +49,8 @@ test.ConstLinDecompOpWithoutInternalFluxes=function(){
     )
   )
 }
+
+
 test.ConstLinDecompOpWithoutOutFluxes=function(){
   n<-3
   k<-3
@@ -67,6 +73,8 @@ test.ConstLinDecompOpWithoutOutFluxes=function(){
     )
   )
 }
+
+
 test.ConstLinDecompOp=function(){
   n<-3
   k<-3
@@ -90,6 +98,7 @@ test.ConstLinDecompOp=function(){
     )
   )
 }
+
 test.ConstLinDecompOpFromNamedFluxes=function(){
   n<-3
   k<-3
@@ -100,22 +109,22 @@ test.ConstLinDecompOpFromNamedFluxes=function(){
     ConstantOutFluxRate(source='barrel',rate_constant=k)
   )
   B=ConstLinDecompOp(
-    internal_flux_rates=c("1_to_2"=k)
+    internal_flux_rates=ifrs
     ,out_flux_rates=ofrs
     ,poolNames=c('barrel','glass','belly')
   )@mat
-  #print(B)
-  #checkEquals(
-  #   B
-  #  ,matrix(
-  #     nrow=n
-  #    ,ncol=n
-  #    ,byrow=TRUE
-  #    ,c( 
-  #       -6,0,0
-  #       ,3,0,0
-  #       ,0,0,0
-  #    )
-  #  )
-  #)
+  print(B)
+  checkEquals(
+     B
+    ,matrix(
+       nrow=n
+      ,ncol=n
+      ,byrow=TRUE
+      ,c( 
+         -6,0,0
+         ,3,0,0
+         ,0,0,0
+      )
+    )
+  )
 }

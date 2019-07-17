@@ -1,5 +1,5 @@
 f<-function(X,t){sum(X)*t}
-test.PoolTopologyConstructors=function(){
+test.PoolTopology=function(){
     
     # PoolSources ='Has a source pool and knows what to do about it "
     # are the parents of out fluxes and rates

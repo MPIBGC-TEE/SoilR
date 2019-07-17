@@ -355,11 +355,33 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="InternalFlux",
+	 name="InternalFlux_by_PoolIndex",
+	 def=function(func,sourceIndex,destinationIndex,src_to_dest)
+	 {
+	     standardGeneric("InternalFlux_by_PoolIndex")
+	 }
+)
+setGeneric(
+	 name="OutFlux_by_PoolIndex",
+	 def=function(func,sourceIndex)
+	 {
+	     standardGeneric("OutFlux_by_PoolIndex")
+	 }
+)
+setGeneric(
+	 name="InternalFlux_by_PoolName",
 	 def=function 
 	 (map,...)
 	 {
-	     standardGeneric("InternalFlux")
+	     standardGeneric("InternalFlux_by_PoolName")
+	 }
+)
+setGeneric(
+	 name="InFlux",
+	 def=function 
+	 (map,...)
+	 {
+	     standardGeneric("InFlux")
 	 }
 )
 setGeneric(
@@ -403,7 +425,7 @@ setGeneric(
 setGeneric(
 	 name="UnBoundNonLinDecompOp",
 	 def=function 
-	 (matFunc,internal_fluxes,out_fluxes,numberOfPools)
+	 (matFunc,internal_fluxes,out_fluxes,numberOfPools,poolNames,timeSymbol)
 	 {
 	     standardGeneric("UnBoundNonLinDecompOp")
 	 }

@@ -45,40 +45,53 @@ setMethod(
       signature(object="UnBoundNonLinDecompOp"),
       definition=function(object){ object@matFunc }
 )
-#setMethod(
-#      f="UnBoundNonLinDecompOp",
-#      signature=c(
-#         mat="missing"
-#        ,internal_flux_rates='vector'
-#        ,out_flux_rates='vector'
-#        ,numberOfPools='numeric'
-#      ),
-#      definition=function 
-#      (internal_flux_rates,out_flux_rates,numberOfPools){
-#        np=PoolIndex(numberOfPools)
-#        internal_flux_rates<-convert_to_internal_flux_rates(internal_flux_rates)
-#        out_flux_rates<-convert_to_out_flux_rates(out_flux_rates)
-#        N=matrix(nrow=np,ncol=np,0)
-#        for (ofr in out_flux_rates){
-#            src=ofr@source
-#            if (src> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
-#            N[src,src]=ofr@rate_constant
-#        }
-#        for (ifr in internal_flux_rates){
-#          dest<-ifr@destination
-#          src<-ifr@source
-#          if (dest> numberOfPools){stop("The index of the destination pool must be smaller than the number of pools")}
-#          if (src> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
-#          N[src,src]=N[src,src]+ifr@rate_constant
-#        }
-#        To=diag(nrow=np,-1)
-#        for (ifr in internal_flux_rates){
-#          To[dest,src]=ifr@rate_constant/N[src,src]
-#        }
-#        B<-To%*%N
-#        return(new('UnBoundNonLinDecompOp',mat=B))
-#      }
-#)
+
+
+setMethod(
+      f="UnBoundNonLinDecompOp",
+      signature=c(
+         matFunc="missing"
+        # assume that we get a list of the right form with elements
+        # of being correctly indexed by numbers and the flux functions with a
+        # vector argument for the state vector
+        ,internal_fluxes='vector'
+        # assume that we get a list of the right form with elements
+        # of being correctly indexed by numbers and the flux functions with a
+        # vector argument for the state vector
+        ,out_fluxes='vector'
+        ,numberOfPools='numeric'
+      ),
+      definition=function(
+        internal_fluxes
+        ,out_fluxes
+        ,numberOfPools
+        ){
+        np=PoolIndex(numberOfPools)
+        BFunc<-function(X,t){
+            N=matrix(nrow=np,ncol=np,0)
+            for (of in out_fluxes){
+                src=of@sourceIndex
+                if (src> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
+                N[src,src]=of@func(X,t)
+            }
+            for (intf in internal_fluxes){
+              dest<-intf@destinationIndex
+              src<-intf@sourceIndex
+              if (dest> numberOfPools){stop("The index of the destination pool must be smaller than the number of pools")}
+              if (src> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
+              N[src,src]=N[src,src]+intf@func(X,t)
+            }
+            To=diag(nrow=np,-1)
+            for (intf in internal_fluxes){
+              To[dest,src]=intf@func(X,t)/N[src,src]
+            }
+            B<-To%*%N
+            return(B)
+        }
+        return(new('UnBoundNonLinDecompOp',matFunc=BFunc))
+      }
+)
+#
 #setMethod(
 #      f="UnBoundNonLinDecompOp",
 #      signature=c(

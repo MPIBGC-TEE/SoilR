@@ -9,15 +9,17 @@ pkgload::load_all('../../../')
 alltests <- defineTestSuite(
    name="selectedMarkus",
    dirs=c("."),
-   #testFileRegexp = "^runit.FluxRateConstructors.R$|^runit.FluxConstructors.R$|^runit.PoolTopologyConstructors.R$",
-   #testFileRegexp = "^runit.PoolTopologyConstructors.R$",
+   #testFileRegexp = "^runit.FluxRateConstructors.R$|^runit.FluxConstructors.R$|^runit.PoolTopology.R$",
+   #testFileRegexp = "^runit.PoolTopology.R$",
    #testFileRegexp = "^runit.FluxRateConstructors.R$",
    #testFileRegexp = "^runit.FluxConstructors.R$",
    #testFileRegexp = "^runit.NonlinearOperators.R$",
    
-   testFileRegexp = "^runit.ConstLinDecompOp.R$$",
-   #testFuncRegexp ="^test.ConstLinDecompOp_check_external_flux_args$",
+   #testFileRegexp = "^runit.ConstLinDecompOp.R$$",
+   testFileRegexp = "^runit.NonLinDecompOp_with_linear_fluxes.R$",
    #testFuncRegexp ="^test.ConstLinDecompOpFromNamedFluxes$",
+   #testFuncRegexp ="^test.ConstLinDecompOp$",
+   testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Index$",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
 )

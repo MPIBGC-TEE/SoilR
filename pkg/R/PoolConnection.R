@@ -49,28 +49,54 @@ setMethod(
 
 
 
-#' convert the source pool id to a number if necessary
+#' new object with the source pool id and the destination pool id guranteed to be of class PoolIndex
+#'
+#' converts the ids if necessary otherwise returns an 
+#' identical object
 setMethod(
   f="by_PoolIndex",
   signature=c(obj='PoolConnection'),
   def=function(obj,poolNames){
-    new(
-        'PoolConnection'
-        ,sourceId=PoolIndex(id=obj@sourceId,poolNames)
-        ,destinationId=PoolIndex(id=obj@destinationId,poolNames)
-    )
+    obj@sourceId=PoolIndex(id=obj@sourceId,poolNames)
+    obj@destinationId=PoolIndex(id=obj@destinationId,poolNames)
+    obj
   }
 )
 
-#' convert the source pool id to a name if necessary
+#' new object with the source pool id and the destination pool id guranteed to be of class PoolName 
+#'
+#' converts the ids if necessary otherwise returns an 
+#' identical object
 setMethod(
   f="by_PoolName",
   signature=c(obj='PoolConnection'),
   def=function(obj,poolNames){
-    new(
-        'PoolConnection'
-        ,sourceId=PoolName(id=obj@sourceId,poolNames)
-        ,destinationId=PoolName(id=obj@destinationId,poolNames)
-    )
+    obj@sourceId=PoolName(id=obj@sourceId,poolNames)
+    obj@destinationId=PoolName(id=obj@destinationId,poolNames)
+    obj
   }
 )
+
+#' for lists and vectors check if the elements are PoolConnections
+elements_are_PoolConnections<-function(vec_or_list){
+      all(
+        as.logical(
+            lapply(
+                vec_or_list
+                ,function(el){inherits(el,'PoolConnection')}
+            )
+        )
+      )
+}
+elements_are_Indexed_by_PoolIndex<-function(vec_or_list){
+      all(
+        as.logical(
+            lapply(
+                vec_or_list
+                ,function(el){
+                        is.numeric(el@sourceId)&is.numeric(el@destinationId)
+                 }
+            )
+        )
+      )
+}

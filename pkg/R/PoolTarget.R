@@ -13,10 +13,8 @@ setMethod(
   f="by_PoolIndex",
   signature=c(obj='PoolTarget'),
   def=function(obj,poolNames){
-    new(
-        'PoolTarget'
-        ,destinationId=PoolIndex(id=obj@destinationId,poolNames)
-    )
+    obj@destinationId=PoolIndex(id=obj@destinationId,poolNames)
+    obj
   }
 )
 
@@ -25,9 +23,7 @@ setMethod(
   f="by_PoolName",
   signature=c(obj='PoolTarget'),
   def=function(obj,poolNames){
-    new(
-        'PoolTarget'
-        ,destinationId=PoolName(id=obj@destinationId,poolNames)
-    )
+    obj@destinationId=PoolName(id=obj@destinationId,poolNames)
+    obj
   }
 )
