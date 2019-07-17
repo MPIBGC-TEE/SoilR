@@ -44,6 +44,9 @@ test.NonLinDecompOp_with_linear_fluxes_by_Names=function(){
   )
 }
 test.NonLinDecompOp_with_linear_fluxes_by_Index=function(){
+  #     barrel
+  #  X= glass
+  #     belly
   n<-3
   k<-3
   intfs=c(
@@ -65,6 +68,13 @@ test.NonLinDecompOp_with_linear_fluxes_by_Index=function(){
         }
     )
   )
+  #BFunc=UnBoundNonLinDecompOp(
+  #  chi_func
+  #  ,normalized_internal_fluxes=intfs
+  #  ,normalized_out_fluxes=ofs
+  #  ,numberOfPools=3
+  #  ,timeSymbol='t'
+  #)@matFunc
   BFunc=UnBoundNonLinDecompOp(
     internal_fluxes=intfs
     ,out_fluxes=ofs
