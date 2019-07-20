@@ -19,7 +19,8 @@ alltests <- defineTestSuite(
    testFileRegexp = "^runit.NonLinDecompOp_with_linear_fluxes.R$",
    #testFuncRegexp ="^test.ConstLinDecompOpFromNamedFluxes$",
    #testFuncRegexp ="^test.ConstLinDecompOp$",
-   testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Index$",
+   testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Name$",
+   #testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Index$",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
 )

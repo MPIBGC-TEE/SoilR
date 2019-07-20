@@ -4,18 +4,6 @@ setClass(
   slots=c(sourceIndex='PoolIndex',func='function')
 )
 
-#setMethod(
-#  f="OutFlux_by_PoolIndex",
-#  signature=c(func='function'),
-#  def=function(func,...){
-#    pc<-OutFlux_by_PoolIndex(...)
-#    intFl=as(pc,'OutFlux_by_PoolIndex')
-#    intFl@func<-func
-#    return(intFl)
-#  }
-#)
-
-
 #' constructor from a PoolIndex (integer like) objects and a function with vector argument 
 #' @param func A function f(X,t) where X is a vector of the state varaibles. 
 #' This form is required internally by the solvers and supported for backward compatibility with earlier versions of SoilR.

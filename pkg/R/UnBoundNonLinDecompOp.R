@@ -46,18 +46,14 @@ setMethod(
       definition=function(object){ object@matFunc }
 )
 
-
+#' constructor
+#' @param internal_fluxes vector of elements of type InternalFlux_by_PoolName
+#' @param out_fluxes vector of elements of type OutFlux_by_PoolName
 setMethod(
       f="UnBoundNonLinDecompOp",
       signature=c(
          matFunc="missing"
-        # assume that we get a list of the right form with elements
-        # of being correctly indexed by numbers and the flux functions with a
-        # vector argument for the state vector
         ,internal_fluxes='vector'
-        # assume that we get a list of the right form with elements
-        # of being correctly indexed by numbers and the flux functions with a
-        # vector argument for the state vector
         ,out_fluxes='vector'
         ,numberOfPools='numeric'
       ),
@@ -149,14 +145,11 @@ setMethod(
 #        )
 #      }
 #)
-#setMethod(
-#    f="getFunctionDefinition",
-#    signature="UnBoundNonLinDecompOp",
-#    definition=function 
-#    (object){
-#      return(function(t){object@mat})
-#    }
-#)
+setMethod(
+    f="getCompartmentalMatrixFunc",
+    signature="UnBoundNonLinDecompOp",
+    definition=function (object){ object@matFunc }
+)
 #setMethod(
 #    f="getTimeRange",
 #    signature="UnBoundNonLinDecompOp",

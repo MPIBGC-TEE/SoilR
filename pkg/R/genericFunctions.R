@@ -362,6 +362,20 @@ setGeneric(
 	 }
 )
 setGeneric(
+	 name="InternalFlux_by_PoolName",
+	 def=function(func,sourceName,destinationName,src_to_dest)
+	 {
+	     standardGeneric("InternalFlux_by_PoolName")
+	 }
+)
+setGeneric(
+	 name="InternalFluxList_by_PoolName",
+	 def=function(l)
+	 {
+	     standardGeneric("InternalFluxList_by_PoolName")
+	 }
+)
+setGeneric(
 	 name="OutFlux_by_PoolIndex",
 	 def=function(func,sourceIndex)
 	 {
@@ -369,11 +383,17 @@ setGeneric(
 	 }
 )
 setGeneric(
-	 name="InternalFlux_by_PoolName",
-	 def=function 
-	 (map,...)
+	 name="OutFluxList_by_PoolName",
+	 def=function(l)
 	 {
-	     standardGeneric("InternalFlux_by_PoolName")
+	     standardGeneric("OutFluxList_by_PoolName")
+	 }
+)
+setGeneric(
+	 name="OutFlux_by_PoolName",
+	 def=function(func,sourceName)
+	 {
+	     standardGeneric("OutFlux_by_PoolName")
 	 }
 )
 setGeneric(
@@ -425,9 +445,17 @@ setGeneric(
 setGeneric(
 	 name="UnBoundNonLinDecompOp",
 	 def=function 
-	 (matFunc,internal_fluxes,out_fluxes,numberOfPools,poolNames,timeSymbol)
+	 (matFunc,internal_fluxes,out_fluxes,numberOfPools,state_variable_names,timeSymbol,operator)
 	 {
 	     standardGeneric("UnBoundNonLinDecompOp")
+	 }
+)
+setGeneric(
+	 name="UnBoundNonLinDecompOp_by_PoolNames",
+	 def=function 
+	 (internal_fluxes,out_fluxes,timeSymbol)
+	 {
+	     standardGeneric("UnBoundNonLinDecompOp_by_PoolNames")
 	 }
 )
 setGeneric(
@@ -491,7 +519,7 @@ setGeneric(
 )
 setGeneric(
 	 name="by_PoolIndex",
-	 def=function(obj,poolNames){
+	 def=function(obj,poolNames,timeSymbol){
 	     standardGeneric("by_PoolIndex")
 	 }
 )
