@@ -53,22 +53,21 @@ setMethod(
         ,timeSymbol='character'
     )
     ,definition=function(obj,poolNames,timeSymbol){
-        funcOfVars<-obj@func
-        arg_names<-names(formals(funcOfVars))
-        possibleArgs=c(poolNames,timeSymbol)
-        positions<-unlist(lapply(arg_names,function(arg){grep(arg,possibleArgs)}))
-        
-        vec_func<-function(state_vec,t){
-            # append t argument to state vector as time symbol to poolNames
-            vec<-c(state_vec,t)
-            res<-funcOfVars(vec[positions])
-            res
-        }
         fl_by_index<-new(
             "InternalFlux_by_PoolIndex"
-            ,sourceIndex=by_PoolIndex(obj@sourceName,poolNames)
-            ,destinationIndex=by_PoolIndex(obj@destinationName,poolNames)
-            ,func=vec_func
+            ,sourceIndex=PoolIndex(
+                obj@sourceName
+                ,poolNames
+            )
+            ,destinationIndex=PoolIndex(
+                obj@destinationName
+                ,poolNames
+            )
+            ,func=by_PoolIndex(
+                obj@func
+                ,timeSymbol=timeSymbol
+                ,poolNames=poolNames
+            )
         )
         fl_by_index
     }

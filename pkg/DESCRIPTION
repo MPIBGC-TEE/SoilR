@@ -13,8 +13,13 @@ LazyData: TRUE
 VignetteBuilder: knitr
 Collate: pkg-package.R setGlobalVariables.R setOldClasses.R
         genericFunctions.R PoolId.R PoolIndex.R PoolName.R PoolTarget.R PoolSource.R
+	InFluxList_by_PoolIndex.R InFluxList_by_PoolName.R InFlux_by_PoolIndex.R 
+	InFlux_by_PoolName.R InternalFluxList_by_PoolIndex.R InternalFluxList_by_PoolName.R 
+	OutFluxList_by_PoolIndex.R OutFluxList_by_PoolName.R OutFlux_by_PoolName.R 
+	UnBoundNonLinDecompOp_by_PoolNames.R  checkTargetClassOfElements.R
         PoolConnection.R ConstantOutFluxRate.R
-        ConstantInFluxRate.R ConstantInternalFluxRate.R Fc.R HelperFunctions.R TimeMap.R InFlux.R InternalFlux_by_PoolIndex.R InternalFlux_by_PoolName.R OutFlux_by_Pool_Index.R
+        ConstantInFluxRate.R ConstantInternalFluxRate.R Fc.R HelperFunctions.R TimeMap.R 
+	InternalFlux_by_PoolIndex.R InternalFlux_by_PoolName.R OutFlux_by_Pool_Index.R
         OutFlux.R InFluxes.R BoundInFluxes.R ConstInFluxes.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R
         NlModel.R SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
