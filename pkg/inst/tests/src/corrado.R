@@ -470,127 +470,77 @@ internal_fluxes[["18_to_20"]] = function(X,t) {
  }
 
 
-# Three different cases
- if(case_var == c("case_1")) {
-    # if(term1(X,t) >= 0) { # Case 1 (Mineralization)
+ # Three different cases ----
 
-    # Nitrogen Flux from Microbial SOM to Inorganic Nitrogen pool
-    internal_fluxes[["18_to_21"]] = function(X,t) {
+internal_fluxes[["18_to_21"]] = function(X,t) {
 
-       C_am   <- X[[1]]
-       C_as	<- X[[2]]
-       C_bm	<- X[[3]]
-       C_bs	<- X[[4]]
-       C_fw	<- X[[5]]
-       C_acw  <- X[[6]]
-       C_bcw  <- X[[7]]
-       C_mic  <- X[[8]]
-       C_slo  <- X[[9]]
-       C_pas  <- X[[10]]
-       N_am	<- X[[11]]
-       N_as	<- X[[12]]
-       N_bm	<- X[[13]]
-       N_bs	<- X[[14]]
-       N_fw	<- X[[15]]
-       N_acw  <- X[[16]]
-       N_bcw  <- X[[17]]
-       N_mic  <- X[[18]]
-       N_slo  <- X[[19]]
-       N_pas  <- X[[20]]
-       N_ino  <- X[[21]]
+   C_am   <- X[[1]]
+   C_as	<- X[[2]]
+   C_bm	<- X[[3]]
+   C_bs	<- X[[4]]
+   C_fw	<- X[[5]]
+   C_acw  <- X[[6]]
+   C_bcw  <- X[[7]]
+   C_mic  <- X[[8]]
+   C_slo  <- X[[9]]
+   C_pas  <- X[[10]]
+   N_am	<- X[[11]]
+   N_as	<- X[[12]]
+   N_bm	<- X[[13]]
+   N_bs	<- X[[14]]
+   N_fw	<- X[[15]]
+   N_acw  <- X[[16]]
+   N_bcw  <- X[[17]]
+   N_mic  <- X[[18]]
+   N_slo  <- X[[19]]
+   N_pas  <- X[[20]]
+   N_ino  <- X[[21]]
+   
+imm_min_vec = imm_min_func(X,t)
 
-       imm_min_vec = imm_min_func(X,t)
+# Mineralization (case_1)
+ifelse(imm_min_vec$term1 >= 0, imm_min_vec$phi, 0)
+       
+}
 
-       imm_min_vec$phi
-
-    }
-
-    print("This is case_1")
-
- }
-
-
- if(case_var == c("case_2")) {
-    # if(term1(X,t) < 0 & abs(phi(X,t)) <= imm_max(X)) { # Case 2 (Immobilization with unrestricted C,N fluxes)
-
-    # Nitrogen Flux from Inorganic Nitrogen pool to Microbial SOM
-    internal_fluxes[["21_to_18"]] = function(X,t) {
-
-       C_am   <- X[[1]]
-       C_as	<- X[[2]]
-       C_bm	<- X[[3]]
-       C_bs	<- X[[4]]
-       C_fw	<- X[[5]]
-       C_acw  <- X[[6]]
-       C_bcw  <- X[[7]]
-       C_mic  <- X[[8]]
-       C_slo  <- X[[9]]
-       C_pas  <- X[[10]]
-       N_am	<- X[[11]]
-       N_as	<- X[[12]]
-       N_bm	<- X[[13]]
-       N_bs	<- X[[14]]
-       N_fw	<- X[[15]]
-       N_acw  <- X[[16]]
-       N_bcw  <- X[[17]]
-       N_mic  <- X[[18]]
-       N_slo  <- X[[19]]
-       N_pas  <- X[[20]]
-       N_ino  <- X[[21]]
-
-       imm_min_vec = imm_min_func(X,t)
-
-       -imm_min_vec$phi
-
-    }
-
-    print("This is case_2")
-
- }
-
-
- if(case_var == c("case_3")) {
-    # if(term1(X,t) < 0 & abs(phi(X,t)) > imm_max(X)) { # Case 3 (Immobilization with restricted C,N fluxes)
-
-    # Nitrogen Flux from Inorganic Nitrogen pool to Microbial SOM
-    internal_fluxes[["21_to_18"]] = function(X,t) {
-
-       C_am   <- X[[1]]
-       C_as	<- X[[2]]
-       C_bm	<- X[[3]]
-       C_bs	<- X[[4]]
-       C_fw	<- X[[5]]
-       C_acw  <- X[[6]]
-       C_bcw  <- X[[7]]
-       C_mic  <- X[[8]]
-       C_slo  <- X[[9]]
-       C_pas  <- X[[10]]
-       N_am	<- X[[11]]
-       N_as	<- X[[12]]
-       N_bm	<- X[[13]]
-       N_bs	<- X[[14]]
-       N_fw	<- X[[15]]
-       N_acw  <- X[[16]]
-       N_bcw  <- X[[17]]
-       N_mic  <- X[[18]]
-       N_slo  <- X[[19]]
-       N_pas  <- X[[20]]
-       N_ino  <- X[[21]]
-
-       imm_min_vec = imm_min_func(X,t)
-
-       # "imm_max" is positive here. It is the flux from Inorganic N to Microbial pool
-       imm_min_vec$imm_max
-
-    }
-
-    print("This is case_3")
-
- }
-
-
-
-
+internal_fluxes[["21_to_18"]] = function(X,t) {
+   
+   C_am   <- X[[1]]
+   C_as	<- X[[2]]
+   C_bm	<- X[[3]]
+   C_bs	<- X[[4]]
+   C_fw	<- X[[5]]
+   C_acw  <- X[[6]]
+   C_bcw  <- X[[7]]
+   C_mic  <- X[[8]]
+   C_slo  <- X[[9]]
+   C_pas  <- X[[10]]
+   N_am	<- X[[11]]
+   N_as	<- X[[12]]
+   N_bm	<- X[[13]]
+   N_bs	<- X[[14]]
+   N_fw	<- X[[15]]
+   N_acw  <- X[[16]]
+   N_bcw  <- X[[17]]
+   N_mic  <- X[[18]]
+   N_slo  <- X[[19]]
+   N_pas  <- X[[20]]
+   N_ino  <- X[[21]]
+   
+   imm_min_vec = imm_min_func(X,t)
+   
+   # Immobilization (without restrictions) (case_2)
+   ifelse(imm_min_vec$term1 < 0 & abs(imm_min_vec$phi) <= imm_min_vec$imm_max,
+          
+          -imm_min_vec$phi,
+          
+          ifelse(imm_min_vec$term1 < 0 & abs(imm_min_vec$phi) > imm_min_vec$imm_max,
+                 # Immobilization (with restrictions) (case_3)
+                 imm_min_vec$imm_max, 0)
+          
+   )
+   
+}
 
 
 
