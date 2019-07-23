@@ -26,7 +26,7 @@ library(SoilR)
 
 # Preliminary ----
 
-# Define constants and parameters used in the model
+# Constants and parameters used in the model
 # Soil texture
 clay_frac = 0.2
 silt_frac = 0.3
@@ -58,17 +58,12 @@ rsm   = 1 - 0.55 - rp
 # Time range and pool number
 t_start = 0
 t_end   = 20
-t       = seq(t_start, t_end, by = 1/ 365) # to check!!!
+t       = seq(t_start, t_end, by = 1) # to check!!!
 
 nr      = 21 # Number of pools
 
 tn      = 100 
 tol     = .02 / tn
-
-case_var = c("case_1") 
-# case_1: Mineralization
-# case_2: Immobilization (phi_mn=1)
-# case_3: Immobilization (phi_mn<1)
 
 
 # Temperature and Moisture values ----
@@ -114,11 +109,10 @@ chi_T3_W2 <- function(t){
 chiFuncs = list(chi_T1_W1, chi_T1_W2, chi_T2_W1, chi_T2_W2, chi_T3_W1, chi_T3_W2)
 
 # The entire system in a for loop of "chi" in the chi_T_W func list
-# for (chi in chiFuncs){ 
-#do something}
+# for (chi in chiFuncs){
 
-# For now set chi equal to chi_T1_W1
-chi<-chi_T1_W1
+# For now set "chi" equal to chi_T1_W1
+chi <- chi_T1_W1
 
 
 # Compute the limitation factor phi_mn ----
@@ -147,15 +141,15 @@ imm_min_func <- function(X,t) {
   N_pas  <- X[[20]]
   N_ino  <- X[[21]]
 
-  term1  = kam * N_am * (1 - 0.4 * ((C_am / N_am) / (C_mic / N_mic)) )     #                                                     +
-     # kas * N_as * ( (1 - (0.4 * rmic * ((C_as / N_as) / (C_mic / N_mic))) - (rslo * ((C_as / N_as) / (C_slo / N_slo)))))        +
-     # kbm * N_bm * (1 - 0.45 * ((C_bm / N_bm) / (C_mic / N_mic)) )                                                               +
-     # kbs * N_bs * ( (1 - (0.45 * rmic * ((C_bs / N_bs) / (C_mic / N_mic))) - (rslo * ((C_bs / N_bs) / (C_slo / N_slo)))))       +
-     # kfw * N_fw * ( (1 - (0.45 * rmic * ((C_fw / N_fw) / (C_mic / N_mic))) - (rslo * ((C_fw / N_fw) / (C_slo / N_slo)))))       +
-     # kacw * N_acw * ( (1 - (0.45 * rmic * ((C_acw / N_acw) / (C_mic / N_mic))) - (rslo * ((C_acw / N_acw) / (C_slo / N_slo))))) +
-     # kbcw * N_bcw * ( (1 - (0.45 * rmic * ((C_bcw / N_bcw) / (C_mic / N_mic))) - (rslo * ((C_bcw / N_bcw) / (C_slo / N_slo))))) +
-     # kslo * N_slo * ( (1 - (rsm * ((C_slo / N_slo) / (C_mic / N_mic))) - (rp * ((C_slo / N_slo) / (C_slo / N_slo)))))           +
-     # kpas * N_pas * (1 - 0.45 * ((C_pas / N_pas) / (C_mic / N_mic)) )
+  term1  = kam * N_am * (1 - 0.4 * ((C_am / N_am) / (C_mic / N_mic)) )                                                          +
+     kas * N_as * ( (1 - (0.4 * rmic * ((C_as / N_as) / (C_mic / N_mic))) - (rslo * ((C_as / N_as) / (C_slo / N_slo)))))        +
+     kbm * N_bm * (1 - 0.45 * ((C_bm / N_bm) / (C_mic / N_mic)) )                                                               +
+     kbs * N_bs * ( (1 - (0.45 * rmic * ((C_bs / N_bs) / (C_mic / N_mic))) - (rslo * ((C_bs / N_bs) / (C_slo / N_slo)))))       +
+     kfw * N_fw * ( (1 - (0.45 * rmic * ((C_fw / N_fw) / (C_mic / N_mic))) - (rslo * ((C_fw / N_fw) / (C_slo / N_slo)))))       +
+     kacw * N_acw * ( (1 - (0.45 * rmic * ((C_acw / N_acw) / (C_mic / N_mic))) - (rslo * ((C_acw / N_acw) / (C_slo / N_slo))))) +
+     kbcw * N_bcw * ( (1 - (0.45 * rmic * ((C_bcw / N_bcw) / (C_mic / N_mic))) - (rslo * ((C_bcw / N_bcw) / (C_slo / N_slo))))) +
+     kslo * N_slo * ( (1 - (rsm * ((C_slo / N_slo) / (C_mic / N_mic))) - (rp * ((C_slo / N_slo) / (C_slo / N_slo)))))           +
+     kpas * N_pas * (1 - 0.45 * ((C_pas / N_pas) / (C_mic / N_mic)) )
   
   # Initial value of phi_mn
   phi_mn = 1
@@ -167,22 +161,7 @@ imm_min_func <- function(X,t) {
   imm_max  = N_ino * kn * chi(t)
   
   # Different conditions
-  # if(term1 >= 0) { 
-  # phi_mn = 1 
-  # } else {
-  # if(abs(phi) <= imm_max) {
-  #   phi_mn = 1
-  # } else {
-  #   phi_mn = -kn * N_ino / term1
-  # }
-  # }
-  
-  # Different conditions
-  
   phi_mn = ifelse(term1 < 0 & abs(phi) > imm_max, -kn * N_ino / term1, 1)
-
-  # pos1 = which(term1 < 0 & abs(phi) > imm_max)
-  # if(length(pos1) > 0) phi_mn[pos1] = -kn * N_ino[pos1] / term1[pos1]
   
   imm_min_list = list("term1" = term1, "phi_mn" = phi_mn, "phi" = phi, "imm_max" = imm_max)
   
@@ -316,8 +295,6 @@ internal_fluxes[["2_to_8"]] = function(X,t) {
    0.45 * kpas * chi(t) * C_pas * imm_min_vec$phi_mn
  }
  # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-
-
 
  # Nitrogen fluxes ----
  # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
@@ -470,88 +447,90 @@ internal_fluxes[["18_to_20"]] = function(X,t) {
  }
 
 
- # Three different cases ----
+ # Three different cases to simulate mineralization and immobilization fluxes
 
-internal_fluxes[["18_to_21"]] = function(X,t) {
+ # Mineralization (case_1)
+ internal_fluxes[["18_to_21"]] = function(X,t) {
+    
+    C_am   <- X[[1]]
+    C_as	<- X[[2]]
+    C_bm	<- X[[3]]
+    C_bs	<- X[[4]]
+    C_fw	<- X[[5]]
+    C_acw  <- X[[6]]
+    C_bcw  <- X[[7]]
+    C_mic  <- X[[8]]
+    C_slo  <- X[[9]]
+    C_pas  <- X[[10]]
+    N_am	<- X[[11]]
+    N_as	<- X[[12]]
+    N_bm	<- X[[13]]
+    N_bs	<- X[[14]]
+    N_fw	<- X[[15]]
+    N_acw  <- X[[16]]
+    N_bcw  <- X[[17]]
+    N_mic  <- X[[18]]
+    N_slo  <- X[[19]]
+    N_pas  <- X[[20]]
+    N_ino  <- X[[21]]
+    
+    imm_min_vec = imm_min_func(X,t)
+    
+    ifelse(imm_min_vec$term1 >= 0, imm_min_vec$phi, 0)
+    
+ }
+ 
+ # Immobilization (case_2 and case_3)
+ internal_fluxes[["21_to_18"]] = function(X,t) {
+    
+    C_am   <- X[[1]]
+    C_as	<- X[[2]]
+    C_bm	<- X[[3]]
+    C_bs	<- X[[4]]
+    C_fw	<- X[[5]]
+    C_acw  <- X[[6]]
+    C_bcw  <- X[[7]]
+    C_mic  <- X[[8]]
+    C_slo  <- X[[9]]
+    C_pas  <- X[[10]]
+    N_am	<- X[[11]]
+    N_as	<- X[[12]]
+    N_bm	<- X[[13]]
+    N_bs	<- X[[14]]
+    N_fw	<- X[[15]]
+    N_acw  <- X[[16]]
+    N_bcw  <- X[[17]]
+    N_mic  <- X[[18]]
+    N_slo  <- X[[19]]
+    N_pas  <- X[[20]]
+    N_ino  <- X[[21]]
+    
+    imm_min_vec = imm_min_func(X,t)
+    
+    # Immobilization (without restrictions) (case_2)
+    ifelse(imm_min_vec$term1 < 0 & abs(imm_min_vec$phi) <= imm_min_vec$imm_max,
+           
+           -imm_min_vec$phi,
+           
+           ifelse(imm_min_vec$term1 < 0 & abs(imm_min_vec$phi) > imm_min_vec$imm_max,
+                  # Immobilization (with restrictions) (case_3)
+                  imm_min_vec$imm_max, 0)
+           
+    )
+    
+ }
+ 
+ 
+ 
 
-   C_am   <- X[[1]]
-   C_as	<- X[[2]]
-   C_bm	<- X[[3]]
-   C_bs	<- X[[4]]
-   C_fw	<- X[[5]]
-   C_acw  <- X[[6]]
-   C_bcw  <- X[[7]]
-   C_mic  <- X[[8]]
-   C_slo  <- X[[9]]
-   C_pas  <- X[[10]]
-   N_am	<- X[[11]]
-   N_as	<- X[[12]]
-   N_bm	<- X[[13]]
-   N_bs	<- X[[14]]
-   N_fw	<- X[[15]]
-   N_acw  <- X[[16]]
-   N_bcw  <- X[[17]]
-   N_mic  <- X[[18]]
-   N_slo  <- X[[19]]
-   N_pas  <- X[[20]]
-   N_ino  <- X[[21]]
-   
-imm_min_vec = imm_min_func(X,t)
-
-# Mineralization (case_1)
-ifelse(imm_min_vec$term1 >= 0, imm_min_vec$phi, 0)
-       
-}
-
-internal_fluxes[["21_to_18"]] = function(X,t) {
-   
-   C_am   <- X[[1]]
-   C_as	<- X[[2]]
-   C_bm	<- X[[3]]
-   C_bs	<- X[[4]]
-   C_fw	<- X[[5]]
-   C_acw  <- X[[6]]
-   C_bcw  <- X[[7]]
-   C_mic  <- X[[8]]
-   C_slo  <- X[[9]]
-   C_pas  <- X[[10]]
-   N_am	<- X[[11]]
-   N_as	<- X[[12]]
-   N_bm	<- X[[13]]
-   N_bs	<- X[[14]]
-   N_fw	<- X[[15]]
-   N_acw  <- X[[16]]
-   N_bcw  <- X[[17]]
-   N_mic  <- X[[18]]
-   N_slo  <- X[[19]]
-   N_pas  <- X[[20]]
-   N_ino  <- X[[21]]
-   
-   imm_min_vec = imm_min_func(X,t)
-   
-   # Immobilization (without restrictions) (case_2)
-   ifelse(imm_min_vec$term1 < 0 & abs(imm_min_vec$phi) <= imm_min_vec$imm_max,
-          
-          -imm_min_vec$phi,
-          
-          ifelse(imm_min_vec$term1 < 0 & abs(imm_min_vec$phi) > imm_min_vec$imm_max,
-                 # Immobilization (with restrictions) (case_3)
-                 imm_min_vec$imm_max, 0)
-          
-   )
-   
-}
-
-
-
-
- #  # ----
- #  internal_fluxes[["3_to_2"]] = function(C,t) {2}
- #  out_fluxes = list()
- #  out_fluxes[["1"]] = function(X,t) {
- #  }
- #
+#  # ----
+#  internal_fluxes[["3_to_2"]] = function(C,t) {2}
+#  out_fluxes = list()
+#  out_fluxes[["1"]] = function(X,t) {
+#  }
+#
  
  
  
  
+
