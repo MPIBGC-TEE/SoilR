@@ -9,11 +9,14 @@ pkgload::load_all('../../../')
 alltests <- defineTestSuite(
    name="selectedCorrado",
    dirs=c("."),
-   testFileRegexp = "^runit.corrado.R$",
+   testFileRegexp = "^notTested.corrado.R$",
    #testFuncRegexp ="^test.ConstLinDecompOpFromNamedFluxes$",
    #testFuncRegexp ="^test.ConstLinDecompOp$",
    #testFuncRegexp ="^test.phi_mn_with_initialValues|test.corrados_next_function",
-   testFuncRegexp ="test.corrados_next_function",
+   #testFuncRegexp ="test.corrados_next_function",
+   #testFuncRegexp ="test.term1",
+   #testFuncRegexp ="test.phi_mn$",
+   testFuncRegexp ="test.InternalFluxe_by_PoolName$",
    rngKind = "Marsaglia-Multicarry",
    rngNormalKind = "Kinderman-Ramage"
 )
