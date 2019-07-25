@@ -63,7 +63,7 @@ setMethod(
   }
 )
 
-#' new object with the source pool id and the destination pool id guranteed to be of class PoolName 
+#' new object with the source pool id and the destination pool id guaranteed to be of class PoolName 
 #'
 #' converts the ids if necessary otherwise returns an 
 #' identical object

@@ -1,11 +1,9 @@
 setClass(
   Class="ConstantOutFluxRate",
-  contains="PoolSource",
-  slots=c(rate_constant='numeric')
-  #slots=c(sourceId='PoolId',rate_constant='numeric')
+  slots=c(sourceId='PoolId',rate_constant='numeric')
 )
 
-ConstantOutFluxRate<-function(rate_constant,...){
+ConstantOutFluxRate<-function(sourceId,rate_constant){
     if (rate_constant<0){
       stop(
         "Negative rate constant. 
@@ -14,8 +12,24 @@ ConstantOutFluxRate<-function(rate_constant,...){
         rate constants have to be positive too."
       )
     }
-    ps<-PoolSource(...)
-    cofr=as(ps,'ConstantOutFluxRate')
-    cofr@rate_constant<-rate_constant
-    return(cofr)
+    new('ConstantOutFluxRate',sourceId=GeneralPoolId(id=sourceId),rate_constant=rate_constant)
 }
+#' new object with the source pool id converted to a PoolIndex if necessary 
+setMethod(
+  f="by_PoolIndex",
+  signature=c(obj='PoolSource'),
+  def=function(obj,poolNames){
+      obj@sourceId=PoolIndex(id=obj@sourceId,poolNames)
+      obj
+  }
+)
+
+#' new object with the source pool id converted to a PoolName if necessary 
+setMethod(
+  f="by_PoolName",
+  signature=c(obj='PoolSource'),
+  def=function(obj,poolNames){
+      obj@sourceId=PoolName(id=obj@sourceId,poolNames)
+      obj
+  }
+)

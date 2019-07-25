@@ -26,11 +26,10 @@ setMethod(
     .Object@numberOfPools=numberOfPools
     .Object@alpha=alpha
     .Object@f=f
-    .Object@lag=lag
     return(.Object)
     }
 )
-fromToSplitter=function(){"_to_"}
+#fromToSplitter=function(){"_to_"}
 getRecipient=function(stri){
   as.numeric(unlist(strsplit(stri,split=fromToSplitter()))[[2]])
 }

@@ -18,8 +18,11 @@
 #' lignin.
 #' @param clay Proportion of clay in mineral soil.
 #' @param silt Proportion of silt in mineral soil.
-#' @param xi A scalar or data.frame object specifying the external
+#' @param xi A scalar, data.frame, function or anything that can be converted to a scalar function of time (\code\link{TimeMap}}  object) 
+#' specifying the external
 #' (environmental and/or edaphic) effects on decomposition rates.
+#' @param lag A time shift/delay  for the automatically 
+#' created time dependent function xi(t) 
 #' @param solver A function that solves the system of ODEs. This can be
 #' \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user
 #' provided function with the same interface.
@@ -62,6 +65,7 @@ CenturyModel<- function
    clay=0.2, 
    silt=0.45, 
    xi=1,  
+   lag=0,
    solver=deSolve.lsoda.wrapper  
   )	
   { 
@@ -110,17 +114,11 @@ CenturyModel<- function
     A[4,3]=alpha43*abs(A[3,3])
     A[5,3]=alpha53*abs(A[3,3])
     A[5,4]=alpha54*abs(A[4,4])
-    if(length(xi)==1) fX=function(t){xi}
-    if(class(xi)=="data.frame"){
-      X=xi[,1]
-      Y=xi[,2]
-      fX=splinefun(X,Y)
-    }
-    Af=BoundLinDecompOp(
-      function(t){fX(t)*A},
-      t_start,
-      t_end
-    )
-    Mod=GeneralModel(t=t,A=Af,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver,pass=FALSE)
+    # whatever format xi is given in we convert it to a time map object
+    # (function,constant,data.frame,list considering also the lag argument)
+    xi=ScalarTimeMap(xi,lag=lag)
+    fX=getFunctionDefinition(xi)
+    At=ConstLinDecompOpWithLinearScalarFactor(mat=A,xi=xi)
+    Mod=GeneralModel(t=t,A=At,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver,pass=FALSE)
     return(Mod)
   }

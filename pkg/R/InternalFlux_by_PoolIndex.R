@@ -41,14 +41,3 @@ setMethod(
     )
   }
 )
-#setMethod(
-#  f="InternalFlux_by_PoolIndex",
-#  signature=c(source='missing',destination='missing',src_to_dest='character',func='function'),
-#  def=function(src_to_dest,func){
-#    InternalFlux_by_PoolIndex(
-#        source=getSender(src_to_dest)
-#        ,destination=getRecipient(src_to_dest)
-#        ,func=func
-#    )
-#  }
-#)

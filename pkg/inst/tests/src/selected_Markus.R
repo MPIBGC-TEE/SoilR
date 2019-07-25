@@ -7,23 +7,27 @@ require("pkgload")
 source("../testhelpers.R")
 pkgload::load_all('../../../')
 alltests <- defineTestSuite(
-   name="selectedMarkus",
-   dirs=c("."),
-   #testFileRegexp = "^runit.FluxRateConstructors.R$|^runit.FluxConstructors.R$|^runit.PoolTopology.R$",
-   #testFileRegexp = "^runit.PoolTopology.R$",
-   #testFileRegexp = "^runit.FluxRateConstructors.R$",
-   #testFileRegexp = "^runit.FluxConstructors.R$",
-   #testFileRegexp = "^runit.NonlinearOperators.R$",
+   name="selectedMarkus"
+   ,dirs=c(".")
+   #,testFileRegexp = "^runit.FluxRateConstructors.R$|^runit.FluxConstructors.R$|^runit.PoolTopology.R$"
+   #,testFileRegexp = "^runit.PoolTopology.R$"
+   #,testFileRegexp = "^runit.FluxRateConstructors.R$"
+   #,testFileRegexp = "^runit.FluxConstructors.R$"
+   #,testFileRegexp = "^runit.NonlinearOperators.R$"
+   #,testFileRegexp = "^runit.Century.R$"
+   #,testFileRegexp = "^runit.ConstLinDecompOpWithLinearScalarFactor.R$"
+   ,testFileRegexp = "^runit.ConstLinDecompOp.R$"
+   #,testFileRegexp = "^runit.NonLinDecompOp_with_linear_fluxes.R$"
    
-   #testFileRegexp = "^runit.ConstLinDecompOp.R$$",
-   testFileRegexp = "^runit.NonLinDecompOp_with_linear_fluxes.R$",
-   #testFuncRegexp ="^test.ConstLinDecompOpFromNamedFluxes$",
-   #testFuncRegexp ="^test.ConstLinDecompOp$",
-   #testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Index$",
-   testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Name$",
-   #testFuncRegexp ="^test.function_by_PoolIndex$",
-   rngKind = "Marsaglia-Multicarry",
-   rngNormalKind = "Kinderman-Ramage"
+   ,testFuncRegexp ="^test.ConstLinDecompOpWithoutOutFluxes$"
+   #,testFuncRegexp ="^test.ConstLinDecompOpFromNamedFluxes$"
+   #,testFuncRegexp ="^test.ConstLinDecompOp$"
+   #,testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Index$"
+   #,testFuncRegexp="^test.ConstLinDecompOpWithLinearScalarFactor_check_external_flux_args$"
+   #,testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Name$"
+   #,testFuncRegexp ="^test.function_by_PoolIndex$"
+   ,rngKind = "Marsaglia-Multicarry"
+   ,rngNormalKind = "Kinderman-Ramage"
 )
 
 #testResult <- runTestSuite(alltests,verbose=0)

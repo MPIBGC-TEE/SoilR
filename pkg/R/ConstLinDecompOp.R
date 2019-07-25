@@ -20,21 +20,24 @@ convert_to_vector_of_ConstantOutFluxRates<-function(out_flux_rates){
 
 
 #' convert names of  vectors or lists to class PoolConnection 
-convert_to_vector_of_ConstantInternalFluxRates<-function(internal_flux_rates){
-  if (length(internal_flux_rates)==0 | elements_are_PoolConnections(internal_flux_rates)
-  ){
-    return(internal_flux_rates)
-  } 
-  if ( is.null(names(internal_flux_rates))){
-        stop('internal_flux_rates must be either a numeric vector with names of the from "i_to_j" or a vector of instances of class ConstantInternalFluxRate')
-  }
+convert_to_vector_of_ConstantInternalFluxRates_by_PooIndex<-function(internal_flux_rates){
+    if (
+        length(internal_flux_rates)==0 
+        || allElementsAreOfClass(internal_flux_rates,"ConstantOutFluxRateList_by_PoolIndex")
+    ){
+        # nothing to do
+        return(internal_flux_rates)
+    } 
+  #if ( is.null(names(internal_flux_rates))){
+  #      stop('internal_flux_rates must be either a numeric vector with names of the from "i_to_j" or a vector of instances of class ConstantInternalFluxRate')
+  #}
   if (inherits(internal_flux_rates,'numeric')){
     keys=names(internal_flux_rates)
     rates=vector()
     for (key in names(internal_flux_rates)){
       rates=append(
                   rates 
-                  ,ConstantInternalFluxRate(
+                  ,ConstantInternalFluxRate_by_PoolIndex(
                      src_to_dest=key,
                     ,rate_constant=internal_flux_rates[[key]]
                   )
@@ -68,10 +71,8 @@ setMethod(
          mat="matrix"
         ,internal_flux_rates='missing'
         ,out_flux_rates='missing'
-        ,numberOfPools='missing'
       ),
-      definition=function 
-      (mat){
+      definition=function (mat,numberOfPools=nrow(mat)){
         r <- nrow(mat)
         c <- ncol(mat)
         if (r!=c){
@@ -83,21 +84,21 @@ setMethod(
 
 #' helper function 
 mat_from_integer_flux_lists=function(
-  internal_flux_rates
-  ,out_flux_rates
+  internal_flux_rates=NULL
+  ,out_flux_rates=NULL
   ,numberOfPools
 ){
   np=PoolIndex(numberOfPools)
   N=matrix(nrow=np,ncol=np,0)
   for (ofr in out_flux_rates){
-      src=PoolIndex(ofr@sourceId)
+      src=ofr@sourceIndex
       if (src> np){stop("The index of the source pool must be smaller than the number of pools")}
       N[src,src]=ofr@rate_constant
   }
 
   for (ifr in internal_flux_rates){
-    dest<-PoolIndex(ifr@destinationId)
-    src<-PoolIndex(ifr@sourceId)
+    dest<-ifr@destinationIndex
+    src<-ifr@sourceIndex
     N[src,src]=N[src,src]+ifr@rate_constant
   }
   To=diag(nrow=np,-1)
@@ -108,153 +109,134 @@ mat_from_integer_flux_lists=function(
   return(B)
 }
 
-
+no_outflux_warning=function(){
+            warning('Compartmental system without out fluxes. For non zero inputs the 
+                    material will accumulate in the system.')
+}
 setMethod(
       f="ConstLinDecompOp",
       signature=c(
          mat="missing"
-        ,internal_flux_rates='vector'
-        ,out_flux_rates='vector'
+        ,internal_flux_rates='list'
+        ,out_flux_rates='missing'
         ,numberOfPools='numeric'
-        ,poolNames='missing'
       ),
       definition=function(
         internal_flux_rates
-        ,out_flux_rates
         ,numberOfPools
       ){
-        np=PoolIndex(numberOfPools)
-        #np=PoolIndex(length(poolNames))
-        if (length(out_flux_rates)==0){
-            # nothing to do convert
-            warning('Compartmental system without out fluxes')
-        } else {
-            out_flux_rates<-convert_to_vector_of_ConstantOutFluxRates(out_flux_rates)
+            no_outflux_warning()
+            np=PoolIndex(numberOfPools)
 
-        }
-        internal_flux_rates<-convert_to_vector_of_ConstantInternalFluxRates(internal_flux_rates)
+            internal_flux_rates<-convert_to_vector_of_ConstantInternalFluxRates_by_PooIndex(internal_flux_rates)
+            print('#######################################################################3')
+            print(internal_flux_rates)
 
-        if( ! elements_are_Indexed_by_PoolIndex(internal_flux_rates)){
-            stop('Without poolNames available PoolIds must be numeric, otherwise no matrix can be computed')
-        }
 
-        B<- mat_from_integer_flux_lists(
-          internal_flux_rates
-          ,out_flux_rates
-          ,numberOfPools
-        )
-        return(new('ConstLinDecompOp',mat=B))
+            B<- mat_from_integer_flux_lists(
+                internal_flux_rates=internal_flux_rates
+                ,numberOfPools= numberOfPools
+            )
+            new('ConstLinDecompOp',mat=B)
       }
 )
 
-setMethod(
-      f="ConstLinDecompOp",
-      signature=c(
-         mat="missing"
-        ,internal_flux_rates='vector'
-        ,out_flux_rates='vector'
-        ,numberOfPools='missing'
-        ,poolNames='character'
-      ),
-      definition=function(
-        internal_flux_rates
-        ,out_flux_rates
-        ,poolNames
-      ){
-        #np=PoolIndex(numberOfPools)
-        numberOfPools=PoolIndex(length(poolNames))
-        if (length(out_flux_rates)==0){
-            # nothing to do
-            warning('Compartmental system without outfluxes')
-        } else {
-            out_flux_rates<-convert_to_vector_of_ConstantOutFluxRates(out_flux_rates)
-        }
-        internal_flux_rates<-convert_to_vector_of_ConstantInternalFluxRates(internal_flux_rates)
-        # we already have a vector of flux rates
-        # but now we make sure that the rates are indexed by integers (not names))
-        internal_flux_rates_by_index<-as.vector(lapply(
-            internal_flux_rates
-            ,function(ifr){by_PoolIndex(ifr,poolNames) }
-        ))
-        out_flux_rates_by_index<-as.vector(lapply(
-            internal_flux_rates
-            ,function(ifr){by_PoolIndex(ifr,poolNames) }
-        ))
-
-        B<- mat_from_integer_flux_lists(
-          internal_flux_rates_by_index
-          ,out_flux_rates_by_index
-          ,numberOfPools
-        )
-        return(new('ConstLinDecompOp',mat=B))
-      }
-)
-setMethod(
-      f="ConstLinDecompOp",
-      signature=c(
-         mat="missing"
-        ,internal_flux_rates='missing'
-        ,out_flux_rates='vector'
-        ,numberOfPools='numeric'
-      ),
-      definition=function 
-      (out_flux_rates,numberOfPools){
-        return(
-          ConstLinDecompOp(
-            internal_flux_rates=numeric()
-            ,out_flux_rates=out_flux_rates
-            ,numberOfPools=numberOfPools
-          )
-        )
-      }
-)
-setMethod(
-      f="ConstLinDecompOp",
-      signature=c(
-         mat="missing"
-        ,internal_flux_rates='vector'
-        ,out_flux_rates='missing'
-        ,numberOfPools='numeric'
-      ),
-      definition=function 
-      (internal_flux_rates,numberOfPools){
-        return(
-          ConstLinDecompOp(
-            internal_flux_rates=internal_flux_rates
-            ,out_flux_rates=numeric()
-            ,numberOfPools=numberOfPools
-          )
-        )
-      }
-)
-setMethod(
-      f="ConstLinDecompOp",
-      signature=c(
-         mat="missing"
-        ,internal_flux_rates='missing'
-        ,out_flux_rates='missing'
-        ,numberOfPools='numeric'
-      ),
-      definition=function 
-      (numberOfPools){
-        return(
-          ConstLinDecompOp(
-            internal_flux_rates=numeric()
-            ,out_flux_rates=numeric()
-            ,numberOfPools=numberOfPools
-          )
-        )
-      }
-)
-
-
-
-
-
-
-
-
-
+#setMethod(
+#      f="ConstLinDecompOp_by_PoolName",
+#      signature=c(
+#      #  ,internal_flux_rates='vector'
+#      #  ,out_flux_rates='vector'
+#         ,poolNames='character'
+#      ),
+#      definition=function(
+#        internal_flux_rates=list()
+#        ,out_flux_rates=list()
+#        ,poolNames
+#      ){
+#        numberOfPools=PoolIndex(length(poolNames))
+#        if (length(out_flux_rates)==0){
+#            # nothing to do
+#            warning('Compartmental system without outfluxes')
+#        } else {
+#            out_flux_rates<-convert_to_vector_of_ConstantOutFluxRates(out_flux_rates)
+#        }
+#        internal_flux_rates<-convert_to_vector_of_ConstantInternalFluxRates(internal_flux_rates)
+#        # we already have a vector of flux rates
+#        # but now we make sure that the rates are indexed by integers (not names))
+#        internal_flux_rates_by_index<-as.vector(lapply(
+#            internal_flux_rates
+#            ,function(ifr){by_PoolIndex(ifr,poolNames) }
+#        ))
+#        out_flux_rates_by_index<-as.vector(lapply(
+#            internal_flux_rates
+#            ,function(ifr){by_PoolIndex(ifr,poolNames) }
+#        ))
+#
+#        B<- mat_from_integer_flux_lists(
+#          internal_flux_rates_by_index
+#          ,out_flux_rates_by_index
+#          ,numberOfPools
+#        )
+#        return(new('ConstLinDecompOp',mat=B))
+#      }
+#)
+#setMethod(
+#      f="ConstLinDecompOp",
+#      signature=c(
+#         mat="missing"
+#        ,internal_flux_rates='missing'
+#        ,out_flux_rates='vector'
+#        ,numberOfPools='numeric'
+#      ),
+#      definition=function 
+#      (out_flux_rates,numberOfPools){
+#        return(
+#          ConstLinDecompOp(
+#            internal_flux_rates=numeric()
+#            ,out_flux_rates=out_flux_rates
+#            ,numberOfPools=numberOfPools
+#          )
+#        )
+#      }
+#)
+#setMethod(
+#      f="ConstLinDecompOp",
+#      signature=c(
+#         mat="missing"
+#        ,internal_flux_rates='vector'
+#        ,out_flux_rates='missing'
+#        ,numberOfPools='numeric'
+#      ),
+#      definition=function 
+#      (internal_flux_rates,numberOfPools){
+#        return(
+#          ConstLinDecompOp(
+#            internal_flux_rates=internal_flux_rates
+#            ,out_flux_rates=list()
+#            ,numberOfPools=numberOfPools
+#          )
+#        )
+#      }
+#)
+#setMethod(
+#      f="ConstLinDecompOp",
+#      signature=c(
+#         mat="missing"
+#        ,internal_flux_rates='missing'
+#        ,out_flux_rates='missing'
+#        ,numberOfPools='numeric'
+#      ),
+#      definition=function 
+#      (numberOfPools){
+#        return(
+#          ConstLinDecompOp(
+#            internal_flux_rates=numeric()
+#            ,out_flux_rates=numeric()
+#            ,numberOfPools=numberOfPools
+#          )
+#        )
+#      }
+#)
 
 
 setMethod(
@@ -335,4 +317,69 @@ setMethod(
       definition=function(object){
           getFunctionDefinition(object)
    }
+)
+setMethod(
+   f= "getConstantCompartmentalMatrix",
+      signature(object="ConstLinDecompOp"),
+      definition=function(object){
+          object@mat
+   }
+)
+setMethod(
+    f= "ConstantOutFluxRateList_by_PoolIndex",
+        signature(object="ConstLinDecompOp"),
+        definition=function(object){
+
+        B=object@mat
+        np=nrow(B)
+        # calculate outputs
+        all_rates=lapply(
+          1:np
+          ,function(pool){
+              ConstantOutFluxRate(
+                sourceId=pool
+                ,rate_constant= -sum(B[, pool])
+              )
+          }
+        )
+        non_zero_rates(all_rates)
+        
+          
+   }
+)
+non_zero_rates=function(all_rates){
+        all_rates[
+          as.logical(
+            lapply(
+                all_rates
+                ,function(cofr){cofr@rate_constant!=0}
+            )
+          )
+        ]
+}
+setMethod(
+    f= "ConstantInternalFluxRateList_by_PoolIndex",
+        signature(object="ConstLinDecompOp"),
+        definition=function(object){
+            B=object@mat
+            np=nrow(B)
+            ## calculate internal fluxes
+            #internal_fluxes = dict()
+            #pipes = [(i,j) for i in range(state_vector.rows) 
+            #                for j in range(state_vector.rows) if i != j]
+            pipes=sets::cset_cartesian(1:np,1:np)
+            all_rates=lapply(
+                pipes
+                ,function(tup){
+                    pool_to  <-tup[[1]]
+                    pool_from<-tup[[2]]
+                    flux_rate = ConstantInternalFluxRate_by_PoolIndex(
+                        sourceId=pool_from
+                        ,destinationId=pool_to
+                        ,rate_constant= B[pool_to, pool_from] 
+                    )
+                }
+            )
+            non_zero_rates(all_rates)
+        }
 )

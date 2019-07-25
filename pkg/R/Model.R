@@ -21,13 +21,15 @@ correctnessOfModel <- function
     tI_max=getTimeRange(InFluxes)["t_max"]
     t_min=min(times)
     t_max=max(times)
-    haveALook="Have look at the object containing  A(t) or the data it is created from"
+    haveALook="Have look at the object containing  A(t) or the data it is created from\n"
     if (t_min<tA_min) {
         stop(
           simpleError(
             paste(
-              "You ordered a timeinterval that starts earlier than the interval your matrix valued function A(t) is defined for. \n ",
-              haveALook
+              "You ordered a timeinterval that starts earlier than the interval your matrix valued function A(t) is defined for. \n "
+              ,haveALook
+              ,paste('tA_min=',tA_min,'\n')
+              ,paste('t_min=',t_min,'\n')
             )
           )
         )
@@ -36,8 +38,10 @@ correctnessOfModel <- function
         stop(
           simpleError(
             paste(
-              "You ordered a timeinterval that ends later than the interval your matrix valued function A(t) is defined for. \n ",
-              haveALook
+              "You ordered a timeinterval that ends later than the interval your matrix valued function A(t) is defined for. \n "
+              ,haveALook
+              ,paste('tA_max=',tA_max,'\n')
+              ,paste('t_max=',t_max,'\n')
             )
           )
         )
@@ -144,10 +148,13 @@ setMethod(
 #' 
 #' Note also that this function checks its arguments quite elaborately and
 #' tries to detect accidental unreasonable combinations, especially concerning
-#' two kinds of errors. \enumerate{ \item unintended extrapolation of time
-#' series data \item violoations of massbalance by the DecompOp argument. }
+#' two kinds of errors. 
+#' \enumerate{ 
+#' \item unintended extrapolation of time series data 
+#' \item violoations of massbalance by the DecompOp argument. 
+#'}
 #' 
-#' SoilR has a lot of unit tests which are installed i with the package and are
+#' SoilR has a lot of unit tests which are installed with the package and are
 #' sometimes instructive as examples.  To see example scenarios for parameter
 #' check look at:
 #' \Sexpr{system.file('tests','runit.correctness_of_Model.R',package='SoilR')}

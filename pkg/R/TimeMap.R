@@ -81,12 +81,31 @@ CallWithPlotVars<- function(
   	res <- eval(funcCall)
   res
 }
+
+#' S4 class for a time dependent function 
+#' 
+#' The class represents functions which are defined on a (possibly infinite) 
+#' interval from [starttime,endtime]
+#' Instances are usually created internally from data frames or lists provided by the user in the high level interfaces.
+#' 
+#' The class is necessary to be able to detect unwanted extrapolation of 
+#' time line data which might otherwise occur for some of the following 
+#' reasons:
+#' SoilR allows to specify measured data for many of its arguments
+#' and computes the interpolating functions automatically.
+#' The functions returned bye the standard R interpolation mechanisms
+#' like \code{splinefun} or \code{approxfun} do not provide a safeguard 
+#' against accidental extrapolation.  
+#' Internally SoilR converts nearly all data to time dependent functions 
+#' e.g. to be used in ode solvers. So the information of the domain of the
+#' function has to be kept.
+
 setClass(
    Class="TimeMap",
    slots=list(
       map="function"
-      ,
-      lag="numeric"
+      #,
+      #lag="numeric"
       ,
       starttime="numeric"
       ,
@@ -190,7 +209,7 @@ setMethod(
               stop(
                 sprintf('If data is a list of matrices or arrays, 
                   the lag element has to either be a scalar or  
-                  a matrix or array of the same shape as the elemenst of the data list. 
+                  a matrix or an array of the same shape as the elemenst of the data list. 
                   You gave a lag argument of dimension %s,
                   while the elements of the data list have dimension %s.',
                   toString(dl),
@@ -408,6 +427,8 @@ setMethod(
      return(obj)
 }
 )
+
+#' manual constructor for a function and an interval
 setMethod(
     f="TimeMap",
     signature=signature(
@@ -417,13 +438,45 @@ setMethod(
       times="missing",
       data="missing"
     ),
-    definition=function 
-    (map, 
-    starttime,  
-    endtime
+    definition=function(
+        map, 
+        starttime,  
+        endtime,
+        lag=0
     ){
-    new("TimeMap",map=map,starttime=starttime,endtime=endtime)
+        new(
+            "TimeMap"
+            ,map=function(t){
+                map(t-lag)
+             }
+            ,starttime=starttime
+            ,endtime=endtime
+        )
   }
+)
+
+#' manual constructor for just a function 
+#'
+#' The interval will be set to [-Inf,Inf]
+setMethod(
+    f="TimeMap",
+    signature=signature(
+      map="function",
+      starttime="missing",
+      endtime="missing",
+      times="missing",
+      data="missing"
+    ),
+    definition=function (map,lag=0){
+        new(
+            "TimeMap"
+            ,map=function(t){
+                map(t-lag)
+            }
+            ,starttime=-Inf
+            ,endtime=Inf
+        )
+    }
 )
 setMethod(
     f="TimeMap",
@@ -455,6 +508,8 @@ setMethod(
         )
     }
 )    
+
+#' The time interval where the function is defined
 setMethod(
     f="getTimeRange",
     signature="TimeMap",
@@ -464,6 +519,17 @@ setMethod(
         return( c("t_min"=object@starttime,"t_max"=object@endtime))
     }
 )
+
+#setMethod(
+#    f="getLaggingTimeRange",
+#    signature="TimeMap",
+#    definition=function 
+#    (object 
+#    ){
+#        lag=object@lag
+#        return( c("t_min"=object@starttime+lag,"t_max"=object@endtime+lag))
+#    }
+#)
 setMethod(
     f="getFunctionDefinition",
     signature="TimeMap",
@@ -471,11 +537,6 @@ setMethod(
         return(object@map)
     }
 )
-
-
-
-
-
 
 #' deprecated constructor of the class TimeMap.
 #' 

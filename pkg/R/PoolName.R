@@ -56,3 +56,9 @@ setMethod(
         PoolIndex(res)
     }
 )
+getRecipientName=function(src_to_dest){
+  PoolName(src_to_dest_parts(src_to_dest)[[2]])
+}
+getSenderName=function(src_to_dest){
+  PoolName(src_to_dest_parts(src_to_dest)[[1]])
+}

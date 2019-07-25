@@ -27,7 +27,6 @@ setMethod(
     .Object@starttime=starttime
     .Object@endtime=endtime
     .Object@map=map
-    .Object@lag=lag
     return(.Object)
     }
 )

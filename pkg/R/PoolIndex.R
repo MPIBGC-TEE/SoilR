@@ -35,3 +35,11 @@ setMethod(
         PoolName(poolNames[[id]]) 
     }
 )
+getRecipientIndex=function(src_to_dest){
+  #PoolIndex(as.integer(unlist(strsplit(stri,split=fromToSplitter()))[[2]]))
+  PoolIndex(as.integer(src_to_dest_parts(src_to_dest)[[2]]))
+}
+getSenderIndex=function(src_to_dest){
+  #PoolIndex(as.integer(unlist(strsplit(stri,split=fromToSplitter()))[[1]]))
+  PoolIndex(as.integer(src_to_dest_parts(src_to_dest)[[1]]))
+}

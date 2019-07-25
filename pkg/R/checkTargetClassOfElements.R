@@ -1,14 +1,5 @@
 checkTargetClassOfElements<-function(l,targetClassName){
-    if(
-        !all(
-            as.logical(
-                lapply(
-                    l
-                    ,function(el){inherits(el,targetClassName)}
-                )
-            )
-        )
-    ){
+    if(allElementsAreOfClass(l,targetClassName)){
         stop(
             paste(
                 'The list elements have to be of type:'
@@ -16,6 +7,16 @@ checkTargetClassOfElements<-function(l,targetClassName){
             )
         )
     }
-    as(l,'InternalFluxList_by_PoolIndex')
+    as(l,targetClassName)
 
+}
+allElementsAreOfClass<-function(l,targetClassName){
+        !all(
+            as.logical(
+                lapply(
+                    l
+                    ,function(el){is(el,targetClassName)}
+                )
+            )
+        )
 }

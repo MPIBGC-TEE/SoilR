@@ -202,6 +202,12 @@ setGeneric(
 	 }
 )
 setGeneric(
+	 name="getLaggingTimeRange",
+	 def=function(object){
+	     standardGeneric("getLaggingTimeRange")
+	 }
+)
+setGeneric(
 	 name="getFunctionDefinition",
 	 def=function(object){
 	     standardGeneric("getFunctionDefinition")
@@ -286,6 +292,30 @@ setGeneric(
 	 }
 )
 setGeneric(
+	 name="getConstantCompartmentalMatrix",
+	 def=function(
+         object
+    ){
+	     standardGeneric("getConstantCompartmentalMatrix")
+	 }
+)
+setGeneric(
+	 name="getConstLinDecompOp",
+	 def=function(
+         object
+    ){
+	     standardGeneric("getConstLinDecompOp")
+	 }
+)
+setGeneric(
+	 name="getLinearScaleFactor",
+	 def=function(
+         object
+    ){
+	     standardGeneric("getLinearScaleFactor")
+	 }
+)
+setGeneric(
 	 name="getTransferCoefficients",
 	 def=function(object){
 	     standardGeneric("getTransferCoefficients")
@@ -304,10 +334,11 @@ setGeneric(
 	   map,
 	   starttime,
 	   endtime,
-     times,
-     data,
+       times,
+       data,
 	   lag=0,                  
-	   interpolation=splinefun 
+	   interpolation=splinefun,
+       ...
      )
 	 {
 	     standardGeneric("TimeMap")
@@ -356,6 +387,20 @@ setGeneric(
 	 (object)
 	 {
 	     standardGeneric("InFluxes")
+	 }
+)
+setGeneric(
+	 name="ConstantInternalFluxRate_by_PoolName",
+	 def=function(sourceName,destinationName,src_to_dest,rate_constant)
+	 {
+	     standardGeneric("ConstantInternalFluxRate_by_PoolName")
+	 }
+)
+setGeneric(
+	 name="ConstantInternalFluxRate_by_PoolIndex",
+	 def=function(sourceIndex,destinationIndex,src_to_dest,rate_constant)
+	 {
+	     standardGeneric("ConstantInternalFluxRate_by_PoolIndex")
 	 }
 )
 setGeneric(
@@ -436,6 +481,27 @@ setGeneric(
 	 }
 )
 setGeneric(
+	 name="ConstantOutFluxRateList_by_PoolName",
+	 def=function(l)
+	 {
+	     standardGeneric("ConstantOutFluxRateList_by_PoolName")
+	 }
+)
+setGeneric(
+	 name="ConstantOutFluxRateList_by_PoolIndex",
+	 def=function(object)
+	 {
+	     standardGeneric("ConstantOutFluxRateList_by_PoolIndex")
+	 }
+)
+setGeneric(
+	 name="ConstantInternalFluxRateList_by_PoolIndex",
+	 def=function(object)
+	 {
+	     standardGeneric("ConstantInternalFluxRateList_by_PoolIndex")
+	 }
+)
+setGeneric(
 	 name="OutFluxList_by_PoolIndex",
 	 def=function(l)
 	 {
@@ -464,9 +530,25 @@ setGeneric(
 setGeneric(
 	 name="ConstLinDecompOp",
 	 def=function 
-	 (mat,internal_flux_rates,out_flux_rates,numberOfPools,poolNames)
+	 (mat,internal_flux_rates,out_flux_rates,numberOfPools)
 	 {
 	     standardGeneric("ConstLinDecompOp")
+	 }
+)
+setGeneric(
+	 name="ConstLinDecompOp_by_PoolName",
+	 def=function 
+	 (internal_flux_rates,out_flux_rates,poolNames)
+	 {
+	     standardGeneric("ConstLinDecompOp_by_PoolName")
+	 }
+)
+setGeneric(
+	 name="ConstLinDecompOpWithLinearScalarFactor",
+	 def=function 
+	 (mat,internal_flux_rates,out_flux_rates,numberOfPools,poolNames,xi)
+	 {
+	     standardGeneric("ConstLinDecompOpWithLinearScalarFactor")
 	 }
 )
 setGeneric(
@@ -543,6 +625,22 @@ setGeneric(
 	 ( source ,destination,src_to_dest)
 	 {
 	     standardGeneric("PoolConnection")
+	 }
+)
+setGeneric(
+	 name="PoolConnection_by_PoolIndex",
+	 def=function  
+	 ( source ,destination,src_to_dest)
+	 {
+	     standardGeneric("PoolConnection_by_PoolIndex")
+	 }
+)
+setGeneric(
+	 name="PoolConnection_by_PoolName",
+	 def=function  
+	 ( source ,destination,src_to_dest)
+	 {
+	     standardGeneric("PoolConnection_by_PoolName")
 	 }
 )
 setGeneric(
