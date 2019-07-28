@@ -231,24 +231,48 @@ setMethod(
 #'   ## lets check that we can compute something# 
 #'   lapply(models,getC)
 #' 
-Model <- function 
-  (t,			
+Model <-function(t,			
    A,			
    ivList,		
    inputFluxes, 
    solverfunc=deSolve.lsoda.wrapper,		
    pass=FALSE  
-   )
-  {
-     obj=new(Class="Model",t,GeneralDecompOp(A),ivList,InFluxes(inputFluxes),solverfunc,pass)
+)
+{   
+     obj=new(
+        Class="Model"
+        ,t
+        ,GeneralDecompOp(A)
+        ,ivList
+        ,InFluxes(inputFluxes,numberOfPools=length(ivList))
+        ,solverfunc
+        ,pass
+        )
      return(obj)
-  }
+}
+
+setMethod(
+   f= "getInFluxes",
+      signature(object="Model"),
+      definition=function(object){
+      object@inputFluxes
+   }
+)
 setMethod(
    f= "plot",
       signature(x="Model"),
       definition=function 
       (x){
       plot(getTimes(x),getC(x)[,1])
+   }
+)
+setMethod(
+   f= "plotPoolGraph",
+      signature(x="Model"),
+      definition=function 
+      (x){
+      op=getDecompOp(x)
+      iflvec=getInFluxes(x)
    }
 )
 setMethod(

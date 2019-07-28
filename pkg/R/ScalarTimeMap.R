@@ -19,7 +19,7 @@ ScalarTimeMap<-function(...){
     ts=getTimeRange(tm)[1]
     val<-f(ts)
     if ( !inherits(val,'numeric')){
-        stop("The created TimeMap uust return numeric valued.")
+        stop("The created TimeMap must return numeric values.")
     }
     if (length(val)!=1) {
         print(val)

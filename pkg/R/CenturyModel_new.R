@@ -55,7 +55,7 @@
 #' legend("topright", c("Structural litter","Metabolic litter",
 #' "Active SOM","Slow SOM","Passive SOM","Total Respiration"),
 #' lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
-CenturyModel<- function 
+CenturyModel_new<- function 
   (t,      
    ks=c(k.STR=0.094,k.MET=0.35,k.ACT=0.14,k.SLW=0.0038,k.PAS=0.00013),  
    C0=c(0,0,0,0,0),	
@@ -69,29 +69,42 @@ CenturyModel<- function
    solver=deSolve.lsoda.wrapper  
   )	
   { 
-    t_start=min(t)
-    t_end=max(t)
-    if(length(ks)!=5) stop("ks must be of length = 5")
-    if(length(C0)!=5) stop("the vector with initial conditions must be of length = 5")
+    numberOfPools=5
+    if(length(ks)!=numberOfPools) stop(paste("ks must be of length = ",numberOfPools))
+    if(length(C0)!=numberOfPools) stop(paste("the vector with initial conditions must be of length = ",numberOfPools))
     Fm=0.85-0.18*LN
     Fs=1-Fm
     if(length(In)==1){
-      inputFluxes=BoundInFluxes(
-        function(t){matrix(nrow=5,ncol=1,c(In*Fm,In*Fs,0,0,0))},
-        t_start,
-        t_end
+        InFluxes=ConstantInFluxList_by_PoolIndex(
+            list(
+                ConstantInFlux_by_PoolIndex(
+                    destinationIndex=1
+                    ,flux_constant=In*Fm
+                )
+                ,
+                ConstantInFlux_by_PoolIndex(
+                    destinationIndex=2
+                    ,flux_constant=In*Fs
+                )
+            )
       )
     }
-    if(class(In)=="data.frame"){
-      x=In[,1]  
-      y=In[,2]  
-      inputFlux=splinefun(x,y)
-      inputFluxes=BoundInFluxes(
-        function(t){matrix(nrow=5,ncol=1,c(inputFlux(t)*Fm,inputFlux(t)*Fs,0,0,0))},
-        min(x),
-        max(x)
-      )
-    }
+    #if(class(In)=="data.frame"){
+    #    InScaled=data.frame(In[,1]*Fm,In[,2]*Fs)
+    #    InFluxes=StateIndependentInFluxList_by_PoolIndex(
+    #        list(
+    #            StateIndependentInFlux_by_PoolIndex(
+    #                destinationIndex=1
+    #                ,flux=ScalarTimeMap(InScaled)
+    #            )
+    #            ,
+    #            StateIndependentInFlux_by_PoolIndex(
+    #                destinationIndex=2
+    #                ,flux=ScalarTimeMap(InScaled)
+    #            )
+    #        )
+    #  )
+    #}
     Txtr=clay+silt
     fTxtr=1-0.75*Txtr
     Es=0.85-0.68*Txtr
@@ -119,6 +132,6 @@ CenturyModel<- function
     xi=ScalarTimeMap(xi,lag=xi_lag)
     fX=getFunctionDefinition(xi)
     At=ConstLinDecompOpWithLinearScalarFactor(mat=A,xi=xi)
-    Mod=GeneralModel(t=t,A=At,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver,pass=FALSE)
+    Mod=GeneralModel(t=t,A=At,ivList=C0,inputFluxes=InFluxes,solverfunc=solver,pass=FALSE)
     return(Mod)
   }

@@ -16,6 +16,22 @@ setMethod(
     }
 )
 
+##' construct from number string like '1' or '3'
+##'
+##'
+setMethod(
+    f="PoolIndex",
+    signature=c(id='character'),
+    def=function(id){
+        assertthat::assert_that(
+            grepl('^[0-9]+$',id)
+            ,msg=paste("Cant convert the id ",id,"to an integer")
+        )
+        check_id_length(id)
+        return(new('PoolIndex',as.integer(id)))
+    }
+)
+
 #' pass throug constructor fron an object of the same class
 #'
 #' This is here to be able to call PoolIndex on a PoolIndex ojbect without

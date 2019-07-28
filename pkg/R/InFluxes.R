@@ -27,3 +27,10 @@ setMethod(
     ConstInFluxes(object)
   }
 )
+setMethod(
+  f="InFluxes",
+  signature=signature(object="ConstantInFluxList_by_PoolIndex"),
+  def=function(object,numberOfPools){
+    ConstInFluxes(map=object,numberOfPools=numberOfPools)
+  }
+)

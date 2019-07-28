@@ -18,6 +18,18 @@ setMethod(
   }
 )
 setMethod(
+    "ConstInFluxes"
+    ,signature=signature(
+         map='ConstantInFluxList_by_PoolIndex'
+        ,numberOfPools='numeric'
+    )
+    ,def=function(map,numberOfPools){
+        res=rep(0,numberOfPools)
+        for (f in map){res[[f@destinationIndex]]<-f@flux_constant}
+        ConstInFluxes(map=res)
+    }
+)
+setMethod(
     f="getTimeRange",
     signature="ConstInFluxes",
     definition=function 

@@ -2,22 +2,30 @@ setClass(
   Class="ConstantOutFluxRate_by_PoolIndex",
   slots=c(sourceIndex='PoolId',rate_constant='numeric')
 )
-
-ConstantOutFluxRate_by_PoolIndex<-function(sourceIndex,rate_constant){
-    if (rate_constant<0){
-      stop(
-        "Negative rate constant. 
-        A rate_constant defines a flux F with F = rate_constant*pool_content. 
-        Since fluxes have to be positive and pool contents are positive
-        rate constants have to be positive too."
-      )
-    }
-    new(
-        'ConstantOutFluxRate_by_PoolIndex'
-        ,sourceIndex=PoolIndex(id=sourceIndex)
-        ,rate_constant=rate_constant
+setMethod(
+    'ConstantOutFluxRate_by_PoolIndex'
+    ,signature=signature(
+         sourceIndex='numeric'   # this also covers the preferred argument class 'PoolIndex' since it contains integer and so also numeric
+        ,rate_constant='numeric'
     )
-}
+    ,def=function(sourceIndex,rate_constant){
+        if (rate_constant<0){
+          stop(
+            "Negative rate constant. 
+            A rate_constant defines a flux F with F = rate_constant*pool_content. 
+            Since fluxes have to be positive and pool contents are positive
+            rate constants have to be positive too."
+          )
+        }
+        rate=new(
+            'ConstantOutFluxRate_by_PoolIndex'
+            ,sourceIndex=PoolIndex(id=sourceIndex)
+            ,rate_constant=rate_constant
+        )
+        rate
+    }
+)
+
 #' new object with the source pool id converted to a PoolName if necessary 
 #' 
 #' This method exists only for classes that do not contain functions of 

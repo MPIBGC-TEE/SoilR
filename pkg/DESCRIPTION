@@ -15,17 +15,19 @@ Collate: pkg-package.R setGlobalVariables.R setOldClasses.R
         genericFunctions.R PoolId.R PoolIndex.R PoolName.R PoolTarget.R PoolSource.R
 	InFluxList_by_PoolIndex.R InFluxList_by_PoolName.R InFlux_by_PoolIndex.R 
 	InFlux_by_PoolName.R InternalFluxList_by_PoolIndex.R InternalFluxList_by_PoolName.R 
-	OutFluxList_by_PoolIndex.R OutFluxList_by_PoolName.R OutFlux_by_PoolName.R 
-	UnBoundNonLinDecompOp_by_PoolNames.R  checkTargetClassOfElements.R
-        PoolConnection.R ConstantOutFluxRate.R
-        ConstantInFluxRate.R ConstantInternalFluxRate.R Fc.R HelperFunctions.R TimeMap.R 
+	OutFluxList_by_PoolIndex.R OutFluxList_by_PoolName.R 
+	ConstantInFluxList_by_PoolIndex.R 
+	ConstantInternalFluxList_by_PoolIndex.R ConstantInternalFluxList_by_PoolName.R 
+	OutFlux_by_PoolName.R 
+        PoolConnection.R 
+        Fc.R HelperFunctions.R TimeMap.R 
 	InternalFlux_by_PoolIndex.R InternalFlux_by_PoolName.R OutFlux_by_Pool_Index.R
         OutFlux.R InFluxes.R BoundInFluxes.R ConstInFluxes.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R
         NlModel.R SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
         UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R UnBoundNonLinDecompOp.R
         DecompositionOperator_deprecated_in_1.2.R Model.R AWBmodel.R
-        bacwaveModel.R bind.C14curves.R BoundFc.R CenturyModel.R
+        bacwaveModel.R bind.C14curves.R BoundFc.R CenturyModel.R CenturyModel_new.R
         ConstFc.R ConstLinDecompOp.R cycling.R euler.R
         example.2DBoundInFluxesFromFunction.R
         example.2DBoundLinDecompOpFromFunction.R

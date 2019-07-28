@@ -1,5 +1,5 @@
 checkTargetClassOfElements<-function(l,targetClassName){
-    if(allElementsAreOfClass(l,targetClassName)){
+    if(!allElementsAreOfClass(l,targetClassName)){
         stop(
             paste(
                 'The list elements have to be of type:'
@@ -10,13 +10,10 @@ checkTargetClassOfElements<-function(l,targetClassName){
     as(l,targetClassName)
 
 }
-allElementsAreOfClass<-function(l,targetClassName){
-        !all(
-            as.logical(
-                lapply(
-                    l
-                    ,function(el){is(el,targetClassName)}
-                )
-            )
-        )
+allElementsAreOfClass<-function(object,targetClassName){
+        result=all(as.logical(lapply(object,function(el){
+                   res<-is(el,targetClassName)
+                   res
+        })))
+        result
 }

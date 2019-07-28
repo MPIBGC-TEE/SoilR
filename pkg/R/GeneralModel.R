@@ -26,15 +26,14 @@
 #' @return A model object that can be further queried.
 #' @seealso \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}},
 #' \code{\link{TwopFeedbackModel}}
-GeneralModel <- function 
-  (t,			
-   A,			
-   ivList,		
-   inputFluxes, 
-   solverfunc=deSolve.lsoda.wrapper,		
-   pass=FALSE  
-   )
-  {
+GeneralModel <- function(
+    t			
+    ,A			
+    ,ivList		
+    ,inputFluxes 
+    ,solverfunc=deSolve.lsoda.wrapper		
+    ,pass=FALSE  
+){
      obj=Model(t,A,ivList,inputFluxes,solverfunc,pass)
      return(obj)
-  }
+}
