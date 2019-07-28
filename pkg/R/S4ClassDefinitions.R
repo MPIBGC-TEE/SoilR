@@ -5,6 +5,20 @@ setClass(
   Class = "ConstantInFluxList_by_PoolIndex",
   contains=c("list")
 )
+
+
+#--------------------------------
+setClass(
+  Class = "InternalFluxList_by_PoolName",
+  contains=c("list")
+)
+
+#--------------------------------
+setClass(
+  Class = "OutFluxList_by_PoolName",
+  contains=c("list")
+)
+
 #--------------------------------
 setClass(
    Class="InFluxes",
@@ -100,6 +114,29 @@ setClass(
     ,
     endtime="numeric"
     ) 
+)
+
+#--------------------------------
+#' A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
+#' or equivalently a combination of ordered constant internal flux rates and 
+#' constant out flux rates.
+setClass(
+    Class="ConstLinDecompOp",
+    contains=c("DecompOp"),
+    slots=list( mat="matrix")
+)
+
+
+#--------------------------------
+#' An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables 
+#'
+setClass(
+    Class="UnBoundNonLinDecompOp_by_PoolNames",
+    slots=c(
+        internal_fluxes="InternalFluxList_by_PoolName"
+        ,out_fluxes="OutFluxList_by_PoolName" 
+        ,timeSymbol="character"
+    )
 )
 
 #--------------------------------

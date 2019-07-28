@@ -30,15 +30,6 @@ mat_from_integer_flux_lists=function(
   return(B)
 }
 
-#' A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
-#' or equivalently a combination of ordered constant internal flux rates and 
-#' constant out flux rates.
-setClass(
-    Class="ConstLinDecompOp",
-    contains=c("DecompOp"),
-    slots=list( mat="matrix")
-)
-
 setMethod(
     f="initialize",
     signature="ConstLinDecompOp",

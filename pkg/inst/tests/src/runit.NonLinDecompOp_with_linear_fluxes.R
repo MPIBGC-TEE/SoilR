@@ -104,7 +104,7 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
   n<-3
   k<-3
   intfs=InternalFluxList_by_PoolName(
-    c(
+    list(
         InternalFlux_by_PoolName(
             sourceName='barrel'
             ,destinationName='glass'

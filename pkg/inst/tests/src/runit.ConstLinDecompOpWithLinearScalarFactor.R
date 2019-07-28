@@ -27,30 +27,31 @@
 #}
 #
 #
-test.ConstLinDecompOpWithLinearScalarFactorWithoutInternalFluxes=function(){
-  n<-3
-  k<-3
-  B=getConstantCompartmentalMatrix(
-        ConstLinDecompOpWithLinearScalarFactor(
-            out_flux_rates=c("1"=k)
-            ,numberOfPools = n
-        )
-  )
-  print(B)
-  checkEquals(
-     B
-    ,matrix(
-       nrow=n
-      ,ncol=n
-      ,byrow=TRUE
-      ,c( 
-         -3,0,0
-         ,0,0,0
-         ,0,0,0
-      )
-    )
-  )
-}
+#test.ConstLinDecompOpWithLinearScalarFactorWithoutInternalFluxes=function(){
+#  n<-3
+#  k<-3
+#  B=getConstantCompartmentalMatrix(
+#        ConstLinDecompOpWithLinearScalarFactor(
+#            out_flux_rates=c("1"=k)
+#            ,numberOfPools = n
+#            ,xi=function(t){sin(t)+2}
+#        )
+#  )
+#  print(B)
+#  checkEquals(
+#     B
+#    ,matrix(
+#       nrow=n
+#      ,ncol=n
+#      ,byrow=TRUE
+#      ,c( 
+#         -3,0,0
+#         ,0,0,0
+#         ,0,0,0
+#      )
+#    )
+#  )
+#}
 #
 #
 #test.ConstLinDecompOpWithLinearScalarFactorWithoutOutFluxes=function(){

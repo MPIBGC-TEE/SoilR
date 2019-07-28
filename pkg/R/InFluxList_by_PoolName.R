@@ -7,10 +7,10 @@ setClass(
 #'
 #' after checking the elememts
 setMethod("InFluxList_by_PoolName",
-    signature=signature(l="list"),
-    definition=function(l){
-        checkTargetClassOfElements(l,targetClassName='InFlux_by_PoolName')
-        as(l,'InFluxList_by_PoolName')
+    signature=signature(object="list"),
+    definition=function(object){
+        checkTargetClassOfElements(object,targetClassName='InFlux_by_PoolName')
+        as(object,'InFluxList_by_PoolName')
     }
 )
 setMethod(

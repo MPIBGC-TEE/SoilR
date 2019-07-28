@@ -1,17 +1,33 @@
-setClass(
-  Class = "InternalFluxList_by_PoolName",
-  contains=c("list")
-)
-
-#' constructor from a normal list
+#' constructor from a normal list 
+#' 
+#' @param l A list. Either a list of elements of type  
+#' \linkS4class{InternalFlux_by_PoolName} or 
+#' a list where the names of the elements are strings of the form
+#' '1->3' (for the flux rate from pool 1 to 2
 #'
-#' after checking the elememts
-setMethod("InternalFluxList_by_PoolName",
-    signature=signature(l="list"),
-    function (l){
-    checkTargetClassOfElements(l,targetClassName='InternalFlux_by_PoolName')
-        as(l,'InternalFluxList_by_PoolName')
+#' @return An object of class
+#' \linkS4class{ConstantInFluxList_by_PoolIndex} 
+#' 
+#' 
+#' The function checks if the elements are of the desired type or can be
+#' converted to it. It is mainly used internally and usually called 
+#' by the front end functions to convert the user supplied arguments.
 
+setMethod("InternalFluxList_by_PoolName",
+    signature=signature(object="list"),
+    definition=function(object){
+        makeListInstance(
+            object
+            ,targetClassName='InternalFlux_by_PoolName'
+            ,targetListClassName="InternalFluxList_by_PoolName"
+            ,permittedValueClassName='function'
+            ,key_value_func=function(key,val){
+                InternalFlux_by_PoolName(
+                     src_to_dest=key
+                    ,flux=object[[key]]
+                )
+            }
+        )
     }
 )
 

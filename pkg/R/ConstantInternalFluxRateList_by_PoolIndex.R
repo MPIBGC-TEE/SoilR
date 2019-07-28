@@ -8,7 +8,7 @@ setClass(
 
 #' constructor from a normal list 
 #' 
-#' @param l A list. Either a list of elements of type  
+#' @param object A list. Either a list of elements of type  
 #' \linkS4class{ConstantInternalFluxRate} or 
 #' a list where the names of the elements are strings of the form
 #' '1->3' (for the flux rate from pool 1 to 2

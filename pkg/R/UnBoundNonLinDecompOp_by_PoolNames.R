@@ -1,13 +1,3 @@
-#' An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables 
-#'
-setClass(
-    Class="UnBoundNonLinDecompOp_by_PoolNames",
-    slots=c(
-        internal_fluxes="InternalFluxList_by_PoolName"
-        ,out_fluxes="OutFluxList_by_PoolName" 
-        ,timeSymbol="character"
-    )
-)
 setMethod(
     f="UnBoundNonLinDecompOp_by_PoolNames",
     signature=c(

@@ -8,8 +8,8 @@ setClass(
 #'
 #' after checking the elememts
 setMethod("InternalFluxList_by_PoolIndex",
-    signature=signature(l="list"),
-    definition=function(l){
+    signature=signature(object="list"),
+    definition=function(object){
         checkTargetClassOfElements(l,targetClassName='InternalFlux_by_PoolIndex')
         as(l,'InternalFluxList_by_PoolIndex')
     }

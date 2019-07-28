@@ -429,10 +429,10 @@ t_start=min(time)
 t_end=max(time)
 @
 
-To create the vector of input fluxes we need to create a new object of class {\tt InFlux}. For our particular model, input fluxes to the $C_1$ and $C_2$ pools are created by this command
+To create the vector of input fluxes we need to create a new object of class {\tt InFluxes}. For our particular model, input fluxes to the $C_1$ and $C_2$ pools are created by this command
 
 <<>>=
-inputFluxes=InFlux( c(270,150,0))
+inputFluxes=InFluxes( c(270,150,0))
 @
 assuming that pool 1 receives 270 gC m$^{2}$ yr$^{-1}$ and pool 2 150 gC m$^{2}$ yr$^{-1}$. 
 The initial amount of carbon is created by aggregating the organic and mineral pools for this site reported in \citet{SierraBG}

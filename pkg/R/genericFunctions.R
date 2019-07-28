@@ -14,10 +14,12 @@ setGeneric(
 	     standardGeneric("Delta14C_from_AbsoluteFractionModern")
 	 }
 )
+
+#' conversion
+#' param delta14C Object to be converted to AbsoluteFractionModern
 setGeneric(
 	 name="AbsoluteFractionModern_from_Delta14C",
-	 def=function( 
-	 delta14C){
+	 def=function(delta14C){
 	     standardGeneric("AbsoluteFractionModern_from_Delta14C")
 	 }
 )
@@ -466,14 +468,13 @@ setGeneric(
 )
 setGeneric(
 	 name="InternalFluxList_by_PoolName",
-	 def=function(l)
-	 {
+	 def=function(object) {
 	     standardGeneric("InternalFluxList_by_PoolName")
 	 }
 )
 setGeneric(
 	 name="InternalFluxList_by_PoolIndex",
-	 def=function(l)
+	 def=function(object)
 	 {
 	     standardGeneric("InternalFluxList_by_PoolIndex")
 	 }
@@ -508,28 +509,28 @@ setGeneric(
 )
 setGeneric(
 	 name="InFluxList_by_PoolName",
-	 def=function(l)
+	 def=function(object)
 	 {
 	     standardGeneric("InFluxList_by_PoolName")
 	 }
 )
 setGeneric(
 	 name="InFluxList_by_PoolIndex",
-	 def=function(l)
+	 def=function(object)
 	 {
 	     standardGeneric("InFluxList_by_PoolIndex")
 	 }
 )
 setGeneric(
 	 name="OutFluxList_by_PoolName",
-	 def=function(l)
+	 def=function(object)
 	 {
 	     standardGeneric("OutFluxList_by_PoolName")
 	 }
 )
 setGeneric(
 	 name="ConstantOutFluxRateList_by_PoolName",
-	 def=function(l)
+	 def=function(object)
 	 {
 	     standardGeneric("ConstantOutFluxRateList_by_PoolName")
 	 }
@@ -549,51 +550,45 @@ setGeneric(
 	 }
 )
 setGeneric(
+	 name="ConstantInternalFluxRateList_by_PoolName",
+	 def=function(object){
+	     standardGeneric("ConstantInternalFluxRateList_by_PoolName")
+	 }
+)
+setGeneric(
 	 name="ConstantInternalFluxRateList_by_PoolIndex",
-	 def=function(object)
-	 {
+	 def=function(object){
 	     standardGeneric("ConstantInternalFluxRateList_by_PoolIndex")
 	 }
 )
 setGeneric(
 	 name="OutFluxList_by_PoolIndex",
-	 def=function(l)
-	 {
+	 def=function(object){
 	     standardGeneric("OutFluxList_by_PoolIndex")
 	 }
 )
 setGeneric(
 	 name="InFlux",
-	 def=function 
-	 (map,...)
-	 {
+	 def=function(map,...) {
 	     standardGeneric("InFlux")
 	 }
 )
 setGeneric(
 	 name="OutFlux",
-	 def=function 
-	 (map,...)
-	 {
+	 def=function (map,...) {
 	     standardGeneric("OutFlux")
 	 }
 )
-#' Generic constructor 
-#' 
-#' @eval makelink('ConstLinDecompOp')
+
 setGeneric(
 	 name="ConstLinDecompOp",
-	 def=function 
-	 (mat,internal_flux_rates,out_flux_rates,numberOfPools)
-	 {
+	 def=function(mat,internal_flux_rates,out_flux_rates,numberOfPools){
 	     standardGeneric("ConstLinDecompOp")
 	 }
 )
 setGeneric(
 	 name="ConstLinDecompOp_by_PoolName",
-	 def=function 
-	 (internal_flux_rates,out_flux_rates,poolNames)
-	 {
+	 def=function(internal_flux_rates,out_flux_rates,poolNames) {
 	     standardGeneric("ConstLinDecompOp_by_PoolName")
 	 }
 )
