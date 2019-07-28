@@ -1,7 +1,3 @@
-setClass(
-    Class="BoundFc",
-    contains=c("TimeMap","Fc")
-)
 setMethod(
   f="BoundFc",
   signature=signature(format='character'),

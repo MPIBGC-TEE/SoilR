@@ -19,7 +19,7 @@ the n pools. The length of this vector is equal to the number of pools. This
 is checked by an internal function.}
 
 \item{inputFluxes}{something that can be converted by \link{GeneralInFlux}
-to any of the available subclasses of \linkS4class{InFlux}.}
+to any of the available subclasses of \linkS4class{InFluxes}.}
 
 \item{solverfunc}{The function used to actually solve the ODE system. The
 default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your
@@ -41,7 +41,7 @@ necessary internal building blocks.  (See the links)
 This function \code{Model} wraps the internal constructor of class
 \linkS4class{Model}. The internal constructor requires the argument \code{A}
 to be of class \linkS4class{DecompOp} and argument \code{inputFluxes} to be
-of class \linkS4class{InFlux}. Before calling the internal constructor
+of class \linkS4class{InFluxes}. Before calling the internal constructor
 \code{Model} calls \link{GeneralDecompOp} on its argument \code{A} and
 \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
 the required classes. Both are generic functions. Follow the links to see
@@ -52,15 +52,18 @@ wrong argument the error will most likely occur in the delegate functions.
 If this happens analyse the errormassage (or use \code{traceback()}) to see
 which function was called and try to call the constructor of the desired
 subclass explicitly with your arguments.  The subclasses are linked in the
-class documentation \linkS4class{DecompOp} or \linkS4class{InFlux}
+class documentation \linkS4class{DecompOp} or \linkS4class{InFluxes}
 respectively.
 
 Note also that this function checks its arguments quite elaborately and
 tries to detect accidental unreasonable combinations, especially concerning
-two kinds of errors. \enumerate{ \item unintended extrapolation of time
-series data \item violoations of massbalance by the DecompOp argument. }
+two kinds of errors. 
+\enumerate{ 
+\item unintended extrapolation of time series data 
+\item violoations of massbalance by the DecompOp argument. 
+}
 
-SoilR has a lot of unit tests which are installed i with the package and are
+SoilR has a lot of unit tests which are installed with the package and are
 sometimes instructive as examples.  To see example scenarios for parameter
 check look at:
 \Sexpr{system.file('tests','runit.correctness_of_Model.R',package='SoilR')}

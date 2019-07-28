@@ -7,10 +7,6 @@ BoundInFlux.new=function
    obj=BoundInFluxes(f,t_start,t_end) 
 return(obj)
 }
-setClass(
-   Class="BoundInFluxes",
-   contains=c("InFluxes","TimeMap"),
-)
 
 
 

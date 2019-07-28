@@ -1,10 +1,3 @@
-setClass(
-   Class="ConstInFluxes",
-   contains=c("InFluxes"),
-   slots=list(
-    map="numeric"
-   )
-)
 setMethod(
   f="ConstInFluxes",
   signature=c(
@@ -30,6 +23,15 @@ setMethod(
     }
 )
 setMethod(
+    "getConstantInFluxVector"
+    ,signature=signature(
+         object='ConstInFluxes'
+    )
+    ,def=function(object){
+        object@map
+    }
+)
+setMethod(
     f="getTimeRange",
     signature="ConstInFluxes",
     definition=function 
@@ -45,3 +47,4 @@ setMethod(
         return(function(t){object@map})
     }
 )
+

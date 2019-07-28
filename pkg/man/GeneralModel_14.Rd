@@ -24,7 +24,7 @@ a vector with the initial values of the radiocarbon fraction for each pool
 and a format string describing in which format the values are given.}
 
 \item{inputFluxes}{something that can be converted by \link{GeneralInFlux}
-to any of the available subclasses of \linkS4class{InFlux}.}
+to any of the available subclasses of \linkS4class{InFluxes}.}
 
 \item{Fc}{deprecated keyword argument, please use inputFc instead}
 

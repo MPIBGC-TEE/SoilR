@@ -1,8 +1,3 @@
-setClass(
-   Class="ConstFc",
-   contains="Fc",
-   slots=c(values="numeric")
-)
 setMethod(
     f="getValues",
     signature="ConstFc",

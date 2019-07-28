@@ -1,6 +1,5 @@
 #' An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables 
 #'
-#' @family UnBoundNonLinDecompOp_constructor_by_PoolNames
 setClass(
     Class="UnBoundNonLinDecompOp_by_PoolNames",
     slots=c(

@@ -1,8 +1,3 @@
-setClass(
-    Class="DecompOp",
-    ,
-    contains="VIRTUAL"
-)
 setMethod(
   f="GeneralDecompOp",
   signature=signature(object="DecompOp"),

@@ -1,16 +1,3 @@
-setClass(
-    Class="DecompositionOperator",
-    contains="DecompOp",   
-    slots=list(
-    map="function"
-    ,
-    lag="numeric"
-    ,
-    starttime="numeric"
-    ,
-    endtime="numeric"
-    ) 
-   )
 setMethod(
     f="initialize",
     signature="DecompositionOperator",

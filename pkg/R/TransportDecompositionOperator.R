@@ -1,14 +1,3 @@
-setClass(
-   Class="TransportDecompositionOperator",
-   contains="TimeMap",
-   slots=list(
-    numberOfPools="numeric"
-    ,
-    alpha="list"
-    ,
-    f="function"
-   )
-) 
 setMethod(
     f="initialize",
     signature="TransportDecompositionOperator",

@@ -6,7 +6,8 @@
 \usage{
 CenturyModel(t, ks = c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW =
   0.0038, k.PAS = 0.00013), C0 = c(0, 0, 0, 0, 0), In, LN, Ls,
-  clay = 0.2, silt = 0.45, xi = 1, solver = deSolve.lsoda.wrapper)
+  clay = 0.2, silt = 0.45, xi = 1, xi_lag = 0,
+  solver = deSolve.lsoda.wrapper)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is
@@ -31,8 +32,13 @@ lignin.}
 
 \item{silt}{Proportion of silt in mineral soil.}
 
-\item{xi}{A scalar or data.frame object specifying the external
-(environmental and/or edaphic) effects on decomposition rates.}
+\item{xi}{A scalar, data.frame, function or anything that can be 
+converted to a scalar function of time \code{\linkS4class{ScalarTimeMap}} #'
+object  specifying the external  (environmental and/or edaphic) effects on
+decomposition rates.}
+
+\item{xi_lag}{A time shift/delay  for the automatically 
+created time dependent function xi(t)}
 
 \item{solver}{A function that solves the system of ODEs. This can be
 \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user

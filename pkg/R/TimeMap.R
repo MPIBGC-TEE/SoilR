@@ -82,36 +82,6 @@ CallWithPlotVars<- function(
   res
 }
 
-#' S4 class for a time dependent function 
-#' 
-#' The class represents functions which are defined on a (possibly infinite) 
-#' interval from [starttime,endtime]
-#' Instances are usually created internally from data frames or lists provided by the user in the high level interfaces.
-#' 
-#' The class is necessary to be able to detect unwanted extrapolation of 
-#' time line data which might otherwise occur for some of the following 
-#' reasons:
-#' SoilR allows to specify measured data for many of its arguments
-#' and computes the interpolating functions automatically.
-#' The functions returned bye the standard R interpolation mechanisms
-#' like \code{splinefun} or \code{approxfun} do not provide a safeguard 
-#' against accidental extrapolation.  
-#' Internally SoilR converts nearly all data to time dependent functions 
-#' e.g. to be used in ode solvers. So the information of the domain of the
-#' function has to be kept.
-
-setClass(
-   Class="TimeMap",
-   slots=list(
-      map="function"
-      #,
-      #lag="numeric"
-      ,
-      starttime="numeric"
-      ,
-      endtime="numeric"
-   )
-)
 setMethod(
     f="initialize",
     signature="TimeMap",

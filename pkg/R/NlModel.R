@@ -1,43 +1,6 @@
-correctnessOfNlModel <- function
-(object)
-{   
-    times=object@times
-    Atm=object@DepComp
-    ivList=object@initialValues
-    InFluxes=object@inputFluxes
-    res=TRUE
-    tI_min=getTimeRange(InFluxes)["t_min"]
-    tI_max=getTimeRange(InFluxes)["t_max"]
-    t_min=min(times)
-    t_max=max(times)
-    if (t_min<tI_min) {
-        stop(simpleError("You ordered a timeinterval that starts earlier than the interval your function I(t) (InFluxes) is defined for. \n Have look at the timeMap object of I(t) or the data it is created from")
-        )
-    }
-    if (t_max>tI_max) {
-        stop(simpleError("You ordered a timeinterval that ends later than the interval your function I(t) (InFluxes) is defined for. \n Have look at the timeMap object of I(t) or the data it is created from")
-        )
-    }
-    return(res)
-}
 is.negative=function(number){
    return(number<0)
 }
-setClass(
-   Class="NlModel",
-   representation=representation(
-        times="numeric"
-        ,
-        DepComp="TransportDecompositionOperator"
-        ,
-        initialValues="numeric"
-        ,
-        inputFluxes="BoundInFluxes"
-        ,
-        solverfunc="function"
-   )
-   , validity=correctnessOfNlModel 
-)
 setMethod(
     f="initialize",
     signature="NlModel",

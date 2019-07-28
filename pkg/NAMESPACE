@@ -7,9 +7,10 @@ importFrom(deSolve,lsoda)
 importFrom("graphics", "pairs")
 importFrom("utils", "tail")
 importFrom(expm,"expm")
+importFrom(assertthat,"assert_that",'are_equal')
+importFrom('igraph',"layout_with_sugiyama","graph_from_data_frame",'graph_attr<-')
 importFrom("stats", "approxfun")
 import(methods)
-import(RUnit)
 export(
 AbsoluteFractionModern_from_Delta14C,
 ConstLinDecompOp,
@@ -33,8 +34,6 @@ RothCModel,
 ConstFc,
 BoundInFluxes,
 ConstInFluxes,
-ConstantInternalFluxRate,
-ConstantOutFluxRate,
 FcAtm.from.Dataframe,
 SoilR.F0.new,
 InFluxes,

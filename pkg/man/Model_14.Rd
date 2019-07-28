@@ -24,7 +24,7 @@ a vector with the initial values of the radiocarbon fraction for each pool
 and a format string describing in which format the values are given.}
 
 \item{inputFluxes}{something that can be converted by \link{GeneralInFlux}
-to any of the available subclasses of \linkS4class{InFlux}.}
+to any of the available subclasses of \linkS4class{InFluxes}.}
 
 \item{inputFc}{An object describing the fraction of C_14 in per mille
 (different formats are possible)}
@@ -152,7 +152,7 @@ for n arbitrarily connected pools.
     starttime=0,
     endtime=20
   )  
-  I=BoundInFlux(
+  I=BoundInFluxes(
      ## The first argument is a vector-valued function of time
      function(t){
        matrix(nrow=3,ncol=1,byrow=TRUE,

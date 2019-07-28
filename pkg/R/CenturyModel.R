@@ -18,9 +18,10 @@
 #' lignin.
 #' @param clay Proportion of clay in mineral soil.
 #' @param silt Proportion of silt in mineral soil.
-#' @param xi A scalar, data.frame, function or anything that can be converted to a scalar function of time (\code\link{TimeMap}}  object) 
-#' specifying the external
-#' (environmental and/or edaphic) effects on decomposition rates.
+#' @param xi A scalar, data.frame, function or anything that can be 
+#' converted to a scalar function of time \code{\linkS4class{ScalarTimeMap}} #'
+#' object  specifying the external  (environmental and/or edaphic) effects on
+#' decomposition rates.
 #' @param xi_lag A time shift/delay  for the automatically 
 #' created time dependent function xi(t) 
 #' @param solver A function that solves the system of ODEs. This can be

@@ -1,91 +1,3 @@
-correctnessOfModel <- function 
-(object)
-{   
-    times=object@times
-    Atm=object@mat
-    ivList=object@initialValues
-    InFluxes=object@inputFluxes
-    A=getFunctionDefinition(Atm)
-    na=nrow(A(0))
-    rcoeffs=RespirationCoefficients(A)
-    r=sapply(times,rcoeffs)
-    truthv=sapply(r,is.negative)
-    positions=grep("TRUE",truthv)
-    res=TRUE
-    if (length(positions)>0){
-       stop(simpleError("The following columns contain unreasonable entries that lead to negative respirations for these pools. Please check your matrix as function of time."))
-        }
-    tA_min=getTimeRange(Atm)["t_min"]
-    tA_max=getTimeRange(Atm)["t_max"]
-    tI_min=getTimeRange(InFluxes)["t_min"]
-    tI_max=getTimeRange(InFluxes)["t_max"]
-    t_min=min(times)
-    t_max=max(times)
-    haveALook="Have look at the object containing  A(t) or the data it is created from\n"
-    if (t_min<tA_min) {
-        stop(
-          simpleError(
-            paste(
-              "You ordered a timeinterval that starts earlier than the interval your matrix valued function A(t) is defined for. \n "
-              ,haveALook
-              ,paste('tA_min=',tA_min,'\n')
-              ,paste('t_min=',t_min,'\n')
-            )
-          )
-        )
-    }
-    if (t_max>tA_max) {
-        stop(
-          simpleError(
-            paste(
-              "You ordered a timeinterval that ends later than the interval your matrix valued function A(t) is defined for. \n "
-              ,haveALook
-              ,paste('tA_max=',tA_max,'\n')
-              ,paste('t_max=',t_max,'\n')
-            )
-          )
-        )
-    }
-    if (t_min<tI_min) {
-        stop(
-          simpleError(
-            paste(
-              "You ordered a timeinterval that starts earlier than the interval your function I(t) (InFluxes) is defined for. \n ",
-              haveALook
-            )
-          )
-        )
-    }
-    if (t_max>tI_max) {
-        stop(
-          simpleError(
-            paste(
-              "You ordered a timeinterval that ends later than the interval your function I(t) (InFluxes) is defined for. \n ",
-              haveALook
-            )
-          )
-        )
-    }
-    return(res)
-}
-is.negative=function(number){
-   return(number<0)
-}
-setClass(
-   Class="Model",
-   representation=representation(
-        times="numeric"
-        ,
-        mat="DecompOp"
-        ,
-        initialValues="numeric"
-        ,
-        inputFluxes="InFluxes"
-        ,
-        solverfunc="function"
-   ) , 
-   validity=correctnessOfModel 
-)
 setMethod(
     f="initialize",
     signature="Model",
@@ -273,6 +185,13 @@ setMethod(
       (x){
       op=getDecompOp(x)
       iflvec=getInFluxes(x)
+
+      #call the function
+      #internalConnections<-list(tuple(1,2),tuple(2,3),tuple(3,1),tuple(3,4))
+      #inBoundConnections<-list(1,3)
+      #outBoundConnections<-list(4)
+      #plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
+      
    }
 )
 setMethod(

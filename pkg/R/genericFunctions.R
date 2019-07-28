@@ -15,18 +15,18 @@ setGeneric(
 	 }
 )
 setGeneric(
+	 name="AbsoluteFractionModern_from_Delta14C",
+	 def=function( 
+	 delta14C){
+	     standardGeneric("AbsoluteFractionModern_from_Delta14C")
+	 }
+)
+setGeneric(
 	 name="AbsoluteFractionModern",
 	 def=function( 
 	 F 
 	 ){
 	     standardGeneric("AbsoluteFractionModern")
-	 }
-)
-setGeneric(
-	 name="AbsoluteFractionModern_from_Delta14C",
-	 def=function( 
-	 delta14C){
-	     standardGeneric("AbsoluteFractionModern_from_Delta14C")
 	 }
 )
 setGeneric(
@@ -599,8 +599,14 @@ setGeneric(
 )
 setGeneric(
 	 name="ConstLinDecompOpWithLinearScalarFactor",
-	 def=function 
-	 (mat,internal_flux_rates,out_flux_rates,numberOfPools,poolNames,xi)
+	 def=function(
+        mat
+        ,internal_flux_rates
+        ,out_flux_rates
+        ,numberOfPools
+        #poolNames
+        ,xi
+    )
 	 {
 	     standardGeneric("ConstLinDecompOpWithLinearScalarFactor")
 	 }
@@ -648,11 +654,7 @@ setGeneric(
 )
 setGeneric(
 	 name="plotPoolGraph",
-	 def=function 
-	 (
-    x,
-    ...
-   )
+	 def=function (x)
 	 {
 	     standardGeneric("plotPoolGraph")
 	 }

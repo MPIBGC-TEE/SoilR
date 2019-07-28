@@ -1,7 +1,3 @@
-setClass(
-   Class="InFluxes",
-   contains="VIRTUAL"
-)
 setMethod(
   f="InFluxes",
   signature(object="TimeMap"),

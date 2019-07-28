@@ -1,29 +1,3 @@
-correctnessOfModel14=function
-(object 
-)
-{
-t_min=min(object@times)
-t_max=max(object@times)
-atm_c14 <- object@c14Fraction
-tA_min=getTimeRange(atm_c14)["t_min"]
-tA_max=getTimeRange(atm_c14)["t_max"]
-    if (t_min<tA_min) {
-        stop(simpleError(sprintf("You ordered a timeinterval that starts earlier (t_min=%s) than the interval your atmospheric 14C fraction is defined for (tA_min=%s). \n Have look at the object or the data it is created from",t_min,tA_min)))
-    }
-    if (t_max>tA_max) {
-        stop(simpleError(sprintf("You ordered a timeinterval that ends later (tmax=%s) than the interval your  your atmospheric 14C fraction is defined for (tA_max=%s). \n Have look at the object or the data it is created from",t_max,tA_max)))
-    }
-}
-setClass(
-    Class="Model_14",
-    contains="Model",
-    representation=representation(
-        c14Fraction="BoundFc",
-        c14DecayRate="numeric",
-        initialValF="ConstFc"
-    ) , 
-    validity=correctnessOfModel14 
-)
 setMethod(
     f="initialize",
     signature=c("Model_14"),

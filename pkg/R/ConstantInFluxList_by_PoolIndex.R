@@ -1,11 +1,3 @@
-#' Subclass of list that is guaranteed to contain only elements of type
-#' \linkS4class{ConstantInFlux_by_PoolIndex}
-#'
-setClass(
-  Class = "ConstantInFluxList_by_PoolIndex",
-  contains=c("list")
-)
-
 #' constructor from a normal list 
 #' 
 #' @param l A list. Either a list of elements of type  
@@ -31,8 +23,8 @@ setMethod("ConstantInFluxList_by_PoolIndex",
             ,permittedValueClassName='numeric'
             ,key_value_func=function(key,val){
                 ConstantInFlux_by_PoolIndex(
-                    destinationIndex=PoolIndex(key),
-                    ,rate_constant=object[[key]]
+                    destinationIndex=PoolIndex(key)
+                    ,flux_constant=object[[key]]
                 )
             }
         )
@@ -43,6 +35,31 @@ setMethod("ConstantInFluxList_by_PoolIndex",
     signature=signature(object="numeric"),
     definition=function(object){
         ConstantInFluxList_by_PoolIndex(as.list(object))
+    }
+)
+
+#' constructor from ConstInFluxes 
+#' 
+#' @param object An object of class \linkS4class{ConstInFluxes}
+#' @return An object of class \linkS4class{ConstantInFluxList_by_PoolIndex}
+setMethod(
+    "ConstantInFluxList_by_PoolIndex"
+    ,signature=signature(
+         object='ConstInFluxes'
+    )
+    ,def=function(object){
+        vec=getConstantInFluxVector(object)
+        non_zero_positions=(1:length(vec))[vec!=0]
+        l=lapply(
+            non_zero_positions
+            ,function(pos){
+                ConstantInFlux_by_PoolIndex(
+                    destinationIndex=pos
+                    ,flux_constant=vec[[pos]]
+                )
+            }
+        )
+        as(l,'ConstantInFluxList_by_PoolIndex')
     }
 )
 

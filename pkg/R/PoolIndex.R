@@ -1,11 +1,3 @@
-#' class for pool indices 
-#'
-#' used to dispatch pool index specific methods like conversion to names.
-setClass(
-   Class="PoolIndex",
-   ,contains=c('PoolId','integer')
-)
-
 #' construct from number 
 setMethod(
     f="PoolIndex",

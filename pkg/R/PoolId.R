@@ -15,14 +15,6 @@ check_duplicate_pool_names<-function(poolNames){
     } 
 }
 
-#' common class for pool is 
-#'
-#' examples for ids are index or name
-setClass(
-   Class="PoolId",
-   contains=c("VIRTUAL")
-)
-
 #' generic factory for this virtual class
 #'
 #' the class returned depends on the method dispached depending on the supplied arguments 

@@ -31,8 +31,8 @@ setMethod("StateIndependentInFluxList_by_PoolIndex",
             ,permittedValueClassName='ScalarTimeMap'
             ,key_value_func=function(key,val){
                 StateIndependentInFlux_by_PoolIndex(
-                    destinationIndex=PoolIndex(key),
-                    ,rate_constant=object[[key]]
+                    destinationIndex=PoolIndex(key)
+                    ,flux=object[[key]]
                 )
             }
         )

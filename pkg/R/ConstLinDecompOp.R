@@ -1,6 +1,7 @@
 
 #' helper function 
-#' @internal
+#'
+#' @keywords internal
 mat_from_integer_flux_lists=function(
   internal_flux_rates
   ,out_flux_rates
@@ -59,13 +60,25 @@ setMethod(
 #' \enumerate{
 #' \item A \code{list} of numbers with names of the form "2->4"  
 #' \item A \code{numeric} vector of numbers with names of the form "2->4"  
-#' \item An object of class
-#' \linkS4class{ConstantInternalFluxRateList_by_PoolIndex}
 #' \item A \code{list} of objects of class 
 #' \linkS4class{ConstantInternalFluxRate_by_PoolIndex}
+#' \item An object of class  
+#" \linkS4class{ConstantInternalFluxRateList_by_PoolIndex}
 #' }
-#' @param out_flux_rates
-#' @param numberOfPools
+#' @param out_flux_rates A list that can be supplied in one of the 
+#' following ways:
+#' \enumerate{
+#' \item A \code{list} of numbers with names that can be converted 
+#' to integers ("2" for pool 2  
+#' \item A \code{numeric} vector of numbers with names that can be converted 
+#' to integers.
+#' \item A \code{list} of objects of class 
+#' \linkS4class{ConstantOutFluxRate_by_PoolIndex}
+#' \item An object of class
+#' \linkS4class{ConstantOutFluxRateList_by_PoolIndex}
+#' }
+#' @param numberOfPools  The number of pools, should not be present if the 
+#' \code{mat} argument is supplied but must be present otherwise.
 
 ConstLinDecompOp=function(
     mat
@@ -117,7 +130,7 @@ ConstLinDecompOp=function(
 
 
 #' helper function 
-#' @internal
+#' @keywords internal
 no_outflux_warning=function(){
             warning('Compartmental system without out fluxes. For non zero inputs the 
                     material will accumulate in the system.')
@@ -256,7 +269,9 @@ setMethod(
             #internal_fluxes = dict()
             #pipes = [(i,j) for i in range(state_vector.rows) 
             #                for j in range(state_vector.rows) if i != j]
-            pipes=sets::cset_cartesian(1:np,1:np)
+            pipes=sets::cset_cartesian(1:np,1:np) - as.set(lapply((1:np),function(i){tuple(i,i)}))
+            
+            #pp('pipes')
             all_rates=lapply(
                 pipes
                 ,function(tup){

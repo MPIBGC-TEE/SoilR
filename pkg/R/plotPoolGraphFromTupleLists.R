@@ -1,17 +1,6 @@
-# el <- matrix( c("foo", "bar", "bar", "foobar"), nc = 2, byrow = TRUE)
-# net1=graph_from_edgelist(el)
-# plot(net1)
-# 
-# nodes <- read.csv("Dataset1-Media-Example-NODES.csv", header=T, as.is=T)
-# links <- read.csv("Dataset1-Media-Example-EDGES.csv", header=T, as.is=T)
-# net2 <-graph_from_data_frame(d=links,vertices = nodes,directed = TRUE )
-#   
-# plot(net2)
-# 
-# vertices=V(net2)
-library('igraph')
-library('sets')
-plotPoolGraph=function(
+require('igraph')
+require('sets')
+plotPoolGraphFromTupleLists=function(
         internalConnections
         ,inBoundConnections
         ,outBoundConnections
@@ -157,8 +146,3 @@ plotPoolGraph=function(
         ,edge.arrow.width=.8
     )
 }
-#call the function
-internalConnections<-list(tuple(1,2),tuple(2,3),tuple(3,1),tuple(3,4))
-inBoundConnections<-list(1,3)
-outBoundConnections<-list(4)
-plotPoolGraph(internalConnections,inBoundConnections,outBoundConnections)

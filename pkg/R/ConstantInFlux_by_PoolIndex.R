@@ -1,9 +1,7 @@
-setClass(
-  Class="ConstantInFlux_by_PoolIndex",
-  slots=c(destinationIndex='PoolIndex',flux_constant='numeric')
-)
-
-ConstantInFlux_by_PoolIndex<-function(destinationIndex,flux_constant){
+ConstantInFlux_by_PoolIndex<-function(
+    destinationIndex
+    ,flux_constant
+){
     if (flux_constant<0){
       stop(
         paste(

@@ -18,7 +18,7 @@ setClass(
 #' a list where the names of the elements are integer strings of the form
 #' '3' (for the flux rate from pool 3) 
 #'
-#' @value An object of class
+#' @return An object of class
 #' \linkS4class{ConstantOutFluxRateList_by_PoolIndex} 
 #' 
 #' 

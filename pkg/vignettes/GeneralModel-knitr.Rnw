@@ -17,7 +17,7 @@
 \newcommand{\SoilR}{\texttt{SoilR }}
 \newcommand{\GeneralModel}{\texttt{GeneralModel }}
 \newcommand{\Model}{\texttt{Model}}
-\newcommand{\BoundInFlux}{\texttt{BoundInFlux }}
+\newcommand{\BoundInFluxes}{\texttt{BoundInFluxes }}
 \newcommand{\BoundLinDecompOp}{\texttt{BoundLinDecompOp }}
 \newcommand{\ConstLinDecompOp}{\texttt{ConstLinDecompOp }}
 %\newcommand{\TimeMap}{\texttt{TimeMap}}
@@ -149,7 +149,7 @@ a function of time. We also choose the simplest
 possible case, which is a constant function of time
 producing a value of 0.05 .  
 <<>>=
-inputFluxes=ConstInFlux(
+inputFluxes=ConstInFluxes(
     map=c(0.05,0,0)
 )
 @
@@ -324,7 +324,7 @@ inputFluxes<-function(t0){
         ,0
     )
 }
-inputFluxes_tm<-BoundInFlux(
+inputFluxes_tm<-BoundInFluxes(
     inputFluxes,
     t_start,
     t_end
@@ -375,7 +375,7 @@ sometimes some of them will be given by observational
 data that have to be interpolated.  Of course you could
 just produce the interpolating  function and proceed as
 in the previous examples. There is a shortcut however.
-Objects of classes \BoundInFlux or \BoundLinDecompOp can be produced directly from
+Objects of classes \BoundInFluxes or \BoundLinDecompOp can be produced directly from
 {\tt dataframes } eliminating the need to specify the
 time range explicitly.
 There are some small example plain text files in the  \codestyle{inst/extdata}
@@ -438,10 +438,10 @@ df2=data.frame(t2,i2)
 #write.csv(df2,row.names=FALSE,p2)
 @
 We will read the first file and create an object 
-of class \BoundInFlux automatically.
+of class \BoundInFluxes automatically.
 <<echo=TRUE>>=
 dfr=read.csv(p)
-iTm=BoundInFlux(dfr)
+iTm=BoundInFluxes(dfr)
 @
 We have the usual ingredients for a \Model \ object
 and can create it.  
@@ -456,7 +456,7 @@ containing a time series of an input flux with
 a smaller time range compared to the explicit time argument to \GeneralModel.
 <<echo=TRUE>>=
 dfr2=read.csv(p2)
-iTm=BoundInFlux(dfr2)
+iTm=BoundInFluxes(dfr2)
 @
 If we try to create a \Model \ from this (by removing the comment in the next example) we will get
 an error message. 
