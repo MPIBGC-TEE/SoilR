@@ -3,7 +3,7 @@
 require("RUnit")
 require("SoilR")
 require("deSolve")
-require("debugHelpers")
+#require("debugHelpers")
 source("testhelpers.R")
 dataPrefix="../../data/"
 dataPaths=Sys.glob(paste(dataPrefix,"*.rda",sep=""))

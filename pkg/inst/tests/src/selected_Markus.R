@@ -14,10 +14,10 @@ alltests <- defineTestSuite(
    #,testFileRegexp = "^runit.FluxRateConstructors.R$"
    #,testFileRegexp = "^runit.FluxConstructors.R$"
    #,testFileRegexp = "^runit.NonlinearOperators.R$"
-   #,testFileRegexp = "^runit.Century.R$"
+   ,testFileRegexp = "^runit.Century.R$"
    #,testFileRegexp = "^runit.ConstLinDecompOpWithLinearScalarFactor.R$"
    #,testFileRegexp = "^runit.ConstLinDecompOp.R$"
-   ,testFileRegexp = "^runit.NonLinDecompOp_with_linear_fluxes.R$"
+   #,testFileRegexp = "^runit.NonLinDecompOp_with_linear_fluxes.R$"
    
    #,testFuncRegexp ="^test.ConstLinDecompOpWithoutOutFluxes$"
    #,testFuncRegexp ="^test.ConstLinDecompOpFromNamedFluxes$"
