@@ -28,6 +28,7 @@ source("functions_corrado.R")
 
 # Internal fluxes
 internal_fluxes = list()
+
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 # Carbon fluxes # ----
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
@@ -2104,11 +2105,10 @@ internal_fluxes[["N_ino_to_N_mic"]] = function(
 
 
 
-# External fluxes # ----
- # internal_fluxes[["3_to_2"]] = function(C,t) {2}
+# Outfluxes ----
+# internal_fluxes[["3_to_2"]] = function(C,t) {2}
 
-
- out_fluxes = list()
+out_fluxes = list()
 
 # Flux from Abovegr. Metabolic to Microbial SOM
 out_fluxes[["C_am_to_C_mic"]] = function(
@@ -2940,3 +2940,68 @@ out_fluxes[["plant_uptake"]] = function(
  
  
  
+
+# Input fluxes ----
+# 1. Constant (Carbon fluxes) ----
+input_fluxes_const = list()
+
+# Input C flux into Abovegr. Metabolic Lit
+input_fluxes_const[["C_to_C_am"]] = function() {
+  # 0.5
+}
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# 2. Dependent on time (Carbon fluxes) ----
+input_fluxes_time = list()
+
+# I have a data.frame with Carbon input for each litter and CWD pool
+# InFluxC (a data.frame):
+#             times | C_in_C_am | C_in_C_as | C_in_C_bm | C_in_C_bs | C_in_C_fw | ... | ... 
+#               0   |     0.1   |     0.2   |    0.1    |    ...    |    ...
+#               1   |     0.2   |     0.3   |    0.1    |    ...    |    ...
+
+# Input C flux into Abovegr. Metabolic Lit
+input_fluxes_time[["C_to_C_am"]] = function(t) {
+  # InFunc_C = approxfun(x = InFluxC$times, y = InFluxC$C_in_C_am)
+}
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# 3. Dependent on time and state (Nitrogen fluxes) ----
+input_fluxes_time_state = list()
+
+# InFluxN (a data.frame):
+#             times | N_in_N_am | N_in_N_as | N_in_N_bm | N_in_N_bs | N_in_N_fw | ... | ... 
+#               0   |     0.1   |     0.2   |    0.1    |    ...    |    ...
+#               1   |     0.2   |     0.3   |    0.1    |    ...    |    ...
+
+# Input N flux into Abovegr. Metabolic Lit
+input_fluxes_time_state[["N_to_N_am"]] = function(
+  C_am
+  ,N_am
+  ,C_as
+  ,N_as
+  ,C_bm
+  ,N_bm
+  ,C_bs
+  ,N_bs
+  ,C_fw
+  ,N_fw
+  ,C_acw
+  ,N_acw
+  ,C_bcw
+  ,N_bcw
+  ,C_mic
+  ,N_mic
+  ,C_slo
+  ,N_slo
+  ,C_pas
+  ,N_pas
+  ,N_ino
+  ,t
+  
+) {
+  # InFunc_N = approxfun(x = InFluxN$times, y = InFluxN$N_in_N_am)
+  # InFunc_N + 0.5 * kup * N_ino
+}
+
+
+
+
