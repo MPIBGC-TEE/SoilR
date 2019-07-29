@@ -2106,7 +2106,6 @@ internal_fluxes[["N_ino_to_N_mic"]] = function(
 
 
 # Outfluxes ----
-# internal_fluxes[["3_to_2"]] = function(C,t) {2}
 
 out_fluxes = list()
 
@@ -2946,7 +2945,7 @@ out_fluxes[["plant_uptake"]] = function(
 input_fluxes_const = list()
 
 # Input C flux into Abovegr. Metabolic Lit
-input_fluxes_const[["C_to_C_am"]] = function() {
+input_fluxes_const[["C_am"]] = function() {
   # 0.5
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
@@ -2960,7 +2959,7 @@ input_fluxes_time = list()
 #               1   |     0.2   |     0.3   |    0.1    |    ...    |    ...
 
 # Input C flux into Abovegr. Metabolic Lit
-input_fluxes_time[["C_to_C_am"]] = function(t) {
+input_fluxes_time[["C_am"]] = function(t) {
   # InFunc_C = approxfun(x = InFluxC$times, y = InFluxC$C_in_C_am)
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
@@ -2973,7 +2972,7 @@ input_fluxes_time_state = list()
 #               1   |     0.2   |     0.3   |    0.1    |    ...    |    ...
 
 # Input N flux into Abovegr. Metabolic Lit
-input_fluxes_time_state[["N_to_N_am"]] = function(
+input_fluxes_time_state[["N_am"]] = function(
   C_am
   ,N_am
   ,C_as

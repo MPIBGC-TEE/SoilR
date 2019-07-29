@@ -129,6 +129,18 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
             )
         )
   )
+  #ifs=OutFluxList_by_PoolName(
+  #      c(
+  #          InFlux_by_PoolName(
+  #              sourceName='barrel'
+  #              ,func=function(barrel,glass,t){
+  #                  k*barrel 
+  #                  # just a linear donor dependent 
+  #                  # flux the second argument is fake but here for the test
+  #              }
+  #          )
+  #      )
+  #)
   #BFunc=UnBoundNonLinDecompOp(
   #  chi_func
   #  ,normalized_internal_fluxes=intfs
@@ -164,4 +176,6 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
       )
     )
   )
+  #initial_values=list(barrel=0.4,glass=0,belly=0)
+  #m=CorradosGeneralModel(operator=obn,influxes=ifs,times,initial_values,chi=chi_func)
 }
