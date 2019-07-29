@@ -3,7 +3,9 @@ before_install:
         - sudo apt-get update
         - sudo apt-get -y install libssl-dev python3-mpi4py libcurl4-openssl-dev libxml2-dev
 install: Rscript travis/inst.R
-script:  ./travis_run_all_tests.sh
+script:  
+        - ./travis_run_all_tests.sh
+        - ./travis_install_SoilR_from_src.sh
 
 notifications:
   email:
