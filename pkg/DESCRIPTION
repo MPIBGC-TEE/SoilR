@@ -1,6 +1,6 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.1-83
+Version: 1.1-84
 Date: 2017-05-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
@@ -12,71 +12,40 @@ Imports: igraph,assertthat,parallel,expm,sets
 Suggests: FME,lattice,MASS,knitr
 LazyData: TRUE
 VignetteBuilder: knitr
-Collate: setGlobalVariables.R setOldClasses.R
-        genericFunctions.R 
-	S4ClassDefinitions.R
-	TimeMap.R 
-	ScalarTimeMap.R
-	PoolId.R 
-	PoolIndex.R 
-	PoolName.R 
-	PoolTarget.R 
-	PoolSource.R
-	InFlux_by_PoolIndex.R 
-	InFlux_by_PoolName.R
-	StateIndependentInFlux_by_PoolIndex.R
-	OutFlux_by_Pool_Index.R
-	OutFlux_by_PoolName.R 
-	InternalFlux_by_PoolIndex.R 
-	InternalFlux_by_PoolName.R 
-        PoolConnection.R 
-	PoolConnection_by_PoolIndex.R
-     	PoolConnection_by_PoolName.R
-	ConstantInFluxRate_by_PoolIndex.R
-     	ConstantInFluxRate_by_PoolName.R
-	InFluxes.R 
-	ConstInFluxes.R 
-     	ConstantInFlux_by_PoolIndex.R
-     	ConstantInternalFluxRate_by_PoolIndex.R
-     	ConstantInternalFluxRate_by_PoolName.R
-	ConstantOutFluxRate_by_PoolIndex.R
-	ConstantOutFluxRate_by_PoolName.R
-	InFluxList_by_PoolIndex.R
-	InFluxList_by_PoolName.R 
+Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
+        S4ClassDefinitions.R TimeMap.R ScalarTimeMap.R PoolId.R
+        PoolIndex.R PoolName.R PoolTarget.R PoolSource.R
+        InFlux_by_PoolIndex.R InFlux_by_PoolName.R
+        StateIndependentInFlux_by_PoolIndex.R OutFlux_by_Pool_Index.R
+        OutFlux_by_PoolName.R InternalFlux_by_PoolIndex.R
+        InternalFlux_by_PoolName.R PoolConnection.R
+        PoolConnection_by_PoolIndex.R PoolConnection_by_PoolName.R
+        ConstantInFluxRate_by_PoolIndex.R
+        ConstantInFluxRate_by_PoolName.R InFluxes.R ConstInFluxes.R
+        ConstantInFlux_by_PoolIndex.R
+        ConstantInternalFluxRate_by_PoolIndex.R
+        ConstantInternalFluxRate_by_PoolName.R
+        ConstantOutFluxRate_by_PoolIndex.R
+        ConstantOutFluxRate_by_PoolName.R InFluxList_by_PoolIndex.R
+        InFluxList_by_PoolName.R
         StateIndependentInFluxList_by_PoolIndex.R
-	OutFluxList_by_PoolIndex.R 
-	OutFluxList_by_PoolName.R 
-	InternalFluxList_by_PoolIndex.R 
-	InternalFluxList_by_PoolName.R 
-	ConstantInFluxList_by_PoolIndex.R 
-	ConstantInternalFluxRateList_by_PoolIndex.R 
-	ConstantInternalFluxRateList_by_PoolName.R 
-	ConstantOutFluxRateList_by_PoolIndex.R
-        Fc.R HelperFunctions.R 
-        OutFlux.R 
-	BoundInFluxes.R 
-	deSolve.lsoda.wrapper.R
+        OutFluxList_by_PoolIndex.R OutFluxList_by_PoolName.R
+        InternalFluxList_by_PoolIndex.R InternalFluxList_by_PoolName.R
+        ConstantInFluxList_by_PoolIndex.R
+        ConstantInternalFluxRateList_by_PoolIndex.R
+        ConstantInternalFluxRateList_by_PoolName.R
+        ConstantOutFluxRateList_by_PoolIndex.R Fc.R HelperFunctions.R
+        OutFlux.R BoundInFluxes.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R
-	SoilR.F0__deprecated_in_1.2.R MCSim.R 
-	DecompOp.R
-        UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R UnBoundNonLinDecompOp.R
-        DecompositionOperator_deprecated_in_1.2.R 
-	Model.R 
-        Model_14.R 
-        NlModel.R 
-    	AutonomousLinearModel.R
-	NonAutonomousLinearModel.R
-	AWBmodel.R
-        bacwaveModel.R 
-	bind.C14curves.R 
-	BoundFc.R 
-	CenturyModel.R 
-	CenturyModel_new.R
-        ConstFc.R 
-	ConstLinDecompOp.R
-	ConstLinDecompOpWithLinearScaleFactor.R 
-	UnBoundNonLinDecompOp_by_PoolNames.R
-	cycling.R euler.R
+        SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
+        UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R
+        UnBoundNonLinDecompOp.R
+        DecompositionOperator_deprecated_in_1.2.R Model.R Model_14.R
+        NlModel.R AutonomousLinearModel.R NonAutonomousLinearModel.R
+        AWBmodel.R bacwaveModel.R bind.C14curves.R BoundFc.R
+        CenturyModel.R CenturyModel_new.R ConstFc.R ConstLinDecompOp.R
+        ConstLinDecompOpWithLinearScaleFactor.R
+        UnBoundNonLinDecompOp_by_PoolNames.R cycling.R euler.R
         example.2DBoundInFluxesFromFunction.R
         example.2DBoundLinDecompOpFromFunction.R
         example.2DConstFC.Args.R example.2DConstInFluxesFromVector.R
@@ -87,80 +56,26 @@ Collate: setGlobalVariables.R setOldClasses.R
         example.nestedTime2DMatrixList.R
         example.nestedTime3DArrayList.R example.Time2DArrayList.R
         example.Time3DArrayList.R example.TimeMapFromArray.R
-        FcAtm_deprecated_in_1.2.R 
-	fT.Arrhenius.R 
-	fT.Century1.R
-        fT.Century2.R 
-	fT.Daycent1.R 
-	fT.Daycent2.R 
-	fT.Demeter.R 
-	fT.KB.R
-        fT.LandT.R 
-	fT.linear.R 
-	fT.Q10.R 
-	fT.RothC.R 
-	fT.Standcarb.R
-        function.R 
-	fW.Candy.R 
-	fW.Century.R 
-	fW.Daycent1.R 
-	fW.Daycent2.R
-        fW.Demeter.R 
-	fW.Gompertz.R 
-	fW.Moyano.R 
-	fW.RothC.R 
-	fW.Skopp.R
-        fW.Standcarb.R 
-	GeneralModel.R
-	GaudinskiModel14.R 
-        GeneralModel_14.R 
-	GeneralNlModel.R 
-	ICBMModel.R 
-	linesCPool.R
-        linMaker.R 
-	list.R 
-	listProduct.R 
-	makelink.R 
-	MeanAge.R 
-	MeanTT.R
-	NpYdot.R 
-	OnepModel.R 
-	OnepModel14.R 
-	ParallelModel.R
-        plotC14Pool.R 
-	plotCPool.R 
-	RothCModel.R 
-	SeriesLinearModel.R
-        SeriesLinearModel14.R 
-	solver.R 
-	spectralNorm.R 
-	systemAge.R
-        ThreepairMMmodel.R 
-	ThreepFeedbackModel.R
-        ThreepFeedbackModel14.R 
-	ThreepParallelModel.R
-        ThreepParallelModel14.R 
-	ThreepSeriesModel.R
-        ThreepSeriesModel14.R 
-	transitTime.R 
-	tupelList.R 
-	turnoverFit.R
-	makeListInstance.R
-        pe.R
-	pp.R
-	plotPoolGraphFromTupleLists.R
-	checkTargetClassOfElements.R
-	TimeRangeIntersection.R
-        TwopFeedbackModel.R 
-	TwopFeedbackModel14.R 
-	TwopMMmodel.R
-        TwopParallelModel.R 
-	TwopParallelModel14.R 
-	TwopSeriesModel.R
-        TwopSeriesModel14.R 
-	vecFuncMaker.R 
-	warnings.R 
-	Yasso07Model.R
+        FcAtm_deprecated_in_1.2.R fT.Arrhenius.R fT.Century1.R
+        fT.Century2.R fT.Daycent1.R fT.Daycent2.R fT.Demeter.R fT.KB.R
+        fT.LandT.R fT.linear.R fT.Q10.R fT.RothC.R fT.Standcarb.R
+        function.R fW.Candy.R fW.Century.R fW.Daycent1.R fW.Daycent2.R
+        fW.Demeter.R fW.Gompertz.R fW.Moyano.R fW.RothC.R fW.Skopp.R
+        fW.Standcarb.R GeneralModel.R GaudinskiModel14.R
+        GeneralModel_14.R GeneralNlModel.R ICBMModel.R linesCPool.R
+        linMaker.R list.R listProduct.R makelink.R MeanAge.R MeanTT.R
+        NpYdot.R OnepModel.R OnepModel14.R ParallelModel.R
+        plotC14Pool.R plotCPool.R RothCModel.R SeriesLinearModel.R
+        SeriesLinearModel14.R solver.R spectralNorm.R systemAge.R
+        ThreepairMMmodel.R ThreepFeedbackModel.R
+        ThreepFeedbackModel14.R ThreepParallelModel.R
+        ThreepParallelModel14.R ThreepSeriesModel.R
+        ThreepSeriesModel14.R transitTime.R tupelList.R turnoverFit.R
+        makeListInstance.R pe.R pp.R plotPoolGraphFromTupleLists.R
+        checkTargetClassOfElements.R TimeRangeIntersection.R
+        TwopFeedbackModel.R TwopFeedbackModel14.R TwopMMmodel.R
+        TwopParallelModel.R TwopParallelModel14.R TwopSeriesModel.R
+        TwopSeriesModel14.R vecFuncMaker.R warnings.R Yasso07Model.R
         YassoModel.R
 RoxygenNote: 6.1.1.9000
 Encoding: UTF-8

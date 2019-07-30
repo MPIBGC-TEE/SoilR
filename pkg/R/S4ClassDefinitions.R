@@ -227,6 +227,25 @@ setClass(
    )
    , validity=correctnessOfNlModel 
 )
+#-----------------------------------------
+correctnessOfModel_by_PoolNames<-function(object){
+    TRUE
+}
+setClass(
+    Class="Model_by_PoolNames"
+    ,slots=c(
+        times="numeric"
+        ,
+        DepComp="UnBoundNonLinDecompOp_by_PoolNames"
+        ,
+        initialValues="numeric"
+        ,
+        inputFluxes="InFluxList_by_PoolNames"
+        ,
+        solverfunc="function"
+   )
+   , validity=correctnessOfModel_by_PoolNames
+)
 #--------------------------------
 correctnessOfModel <- function(object){   
     times=object@times

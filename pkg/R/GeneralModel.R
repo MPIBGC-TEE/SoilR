@@ -34,6 +34,18 @@ GeneralModel <- function(
     ,solverfunc=deSolve.lsoda.wrapper		
     ,pass=FALSE  
 ){
-     obj=Model(t,A,ivList,inputFluxes,solverfunc,pass)
-     return(obj)
+     if (
+         is(A,"UnBoundNonLinDecompOp_by_PoolNames") && is(inputFluxes,"InFluxList_by_PoolName")
+     ){
+        return(NonlinearModel_by_PoolNames(
+            t
+            ,A
+            ,ivList
+            ,inputFluxes
+            ,solverfunc
+            pass
+        ))
+     }else{
+        return(Model(t,A,ivList,inputFluxes,solverfunc,pass))
+    }
 }
