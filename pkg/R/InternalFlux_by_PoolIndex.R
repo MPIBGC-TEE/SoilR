@@ -41,3 +41,10 @@ setMethod(
     )
   }
 )
+setMethod(
+    f='getFunctionDefinition'
+    ,signature=c(object='InFluxList_by_PoolName')
+    ,definition=function(object){
+
+    }
+)

@@ -1,8 +1,3 @@
-setClass(
-  Class = "InFluxList_by_PoolName",
-  contains=c("list")
-)
-
 #' constructor from a normal list
 #'
 #' after checking the elememts
@@ -28,5 +23,16 @@ setMethod(
             }
         )
         as(l,'InFluxList_by_PoolIndex')
+    }
+)
+setMethod("getFunctionDefinition",
+    signature=signature(object="InFluxList_by_PoolName"),
+    definition=function(
+        object
+        ,timeSymbol
+        ,poolNames
+    ){
+        o_by_Index=by_PoolIndex(object,timeSymbol=timeSymbol,poolNames=poolNames)
+        getFunctionDefinition(o_by_Index,numberOfPools=length(poolNames))
     }
 )

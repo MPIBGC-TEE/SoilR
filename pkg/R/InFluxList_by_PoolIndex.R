@@ -14,3 +14,28 @@ setMethod(
         as(object,'InFluxList_by_PoolIndex')
     }
 )
+setMethod("getFunctionDefinition",
+    signature=signature(object="InFluxList_by_PoolIndex"),
+    definition=function(
+        object
+        ,numberOfPools
+    ){
+
+        np=PoolIndex(numberOfPools)
+        IvecFunc=function(X,t){
+            Ivec=matrix(nrow=np,ncol=1,0)
+            for (ifl in object){
+                dest<-ifl@destinationIndex
+                if (dest> numberOfPools){stop("The index of the destination pool must be smaller than the number of pools")}
+                Ivec[dest,1]<-ifl@func(X,t)
+            }
+            return(Ivec)
+        }
+        iv=StateDependentInFluxVector(
+            map=IvecFunc
+            ,starttime=-Inf
+            ,endtime= Inf
+        )
+        getFunctionDefinition(iv)
+    }
+)

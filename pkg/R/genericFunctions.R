@@ -211,8 +211,14 @@ setGeneric(
 )
 setGeneric(
 	 name="getFunctionDefinition",
-	 def=function(object){
+	 def=function(object,timeSymbol,poolNames,numberOfPools){
 	     standardGeneric("getFunctionDefinition")
+	 }
+)
+setGeneric(
+	 name="getRightHandSideOfODE",
+	 def=function(object,timeSymbol,poolNames,numberOfPools){
+	     standardGeneric("getRightHandSideOfODE")
 	 }
 )
 setGeneric(

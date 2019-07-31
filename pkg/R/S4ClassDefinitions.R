@@ -25,6 +25,20 @@ setClass(
    contains="VIRTUAL"
 )
 #--------------------------------
+StateDependentInFluxVector<-setClass(
+   Class="StateDependentInFluxVector"
+   ,contains="InFluxes"
+   ,slots=list(
+      map="function"
+      #,
+      #lag="numeric"
+      ,
+      starttime="numeric"
+      ,
+      endtime="numeric"
+   )
+)
+#--------------------------------
 setClass(
    Class="ConstInFluxes",
    contains=c("InFluxes"),
@@ -187,6 +201,20 @@ setClass(
 )
 
 #--------------------------------
+setClass(
+  Class = "InFlux_by_PoolName",
+  # contains="PoolConnection", we do not want to iherit mehtods...
+  slots=c(destinationName='PoolName',func='function')
+)
+
+#--------------------------------
+
+setClass(
+  Class = "InFluxList_by_PoolName",
+  contains=c("list")
+)
+
+#--------------------------------
 is.negative=function(number){
    return(number<0)
 }
@@ -231,20 +259,39 @@ setClass(
 correctnessOfModel_by_PoolNames<-function(object){
     TRUE
 }
-setClass(
+Model_by_PoolNames=setClass(
     Class="Model_by_PoolNames"
     ,slots=c(
-        times="numeric"
-        ,
-        DepComp="UnBoundNonLinDecompOp_by_PoolNames"
-        ,
-        initialValues="numeric"
-        ,
-        inputFluxes="InFluxList_by_PoolNames"
-        ,
-        solverfunc="function"
+         times="numeric"
+        ,mat="UnBoundNonLinDecompOp_by_PoolNames"
+        ,initialValues="numeric"
+        ,inputFluxes="InFluxList_by_PoolName"
+        ,solverfunc="function"
+        ,timeSymbol='character'
    )
-   , validity=correctnessOfModel_by_PoolNames
+   #,validity=correctnessOfModel_by_PoolNames
+)
+setMethod(
+    'initialize'
+    ,signature= signature(.Object='Model_by_PoolNames')
+    ,definition=function(
+        .Object
+        ,times
+        ,mat
+        ,initialValues
+        ,inputFluxes
+        ,solverfunc
+        ,pass
+        ,timeSymbol
+    ){
+        .Object@times=times
+        .Object@mat=mat
+        .Object@initialValues=initialValues
+        .Object@inputFluxes=inputFluxes
+        .Object@solverfunc=solverfunc
+        .Object@timeSymbol=timeSymbol
+        .Object
+    }
 )
 #--------------------------------
 correctnessOfModel <- function(object){   

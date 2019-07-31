@@ -129,18 +129,18 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
             )
         )
   )
-  #ifs=OutFluxList_by_PoolName(
-  #      c(
-  #          InFlux_by_PoolName(
-  #              sourceName='barrel'
-  #              ,func=function(barrel,glass,t){
-  #                  k*barrel 
-  #                  # just a linear donor dependent 
-  #                  # flux the second argument is fake but here for the test
-  #              }
-  #          )
-  #      )
-  #)
+  ifs=InFluxList_by_PoolName(
+        c(
+            InFlux_by_PoolName(
+                destinationName='barrel'
+                ,func=function(barrel,glass,t){
+                    k*barrel*glass*(1+sin(t))
+                    # a receiver dependent 
+                    # flux the second argument is fake but here for the test
+                }
+            )
+        )
+  )
   #BFunc=UnBoundNonLinDecompOp(
   #  chi_func
   #  ,normalized_internal_fluxes=intfs
@@ -176,6 +176,25 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
       )
     )
   )
-  #initial_values=list(barrel=0.4,glass=0,belly=0)
-  #m=CorradosGeneralModel(operator=obn,influxes=ifs,times,initial_values,chi=chi_func)
+  
+  
+  mod=GeneralModel(
+        t=0:100
+        ,A=obn
+        ,ivList=c(barrel=0.4,glass=0,belly=0)
+        ,inputFluxes=ifs
+        ,timeSymbol='t'
+  )
+
+  I_func=getFunctionDefinition(
+    mod@inputFluxes
+    ,timeSymbol=timeSymbol
+    ,poolNames=names(iv)
+  )
+  I_0=I_func(iv,0)
+  pp('I_0')
+  rhs=getRightHandSideOfODE(mod)
+  rhs_0=rhs(iv,0)
+  pp('rhs_0')
+  getC(mod)
 }

@@ -7,8 +7,6 @@ checkTargetClassOfElements<-function(l,targetClassName){
             )
         )
     }
-    as(l,targetClassName)
-
 }
 allElementsAreOfClass<-function(object,targetClassName){
         result=all(as.logical(lapply(object,function(el){
