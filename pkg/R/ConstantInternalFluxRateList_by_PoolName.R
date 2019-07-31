@@ -42,3 +42,17 @@ setMethod("ConstantInternalFluxRateList_by_PoolName",
 )
 
 
+#' convert to a list indexed by pool names
+#'
+setMethod("by_PoolIndex",
+    signature=signature(obj="ConstantInternalFluxRateList_by_PoolName"),
+    definition=function(obj,poolNames){
+        l=lapply(
+                obj
+                ,function(rate){
+                    by_PoolIndex(rate,poolNames)
+                }
+        )
+        as(l,'ConstantInternalFluxRateList_by_PoolIndex')
+    }
+)

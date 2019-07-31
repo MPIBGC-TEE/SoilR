@@ -232,20 +232,27 @@ setMethod(
    }
 )
 setMethod(
-   f= "getC",
-      signature= "Model",
-      definition=
-      function(object){
-      ns=length(object@initialValues)
-      Atm=object@mat
-      A=getFunctionDefinition(Atm)
-      itm=object@inputFluxes
-      input=getFunctionDefinition(itm)
-      ydot=NpYdot(A,input)
-      sVmat=matrix(object@initialValues,nrow=ns,ncol=1)
-      Y=solver(object@times,ydot,sVmat,object@solverfunc) 
-      f=function(i){paste("C",i,sep="")}
-      return(Y)
+    f='getRightHandSideOfODE'
+    ,signature= "Model"
+    ,definition= function(object){
+        ns=length(object@initialValues)
+        Atm=object@mat
+        A=getFunctionDefinition(Atm)
+        itm=object@inputFluxes
+        input=getFunctionDefinition(itm)
+        ydot=NpYdot(A,input)
+    }
+)
+setMethod(
+    f= "getC"
+    ,signature= "Model"
+    ,definition= function(object){
+        ns=length(object@initialValues)
+        ydot=getRightHandSideOfODE(object)
+        sVmat=matrix(object@initialValues,nrow=ns,ncol=1)
+        Y=solver(object@times,ydot,sVmat,object@solverfunc) 
+        #f=function(i){paste("C",i,sep="")}
+        return(Y)
    }
 )
 setMethod(

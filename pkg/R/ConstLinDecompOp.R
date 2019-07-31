@@ -2,9 +2,9 @@
 #' helper function 
 #'
 #' @keywords internal
-mat_from_integer_flux_lists=function(
-  internal_flux_rates
-  ,out_flux_rates
+from_integer_flux_lists_with_defaults=function(
+  internal_flux_rates=list()
+  ,out_flux_rates=list()
   ,numberOfPools
 ){
   np=PoolIndex(numberOfPools)
@@ -27,7 +27,7 @@ mat_from_integer_flux_lists=function(
     To[dest,src]=ifr@rate_constant/N[src,src]
   }
   B<-To%*%N
-  return(B)
+  return(new('ConstLinDecompOp',mat=B))
 }
 
 setMethod(
@@ -39,86 +39,113 @@ setMethod(
         return(.Object)
     }
 )
-
 #' Constructor 
-#'
-#' @param mat A quadratic compartmental matrix. 
-#' If present nome of \code{internal_flux_rates}, 
-#' code{out_flux_rates}, code{numberOfPools} 
-#' may be present.
-#' @param internal_flux_rates A list that can be supplied 
-#' in one of the following ways:
-#' \enumerate{
-#' \item A \code{list} of numbers with names of the form "2->4"  
-#' \item A \code{numeric} vector of numbers with names of the form "2->4"  
-#' \item A \code{list} of objects of class 
-#' \linkS4class{ConstantInternalFluxRate_by_PoolIndex}
-#' \item An object of class  
-#" \linkS4class{ConstantInternalFluxRateList_by_PoolIndex}
-#' }
-#' @param out_flux_rates A list that can be supplied in one of the 
-#' following ways:
-#' \enumerate{
-#' \item A \code{list} of numbers with names that can be converted 
-#' to integers ("2" for pool 2  
-#' \item A \code{numeric} vector of numbers with names that can be converted 
-#' to integers.
-#' \item A \code{list} of objects of class 
-#' \linkS4class{ConstantOutFluxRate_by_PoolIndex}
-#' \item An object of class
-#' \linkS4class{ConstantOutFluxRateList_by_PoolIndex}
-#' }
-#' @param numberOfPools  The number of pools, should not be present if the 
-#' \code{mat} argument is supplied but must be present otherwise.
-
-ConstLinDecompOp=function(
-    mat
-    ,internal_flux_rates
-    ,out_flux_rates
-    ,numberOfPools
+#setMethod(
+#    "ConstLinDecompOp"
+#    ,signature=signature(
+#        mat='matrix'
+#        ,internal_flux_rates='missing'
+#        ,out_flux_rates='missing'
+#        ,numberOfPools='numeric'
+#        ,poolNames='missing'
+#    )
+#    ,definition=function( mat){
+#        r <- nrow(mat)
+#        c <- ncol(mat)
+#        assertthat::are_equal(
+#            r
+#            ,c
+#            ,msg=sprintf('The matrix has to be quadratic!. Your matrix has %s rows and %s columns',r,c)
+#        )
+#        return(new("ConstLinDecompOp",mat=mat)) 
+#    }
+#)
+#
+#' Constructor 
+setMethod(
+    "ConstLinDecompOp"
+    ,signature=signature(
+        mat='missing'
+        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolIndex'
+        ,out_flux_rates='ConstantOutFluxRateList_by_PoolIndex'
+        ,numberOfPools='numeric'
+        ,poolNames='missing'
+    )
+    ,definition=function(
+         internal_flux_rates
+        ,out_flux_rates
+        ,numberOfPools
     ){
-        if (missing(mat)){
-            assertthat::assert_that(
-                hasArg(numberOfPools)
-                ,msg="If mat is not given numberOfPools must be present."
-            )
-            if(hasArg(internal_flux_rates)){
-                   internal_flux_rates=ConstantInternalFluxRateList_by_PoolIndex(internal_flux_rates)
-            }else{
-                   internal_flux_rates=list()
-            }
-            if(hasArg(out_flux_rates)){ 
-                   out_flux_rates=ConstantOutFluxRateList_by_PoolIndex(out_flux_rates)
-            }else{
-                   out_flux_rates=list()
-            }
-            mat= mat_from_integer_flux_lists(
+         from_integer_flux_lists_with_defaults(
                 internal_flux_rates=internal_flux_rates
                 ,out_flux_rates = out_flux_rates
-                ,numberOfPools
-            )
-        }else{
-            assertthat::assert_that(
-                all(
-                    missing(internal_flux_rates)
-                    ,missing(out_flux_rates)
-                    ,missing(numberOfPools)
-                )
-                ,msg="if mat is given, non of internal_flux_rates, 
-                      out_flux_rates and numberOfPools, can be given"
-            )
-            r <- nrow(mat)
-            c <- ncol(mat)
-            assertthat::are_equal(
-                r
-                ,c
-                ,msg=sprintf('The matrix has to be quadratic!. Your matrix has %s rows and %s columns',r,c)
-            )
-        }
-    return(new("ConstLinDecompOp",mat=mat))
-}
-#)
+                ,numberOfPools = numberOfPools
+         )
+    }
+)
+#' Constructor 
+setMethod(
+    "ConstLinDecompOp"
+    ,signature=signature(
+        mat='missing'
+        ,internal_flux_rates='missing'
+        ,out_flux_rates='ConstantOutFluxRateList_by_PoolIndex'
+        ,numberOfPools='numeric'
+        ,poolNames='missing'
+    )
+    ,definition=function(
+         out_flux_rates
+        ,numberOfPools
+    ){
+         from_integer_flux_lists_with_defaults(
+                out_flux_rates = out_flux_rates
+                ,numberOfPools = numberOfPools
+         )
+    }
+)
+#' Constructor 
+setMethod(
+    "ConstLinDecompOp"
+    ,signature=signature(
+        mat='missing'
+        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolIndex'
+        ,out_flux_rates='missing'
+        ,numberOfPools='numeric'
+        ,poolNames='missing'
+    )
+    ,definition=function(
+         internal_flux_rates
+        ,numberOfPools
+    ){
+         from_integer_flux_lists_with_defaults(
+                internal_flux_rates=internal_flux_rates
+                ,numberOfPools = numberOfPools
+         )
+    }
+)
 
+#' alternative Constructor with pool names 
+setMethod(
+    'ConstLinDecompOp'
+    ,signature=signature(
+        mat='missing'
+        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolName'
+        #,out_flux_rates='ConstantOutFluxRateList_by_PoolName'
+        ,poolNames='character'
+     )
+    ,definition=function(
+         internal_flux_rates
+        ,out_flux_rates
+        ,poolNames
+    ){
+        ConstLinDecompOp(
+            internal_flux_rates=by_PoolIndex(internal_flux_rates,poolNames)
+           , out_flux_rates=by_PoolIndex(out_flux_rates,poolNames)
+           ,numberOfPools=length(poolNames)
+        )
+
+    }
+)
 
 #' helper function 
 #' @keywords internal

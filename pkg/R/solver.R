@@ -7,6 +7,5 @@ solver=function
  )
  {
    Y=solverFunc(times,ydot,startValues) 
-    pp('Y')
    return(Y)
 }

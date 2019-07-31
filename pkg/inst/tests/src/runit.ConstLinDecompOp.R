@@ -3,8 +3,8 @@ test.ConstLinDecompOp_check_external_flux_args=function(){
   mess='the out flux pool index:5 exceeds the numberOfPools:4'
   checkException(
     ConstLinDecompOp(
-      internal_flux_rates=c("1_to_2"=3)
-      ,out_flux_rates=c("5"=2)
+      internal_flux_rates=ConstantOutFluxRateList_by_PoolIndex(list("1_to_2"=3))
+      ,out_flux_rates=ConstantOutFluxRateList_by_PoolIndex(list("5"=2))
       ,numberOfPools = 4
     )
     ,mess
@@ -17,8 +17,8 @@ test.ConstLinDecompOp_check_internal_flux_args=function(){
   mess='the internal flux pool index:5 exceeds the numberOfPools:4'
   checkException(
     ConstLinDecompOp(
-      internal_flux_rates=c("5_to_2"=3)
-      ,out_flux_rates=c("1"=2)
+      internal_flux_rates=ConstantOutFluxRateList_by_PoolIndex(list("5_to_2"=3))
+      ,out_flux_rates=ConstantOutFluxRateList_by_PoolIndex(list("1"=2))
       ,numberOfPools = 4
     )
     ,silent=TRUE
@@ -29,7 +29,7 @@ test.ConstLinDecompOp_check_internal_flux_args=function(){
 test.ConstLinDecompOpWithoutInternalFluxes=function(){
   n<-3
   k<-3
-  out_flux_rates=list("1"=k)
+  out_flux_rates=ConstantOutFluxRateList_by_PoolIndex(list("1"=k))
   B=ConstLinDecompOp(
      out_flux_rates=out_flux_rates
     ,numberOfPools = n
@@ -86,89 +86,39 @@ test.ConstLinDecompOpWithoutOutFluxes=function(){
     )
     checkEquals(getConstantCompartmentalMatrix(B_1),B_ref)
 
-    # but the constructor will also accept normal lists (vectors)
-    # if the elements have the right type
-    internal_flux_rates_2<-c(
-         ConstantInternalFluxRate_by_PoolIndex(
-            sourceIndex=1L
-            ,destinationIndex=2L
-            ,rate_constant=k
-        )
-    )
-    B_2<-ConstLinDecompOp(
-        internal_flux_rates=internal_flux_rates_2
-        ,numberOfPools= n
-    )
-    checkEquals(getConstantCompartmentalMatrix(B_2),B_ref)
-
-    # or even a list of rates if the names are characters
-    # that can be used to infer source and target pools
-    internal_flux_rates_3=list("1_to_2"=k)
-    B_3<-ConstLinDecompOp(
-        internal_flux_rates=internal_flux_rates_3
-        ,numberOfPools= n
-    )
-    checkEquals( getConstantCompartmentalMatrix(B_3) ,B_ref)
-
-    internal_flux_rates_4=list("1->2"=k)
-    B_4<-ConstLinDecompOp(
-         internal_flux_rates=internal_flux_rates_4
-        ,numberOfPools= n
-    )
-    checkEquals(getConstantCompartmentalMatrix(B_4),B_ref)
 }
 
 
-test.ConstLinDecompOp=function(){
-  n<-3
-  k<-3
-  B=ConstLinDecompOp(
-    internal_flux_rates=c("1_to_2"=k)
-    ,out_flux_rates=c("1"=k)
-    ,numberOfPools = n
-  )@mat
-  print(B)
-  checkEquals(
-     B
-    ,matrix(
-       nrow=n
-      ,ncol=n
-      ,byrow=TRUE
-      ,c( 
-         -6,0,0
-         ,3,0,0
-         ,0,0,0
+test.ConstLinDecompOpFromNamedFluxes=function(){
+    n<-3
+    k<-3
+    ifrs=ConstantInternalFluxRateList_by_PoolName(
+        list(
+            ConstantInternalFluxRate_by_PoolName(sourceName='barrel',destinationName='glass',rate_constant=k)
+            )
+    )
+    ofrs=ConstantOutFluxRateList_by_PoolName(
+        list(
+            ConstantOutFluxRate_by_PoolName(sourceName='barrel',rate_constant=k)
+         )
+    )
+    B=ConstLinDecompOp(
+        internal_flux_rates=ifrs
+        ,out_flux_rates=ofrs
+        ,poolNames=c('barrel','glass','belly')
+    )@mat
+    print(B)
+    checkEquals(
+       B
+      ,matrix(
+         nrow=n
+        ,ncol=n
+        ,byrow=TRUE
+        ,c( 
+           -6,0,0
+           ,3,0,0
+           ,0,0,0
+        )
       )
     )
-  )
 }
-
-#test.ConstLinDecompOpFromNamedFluxes=function(){
-#  n<-3
-#  k<-3
-#  ifrs=c(
-#    ConstantInternalFluxRate_by_PoolName(sourceName='barrel',destinationName='glass',rate_constant=k)
-#  )
-#  ofrs=c(
-#    ConstantOutFluxRate_by_PoolName(sourceName='barrel',rate_constant=k)
-#  )
-#  B=ConstLinDecompOp(
-#    internal_flux_rates=ifrs
-#    ,out_flux_rates=ofrs
-#    ,poolNames=c('barrel','glass','belly')
-#  )@mat
-#  print(B)
-#  checkEquals(
-#     B
-#    ,matrix(
-#       nrow=n
-#      ,ncol=n
-#      ,byrow=TRUE
-#      ,c( 
-#         -6,0,0
-#         ,3,0,0
-#         ,0,0,0
-#      )
-#    )
-#  )
-#}

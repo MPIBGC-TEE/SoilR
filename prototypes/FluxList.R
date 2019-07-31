@@ -1,0 +1,19 @@
+myClassName="InFluxesByIndex"
+check_Flux_Frame<-function(object){TRUE}
+constructor=setClass(
+     myClassName 
+    ,contains=c('list')
+    ,validity=check_Flux_Frame
+)
+setMethod(
+    'initialize'
+    ,signature=signature(.Object=myClassName)
+    ,definition=function(.Object,...){
+        evaluated_args=list(...)
+        
+        print(evaluated_args)
+        .Object
+    }
+)
+f=function(x){x**2}
+object=constructor(a=f)

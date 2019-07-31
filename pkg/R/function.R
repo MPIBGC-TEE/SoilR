@@ -51,9 +51,7 @@ setMethod(
   definition=function(obj,poolNames,timeSymbol){
         funcOfVars<-obj
         arg_names<-names(formals(funcOfVars))
-        pp('arg_names')
         possibleArgs=c(poolNames,timeSymbol)
-        pp('possibleArgs')
         positions<-unlist(lapply(arg_names,function(arg){grep(arg,possibleArgs)}))
         
         vec_func<-function(state_vec,t){

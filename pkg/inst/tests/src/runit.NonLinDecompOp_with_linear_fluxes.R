@@ -95,106 +95,140 @@ test.NonLinDecompOp_with_linear_fluxes_by_Index=function(){
     )
   )
 }
+#--------------------------------------------------------------
 test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
-  #     barrel
-  #  X= glass
-  #     belly
-  state_variable_names=c("barrel" ,"glass" ,"belly")
-  timeSymbol='t'
-  n<-3
-  k<-3
-  intfs=InternalFluxList_by_PoolName(
-    list(
-        InternalFlux_by_PoolName(
-            sourceName='barrel'
-            ,destinationName='glass'
-            ,func=function(barrel,t){
-                # just a linear donor dependent flux 
-                # although we could use the glass argument 
-                k*barrel 
-            }
+    # formulate a linear autonomous model
+    # (constant matrix and constant influxes)
+    state_variable_names=c("barrel" ,"glass" ,"belly")
+    timeSymbol='t'
+    n<-3
+    k<-3
+    B_ref=matrix(
+         nrow=n
+        ,ncol=n
+        ,byrow=TRUE
+        ,c( 
+         -2*k,0,0
+           ,k,0,0
+           ,0,0,0
         )
     )
-  )
-    
-  ofs=OutFluxList_by_PoolName(
-        c(
-            OutFlux_by_PoolName(
-                sourceName='barrel'
-                ,func=function(barrel,glass,t){
-                    k*barrel 
-                    # just a linear donor dependent 
-                    # flux the second argument is fake but here for the test
-                }
+    ifrs=ConstantInternalFluxRateList_by_PoolName(
+        list(
+            ConstantInternalFluxRate_by_PoolName(sourceName='barrel',destinationName='glass',rate_constant=k)
             )
-        )
-  )
-  ifs=InFluxList_by_PoolName(
-        c(
-            InFlux_by_PoolName(
-                destinationName='barrel'
-                ,func=function(barrel,glass,t){
-                    k*barrel*glass*(1+sin(t))
-                    # a receiver dependent 
-                    # flux the second argument is fake but here for the test
-                }
-            )
-        )
-  )
-  #BFunc=UnBoundNonLinDecompOp(
-  #  chi_func
-  #  ,normalized_internal_fluxes=intfs
-  #  ,normalized_out_fluxes=ofs
-  #  ,numberOfPools=3
-  #  ,timeSymbol='t'
-  #)@matFunc
-  
-  obn<- UnBoundNonLinDecompOp_by_PoolNames(
-    internal_fluxes=intfs
-    ,out_fluxes=ofs
-    ,timeSymbol='t'
-  )
-  BFunc=getCompartmentalMatrixFunc(
-    obn
-    ,timeSymbol
-    ,state_variable_names
     )
-  # initial values
-  iv<-c(barrel=1,glass=1,belly=1)
-  B<-BFunc(iv,t=0)
-  print(B)
-  checkEquals(
-     B
-    ,matrix(
-       nrow=n
-      ,ncol=n
-      ,byrow=TRUE
-      ,c( 
-         -6,0,0
-         ,3,0,0
-         ,0,0,0
+    ofrs=ConstantOutFluxRateList_by_PoolName(
+        list(
+            ConstantOutFluxRate_by_PoolName(sourceName='barrel',rate_constant=k)
+         )
+    )
+    cop=ConstLinDecompOp(
+        internal_flux_rates=ifrs
+        ,out_flux_rates=ofrs
+        ,poolNames=state_variable_names
+    )
+    ifl_cl=ConstInFluxes(c(1,0,0))
+    # initial values
+    iv<-c(barrel=1,glass=1,belly=1)
+    mod_cl=GeneralModel(
+          t=0:100
+          ,A=cop
+          ,ivList=iv
+          ,inputFluxes=ifl_cl
+          ,timeSymbol='t'
+    )
+    I_func_cl=getFunctionDefinition(ifl_cl)
+    I_cl_0=I_func_cl(0)
+    pe(I_cl_0)
+    rhs_cl=getRightHandSideOfODE(mod_cl)
+    rhs_cl_0=rhs_cl(iv,0)
+    pe(rhs_cl_0)
+    sol_cl=getC(mod_cl)
+ 
+    # now we formulate the same Model as (possibly) nonlinear Model
+    # which does not change the solution but hides the information
+    # of linearity from SoilR
+
+    intfs=InternalFluxList_by_PoolName(
+      list(
+          InternalFlux_by_PoolName(
+              sourceName='barrel'
+              ,destinationName='glass'
+              ,func=function(barrel,t){
+                  # just a linear donor dependent flux 
+                  # although we could use the glass argument 
+                  k*barrel 
+              }
+          )
       )
     )
-  )
-  
-  
-  mod=GeneralModel(
-        t=0:100
-        ,A=obn
-        ,ivList=c(barrel=0.4,glass=0,belly=0)
-        ,inputFluxes=ifs
-        ,timeSymbol='t'
-  )
+      
+    ofs=OutFluxList_by_PoolName(
+          c(
+              OutFlux_by_PoolName(
+                  sourceName='barrel'
+                  ,func=function(barrel,glass,t){
+                      k*barrel 
+                      # just a linear donor dependent 
+                      # flux the second argument is fake but here for the test
+                  }
+              )
+          )
+    )
+    ifs=InFluxList_by_PoolName(
+          c(
+              InFlux_by_PoolName(
+                  destinationName='barrel'
+                  ,func=function(barrel,glass,t){
+                      # ignore arguments
+                      #res=(barrel+glass)*(1+sin(t))/100
+                      res=1
+                      res
+                  }
+              )
+          )
+    )
+    #BFunc=UnBoundNonLinDecompOp(
+    #  chi_func
+    #  ,normalized_internal_fluxes=intfs
+    #  ,normalized_out_fluxes=ofs
+    #  ,numberOfPools=3
+    #  ,timeSymbol='t'
+    #)@matFunc
+    
+    obn<- UnBoundNonLinDecompOp_by_PoolNames(
+      internal_fluxes=intfs
+      ,out_fluxes=ofs
+      ,timeSymbol='t'
+    )
+    BFunc=getCompartmentalMatrixFunc(
+      obn
+      ,timeSymbol
+      ,state_variable_names
+      )
+    # initial values
+    iv<-c(barrel=1,glass=1,belly=1)
+    B_0<-BFunc(iv,t=0)
+    checkEquals(B_0,B_ref)
+    
+    mod=GeneralModel(
+          t=0:100
+          ,A=obn
+          ,ivList=c(barrel=0.4,glass=0,belly=0)
+          ,inputFluxes=ifs
+          ,timeSymbol='t'
+    )
 
-  I_func=getFunctionDefinition(
-    mod@inputFluxes
-    ,timeSymbol=timeSymbol
-    ,poolNames=names(iv)
-  )
-  I_0=I_func(iv,0)
-  pp('I_0')
-  rhs=getRightHandSideOfODE(mod)
-  rhs_0=rhs(iv,0)
-  pp('rhs_0')
-  getC(mod)
+    I_func=getFunctionDefinition(
+      mod@inputFluxes
+      ,timeSymbol=timeSymbol
+      ,poolNames=names(iv)
+    )
+    I_0=I_func(iv,0)
+    pe(I_0)
+    rhs=getRightHandSideOfODE(mod)
+    rhs_0=rhs(iv,0)
+    pe(rhs_0)
+    getC(mod)
 }

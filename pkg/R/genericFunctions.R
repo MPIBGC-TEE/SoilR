@@ -588,7 +588,13 @@ setGeneric(
 
 setGeneric(
 	 name="ConstLinDecompOp",
-	 def=function(mat,internal_flux_rates,out_flux_rates,numberOfPools){
+	 def=function(
+        mat
+        ,internal_flux_rates
+        ,out_flux_rates
+        ,numberOfPools
+        ,poolNames
+    ){
 	     standardGeneric("ConstLinDecompOp")
 	 }
 )

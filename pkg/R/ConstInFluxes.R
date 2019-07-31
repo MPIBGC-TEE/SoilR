@@ -44,7 +44,7 @@ setMethod(
     f="getFunctionDefinition",
     signature="ConstInFluxes",
     definition=function(object){
-        return(function(t){object@map})
+        return(function(t){matrix(ncol=1,object@map)})
     }
 )
 
