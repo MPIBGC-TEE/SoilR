@@ -25,26 +25,166 @@
 ##    }
 ##)
 ## example code
-#setClass('PoolId',contains=c('VIRTUAL'))
-setClass('PoolIndex',contains=c('integer'))
-setClass('PoolName',contains=c('character'))
-#setClass('OutBound',contains=c('VIRTUAL')
-setClass('OutBoundByIndex'slots=c(source='PoolIndex')
-setClass('OutBoundByName',slots=c(source='PoolName'))
+setClass('PoolId',contains=c('VIRTUAL'))
+setClass(
+    'PoolIndex'
+    ,contains=c(
+        'PoolId'
+        ,
+        'integer'
+    )
+)
+setClass(
+    'PoolName'
+    ,
+    contains=c(
+        'PoolId'
+        ,
+        'character'
+    )
+)
+#setClass('OutBound',contains=c('VIRTUAL'))
+setClass(
+    'indexable'
+    ,
+    contains=c('VIRTUAL')
+    ,
+    slots=c(
+        byIndex='logical'
+    )
+)
+setClass(
+    'OutBound'
+    ,
+    contains=c('indexable')
+    ,
+    slots=c(
+        source='PoolId'
+        ,
+        Func='function'
+    )
+)
+setClass(
+    'StateIndependentOutBound'
+    ,
+    slots=c(
+        source='PoolId'
+    )
+)
+OutFluxRate                 <-setClass('OutFluxRate'                ,contains=c('OutBound'))
+OutFlux                     <-setClass('OutFluxRateByIndex'         ,contains=c('OutBound'))
+StateIndependentOutFlux     <-setClass('StateIndependentOutFlux'    ,contains=c('StateIndependentOutBound'))
+StateIndependentOutFluxRate <-setClass('StateIndependentOutFluxRate',contains=c('StateIndependentOutBound'))
+ConstantOutFlux             <-setClass('ConstantOutFlux'            ,contains=c('StateIndependentOutBound'))
+ConstantOutFluxRate         <-setClass('ConstantOutFluxRate'        ,contains=c('StateIndependentOutBound'))
 
-OutFluxRateByIndex<-setClass(OutFluxRateByIndex,slots=c(stateVec='function'))
+setClass(
+    'InBound'
+    ,
+    contains=c('indexable')
+    ,
+    slots=c(
+        destination='PoolId'
+        ,
+        Func='function'
+    )
+)
+setClass(
+    'StateIndependentInBound'
+    ,
+    contains=c('indexable')
+    ,
+    slots=c(
+        byIndex='logical'
+        ,
+        destination='PoolId'
+    )
+)
+InFluxRate                  <-setClass('InFluxRate'                 ,contains=c('InBound'))
+InFlux                      <-setClass('InFluxRateByIndex'          ,contains=c('InBound'))
+StateIndependentInFlux      <-setClass('StateIndependentInFlux'     ,contains=c('StateIndependentInBound'))
+StateIndependentInFluxRate  <-setClass('StateIndependentInFluxRate' ,contains=c('StateIndependentInBound'))
+ConstantInFlux              <-setClass('ConstantInFlux'             ,contains=c('StateIndependentInBound'))
+ConstantInFluxRate          <-setClass('ConstantInFluxRate'         ,contains=c('StateIndependentInBound'))
+
+setClass(
+    'Internal'
+    ,
+    contains=c('indexable')
+    ,
+    slots=c(
+        source='PoolId'
+        ,
+        destination='PoolId'
+        ,
+        Func='function'
+    )
+)
+setClass(
+    'StateIndependentInternal'
+    ,
+    contains=c('indexable')
+    ,
+    slots=c(
+        source='PoolId'
+        ,
+        destination='PoolId'
+    )
+)
+InternalFluxRate                 <-setClass('InternalFluxRate'                  ,contains=c('Internal'))
+InternalFlux                     <-setClass('InternalFluxRateByIndex'           ,contains=c('Internal'))
+StateIndependentInternalFlux     <-setClass('StateIndependentInternalFlux'      ,contains=c('StateIndependentInternal'))
+StateIndependentInternalFluxRate <-setClass('StateIndependentInternalFluxRate'  ,contains=c('StateIndependentInternal'))
+ConstantInternalFlux             <-setClass('ConstantInternalFlux'              ,contains=c('StateIndependentInternal'))
+ConstantInternalFluxRate         <-setClass('ConstantInternalFluxRate'          ,contains=c('StateIndependentInternal'))
+
+
+setGeneric(
+    name='toIndexedForm'
+    ,def=function(object,poolNames){ standardGeneric('toIndexedForm') }
+)
+setGeneric(
+    name='isInIndexedForm'
+    ,def=function(object){standardGeneric('isInIndexedForm')}
+)
+
 setMethod(
-    'initialize'
-    ,signature=signature(.Object='OutFluxRateByIndex')
-    ,definition=function(.Object,source,){
-        evaluated_args=list(...)
-         
-        print(evaluated_args)
-        .Object
+    'isInIndexedForm'
+    ,signature('OutBound')
+    ,definition=function(object){object@byIndex}
+)
+setMethod(
+    'toIndexedForm'
+    ,signature('InBound')
+    ,definition=function(object,poolNames){
+        if(object@byIndex){
+            return(object)
+        } else {
+            object@destination  <- PoolIndex(  object@destination,poolNames)
+            object@Func         <-   vecFunc(     object@Func    ,poolNames)
+            return(object)
+        }
     }
 )
-OutFluxRateByName<-setClass(OutFluxRateByIndex,slots=c(stateVars='function'))
-byIndex
+setMethod(
+    'toIndexedForm'
+    ,signature('StateIndependentOutBound')
+    ,definition=function(object,poolNames){
+        if(object@byIndex){
+            return(object)
+        } else {
+            object@source<- PoolIndex(  object@source   ,poolNames)
+            return(object)
+        }
+    }
+)
+setMethod(
+    'isInIndexedForm'
+    ,signature=signature(object='list')
+    ,definition=function(object){
+        all(as.logical(lapply(object,isInIndexedForm)))
+    }
+)
 #InFluxByIndex<-setClass(FluxClassName,slots=c(destination='character',stateVarFunc='function'))
 #myFlux1=InFluxbyIndex(destination="barrel",stateVarFunc=function(x){x**1})
 #myFlux2=InFluxbyIndex(destination="barrel",stateVarFunc=function(x){x**2})
