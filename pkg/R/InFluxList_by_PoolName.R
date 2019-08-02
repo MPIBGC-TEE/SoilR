@@ -1,13 +1,25 @@
 #' constructor from a normal list
 #'
 #' after checking the elememts
+
 setMethod("InFluxList_by_PoolName",
     signature=signature(object="list"),
     definition=function(object){
-        checkTargetClassOfElements(object,targetClassName='InFlux_by_PoolName')
-        as(object,'InFluxList_by_PoolName')
+        makeListInstance(
+            object
+            ,targetClassName='InFlux_by_PoolName'
+            ,targetListClassName="InFluxList_by_PoolName"
+            ,permittedValueClassName='function'
+            ,key_value_func=function(key,val){
+                InFlux_by_PoolName(
+                     destinationName=key
+                    ,func=val
+                )
+            }
+        )
     }
 )
+
 setMethod(
     f="by_PoolIndex"
     ,signature=signature(

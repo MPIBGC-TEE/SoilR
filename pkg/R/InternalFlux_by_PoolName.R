@@ -31,10 +31,9 @@ setMethod(
     ,src_to_dest='missing'
   ),
   def=function(
-    func='function'
-    ,sourceName='character'
-    ,destinationName='character'
-    ,src_to_dest='missing'
+    func
+    ,sourceName
+    ,destinationName
     ){
     new(
         'InternalFlux_by_PoolName'
@@ -42,6 +41,27 @@ setMethod(
         ,sourceName=PoolName(sourceName)
         ,destinationName=PoolName(destinationName)
     )
+  }
+)
+
+setMethod(
+  f="InternalFlux_by_PoolName",
+  signature=c(
+    func='function'
+    ,sourceName='missing'
+    ,destinationName='missing'
+    ,src_to_dest='character'
+  ),
+  def=function(
+    func
+    ,src_to_dest
+    ){
+      new(
+          "InternalFlux_by_PoolName"
+          ,sourceName=getSenderName(src_to_dest)
+          ,destinationName=getRecipientName(src_to_dest)
+          ,func=func
+     )
   }
 )
 

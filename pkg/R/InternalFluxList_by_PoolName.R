@@ -24,7 +24,7 @@ setMethod("InternalFluxList_by_PoolName",
             ,key_value_func=function(key,val){
                 InternalFlux_by_PoolName(
                      src_to_dest=key
-                    ,flux=object[[key]]
+                    ,func=val
                 )
             }
         )

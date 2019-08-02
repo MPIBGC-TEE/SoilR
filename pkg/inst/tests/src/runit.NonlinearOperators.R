@@ -113,12 +113,12 @@ test.NonlinearOperators=function(){
   checkEquals(A_0,B2_iv_0)
   #        
   ##################################################################################
-  ## build the two models (linear and nonlinear)
-  #mod=GeneralModel( t, A,iv, inputrates, deSolve.lsoda.wrapper) 
-  #modnl=GeneralNlModel( t, Anl, iv, inputrates, deSolve.lsoda.wrapper)
-  ## compare the Cstock
-  #Y=getC(mod) 
-  #Ynonlin=getC(modnl) 
+  # build the two models (linear and nonlinear)
+  mod=GeneralModel( t, A,iv, inputrates, deSolve.lsoda.wrapper) 
+  modnl=GeneralNlModel( t, Anl, iv, inputrates, deSolve.lsoda.wrapper)
+  # compare the Cstock
+  Y=getC(mod) 
+  Ynonlin=getC(modnl) 
   ##R=getReleaseFlux(mod) 
   ##Rnonlin=getReleaseFlux(modnl) 
 #b#egin plots 

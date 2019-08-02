@@ -49,6 +49,9 @@ setMethod(
 #' constructor
 #' @param internal_fluxes vector of elements of type InternalFlux_by_PoolName
 #' @param out_fluxes vector of elements of type OutFlux_by_PoolName
+                    #if (dest> numberOfPools){stop("The index of the destination pool must be smaller than the number of pools")}
+                    #if (src_int> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
+                    # if (src_o> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
 setMethod(
       f="UnBoundNonLinDecompOp",
       signature=c(
@@ -66,20 +69,42 @@ setMethod(
         BFunc<-function(X,t){
             N=matrix(nrow=np,ncol=np,0)
             for (of in out_fluxes){
-                src=of@sourceIndex
-                if (src> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
-                N[src,src]=of@func(X,t)
-            }
-            for (intf in internal_fluxes){
-              dest<-intf@destinationIndex
-              src<-intf@sourceIndex
-              if (dest> numberOfPools){stop("The index of the destination pool must be smaller than the number of pools")}
-              if (src> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
-              N[src,src]=N[src,src]+intf@func(X,t)
+                src_o=of@sourceIndex
+                totalOutFlux=of@func(X,t)
+                if (is.na(totalOutFlux)){
+                    print(of)
+                    pe(X)
+                    pe(t)
+                    warning('Encountered Na for out flux')
+                }
+                for (intf in internal_fluxes){
+                  
+                    src_int<-intf@sourceIndex
+                    if(src_o==src_int){
+                      flux= intf@func(X,t)
+                      if (is.na(flux)){
+                          #print(intf)
+                          pe(X)
+                          pe(t)
+                          warning('Encountered Na for internal_flux')
+                      }
+                      totalOutFlux=totalOutFlux+flux
+                      totalOutFluxRate=totalOutFlux/X[[src_o]]
+                      N[src_o,src_o]=totalOutFluxRate
+                    }
+                }
             }
             To=diag(nrow=np,-1)
             for (intf in internal_fluxes){
-              To[dest,src]=intf@func(X,t)/N[src,src]
+                src=intf@sourceIndex
+                dest=intf@destinationIndex
+                totalOutFlux=N[src,src]
+                if(is.na(totalOutFlux) || totalOutFlux==0){
+                    #stop('zero total out flux')
+                    To[dest,src]=0
+                }else{
+                    To[dest,src]=intf@func(X,t)/totalOutFlux/X[[src]]
+                }
             }
             B<-To%*%N
             return(B)

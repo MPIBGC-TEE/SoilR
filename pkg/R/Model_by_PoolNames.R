@@ -36,7 +36,9 @@ setMethod(
                 # we could computed the combination of InternalFluxes and
                 # OutFluxes directly (as opposed to multiplication with the 
                 # Compartmental matrix
-                return(AFunc(Y,t)%*%Y+inputFunc(Y,t))
+                A=AFunc(Y,t)
+                I=inputFunc(Y,t)
+                res=A%*%Y+I
             }
             return(DotY)
         }

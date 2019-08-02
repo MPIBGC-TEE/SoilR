@@ -1,4 +1,4 @@
-# test the constructor
+ test the constructor
 test.function_by_PoolIndex=function(){
     poolNames=c('barrel','glass','belly')
     timeSymbol='t'
@@ -41,8 +41,6 @@ test.NonLinDecompOp_with_linear_fluxes_by_Index=function(){
   #     barrel
   #  X= glass
   #     belly
-  n<-3
-  k<-3
   intfs=c(
     InternalFlux_by_PoolIndex(
          sourceIndex=1
@@ -99,10 +97,12 @@ test.NonLinDecompOp_with_linear_fluxes_by_Index=function(){
 test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
     # formulate a linear autonomous model
     # (constant matrix and constant influxes)
-    state_variable_names=c("barrel" ,"glass" ,"belly")
+    iv<-c(barrel=1,glass=1,belly=1)
+    state_variable_names=names(iv)
     timeSymbol='t'
+    times=0:10
     n<-3
-    k<-3
+    k<-.02
     B_ref=matrix(
          nrow=n
         ,ncol=n
@@ -130,9 +130,8 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
     )
     ifl_cl=ConstInFluxes(c(1,0,0))
     # initial values
-    iv<-c(barrel=1,glass=1,belly=1)
     mod_cl=GeneralModel(
-          t=0:100
+          t=times
           ,A=cop
           ,ivList=iv
           ,inputFluxes=ifl_cl
@@ -168,7 +167,7 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
           c(
               OutFlux_by_PoolName(
                   sourceName='barrel'
-                  ,func=function(barrel,glass,t){
+                  ,func=function(barrel,t){
                       k*barrel 
                       # just a linear donor dependent 
                       # flux the second argument is fake but here for the test
@@ -183,8 +182,7 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
                   ,func=function(barrel,glass,t){
                       # ignore arguments
                       #res=(barrel+glass)*(1+sin(t))/100
-                      res=1
-                      res
+                      1
                   }
               )
           )
@@ -210,13 +208,22 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
     # initial values
     iv<-c(barrel=1,glass=1,belly=1)
     B_0<-BFunc(iv,t=0)
+    pp('B_0')
+    B_0_cl=cop@mat
+    pp('B_0_cl')
     checkEquals(B_0,B_ref)
-    
     mod=GeneralModel(
-          t=0:100
+          t=times
           ,A=obn
-          ,ivList=c(barrel=0.4,glass=0,belly=0)
+          ,ivList=iv 
           ,inputFluxes=ifs
+          ,timeSymbol='t'
+    )
+    mod_cl=GeneralModel(
+          t=times
+          ,A=cop
+          ,ivList=iv
+          ,inputFluxes=ifl_cl
           ,timeSymbol='t'
     )
 
@@ -225,10 +232,22 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
       ,timeSymbol=timeSymbol
       ,poolNames=names(iv)
     )
+    I_func_cl=getFunctionDefinition(
+      mod_cl@inputFluxes
+    )
     I_0=I_func(iv,0)
+    I_0_cl=I_func_cl(0)
     pe(I_0)
+    pe(I_0_cl)
     rhs=getRightHandSideOfODE(mod)
     rhs_0=rhs(iv,0)
     pe(rhs_0)
-    getC(mod)
+    sol=getC(mod)
+    sol_cl=getC(mod_cl)
+    plot(x=times,y=sol[,2])
+    #lines(x=times,y=sol_cl[,1],col='red')
+    #plot(x=times,y=sol_cl[,1],col='red')
+    lines(x=times,y=sol_cl[,2],col='red')
+    #plot(x=times,y=sol_cl[,3])
+
 }
