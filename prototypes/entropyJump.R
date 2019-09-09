@@ -58,11 +58,11 @@ entropyJump<-structure(
     Fm=0.85-0.18*LN; Fs=1-Fm
     CI=matrix(nrow=5,ncol=1,c(In*Fm,In*Fs,0,0,0))
     
-    entropyRate(B=AC, u=CI)
+    entropyJump(B=AC, u=CI)
     
     xi=seq(0.1,2,by=0.1)
     
-    lxi=lapply(xi,FUN=function(x){entropyRate(B=x*AC, u=CI)})
+    lxi=lapply(xi,FUN=function(x){entropyJump(B=x*AC, u=CI)})
     
     xiEJ=sapply(lxi, FUN=function(x){x$entropyRate})
     xiEP=sapply(lxi, FUN=function(x){x$entropyRatePath})
@@ -76,7 +76,7 @@ entropyJump<-structure(
     #####
     Temp=seq(0,40,by=0.5)
     
-    ET=lapply(Temp,FUN=function(x){entropyRate(B=fT.Century1(x)*AC, u=CI)})
+    ET=lapply(Temp,FUN=function(x){entropyJump(B=fT.Century1(x)*AC, u=CI)})
     EJ_Temp=sapply(ET, FUN=function(x){x$entropyRate})
     EP_Temp=sapply(ET, FUN=function(x){x$entropyRatePath})
     
