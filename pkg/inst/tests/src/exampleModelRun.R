@@ -1,3 +1,4 @@
+library(ggplot2)
 require("pkgload")
 source("../testhelpers.R")
 source("corradoFluxLists.R")
@@ -5,32 +6,37 @@ pkgload::load_all('../../../')
 # formulate a linear autonomous model
 # (constant matrix and constant influxes)
 iv<-c(
-    C_am 		=3.1
-    ,C_as		=3.2
-    ,C_bm		=3.3
-    ,C_bs		=3.4
-    ,C_fw		=3.5
-    ,C_acw		=3.6
-    ,C_bcw		=3.7
-    ,C_mic		=3.8
-    ,C_slo		=3.9
-    ,C_pas		=3.11
-    ,N_am		=3.12
-    ,N_as		=3.13
-    ,N_bm		=3.14
-    ,N_bs		=3.15
-    ,N_fw		=3.16
-    ,N_acw		=3.17
-    ,N_bcw		=3.18
-    ,N_mic		=3.19
-    ,N_slo		=3.121
-    ,N_pas		=3.21
-    ,N_ino		=3.31
+  # Initial values from CENTURY4 ('tdecid.100' in PARAMETER_FILES folder)
+  # gC*m-2; gN*m-2
+  C_am 		  = 0.0001 #335.5 #0.1
+  ,C_as		  = 0.0001 #9.1 #0.1
+  ,C_bm		  = 0.0001 #150.7 #0.1
+  ,C_bs		  = 0.0001 #44 #0.1 
+  ,C_fw		  = 0.0001 #118.7 #0.1
+  ,C_acw		= 0.0001 #401.6 #0.1
+  ,C_bcw		= 0.0001 #334.6 #0.1
+  ,C_srfmic = 0.0001 #130.2 #0.1
+  ,C_mic		= 0.0001 #456.6 #0.1
+  ,C_slo		= 0.0001 #5367.9 #0.1
+  ,C_pas		= 0.0001 #7167.4 #0.1
+  ,N_am		  = 335.5 / ini_cn_rat_abgmet
+  ,N_as		  = 9.1 / ini_cn_rat_abgstr
+  ,N_bm		  = 150.7 / ini_cn_rat_blwmet
+  ,N_bs		  = 44 / ini_cn_rat_blwstr
+  ,N_fw		  = 118.7 / ini_cn_rat_fw
+  ,N_acw		= 401.6 / ini_cn_rat_acw
+  ,N_bcw		= 334.6 / ini_cn_rat_bcw
+  ,N_srfmic = 130.2 / ini_cn_rat_srfmic
+  ,N_mic		= 456.6 / ini_cn_rat_mic
+  ,N_slo		= 5367.9 / ini_cn_rat_slo
+  ,N_pas		= 7167.4 / ini_cn_rat_pas
+  ,N_ino		= 6
 )
 poolNames=names(iv)
 state_variable_names=names(iv)
 timeSymbol='t'
-times=seq(0,10,by=0.05)
+times = seq(0, 10000, by = 100)
+# times = c(0,10000)
 
 # now we formulate the same Model as (possibly) nonlinear Model
 # which does not change the solution but hides the information
@@ -54,20 +60,16 @@ mod=GeneralModel(
       ,timeSymbol='t'
 )
 sol=getC(mod)
+round(sol, digits = 4)
 df=cbind(sol,times)
 
 colnames(sol)<-poolNames
-for ( i in 1:ncol(sol)){
-    plot(x=times,y=sol[,i],ylab=paste('sol',i))
-}
-# example 
-name='C_am->C_mic'
-f=internal_fluxes[[name]]
-colnames(df)=c(poolNames,timeSymbol)
-flux_values=as.numeric(lapply(
-  1:length(times)
-  ,function(i){t=times[i]
-    flux=do.call("f",as.list(df[i,formalArgs(f)]))
+  for ( i in 1:ncol(sol)){
+    plot(x=times,y=sol[,i],ylab=paste('Carbon Stocks (gC*m-2) ','sol',i), type = 'l', cex.axis = 1.3)
   }
-))
-plot(times,flux_values,ylab=name)
+
+c_n_stocks = data.frame('times' = times, sol)
+
+# Plot results
+dir_out = '/home/corrado/SoilR-exp/pkg/inst/tests/src/'
+

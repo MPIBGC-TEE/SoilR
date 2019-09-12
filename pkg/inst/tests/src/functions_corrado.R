@@ -5,323 +5,459 @@ print_loud<-function(obj){
 }
 
 # Preliminary ----
-# Constants and parameters used in the model
+
+# General info *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# Site name:          Hainich
+# Country:            Germany
+# Type:               Forest
+# Specie:             Beech
+# Latitude (°):       51◦4′45.36′′N
+# Longitude (°):      10◦27′7.20′′E
+# Elevation (m):      440 m a.s.l.  (Kutsch et al., 2010)
+# Mean Annual Air T:  7.5-8 °C      (Kutsch et al., 2010)
+# Annual Rainfall:    750-800 mm    (Kutsch et al., 2010)
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Simulation run ('c-only' or 'cn-coupled')
+sim_type = 'cn-coupled'
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
 # Soil texture
-clay_frac = 0.2
-silt_frac = 0.3
-sand_frac = 0.5
+# Depth 50-60 cm
+clay_frac = 0.7000
+silt_frac = 0.2790
+sand_frac = 0.0174
+# Check if total soil texture is = 1
+tot_soilfrac = clay_frac + silt_frac + sand_frac
+if (tot_soilfrac < 0.99 | tot_soilfrac > 1) stop('ERROR: clay + silt + sand fractions are not equal 1')
 
-# Decomposition base rates (1/year)
-# To change into 1/day!!!
-kam  = 14.8
-kas  = 3.9
-kbm  = 18.5
-kbs  = 4.9
-kfw  = 0.3
-kacw = 0.3 # to change!
-kbcw = 0.3 # to change!
-kmic = 7.3
-kslo = 0.01
-kpas = 0.0045
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
-# Immobilization rate
-kn = 0.1 # to define!!! This is a default value!
+# Lignin content (gr lignin/gr biomass)
+ligfr_as  = 0.18
+ligfr_bs  = 0.18
+ligfr_fw  = 0.22
+ligfr_acw = 0.26
+ligfr_bcw = 0.26
+# Effect of Lignin/Structural ratio on decomposition
+pligst    = 3
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Effect of anaerobic conditions on decomposition
+anerb  = 1 # Computed in "anerob.f" in CENTURY4.0 code
+# Slope term to simulate the effect of anaerobic conditions on decomposition
+animpt = 5
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Decomposition base rates (1/year) (in parentesis the values from CENW model)
+k_am     = 14.8 #26.9
+k_as     = 3.9 #7.3
+k_bm     = 18.5 #33.6
+k_bs     = 4.9 #9
+k_fw     = 1.5 #3.65
+k_acw    = 0.5 #0.73
+k_bcw    = 0.6 #0.73
+k_srfmic = 6.0
+k_mic    = 7.3 #13.4
+k_slo    = 0.2 #0.36 # 0.01
+k_pas    = 0.0045 #0.013
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Fraction of Carbon lost as CO2
+# Metabolic litter
+co2am     = 0.55
+co2bm     = 0.55
+# Structural litter
+co2as1    = 0.45 # to mic SOM
+co2as2    = 0.30 # to slo SOM
+co2bs1    = 0.55 # to mic SOM
+co2bs2    = 0.30 # to slo SOM
+# Wood
+co2fw1    = 0.45
+co2fw2    = 0.30
+co2acw1   = 0.45
+co2acw2   = 0.30
+co2bcw1   = 0.55
+co2bcw2   = 0.30
+# Microbial SOM
+co2mic1   = 0.17
+co2mic2   = 0.68
+co2mic    = co2mic1 + co2mic2 * sand_frac
+co2slo    = 0.55
+co2pas    = 0.55 * anerb
+co2srfmic = 0.60
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Transfer fractions among SOM pools
+ps1s3a      = 0.003
+ps1s3b      = 0.032
+frmicpas    = (ps1s3a + ps1s3b * clay_frac) * (1 + animpt * (1 - anerb))
+frmicslo    = 1 - co2mic - frmicpas
+ps2s3a      = 0.003
+ps2s3b      = 0.009
+frslopas    = (ps2s3a + ps2s3b * clay_frac) * (1 + animpt * (1 - anerb))
+frslomic    = 1 - co2slo - frslopas
+frpasmic    = 1 - co2pas
+frsrfmicslo = 1 - co2srfmic
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+  
+# Effect of soil texture on the microbial decomposition rate
+peftxa = 0.25
+peftxb = 0.75
+eftext = peftxa + peftxb * sand_frac
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Soil temperature effect on SOM decomposition
+# Parameters 'a' and 'b' for the exponential equation implemented in CENTURY4 code
+par_a = 0.125
+par_b = 0.070
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# scaling factor for potential evapotranspiration (pevap.f in CENTURY4 code)
+fwloss_4 = 0.70
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
 # Plant uptake
-kup = 0.1 # to define!!! This is a default value!
+# kup = 0.05
 
-# Fractions of internal fluxes into SOM pools (constant over time)
-rslo  = 0.25      # (Fraction into Slow pool. Litter lignin concentration)
-rmic  = 1 - rslo  # (Fraction into Microbial pool)
-rms   = (1 - 0.004 - 0.17 * (clay_frac + silt_frac))
-rp    = 0.003 - 0.009 * clay_frac
-rsm   = 1 - 0.55 - rp
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Run settings ----
 
 # Time range and pool number
 t_start = 0
-t_end   = 20
-times       = seq(t_start, t_end, by = 1) # to check!!!
+t_end   = 10000
+times   = seq(t_start, t_end, by = 1)
 
-nr      = 21 # Number of pools
+nr      = 23 # Number of pools
 
 tn      = 100 
 tol     = .02 / tn
 
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
-# Temperature and Moisture values ----
-# Now set as default values. Given as input from a csv file
-TempData = data.frame(times, Temp = 15 + sin(2 * pi * times) 
-                      + rnorm(n = length(times), mean = 0, sd = 1))
-# Approximation function from temperature data. It's called by xi_T_W functions
-TempFunction = approxfun(x=TempData$times,y=TempData$Temp)
+# Carbon and Nitrogen input in Litter and Woody pools
+# cn_input = data.frame('t' = times, read.csv(file = '/home/corrado/SoilR-exp/pkg/inst/tests/src/cn_input.csv', header = T, sep = ','))
 
-MoisData = data.frame(times, Mois = 70 + 10 * sin(2 * pi * times - (pi / 7)) 
-                      + rnorm(n = length(times), mean = 0, sd = 1))
-# Approximation function from moisture data. It's called by xi_T_W functions
-MoisFunction = approxfun(x=MoisData$times,y=MoisData$Mois)
+# Input data ----
+
+# Litter input (gC*m-2*y-1)
+leaf_inp = 314 #340
+froo_inp = 178
+fw_inp   = 20
+acw_inp  = 20
+bcw_inp  = 20
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# CN ratios of residues
+cn_leaf = 50
+cn_froo = 40
+cn_wood = 200
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Initial C:N ratio for litter and SOM pools
+ini_cn_rat_abgmet = 88
+ini_cn_rat_abgstr = 88
+ini_cn_rat_blwmet = 66
+ini_cn_rat_blwstr = 66
+ini_cn_rat_fw     = 100 # set by me
+ini_cn_rat_acw    = 100 # set by me
+ini_cn_rat_bcw    = 100 # set by me
+ini_cn_rat_srfmic = 15
+ini_cn_rat_mic    = 14
+ini_cn_rat_slo    = 25
+ini_cn_rat_pas    = 12
+
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+requireNamespace('SoilR')
+# Climate data
+# (PPT = monthly precipitation (mm); PET = monthly evapotranspiration (mm); TempData = monthly temperature (°C))
+# Function "pevap" Compute Potential Evapotranspiration ----
+pevap <- function() {
+  
+  # Avg temp for each month
+  avgtemp = (maxtemp - mintemp) / 2
+  
+  # Minimum and Maximum temperature for each year
+  highest = max(avgtemp)
+  lowest  = min(avgtemp)
+  lowest  = max(lowest, -10)
+  
+  # Avg temp range
+  ra = abs(highest - lowest)
+  
+  # Temp range
+  tr = maxtemp - max(-10, mintemp)
+  t_fac  = tr / (2 + mintemp)
+  tm = t_fac + 0.006 * elev_site
+  td = 0.0023 * elev_site + 0.37 * t_fac + 0.53 * tr + 0.35 * ra -10.9
+  e_fac  = ((700 * tm / (100 - abs(latit_site))) + 15 * td) / (80 - t)
+  monpet = (e_fac * 30) / 10
+  
+  monpet = ifelse(monpet < 0.5
+                  ,0.5
+                  ,monpet
+  )
+  
+  pevap = monpet * fwloss_4
+  
+  
+}
+
+# Soil temperature and moisture effect on SOM decomposition ----
+
+TempData = c(length = length(times))
+TempData = data.frame('times' = times, 'Temp' = rep(7.9, TempData))
+# TempData = data.frame(times, 'Temp' = meteo$Temp)
+# Approximation function of temperature
+# TempFunction = approxfun(x = meteo$times, y = meteo$Temp)
+TempFunction = approxfun(x = TempData$times, y = TempData$Temp)
+
+# Temperature (function implemented in CENTURY 4)
+fT.Century4 <- function(Temp, par_a, par_b) {
+  par_a * exp(par_b * Temp)
+}
 
 # xi scalar computed by different combinations of Temp and Mois funcs
-requireNamespace('SoilR')
 xi_T1_W1 <- function(t){
-  fT.Q10(Temp = TempFunction(t), Q10 = 2)*
-    fW.Daycent1(swc =MoisFunction(t)/100)$wfunc
-}
-xi_T1_W2 <- function(t){
-  fT.Q10(Temp = TempFunction(t), Q10 = 2)*
-    fW.Gompertz(theta = MoisFunction(t))
+  fT.Century4(Temp = TempFunction(t), par_a, par_b)*
+    fW.Century(PPT = 800, PET = 500)
 }
 
-xi_T2_W1 <- function(t){
-  fT.Century1(Temp = TempFunction(t), Tmax = 45, Topt = 35)*
-    fW.Daycent1(swc =MoisFunction(t)/100)
-}
-xi_T2_W2 <- function(t){
-  fT.Century1(Temp = TempFunction(t), Tmax = 45, Topt = 35)*
-    fW.Gompertz(theta = MoisFunction(t))
-}
-xi_T3_W1 <- function(t){
-  fT.LandT(Temp = TempFunction(t))*
-    fW.Daycent1(swc =MoisFunction(t)/100)
-}
-xi_T3_W2 <- function(t){
-  fT.LandT(Temp = TempFunction(t))*
-    fW.Gompertz(theta = MoisFunction(t))
-}
-
-# Put all xi_T_W functions in a list
-xiFuncs = list(xi_T1_W1, xi_T1_W2, xi_T2_W1, xi_T2_W2, xi_T3_W1, xi_T3_W2)
-
-# The entire system in a for loop of "xi" in the xi_T_W func list
-# for (xi in xiFuncs){
-
-# For now set "xi" equal to xi_T1_W1
 xi <- xi_T1_W1
 
+# # Put all xi_T_W functions in a list
+# xiFuncs = list(xi_T1_W1, xi_T1_W2, xi_T2_W1, xi_T2_W2, xi_T3_W1, xi_T3_W2)
+# # The entire system in a for loop of "xi" in the xi_T_W func list
+# # for (xi in xiFuncs){
+
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-term1 <- function( # ----
-                   
-                   C_am
-                   ,N_am
-                   ,C_as
-                   ,N_as
-                   ,C_bm
-                   ,N_bm
-                   ,C_bs
-                   ,N_bs
-                   ,C_fw
-                   ,N_fw
-                   ,C_acw
-                   ,N_acw
-                   ,C_bcw
-                   ,N_bcw
-                   ,C_mic
-                   ,N_mic
-                   ,C_slo
-                   ,N_slo
-                   ,C_pas
-                   ,N_pas
-                   ,N_ino
-                   
-){
+# Function "fm_frac"_Split C,N input into Metabolic and Structural litter # ----
+fm_frac <- function(layer, ln_rat) {
   
-  term =  kam * N_am * (1 - 0.4 * ((C_am / N_am) / (C_mic / N_mic)) )                                                          +
-    kas * N_as * ( (1 - (0.4 * rmic * ((C_as / N_as) / (C_mic / N_mic))) - (rslo * ((C_as / N_as) / (C_slo / N_slo)))))        +
-    kbm * N_bm * (1 - 0.45 * ((C_bm / N_bm) / (C_mic / N_mic)) )                                                               +
-    kbs * N_bs * ( (1 - (0.45 * rmic * ((C_bs / N_bs) / (C_mic / N_mic))) - (rslo * ((C_bs / N_bs) / (C_slo / N_slo)))))       +
-    kfw * N_fw * ( (1 - (0.45 * rmic * ((C_fw / N_fw) / (C_mic / N_mic))) - (rslo * ((C_fw / N_fw) / (C_slo / N_slo)))))       +
-    kacw * N_acw * ( (1 - (0.45 * rmic * ((C_acw / N_acw) / (C_mic / N_mic))) - (rslo * ((C_acw / N_acw) / (C_slo / N_slo))))) +
-    kbcw * N_bcw * ( (1 - (0.45 * rmic * ((C_bcw / N_bcw) / (C_mic / N_mic))) - (rslo * ((C_bcw / N_bcw) / (C_slo / N_slo))))) +
-    kslo * N_slo * ( (1 - (rsm * ((C_slo / N_slo) / (C_mic / N_mic))) - (rp * ((C_slo / N_slo) / (C_slo / N_slo)))))           +
-    kpas * N_pas * (1 - 0.45 * ((C_pas / N_pas) / (C_mic / N_mic)) )
+  ifelse(layer == 'abg'
+         ,0.99 - ln_rat * 0.018
+         ,0.85 - ln_rat * 0.018
+  )
   
-  term
+}
+
+# Function "candec"_Verify if decomposition can occur (C,N decomposition limited by available inorganic Nitrogen) # ----
+candec <- function(c_cont, n_cont, cn_rat_new, N_ino) {
+  
+  ifelse(N_ino < 0
+         ,ifelse((c_cont / n_cont > cn_rat_new)
+                 ,FALSE
+                 ,TRUE
+         )
+         ,TRUE
+  )
+  
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-imm_max <- function( # ----
-                     C_am
-                     ,N_am
-                     ,C_as
-                     ,N_as
-                     ,C_bm
-                     ,N_bm
-                     ,C_bs
-                     ,N_bs
-                     ,C_fw
-                     ,N_fw
-                     ,C_acw
-                     ,N_acw
-                     ,C_bcw
-                     ,N_bcw
-                     ,C_mic
-                     ,N_mic
-                     ,C_slo
-                     ,N_slo
-                     ,C_pas
-                     ,N_pas
-                     ,N_ino
-                     ,t
+# Function "agdrat"_Compute the C:N ratio of new material from Aboveground pools entering Microbial SOM # ----
+pcemic1 = 16
+pcemic2 = 10
+pcemic3 = 0.02
+
+# Biomass conversion factor
+biocnv = 2.5 # non-wood material
+biocnv_wood = 2 # wood material
+
+cemicb = (pcemic2 - pcemic1) / pcemic3
+
+agdrat <- function(c_cont
+                   ,n_cont
+                   ,biocnv
+                   ,cemicb
+                   ,pcemic1
+                   ,pcemic2
+                   ,pcemic3) {
+        
+  econt = ifelse((c_cont * biocnv) <= 0
+                 ,0
+                 ,n_cont/(c_cont*biocnv)
+  )
+  
+  ifelse(econt > pcemic3
+         ,pcemic2
+         ,pcemic1 + econt * cemicb
+         
+  )  
+  
+}
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# Function "bgdrat"_Compute the C:N ratio of new material from Soil pools entering Microbial SOM # ----
+varat1_1 = 18
+varat1_2 = 8
+varat1_3 = 2
+
+varat2_1 = 40
+varat2_2 = 12
+varat2_3 = 2
+
+varat3_1 = 20
+varat3_2 = 6
+varat3_3 = 2
+
+bgdrat <- function(
+  N_ino
+  ,varatx_1
+  ,varatx_2
+  ,varatx_3
 ) {
   
-  # Maximum immobilization available
-  imm_max  = N_ino * kn * xi(t)
+  ifelse(N_ino <= 0
+         ,varatx_1
+         ,ifelse(N_ino > varatx_3
+                 ,varatx_2
+                 ,(1 - N_ino / varatx_3) * (varatx_1 - varatx_2) + varatx_2
+         )
+  )
+  
+}
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# Function "rnewas"_Compute C:N ratio from Abovegr. Structural Litter entering Slow SOM # ----
+rad1p1 = 12
+rad1p2 = 3
+rad1p3 = 5
+
+pcemic2 = 10
+
+rnewas <- function(c_cont
+                   ,n_cont
+                   ,rad1p1
+                   ,rad1p2
+                   ,rad1p3
+) 
+  {
+  
+  rnewas1 = agdrat (c_cont
+                    ,n_cont
+                    ,biocnv
+                    ,cemicb
+                    ,pcemic1
+                    ,pcemic2
+                    ,pcemic3
+  )
+  
+  radds1 = rad1p1 + rad1p2 * (rnewas1 - pcemic2)
+  rnewas2 = rnewas1 + radds1
+  rnewas2 = max(rnewas2, rad1p3)
+  
+}
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# Function "rneww1_2"_Compute C:N ratio to Slow SOM for Fine Wood # ----
+rneww1_2 <- function(c_cont
+                     ,n_cont
+                     ,rad1p1
+                     ,rad1p2
+                     ,rad1p3
+) 
+{
+  
+  rneww1 = agdrat (c_cont
+                   ,n_cont
+                    ,biocnv
+                    ,cemicb
+                    ,pcemic1
+                    ,pcemic2
+                    ,pcemic3
+  )
+  
+  radds1 = rad1p1 + rad1p2 * (rneww1 - pcemic2)
+  rneww1_2 = rneww1 + radds1
+  rneww1_2 = max(rneww1_2, rad1p3)
+  
+}
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# Function "rneww2_2"_Compute C:N ratio to Slow SOM for Abovegr. Coarse Wood # ----
+rneww2_2 <- function(c_cont
+                     ,n_cont
+                     ,rad1p1
+                     ,rad1p2
+                     ,rad1p3
+) 
+{
+  
+  rneww2 = agdrat (c_cont
+                   ,n_cont
+                   ,biocnv
+                   ,cemicb
+                   ,pcemic1
+                   ,pcemic2
+                   ,pcemic3
+  )
+  
+  radds1 = rad1p1 + rad1p2 * (rneww2 - pcemic2)
+  rneww2_2 = rneww2 + radds1
+  rneww2_2 = max(rneww2_2, rad1p3)
+  
+}
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# Function "esched"_Schedule Organic Nitrogen flux # ----
+esched <- function(c_transf, outofa, cn_rat_new) {
+
+  ifelse(outofa > 0,
+         ifelse((c_transf / outofa) > cn_rat_new
+                ,outofa
+                ,c_transf / cn_rat_new
+         )
+         ,0
+  )
 
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-phi_mn_scalar <- function( # ----
-                           C_am
-                           ,N_am
-                           ,C_as
-                           ,N_as
-                           ,C_bm
-                           ,N_bm
-                           ,C_bs
-                           ,N_bs
-                           ,C_fw
-                           ,N_fw
-                           ,C_acw
-                           ,N_acw
-                           ,C_bcw
-                           ,N_bcw
-                           ,C_mic
-                           ,N_mic
-                           ,C_slo
-                           ,N_slo
-                           ,C_pas
-                           ,N_pas
-                           ,N_ino
-  ,t
+# Function "mineral_n"_Schedule Nitrogen mineralization pathway # ----
+mineral_n <- function(c_transf, outofa, cn_rat_new) {
   
-){
-  
-  term1 = term1(
-    C_am
-    ,N_am
-    ,C_as
-    ,N_as
-    ,C_bm
-    ,N_bm
-    ,C_bs
-    ,N_bs
-    ,C_fw
-    ,N_fw
-    ,C_acw
-    ,N_acw
-    ,C_bcw
-    ,N_bcw
-    ,C_mic
-    ,N_mic
-    ,C_slo
-    ,N_slo
-    ,C_pas
-    ,N_pas
+  ifelse(outofa > 0,
+         ifelse((c_transf / outofa) > cn_rat_new
+                ,0
+                ,outofa - (c_transf / cn_rat_new)
+         )
+         ,0
   )
-  
-  imm_max = imm_max(
-    C_am
-    ,N_am
-    ,C_as
-    ,N_as
-    ,C_bm
-    ,N_bm
-    ,C_bs
-    ,N_bs
-    ,C_fw
-    ,N_fw
-    ,C_acw
-    ,N_acw
-    ,C_bcw
-    ,N_bcw
-    ,C_mic
-    ,N_mic
-    ,C_slo
-    ,N_slo
-    ,C_pas
-    ,N_pas
-    ,N_ino
-    ,t
-  )
-  
-  # Different conditions
-  # abs(xi(t) * term1) should be abs(phi), with "phi" =  xi(t) * term1 * phi_mn, with "phi_mn" = 1
-  phi_mn = ifelse(term1 < 0 & abs(xi(t) * term1) > imm_max, -kn * N_ino / term1, 1)
-  return(phi_mn) 
-}
-# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-phi <- function( # ----
-                 C_am
-                 ,N_am
-                 ,C_as
-                 ,N_as
-                 ,C_bm
-                 ,N_bm
-                 ,C_bs
-                 ,N_bs
-                 ,C_fw
-                 ,N_fw
-                 ,C_acw
-                 ,N_acw
-                 ,C_bcw
-                 ,N_bcw
-                 ,C_mic
-                 ,N_mic
-                 ,C_slo
-                 ,N_slo
-                 ,C_pas
-                 ,N_pas
-                 ,N_ino
-                 ,t
-                 
-) {
-  
-  phi_mn_scalar = phi_mn_scalar(
-    C_am
-    ,N_am
-    ,C_as
-    ,N_as
-    ,C_bm
-    ,N_bm
-    ,C_bs
-    ,N_bs
-    ,C_fw
-    ,N_fw
-    ,C_acw
-    ,N_acw
-    ,C_bcw
-    ,N_bcw
-    ,C_mic
-    ,N_mic
-    ,C_slo
-    ,N_slo
-    ,C_pas
-    ,N_pas
-    ,N_ino
-    ,t
-  )
-  
-  term1 = term1(
-    C_am
-    ,N_am
-    ,C_as
-    ,N_as
-    ,C_bm
-    ,N_bm
-    ,C_bs
-    ,N_bs
-    ,C_fw
-    ,N_fw
-    ,C_acw
-    ,N_acw
-    ,C_bcw
-    ,N_bcw
-    ,C_mic
-    ,N_mic
-    ,C_slo
-    ,N_slo
-    ,C_pas
-    ,N_pas
-  )
-  
-  phi = phi_mn_scalar * xi(t) * term1
   
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# Function "immob_n"_Schedule Nitrogen immobilization pathway # ----
+immob_n <- function(c_transf, outofa, cn_rat_new) {
+  
+  ifelse(outofa > 0,
+         ifelse((c_transf / outofa) > cn_rat_new
+                ,(c_transf / cn_rat_new) - outofa
+                ,0
+         )
+         ,0
+  )
+  
+}
+# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# NO!_Function "c_leaf" ----
+c_leaf <- function(t) {
+  
+  pos1 = which(cn_input$t == t)
+  if(length(pos1) > 0) cn_input$C_leaf[pos1]
+  
+}
+
+# NO!_Function "n_leaf" ----
+n_leaf <- function(t) {
+  
+  pos1 = which(cn_input$t == t)
+  if(length(pos1) > 0) cn_input$N_leaf[pos1]
+  
+}
