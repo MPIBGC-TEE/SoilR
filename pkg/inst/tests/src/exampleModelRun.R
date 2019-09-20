@@ -30,12 +30,12 @@ iv<-c(
   ,N_mic		= 456.6 / ini_cn_rat_mic
   ,N_slo		= 5367.9 / ini_cn_rat_slo
   ,N_pas		= 7167.4 / ini_cn_rat_pas
-  ,N_ino		= 6
+  ,N_ino		= 10
 )
 poolNames=names(iv)
 state_variable_names=names(iv)
 timeSymbol='t'
-times = seq(0, 10000, by = 100)
+times = seq(0, 15000, by = 100)
 # times = c(0,10000)
 
 # now we formulate the same Model as (possibly) nonlinear Model

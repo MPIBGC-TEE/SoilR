@@ -73,6 +73,8 @@ internal_fluxes[["C_am->C_srfmic"]] = function(
                        ,pcemic3
   )
 
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -130,7 +132,7 @@ internal_fluxes[["C_as->C_srfmic"]] = function(
   ,N_ino
   ,t
 ) {
-  
+
   c_cont = C_as
   n_cont = N_as
   cn_rat_new <- agdrat(c_cont
@@ -141,6 +143,8 @@ internal_fluxes[["C_as->C_srfmic"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -160,7 +164,7 @@ internal_fluxes[["C_as->C_srfmic"]] = function(
                   ,tcflow
                   ,C_as
   )
-  
+
   # Transfer Carbon flux if C is positive and Nitrogen is not limiting
   c_as_to_c_srfmic = ifelse(C_as > 0
                             ,ifelse(cando == TRUE
@@ -222,13 +226,13 @@ internal_fluxes[["C_as->C_slo"]] = function(
 
   # Carbon lost by the pool
   tcflow = k_as * xi(t) * C_as * exp(-pligst * ligfr_as)
-  
+
   # If decomposed carbon is higher then Carbon amount in the pool
   tcflow = ifelse(tcflow <= C_as
                   ,tcflow
                   ,C_as
   )
-  
+
   # Transfer Carbon flux if C is positive and Nitrogen is not limiting
   c_as_to_c_slo = ifelse(C_as > 0
                          ,ifelse(cando == TRUE
@@ -237,7 +241,7 @@ internal_fluxes[["C_as->C_slo"]] = function(
                          )
                          ,0
   )
-  
+
 }
 
 # Flux from Belowgr. Metabolic to Microbial SOM
@@ -291,7 +295,7 @@ internal_fluxes[["C_bm->C_mic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bm * xi(t) * C_bm * anerb
 
@@ -345,7 +349,7 @@ internal_fluxes[["C_bs->C_mic"]] = function(
   c_cont = C_bs
   n_cont = N_bs
   cn_rat_new = varat1_1
-  
+
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
                  ,candec(c_cont
@@ -354,7 +358,7 @@ internal_fluxes[["C_bs->C_mic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bs * xi(t) * C_bs * exp(-pligst * ligfr_bs) * anerb
 
@@ -408,7 +412,7 @@ internal_fluxes[["C_bs->C_slo"]] = function(
   c_cont = C_bs
   n_cont = N_bs
   cn_rat_new = varat1_2
-  
+
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
                  ,candec(c_cont
@@ -417,7 +421,7 @@ internal_fluxes[["C_bs->C_slo"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bs * xi(t) * C_bs * exp(-pligst * ligfr_bs) * anerb
 
@@ -476,7 +480,9 @@ internal_fluxes[["C_fw->C_srfmic"]] = function(
                      ,pcemic1
                      ,pcemic2
                      ,pcemic3)
-  
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -486,7 +492,7 @@ internal_fluxes[["C_fw->C_srfmic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_fw * xi(t) * C_fw * exp(-pligst * ligfr_fw)
 
@@ -554,7 +560,7 @@ internal_fluxes[["C_fw->C_slo"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_fw * xi(t) * C_fw * exp(-pligst * ligfr_fw)
 
@@ -563,7 +569,7 @@ internal_fluxes[["C_fw->C_slo"]] = function(
                   ,tcflow
                   ,C_fw
   )
-  
+
   # Transfer Carbon flux if C is positive and Nitrogen is not limiting
   c_fw_to_c_slo = ifelse(C_fw > 0
                          ,ifelse(cando == TRUE
@@ -615,6 +621,8 @@ internal_fluxes[["C_acw->C_srfmic"]] = function(
                        ,pcemic3
   )
 
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -624,7 +632,7 @@ internal_fluxes[["C_acw->C_srfmic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_acw * xi(t) * C_acw * exp(-pligst * ligfr_acw)
 
@@ -633,7 +641,7 @@ internal_fluxes[["C_acw->C_srfmic"]] = function(
                   ,tcflow
                   ,C_acw
   )
-  
+
   # Transfer Carbon flux if C is positive and Nitrogen is not limiting
   c_acw_to_c_srfmic = ifelse(C_acw > 0
                              ,ifelse(cando == TRUE
@@ -692,7 +700,7 @@ internal_fluxes[["C_acw->C_slo"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_acw * xi(t) * C_acw * exp(-pligst * ligfr_acw)
 
@@ -741,11 +749,11 @@ internal_fluxes[["C_bcw->C_mic"]] = function(
   ,t
 
 ) {
-  
+
   c_cont = C_bcw
   n_cont = N_bcw
   cn_rat_new = varat1_1
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -755,7 +763,7 @@ internal_fluxes[["C_bcw->C_mic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bcw * xi(t) * C_bcw * exp(-pligst * ligfr_bcw) * anerb
 
@@ -808,7 +816,7 @@ internal_fluxes[["C_bcw->C_slo"]] = function(
   c_cont = C_bcw
   n_cont = N_bcw
   cn_rat_new = varat2_2
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -818,7 +826,7 @@ internal_fluxes[["C_bcw->C_slo"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bcw * xi(t) * C_bcw * exp(-pligst * ligfr_bcw) * anerb
 
@@ -865,16 +873,16 @@ internal_fluxes[["C_srfmic->C_slo"]] = function(
   ,N_pas
   ,N_ino
   ,t
-  
+
 ) {
-  
+
   c_cont = C_srfmic
   n_cont = N_srfmic
-  
+
   radds1 = rad1p1 + rad1p2 * ((c_cont / n_cont) - pcemic2)
   cn_rat_new = c_cont / n_cont + radds1 # rceto2 in CENTURY4
   cn_rat_new = max(cn_rat_new, rad1p3)
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -884,10 +892,10 @@ internal_fluxes[["C_srfmic->C_slo"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_srfmic * xi(t) * C_srfmic
-  
+
   c_srfmic_to_c_slo = ifelse(C_srfmic > 0
                           ,ifelse(cando == TRUE
                                   ,frsrfmicslo * tcflow
@@ -895,7 +903,7 @@ internal_fluxes[["C_srfmic->C_slo"]] = function(
                           )
                           ,0
   )
-  
+
 }
 
 # Flux from Microbial SOM to Slow SOM
@@ -929,7 +937,7 @@ internal_fluxes[["C_mic->C_slo"]] = function(
 
   c_cont = C_mic
   n_cont = N_mic
-  
+
   varatx_1 = varat2_1
   varatx_2 = varat2_2
   varatx_3 = varat2_3
@@ -948,7 +956,7 @@ internal_fluxes[["C_mic->C_slo"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_mic * xi(t) * C_mic * eftext * anerb
 
@@ -994,7 +1002,7 @@ internal_fluxes[["C_mic->C_pas"]] = function(
 
   c_cont = C_mic
   n_cont = N_mic
-  
+
   varatx_1 = varat3_1
   varatx_2 = varat3_2
   varatx_3 = varat3_3
@@ -1013,7 +1021,7 @@ internal_fluxes[["C_mic->C_pas"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_mic * xi(t) * C_mic * eftext * anerb
 
@@ -1056,7 +1064,7 @@ internal_fluxes[["C_slo->C_mic"]] = function(
   ,t
 
 ) {
-  
+
   c_cont = C_slo
   n_cont = N_slo
 
@@ -1078,10 +1086,10 @@ internal_fluxes[["C_slo->C_mic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_slo * xi(t) * C_slo * anerb
-  
+
   # Transfer Carbon flux if C is positive and Nitrogen is not limiting
   c_slo_to_c_mic = ifelse(C_slo > 0
                           ,ifelse(cando == TRUE
@@ -1121,7 +1129,7 @@ internal_fluxes[["C_slo->C_pas"]] = function(
   ,t
 
 ) {
-  
+
   c_cont = C_slo
   n_cont = N_slo
 
@@ -1143,7 +1151,7 @@ internal_fluxes[["C_slo->C_pas"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_slo * xi(t) * C_slo * anerb
 
@@ -1189,7 +1197,7 @@ internal_fluxes[["C_pas->C_mic"]] = function(
 
   c_cont = C_slo
   n_cont = N_slo
-  
+
   varatx_1 = varat1_1
   varatx_2 = varat1_2
   varatx_3 = varat1_3
@@ -1208,7 +1216,7 @@ internal_fluxes[["C_pas->C_mic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_pas * xi(t) * C_pas * anerb
 
@@ -1244,6 +1252,8 @@ internal_fluxes[["N_am->N_srfmic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1266,6 +1276,8 @@ internal_fluxes[["N_am->N_srfmic"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -1319,6 +1331,8 @@ internal_fluxes[["N_as->N_srfmic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1340,6 +1354,8 @@ internal_fluxes[["N_as->N_srfmic"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -1393,6 +1409,8 @@ internal_fluxes[["N_as->N_slo"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1465,6 +1483,8 @@ internal_fluxes[["N_bm->N_mic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1541,6 +1561,8 @@ internal_fluxes[["N_bs->N_mic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1608,6 +1630,8 @@ internal_fluxes[["N_bs->N_slo"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1675,6 +1699,8 @@ internal_fluxes[["N_fw->N_srfmic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1696,6 +1722,8 @@ internal_fluxes[["N_fw->N_srfmic"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -1749,6 +1777,8 @@ internal_fluxes[["N_fw->N_slo"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1821,6 +1851,8 @@ internal_fluxes[["N_acw->N_srfmic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1842,6 +1874,8 @@ internal_fluxes[["N_acw->N_srfmic"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -1895,6 +1929,8 @@ internal_fluxes[["N_acw->N_slo"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -1967,6 +2003,8 @@ internal_fluxes[["N_bcw->N_mic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2034,6 +2072,8 @@ internal_fluxes[["N_bcw->N_slo"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2101,6 +2141,8 @@ internal_fluxes[["N_srfmic->N_slo"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2165,6 +2207,8 @@ internal_fluxes[["N_mic->N_slo"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2234,6 +2278,8 @@ internal_fluxes[["N_mic->N_pas"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2303,6 +2349,8 @@ internal_fluxes[["N_slo->N_mic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2372,6 +2420,8 @@ internal_fluxes[["N_slo->N_pas"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2441,6 +2491,8 @@ internal_fluxes[["N_pas->N_mic"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2513,6 +2565,8 @@ internal_fluxes[["N_am->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2535,6 +2589,8 @@ internal_fluxes[["N_am->N_ino"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -2588,6 +2644,8 @@ internal_fluxes[["N_as->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2610,6 +2668,8 @@ internal_fluxes[["N_as->N_ino"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -2711,6 +2771,8 @@ internal_fluxes[["N_bm->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2787,6 +2849,8 @@ internal_fluxes[["N_bs->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2899,6 +2963,8 @@ internal_fluxes[["N_fw->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -2922,6 +2988,8 @@ internal_fluxes[["N_fw->N_ino"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -3023,6 +3091,8 @@ internal_fluxes[["N_acw->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -3046,6 +3116,8 @@ internal_fluxes[["N_acw->N_ino"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -3147,6 +3219,8 @@ internal_fluxes[["N_bcw->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -3259,6 +3333,8 @@ internal_fluxes[["N_srfmic->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -3323,6 +3399,8 @@ internal_fluxes[["N_mic->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -3438,6 +3516,8 @@ internal_fluxes[["N_slo->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -3554,6 +3634,8 @@ internal_fluxes[["N_pas->N_ino"]] = function(
   ,N_acw
   ,C_bcw
   ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
   ,C_mic
   ,N_mic
   ,C_slo
@@ -3651,6 +3733,8 @@ internal_fluxes[["N_ino->N_srfmic"]] = function(
                        ,pcemic3
   )
 
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -3697,6 +3781,8 @@ internal_fluxes[["N_ino->N_srfmic"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
 
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
@@ -3745,6 +3831,8 @@ internal_fluxes[["N_ino->N_srfmic"]] = function(
                        ,pcemic3
   )
 
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -3792,6 +3880,8 @@ internal_fluxes[["N_ino->N_srfmic"]] = function(
                        ,pcemic3
   )
 
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -3828,7 +3918,7 @@ internal_fluxes[["N_ino->N_srfmic"]] = function(
 
   # Total Immobilized Nitrogen
   n_ino_to_n_srfmic = n_ino_to_n_srfmic_1 + n_ino_to_n_srfmic_2 + n_ino_to_n_srfmic_3 + n_ino_to_n_srfmic_4
-  
+
 
 }
 
@@ -4571,7 +4661,9 @@ out_fluxes[["C_am"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
-  
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -4581,7 +4673,7 @@ out_fluxes[["C_am"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_am * xi(t) * C_am
 
@@ -4643,7 +4735,9 @@ out_fluxes[["C_as"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
-  
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -4653,8 +4747,8 @@ out_fluxes[["C_as"]] = function(
                          ,N_ino
                  )
   )
-  
-  # Carbon lost by the pool
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')# Carbon lost by the pool
   tcflow = k_as * xi(t) * C_as * exp(-pligst * ligfr_as)
 
   # If decomposed carbon is higher then Carbon amount in the pool
@@ -4681,7 +4775,7 @@ out_fluxes[["C_as"]] = function(
                        ,rad1p2
                        ,rad1p3
   )
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -4691,7 +4785,7 @@ out_fluxes[["C_as"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_as * xi(t) * C_as * exp(-pligst * ligfr_as)
 
@@ -4752,7 +4846,7 @@ out_fluxes[["C_bm"]] = function(
                        ,varatx_2
                        ,varatx_3
   )
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   c_cont = C_bm
   n_cont = N_bm
@@ -4764,7 +4858,7 @@ out_fluxes[["C_bm"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bm * xi(t) * C_bm * anerb
 
@@ -4819,7 +4913,7 @@ out_fluxes[["C_bs"]] = function(
   c_cont = C_bs
   n_cont = N_bs
   cn_rat_new = varat1_1
-  
+
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
                  ,candec(c_cont
@@ -4828,7 +4922,7 @@ out_fluxes[["C_bs"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bs * xi(t) * C_bs * exp(-pligst * ligfr_bs) * anerb
 
@@ -4852,7 +4946,7 @@ out_fluxes[["C_bs"]] = function(
   c_cont = C_bs
   n_cont = N_bs
   cn_rat_new = varat1_2
-  
+
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
                  ,candec(c_cont
@@ -4861,7 +4955,7 @@ out_fluxes[["C_bs"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bs * xi(t) * C_bs * exp(-pligst * ligfr_bs) * anerb
 
@@ -4923,7 +5017,9 @@ out_fluxes[["C_fw"]] = function(
                        ,pcemic1
                        ,pcemic2
                        ,pcemic3)
-  
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -4933,7 +5029,7 @@ out_fluxes[["C_fw"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_fw * xi(t) * C_fw * exp(-pligst * ligfr_fw)
 
@@ -4961,7 +5057,7 @@ out_fluxes[["C_fw"]] = function(
                          ,rad1p2
                          ,rad1p3
   )
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -4971,7 +5067,7 @@ out_fluxes[["C_fw"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_fw * xi(t) * C_fw * exp(-pligst * ligfr_fw)
 
@@ -5034,7 +5130,9 @@ out_fluxes[["C_acw"]] = function(
                        ,pcemic2
                        ,pcemic3
   )
-  
+
+  if (cn_rat_new < 10 | cn_rat_new > 16) stop('ERROR: cn_rat_new out of range!')
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -5044,7 +5142,7 @@ out_fluxes[["C_acw"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_acw * xi(t) * C_acw * exp(-pligst * ligfr_acw)
 
@@ -5072,7 +5170,7 @@ out_fluxes[["C_acw"]] = function(
                          ,rad1p2
                          ,rad1p3
   )
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -5082,7 +5180,7 @@ out_fluxes[["C_acw"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_acw * xi(t) * C_acw * exp(-pligst * ligfr_acw)
 
@@ -5138,7 +5236,7 @@ out_fluxes[["C_bcw"]] = function(
   c_cont = C_bcw
   n_cont = N_bcw
   cn_rat_new = varat1_1
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -5148,7 +5246,7 @@ out_fluxes[["C_bcw"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bcw * xi(t) * C_bcw * exp(-pligst * ligfr_bcw) * anerb
 
@@ -5171,7 +5269,7 @@ out_fluxes[["C_bcw"]] = function(
   c_cont = C_bcw
   n_cont = N_bcw
   cn_rat_new = varat2_2
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -5181,7 +5279,7 @@ out_fluxes[["C_bcw"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_bcw * xi(t) * C_bcw * exp(-pligst * ligfr_bcw) * anerb
 
@@ -5230,16 +5328,16 @@ out_fluxes[["C_srfmic"]] = function(
   ,N_pas
   ,N_ino
   ,t
-  
+
 ) {
-  
+
   c_cont = C_srfmic
   n_cont = N_srfmic
-  
+
   radds1 = rad1p1 + rad1p2 * ((c_cont / n_cont) - pcemic2)
   cn_rat_new = c_cont / n_cont + radds1 # rceto2 in CENTURY4
   cn_rat_new = max(cn_rat_new, rad1p3)
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -5249,10 +5347,10 @@ out_fluxes[["C_srfmic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_srfmic * xi(t) * C_srfmic
-  
+
   # Respired Carbon flux if C is positive and Nitrogen is not limiting
   c_srfmic_to_c_slo = ifelse(C_srfmic > 0
                              ,ifelse(cando == TRUE
@@ -5261,7 +5359,7 @@ out_fluxes[["C_srfmic"]] = function(
                              )
                              ,0
   )
-  
+
 }
 
 # Flux from Microbial SOM
@@ -5295,7 +5393,7 @@ out_fluxes[["C_mic"]] = function(
 
   c_cont = C_mic
   n_cont = N_mic
-  
+
   varatx_1 = varat2_1
   varatx_2 = varat2_2
   varatx_3 = varat2_3
@@ -5304,7 +5402,7 @@ out_fluxes[["C_mic"]] = function(
                        ,varatx_2
                        ,varatx_3
   )
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -5314,7 +5412,7 @@ out_fluxes[["C_mic"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_mic * xi(t) * C_mic * eftext * anerb
 
@@ -5357,10 +5455,10 @@ out_fluxes[["C_slo"]] = function(
   ,t
 
 ) {
-  
+
   c_cont = C_slo
   n_cont = N_slo
-  
+
   varatx_1 = varat1_1
   varatx_2 = varat1_2
   varatx_3 = varat1_3
@@ -5369,7 +5467,7 @@ out_fluxes[["C_slo"]] = function(
                        ,varatx_2
                        ,varatx_3
   )
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -5379,7 +5477,7 @@ out_fluxes[["C_slo"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_slo * xi(t) * C_slo * anerb
 
@@ -5422,10 +5520,10 @@ out_fluxes[["C_pas"]] = function(
   ,t
 
 ) {
-  
+
   c_cont = C_slo
   n_cont = N_slo
-  
+
   varatx_1 = varat1_1
   varatx_2 = varat1_2
   varatx_3 = varat1_3
@@ -5434,7 +5532,7 @@ out_fluxes[["C_pas"]] = function(
                        ,varatx_2
                        ,varatx_3
   )
-  
+
   # Verify if decomposition can occur (Nitrogen limitations)
   cando = ifelse(sim_type == 'c-only'
                  ,TRUE
@@ -5444,7 +5542,7 @@ out_fluxes[["C_pas"]] = function(
                          ,N_ino
                  )
   )
-  
+
   # Carbon lost by the pool
   tcflow = k_pas * xi(t) * C_pas * anerb
 
@@ -5677,6 +5775,37 @@ out_fluxes[["N_bcw"]] = function(
 }
 
 # Flux from Microbial SOM Nitrogen
+out_fluxes[["N_srfmic"]] = function(
+  C_am
+  ,N_am
+  ,C_as
+  ,N_as
+  ,C_bm
+  ,N_bm
+  ,C_bs
+  ,N_bs
+  ,C_fw
+  ,N_fw
+  ,C_acw
+  ,N_acw
+  ,C_bcw
+  ,N_bcw
+  ,C_srfmic
+  ,N_srfmic
+  ,C_mic
+  ,N_mic
+  ,C_slo
+  ,N_slo
+  ,C_pas
+  ,N_pas
+  ,N_ino
+  ,t
+
+) {
+  0
+}
+
+# Flux from Microbial SOM Nitrogen
 out_fluxes[["N_mic"]] = function(
   C_am
   ,N_am
@@ -5797,7 +5926,7 @@ out_fluxes[["N_ino"]] = function(
   ,t
 
 ) {
-  0 #kup * N_ino
+  kup * N_ino
 }
 
 # Input fluxes - Constant (Carbon fluxes) ----

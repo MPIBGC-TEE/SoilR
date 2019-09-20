@@ -25,9 +25,10 @@ sim_type = 'cn-coupled'
 
 # Soil texture
 # Depth 50-60 cm
-clay_frac = 0.7000
+clay_frac = 0.70
 silt_frac = 0.2790
 sand_frac = 0.0174
+          
 # Check if total soil texture is = 1
 tot_soilfrac = clay_frac + silt_frac + sand_frac
 if (tot_soilfrac < 0.99 | tot_soilfrac > 1) stop('ERROR: clay + silt + sand fractions are not equal 1')
@@ -127,7 +128,7 @@ fwloss_4 = 0.70
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
 # Plant uptake
-# kup = 0.05
+kup = 0.1
 
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
@@ -135,7 +136,7 @@ fwloss_4 = 0.70
 
 # Time range and pool number
 t_start = 0
-t_end   = 10000
+t_end   = 15000
 times   = seq(t_start, t_end, by = 1)
 
 nr      = 23 # Number of pools
@@ -244,7 +245,7 @@ xi <- xi_T1_W1
 # # for (xi in xiFuncs){
 
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "fm_frac"_Split C,N input into Metabolic and Structural litter # ----
+# Function "fm_frac"____Split C,N input into Metabolic and Structural litter # ----
 fm_frac <- function(layer, ln_rat) {
   
   ifelse(layer == 'abg'
@@ -254,7 +255,7 @@ fm_frac <- function(layer, ln_rat) {
   
 }
 
-# Function "candec"_Verify if decomposition can occur (C,N decomposition limited by available inorganic Nitrogen) # ----
+# Function "candec"_____Verify if decomposition can occur (C,N decomposition limited by available inorganic Nitrogen) # ----
 candec <- function(c_cont, n_cont, cn_rat_new, N_ino) {
   
   ifelse(N_ino < 0
@@ -267,7 +268,7 @@ candec <- function(c_cont, n_cont, cn_rat_new, N_ino) {
   
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "agdrat"_Compute the C:N ratio of new material from Aboveground pools entering Microbial SOM # ----
+# Function "agdrat"_____Compute the C:N ratio of new material from Aboveground pools entering Microbial SOM # ----
 pcemic1 = 16
 pcemic2 = 10
 pcemic3 = 0.02
@@ -299,7 +300,7 @@ agdrat <- function(c_cont
   
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "bgdrat"_Compute the C:N ratio of new material from Soil pools entering Microbial SOM # ----
+# Function "bgdrat"_____Compute the C:N ratio of new material from Soil pools entering Microbial SOM # ----
 varat1_1 = 18
 varat1_2 = 8
 varat1_3 = 2
@@ -309,7 +310,7 @@ varat2_2 = 12
 varat2_3 = 2
 
 varat3_1 = 20
-varat3_2 = 6
+varat3_2 = 6 # tried with 8
 varat3_3 = 2
 
 bgdrat <- function(
@@ -329,37 +330,37 @@ bgdrat <- function(
   
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "rnewas"_Compute C:N ratio from Abovegr. Structural Litter entering Slow SOM # ----
-rad1p1 = 12
-rad1p2 = 3
-rad1p3 = 5
-
-pcemic2 = 10
-
-rnewas <- function(c_cont
-                   ,n_cont
-                   ,rad1p1
-                   ,rad1p2
-                   ,rad1p3
-) 
-  {
+# Function "rnewas"_____Compute C:N ratio from Abovegr. Structural Litter entering Slow SOM # ----
+  rad1p1 = 12
+  rad1p2 = 3
+  rad1p3 = 5
   
-  rnewas1 = agdrat (c_cont
-                    ,n_cont
-                    ,biocnv
-                    ,cemicb
-                    ,pcemic1
-                    ,pcemic2
-                    ,pcemic3
-  )
+  pcemic2 = 10
   
-  radds1 = rad1p1 + rad1p2 * (rnewas1 - pcemic2)
-  rnewas2 = rnewas1 + radds1
-  rnewas2 = max(rnewas2, rad1p3)
-  
-}
-# *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "rneww1_2"_Compute C:N ratio to Slow SOM for Fine Wood # ----
+  rnewas <- function(c_cont
+                     ,n_cont
+                     ,rad1p1
+                     ,rad1p2
+                     ,rad1p3
+  ) 
+    {
+    
+    rnewas1 = agdrat (c_cont
+                      ,n_cont
+                      ,biocnv
+                      ,cemicb
+                      ,pcemic1
+                      ,pcemic2
+                      ,pcemic3
+    )
+    
+    radds1 = rad1p1 + rad1p2 * (rnewas1 - pcemic2)
+    rnewas2 = rnewas1 + radds1
+    rnewas2 = max(rnewas2, rad1p3)
+    
+  }
+  # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+# Function "rneww1_2"___Compute C:N ratio to Slow SOM for Fine Wood # ----
 rneww1_2 <- function(c_cont
                      ,n_cont
                      ,rad1p1
@@ -383,7 +384,7 @@ rneww1_2 <- function(c_cont
   
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "rneww2_2"_Compute C:N ratio to Slow SOM for Abovegr. Coarse Wood # ----
+# Function "rneww2_2"___Compute C:N ratio to Slow SOM for Abovegr. Coarse Wood # ----
 rneww2_2 <- function(c_cont
                      ,n_cont
                      ,rad1p1
@@ -407,11 +408,11 @@ rneww2_2 <- function(c_cont
   
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "esched"_Schedule Organic Nitrogen flux # ----
+# Function "esched"_____Schedule Organic Nitrogen flux # ----
 esched <- function(c_transf, outofa, cn_rat_new) {
 
   ifelse(outofa > 0,
-         ifelse((c_transf / outofa) > cn_rat_new
+         ifelse((c_transf / (outofa + 0.0000001)) > cn_rat_new
                 ,outofa
                 ,c_transf / cn_rat_new
          )
@@ -420,11 +421,11 @@ esched <- function(c_transf, outofa, cn_rat_new) {
 
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "mineral_n"_Schedule Nitrogen mineralization pathway # ----
+# Function "mineral_n"__Schedule Nitrogen mineralization pathway # ----
 mineral_n <- function(c_transf, outofa, cn_rat_new) {
   
   ifelse(outofa > 0,
-         ifelse((c_transf / outofa) > cn_rat_new
+         ifelse((c_transf / (outofa + 0.0000001)) > cn_rat_new
                 ,0
                 ,outofa - (c_transf / cn_rat_new)
          )
@@ -433,11 +434,11 @@ mineral_n <- function(c_transf, outofa, cn_rat_new) {
   
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# Function "immob_n"_Schedule Nitrogen immobilization pathway # ----
+# Function "immob_n"____Schedule Nitrogen immobilization pathway # ----
 immob_n <- function(c_transf, outofa, cn_rat_new) {
   
   ifelse(outofa > 0,
-         ifelse((c_transf / outofa) > cn_rat_new
+         ifelse((c_transf / (outofa + 0.0000001)) > cn_rat_new
                 ,(c_transf / cn_rat_new) - outofa
                 ,0
          )
@@ -446,18 +447,3 @@ immob_n <- function(c_transf, outofa, cn_rat_new) {
   
 }
 # *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-# NO!_Function "c_leaf" ----
-c_leaf <- function(t) {
-  
-  pos1 = which(cn_input$t == t)
-  if(length(pos1) > 0) cn_input$C_leaf[pos1]
-  
-}
-
-# NO!_Function "n_leaf" ----
-n_leaf <- function(t) {
-  
-  pos1 = which(cn_input$t == t)
-  if(length(pos1) > 0) cn_input$N_leaf[pos1]
-  
-}
