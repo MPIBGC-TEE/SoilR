@@ -29,18 +29,23 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         ConstantOutFluxRate_by_PoolName.R InFluxList_by_PoolIndex.R
         InFluxList_by_PoolName.R
         StateIndependentInFluxList_by_PoolIndex.R
+	StateDependentInFluxVector.R
         OutFluxList_by_PoolIndex.R OutFluxList_by_PoolName.R
         InternalFluxList_by_PoolIndex.R InternalFluxList_by_PoolName.R
         ConstantInFluxList_by_PoolIndex.R
         ConstantInternalFluxRateList_by_PoolIndex.R
         ConstantInternalFluxRateList_by_PoolName.R
-        ConstantOutFluxRateList_by_PoolIndex.R Fc.R HelperFunctions.R
+        ConstantOutFluxRateList_by_PoolIndex.R 
+        ConstantOutFluxRateList_by_PoolName.R 
+	Fc.R HelperFunctions.R
         OutFlux.R BoundInFluxes.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R
         SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
         UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R
         UnBoundNonLinDecompOp.R
-        DecompositionOperator_deprecated_in_1.2.R Model.R Model_14.R
+        DecompositionOperator_deprecated_in_1.2.R 
+	Model_by_PoolNames.R
+	Model.R Model_14.R
         NlModel.R AutonomousLinearModel.R NonAutonomousLinearModel.R
         AWBmodel.R bacwaveModel.R bind.C14curves.R BoundFc.R
         CenturyModel.R CenturyModel_new.R ConstFc.R ConstLinDecompOp.R
