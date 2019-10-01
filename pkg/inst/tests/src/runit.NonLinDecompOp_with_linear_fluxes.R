@@ -1,4 +1,4 @@
- test the constructor
+# test the constructor
 test.function_by_PoolIndex=function(){
     poolNames=c('barrel','glass','belly')
     timeSymbol='t'
@@ -143,7 +143,6 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
     rhs_cl=getRightHandSideOfODE(mod_cl)
     rhs_cl_0=rhs_cl(iv,0)
     pe(rhs_cl_0)
-    sol_cl=getC(mod_cl)
  
     # now we formulate the same Model as (possibly) nonlinear Model
     # which does not change the solution but hides the information
@@ -237,17 +236,15 @@ test.NonLinDecompOp_with_linear_fluxes_by_Name=function(){
     )
     I_0=I_func(iv,0)
     I_0_cl=I_func_cl(0)
-    pe(I_0)
-    pe(I_0_cl)
     rhs=getRightHandSideOfODE(mod)
     rhs_0=rhs(iv,0)
-    pe(rhs_0)
     sol=getC(mod)
+    co2=getReleaseFlux(mod)
     sol_cl=getC(mod_cl)
-    plot(x=times,y=sol[,2])
-    #lines(x=times,y=sol_cl[,1],col='red')
-    #plot(x=times,y=sol_cl[,1],col='red')
-    lines(x=times,y=sol_cl[,2],col='red')
-    #plot(x=times,y=sol_cl[,3])
+    co2_cl=getReleaseFlux(mod_cl)
+    #plot(x=times,y=sol[,2])
+    #lines(x=times,y=sol_cl[,2],col='red')
+    plot(x=times,y=co2[,1])
+    lines(x=times,y=co2_cl[,1],col='red')
 
 }

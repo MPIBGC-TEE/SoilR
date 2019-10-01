@@ -18,6 +18,35 @@ setMethod(
             return(Y)
         }
     )
+
+setMethod(
+   f= "getReleaseFlux",
+      signature= "Model_by_PoolNames",
+      definition=function 
+      (
+      object 
+      ){
+      C=getC(object)
+      times=object@times
+      initialValues=object@initialValues
+      timeSymbol=object@timeSymbol
+      state_variable_names=names(initialValues)
+      Atm=object@mat
+      timeSymbol=object@timeSymbol
+      BFunc=getCompartmentalMatrixFunc( Atm ,timeSymbol ,state_variable_names)
+      n=length(initialValues)
+      testvec=matrix(nrow=1,ncol=n,1)
+      rfunc= function(sol,t){
+          -testvec%*%BFunc(sol,t)
+      }
+      t_inds=1:length(times)
+      l=sapply(t_inds,function(i){ rfunc(C[i,],times[[i]])})
+      if (n==1) { r=matrix(ncol=n,l)}
+      else {r=t(l)}
+      R=r*C
+      return(R)
+   }
+)
 setMethod(
     f='getRightHandSideOfODE'
     ,signature= "Model_by_PoolNames"

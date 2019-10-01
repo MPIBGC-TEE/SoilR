@@ -60,6 +60,7 @@ mod=GeneralModel(
       ,timeSymbol='t'
 )
 sol=getC(mod)
+co2=getReleaseFlux(mod)
 round(sol, digits = 4)
 df=cbind(sol,times)
 

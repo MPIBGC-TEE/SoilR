@@ -268,10 +268,10 @@ setMethod(
       A=getFunctionDefinition(Atm)
       n=length(object@initialValues)
       rfunc=RespirationCoefficients(A)
-      if (n==1) { r=matrix(ncol=n,sapply(times,rfunc))}
-      else {r=t(sapply(times,rfunc))}
+      l=sapply(times,rfunc)
+      if (n==1) { r=matrix(ncol=n,l)}
+      else {r=t(l)}
       R=r*C
-      f=function(i){paste("ReleaseFlux",i,sep="")}
       return(R)
    }
 )
