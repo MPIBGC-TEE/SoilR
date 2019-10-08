@@ -1,7 +1,3 @@
-setClass(
-  Class="ConstantOutFluxRate_by_PoolIndex",
-  slots=c(sourceIndex='PoolId',rate_constant='numeric')
-)
 setMethod(
     'ConstantOutFluxRate_by_PoolIndex'
     ,signature=signature(

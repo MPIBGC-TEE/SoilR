@@ -4,9 +4,21 @@
 \alias{SeriesLinearModel14}
 \title{General m-pool linear C14 model with series structure}
 \usage{
-SeriesLinearModel14(t, m.pools, ki, Tij, C0, F0_Delta14C, In, xi = 1,
-  inputFc, lambda = -0.0001209681, lag = 0,
-  solver = deSolve.lsoda.wrapper, pass = FALSE)
+SeriesLinearModel14(
+  t,
+  m.pools,
+  ki,
+  Tij,
+  C0,
+  F0_Delta14C,
+  In,
+  xi = 1,
+  inputFc,
+  lambda = -0.0001209681,
+  lag = 0,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

@@ -4,8 +4,16 @@
 \alias{TwopSeriesModel}
 \title{Implementation of a two pool model with series structure}
 \usage{
-TwopSeriesModel(t, ks, a21, C0, In, xi = 1,
-  solver = deSolve.lsoda.wrapper, pass = FALSE)
+TwopSeriesModel(
+  t,
+  ks,
+  a21,
+  C0,
+  In,
+  xi = 1,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

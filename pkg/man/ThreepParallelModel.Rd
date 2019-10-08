@@ -4,8 +4,17 @@
 \alias{ThreepParallelModel}
 \title{Implementation of a three pool model with parallel structure}
 \usage{
-ThreepParallelModel(t, ks, C0, In, gam1, gam2, xi = 1,
-  solver = deSolve.lsoda.wrapper, pass = FALSE)
+ThreepParallelModel(
+  t,
+  ks,
+  C0,
+  In,
+  gam1,
+  gam2,
+  xi = 1,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

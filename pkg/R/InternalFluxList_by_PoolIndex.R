@@ -1,9 +1,3 @@
-
-setClass(
-  Class = "InternalFluxList_by_PoolIndex",
-  contains=c("list")
-)
-
 #' constructor from a normal list
 #'
 #' after checking the elememts

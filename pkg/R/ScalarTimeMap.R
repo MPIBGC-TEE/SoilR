@@ -1,8 +1,3 @@
-setClass(
-   Class="ScalarTimeMap",
-   contains=c('TimeMap')
-)
-
 #' constructor 
 #'
 #' The arguments are passed through to create a function of time (an object of class \code{\link{TimeMap}}) which is susequently checked to yield a scalar numeric value

@@ -4,11 +4,17 @@
 \alias{Yasso07Model}
 \title{Implementation of the Yasso07 model}
 \usage{
-Yasso07Model(t, ks = c(kA = 0.66, kW = 4.3, kE = 0.35, kN = 0.22, kH =
-  0.0033), p = c(p1 = 0.32, p2 = 0.01, p3 = 0.93, p4 = 0.34, p5 = 0, p6 =
-  0, p7 = 0.035, p8 = 0.005, p9 = 0.01, p10 = 5e-04, p11 = 0.03, p12 =
-  0.92, pH = 0.04), C0, In, xi = 1, solver = deSolve.lsoda.wrapper,
-  pass = FALSE)
+Yasso07Model(
+  t,
+  ks = c(kA = 0.66, kW = 4.3, kE = 0.35, kN = 0.22, kH = 0.0033),
+  p = c(p1 = 0.32, p2 = 0.01, p3 = 0.93, p4 = 0.34, p5 = 0, p6 = 0, p7 = 0.035, p8 =
+    0.005, p9 = 0.01, p10 = 5e-04, p11 = 0.03, p12 = 0.92, pH = 0.04),
+  C0,
+  In,
+  xi = 1,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

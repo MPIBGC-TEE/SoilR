@@ -4,9 +4,23 @@
 \alias{ThreepFeedbackModel14}
 \title{Implementation of a three-pool C14 model with feedback structure}
 \usage{
-ThreepFeedbackModel14(t, ks, C0, F0_Delta14C, In, a21, a12, a32, a23,
-  xi = 1, inputFc, lambda = -0.0001209681, lag = 0,
-  solver = deSolve.lsoda.wrapper, pass = FALSE)
+ThreepFeedbackModel14(
+  t,
+  ks,
+  C0,
+  F0_Delta14C,
+  In,
+  a21,
+  a12,
+  a32,
+  a23,
+  xi = 1,
+  inputFc,
+  lambda = -0.0001209681,
+  lag = 0,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

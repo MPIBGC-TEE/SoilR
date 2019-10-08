@@ -4,8 +4,14 @@
 \alias{ParallelModel}
 \title{models for unconnected pools}
 \usage{
-ParallelModel(times, coeffs_tm, startvalues, inputrates,
-  solverfunc = deSolve.lsoda.wrapper, pass = FALSE)
+ParallelModel(
+  times,
+  coeffs_tm,
+  startvalues,
+  inputrates,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{times}{A vector containing the points in time where the solution is

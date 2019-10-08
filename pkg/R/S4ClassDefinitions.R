@@ -6,20 +6,44 @@ setClass(
   contains=c("list")
 )
 
+#' S4-class for a single internal flux wiht source and destination pools specified by name
+#'
+setClass(
+  Class="InternalFlux_by_PoolIndex",
+  # contains="PoolConnection", we do not want to iherit mehtods...
+  slots=c(sourceIndex='PoolIndex',destinationIndex='PoolIndex',func='function')
+)
 
-#--------------------------------
+#' S4-class for a list of internal fluxes with source and destination pool inidices 
+#'
+setClass(
+  Class = "InternalFluxList_by_PoolIndex",
+  contains=c("list")
+)
+
+
+#' S4-class for a list of internal fluxes with indexed by (source and destination pool) names
+#'
 setClass(
   Class = "InternalFluxList_by_PoolName",
   contains=c("list")
 )
 
-#--------------------------------
+#' S4-class for a single out fluxe with source pool index
+#'
+setClass(
+  Class="OutFlux_by_PoolIndex",
+  # contains="PoolConnection", we do not want to iherit mehtods...
+  slots=c(sourceIndex='PoolIndex',func='function')
+)
+
 setClass(
   Class = "OutFluxList_by_PoolName",
   contains=c("list")
 )
 
-#--------------------------------
+#' A virtual S4-class representing (different subclasses) of in-fluxes to the system
+#' 
 setClass(
    Class="InFluxes",
    contains="VIRTUAL"
@@ -39,6 +63,19 @@ StateDependentInFluxVector<-setClass(
    )
 )
 #--------------------------------
+
+#' S4 class for a constant influx vector 
+#' 
+#' It is mainly used to dispatch S4-methods for computations that 
+#' are valid only if the influx is constant.
+#' This knowledge can either be used to speed up computations or to decide if they are
+#' possible at all.
+#' E.g. the computation of equilibria for a model run requires autonomy of the model which 
+#' requires the influxes to be time independent. If the model is linear  
+#' and compartmental then the (unique) equilibrium can be computed.
+#' Accordingly a method with ConstInFluxes in the signature can be implemented, whereas 
+#' none would be available for a general InFluxes argument.
+
 setClass(
    Class="ConstInFluxes",
    contains=c("InFluxes"),
@@ -58,7 +95,7 @@ setClass(
 #' reasons:
 #' SoilR allows to specify measured data for many of its arguments
 #' and computes the interpolating functions automatically.
-#' The functions returned bye the standard R interpolation mechanisms
+#' The functions returned by the standard R interpolation mechanisms
 #' like \code{splinefun} or \code{approxfun} do not provide a safeguard 
 #' against accidental extrapolation.  
 #' Internally SoilR converts nearly all data to time dependent functions 
@@ -76,6 +113,13 @@ setClass(
       ,
       endtime="numeric"
    )
+)
+#--------------------------------
+
+#' S4 class for a scalar time dependent function on a finite time interval
+setClass(
+   Class="ScalarTimeMap",
+   contains=c('TimeMap')
 )
 
 #--------------------------------
@@ -108,7 +152,8 @@ setClass(
     contains=c("TimeMap","Fc")
 )
 
-#--------------------------------
+#' S4-class to represent compartmental operators 
+#'
 setClass(
     Class="DecompOp",
     ,
@@ -195,23 +240,69 @@ setClass(
 
 #--------------------------------
 
+#' class for pool-name-strings
+#'
+#' used to control the creation of PoolName objects which have ot be valid R identifiers and to dispatch pool name specific methods like conversion to pool indexed 
+setClass(
+   Class="PoolName",
+   ,contains=c('PoolId','character')
+)
+
+
+#' class for a constan influx to a single pool identified by index
+#'
 setClass(
   Class="ConstantInFlux_by_PoolIndex",
   slots=c(destinationIndex='PoolIndex',flux_constant='numeric')
 )
 
 #--------------------------------
+
+#' class for a constan influx to a single pool identified by the name 
+#'
 setClass(
   Class = "InFlux_by_PoolName",
   # contains="PoolConnection", we do not want to iherit mehtods...
   slots=c(destinationName='PoolName',func='function')
 )
 
-#--------------------------------
 
+#' Class for a list of influxes indexed by the names of the target pools 
+#'
 setClass(
   Class = "InFluxList_by_PoolName",
   contains=c("list")
+)
+
+#' S4 class representing a constant internal flux rate
+#'
+#' The class is used to dispatch specific methods for the creation of the compartmental matrix which is simplified in case of constant rates.
+setClass(
+  Class="ConstantInternalFluxRate_by_PoolIndex",
+  slots=c(sourceIndex='PoolIndex',destinationIndex='PoolIndex',rate_constant='numeric')
+)
+
+#' S4-class to represent a constant internal flux rate with source and target indexed by name 
+#'
+setClass(
+  Class="ConstantInternalFluxRate_by_PoolName",
+  slots=c(sourceName="PoolName",destinationName='PoolName',rate_constant='numeric')
+)
+
+#' S4 Class to represent a single constant out-flux rate with the 
+#' source pool specified by an index
+#'
+setClass(
+  Class="ConstantOutFluxRate_by_PoolIndex",
+  slots=c(sourceIndex='PoolId',rate_constant='numeric')
+)
+
+#' S4 Class to represent a single constant out-flux rate with the 
+#' source pool specified by name 
+#'
+setClass(
+  Class="ConstantOutFluxRate_by_PoolName",
+  slots=c(sourceName='PoolName',rate_constant='numeric')
 )
 
 #--------------------------------
@@ -240,6 +331,9 @@ correctnessOfNlModel <- function
     }
     return(res)
 }
+
+#' deprecated class for a non-linear model run. 
+#'
 setClass(
    Class="NlModel",
    representation=representation(
@@ -402,6 +496,8 @@ tA_max=getTimeRange(atm_c14)["t_max"]
         stop(simpleError(sprintf("You ordered a timeinterval that ends later (tmax=%s) than the interval your  your atmospheric 14C fraction is defined for (tA_max=%s). \n Have look at the object or the data it is created from",t_max,tA_max)))
     }
 }
+#' S4-class to represent a ^{14}C model run 
+#'
 setClass(
     Class="Model_14",
     contains="Model",

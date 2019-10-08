@@ -1,10 +1,4 @@
 
-#' class for pool-name-strings
-setClass(
-   Class="PoolName",
-   ,contains=c('PoolId','character')
-)
-
 #' construct from string with checks
 setMethod(
     f="PoolName",

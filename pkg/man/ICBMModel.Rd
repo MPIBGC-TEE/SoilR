@@ -4,9 +4,16 @@
 \alias{ICBMModel}
 \title{Implementation of the Introductory Carbon Balance Model (ICBM)}
 \usage{
-ICBMModel(t, ks = c(k1 = 0.8, k2 = 0.00605), h = 0.13, r = 1.32,
-  c0 = c(Y0 = 0.3, O0 = 3.96), In = 0,
-  solver = deSolve.lsoda.wrapper, pass = FALSE)
+ICBMModel(
+  t,
+  ks = c(k1 = 0.8, k2 = 0.00605),
+  h = 0.13,
+  r = 1.32,
+  c0 = c(Y0 = 0.3, O0 = 3.96),
+  In = 0,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

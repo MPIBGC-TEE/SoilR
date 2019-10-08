@@ -17,7 +17,7 @@
 #' @param initialValF An object equal or equivalent to class ConstFc containing
 #' a vector with the initial values of the radiocarbon fraction for each pool
 #' and a format string describing in which format the values are given.
-#' @param inputFluxes something that can be converted by \link{GeneralInFlux}
+#' @param inputFluxes something that can be converted by \link{InFluxes}
 #' to any of the available subclasses of \linkS4class{InFluxes}.
 #' @param Fc deprecated keyword argument, please use inputFc instead
 #' @param inputFc An object describing the fraction of C_14 in per mille

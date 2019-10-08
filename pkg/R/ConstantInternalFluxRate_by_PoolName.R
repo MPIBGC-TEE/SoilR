@@ -1,8 +1,3 @@
- setClass(
-  Class="ConstantInternalFluxRate_by_PoolName",
-  slots=c(sourceName="PoolName",destinationName='PoolName',rate_constant='numeric')
-)
-
 #' constructor with argument conversion 
 setMethod(
     f='ConstantInternalFluxRate_by_PoolName'

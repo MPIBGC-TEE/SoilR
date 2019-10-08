@@ -4,8 +4,19 @@
 \alias{ThreepFeedbackModel}
 \title{Implementation of a three pool model with feedback structure}
 \usage{
-ThreepFeedbackModel(t, ks, a21, a12, a32, a23, C0, In, xi = 1,
-  solver = deSolve.lsoda.wrapper, pass = FALSE)
+ThreepFeedbackModel(
+  t,
+  ks,
+  a21,
+  a12,
+  a32,
+  a23,
+  C0,
+  In,
+  xi = 1,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

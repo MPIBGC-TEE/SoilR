@@ -4,8 +4,16 @@
 \alias{fW.Daycent1}
 \title{Effects of moisture on decomposition rates according to the DAYCENT model}
 \usage{
-fW.Daycent1(swc, a = 0.6, b = 1.27, c = 0.0012, d = 2.84,
-  partd = 2.65, bulkd = 1, width = 1)
+fW.Daycent1(
+  swc,
+  a = 0.6,
+  b = 1.27,
+  c = 0.0012,
+  d = 2.84,
+  partd = 2.65,
+  bulkd = 1,
+  width = 1
+)
 }
 \arguments{
 \item{swc}{A scalar or vector with soil water content of a soil layer (cm).}

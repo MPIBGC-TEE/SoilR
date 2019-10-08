@@ -4,8 +4,16 @@
 \alias{turnoverFit}
 \title{Estimation of the turnover time from a soil radiocarbon sample.}
 \usage{
-turnoverFit(obsC14, obsyr, In, C0 = 0, yr0 = 1900, Zone = "NHZone2",
-  plot = TRUE, by = 0.5)
+turnoverFit(
+  obsC14,
+  obsyr,
+  In,
+  C0 = 0,
+  yr0 = 1900,
+  Zone = "NHZone2",
+  plot = TRUE,
+  by = 0.5
+)
 }
 \arguments{
 \item{obsC14}{a scalar with the observed radiocarbon value in Delta14C of

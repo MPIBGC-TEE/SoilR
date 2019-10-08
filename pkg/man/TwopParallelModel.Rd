@@ -4,8 +4,16 @@
 \alias{TwopParallelModel}
 \title{Implementation of a linear two pool model with parallel structure}
 \usage{
-TwopParallelModel(t, ks, C0, In, gam, xi = 1,
-  solver = deSolve.lsoda.wrapper, pass = FALSE)
+TwopParallelModel(
+  t,
+  ks,
+  C0,
+  In,
+  gam,
+  xi = 1,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

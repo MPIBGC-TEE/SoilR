@@ -4,8 +4,14 @@
 \alias{GeneralNlModel}
 \title{Use this function to create objects of class NlModel.}
 \usage{
-GeneralNlModel(t, TO, ivList, inputFluxes,
-  solverfunc = deSolve.lsoda.wrapper, pass = FALSE)
+GeneralNlModel(
+  t,
+  TO,
+  ivList,
+  inputFluxes,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

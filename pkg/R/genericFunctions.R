@@ -357,6 +357,9 @@ setGeneric(
 	     standardGeneric("getTransferCoefficients")
 	 }
 )
+
+#' constructor for \code{\link{TimeMap-class}}
+#' 
 setGeneric(
 	 name="TimeMap",
 	 def=function 
@@ -400,6 +403,10 @@ setGeneric(
 	     standardGeneric("ConstInFluxes")
 	 }
 )
+
+#' A generic factory for subclasses of GeneralDecompOp
+#'
+#' The class of the output depends on the provided arguments
 setGeneric(
 	 name="GeneralDecompOp",
 	 def=function 
@@ -408,6 +415,11 @@ setGeneric(
 	     standardGeneric("GeneralDecompOp")
 	 }
 )
+
+#' A generic factory for subclasses of \linkS4class{InFluxes}
+#'
+#' The actual class of the returned object depends on the arguments 
+#' provided
 setGeneric(
 	 name="InFluxes",
 	 def=function 

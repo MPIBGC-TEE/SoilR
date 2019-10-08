@@ -4,9 +4,20 @@
 \alias{TwopParallelModel14}
 \title{Implementation of a two-pool C14 model with parallel structure}
 \usage{
-TwopParallelModel14(t, ks, C0, F0_Delta14C, In, gam, xi = 1, inputFc,
-  lambda = -0.0001209681, lag = 0, solver = deSolve.lsoda.wrapper,
-  pass = FALSE)
+TwopParallelModel14(
+  t,
+  ks,
+  C0,
+  F0_Delta14C,
+  In,
+  gam,
+  xi = 1,
+  inputFc,
+  lambda = -0.0001209681,
+  lag = 0,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

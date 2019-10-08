@@ -4,8 +4,16 @@
 \alias{TwopMMmodel}
 \title{Implementation of a two-pool Michaelis-Menten model}
 \usage{
-TwopMMmodel(t, ks = 1.8e-05, kb = 0.007, Km = 900, r = 0.6,
-  Af = 1, ADD = 3.2, ival)
+TwopMMmodel(
+  t,
+  ks = 1.8e-05,
+  kb = 0.007,
+  Km = 900,
+  r = 0.6,
+  Af = 1,
+  ADD = 3.2,
+  ival
+)
 }
 \arguments{
 \item{t}{vector of times (in days) to calculate a solution.}

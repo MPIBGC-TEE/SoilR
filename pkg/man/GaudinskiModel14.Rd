@@ -4,12 +4,21 @@
 \alias{GaudinskiModel14}
 \title{Implementation of a the six-pool C14 model proposed by Gaudinski et al. 2000}
 \usage{
-GaudinskiModel14(t, ks = c(kr = 1/1.5, koi = 1/1.5, koeal = 1/4, koeah =
-  1/80, kA1 = 1/3, kA2 = 1/75, kM = 1/110), C0 = c(FR0 = 390, C10 = 220,
-  C20 = 390, C30 = 1370, C40 = 90, C50 = 1800, C60 = 560),
-  F0_Delta14C = rep(0, 7), LI = 150, RI = 255, xi = 1, inputFc,
-  lambda = -0.0001209681, lag = 0, solver = deSolve.lsoda.wrapper,
-  pass = FALSE)
+GaudinskiModel14(
+  t,
+  ks = c(kr = 1/1.5, koi = 1/1.5, koeal = 1/4, koeah = 1/80, kA1 = 1/3, kA2 = 1/75, kM =
+    1/110),
+  C0 = c(FR0 = 390, C10 = 220, C20 = 390, C30 = 1370, C40 = 90, C50 = 1800, C60 = 560),
+  F0_Delta14C = rep(0, 7),
+  LI = 150,
+  RI = 255,
+  xi = 1,
+  inputFc,
+  lambda = -0.0001209681,
+  lag = 0,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

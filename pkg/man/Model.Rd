@@ -4,8 +4,14 @@
 \alias{Model}
 \title{Constructor for class \linkS4class{Model}}
 \usage{
-Model(t, A, ivList, inputFluxes, solverfunc = deSolve.lsoda.wrapper,
-  pass = FALSE)
+Model(
+  t,
+  A,
+  ivList,
+  inputFluxes,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

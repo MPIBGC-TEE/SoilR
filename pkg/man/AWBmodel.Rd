@@ -5,11 +5,28 @@
 \title{Implementation of the microbial model AWB (Allison, Wallenstein, Bradford,
 2010)}
 \usage{
-AWBmodel(t, V_M = 1e+08, V_m = 1e+08, r_B = 2e-04, r_E = 5e-06,
-  r_L = 0.001, a_BS = 0.5, epsilon_0 = 0.63, epsilon_s = -0.016,
-  Km_0 = 500, Km_u0 = 0.1, Km_s = 0.5, Km_us = 0.1, Ea = 47,
-  R = 0.008314, Temp1 = 20, Temp2 = 20, ival = c(B = 2.19159, E =
-  0.0109579, S = 111.876, D = 0.00144928), I_S = 0.005, I_D = 0.005)
+AWBmodel(
+  t,
+  V_M = 1e+08,
+  V_m = 1e+08,
+  r_B = 2e-04,
+  r_E = 5e-06,
+  r_L = 0.001,
+  a_BS = 0.5,
+  epsilon_0 = 0.63,
+  epsilon_s = -0.016,
+  Km_0 = 500,
+  Km_u0 = 0.1,
+  Km_s = 0.5,
+  Km_us = 0.1,
+  Ea = 47,
+  R = 0.008314,
+  Temp1 = 20,
+  Temp2 = 20,
+  ival = c(B = 2.19159, E = 0.0109579, S = 111.876, D = 0.00144928),
+  I_S = 0.005,
+  I_D = 0.005
+)
 }
 \arguments{
 \item{t}{vector of times (in hours) to calculate a solution.}

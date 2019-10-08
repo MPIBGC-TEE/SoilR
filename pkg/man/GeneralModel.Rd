@@ -4,8 +4,15 @@
 \alias{GeneralModel}
 \title{additional function to create Models}
 \usage{
-GeneralModel(t, A, ivList, inputFluxes,
-  solverfunc = deSolve.lsoda.wrapper, pass = FALSE)
+GeneralModel(
+  t,
+  A,
+  ivList,
+  inputFluxes,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE,
+  timeSymbol
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

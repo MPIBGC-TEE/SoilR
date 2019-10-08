@@ -4,8 +4,7 @@
 \alias{FcAtm.from.Dataframe}
 \title{FcAtm.from.Dataframe}
 \usage{
-FcAtm.from.Dataframe(dframe, lag = 0, interpolation = splinefun,
-  format)
+FcAtm.from.Dataframe(dframe, lag = 0, interpolation = splinefun, format)
 }
 \arguments{
 \item{dframe}{A data frame containing exactly two columns: the first one is

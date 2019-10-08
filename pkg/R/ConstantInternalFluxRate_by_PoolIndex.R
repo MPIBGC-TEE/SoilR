@@ -1,8 +1,3 @@
-
-setClass(
-  Class="ConstantInternalFluxRate_by_PoolIndex",
-  slots=c(sourceIndex='PoolIndex',destinationIndex='PoolIndex',rate_constant='numeric')
-)
 # constructor from number like objects
 setMethod(
     f='ConstantInternalFluxRate_by_PoolIndex'

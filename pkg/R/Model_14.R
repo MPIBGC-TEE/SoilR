@@ -63,7 +63,7 @@ setMethod(
 #' @param initialValF An object equal or equivalent to class ConstFc containing
 #' a vector with the initial values of the radiocarbon fraction for each pool
 #' and a format string describing in which format the values are given.
-#' @param inputFluxes something that can be converted by \link{GeneralInFlux}
+#' @param inputFluxes something that can be converted by \link{InFluxes}
 #' to any of the available subclasses of \linkS4class{InFluxes}.
 #' @param inputFc An object describing the fraction of C_14 in per mille
 #' (different formats are possible)
@@ -104,7 +104,7 @@ setMethod(
 #'   #) 
 #'   possibleAs  <- example.2DGeneralDecompOpArgs()
 #'   
-#'   # Since "Model" will call "GeneralInFlux" on its "inputFluxes" 
+#'   # Since "Model" will call "InFluxes" on its "inputFluxes" 
 #'   # argument there are again different choices
 #'   # we have included a function in SoilR that produces 2D examples
 #'   

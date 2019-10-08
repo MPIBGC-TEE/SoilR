@@ -4,8 +4,15 @@
 \alias{fW.Standcarb}
 \title{Effects of moisture on decomposition rates according to the StandCarb model}
 \usage{
-fW.Standcarb(Moist, MatricShape = 5, MatricLag = 0, MoistMin = 30,
-  MoistMax = 350, DiffuseShape = 15, DiffuseLag = 4)
+fW.Standcarb(
+  Moist,
+  MatricShape = 5,
+  MatricLag = 0,
+  MoistMin = 30,
+  MoistMax = 350,
+  DiffuseShape = 15,
+  DiffuseLag = 4
+)
 }
 \arguments{
 \item{Moist}{A scalar or vector containing values of moisture content of a

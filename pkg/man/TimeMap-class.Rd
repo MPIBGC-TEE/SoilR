@@ -15,7 +15,7 @@ time line data which might otherwise occur for some of the following
 reasons:
 SoilR allows to specify measured data for many of its arguments
 and computes the interpolating functions automatically.
-The functions returned bye the standard R interpolation mechanisms
+The functions returned by the standard R interpolation mechanisms
 like \code{splinefun} or \code{approxfun} do not provide a safeguard 
 against accidental extrapolation.  
 Internally SoilR converts nearly all data to time dependent functions 

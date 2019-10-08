@@ -15,5 +15,5 @@ coefficients for all pools.
 }
 \description{
 This function computes the respiration coefficients as function of time for
-all pools according to the given matrix A
+all pools according to the given matrix function  A(t)
 }

@@ -1,8 +1,3 @@
-setClass(
-  Class="ConstantOutFluxRate_by_PoolName",
-  slots=c(sourceName='PoolName',rate_constant='numeric')
-)
-
 ConstantOutFluxRate_by_PoolName<-function(sourceName,rate_constant){
     if (rate_constant<0){
       stop(

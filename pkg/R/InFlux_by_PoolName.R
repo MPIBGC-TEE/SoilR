@@ -1,10 +1,12 @@
-#' constructor from a PoolName (integer like) object and a function 
+#' constructor from a 
+#' @param destinationName PoolName (string like) object and a function 
 #' @param func A function. The names of the formal aguemnts have to be a subset of the state variable names and the time symbol 
 #' This allows subsequent automatic reordering of the state variables.
-#' In the presence of a vector of stave variabl names the formulation can 
-#' automatically be transformed to a function of a s tate VECTOR argument and #' time
+#' In the presence of a vector of state-variable-names the formulation can 
+#' automatically be transformed to a function of a s tate VECTOR argument and 
+#' time
 
-#' constructor from an ordered pair of PoolName (integer like) objects 
+#' constructor from an ordered pair of PoolName (string like) and function  objects 
 setMethod(
   f="InFlux_by_PoolName",
   signature=c(

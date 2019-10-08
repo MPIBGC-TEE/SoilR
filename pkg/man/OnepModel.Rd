@@ -4,8 +4,7 @@
 \alias{OnepModel}
 \title{Implementation of a one pool model}
 \usage{
-OnepModel(t, k, C0, In, xi = 1, solver = deSolve.lsoda.wrapper,
-  pass = FALSE)
+OnepModel(t, k, C0, In, xi = 1, solver = deSolve.lsoda.wrapper, pass = FALSE)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

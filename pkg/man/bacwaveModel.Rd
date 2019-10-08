@@ -4,9 +4,20 @@
 \alias{bacwaveModel}
 \title{Implementation of the microbial model Bacwave (bacterial waves)}
 \usage{
-bacwaveModel(t, umax = 0.063, ks = 3, theta = 0.23, Dmax = 0.26,
-  kd = 14.5, kr = 0.4, Y = 0.44, ival = c(S0 = 0.5, X0 = 1.5),
-  BGF = 0.15, ExuM = 8, ExuT = 0.8)
+bacwaveModel(
+  t,
+  umax = 0.063,
+  ks = 3,
+  theta = 0.23,
+  Dmax = 0.26,
+  kd = 14.5,
+  kr = 0.4,
+  Y = 0.44,
+  ival = c(S0 = 0.5, X0 = 1.5),
+  BGF = 0.15,
+  ExuM = 8,
+  ExuT = 0.8
+)
 }
 \arguments{
 \item{t}{vector of times (in hours) to calculate a solution.}

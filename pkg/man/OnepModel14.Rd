@@ -4,9 +4,19 @@
 \alias{OnepModel14}
 \title{Implementation of a one-pool C14 model}
 \usage{
-OnepModel14(t, k, C0, F0_Delta14C, In, xi = 1, inputFc,
-  lambda = -0.0001209681, lag = 0, solver = deSolve.lsoda.wrapper,
-  pass = FALSE)
+OnepModel14(
+  t,
+  k,
+  C0,
+  F0_Delta14C,
+  In,
+  xi = 1,
+  inputFc,
+  lambda = -0.0001209681,
+  lag = 0,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

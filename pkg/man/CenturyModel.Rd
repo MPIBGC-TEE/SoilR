@@ -4,10 +4,19 @@
 \alias{CenturyModel}
 \title{Implementation of the Century model}
 \usage{
-CenturyModel(t, ks = c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW =
-  0.0038, k.PAS = 0.00013), C0 = c(0, 0, 0, 0, 0), In, LN, Ls,
-  clay = 0.2, silt = 0.45, xi = 1, xi_lag = 0,
-  solver = deSolve.lsoda.wrapper)
+CenturyModel(
+  t,
+  ks = c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW = 0.0038, k.PAS = 0.00013),
+  C0 = c(0, 0, 0, 0, 0),
+  In,
+  LN,
+  Ls,
+  clay = 0.2,
+  silt = 0.45,
+  xi = 1,
+  xi_lag = 0,
+  solver = deSolve.lsoda.wrapper
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

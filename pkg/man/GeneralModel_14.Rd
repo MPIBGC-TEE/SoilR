@@ -4,9 +4,18 @@
 \alias{GeneralModel_14}
 \title{create objects of class \linkS4class{Model_14}}
 \usage{
-GeneralModel_14(t, A, ivList, initialValF, inputFluxes, Fc = NULL,
-  inputFc = Fc, di = -0.0001209681,
-  solverfunc = deSolve.lsoda.wrapper, pass = FALSE)
+GeneralModel_14(
+  t,
+  A,
+  ivList,
+  initialValF,
+  inputFluxes,
+  Fc = NULL,
+  inputFc = Fc,
+  di = -0.0001209681,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is
@@ -23,7 +32,7 @@ equal to the length of k. This is checked by an internal function.}
 a vector with the initial values of the radiocarbon fraction for each pool
 and a format string describing in which format the values are given.}
 
-\item{inputFluxes}{something that can be converted by \link{GeneralInFlux}
+\item{inputFluxes}{something that can be converted by \link{InFluxes}
 to any of the available subclasses of \linkS4class{InFluxes}.}
 
 \item{Fc}{deprecated keyword argument, please use inputFc instead}

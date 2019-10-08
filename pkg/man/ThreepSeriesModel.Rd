@@ -4,8 +4,17 @@
 \alias{ThreepSeriesModel}
 \title{Implementation of a three pool model with series structure}
 \usage{
-ThreepSeriesModel(t, ks, a21, a32, C0, In, xi = 1,
-  solver = deSolve.lsoda.wrapper, pass = FALSE)
+ThreepSeriesModel(
+  t,
+  ks,
+  a21,
+  a32,
+  C0,
+  In,
+  xi = 1,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is

@@ -4,9 +4,17 @@
 \alias{Model_14}
 \title{general constructor for class Model_14}
 \usage{
-Model_14(t, A, ivList, initialValF, inputFluxes, inputFc,
-  c14DecayRate = -0.0001209681, solverfunc = deSolve.lsoda.wrapper,
-  pass = FALSE)
+Model_14(
+  t,
+  A,
+  ivList,
+  initialValF,
+  inputFluxes,
+  inputFc,
+  c14DecayRate = -0.0001209681,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is
@@ -23,7 +31,7 @@ equal to the length of k. This is checked by an internal function.}
 a vector with the initial values of the radiocarbon fraction for each pool
 and a format string describing in which format the values are given.}
 
-\item{inputFluxes}{something that can be converted by \link{GeneralInFlux}
+\item{inputFluxes}{something that can be converted by \link{InFluxes}
 to any of the available subclasses of \linkS4class{InFluxes}.}
 
 \item{inputFc}{An object describing the fraction of C_14 in per mille
@@ -74,7 +82,7 @@ for n arbitrarily connected pools.
   #) 
   possibleAs  <- example.2DGeneralDecompOpArgs()
   
-  # Since "Model" will call "GeneralInFlux" on its "inputFluxes" 
+  # Since "Model" will call "InFluxes" on its "inputFluxes" 
   # argument there are again different choices
   # we have included a function in SoilR that produces 2D examples
   
