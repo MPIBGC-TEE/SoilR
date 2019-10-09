@@ -1,3 +1,86 @@
+
+#' common class for pool ids 
+#'
+#' examples for ids are index or name
+setClass(
+   Class="PoolId",
+   contains=c("VIRTUAL")
+)
+
+
+#' S4 class for pool indices 
+#'
+#' used to dispatch pool index specific methods like conversion to names.
+setClass(
+   Class="PoolIndex",
+   ,contains=c('PoolId','integer')
+)
+
+
+#' class for pool-name-strings
+#'
+#' used to control the creation of PoolName objects which have ot be valid R identifiers and to dispatch pool name specific methods like conversion to pool indexed 
+setClass(
+   Class="PoolName",
+   ,contains=c('PoolId','character')
+)
+
+#' S4 class for a time dependent function 
+#' 
+#' The class represents functions which are defined on a (possibly infinite) 
+#' interval from [starttime,endtime]
+#' Instances are usually created internally from data frames or lists provided by the user in the high level interfaces.
+#' 
+#' The class is necessary to be able to detect unwanted extrapolation of 
+#' time line data which might otherwise occur for some of the following 
+#' reasons:
+#' SoilR allows to specify measured data for many of its arguments
+#' and computes the interpolating functions automatically.
+#' The functions returned by the standard R interpolation mechanisms
+#' like \code{splinefun} or \code{approxfun} do not provide a safeguard 
+#' against accidental extrapolation.  
+#' Internally SoilR converts nearly all data to time dependent functions 
+#' e.g. to be used in ode solvers. So the information of the domain of the
+#' function has to be kept.
+
+setClass(
+   Class="TimeMap",
+   slots=list(
+      map="function"
+      #,
+      #lag="numeric"
+      ,
+      starttime="numeric"
+      ,
+      endtime="numeric"
+   )
+)
+
+#' S4 class for a scalar time dependent function on a finite time interval
+#'
+setClass(
+   Class="ScalarTimeMap",
+   contains=c('TimeMap')
+)
+
+#'Constructor for the class with the same name
+#'
+#'@slot destinationIndex 
+#'@slot flux 
+StateIndependentInFlux_by_PoolIndex<-setClass(
+  Class="StateIndependentInFlux_by_PoolIndex",
+  slots=c(destinationIndex='PoolIndex',flux='ScalarTimeMap')
+)
+
+#' Subclass of list that is guaranteed to contain only elements of type
+#' \linkS4class{StateIndependentInFlux_by_PoolIndex}
+#'
+setClass(
+  Class = "StateIndependentInFluxList_by_PoolIndex",
+  contains=c("list")
+)
+
+
 #' Subclass of list that is guaranteed to contain only elements of type
 #' \linkS4class{ConstantInFlux_by_PoolIndex}
 #'
@@ -6,13 +89,22 @@ setClass(
   contains=c("list")
 )
 
-#' S4-class for a single internal flux wiht source and destination pools specified by name
+#' S4-class for a single internal flux wiht source and destination pools specified by indices 
 #'
 setClass(
   Class="InternalFlux_by_PoolIndex",
   # contains="PoolConnection", we do not want to iherit mehtods...
   slots=c(sourceIndex='PoolIndex',destinationIndex='PoolIndex',func='function')
 )
+
+#' S4-class for a single internal flux wiht source and destination pools specified by name
+#'
+setClass(
+  Class="InternalFlux_by_PoolName",
+  # contains="PoolConnection", we do not want to iherit mehtods...
+  slots=c(sourceName='PoolName',destinationName='PoolName',func='function')
+)
+
 
 #' S4-class for a list of internal fluxes with source and destination pool inidices 
 #'
@@ -29,7 +121,7 @@ setClass(
   contains=c("list")
 )
 
-#' S4-class for a single out fluxe with source pool index
+#' S4 class for a single out-flux with source pool index
 #'
 setClass(
   Class="OutFlux_by_PoolIndex",
@@ -37,6 +129,17 @@ setClass(
   slots=c(sourceIndex='PoolIndex',func='function')
 )
 
+#' S4 class for a single out-flux with source pool name 
+#'
+setClass(
+  Class = "OutFlux_by_PoolName",
+  # contains="PoolConnection", we do not want to iherit mehtods...
+  slots=c(sourceName='PoolName',func='function')
+)
+
+
+#' S4 class for a list of out-fluxes indexed by source pool name 
+#'
 setClass(
   Class = "OutFluxList_by_PoolName",
   contains=c("list")
@@ -82,44 +185,6 @@ setClass(
    slots=list(
     map="numeric"
    )
-)
-
-#' S4 class for a time dependent function 
-#' 
-#' The class represents functions which are defined on a (possibly infinite) 
-#' interval from [starttime,endtime]
-#' Instances are usually created internally from data frames or lists provided by the user in the high level interfaces.
-#' 
-#' The class is necessary to be able to detect unwanted extrapolation of 
-#' time line data which might otherwise occur for some of the following 
-#' reasons:
-#' SoilR allows to specify measured data for many of its arguments
-#' and computes the interpolating functions automatically.
-#' The functions returned by the standard R interpolation mechanisms
-#' like \code{splinefun} or \code{approxfun} do not provide a safeguard 
-#' against accidental extrapolation.  
-#' Internally SoilR converts nearly all data to time dependent functions 
-#' e.g. to be used in ode solvers. So the information of the domain of the
-#' function has to be kept.
-
-setClass(
-   Class="TimeMap",
-   slots=list(
-      map="function"
-      #,
-      #lag="numeric"
-      ,
-      starttime="numeric"
-      ,
-      endtime="numeric"
-   )
-)
-#--------------------------------
-
-#' S4 class for a scalar time dependent function on a finite time interval
-setClass(
-   Class="ScalarTimeMap",
-   contains=c('TimeMap')
 )
 
 #--------------------------------
@@ -217,36 +282,6 @@ setClass(
    contains=c("InFluxes","TimeMap"),
 )
 
-#--------------------------------
-
-#' common class for pool is 
-#'
-#' examples for ids are index or name
-setClass(
-   Class="PoolId",
-   contains=c("VIRTUAL")
-)
-
-
-#--------------------------------
-
-#' class for pool indices 
-#'
-#' used to dispatch pool index specific methods like conversion to names.
-setClass(
-   Class="PoolIndex",
-   ,contains=c('PoolId','integer')
-)
-
-#--------------------------------
-
-#' class for pool-name-strings
-#'
-#' used to control the creation of PoolName objects which have ot be valid R identifiers and to dispatch pool name specific methods like conversion to pool indexed 
-setClass(
-   Class="PoolName",
-   ,contains=c('PoolId','character')
-)
 
 
 #' class for a constan influx to a single pool identified by index
@@ -256,9 +291,15 @@ setClass(
   slots=c(destinationIndex='PoolIndex',flux_constant='numeric')
 )
 
-#--------------------------------
+#' S4 class for the influx to a single pool identified by theindex 
+#'
+setClass(
+  Class="InFlux_by_PoolIndex",
+  # contains="PoolConnection", we do not want to iherit mehtods...
+  slots=c(destinationIndex='PoolIndex',func='function')
+)
 
-#' class for a constan influx to a single pool identified by the name 
+#' S4 class for the influx to a single pool identified by the name 
 #'
 setClass(
   Class = "InFlux_by_PoolName",
@@ -456,6 +497,9 @@ correctnessOfModel <- function(object){
     }
     return(res)
 }
+
+#' S4 class representing a model run 
+#'
 setClass(
    Class="Model",
    representation=representation(
@@ -472,7 +516,8 @@ setClass(
    validity=correctnessOfModel 
 )
 
-#--------------------------------
+#' S4 class representing a constan ^{14}C fraction
+#'
 setClass(
    Class="ConstFc",
    contains="Fc",

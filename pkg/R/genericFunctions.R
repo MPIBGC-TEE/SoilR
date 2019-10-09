@@ -121,6 +121,9 @@ setGeneric (
 	def=function(
 	object){standardGeneric("getInitialValues")}
 )
+
+#' Generic Function to obtain the fluxes out of of the pools 
+#'
 setGeneric ( 
 	name= "getOutputFluxes",
 	def=function
@@ -130,6 +133,9 @@ setGeneric (
 	){standardGeneric("getOutputFluxes")
 	}
 )
+
+#' Generic Function to obtain the contents of the pools for all time steps
+#'
 setGeneric ( 
 	name= "getC",
 	def=function(
@@ -145,6 +151,9 @@ setGeneric(
 	){standardGeneric("getParticleMonteCarloSimulator")
 	 }
 )
+
+#' Generic Function to obtain the vector of release fluxes out of the pools for all times.
+#'
 setGeneric ( 
 	name= "getReleaseFlux",
   valueClass='matrix',
@@ -161,6 +170,9 @@ setGeneric (
 	){standardGeneric("getAccumulatedRelease")
 	 }
 )
+
+#' Generic that yields the ^{14}C content for all pools and all times
+#'
 setGeneric ( 
 	name= "getC14",
 	def=function(
@@ -173,6 +185,9 @@ setGeneric (
 	object
 	){standardGeneric("getCumulativeC")}
 )
+
+#' Generic that yields the ^{14}C fraction for the content all pools and all times
+#'
 setGeneric ( 
 	name= "getF14",
 	def=function(
@@ -185,12 +200,18 @@ setGeneric (
 	object
 	){standardGeneric("getReleaseFlux14")}
 )
+
+#' Generic that yields the ^{14}C fraction for the release flux of all pools and all times
+#'
 setGeneric ( 
   name= "getF14R",
   def=function(
 	 object
 	 ){standardGeneric("getF14R")}
   )
+
+#' Generic that yields the ^{14}C fraction for the cumulative content of all pools and all times
+#'
 setGeneric ( 
   name= "getF14C",
   def=function(
@@ -428,6 +449,9 @@ setGeneric(
 	     standardGeneric("InFluxes")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstantInternalFluxRate_by_PoolName",
 	 def=function(sourceName,destinationName,src_to_dest,rate_constant)
@@ -435,6 +459,9 @@ setGeneric(
 	     standardGeneric("ConstantInternalFluxRate_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstantInternalFluxRate_by_PoolIndex",
 	 def=function(sourceIndex,destinationIndex,src_to_dest,rate_constant)
@@ -442,6 +469,9 @@ setGeneric(
 	     standardGeneric("ConstantInternalFluxRate_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
      name='ConstantInFluxList_by_PoolName',
 	 def=function(object)
@@ -449,6 +479,9 @@ setGeneric(
 	     standardGeneric('ConstantInFluxList_by_PoolName')
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
      name='StateIndependentInFluxList_by_PoolIndex',
 	 def=function(object)
@@ -456,6 +489,9 @@ setGeneric(
 	     standardGeneric('StateIndependentInFluxList_by_PoolIndex')
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
      name='StateIndependentInFluxList_by_PoolName',
 	 def=function(object)
@@ -463,6 +499,9 @@ setGeneric(
 	     standardGeneric('StateIndependentInFluxList_by_PoolName')
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
      name='ConstantInFluxList_by_PoolIndex',
 	 def=function(object)
@@ -470,6 +509,9 @@ setGeneric(
 	     standardGeneric('ConstantInFluxList_by_PoolIndex')
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="InternalFlux_by_PoolIndex",
 	 def=function(func,sourceIndex,destinationIndex,src_to_dest)
@@ -477,6 +519,9 @@ setGeneric(
 	     standardGeneric("InternalFlux_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="InternalFlux_by_PoolName",
 	 def=function(func,sourceName,destinationName,src_to_dest)
@@ -484,12 +529,18 @@ setGeneric(
 	     standardGeneric("InternalFlux_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="InternalFluxList_by_PoolName",
 	 def=function(object) {
 	     standardGeneric("InternalFluxList_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="InternalFluxList_by_PoolIndex",
 	 def=function(object)
@@ -497,6 +548,9 @@ setGeneric(
 	     standardGeneric("InternalFluxList_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="InFlux_by_PoolIndex",
 	 def=function(func,destinationIndex)
@@ -504,6 +558,9 @@ setGeneric(
 	     standardGeneric("InFlux_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for an influx to a single pool from an ordered pair of PoolName (string like) and function  objects 
+#'
 setGeneric(
 	 name="InFlux_by_PoolName",
 	 def=function(func,destinationName)
@@ -511,6 +568,9 @@ setGeneric(
 	     standardGeneric("InFlux_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="OutFlux_by_PoolIndex",
 	 def=function(func,sourceIndex)
@@ -518,6 +578,9 @@ setGeneric(
 	     standardGeneric("OutFlux_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="OutFlux_by_PoolName",
 	 def=function(func,sourceName)
@@ -525,6 +588,9 @@ setGeneric(
 	     standardGeneric("OutFlux_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="InFluxList_by_PoolName",
 	 def=function(object)
@@ -532,6 +598,9 @@ setGeneric(
 	     standardGeneric("InFluxList_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="InFluxList_by_PoolIndex",
 	 def=function(object)
@@ -539,6 +608,9 @@ setGeneric(
 	     standardGeneric("InFluxList_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="OutFluxList_by_PoolName",
 	 def=function(object)
@@ -546,6 +618,9 @@ setGeneric(
 	     standardGeneric("OutFluxList_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstantOutFluxRateList_by_PoolName",
 	 def=function(object)
@@ -553,6 +628,9 @@ setGeneric(
 	     standardGeneric("ConstantOutFluxRateList_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstantOutFluxRate_by_PoolIndex",
 	 def=function(sourceIndex,rate_constant)
@@ -560,6 +638,9 @@ setGeneric(
 	     standardGeneric("ConstantOutFluxRate_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstantOutFluxRateList_by_PoolIndex",
 	 def=function(object)
@@ -567,30 +648,45 @@ setGeneric(
 	     standardGeneric("ConstantOutFluxRateList_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstantInternalFluxRateList_by_PoolName",
 	 def=function(object){
 	     standardGeneric("ConstantInternalFluxRateList_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstantInternalFluxRateList_by_PoolIndex",
 	 def=function(object){
 	     standardGeneric("ConstantInternalFluxRateList_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="OutFluxList_by_PoolIndex",
 	 def=function(object){
 	     standardGeneric("OutFluxList_by_PoolIndex")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="InFlux",
 	 def=function(map,...) {
 	     standardGeneric("InFlux")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="OutFlux",
 	 def=function (map,...) {
@@ -598,6 +694,9 @@ setGeneric(
 	 }
 )
 
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstLinDecompOp",
 	 def=function(
@@ -610,12 +709,18 @@ setGeneric(
 	     standardGeneric("ConstLinDecompOp")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstLinDecompOp_by_PoolName",
 	 def=function(internal_flux_rates,out_flux_rates,poolNames) {
 	     standardGeneric("ConstLinDecompOp_by_PoolName")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="ConstLinDecompOpWithLinearScalarFactor",
 	 def=function(
@@ -630,6 +735,9 @@ setGeneric(
 	     standardGeneric("ConstLinDecompOpWithLinearScalarFactor")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="UnBoundLinDecompOp",
 	 def=function 
@@ -638,6 +746,9 @@ setGeneric(
 	     standardGeneric("UnBoundLinDecompOp")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="BoundLinDecompOp",
 	 def=function 
@@ -649,6 +760,9 @@ setGeneric(
 	     standardGeneric("BoundLinDecompOp")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="UnBoundNonLinDecompOp",
 	 def=function(
@@ -663,6 +777,9 @@ setGeneric(
 	     standardGeneric("UnBoundNonLinDecompOp")
 	 }
 )
+
+#' Generic constructor for the class with the same name
+#'
 setGeneric(
 	 name="UnBoundNonLinDecompOp_by_PoolNames",
 	 def=function 
@@ -671,6 +788,10 @@ setGeneric(
 	     standardGeneric("UnBoundNonLinDecompOp_by_PoolNames")
 	 }
 )
+
+#' Generic plotter
+#'
+#' @param x An argument containing sufficient information about the connections between the pools as well as from and to the exterior.  
 setGeneric(
 	 name="plotPoolGraph",
 	 def=function (x)

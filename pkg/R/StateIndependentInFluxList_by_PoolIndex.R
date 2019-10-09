@@ -1,15 +1,7 @@
-#' Subclass of list that is guaranteed to contain only elements of type
-#' \linkS4class{StateIndependentInFlux_by_PoolIndex}
-#'
-setClass(
-  Class = "StateIndependentInFluxList_by_PoolIndex",
-  contains=c("list")
-)
-
 #' constructor from a normal list 
 #' 
 #' @param l A list. Either a list of elements of type  
-#' \linkS4class{StateIndependentInFlux} or 
+#' \linkS4class{StateIndependentInFlux_by_PoolIndex} or 
 #' a list where the names of the elements are strings of the form
 #' '3' (for an in flux connected to pool 3)
 #'

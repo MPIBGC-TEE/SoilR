@@ -1,9 +1,3 @@
-setClass(
-  Class="InternalFlux_by_PoolName",
-  # contains="PoolConnection", we do not want to iherit mehtods...
-  slots=c(sourceName='PoolName',destinationName='PoolName',func='function')
-)
-
 #' constructor from an ordered pair of PoolName (string like) objects and a function with the set of formal argument names forming a 
 #' subset of the state_variable_names
 #' 

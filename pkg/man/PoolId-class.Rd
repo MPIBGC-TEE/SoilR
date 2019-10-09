@@ -3,7 +3,7 @@
 \docType{class}
 \name{PoolId-class}
 \alias{PoolId-class}
-\title{common class for pool is}
+\title{common class for pool ids}
 \description{
 examples for ids are index or name
 }

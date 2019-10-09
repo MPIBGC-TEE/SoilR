@@ -2,20 +2,19 @@
 % Please edit documentation in R/InFlux_by_PoolName.R
 \name{InFlux_by_PoolName,function,character-method}
 \alias{InFlux_by_PoolName,function,character-method}
-\title{constructor from a}
+\title{Constructor from an ordered pair of PoolName (string like) and function  objects}
 \usage{
 \S4method{InFlux_by_PoolName}{`function`,character}(func, destinationName)
 }
 \arguments{
-\item{func}{A function. The names of the formal aguemnts have to be a subset of the state variable names and the time symbol 
+\item{func}{A function. The names of the formal arguments have to be a subset of the state variable names and the time symbol 
 This allows subsequent automatic reordering of the state variables.
 In the presence of a vector of state-variable-names the formulation can 
 automatically be transformed to a function of a s tate VECTOR argument and 
-time
-constructor from an ordered pair of PoolName (string like) and function  objects}
+time}
 
 \item{destinationName}{PoolName (string like) object and a function}
 }
 \description{
-constructor from a
+Constructor from an ordered pair of PoolName (string like) and function  objects
 }

@@ -1,9 +1,3 @@
-setClass(
-  Class = "OutFlux_by_PoolName",
-  # contains="PoolConnection", we do not want to iherit mehtods...
-  slots=c(sourceName='PoolName',func='function')
-)
-
 #' constructor from a PoolName (integer like) object and a function 
 #' @param func A function. The names of the formal aguemnts have to be a subset of the state variable names and the time symbol 
 #' This allows subsequent automatic reordering of the state variables.

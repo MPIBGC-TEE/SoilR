@@ -46,7 +46,7 @@ setMethod(
 #' to be of class \linkS4class{DecompOp} and argument \code{inputFluxes} to be
 #' of class \linkS4class{InFluxes}. Before calling the internal constructor
 #' \code{Model} calls \link{GeneralDecompOp} on its argument \code{A} and
-#' \link{GeneralInFlux} on its argument \code{inputFluxes} to convert them into
+#' \link{InFluxes} on its argument \code{inputFluxes} to convert them into
 #' the required classes. Both are generic functions. Follow the links to see
 #' for which kind of inputs conversion methods are available. The attempted
 #' conversion allows great flexibility with respect to arguments and
@@ -78,7 +78,7 @@ setMethod(
 #' @param ivList A numeric vector containing the initial amount of carbon for
 #' the n pools. The length of this vector is equal to the number of pools. This
 #' is checked by an internal function.
-#' @param inputFluxes something that can be converted by \link{GeneralInFlux}
+#' @param inputFluxes something that can be converted by \link{InFluxes}
 #' to any of the available subclasses of \linkS4class{InFluxes}.
 #' @param solverfunc The function used to actually solve the ODE system. The
 #' default is \code{\link{deSolve.lsoda.wrapper}} but you can also provide your
@@ -89,7 +89,7 @@ setMethod(
 #' methods to be found there.
 #' @seealso This function is called by many of the \link{predefinedModels}. \cr
 #' Package functions called in the examples:\cr
-#' \code{\link{example.2DInFlux.Args}},\cr
+#' \code{\link{example.2DInFluxes.Args}},\cr
 #' \code{\link{example.2DGeneralDecompOpArgs}},\cr
 #' @examples
 #' # examples from external files
@@ -116,11 +116,11 @@ setMethod(
 #'   #) 
 #'   possibleAs  <- example.2DGeneralDecompOpArgs()
 #'   
-#'   # Since "Model" will call "GeneralInFlux" on its "inputFluxes" 
+#'   # Since "Model" will call "InFluxes" on its "inputFluxes" 
 #'   # argument there are again different choices
 #'   # we have included a function in SoilR that produces 2D examples
 #'   
-#'   possibleInfluxes <- example.2DInFlux.Args()
+#'   possibleInfluxes <- example.2DInFluxes.Args()
 #'  print(possibleInfluxes$I.vec)
 #'   # We can build a lot of  models from the possible combinations
 #'   # for instance   

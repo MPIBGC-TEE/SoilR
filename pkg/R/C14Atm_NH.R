@@ -1,6 +1,5 @@
 #' Post-bomb atmospheric 14C fraction
 #'
-#' Description
 #' Atmospheric 14C concentrations for the post-bomb period expressed as Delta 14C in per mile. This dataset contains a combination of observations from locations in Europe and North America. It is representative for the Northern Hemisphere.
 #'
 #' @docType data
