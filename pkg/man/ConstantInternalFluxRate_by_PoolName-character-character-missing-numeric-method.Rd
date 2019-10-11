@@ -10,6 +10,13 @@
   rate_constant
 )
 }
+\arguments{
+\item{sourceName}{object of class:\code{character}. }
+
+\item{destinationName}{object of class:\code{character}. }
+
+\item{rate_constant}{object of class:\code{numeric}. }
+}
 \description{
 constructor with argument conversion
 }

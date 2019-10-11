@@ -6,6 +6,13 @@
 \usage{
 \S4method{UnBoundNonLinDecompOp}{missing,missing,missing,missing,character,character,UnBoundNonLinDecompOp_by_PoolNames}(state_variable_names, timeSymbol, operator)
 }
+\arguments{
+\item{state_variable_names}{object of class:\code{character}. }
+
+\item{timeSymbol}{object of class:\code{character}. }
+
+\item{operator}{object of class:\code{UnBoundNonLinDecompOp_by_PoolNames}. }
+}
 \description{
 convert to Indexed version
 }

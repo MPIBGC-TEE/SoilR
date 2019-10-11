@@ -6,6 +6,15 @@
 \usage{
 \S4method{TimeMap}{`function`,numeric,numeric,missing,missing}(map, starttime, endtime, lag = 0)
 }
+\arguments{
+\item{map}{object of class:\code{function}. }
+
+\item{starttime}{object of class:\code{numeric}. }
+
+\item{endtime}{object of class:\code{numeric}. }
+
+\item{lag}{}
+}
 \description{
 manual constructor for a function and an interval
 }

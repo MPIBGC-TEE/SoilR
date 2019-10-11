@@ -6,6 +6,9 @@
 \usage{
 \S4method{InFluxList_by_PoolIndex}{list}(object)
 }
+\arguments{
+\item{object}{object of class:\code{list}. }
+}
 \description{
 after checking the elememts
 }

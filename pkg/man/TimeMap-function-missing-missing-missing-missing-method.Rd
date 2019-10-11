@@ -6,6 +6,11 @@
 \usage{
 \S4method{TimeMap}{`function`,missing,missing,missing,missing}(map, lag = 0)
 }
+\arguments{
+\item{map}{object of class:\code{function}. }
+
+\item{lag}{}
+}
 \description{
 The interval will be set to [-Inf,Inf]
 }

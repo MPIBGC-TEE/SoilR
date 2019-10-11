@@ -7,11 +7,13 @@
 \S4method{OutFlux_by_PoolName}{`function`,character}(func, sourceName)
 }
 \arguments{
-\item{func}{A function. The names of the formal aguemnts have to be a subset of the state variable names and the time symbol 
+\item{func}{object of class:\code{function}. A function. The names of the formal aguemnts have to be a subset of the state variable names and the time symbol 
 This allows subsequent automatic reordering of the state variables.
 In the presence of a vector of stave variabl names the formulation can 
 automatically be transformed to a function of a s tate VECTOR argument and #' time
 constructor from an ordered pair of PoolName (integer like) objects}
+
+\item{sourceName}{object of class:\code{character}. }
 }
 \description{
 constructor from a PoolName (integer like) object and a function

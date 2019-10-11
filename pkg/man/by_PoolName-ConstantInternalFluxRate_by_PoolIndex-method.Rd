@@ -6,6 +6,11 @@
 \usage{
 \S4method{by_PoolName}{ConstantInternalFluxRate_by_PoolIndex}(obj, poolNames)
 }
+\arguments{
+\item{obj}{object of class:\code{ConstantInternalFluxRate_by_PoolIndex}. }
+
+\item{poolNames}{}
+}
 \description{
 new object with the source pool id converted to a PoolIndex if necessary
 }

@@ -6,6 +6,11 @@
 \usage{
 \S4method{ConstantInternalFluxRate_by_PoolName}{missing,missing,character,numeric}(src_to_dest, rate_constant)
 }
+\arguments{
+\item{src_to_dest}{object of class:\code{character}. }
+
+\item{rate_constant}{object of class:\code{numeric}. }
+}
 \description{
 constructor from strings of the form 'a->b'
 }

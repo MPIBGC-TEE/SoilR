@@ -39,28 +39,29 @@ setMethod(
         return(.Object)
     }
 )
+
 #' Constructor 
-#setMethod(
-#    "ConstLinDecompOp"
-#    ,signature=signature(
-#        mat='matrix'
-#        ,internal_flux_rates='missing'
-#        ,out_flux_rates='missing'
-#        ,numberOfPools='numeric'
-#        ,poolNames='missing'
-#    )
-#    ,definition=function( mat){
-#        r <- nrow(mat)
-#        c <- ncol(mat)
-#        assertthat::are_equal(
-#            r
-#            ,c
-#            ,msg=sprintf('The matrix has to be quadratic!. Your matrix has %s rows and %s columns',r,c)
-#        )
-#        return(new("ConstLinDecompOp",mat=mat)) 
-#    }
-#)
-#
+setMethod(
+    "ConstLinDecompOp"
+    ,signature=signature(
+        mat='matrix'
+        ,internal_flux_rates='missing'
+        ,out_flux_rates='missing'
+        ,numberOfPools='missing'
+        ,poolNames='missing'
+    )
+    ,definition=function( mat){
+        r <- nrow(mat)
+        c <- ncol(mat)
+        assertthat::are_equal(
+            r
+            ,c
+            ,msg=sprintf('The matrix has to be quadratic!. Your matrix has %s rows and %s columns',r,c)
+        )
+        return(new("ConstLinDecompOp",mat=mat)) 
+    }
+)
+
 #' Constructor 
 setMethod(
     "ConstLinDecompOp"
@@ -83,6 +84,7 @@ setMethod(
          )
     }
 )
+
 #' Constructor 
 setMethod(
     "ConstLinDecompOp"
@@ -103,6 +105,7 @@ setMethod(
          )
     }
 )
+
 #' Constructor 
 setMethod(
     "ConstLinDecompOp"
@@ -130,8 +133,9 @@ setMethod(
     ,signature=signature(
         mat='missing'
         ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolName'
-        #,out_flux_rates='ConstantOutFluxRateList_by_PoolName'
+        ,out_flux_rates='ConstantOutFluxRateList_by_PoolName'
         ,poolNames='character'
+        ,numberOfPools='missing'
      )
     ,definition=function(
          internal_flux_rates

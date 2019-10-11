@@ -7,6 +7,9 @@ param delta14C Object to be converted to AbsoluteFractionModern}
 \usage{
 AbsoluteFractionModern_from_Delta14C(delta14C)
 }
+\arguments{
+\item{delta14C}{see method arguments}
+}
 \description{
 conversion
 param delta14C Object to be converted to AbsoluteFractionModern

@@ -15,6 +15,8 @@ import(methods)
 export(
 AbsoluteFractionModern_from_Delta14C,
 ConstLinDecompOp,
+ConstantOutFluxRateList_by_PoolIndex,
+ConstantInternalFluxRateList_by_PoolIndex,
 UnBoundNonLinDecompOp,
 Delta14C_from_AbsoluteFractionModern,
 Delta14C,

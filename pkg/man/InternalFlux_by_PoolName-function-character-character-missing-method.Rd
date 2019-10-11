@@ -8,6 +8,12 @@ subset of the state_variable_names}
 \S4method{InternalFlux_by_PoolName}{`function`,character,character,missing}(func, sourceName, destinationName)
 }
 \arguments{
+\item{func}{object of class:\code{function}. }
+
+\item{sourceName}{object of class:\code{character}. }
+
+\item{destinationName}{object of class:\code{character}. }
+
 \item{time_symbol}{A string idicating which of the formal arguments of \code{map} will be considered as time.}
 
 \item{state_variable_ames}{A character vector with the

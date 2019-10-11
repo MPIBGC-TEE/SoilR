@@ -6,6 +6,11 @@
 \usage{
 \S4method{PoolConnection_by_PoolName}{ANY,ANY,missing}(source, destination)
 }
+\arguments{
+\item{source}{object of class:\code{ANY}. }
+
+\item{destination}{object of class:\code{ANY}. }
+}
 \description{
 constructor from an ordered pair of PoolName objects
 }

@@ -174,7 +174,7 @@ library(FME)
 
 eCO2P1=function(pars){
     At=ConstLinDecompOp(
-         out_flux_rates=c("1"=pars[[1]])
+          out_flux_rates=ConstantOutFluxRateList_by_PoolIndex(list("1"=pars[[1]]))
          ,numberOfPools =1
     
     )
@@ -246,7 +246,7 @@ We therefore probably can improve the fit significantly if we allow a second par
 <<>>= 
 eCO2P1a=function(pars){
   At=ConstLinDecompOp(
-      out_flux_rates=c("1"=pars[[1]])
+      out_flux_rates=ConstantOutFluxRateList_by_PoolIndex(list("1"=pars[[1]]))
       ,numberOfPools =1 
   ) 
   mod=GeneralModel(
@@ -332,7 +332,7 @@ decides now how the total carbon is distributed between the two pools.
 <<>>=
 eCO2P2=function(pars){
    At=ConstLinDecompOp(
-       out_flux_rates=c("1"=pars[[1]],"2"=pars[[2]])
+       out_flux_rates=ConstantOutFluxRateList_by_PoolIndex(list("1"=pars[[1]],"2"=pars[[2]]))
        ,numberOfPools =2
    )
    gamma=pars[[3]]
@@ -340,7 +340,7 @@ eCO2P2=function(pars){
       t=BorealCO2[,'time']
      ,A=At
      ,ivList=Ctotal*c(gamma,1-gamma)
-     ,inputFluxes=0
+     ,inputFluxes=c(0,0)
      ,pass=TRUE
    )
    Rt<-getReleaseFlux(mod)
@@ -447,14 +447,18 @@ $\Delta^{14}$C value of the respired carbon for the desired times.
 Fc=BoundFc(C14Atm_NH,lag=0,format="Delta14C")
 Mod1<-function(ks,pass=TRUE){
     At=ConstLinDecompOp(
-         internal_flux_rates=c(
-            "1_to_2"=ks[[4]]
-            #,"1_to_3"=ks[[5]]
-         )
-        ,out_flux_rates=c(
+         internal_flux_rates=ConstantInternalFluxRateList_by_PoolIndex(
+            list(
+              "1_to_2"=ks[[4]]
+              #,"1_to_3"=ks[[5]]
+            )
+          )
+        ,out_flux_rates=ConstantOutFluxRateList_by_PoolIndex(
+          list(
             "1"=ks[[1]]
             ,"2"=ks[[2]]
             ,"3"=ks[[3]]
+          )
         )
         ,numberOfPools = 3
     
@@ -485,7 +489,8 @@ R14tCost <- function(pars){
 }
 @
 As before we perform an initial optimization, and the final Bayesian parameter estimation. 
-<<cache=TRUE>>=
+%<<cache=TRUE>>=
+<<>>=
 nk=4
 up=rep(1,nk)
 lo=rep(0,nk)

@@ -1,6 +1,19 @@
 #!/usr/bin/env Rscript
 #·vim:set·ff=unix ts=2·sw=2:
-require(roxygen2)
+requireNamespace('roxygen2')
+  tryCatch(
+    roxygen2::SoilR_approved(),
+    error=function(e){
+      cat("
+      Until the pull request to roxygen2 have been accepted 
+      you need a special branch of roxygen2 to document SoilR. 
+      Please install from gitbug by:     
+
+      devtools::install_github('mamueller/roxygen2')
+      ")
+      e
+  }
+)
 require(devtools)
 
 # find relative path to this script from the current wd
@@ -18,7 +31,7 @@ devtools::install(pkgDir,args=c('--html'))
 #system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(pkgDir)))
 #devtools::check(pkgDir,document=FALSE,build_args = '--no-build-vignettes')
 #devtools::check(pkgDir,document=FALSE)
-browserBin <- 'firefox'
+#browserBin <- 'firefox'
 #
 ## check if the browser is running 
 #res <- system2(command='pgrep',args=browserBin,stdout=TRUE)

@@ -7,6 +7,8 @@
 \S4method{OutFluxList_by_PoolName}{list}(object)
 }
 \arguments{
+\item{object}{object of class:\code{list}. }
+
 \item{l}{A list. Either a list of elements of type
 \linkS4class{OutFlux_by_PoolName} or 
 a list where the names of the elements are integer strings.}

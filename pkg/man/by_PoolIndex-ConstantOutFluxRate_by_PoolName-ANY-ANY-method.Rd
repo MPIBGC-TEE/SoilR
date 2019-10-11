@@ -6,6 +6,11 @@
 \usage{
 \S4method{by_PoolIndex}{ConstantOutFluxRate_by_PoolName,ANY,ANY}(obj, poolNames)
 }
+\arguments{
+\item{obj}{object of class:\code{ConstantOutFluxRate_by_PoolName}. }
+
+\item{poolNames}{object of class:\code{ANY}. }
+}
 \description{
 new object with the source pool id converted to a PoolIndex if necessary
 }

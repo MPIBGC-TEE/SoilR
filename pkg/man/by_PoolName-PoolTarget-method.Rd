@@ -6,6 +6,11 @@
 \usage{
 \S4method{by_PoolName}{PoolTarget}(obj, poolNames)
 }
+\arguments{
+\item{obj}{object of class:\code{PoolTarget}. }
+
+\item{poolNames}{}
+}
 \description{
 convert the source pool id to a name if necessary
 }

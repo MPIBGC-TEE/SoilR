@@ -7,6 +7,11 @@ new object with the source pool id and the destination pool id guranteed to be o
 \usage{
 \S4method{by_PoolIndex}{PoolConnection_by_PoolName,ANY,ANY}(obj, poolNames)
 }
+\arguments{
+\item{obj}{object of class:\code{PoolConnection_by_PoolName}. }
+
+\item{poolNames}{object of class:\code{ANY}. }
+}
 \description{
 converts the ids if necessary otherwise returns an 
 identical object

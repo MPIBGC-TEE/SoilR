@@ -6,6 +6,9 @@
 \usage{
 \S4method{PoolIndex}{character}(id)
 }
+\arguments{
+\item{id}{object of class:\code{character}. }
+}
 \description{
 construct from number string like '1' or '3'
 }

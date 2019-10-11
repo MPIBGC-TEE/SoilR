@@ -6,6 +6,9 @@
 \usage{
 \S4method{GeneralPoolId}{numeric}(id)
 }
+\arguments{
+\item{id}{object of class:\code{numeric}. }
+}
 \description{
 the class returned depends on the method dispached depending on the supplied arguments
 }

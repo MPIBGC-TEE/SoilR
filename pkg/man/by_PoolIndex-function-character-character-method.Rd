@@ -7,11 +7,11 @@
 \S4method{by_PoolIndex}{`function`,character,character}(obj, poolNames, timeSymbol)
 }
 \arguments{
-\item{obj}{For this method a function, whose formal arguments must have names that are elements of the union of poolNames and timeSymbol}
+\item{obj}{object of class:\code{function}. For this method a function, whose formal arguments must have names that are elements of the union of poolNames and timeSymbol}
 
-\item{poolNames}{The ordered poolnames}
+\item{poolNames}{object of class:\code{character}. The ordered poolnames}
 
-\item{timeSymbol}{The name of the argument of obj that represents time.}
+\item{timeSymbol}{object of class:\code{character}. The name of the argument of obj that represents time.}
 }
 \value{
 f_vec(vec,t)  A new function that extracts the arguments of obj from a complete vector of state variables and the time argument t and applies the orginal function to these arguments

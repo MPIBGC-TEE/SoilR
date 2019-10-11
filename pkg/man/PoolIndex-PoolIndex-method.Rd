@@ -6,6 +6,11 @@
 \usage{
 \S4method{PoolIndex}{PoolIndex}(id, poolNames)
 }
+\arguments{
+\item{id}{object of class:\code{PoolIndex}. }
+
+\item{poolNames}{}
+}
 \description{
 This is here to be able to call PoolIndex on a PoolIndex ojbect without
 having to chech before if it is necessary.

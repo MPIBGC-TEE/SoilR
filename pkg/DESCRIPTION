@@ -1,6 +1,6 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.1-90
+Version: 1.1-91
 Date: 2017-05-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
@@ -9,7 +9,7 @@ Description: Functions for modeling Soil Organic Matter decomposition
 License: GPL-3
 Depends: R (>= 3.5.0), deSolve,methods
 Imports: igraph,assertthat,parallel,expm,sets
-Suggests: FME,lattice,MASS,knitr
+Suggests: FME,lattice,MASS,knitr,rmarkdown
 LazyData: TRUE
 VignetteBuilder: knitr
 Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R

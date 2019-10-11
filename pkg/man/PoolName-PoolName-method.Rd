@@ -6,6 +6,11 @@
 \usage{
 \S4method{PoolName}{PoolName}(id, poolNames)
 }
+\arguments{
+\item{id}{object of class:\code{PoolName}. }
+
+\item{poolNames}{}
+}
 \description{
 This is here to be able to call PoolName on a PoolName ojbect without
 having to test before if we have to.

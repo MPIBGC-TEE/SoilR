@@ -6,6 +6,11 @@
 \usage{
 \S4method{by_PoolIndex}{PoolConnection,ANY,ANY}(obj, poolNames)
 }
+\arguments{
+\item{obj}{object of class:\code{PoolConnection}. }
+
+\item{poolNames}{object of class:\code{ANY}. }
+}
 \description{
 converts the ids if necessary otherwise returns an 
 identical object

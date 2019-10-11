@@ -6,6 +6,11 @@
 \usage{
 \S4method{by_PoolIndex}{PoolSource,ANY,ANY}(obj, poolNames)
 }
+\arguments{
+\item{obj}{object of class:\code{PoolSource}. }
+
+\item{poolNames}{object of class:\code{ANY}. }
+}
 \description{
 new object with the source pool id converted to a PoolIndex if necessary
 }
