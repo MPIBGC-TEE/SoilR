@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="ConstInFluxes",
   signature=c(
@@ -10,6 +16,12 @@ setMethod(
     new("ConstInFluxes",map=map)
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     "ConstInFluxes"
     ,signature=signature(
@@ -22,6 +34,12 @@ setMethod(
         ConstInFluxes(map=res)
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     "getConstantInFluxVector"
     ,signature=signature(
@@ -31,6 +49,12 @@ setMethod(
         object@map
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getTimeRange",
     signature="ConstInFluxes",
@@ -40,6 +64,12 @@ setMethod(
                c("t_min"=-Inf,"t_max"=Inf))
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="ConstInFluxes",

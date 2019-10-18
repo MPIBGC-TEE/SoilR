@@ -13,6 +13,12 @@ correctnessOfBoundDecompOp <- function(obj){
   if (valDims[[1]]!=valDims[[2]]){
     stop(sprintf('The function must return a quadratic object (qudratic Matrix). Your input leads to a function that return an object with dim(object)=%s',valDims))}
 }
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
       f="BoundLinDecompOp",
       signature=c(map="UnBoundLinDecompOp"),
@@ -25,6 +31,12 @@ setMethod(
       return(BoundLinDecompOp(map=f,starttime,endtime))
      }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
       f="BoundLinDecompOp",
       signature=signature(map="ANY"),
@@ -39,6 +51,12 @@ setMethod(
   }
 )
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getCompartmentalMatrixFunc",
       signature(object="BoundLinDecompOp"),

@@ -1,4 +1,10 @@
 # constructor from number like objects
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f='ConstantInternalFluxRate_by_PoolIndex'
     ,signature=signature(

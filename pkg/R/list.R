@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="InFluxes",
   signature=signature(object="list"),
@@ -6,6 +12,12 @@ setMethod(
     BoundInFluxes(TimeMap(object))
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="GeneralDecompOp",
   signature=signature(object="list"),

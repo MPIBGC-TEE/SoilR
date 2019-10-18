@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getValues",
     signature="ConstFc",
@@ -7,6 +13,12 @@ setMethod(
         return(object@values)
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "Delta14C",
       signature("ConstFc"),
@@ -29,6 +41,12 @@ setMethod(
       stop("conversion not implemented for this format")
       }	 
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "AbsoluteFractionModern",
       signature("ConstFc"),

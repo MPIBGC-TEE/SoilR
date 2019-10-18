@@ -3,6 +3,12 @@ setClass(
     contains=c("InFluxes"),
     slots=list( map="function")
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
      f="initialize",
      signature="UnBoundInFluxes",
@@ -13,6 +19,12 @@ setMethod(
      return(.Object)
      }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
       f="UnBoundInFluxes",
       signature=c(map="function"),
@@ -21,6 +33,12 @@ setMethod(
       return(new("UnBoundInFluxes",map=map))
      }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="UnBoundInFluxes",
@@ -29,6 +47,12 @@ setMethod(
       return(object@map)
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getTimeRange",
     signature="UnBoundInFluxes",

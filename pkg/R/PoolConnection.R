@@ -35,6 +35,12 @@ setMethod(
     )
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="check_pool_ids",
   signature=c(obj='PoolConnection',pools='integer'),

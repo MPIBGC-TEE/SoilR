@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getFormat",
     signature="Fc",

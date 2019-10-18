@@ -3,6 +3,12 @@ setClass(
     contains=c("DecompOp"),
     slots=list( matFunc="function")
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
      f="initialize",
      signature="UnBoundLinDecompOp",
@@ -13,6 +19,12 @@ setMethod(
      return(.Object)
      }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
       f="UnBoundLinDecompOp",
       signature=c(matFunc="function"),
@@ -27,6 +39,12 @@ setMethod(
       return(new("UnBoundLinDecompOp",matFunc=matFunc))
      }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="UnBoundLinDecompOp",
@@ -35,6 +53,12 @@ setMethod(
       return(object@matFunc)
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getTimeRange",
     signature="UnBoundLinDecompOp",

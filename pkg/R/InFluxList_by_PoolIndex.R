@@ -14,6 +14,12 @@ setMethod(
         as(object,'InFluxList_by_PoolIndex')
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod("getFunctionDefinition",
     signature=signature(object="InFluxList_by_PoolIndex"),
     definition=function(

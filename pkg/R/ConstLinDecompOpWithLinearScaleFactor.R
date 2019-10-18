@@ -64,6 +64,12 @@ setClass(
 #     }
 #)
 #
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
       f="ConstLinDecompOpWithLinearScalarFactor",
       signature=c(
@@ -272,6 +278,12 @@ setMethod(
       function(t){f_clo(t)*f_xi(t)}
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getTimeRange"
     ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -279,6 +291,12 @@ setMethod(
       TimeRangeIntersection(object@clo,object@xi)
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getConstantCompartmentalMatrix",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -286,6 +304,12 @@ setMethod(
         getConstantCompartmentalMatrix(object@clo)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getLinearScaleFactor",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -293,6 +317,12 @@ setMethod(
         object@xi
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getConstLinDecompOp",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"

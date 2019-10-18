@@ -20,6 +20,12 @@ setClass(
 #     }
 #)
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
       f="UnBoundNonLinDecompOp",
       signature=c(
@@ -40,6 +46,12 @@ setMethod(
      }
 )
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getCompartmentalMatrixFunc",
       signature(object="UnBoundNonLinDecompOp"),
@@ -170,6 +182,12 @@ setMethod(
 #        )
 #      }
 #)
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getCompartmentalMatrixFunc",
     signature="UnBoundNonLinDecompOp",

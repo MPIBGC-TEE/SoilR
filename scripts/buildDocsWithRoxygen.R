@@ -1,5 +1,9 @@
 #!/usr/bin/env Rscript
 #·vim:set·ff=unix ts=2·sw=2:
+require(devtools)
+require(pkgload)
+pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
+
 requireNamespace('roxygen2')
   tryCatch(
     roxygen2::SoilR_approved(),
@@ -14,7 +18,6 @@ requireNamespace('roxygen2')
       e
   }
 )
-require(devtools)
 
 # find relative path to this script from the current wd
 initial.options <- commandArgs(trailingOnly = FALSE)
@@ -24,8 +27,9 @@ script.basename <- dirname(script.name)
 git.hubs.docs.dir <- file.path(script.basename,'..','docs')
 
 pkgDir='~/SoilR-exp/pkg'
-roxygen2::roxygenize(pkgDir)
+roxygen2::roxygenize(pkgDir,roclets=c('autotag_roclet','rd'))
 devtools::install(pkgDir,args=c('--html'))
+
 #p='pkg.pdf'
 #if(file.exists(p)){file.remove(p)}
 #system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(pkgDir)))

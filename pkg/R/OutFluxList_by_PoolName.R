@@ -31,6 +31,12 @@ setMethod("OutFluxList_by_PoolName",
 )
 
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="by_PoolIndex"
     ,signature=signature(

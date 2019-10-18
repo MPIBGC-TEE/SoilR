@@ -25,6 +25,12 @@ setMethod(
         return(PoolIndex(id))
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="GeneralPoolId",
     signature=c(id='character'),

@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="initialize",
     signature="DecompositionOperator",
@@ -17,6 +23,12 @@ setMethod(
     return(.Object)
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getTimeRange",
     signature="DecompositionOperator",
@@ -26,6 +38,12 @@ setMethod(
         return( c("t_min"=object@starttime,"t_max"=object@endtime))
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="DecompositionOperator",

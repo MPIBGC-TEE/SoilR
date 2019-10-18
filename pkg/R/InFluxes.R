@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="InFluxes",
   signature(object="TimeMap"),
@@ -7,6 +13,12 @@ setMethod(
     BoundInFluxes(object)
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="InFluxes",
   signature=signature(object="InFluxes"),
@@ -15,6 +27,12 @@ setMethod(
     object
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="InFluxes",
   signature=signature(object="numeric"),
@@ -23,6 +41,12 @@ setMethod(
     ConstInFluxes(object)
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="InFluxes",
   signature=signature(object="ConstantInFluxList_by_PoolIndex"),

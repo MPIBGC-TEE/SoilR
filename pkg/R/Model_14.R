@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="initialize",
     signature=c("Model_14"),
@@ -225,6 +231,12 @@ Model_14 <- function
      obj=new(Class="Model_14",t,GeneralDecompOp(A),ivList, initialValF,InFluxes(inputFluxes),inputFc,c14DecayRate=c14DecayRate,solverfunc=solverfunc,pass=pass)
      return(obj)
   }
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getC14",
       signature= "Model_14",
@@ -256,6 +268,12 @@ setMethod(
       return(Y)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getF14",
       signature= "Model_14",
@@ -270,6 +288,12 @@ setMethod(
       return(fr)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getReleaseFlux14",
       signature= "Model_14",
@@ -290,6 +314,12 @@ setMethod(
       return(R)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f= "getF14R",
   signature= "Model_14",
@@ -304,6 +334,12 @@ setMethod(
     return(fr)
   }
   )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f= "getF14C",
   signature= "Model_14",

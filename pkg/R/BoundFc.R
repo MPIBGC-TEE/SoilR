@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="BoundFc",
   signature=signature(format='character'),
@@ -12,6 +18,12 @@ setMethod(
     return(obj)
 }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="BoundFc",
   signature=signature(format='missing'),
@@ -27,6 +39,12 @@ setMethod(
     return(obj)
 }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "Delta14C",
    signature("BoundFc"),
@@ -53,6 +71,12 @@ setMethod(
       stop("conversion not implemented for this format")
     }	 
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f= "AbsoluteFractionModern",
       signature("BoundFc"),

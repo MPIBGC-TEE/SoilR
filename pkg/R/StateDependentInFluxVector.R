@@ -1,3 +1,9 @@
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     'getFunctionDefinition'
     ,signature=signature(object='StateDependentInFluxVector')

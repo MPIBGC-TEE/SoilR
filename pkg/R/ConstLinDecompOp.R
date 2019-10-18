@@ -30,6 +30,12 @@ from_integer_flux_lists_with_defaults=function(
   return(new('ConstLinDecompOp',mat=B))
 }
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="initialize",
     signature="ConstLinDecompOp",
@@ -160,6 +166,12 @@ no_outflux_warning=function(){
 
 
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="ConstLinDecompOp",
@@ -168,6 +180,12 @@ setMethod(
       return(function(t){object@mat})
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getTimeRange",
     signature="ConstLinDecompOp",
@@ -177,6 +195,12 @@ setMethod(
         return( c("t_min"=-Inf,"t_max"=Inf))
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f= "getMeanTransitTime",
     signature= "ConstLinDecompOp",
@@ -210,6 +234,12 @@ setMethod(
       return(meanTimeIntegrate)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getTransitTimeDistributionDensity",
       signature= "ConstLinDecompOp",
@@ -232,6 +262,12 @@ setMethod(
    }
 )
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getCompartmentalMatrixFunc",
       signature(object="ConstLinDecompOp"),
@@ -239,6 +275,12 @@ setMethod(
           getFunctionDefinition(object)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getConstantCompartmentalMatrix",
       signature(object="ConstLinDecompOp"),
@@ -256,6 +298,12 @@ non_zero_rates=function(all_rates){
           )
         ]
 }
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f= "getConstantOutFluxRateList_by_PoolIndex",
         signature(object="ConstLinDecompOp"),
@@ -281,6 +329,12 @@ setMethod(
           
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f= "getConstantInternalFluxRateList_by_PoolIndex",
         signature(object="ConstLinDecompOp"),

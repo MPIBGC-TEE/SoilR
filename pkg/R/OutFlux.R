@@ -4,6 +4,12 @@ setClass(
   slots=c(func='function')
 )
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="OutFlux",
   signature=c(map='function'),

@@ -1,6 +1,12 @@
 is.negative=function(number){
    return(number<0)
 }
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="initialize",
     signature="NlModel",
@@ -51,6 +57,12 @@ setMethod(
         return(.Object)
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getInFluxes",
    signature(object="NlModel"),
@@ -67,6 +79,12 @@ errorPlotC=function(C,t){
         pairs(C,diag.panel=timePlot)
       }
 }
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "plot",
       signature(x="NlModel"),
@@ -78,12 +96,24 @@ setMethod(
       plot(t,cul)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "print",
       signature(x="NlModel"),
       definition=function(x){
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getNumberOfPools",
       signature(object="NlModel"),
@@ -91,12 +121,24 @@ setMethod(
       return(length(object@initialValues))
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "show",
       signature(object="NlModel"),
       definition=function(object){
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getDecompOp",
       signature= "NlModel",
@@ -104,6 +146,12 @@ setMethod(
       return(object@DepComp)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getParticleMonteCarloSimulator",
       signature= "NlModel",
@@ -111,6 +159,12 @@ setMethod(
       return(new(Class="MCSim",object))
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getTimes",
       signature= "NlModel",
@@ -120,6 +174,12 @@ setMethod(
       return(times)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getCumulativeC",
       signature= "NlModel",
@@ -130,6 +190,12 @@ setMethod(
       return(cul)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getInitialValues",
       signature= "NlModel",
@@ -147,6 +213,12 @@ res2fun=function(times,C){
   }
   return(Cs)
 }
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getTransferCoefficients",
       signature= "NlModel",
@@ -177,6 +249,12 @@ setMethod(
       }
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getOutputFluxes",
       signature= "NlModel",
@@ -195,6 +273,12 @@ setMethod(
       }
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getReleaseFlux",
       signature= "NlModel",
@@ -220,12 +304,24 @@ setMethod(
       return(allRes)
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "computeResults",
       signature= "NlModel",
       definition=function(object){
 }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
    f= "getC",
       signature= c("NlModel"),
@@ -269,6 +365,12 @@ setMethod(
       }
    }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="[",
   signature(x="NlModel",i="character"),
@@ -293,6 +395,12 @@ setMethod(
       return(df)
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod("$",signature(x="NlModel"), 
         definition=function 
         ( 

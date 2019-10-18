@@ -82,6 +82,12 @@ CallWithPlotVars<- function(
   res
 }
 
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="initialize",
     signature="TimeMap",
@@ -97,6 +103,12 @@ setMethod(
     return(.Object)
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -204,6 +216,12 @@ setMethod(
     )
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -246,6 +264,12 @@ setMethod(
     )
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -299,6 +323,12 @@ setMethod(
     )
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -349,6 +379,12 @@ setMethod(
   )
  }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -378,6 +414,12 @@ setMethod(
     return(TimeMap(times=times,data=data,lag=lag,interpolation=interpolation))
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="TimeMap",
     signature=signature(
@@ -448,6 +490,12 @@ setMethod(
         )
     }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="TimeMap",
     signature=signature(
@@ -459,6 +507,12 @@ setMethod(
    map 
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="as.character",
     signature=c(x="TimeMap"),
@@ -500,6 +554,12 @@ setMethod(
 #        return( c("t_min"=object@starttime+lag,"t_max"=object@endtime+lag))
 #    }
 #)
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="TimeMap",
@@ -568,6 +628,12 @@ interpolation=splinefun
    obj=TimeMap(dframe,interpolation=interpolation) 
 return(obj)
 }
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f= "plot",
   signature=c(x="TimeMap"),
@@ -582,6 +648,12 @@ setMethod(
     )
   }
 )
+
+#' @auto
+
+#' @auto
+
+#' @auto
 setMethod(
   f= "add_plot",
   signature=c(x="TimeMap"),
