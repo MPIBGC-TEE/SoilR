@@ -1,6 +1,6 @@
 #' constructor from a normal list 
 #' 
-#' @param l A list. Either a list of elements of type  
+#' @param object A list. Either a list of elements of type  
 #' \linkS4class{InternalFlux_by_PoolName} or 
 #' a list where the names of the elements are strings of the form
 #' '1->3' (for the flux rate from pool 1 to 2
@@ -30,11 +30,6 @@ setMethod("InternalFluxList_by_PoolName",
         )
     }
 )
-
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(

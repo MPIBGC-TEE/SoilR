@@ -46,13 +46,6 @@
 #  }
 #}
 #
-##' A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
-##'
-setClass(
-    Class="ConstLinDecompOpWithLinearScalarFactor"
-    ,contains=c("DecompOp")
-    ,slots=list(clo="ConstLinDecompOp",xi='TimeMap')
-)
 #setMethod(
 #     f="initialize",
 #     signature="ConstLinDecompOp",
@@ -64,10 +57,6 @@ setClass(
 #     }
 #)
 #
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(

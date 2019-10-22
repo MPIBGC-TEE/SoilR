@@ -8,26 +8,12 @@ subset of the state_variable_names}
 \S4method{InternalFlux_by_PoolName}{`function`,character,character,missing}(func, sourceName, destinationName)
 }
 \arguments{
-\item{func}{object of class:\code{function}. }
+\item{func}{object of class:\code{function}. A real valued function describing the flux (mass/time)
+as function of the state variables and time.}
 
-\item{sourceName}{object of class:\code{character}. }
+\item{sourceName}{object of class:\code{character}. A string identifying the source pool of the flux}
 
-\item{destinationName}{object of class:\code{character}. }
-
-\item{time_symbol}{A string idicating which of the formal arguments of \code{map} will be considered as time.}
-
-\item{state_variable_ames}{A character vector with the
-names of the variables. If present the vector will be used together with 
-the map argument. In this case only names in this vector and the time_symbol 
-argument are permitted as formal arguments of map.}
-
-\item{map}{A real valued function describing the flux (mass/time)#' as function of the state variables and time.
-If \code{state_variables_names} is given  
-the names of the formal arguments of \code{map}.
-SoilR will then use this imformation to derive a function of one 
-vector argument for the state vector and time as required by
-the solvers
-If \code{state_variable_names} is missing}
+\item{destinationName}{object of class:\code{character}. A string identifying the destination pool of the flux}
 }
 \description{
 constructor from an ordered pair of PoolName (string like) objects and a function with the set of formal argument names forming a 

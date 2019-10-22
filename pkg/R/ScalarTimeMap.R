@@ -1,6 +1,7 @@
 #' constructor 
 #'
-#' The arguments are passed through to create a function of time (an object of class \code{\link{TimeMap}}) which is susequently checked to yield a scalar numeric value
+#' @param ... 
+#' The arguments are passed through to create a function of time (an object of class \code{\link{TimeMap}}) which is subsequently checked to yield a scalar numeric value
 ScalarTimeMap<-function(...){
     # create a time map Object
     # fixme mm :

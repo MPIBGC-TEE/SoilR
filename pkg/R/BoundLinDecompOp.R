@@ -1,7 +1,3 @@
-setClass(
-    Class="BoundLinDecompOp",
-    contains=c("DecompOp","TimeMap"),   
-   )
 correctnessOfBoundDecompOp <- function(obj){
   tr <- getTimeRange(obj)
   t_min <- tr[['t_min']]
@@ -14,11 +10,20 @@ correctnessOfBoundDecompOp <- function(obj){
     stop(sprintf('The function must return a quadratic object (qudratic Matrix). Your input leads to a function that return an object with dim(object)=%s',valDims))}
 }
 
-#' @auto
-
-#' @auto
-
-#' @auto
+#' A converter 
+#' 
+#' The destinction between the classes BoundLinDecompOp and UnboundLinDecompOp exist for those functions, that should be only defined for objects of class UnBoundLinDecomp.
+#'  
+#' Many functions however do not need extra methods for objects of class 
+#' UnBoundLinDecompOp and just treat it as a BoundLinDecompOp which is defined
+#' on the complete timeline (-Inf,+Inf). 
+#' With its default arguments this function converts its map argument to a BoundLinDecompOp with just this domain. 
+#' This is the most frequent internal use case. 
+#' If starttime and endtime are provided the domain of the operator will be restricted [starttime,endtime].
+#'
+#' @param map An object of class UnBoundLinDecompOp
+#' @param starttime  Begin of time interval map will be restricted to
+#' @param endtime End of time interval map will be restricted to
 setMethod(
       f="BoundLinDecompOp",
       signature=c(map="UnBoundLinDecompOp"),
@@ -31,10 +36,6 @@ setMethod(
       return(BoundLinDecompOp(map=f,starttime,endtime))
      }
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(
@@ -50,11 +51,6 @@ setMethod(
     return(obj)
   }
 )
-
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(

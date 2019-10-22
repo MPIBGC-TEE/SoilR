@@ -6,6 +6,9 @@
 \usage{
 check_duplicate_pool_names(poolNames)
 }
+\arguments{
+\item{poolNames}{character vector which will be tested for duplicats}
+}
 \description{
-helper function
+Check that poolNames are unique
 }

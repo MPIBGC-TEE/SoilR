@@ -19,7 +19,8 @@ setClass(
 
 #' class for pool-name-strings
 #'
-#' used to control the creation of PoolName objects which have ot be valid R identifiers and to dispatch pool name specific methods like conversion to pool indexed 
+#' used to control the creation of PoolName objects which have to be valid R identifiers 
+#' and to dispatch pool name specific methods like conversion to pool indices 
 setClass(
    Class="PoolName",
    ,contains=c('PoolId','character')
@@ -250,8 +251,23 @@ setClass(
     slots=list( mat="matrix")
 )
 
+#' A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
+#' with a time dependent (linear) scalar pre factor 
+#' This is a special case of a linear compartmental operator/matrix 
+setClass(
+    Class="ConstLinDecompOpWithLinearScalarFactor"
+    ,contains=c("DecompOp")
+    ,slots=list(clo="ConstLinDecompOp",xi='TimeMap')
+)
 
-#--------------------------------
+#' A S4 class to represent a linear compartmental operator 
+#' defined on time interval
+#'
+setClass(
+    Class="BoundLinDecompOp",
+    contains=c("DecompOp","TimeMap"),   
+   )
+
 #' An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables 
 #'
 setClass(

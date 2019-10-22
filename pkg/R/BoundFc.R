@@ -1,9 +1,5 @@
 
 #' @auto
-
-#' @auto
-
-#' @auto
 setMethod(
   f="BoundFc",
   signature=signature(format='character'),
@@ -18,10 +14,6 @@ setMethod(
     return(obj)
 }
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(
@@ -39,10 +31,6 @@ setMethod(
     return(obj)
 }
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(
@@ -71,10 +59,6 @@ setMethod(
       stop("conversion not implemented for this format")
     }	 
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(

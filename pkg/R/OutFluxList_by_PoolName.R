@@ -1,6 +1,6 @@
 #' constructor from a normal list 
 #' 
-#' @param l A list. Either a list of elements of type  
+#' @param object A list. Either a list of elements of type  
 #' \linkS4class{OutFlux_by_PoolName} or 
 #' a list where the names of the elements are integer strings.
 #'

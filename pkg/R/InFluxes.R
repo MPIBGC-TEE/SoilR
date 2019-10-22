@@ -1,8 +1,3 @@
-
-#' @auto
-
-#' @auto
-
 #' @auto
 setMethod(
   f="InFluxes",
@@ -15,10 +10,6 @@ setMethod(
 )
 
 #' @auto
-
-#' @auto
-
-#' @auto
 setMethod(
   f="InFluxes",
   signature=signature(object="InFluxes"),
@@ -29,10 +20,6 @@ setMethod(
 )
 
 #' @auto
-
-#' @auto
-
-#' @auto
 setMethod(
   f="InFluxes",
   signature=signature(object="numeric"),
@@ -41,10 +28,6 @@ setMethod(
     ConstInFluxes(object)
   }
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(

@@ -41,6 +41,8 @@ test.NonLinDecompOp_with_linear_fluxes_by_Index=function(){
   #     barrel
   #  X= glass
   #     belly
+  n<-3
+  k<-3
   intfs=c(
     InternalFlux_by_PoolIndex(
          sourceIndex=1
@@ -71,7 +73,7 @@ test.NonLinDecompOp_with_linear_fluxes_by_Index=function(){
       UnBoundNonLinDecompOp(
       internal_fluxes=intfs
       ,out_fluxes=ofs
-      ,numberOfPools=3
+      ,numberOfPools=n
       ,timeSymbol='t'
     )
   )
@@ -86,8 +88,8 @@ test.NonLinDecompOp_with_linear_fluxes_by_Index=function(){
       ,ncol=n
       ,byrow=TRUE
       ,c( 
-         -6,0,0
-         ,3,0,0
+       -2*k,0,0
+         ,k,0,0
          ,0,0,0
       )
     )

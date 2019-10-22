@@ -21,11 +21,6 @@ setMethod(
   }
 )
 
-
-#' @auto
-
-#' @auto
-
 #' @auto
 setMethod(
     f="by_PoolIndex"

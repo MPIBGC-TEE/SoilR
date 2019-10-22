@@ -2,7 +2,8 @@
 % Please edit documentation in R/ConstLinDecompOpWithLinearScaleFactor.R
 \name{ConstLinDecompOpWithLinearScalarFactor,matrix,missing,missing,missing,ScalarTimeMap-method}
 \alias{ConstLinDecompOpWithLinearScalarFactor,matrix,missing,missing,missing,ScalarTimeMap-method}
-\title{ConstLinDecompOpWithLinearScalarFactor,matrix,missing,missing,missing,ScalarTimeMap-method}
+\title{convert names of  vectors or lists to class ConstantOutFluxRate 
+convert names of  vectors or lists to class ConstantInternalFluxRate}
 \usage{
 \S4method{ConstLinDecompOpWithLinearScalarFactor}{matrix,missing,missing,missing,ScalarTimeMap}(mat, xi)
 }
@@ -12,5 +13,8 @@
 \item{xi}{object of class:\code{ScalarTimeMap}. }
 }
 \description{
+convert names of  vectors or lists to class ConstantOutFluxRate 
+convert names of  vectors or lists to class ConstantInternalFluxRate
+
 ConstLinDecompOpWithLinearScalarFactor,matrix,missing,missing,missing,ScalarTimeMap-method
 }

@@ -5,5 +5,6 @@
 \alias{PoolName-class}
 \title{class for pool-name-strings}
 \description{
-used to control the creation of PoolName objects which have ot be valid R identifiers and to dispatch pool name specific methods like conversion to pool indexed
+used to control the creation of PoolName objects which have to be valid R identifiers 
+and to dispatch pool name specific methods like conversion to pool indices
 }

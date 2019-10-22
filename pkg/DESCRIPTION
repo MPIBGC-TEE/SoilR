@@ -14,11 +14,11 @@ LazyData: TRUE
 VignetteBuilder: knitr
 Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         S4ClassDefinitions.R TimeMap.R ScalarTimeMap.R PoolId.R
-        PoolIndex.R PoolName.R PoolTarget.R PoolSource.R
+        PoolIndex.R PoolName.R 
         InFlux_by_PoolIndex.R InFlux_by_PoolName.R
         OutFlux_by_PoolIndex.R OutFlux_by_PoolName.R
         InternalFlux_by_PoolIndex.R InternalFlux_by_PoolName.R
-        PoolConnection.R PoolConnection_by_PoolIndex.R
+        PoolConnection_by_PoolIndex.R
         PoolConnection_by_PoolName.R ConstantInFluxRate_by_PoolIndex.R
         ConstantInFluxRate_by_PoolName.R InFluxes.R ConstInFluxes.R
         ConstantInFlux_by_PoolIndex.R
@@ -36,7 +36,7 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         ConstantInternalFluxRateList_by_PoolName.R
         ConstantOutFluxRateList_by_PoolIndex.R
         ConstantOutFluxRateList_by_PoolName.R Fc.R HelperFunctions.R
-        OutFlux.R BoundInFluxes.R deSolve.lsoda.wrapper.R
+	BoundInFluxes.R deSolve.lsoda.wrapper.R
         RespirationCoefficients.R TransportDecompositionOperator.R
         SoilR.F0__deprecated_in_1.2.R MCSim.R DecompOp.R
         UnboundInflux.R UnBoundLinDecompOp.R BoundLinDecompOp.R
@@ -78,6 +78,8 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         TwopFeedbackModel.R TwopFeedbackModel14.R TwopMMmodel.R
         TwopParallelModel.R TwopParallelModel14.R TwopSeriesModel.R
         TwopSeriesModel14.R vecFuncMaker.R warnings.R Yasso07Model.R
-        YassoModel.R C14Atm_NH.R Hua2013.R IntCal09.R IntCal13.R
+        YassoModel.R C14Atm_NH.R  C14Atm.R Hua2013.R 
+	IntCal09.R IntCal13.R incubation_experiment.R 
+	HarvardForest14CO2.R 
 RoxygenNote: 6.1.99.9001
 Encoding: UTF-8

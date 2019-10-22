@@ -4,7 +4,7 @@
 setMethod("InternalFluxList_by_PoolIndex",
     signature=signature(object="list"),
     definition=function(object){
-        checkTargetClassOfElements(l,targetClassName='InternalFlux_by_PoolIndex')
-        as(l,'InternalFluxList_by_PoolIndex')
+        checkTargetClassOfElements(object,targetClassName='InternalFlux_by_PoolIndex')
+        as(object,'InternalFluxList_by_PoolIndex')
     }
 )

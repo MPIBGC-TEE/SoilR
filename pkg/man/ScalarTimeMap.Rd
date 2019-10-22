@@ -6,6 +6,9 @@
 \usage{
 ScalarTimeMap(...)
 }
+\arguments{
+\item{...}{The arguments are passed through to create a function of time (an object of class \code{\link{TimeMap}}) which is subsequently checked to yield a scalar numeric value}
+}
 \description{
-The arguments are passed through to create a function of time (an object of class \code{\link{TimeMap}}) which is susequently checked to yield a scalar numeric value
+constructor
 }

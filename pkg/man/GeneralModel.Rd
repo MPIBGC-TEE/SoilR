@@ -33,6 +33,8 @@ This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided
 function with the same interface.}
 
 \item{pass}{Forces the constructor to create the model even if it is invalid}
+
+\item{timeSymbol}{A string (character vector of lenght 1) identifying the variable name}
 }
 \value{
 A model object that can be further queried.
