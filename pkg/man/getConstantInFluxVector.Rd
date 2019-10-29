@@ -12,3 +12,10 @@ getConstantInFluxVector(object)
 \description{
 getConstantInFluxVector
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getConstantInFluxVector,ConstInFluxes-method}}
+  \item \code{\link{getConstantInFluxVector,ConstInFluxes-method}}
+}
+}
+

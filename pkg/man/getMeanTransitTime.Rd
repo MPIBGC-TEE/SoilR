@@ -14,3 +14,10 @@ getMeanTransitTime(object, inputDistribution)
 \description{
 getMeanTransitTime
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getMeanTransitTime,ConstLinDecompOp-method}}
+  \item \code{\link{getMeanTransitTime,ConstLinDecompOp-method}}
+}
+}
+

@@ -9,7 +9,7 @@
 \arguments{
 \item{object}{object of class:\code{InFluxList_by_PoolIndex}. }
 
-\item{numberOfPools}{}
+\item{numberOfPools}{found automatically by inspection, not documented yet}
 }
 \description{
 getFunctionDefinition,InFluxList_by_PoolIndex-method

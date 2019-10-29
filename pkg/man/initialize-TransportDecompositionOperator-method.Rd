@@ -17,17 +17,17 @@
 \arguments{
 \item{.Object}{object of class:\code{TransportDecompositionOperator}. }
 
-\item{starttime}{}
+\item{starttime}{found automatically by inspection, not documented yet}
 
-\item{endtime}{}
+\item{endtime}{found automatically by inspection, not documented yet}
 
-\item{numberOfPools}{}
+\item{numberOfPools}{found automatically by inspection, not documented yet}
 
-\item{alpha}{}
+\item{alpha}{found automatically by inspection, not documented yet}
 
-\item{f}{}
+\item{f}{found automatically by inspection, not documented yet}
 
-\item{lag}{}
+\item{lag}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,TransportDecompositionOperator-method

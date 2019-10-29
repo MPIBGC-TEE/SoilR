@@ -9,9 +9,9 @@
 \arguments{
 \item{x}{object of class:\code{TimeMap}. }
 
-\item{y}{}
+\item{y}{found automatically by inspection, not documented yet}
 
-\item{...}{}
+\item{...}{found automatically by inspection, not documented yet}
 }
 \description{
 plot,TimeMap-method

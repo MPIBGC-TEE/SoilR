@@ -14,3 +14,10 @@ check_pool_ids(obj, pools)
 \description{
 check_pool_ids
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}}
+  \item \code{\link{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}}
+}
+}
+

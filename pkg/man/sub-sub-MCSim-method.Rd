@@ -9,7 +9,7 @@
 \arguments{
 \item{x}{object of class:\code{MCSim}. }
 
-\item{i}{}
+\item{i}{found automatically by inspection, not documented yet}
 }
 \description{
 [[,MCSim-method

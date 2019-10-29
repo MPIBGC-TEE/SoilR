@@ -12,3 +12,12 @@ getDecompOp(object)
 \description{
 getDecompOp
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getDecompOp,Model-method}}
+  \item \code{\link{getDecompOp,NlModel-method}}
+  \item \code{\link{getDecompOp,Model-method}}
+  \item \code{\link{getDecompOp,NlModel-method}}
+}
+}
+

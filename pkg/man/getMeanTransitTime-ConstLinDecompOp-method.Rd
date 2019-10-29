@@ -9,7 +9,7 @@
 \arguments{
 \item{object}{object of class:\code{ConstLinDecompOp}. }
 
-\item{inputDistribution}{}
+\item{inputDistribution}{found automatically by inspection, not documented yet}
 }
 \description{
 getMeanTransitTime,ConstLinDecompOp-method

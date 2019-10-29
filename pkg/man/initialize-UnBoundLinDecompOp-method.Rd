@@ -10,7 +10,7 @@
 \arguments{
 \item{.Object}{object of class:\code{UnBoundLinDecompOp}. }
 
-\item{matFunc}{}
+\item{matFunc}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,UnBoundLinDecompOp-method

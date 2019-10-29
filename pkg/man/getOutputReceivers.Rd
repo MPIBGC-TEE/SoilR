@@ -14,3 +14,10 @@ getOutputReceivers(object, i)
 \description{
 getOutputReceivers
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getOutputReceivers,TransportDecompositionOperator,numeric-method}}
+  \item \code{\link{getOutputReceivers,TransportDecompositionOperator,numeric-method}}
+}
+}
+

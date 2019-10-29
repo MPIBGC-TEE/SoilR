@@ -9,7 +9,7 @@
 \arguments{
 \item{.Object}{object of class:\code{ConstLinDecompOp}. }
 
-\item{mat}{}
+\item{mat}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,ConstLinDecompOp-method

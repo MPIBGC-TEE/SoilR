@@ -9,7 +9,7 @@
 \arguments{
 \item{obj}{object of class:\code{ConstantInFluxRate_by_PoolIndex}. }
 
-\item{poolNames}{}
+\item{poolNames}{found automatically by inspection, not documented yet}
 }
 \description{
 new object with the source pool id converted to a PoolIndex if necessary

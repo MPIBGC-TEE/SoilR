@@ -9,7 +9,7 @@
 \arguments{
 \item{format}{object of class:\code{missing}. }
 
-\item{...}{}
+\item{...}{found automatically by inspection, not documented yet}
 }
 \description{
 BoundFc,missing-method

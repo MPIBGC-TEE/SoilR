@@ -10,7 +10,7 @@
 \arguments{
 \item{.Object}{object of class:\code{UnBoundInFluxes}. }
 
-\item{map}{}
+\item{map}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,UnBoundInFluxes-method

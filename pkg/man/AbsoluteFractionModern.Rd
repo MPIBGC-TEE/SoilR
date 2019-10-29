@@ -12,3 +12,12 @@ AbsoluteFractionModern(F)
 \description{
 AbsoluteFractionModern
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{AbsoluteFractionModern,BoundFc-method}}
+  \item \code{\link{AbsoluteFractionModern,ConstFc-method}}
+  \item \code{\link{AbsoluteFractionModern,BoundFc-method}}
+  \item \code{\link{AbsoluteFractionModern,ConstFc-method}}
+}
+}
+

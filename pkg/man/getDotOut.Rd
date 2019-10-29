@@ -12,3 +12,10 @@ getDotOut(object)
 \description{
 getDotOut
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getDotOut,TransportDecompositionOperator-method}}
+  \item \code{\link{getDotOut,TransportDecompositionOperator-method}}
+}
+}
+

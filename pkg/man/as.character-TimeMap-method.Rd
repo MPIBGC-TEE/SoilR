@@ -9,7 +9,7 @@
 \arguments{
 \item{x}{object of class:\code{TimeMap}. }
 
-\item{...}{}
+\item{...}{found automatically by inspection, not documented yet}
 }
 \description{
 as.character,TimeMap-method

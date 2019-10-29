@@ -9,9 +9,9 @@
 \arguments{
 \item{map}{object of class:\code{UnBoundLinDecompOp}. An object of class UnBoundLinDecompOp}
 
-\item{starttime}{Begin of time interval map will be restricted to}
+\item{starttime}{found automatically by inspection, not documented yet}
 
-\item{endtime}{End of time interval map will be restricted to}
+\item{endtime}{found automatically by inspection, not documented yet}
 }
 \description{
 The destinction between the classes BoundLinDecompOp and UnboundLinDecompOp exist for those functions, that should be only defined for objects of class UnBoundLinDecomp.

@@ -12,3 +12,12 @@ getConstantCompartmentalMatrix(object)
 \description{
 getConstantCompartmentalMatrix
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getConstantCompartmentalMatrix,ConstLinDecompOp-method}}
+  \item \code{\link{getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method}}
+  \item \code{\link{getConstantCompartmentalMatrix,ConstLinDecompOp-method}}
+  \item \code{\link{getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method}}
+}
+}
+

@@ -14,3 +14,10 @@ add_plot(x, ...)
 \description{
 add_plot
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{add_plot,TimeMap-method}}
+  \item \code{\link{add_plot,TimeMap-method}}
+}
+}
+

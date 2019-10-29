@@ -12,3 +12,10 @@ getAccumulatedRelease(object)
 \description{
 getAccumulatedRelease
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getAccumulatedRelease,Model-method}}
+  \item \code{\link{getAccumulatedRelease,Model-method}}
+}
+}
+

@@ -9,7 +9,7 @@
 \arguments{
 \item{obj}{object of class:\code{ConstantInternalFluxRateList_by_PoolIndex}. }
 
-\item{poolNames}{}
+\item{poolNames}{found automatically by inspection, not documented yet}
 }
 \description{
 convert to a list indexed by pool names

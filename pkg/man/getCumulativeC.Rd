@@ -12,3 +12,10 @@ getCumulativeC(object)
 \description{
 getCumulativeC
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getCumulativeC,NlModel-method}}
+  \item \code{\link{getCumulativeC,NlModel-method}}
+}
+}
+

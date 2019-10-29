@@ -12,3 +12,10 @@ getInitialValues(object)
 \description{
 getInitialValues
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getInitialValues,NlModel-method}}
+  \item \code{\link{getInitialValues,NlModel-method}}
+}
+}
+

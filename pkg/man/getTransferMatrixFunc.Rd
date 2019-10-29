@@ -12,3 +12,10 @@ getTransferMatrixFunc(object)
 \description{
 getTransferMatrixFunc
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getTransferMatrixFunc,TransportDecompositionOperator-method}}
+  \item \code{\link{getTransferMatrixFunc,TransportDecompositionOperator-method}}
+}
+}
+

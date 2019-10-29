@@ -12,3 +12,12 @@ Delta14C_from_AbsoluteFractionModern(AbsoluteFractionModern)
 \description{
 Delta14C_from_AbsoluteFractionModern
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{Delta14C_from_AbsoluteFractionModern,matrix-method}}
+  \item \code{\link{Delta14C_from_AbsoluteFractionModern,numeric-method}}
+  \item \code{\link{Delta14C_from_AbsoluteFractionModern,matrix-method}}
+  \item \code{\link{Delta14C_from_AbsoluteFractionModern,numeric-method}}
+}
+}
+

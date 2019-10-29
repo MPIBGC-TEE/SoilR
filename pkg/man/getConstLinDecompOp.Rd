@@ -12,3 +12,10 @@ getConstLinDecompOp(object)
 \description{
 getConstLinDecompOp
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method}}
+  \item \code{\link{getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method}}
+}
+}
+

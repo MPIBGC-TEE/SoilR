@@ -16,3 +16,16 @@ GeneralPoolId
 
 GeneralPoolId
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{GeneralPoolId,character-method}}
+  \item \code{\link{GeneralPoolId,numeric-method}}
+  \item \code{\link{GeneralPoolId,character-method}}
+  \item \code{\link{GeneralPoolId,numeric-method}}
+  \item \code{\link{GeneralPoolId,character-method}}
+  \item \code{\link{GeneralPoolId,numeric-method}}
+  \item \code{\link{GeneralPoolId,character-method}}
+  \item \code{\link{GeneralPoolId,numeric-method}}
+}
+}
+

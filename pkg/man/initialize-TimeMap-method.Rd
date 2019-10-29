@@ -14,11 +14,11 @@
 \arguments{
 \item{.Object}{object of class:\code{TimeMap}. }
 
-\item{starttime}{}
+\item{starttime}{found automatically by inspection, not documented yet}
 
-\item{endtime}{}
+\item{endtime}{found automatically by inspection, not documented yet}
 
-\item{map}{}
+\item{map}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,TimeMap-method

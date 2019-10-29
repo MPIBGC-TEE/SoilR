@@ -12,3 +12,10 @@ getTransferMatrix(object)
 \description{
 getTransferMatrix
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getTransferMatrix,ANY-method}}
+  \item \code{\link{getTransferMatrix,ANY-method}}
+}
+}
+

@@ -12,3 +12,10 @@ getValues(object)
 \description{
 getValues
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getValues,ConstFc-method}}
+  \item \code{\link{getValues,ConstFc-method}}
+}
+}
+

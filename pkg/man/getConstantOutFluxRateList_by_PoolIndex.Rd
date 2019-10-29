@@ -12,3 +12,10 @@ getConstantOutFluxRateList_by_PoolIndex(object)
 \description{
 getConstantOutFluxRateList_by_PoolIndex
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method}}
+  \item \code{\link{getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method}}
+}
+}
+

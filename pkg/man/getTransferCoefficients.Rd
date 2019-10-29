@@ -18,3 +18,16 @@ getTransferCoefficients
 
 getTransferCoefficients
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getTransferCoefficients,NlModel-method}}
+  \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
+  \item \code{\link{getTransferCoefficients,NlModel-method}}
+  \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
+  \item \code{\link{getTransferCoefficients,NlModel-method}}
+  \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
+  \item \code{\link{getTransferCoefficients,NlModel-method}}
+  \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
+}
+}
+

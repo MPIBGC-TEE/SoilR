@@ -14,3 +14,12 @@ BoundFc(format, ...)
 \description{
 BoundFc
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{BoundFc,character-method}}
+  \item \code{\link{BoundFc,missing-method}}
+  \item \code{\link{BoundFc,character-method}}
+  \item \code{\link{BoundFc,missing-method}}
+}
+}
+

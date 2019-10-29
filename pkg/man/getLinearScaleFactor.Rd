@@ -12,3 +12,10 @@ getLinearScaleFactor(object)
 \description{
 getLinearScaleFactor
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method}}
+  \item \code{\link{getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method}}
+}
+}
+

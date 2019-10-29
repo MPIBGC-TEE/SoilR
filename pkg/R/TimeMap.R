@@ -84,10 +84,6 @@ CallWithPlotVars<- function(
 
 
 #' @auto
-
-#' @auto
-
-#' @auto
 setMethod(
     f="initialize",
     signature="TimeMap",
@@ -103,10 +99,6 @@ setMethod(
     return(.Object)
     }
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(
@@ -218,10 +210,6 @@ setMethod(
 )
 
 #' @auto
-
-#' @auto
-
-#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -264,10 +252,6 @@ setMethod(
     )
   }
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setMethod(

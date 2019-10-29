@@ -12,3 +12,10 @@ getReleaseFlux14(object)
 \description{
 getReleaseFlux14
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getReleaseFlux14,Model_14-method}}
+  \item \code{\link{getReleaseFlux14,Model_14-method}}
+}
+}
+

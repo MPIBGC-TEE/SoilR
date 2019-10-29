@@ -9,7 +9,7 @@
 \arguments{
 \item{format}{object of class:\code{character}. }
 
-\item{...}{}
+\item{...}{found automatically by inspection, not documented yet}
 }
 \description{
 BoundFc,character-method

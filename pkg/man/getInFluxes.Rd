@@ -12,3 +12,12 @@ getInFluxes(object)
 \description{
 getInFluxes
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getInFluxes,Model-method}}
+  \item \code{\link{getInFluxes,NlModel-method}}
+  \item \code{\link{getInFluxes,Model-method}}
+  \item \code{\link{getInFluxes,NlModel-method}}
+}
+}
+

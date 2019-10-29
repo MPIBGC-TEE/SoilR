@@ -9,7 +9,7 @@
 \arguments{
 \item{map}{object of class:\code{ANY}. }
 
-\item{...}{}
+\item{...}{found automatically by inspection, not documented yet}
 }
 \description{
 BoundLinDecompOp,ANY-method

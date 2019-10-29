@@ -645,9 +645,24 @@ setGeneric(
 	 }
 )
 
-#' @auto
-
-#' @auto
+#' @auto 
+setGeneric(
+	 name="ScalarTimeMap",
+	 def=function 
+	 (
+	   map,
+	   starttime,
+	   endtime,
+       times,
+       data,
+	   lag=0,                  
+	   interpolation=splinefun,
+       ...
+     )
+	 {
+	     standardGeneric("ScalarTimeMap")
+	 }
+)
 
 #' @auto
 setGeneric(
@@ -663,10 +678,6 @@ setGeneric(
 )
 
 #' @auto
-
-#' @auto
-
-#' @auto
 setGeneric(
 	 name="UnBoundInFluxes",
 	 def=function 
@@ -675,10 +686,6 @@ setGeneric(
 	     standardGeneric("UnBoundInFluxes")
 	 }
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setGeneric(
@@ -1065,10 +1072,6 @@ setGeneric(
 )
 
 #' @auto
-
-#' @auto
-
-#' @auto
 setGeneric(
 	 name="add_plot",
 	 def=function 
@@ -1080,10 +1083,6 @@ setGeneric(
 	     standardGeneric("add_plot")
 	 }
 )
-
-#' @auto
-
-#' @auto
 
 #' @auto
 setGeneric(

@@ -9,7 +9,7 @@
 \arguments{
 \item{id}{object of class:\code{PoolName}. }
 
-\item{poolNames}{}
+\item{poolNames}{found automatically by inspection, not documented yet}
 }
 \description{
 This is here to be able to call PoolName on a PoolName ojbect without

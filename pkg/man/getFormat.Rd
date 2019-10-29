@@ -12,3 +12,10 @@ getFormat(object)
 \description{
 getFormat
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getFormat,Fc-method}}
+  \item \code{\link{getFormat,Fc-method}}
+}
+}
+

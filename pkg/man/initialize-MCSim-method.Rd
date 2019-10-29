@@ -9,9 +9,9 @@
 \arguments{
 \item{.Object}{object of class:\code{MCSim}. }
 
-\item{model}{}
+\item{model}{found automatically by inspection, not documented yet}
 
-\item{tasklist}{}
+\item{tasklist}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,MCSim-method

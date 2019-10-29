@@ -14,3 +14,16 @@ PoolIndex(id, ...)
 \description{
 PoolIndex
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{PoolIndex,character-method}}
+  \item \code{\link{PoolIndex,numeric-method}}
+  \item \code{\link{PoolIndex,PoolIndex-method}}
+  \item \code{\link{PoolIndex,PoolName-method}}
+  \item \code{\link{PoolIndex,character-method}}
+  \item \code{\link{PoolIndex,numeric-method}}
+  \item \code{\link{PoolIndex,PoolIndex-method}}
+  \item \code{\link{PoolIndex,PoolName-method}}
+}
+}
+

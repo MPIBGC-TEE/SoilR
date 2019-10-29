@@ -12,3 +12,12 @@ Delta14C(F)
 \description{
 Delta14C
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{Delta14C,BoundFc-method}}
+  \item \code{\link{Delta14C,ConstFc-method}}
+  \item \code{\link{Delta14C,BoundFc-method}}
+  \item \code{\link{Delta14C,ConstFc-method}}
+}
+}
+

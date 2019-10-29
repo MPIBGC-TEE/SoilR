@@ -16,3 +16,12 @@ PoolConnection_by_PoolIndex(source, destination, src_to_dest)
 \description{
 PoolConnection_by_PoolIndex
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{PoolConnection_by_PoolIndex,ANY,ANY,missing-method}}
+  \item \code{\link{PoolConnection_by_PoolIndex,missing,missing,character-method}}
+  \item \code{\link{PoolConnection_by_PoolIndex,ANY,ANY,missing-method}}
+  \item \code{\link{PoolConnection_by_PoolIndex,missing,missing,character-method}}
+}
+}
+

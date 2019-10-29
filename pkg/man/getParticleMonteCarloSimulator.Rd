@@ -12,3 +12,10 @@ getParticleMonteCarloSimulator(object)
 \description{
 getParticleMonteCarloSimulator
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getParticleMonteCarloSimulator,NlModel-method}}
+  \item \code{\link{getParticleMonteCarloSimulator,NlModel-method}}
+}
+}
+

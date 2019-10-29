@@ -12,3 +12,12 @@ getTimes(object)
 \description{
 getTimes
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getTimes,Model-method}}
+  \item \code{\link{getTimes,NlModel-method}}
+  \item \code{\link{getTimes,Model-method}}
+  \item \code{\link{getTimes,NlModel-method}}
+}
+}
+

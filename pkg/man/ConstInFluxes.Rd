@@ -14,3 +14,12 @@ ConstInFluxes(map, numberOfPools)
 \description{
 ConstInFluxes
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}}
+  \item \code{\link{ConstInFluxes,numeric,ANY-method}}
+  \item \code{\link{ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}}
+  \item \code{\link{ConstInFluxes,numeric,ANY-method}}
+}
+}
+

@@ -12,3 +12,10 @@ UnBoundInFluxes(map)
 \description{
 UnBoundInFluxes
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{UnBoundInFluxes,function-method}}
+  \item \code{\link{UnBoundInFluxes,function-method}}
+}
+}
+

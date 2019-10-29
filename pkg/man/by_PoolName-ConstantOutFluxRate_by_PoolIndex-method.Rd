@@ -9,7 +9,7 @@
 \arguments{
 \item{obj}{object of class:\code{ConstantOutFluxRate_by_PoolIndex}. }
 
-\item{poolNames}{}
+\item{poolNames}{found automatically by inspection, not documented yet}
 }
 \description{
 This method exists only for classes that do not contain functions of 

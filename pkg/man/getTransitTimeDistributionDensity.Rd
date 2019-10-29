@@ -16,3 +16,10 @@ getTransitTimeDistributionDensity(object, inputDistribution, times)
 \description{
 getTransitTimeDistributionDensity
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
+  \item \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
+}
+}
+

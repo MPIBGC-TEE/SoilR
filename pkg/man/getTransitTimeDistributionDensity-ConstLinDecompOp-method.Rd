@@ -9,9 +9,9 @@
 \arguments{
 \item{object}{object of class:\code{ConstLinDecompOp}. }
 
-\item{inputDistribution}{}
+\item{inputDistribution}{found automatically by inspection, not documented yet}
 
-\item{times}{}
+\item{times}{found automatically by inspection, not documented yet}
 }
 \description{
 getTransitTimeDistributionDensity,ConstLinDecompOp-method

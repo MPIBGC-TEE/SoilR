@@ -9,7 +9,7 @@
 \arguments{
 \item{x}{object of class:\code{NlModel}. }
 
-\item{name}{}
+\item{name}{found automatically by inspection, not documented yet}
 }
 \description{
 $,NlModel-method

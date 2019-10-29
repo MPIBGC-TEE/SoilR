@@ -20,17 +20,17 @@
 \arguments{
 \item{.Object}{object of class:\code{NlModel}. }
 
-\item{times}{}
+\item{times}{found automatically by inspection, not documented yet}
 
-\item{DepComp}{}
+\item{DepComp}{found automatically by inspection, not documented yet}
 
-\item{initialValues}{}
+\item{initialValues}{found automatically by inspection, not documented yet}
 
-\item{inputFluxes}{}
+\item{inputFluxes}{found automatically by inspection, not documented yet}
 
-\item{solverfunc}{}
+\item{solverfunc}{found automatically by inspection, not documented yet}
 
-\item{pass}{}
+\item{pass}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,NlModel-method

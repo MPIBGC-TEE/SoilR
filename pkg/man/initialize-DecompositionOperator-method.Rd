@@ -15,13 +15,13 @@
 \arguments{
 \item{.Object}{object of class:\code{DecompositionOperator}. }
 
-\item{starttime}{}
+\item{starttime}{found automatically by inspection, not documented yet}
 
-\item{endtime}{}
+\item{endtime}{found automatically by inspection, not documented yet}
 
-\item{map}{}
+\item{map}{found automatically by inspection, not documented yet}
 
-\item{lag}{}
+\item{lag}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,DecompositionOperator-method

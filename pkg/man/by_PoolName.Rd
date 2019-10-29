@@ -14,3 +14,18 @@ by_PoolName(obj, poolNames)
 \description{
 by_PoolName
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{by_PoolName,ConstantInFluxRate_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantOutFluxRate_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantOutFluxRateList_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantInFluxRate_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantOutFluxRate_by_PoolIndex-method}}
+  \item \code{\link{by_PoolName,ConstantOutFluxRateList_by_PoolIndex-method}}
+}
+}
+

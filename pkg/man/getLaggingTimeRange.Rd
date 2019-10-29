@@ -12,3 +12,9 @@ getLaggingTimeRange(object)
 \description{
 getLaggingTimeRange
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{}}
+}
+}
+

@@ -12,3 +12,10 @@ availableParticleSets(object)
 \description{
 availableParticleSets
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{availableParticleSets,MCSim-method}}
+  \item \code{\link{availableParticleSets,MCSim-method}}
+}
+}
+

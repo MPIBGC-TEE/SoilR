@@ -16,3 +16,18 @@ getCompartmentalMatrixFunc(object, timeSymbol, state_variable_names)
 \description{
 getCompartmentalMatrixFunc
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method}}
+  \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}}
+}
+}
+

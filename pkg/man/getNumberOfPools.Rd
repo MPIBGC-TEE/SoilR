@@ -12,3 +12,14 @@ getNumberOfPools(object)
 \description{
 getNumberOfPools
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getNumberOfPools,MCSim-method}}
+  \item \code{\link{getNumberOfPools,NlModel-method}}
+  \item \code{\link{getNumberOfPools,TransportDecompositionOperator-method}}
+  \item \code{\link{getNumberOfPools,MCSim-method}}
+  \item \code{\link{getNumberOfPools,NlModel-method}}
+  \item \code{\link{getNumberOfPools,TransportDecompositionOperator-method}}
+}
+}
+

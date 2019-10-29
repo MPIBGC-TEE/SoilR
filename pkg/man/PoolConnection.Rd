@@ -16,3 +16,9 @@ PoolConnection(source, destination, src_to_dest)
 \description{
 PoolConnection
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{}}
+}
+}
+

@@ -9,7 +9,7 @@
 \arguments{
 \item{map}{object of class:\code{function}. }
 
-\item{lag}{}
+\item{lag}{found automatically by inspection, not documented yet}
 }
 \description{
 The interval will be set to [-Inf,Inf]

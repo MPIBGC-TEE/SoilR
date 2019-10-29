@@ -18,3 +18,12 @@ getRightHandSideOfODE(object, timeSymbol, poolNames, numberOfPools)
 \description{
 getRightHandSideOfODE
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{getRightHandSideOfODE,Model-method}}
+  \item \code{\link{getRightHandSideOfODE,Model_by_PoolNames-method}}
+  \item \code{\link{getRightHandSideOfODE,Model-method}}
+  \item \code{\link{getRightHandSideOfODE,Model_by_PoolNames-method}}
+}
+}
+

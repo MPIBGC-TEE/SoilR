@@ -1,27 +1,54 @@
 #' constructor 
 #'
-#' @param ... 
-#' The arguments are passed through to create a function of time (an object of class \code{\link{TimeMap}}) which is subsequently checked to yield a scalar numeric value
-ScalarTimeMap<-function(...){
-    # create a time map Object
-    # fixme mm :
-    # Instead of using all the constructors of TimeMap we could be 
-    # transfer some of them here wich would give us more flexibility.
-    # since we know more specifically what we want here.
+#setMethod(
+#  f= ScalarTimeMap<-function(...){
+#    signature(
+#            map="numeric'
+#
+#    tm=TimeMap(...)
+#    # check if it defines a scalar valued functiont
+#    f=getFunctionDefinition(tm)
+#    ts=getTimeRange(tm)[1]
+#    val<-f(ts)
+#    if ( !inherits(val,'numeric')){
+#        stop("The created TimeMap must return numeric values.")
+#    }
+#    if (length(val)!=1) {
+#        print(val)
+#        stop("The created TimeMap must return a scalar.")
+#    }
+#    as(tm,'ScalarTimeMap')
+#}
 
-    tm=TimeMap(...)
-    # check if it defines a scalar valued functiont
-    f=getFunctionDefinition(tm)
-    ts=getTimeRange(tm)[1]
-    val<-f(ts)
-    if ( !inherits(val,'numeric')){
-        stop("The created TimeMap must return numeric values.")
+#' @auto
+#'
+#' special case for a time map from a constant 
+setMethod(
+  f="ScalarTimeMap",
+  signature=signature(
+    map="missing" ,
+    starttime="missing",
+    endtime="missing",
+    times="missing",
+    data="numeric"
+  ),
+  def=function 
+  (
+   starttime=-Inf,
+   endtime=+Inf,
+   data,
+   lag=0 
+  ){
+    if(length(data)>1) {stop("if the data argument is a numeric vector it has to be of length 1. If you want an interpolating function there are methods that accept an additional times argument, or a list or dataframe for the data argument")
+    }else{
+      new(
+        "ScalarTimeMap",
+        map=function(t){data},
+        starttime=-Inf,
+        endtime=Inf
+      )
     }
-    if (length(val)!=1) {
-        print(val)
-        stop("The created TimeMap must return a scalar.")
-    }
-    as(tm,'ScalarTimeMap')
-}
+  }
+)
 
 

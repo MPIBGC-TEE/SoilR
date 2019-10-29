@@ -11,9 +11,9 @@
 
 \item{data}{object of class:\code{array}. }
 
-\item{lag}{}
+\item{lag}{found automatically by inspection, not documented yet}
 
-\item{interpolation}{}
+\item{interpolation}{found automatically by inspection, not documented yet}
 }
 \description{
 TimeMap,missing,missing,missing,numeric,array-method

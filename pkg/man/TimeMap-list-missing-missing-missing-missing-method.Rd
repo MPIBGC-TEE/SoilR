@@ -9,9 +9,9 @@
 \arguments{
 \item{map}{object of class:\code{list}. }
 
-\item{lag}{}
+\item{lag}{found automatically by inspection, not documented yet}
 
-\item{interpolation}{}
+\item{interpolation}{found automatically by inspection, not documented yet}
 }
 \description{
 TimeMap,list,missing,missing,missing,missing-method

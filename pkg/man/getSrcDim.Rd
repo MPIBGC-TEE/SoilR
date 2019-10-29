@@ -12,3 +12,9 @@ getSrcDim(obj)
 \description{
 getSrcDim
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{}}
+}
+}
+

@@ -12,9 +12,9 @@
 \arguments{
 \item{object}{object of class:\code{InFluxList_by_PoolName}. }
 
-\item{timeSymbol}{}
+\item{timeSymbol}{found automatically by inspection, not documented yet}
 
-\item{poolNames}{}
+\item{poolNames}{found automatically by inspection, not documented yet}
 }
 \description{
 getFunctionDefinition,InFluxList_by_PoolName-method

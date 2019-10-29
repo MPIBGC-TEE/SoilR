@@ -21,23 +21,23 @@
 \arguments{
 \item{.Object}{object of class:\code{Model_14}. }
 
-\item{times}{}
+\item{times}{found automatically by inspection, not documented yet}
 
-\item{mat}{}
+\item{mat}{found automatically by inspection, not documented yet}
 
-\item{initialValues}{}
+\item{initialValues}{found automatically by inspection, not documented yet}
 
-\item{initialValF}{}
+\item{initialValF}{found automatically by inspection, not documented yet}
 
-\item{inputFluxes}{}
+\item{inputFluxes}{found automatically by inspection, not documented yet}
 
-\item{c14Fraction}{}
+\item{c14Fraction}{found automatically by inspection, not documented yet}
 
-\item{c14DecayRate}{}
+\item{c14DecayRate}{found automatically by inspection, not documented yet}
 
-\item{solverfunc}{}
+\item{solverfunc}{found automatically by inspection, not documented yet}
 
-\item{pass}{}
+\item{pass}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,Model_14-method

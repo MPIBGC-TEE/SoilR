@@ -9,7 +9,7 @@
 \arguments{
 \item{object}{object of class:\code{NlModel}. }
 
-\item{as.closures}{}
+\item{as.closures}{found automatically by inspection, not documented yet}
 }
 \description{
 getC,NlModel-method

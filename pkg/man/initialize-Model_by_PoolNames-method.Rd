@@ -18,19 +18,19 @@
 \arguments{
 \item{.Object}{object of class:\code{Model_by_PoolNames}. }
 
-\item{times}{}
+\item{times}{found automatically by inspection, not documented yet}
 
-\item{mat}{}
+\item{mat}{found automatically by inspection, not documented yet}
 
-\item{initialValues}{}
+\item{initialValues}{found automatically by inspection, not documented yet}
 
-\item{inputFluxes}{}
+\item{inputFluxes}{found automatically by inspection, not documented yet}
 
-\item{solverfunc}{}
+\item{solverfunc}{found automatically by inspection, not documented yet}
 
-\item{pass}{}
+\item{pass}{found automatically by inspection, not documented yet}
 
-\item{timeSymbol}{}
+\item{timeSymbol}{found automatically by inspection, not documented yet}
 }
 \description{
 initialize,Model_by_PoolNames-method

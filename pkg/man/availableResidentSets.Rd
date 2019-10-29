@@ -12,3 +12,10 @@ availableResidentSets(object)
 \description{
 availableResidentSets
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{availableResidentSets,MCSim-method}}
+  \item \code{\link{availableResidentSets,MCSim-method}}
+}
+}
+

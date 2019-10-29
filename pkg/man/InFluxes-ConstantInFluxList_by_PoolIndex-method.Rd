@@ -9,7 +9,7 @@
 \arguments{
 \item{object}{object of class:\code{ConstantInFluxList_by_PoolIndex}. }
 
-\item{numberOfPools}{}
+\item{numberOfPools}{found automatically by inspection, not documented yet}
 }
 \description{
 InFluxes,ConstantInFluxList_by_PoolIndex-method

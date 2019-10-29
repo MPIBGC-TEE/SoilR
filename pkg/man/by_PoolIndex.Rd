@@ -16,3 +16,34 @@ by_PoolIndex(obj, poolNames, timeSymbol)
 \description{
 by_PoolIndex
 }
+\section{S4 methods for this generic}{
+\itemize{
+  \item \code{\link{by_PoolIndex,ConstantInFluxRate_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantInternalFluxRate_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantInternalFluxRateList_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantOutFluxRate_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantOutFluxRateList_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,function,character,character-method}}
+  \item \code{\link{by_PoolIndex,InFlux_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,InFluxList_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,InternalFlux_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,InternalFluxList_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,OutFlux_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,OutFluxList_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,PoolConnection_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantInFluxRate_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantInternalFluxRate_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantInternalFluxRateList_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantOutFluxRate_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,ConstantOutFluxRateList_by_PoolName,ANY,ANY-method}}
+  \item \code{\link{by_PoolIndex,function,character,character-method}}
+  \item \code{\link{by_PoolIndex,InFlux_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,InFluxList_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,InternalFlux_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,InternalFluxList_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,OutFlux_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,OutFluxList_by_PoolName,character,character-method}}
+  \item \code{\link{by_PoolIndex,PoolConnection_by_PoolName,ANY,ANY-method}}
+}
+}
+

@@ -13,7 +13,7 @@
 
 \item{endtime}{object of class:\code{numeric}. }
 
-\item{lag}{}
+\item{lag}{found automatically by inspection, not documented yet}
 }
 \description{
 manual constructor for a function and an interval
