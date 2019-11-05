@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="initialize",
     signature="Model",
@@ -170,11 +167,8 @@ Model <-function(t,
 }
 
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getInFluxes",
       signature(object="Model"),
@@ -183,11 +177,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "plot",
       signature(x="Model"),
@@ -197,11 +188,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "plotPoolGraph",
       signature(x="Model"),
@@ -219,11 +207,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "print",
       signature(x="Model"),
@@ -232,11 +217,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "summary",
       signature(object="Model"),
@@ -245,11 +227,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "show",
       signature(object="Model"),
@@ -258,11 +237,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getDecompOp",
       signature= "Model",
@@ -271,11 +247,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getTimes",
       signature= "Model",
@@ -286,11 +259,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f='getRightHandSideOfODE'
     ,signature= "Model"
@@ -304,11 +274,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f= "getC"
     ,signature= "Model"
@@ -322,11 +289,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getReleaseFlux",
       signature= "Model",
@@ -348,11 +312,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getAccumulatedRelease",
       signature= "Model",
@@ -393,11 +354,8 @@ getSingleCol=function(x,slot_name){
     return(res)
 }
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod("[",signature(x="Model",i="character",j="missing",drop="missing"), 
         definition=function 
         (x,i){

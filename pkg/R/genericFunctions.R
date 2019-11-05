@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
   name="Delta14C",
   def=function( 
@@ -13,11 +10,8 @@ setGeneric(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="Delta14C_from_AbsoluteFractionModern",
 	 def=function( 
@@ -36,11 +30,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="AbsoluteFractionModern",
 	 def=function( 
@@ -50,11 +41,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getFormat",
 	 def=function( 
@@ -64,11 +52,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getValues",
 	 def=function( 
@@ -78,11 +63,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
 	f= "AbsoluteFractionModern_from_Delta14C",
 	   signature("numeric"),
@@ -94,11 +76,8 @@ setMethod(
 	}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
 	f= "Delta14C_from_AbsoluteFractionModern",
 	   signature("numeric"),
@@ -110,11 +89,8 @@ setMethod(
 	   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
 	f= "AbsoluteFractionModern_from_Delta14C",
 	   signature("matrix"),
@@ -131,11 +107,8 @@ setMethod(
 	}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
 	f= "Delta14C_from_AbsoluteFractionModern",
 	   signature("matrix"),
@@ -151,11 +124,8 @@ setMethod(
 	}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric ( 
 	name= "getMeanTransitTime",
 	def=function(
@@ -164,11 +134,8 @@ setGeneric (
 	){standardGeneric("getMeanTransitTime")}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric ( 
 	name= "getTransitTimeDistributionDensity",
 	def=function(
@@ -178,22 +145,16 @@ setGeneric (
 	){standardGeneric("getTransitTimeDistributionDensity")}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric (
 	name= "getTimes",
 	def=function(
 	object){standardGeneric("getTimes")}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric (
 	name= "getInitialValues",
 	def=function(
@@ -223,11 +184,8 @@ setGeneric (
 	}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric( 
 	name= "getParticleMonteCarloSimulator",
 	def=function
@@ -248,11 +206,8 @@ setGeneric (
 	}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric ( 
 	name= "getAccumulatedRelease",
 	def=function
@@ -270,11 +225,8 @@ setGeneric (
 	){standardGeneric("getC14")}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric ( 
 	name= "getCumulativeC",
 	def=function(
@@ -291,11 +243,8 @@ setGeneric (
 	){standardGeneric("getF14")}
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric ( 
 	name= "getReleaseFlux14",
 	def=function(
@@ -321,11 +270,8 @@ setGeneric (
 	 ){standardGeneric("getF14C")}
   )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getTimeRange",
 	 def=function(object){
@@ -333,11 +279,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getLaggingTimeRange",
 	 def=function(object){
@@ -345,11 +288,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getFunctionDefinition",
 	 def=function(object,timeSymbol,poolNames,numberOfPools){
@@ -357,11 +297,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getRightHandSideOfODE",
 	 def=function(object,timeSymbol,poolNames,numberOfPools){
@@ -369,11 +306,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getNumberOfPools",
 	 def=function(object){
@@ -381,11 +315,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getOutputReceivers",
 	 def=function(object,i){
@@ -393,11 +324,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getDecompOp",
 	 def=function(object){
@@ -405,11 +333,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getConstantInFluxVector",
 	 def=function(object){
@@ -417,11 +342,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getInFluxes",
 	 def=function(object){
@@ -429,11 +351,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="availableParticleProperties",
 	 def=function(object){
@@ -441,11 +360,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="availableParticleSets",
 	 def=function(object){
@@ -453,11 +369,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="availableResidentSets",
 	 def=function(object){
@@ -465,11 +378,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="computeResults",
 	 def=function(object){
@@ -477,11 +387,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getDotOut",
 	 def=function(object){
@@ -489,11 +396,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getTransferMatrix",
 	 def=function(object){
@@ -503,11 +407,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getTransferMatrixFunc",
 	 def=function(object){
@@ -515,11 +416,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getCompartmentalMatrixFunc",
 	 def=function(
@@ -531,11 +429,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getConstantCompartmentalMatrix",
 	 def=function(
@@ -545,11 +440,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getConstantInternalFluxRateList_by_PoolIndex",
 	 def=function(
@@ -559,11 +451,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getConstantOutFluxRateList_by_PoolIndex",
 	 def=function(
@@ -573,11 +462,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getConstLinDecompOp",
 	 def=function(
@@ -587,11 +473,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getLinearScaleFactor",
 	 def=function(
@@ -601,11 +484,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getTransferCoefficients",
 	 def=function(object){
@@ -613,11 +493,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="getTransferCoefficients",
 	 def=function(object,as.closures=F){
@@ -645,7 +522,6 @@ setGeneric(
 	 }
 )
 
-#' @auto 
 setGeneric(
 	 name="ScalarTimeMap",
 	 def=function 
@@ -664,7 +540,6 @@ setGeneric(
 	 }
 )
 
-#' @auto
 setGeneric(
 	 name="BoundFc",
 	 def=function 
@@ -677,7 +552,6 @@ setGeneric(
 	 }
 )
 
-#' @auto
 setGeneric(
 	 name="UnBoundInFluxes",
 	 def=function 
@@ -687,7 +561,6 @@ setGeneric(
 	 }
 )
 
-#' @auto
 setGeneric(
 	 name="ConstInFluxes",
 	 def=function(map,numberOfPools)
@@ -1071,7 +944,6 @@ setGeneric(
 	 }
 )
 
-#' @auto
 setGeneric(
 	 name="add_plot",
 	 def=function 
@@ -1084,7 +956,6 @@ setGeneric(
 	 }
 )
 
-#' @auto
 setGeneric(
 	 name="getSrcDim",
 	 def=function  
@@ -1096,11 +967,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="GeneralPoolId",
 	 def=function  (id) {
@@ -1108,11 +976,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="PoolConnection",
 	 def=function  
@@ -1122,11 +987,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="PoolConnection_by_PoolIndex",
 	 def=function  
@@ -1136,11 +998,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="PoolConnection_by_PoolName",
 	 def=function  
@@ -1150,11 +1009,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="PoolName",
 	 def=function(id,...){
@@ -1162,11 +1018,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="PoolIndex",
 	 def=function(id,...){
@@ -1174,11 +1027,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="check_pool_ids",
 	 def=function(obj,pools){
@@ -1186,11 +1036,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="GeneralPoolId",
 	 def=function(id){
@@ -1198,11 +1045,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="by_PoolIndex",
 	 def=function(obj,poolNames,timeSymbol){
@@ -1210,11 +1054,8 @@ setGeneric(
 	 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setGeneric(
 	 name="by_PoolName",
 	 def=function(obj,poolNames){

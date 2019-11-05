@@ -36,11 +36,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f='getFunctionDefinition'
     ,signature=c(object='InFluxList_by_PoolName')

@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="GeneralDecompOp",
   signature=signature(object="function"),
@@ -13,11 +10,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="InFluxes",
   signature=signature(object="function"),

@@ -423,11 +423,8 @@ Model_by_PoolNames=setClass(
    #,validity=correctnessOfModel_by_PoolNames
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     'initialize'
     ,signature= signature(.Object='Model_by_PoolNames')

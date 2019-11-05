@@ -37,7 +37,6 @@ setMethod(
      }
 )
 
-#' @auto
 setMethod(
       f="BoundLinDecompOp",
       signature=signature(map="ANY"),
@@ -52,7 +51,6 @@ setMethod(
   }
 )
 
-#' @auto
 setMethod(
    f= "getCompartmentalMatrixFunc",
       signature(object="BoundLinDecompOp"),

@@ -4,11 +4,8 @@ setClass(
     slots=list( matFunc="function")
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
      f="initialize",
      signature="UnBoundLinDecompOp",
@@ -20,11 +17,8 @@ setMethod(
      }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
       f="UnBoundLinDecompOp",
       signature=c(matFunc="function"),
@@ -40,11 +34,8 @@ setMethod(
      }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="UnBoundLinDecompOp",
@@ -54,11 +45,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getTimeRange",
     signature="UnBoundLinDecompOp",

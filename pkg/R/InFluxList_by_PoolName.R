@@ -21,11 +21,8 @@ setMethod("InFluxList_by_PoolName",
 )
 
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="by_PoolIndex"
     ,signature=signature(
@@ -44,11 +41,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod("getFunctionDefinition",
     signature=signature(object="InFluxList_by_PoolName"),
     definition=function(

@@ -36,11 +36,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="check_pool_ids",
   signature=c(obj='PoolConnection_by_PoolIndex',pools='integer'),

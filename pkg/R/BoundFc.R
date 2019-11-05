@@ -1,5 +1,4 @@
 
-#' @auto
 setMethod(
   f="BoundFc",
   signature=signature(format='character'),
@@ -15,7 +14,6 @@ setMethod(
 }
 )
 
-#' @auto
 setMethod(
   f="BoundFc",
   signature=signature(format='missing'),
@@ -32,7 +30,6 @@ setMethod(
 }
 )
 
-#' @auto
 setMethod(
    f= "Delta14C",
    signature("BoundFc"),
@@ -60,7 +57,6 @@ setMethod(
     }	 
 )
 
-#' @auto
 setMethod(
   f= "AbsoluteFractionModern",
       signature("BoundFc"),

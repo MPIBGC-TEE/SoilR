@@ -4,11 +4,8 @@ setClass(
     slots=list( map="function")
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
      f="initialize",
      signature="UnBoundInFluxes",
@@ -20,11 +17,8 @@ setMethod(
      }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
       f="UnBoundInFluxes",
       signature=c(map="function"),
@@ -34,11 +28,8 @@ setMethod(
      }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="UnBoundInFluxes",
@@ -48,11 +39,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getTimeRange",
     signature="UnBoundInFluxes",

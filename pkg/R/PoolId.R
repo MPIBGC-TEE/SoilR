@@ -31,7 +31,6 @@ setMethod(
    }
 )
 
-#' @auto
 setMethod(
     f="GeneralPoolId",
     signature=c(id='character'),

@@ -27,7 +27,6 @@ setMethod(
   }
 )
 
-#' @auto
 setMethod(
   f="InternalFlux_by_PoolName",
   signature=c(
@@ -49,7 +48,6 @@ setMethod(
   }
 )
 
-#' @auto
 setMethod(
     f="by_PoolIndex"
     ,signature=signature(

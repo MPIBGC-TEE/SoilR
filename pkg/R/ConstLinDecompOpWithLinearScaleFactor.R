@@ -58,7 +58,6 @@
 #)
 #
 
-#' @auto
 setMethod(
       f="ConstLinDecompOpWithLinearScalarFactor",
       signature=c(
@@ -268,11 +267,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getTimeRange"
     ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -281,11 +277,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getConstantCompartmentalMatrix",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -294,11 +287,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getLinearScaleFactor",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -307,11 +297,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getConstLinDecompOp",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"

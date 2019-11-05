@@ -21,7 +21,6 @@ setMethod(
   }
 )
 
-#' @auto
 setMethod(
     f="by_PoolIndex"
     ,signature=signature(

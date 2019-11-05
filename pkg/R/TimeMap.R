@@ -83,7 +83,6 @@ CallWithPlotVars<- function(
 }
 
 
-#' @auto
 setMethod(
     f="initialize",
     signature="TimeMap",
@@ -100,7 +99,6 @@ setMethod(
     }
 )
 
-#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -209,7 +207,6 @@ setMethod(
   }
 )
 
-#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -253,7 +250,6 @@ setMethod(
   }
 )
 
-#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -308,11 +304,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -364,11 +357,8 @@ setMethod(
  }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -399,11 +389,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="TimeMap",
     signature=signature(
@@ -475,11 +462,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="TimeMap",
     signature=signature(
@@ -492,11 +476,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="as.character",
     signature=c(x="TimeMap"),
@@ -539,11 +520,8 @@ setMethod(
 #    }
 #)
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="TimeMap",
@@ -613,11 +591,8 @@ interpolation=splinefun
 return(obj)
 }
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f= "plot",
   signature=c(x="TimeMap"),
@@ -633,11 +608,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f= "add_plot",
   signature=c(x="TimeMap"),

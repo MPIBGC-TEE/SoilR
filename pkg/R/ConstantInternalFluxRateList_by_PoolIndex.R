@@ -60,11 +60,8 @@ setMethod("ConstantInternalFluxRateList_by_PoolIndex",
 )
 
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod("ConstantInternalFluxRateList_by_PoolIndex",
     signature=signature(object="numeric"),
     definition=function(object){

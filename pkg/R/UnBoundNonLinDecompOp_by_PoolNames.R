@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="UnBoundNonLinDecompOp_by_PoolNames",
     signature=c(

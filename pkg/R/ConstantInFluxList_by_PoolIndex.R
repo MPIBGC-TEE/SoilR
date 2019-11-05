@@ -31,7 +31,6 @@ setMethod("ConstantInFluxList_by_PoolIndex",
     }
 )
 
-#' @auto
 setMethod("ConstantInFluxList_by_PoolIndex",
     signature=signature(object="numeric"),
     definition=function(object){

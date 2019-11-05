@@ -20,7 +20,6 @@
 #    as(tm,'ScalarTimeMap')
 #}
 
-#' @auto
 #'
 #' special case for a time map from a constant 
 setMethod(

@@ -68,11 +68,8 @@ setMethod("ConstantOutFluxRateList_by_PoolName",
 )
 
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod("ConstantOutFluxRateList_by_PoolName",
     signature=signature(object="numeric"),
     definition=function(object){

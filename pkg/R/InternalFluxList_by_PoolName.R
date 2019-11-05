@@ -31,7 +31,6 @@ setMethod("InternalFluxList_by_PoolName",
     }
 )
 
-#' @auto
 setMethod(
     f="by_PoolIndex"
     ,signature=signature(

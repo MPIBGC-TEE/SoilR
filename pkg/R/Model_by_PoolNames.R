@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f= "getC"
     ,signature= "Model_by_PoolNames"
@@ -26,11 +23,8 @@ setMethod(
     )
 
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getReleaseFlux",
       signature= "Model_by_PoolNames",
@@ -60,11 +54,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f='getRightHandSideOfODE'
     ,signature= "Model_by_PoolNames"

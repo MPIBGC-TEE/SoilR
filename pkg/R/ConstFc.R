@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getValues",
     signature="ConstFc",
@@ -14,11 +11,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "Delta14C",
       signature("ConstFc"),
@@ -42,11 +36,8 @@ setMethod(
       }	 
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "AbsoluteFractionModern",
       signature("ConstFc"),

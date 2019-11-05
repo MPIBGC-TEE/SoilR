@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     'ConstantOutFluxRate_by_PoolIndex'
     ,signature=signature(

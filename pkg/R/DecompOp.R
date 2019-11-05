@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="GeneralDecompOp",
   signature=signature(object="DecompOp"),
@@ -13,11 +10,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   "GeneralDecompOp",
   signature(object="matrix"),
@@ -27,11 +21,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="GeneralDecompOp",
   signature=signature(object="TimeMap"),

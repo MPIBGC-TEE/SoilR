@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="ConstInFluxes",
   signature=c(
@@ -17,11 +14,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     "ConstInFluxes"
     ,signature=signature(
@@ -35,11 +29,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     "getConstantInFluxVector"
     ,signature=signature(
@@ -50,11 +41,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getTimeRange",
     signature="ConstInFluxes",
@@ -65,11 +53,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getFunctionDefinition",
     signature="ConstInFluxes",

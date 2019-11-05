@@ -2,11 +2,8 @@ is.negative=function(number){
    return(number<0)
 }
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="initialize",
     signature="NlModel",
@@ -58,11 +55,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getInFluxes",
    signature(object="NlModel"),
@@ -80,11 +74,8 @@ errorPlotC=function(C,t){
       }
 }
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "plot",
       signature(x="NlModel"),
@@ -97,11 +88,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "print",
       signature(x="NlModel"),
@@ -109,11 +97,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getNumberOfPools",
       signature(object="NlModel"),
@@ -122,11 +107,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "show",
       signature(object="NlModel"),
@@ -134,11 +116,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getDecompOp",
       signature= "NlModel",
@@ -147,11 +126,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getParticleMonteCarloSimulator",
       signature= "NlModel",
@@ -160,11 +136,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getTimes",
       signature= "NlModel",
@@ -175,11 +148,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getCumulativeC",
       signature= "NlModel",
@@ -191,11 +161,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getInitialValues",
       signature= "NlModel",
@@ -214,11 +181,8 @@ res2fun=function(times,C){
   return(Cs)
 }
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getTransferCoefficients",
       signature= "NlModel",
@@ -250,11 +214,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getOutputFluxes",
       signature= "NlModel",
@@ -274,11 +235,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getReleaseFlux",
       signature= "NlModel",
@@ -305,11 +263,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "computeResults",
       signature= "NlModel",
@@ -317,11 +272,8 @@ setMethod(
 }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getC",
       signature= c("NlModel"),
@@ -366,11 +318,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f="[",
   signature(x="NlModel",i="character"),
@@ -396,11 +345,8 @@ setMethod(
   }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod("$",signature(x="NlModel"), 
         definition=function 
         ( 

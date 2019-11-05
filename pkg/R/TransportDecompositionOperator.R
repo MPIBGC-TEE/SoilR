@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="initialize",
     signature="TransportDecompositionOperator",
@@ -32,11 +29,8 @@ getSender=function(stri){
   as.numeric(unlist(strsplit(stri,split=fromToSplitter()))[[1]])
 }
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getDotOut",
       signature(object="TransportDecompositionOperator"),
@@ -45,11 +39,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getCompartmentalMatrixFunc",
       signature(object="TransportDecompositionOperator"),
@@ -72,11 +63,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getOutputReceivers",
    signature(object="TransportDecompositionOperator",i="numeric"),
@@ -98,11 +86,8 @@ setMethod(
 #   }
 #)
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getTransferMatrixFunc",
       signature(object="TransportDecompositionOperator"),
@@ -122,11 +107,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getTransferCoefficients",
       signature(object="TransportDecompositionOperator"),
@@ -135,11 +117,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getNumberOfPools",
       signature(object="TransportDecompositionOperator"),
@@ -148,11 +127,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="getFunctionDefinition",
       signature(object="TransportDecompositionOperator"),

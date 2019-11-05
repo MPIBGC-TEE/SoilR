@@ -6,11 +6,8 @@ setClass(
    )
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="initialize",
     signature="MCSim",
@@ -21,11 +18,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="plot",
     signature="MCSim",
@@ -53,11 +47,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="availableResidentSets",
     signature="MCSim",
@@ -71,11 +62,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="availableParticleSets",
     signature="MCSim",
@@ -90,11 +78,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="availableParticleProperties",
     signature="MCSim",
@@ -106,11 +91,8 @@ setMethod(
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod("[[",
     signature(x = "MCSim"),
     definition=function 
@@ -128,11 +110,8 @@ setMethod("[[",
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod("[[<-",
     signature(x = "MCSim"),
     definition=function 
@@ -153,11 +132,8 @@ setMethod("[[<-",
     }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getNumberOfPools",
       signature(object="MCSim"),
@@ -166,11 +142,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="computeResults",
     signature="MCSim",

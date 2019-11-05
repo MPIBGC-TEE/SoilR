@@ -1,9 +1,6 @@
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
     f="initialize",
     signature=c("Model_14"),
@@ -232,11 +229,8 @@ Model_14 <- function
      return(obj)
   }
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getC14",
       signature= "Model_14",
@@ -269,11 +263,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getF14",
       signature= "Model_14",
@@ -289,11 +280,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
    f= "getReleaseFlux14",
       signature= "Model_14",
@@ -315,11 +303,8 @@ setMethod(
    }
 )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f= "getF14R",
   signature= "Model_14",
@@ -335,11 +320,8 @@ setMethod(
   }
   )
 
-#' @auto
 
-#' @auto
 
-#' @auto
 setMethod(
   f= "getF14C",
   signature= "Model_14",
