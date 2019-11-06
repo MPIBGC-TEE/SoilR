@@ -2,13 +2,15 @@
 % Please edit documentation in R/UnBoundNonLinDecompOp.R
 \name{UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method}
 \alias{UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method}
-\title{UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method}
+\title{Automatic description:
+UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method}
 \usage{
 \S4method{UnBoundNonLinDecompOp}{`function`,missing,missing,missing,ANY,ANY,ANY}(matFunc)
 }
 \arguments{
-\item{matFunc}{object of class:\code{function}. }
+\item{matFunc}{object of class:\code{function}. : object of class:\code{function}, no manual documentation}
 }
 \description{
+Automatic description:
 UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method
 }

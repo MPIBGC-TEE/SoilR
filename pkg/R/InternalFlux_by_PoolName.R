@@ -27,6 +27,20 @@ setMethod(
   }
 )
 
+#' Automatic description:
+#' InternalFlux_by_PoolName,function,missing,missing,character-method
+#' 
+#' @name InternalFlux_by_PoolName,function,missing,missing,character-method
+#' @param func : object of class:\code{function}, no manual documentation
+#' @param src_to_dest : object of class:\code{character}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
   f="InternalFlux_by_PoolName",
   signature=c(
@@ -48,6 +62,22 @@ setMethod(
   }
 )
 
+#' Automatic description:
+#' by_PoolIndex,InternalFlux_by_PoolName,character,character-method
+#' 
+#' @name by_PoolIndex,InternalFlux_by_PoolName,character,character-method
+#' @param obj : object of class:\code{InternalFlux_by_PoolName}, no manual
+#' documentation
+#' @param poolNames : object of class:\code{character}, no manual documentation
+#' @param timeSymbol : object of class:\code{character}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="by_PoolIndex"
     ,signature=signature(

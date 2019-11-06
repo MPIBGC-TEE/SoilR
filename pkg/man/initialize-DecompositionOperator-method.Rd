@@ -2,7 +2,7 @@
 % Please edit documentation in R/DecompositionOperator_deprecated_in_1.2.R
 \name{initialize,DecompositionOperator-method}
 \alias{initialize,DecompositionOperator-method}
-\title{initialize,DecompositionOperator-method}
+\title{Automatic description: initialize,DecompositionOperator-method}
 \usage{
 \S4method{initialize}{DecompositionOperator}(
   .Object,
@@ -13,7 +13,8 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{DecompositionOperator}. }
+\item{.Object}{object of class:\code{DecompositionOperator}. : object of class:\code{DecompositionOperator}, no manual
+documentation}
 
 \item{starttime}{found automatically by inspection, not documented yet}
 
@@ -24,5 +25,5 @@
 \item{lag}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,DecompositionOperator-method
+Automatic description: initialize,DecompositionOperator-method
 }

@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{getInFluxes,Model-method}
 \alias{getInFluxes,Model-method}
-\title{getInFluxes,Model-method}
+\title{Automatic description: getInFluxes,Model-method}
 \usage{
 \S4method{getInFluxes}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}. }
+\item{object}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-getInFluxes,Model-method
+Automatic description: getInFluxes,Model-method
 }

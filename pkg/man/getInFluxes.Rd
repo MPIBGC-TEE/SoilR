@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getInFluxes}
 \alias{getInFluxes}
-\title{getInFluxes}
+\title{S4 generic: getInFluxes}
 \usage{
 getInFluxes(object)
 }
@@ -10,12 +10,10 @@ getInFluxes(object)
 \item{object}{see method arguments}
 }
 \description{
-getInFluxes
+S4 generic: getInFluxes
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getInFluxes,Model-method}}
-  \item \code{\link{getInFluxes,NlModel-method}}
   \item \code{\link{getInFluxes,Model-method}}
   \item \code{\link{getInFluxes,NlModel-method}}
 }

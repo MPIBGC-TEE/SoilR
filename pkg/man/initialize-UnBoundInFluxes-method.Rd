@@ -2,16 +2,17 @@
 % Please edit documentation in R/UnboundInflux.R
 \name{initialize,UnBoundInFluxes-method}
 \alias{initialize,UnBoundInFluxes-method}
-\title{initialize,UnBoundInFluxes-method}
+\title{Automatic description: initialize,UnBoundInFluxes-method}
 \usage{
 \S4method{initialize}{UnBoundInFluxes}(.Object, map = function() {
 })
 }
 \arguments{
-\item{.Object}{object of class:\code{UnBoundInFluxes}. }
+\item{.Object}{object of class:\code{UnBoundInFluxes}. : object of class:\code{UnBoundInFluxes}, no manual
+documentation}
 
 \item{map}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,UnBoundInFluxes-method
+Automatic description: initialize,UnBoundInFluxes-method
 }

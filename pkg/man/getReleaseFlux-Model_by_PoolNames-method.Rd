@@ -2,13 +2,14 @@
 % Please edit documentation in R/Model_by_PoolNames.R
 \name{getReleaseFlux,Model_by_PoolNames-method}
 \alias{getReleaseFlux,Model_by_PoolNames-method}
-\title{getReleaseFlux,Model_by_PoolNames-method}
+\title{Automatic description: getReleaseFlux,Model_by_PoolNames-method}
 \usage{
 \S4method{getReleaseFlux}{Model_by_PoolNames}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model_by_PoolNames}. }
+\item{object}{object of class:\code{Model_by_PoolNames}. : object of class:\code{Model_by_PoolNames}, no manual
+documentation}
 }
 \description{
-getReleaseFlux,Model_by_PoolNames-method
+Automatic description: getReleaseFlux,Model_by_PoolNames-method
 }

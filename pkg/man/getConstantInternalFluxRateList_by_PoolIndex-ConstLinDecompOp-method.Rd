@@ -2,13 +2,16 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method}
 \alias{getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method}
-\title{getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method}
+\title{Automatic description:
+getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method}
 \usage{
 \S4method{getConstantInternalFluxRateList_by_PoolIndex}{ConstLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}. }
+\item{object}{object of class:\code{ConstLinDecompOp}. : object of class:\code{ConstLinDecompOp}, no manual
+documentation}
 }
 \description{
+Automatic description:
 getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method
 }

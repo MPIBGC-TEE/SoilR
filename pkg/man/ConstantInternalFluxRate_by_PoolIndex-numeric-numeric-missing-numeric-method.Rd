@@ -2,7 +2,8 @@
 % Please edit documentation in R/ConstantInternalFluxRate_by_PoolIndex.R
 \name{ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method}
 \alias{ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method}
-\title{ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method}
+\title{Automatic description:
+ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method}
 \usage{
 \S4method{ConstantInternalFluxRate_by_PoolIndex}{numeric,numeric,missing,numeric}(
   sourceIndex,
@@ -11,12 +12,15 @@
 )
 }
 \arguments{
-\item{sourceIndex}{object of class:\code{numeric}. }
+\item{sourceIndex}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 
-\item{destinationIndex}{object of class:\code{numeric}. }
+\item{destinationIndex}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual
+documentation}
 
-\item{rate_constant}{object of class:\code{numeric}. }
+\item{rate_constant}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual
+documentation}
 }
 \description{
+Automatic description:
 ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method
 }

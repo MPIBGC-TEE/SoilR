@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{getC,Model-method}
 \alias{getC,Model-method}
-\title{getC,Model-method}
+\title{Automatic description: getC,Model-method}
 \usage{
 \S4method{getC}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}. }
+\item{object}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-getC,Model-method
+Automatic description: getC,Model-method
 }

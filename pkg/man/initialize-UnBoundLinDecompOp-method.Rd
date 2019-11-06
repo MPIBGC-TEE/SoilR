@@ -2,16 +2,17 @@
 % Please edit documentation in R/UnBoundLinDecompOp.R
 \name{initialize,UnBoundLinDecompOp-method}
 \alias{initialize,UnBoundLinDecompOp-method}
-\title{initialize,UnBoundLinDecompOp-method}
+\title{Automatic description: initialize,UnBoundLinDecompOp-method}
 \usage{
 \S4method{initialize}{UnBoundLinDecompOp}(.Object, matFunc = function() {
 })
 }
 \arguments{
-\item{.Object}{object of class:\code{UnBoundLinDecompOp}. }
+\item{.Object}{object of class:\code{UnBoundLinDecompOp}. : object of class:\code{UnBoundLinDecompOp}, no manual
+documentation}
 
 \item{matFunc}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,UnBoundLinDecompOp-method
+Automatic description: initialize,UnBoundLinDecompOp-method
 }

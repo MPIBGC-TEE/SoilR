@@ -2,13 +2,13 @@
 % Please edit documentation in R/list.R
 \name{InFluxes,list-method}
 \alias{InFluxes,list-method}
-\title{InFluxes,list-method}
+\title{Automatic description: InFluxes,list-method}
 \usage{
 \S4method{InFluxes}{list}(object)
 }
 \arguments{
-\item{object}{object of class:\code{list}. }
+\item{object}{object of class:\code{list}. : object of class:\code{list}, no manual documentation}
 }
 \description{
-InFluxes,list-method
+Automatic description: InFluxes,list-method
 }

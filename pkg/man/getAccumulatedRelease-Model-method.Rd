@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{getAccumulatedRelease,Model-method}
 \alias{getAccumulatedRelease,Model-method}
-\title{getAccumulatedRelease,Model-method}
+\title{Automatic description: getAccumulatedRelease,Model-method}
 \usage{
 \S4method{getAccumulatedRelease}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}. }
+\item{object}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-getAccumulatedRelease,Model-method
+Automatic description: getAccumulatedRelease,Model-method
 }

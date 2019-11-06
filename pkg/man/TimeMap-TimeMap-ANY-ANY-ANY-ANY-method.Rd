@@ -2,13 +2,13 @@
 % Please edit documentation in R/TimeMap.R
 \name{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}
 \alias{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}
-\title{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}
+\title{Automatic description: TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}
 \usage{
 \S4method{TimeMap}{TimeMap,ANY,ANY,ANY,ANY}(map)
 }
 \arguments{
-\item{map}{object of class:\code{TimeMap}. }
+\item{map}{object of class:\code{TimeMap}. : object of class:\code{TimeMap}, no manual documentation}
 }
 \description{
-TimeMap,TimeMap,ANY,ANY,ANY,ANY-method
+Automatic description: TimeMap,TimeMap,ANY,ANY,ANY,ANY-method
 }

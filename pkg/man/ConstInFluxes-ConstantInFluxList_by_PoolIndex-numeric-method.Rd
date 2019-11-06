@@ -2,15 +2,19 @@
 % Please edit documentation in R/ConstInFluxes.R
 \name{ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}
 \alias{ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}
-\title{ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}
+\title{Automatic description:
+ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}
 \usage{
 \S4method{ConstInFluxes}{ConstantInFluxList_by_PoolIndex,numeric}(map, numberOfPools)
 }
 \arguments{
-\item{map}{object of class:\code{ConstantInFluxList_by_PoolIndex}. }
+\item{map}{object of class:\code{ConstantInFluxList_by_PoolIndex}. : object of class:\code{ConstantInFluxList_by_PoolIndex}, no
+manual documentation}
 
-\item{numberOfPools}{object of class:\code{numeric}. }
+\item{numberOfPools}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual
+documentation}
 }
 \description{
+Automatic description:
 ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method
 }

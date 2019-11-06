@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{getInFluxes,NlModel-method}
 \alias{getInFluxes,NlModel-method}
-\title{getInFluxes,NlModel-method}
+\title{Automatic description: getInFluxes,NlModel-method}
 \usage{
 \S4method{getInFluxes}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-getInFluxes,NlModel-method
+Automatic description: getInFluxes,NlModel-method
 }

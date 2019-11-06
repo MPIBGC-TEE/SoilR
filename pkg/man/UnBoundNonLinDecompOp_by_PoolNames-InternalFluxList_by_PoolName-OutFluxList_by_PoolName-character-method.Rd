@@ -2,17 +2,22 @@
 % Please edit documentation in R/UnBoundNonLinDecompOp_by_PoolNames.R
 \name{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}
 \alias{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}
-\title{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}
+\title{Automatic description:
+UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}
 \usage{
 \S4method{UnBoundNonLinDecompOp_by_PoolNames}{InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character}(internal_fluxes, out_fluxes, timeSymbol)
 }
 \arguments{
-\item{internal_fluxes}{object of class:\code{InternalFluxList_by_PoolName}. }
+\item{internal_fluxes}{object of class:\code{InternalFluxList_by_PoolName}. : object of
+class:\code{InternalFluxList_by_PoolName}, no manual documentation}
 
-\item{out_fluxes}{object of class:\code{OutFluxList_by_PoolName}. }
+\item{out_fluxes}{object of class:\code{OutFluxList_by_PoolName}. : object of class:\code{OutFluxList_by_PoolName}, no
+manual documentation}
 
-\item{timeSymbol}{object of class:\code{character}. }
+\item{timeSymbol}{object of class:\code{character}. : object of class:\code{character}, no manual
+documentation}
 }
 \description{
+Automatic description:
 UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method
 }

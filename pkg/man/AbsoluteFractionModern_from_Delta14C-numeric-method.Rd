@@ -2,13 +2,13 @@
 % Please edit documentation in R/genericFunctions.R
 \name{AbsoluteFractionModern_from_Delta14C,numeric-method}
 \alias{AbsoluteFractionModern_from_Delta14C,numeric-method}
-\title{AbsoluteFractionModern_from_Delta14C,numeric-method}
+\title{Automatic description: AbsoluteFractionModern_from_Delta14C,numeric-method}
 \usage{
 \S4method{AbsoluteFractionModern_from_Delta14C}{numeric}(delta14C)
 }
 \arguments{
-\item{delta14C}{object of class:\code{numeric}. }
+\item{delta14C}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 }
 \description{
-AbsoluteFractionModern_from_Delta14C,numeric-method
+Automatic description: AbsoluteFractionModern_from_Delta14C,numeric-method
 }

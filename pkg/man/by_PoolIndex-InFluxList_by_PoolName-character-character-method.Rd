@@ -2,17 +2,21 @@
 % Please edit documentation in R/InFluxList_by_PoolName.R
 \name{by_PoolIndex,InFluxList_by_PoolName,character,character-method}
 \alias{by_PoolIndex,InFluxList_by_PoolName,character,character-method}
-\title{by_PoolIndex,InFluxList_by_PoolName,character,character-method}
+\title{Automatic description:
+by_PoolIndex,InFluxList_by_PoolName,character,character-method}
 \usage{
 \S4method{by_PoolIndex}{InFluxList_by_PoolName,character,character}(obj, poolNames, timeSymbol)
 }
 \arguments{
-\item{obj}{object of class:\code{InFluxList_by_PoolName}. }
+\item{obj}{object of class:\code{InFluxList_by_PoolName}. : object of class:\code{InFluxList_by_PoolName}, no manual
+documentation}
 
-\item{poolNames}{object of class:\code{character}. }
+\item{poolNames}{object of class:\code{character}. : object of class:\code{character}, no manual documentation}
 
-\item{timeSymbol}{object of class:\code{character}. }
+\item{timeSymbol}{object of class:\code{character}. : object of class:\code{character}, no manual
+documentation}
 }
 \description{
+Automatic description:
 by_PoolIndex,InFluxList_by_PoolName,character,character-method
 }

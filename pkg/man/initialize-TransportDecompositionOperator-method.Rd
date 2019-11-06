@@ -2,7 +2,7 @@
 % Please edit documentation in R/TransportDecompositionOperator.R
 \name{initialize,TransportDecompositionOperator-method}
 \alias{initialize,TransportDecompositionOperator-method}
-\title{initialize,TransportDecompositionOperator-method}
+\title{Automatic description: initialize,TransportDecompositionOperator-method}
 \usage{
 \S4method{initialize}{TransportDecompositionOperator}(
   .Object,
@@ -15,7 +15,8 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{TransportDecompositionOperator}. }
+\item{.Object}{object of class:\code{TransportDecompositionOperator}. : object of class:\code{TransportDecompositionOperator}, no
+manual documentation}
 
 \item{starttime}{found automatically by inspection, not documented yet}
 
@@ -30,5 +31,5 @@
 \item{lag}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,TransportDecompositionOperator-method
+Automatic description: initialize,TransportDecompositionOperator-method
 }

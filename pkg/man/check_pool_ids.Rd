@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{check_pool_ids}
 \alias{check_pool_ids}
-\title{check_pool_ids}
+\title{S4 generic: check_pool_ids}
 \usage{
 check_pool_ids(obj, pools)
 }
@@ -12,11 +12,10 @@ check_pool_ids(obj, pools)
 \item{pools}{see method arguments}
 }
 \description{
-check_pool_ids
+S4 generic: check_pool_ids
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}}
   \item \code{\link{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}}
 }
 }

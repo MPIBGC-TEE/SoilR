@@ -2,13 +2,14 @@
 % Please edit documentation in R/ConstInFluxes.R
 \name{getConstantInFluxVector,ConstInFluxes-method}
 \alias{getConstantInFluxVector,ConstInFluxes-method}
-\title{getConstantInFluxVector,ConstInFluxes-method}
+\title{Automatic description: getConstantInFluxVector,ConstInFluxes-method}
 \usage{
 \S4method{getConstantInFluxVector}{ConstInFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstInFluxes}. }
+\item{object}{object of class:\code{ConstInFluxes}. : object of class:\code{ConstInFluxes}, no manual
+documentation}
 }
 \description{
-getConstantInFluxVector,ConstInFluxes-method
+Automatic description: getConstantInFluxVector,ConstInFluxes-method
 }

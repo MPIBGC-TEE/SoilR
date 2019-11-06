@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getDotOut}
 \alias{getDotOut}
-\title{getDotOut}
+\title{S4 generic: getDotOut}
 \usage{
 getDotOut(object)
 }
@@ -10,11 +10,10 @@ getDotOut(object)
 \item{object}{see method arguments}
 }
 \description{
-getDotOut
+S4 generic: getDotOut
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getDotOut,TransportDecompositionOperator-method}}
   \item \code{\link{getDotOut,TransportDecompositionOperator-method}}
 }
 }

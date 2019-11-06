@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getParticleMonteCarloSimulator}
 \alias{getParticleMonteCarloSimulator}
-\title{getParticleMonteCarloSimulator}
+\title{S4 generic: getParticleMonteCarloSimulator}
 \usage{
 getParticleMonteCarloSimulator(object)
 }
@@ -10,11 +10,10 @@ getParticleMonteCarloSimulator(object)
 \item{object}{see method arguments}
 }
 \description{
-getParticleMonteCarloSimulator
+S4 generic: getParticleMonteCarloSimulator
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getParticleMonteCarloSimulator,NlModel-method}}
   \item \code{\link{getParticleMonteCarloSimulator,NlModel-method}}
 }
 }

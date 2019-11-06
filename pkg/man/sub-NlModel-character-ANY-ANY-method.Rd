@@ -2,15 +2,15 @@
 % Please edit documentation in R/NlModel.R
 \name{[,NlModel,character,ANY,ANY-method}
 \alias{[,NlModel,character,ANY,ANY-method}
-\title{[,NlModel,character,ANY,ANY-method}
+\title{Automatic description: [,NlModel,character,ANY,ANY-method}
 \usage{
 \S4method{[}{NlModel,character,ANY,ANY}(x, i)
 }
 \arguments{
-\item{x}{object of class:\code{NlModel}. }
+\item{x}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 
-\item{i}{object of class:\code{character}. }
+\item{i}{object of class:\code{character}. : object of class:\code{character}, no manual documentation}
 }
 \description{
-[,NlModel,character,ANY,ANY-method
+Automatic description: [,NlModel,character,ANY,ANY-method
 }

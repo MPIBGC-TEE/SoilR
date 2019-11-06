@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{print,Model-method}
 \alias{print,Model-method}
-\title{print,Model-method}
+\title{Automatic description: print,Model-method}
 \usage{
 \S4method{print}{Model}(x)
 }
 \arguments{
-\item{x}{object of class:\code{Model}. }
+\item{x}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-print,Model-method
+Automatic description: print,Model-method
 }

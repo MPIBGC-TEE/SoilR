@@ -2,13 +2,13 @@
 % Please edit documentation in R/InFluxes.R
 \name{InFluxes,TimeMap-method}
 \alias{InFluxes,TimeMap-method}
-\title{InFluxes,TimeMap-method}
+\title{Automatic description: InFluxes,TimeMap-method}
 \usage{
 \S4method{InFluxes}{TimeMap}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TimeMap}. }
+\item{object}{object of class:\code{TimeMap}. : object of class:\code{TimeMap}, no manual documentation}
 }
 \description{
-InFluxes,TimeMap-method
+Automatic description: InFluxes,TimeMap-method
 }

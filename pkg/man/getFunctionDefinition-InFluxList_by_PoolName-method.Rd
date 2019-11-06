@@ -3,21 +3,22 @@
 %   R/InFluxList_by_PoolName.R
 \name{getFunctionDefinition,InFluxList_by_PoolName-method}
 \alias{getFunctionDefinition,InFluxList_by_PoolName-method}
-\title{getFunctionDefinition,InFluxList_by_PoolName-method}
+\title{Automatic description: getFunctionDefinition,InFluxList_by_PoolName-method}
 \usage{
 \S4method{getFunctionDefinition}{InFluxList_by_PoolName}(object, timeSymbol, poolNames)
 
 \S4method{getFunctionDefinition}{InFluxList_by_PoolName}(object, timeSymbol, poolNames)
 }
 \arguments{
-\item{object}{object of class:\code{InFluxList_by_PoolName}. }
+\item{object}{object of class:\code{InFluxList_by_PoolName}. : object of class:\code{InFluxList_by_PoolName}, no manual
+documentation}
 
 \item{timeSymbol}{found automatically by inspection, not documented yet}
 
 \item{poolNames}{found automatically by inspection, not documented yet}
 }
 \description{
-getFunctionDefinition,InFluxList_by_PoolName-method
+Automatic description: getFunctionDefinition,InFluxList_by_PoolName-method
 
-getFunctionDefinition,InFluxList_by_PoolName-method
+Automatic description: getFunctionDefinition,InFluxList_by_PoolName-method
 }

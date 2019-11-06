@@ -2,13 +2,13 @@
 % Please edit documentation in R/MCSim.R
 \name{getNumberOfPools,MCSim-method}
 \alias{getNumberOfPools,MCSim-method}
-\title{getNumberOfPools,MCSim-method}
+\title{Automatic description: getNumberOfPools,MCSim-method}
 \usage{
 \S4method{getNumberOfPools}{MCSim}(object)
 }
 \arguments{
-\item{object}{object of class:\code{MCSim}. }
+\item{object}{object of class:\code{MCSim}. : object of class:\code{MCSim}, no manual documentation}
 }
 \description{
-getNumberOfPools,MCSim-method
+Automatic description: getNumberOfPools,MCSim-method
 }

@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{print,NlModel-method}
 \alias{print,NlModel-method}
-\title{print,NlModel-method}
+\title{Automatic description: print,NlModel-method}
 \usage{
 \S4method{print}{NlModel}(x)
 }
 \arguments{
-\item{x}{object of class:\code{NlModel}. }
+\item{x}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-print,NlModel-method
+Automatic description: print,NlModel-method
 }

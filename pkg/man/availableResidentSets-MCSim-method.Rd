@@ -2,13 +2,13 @@
 % Please edit documentation in R/MCSim.R
 \name{availableResidentSets,MCSim-method}
 \alias{availableResidentSets,MCSim-method}
-\title{availableResidentSets,MCSim-method}
+\title{Automatic description: availableResidentSets,MCSim-method}
 \usage{
 \S4method{availableResidentSets}{MCSim}(object)
 }
 \arguments{
-\item{object}{object of class:\code{MCSim}. }
+\item{object}{object of class:\code{MCSim}. : object of class:\code{MCSim}, no manual documentation}
 }
 \description{
-availableResidentSets,MCSim-method
+Automatic description: availableResidentSets,MCSim-method
 }

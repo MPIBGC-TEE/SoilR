@@ -1,6 +1,17 @@
 
 
 
+#' Automatic description: ConstInFluxes,numeric,ANY-method
+#' 
+#' @name ConstInFluxes,numeric,ANY-method
+#' @param map : object of class:\code{numeric}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
   f="ConstInFluxes",
   signature=c(
@@ -16,6 +27,21 @@ setMethod(
 
 
 
+#' Automatic description:
+#' ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method
+#' 
+#' @name ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method
+#' @param map : object of class:\code{ConstantInFluxList_by_PoolIndex}, no
+#' manual documentation
+#' @param numberOfPools : object of class:\code{numeric}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     "ConstInFluxes"
     ,signature=signature(
@@ -31,6 +57,18 @@ setMethod(
 
 
 
+#' Automatic description: getConstantInFluxVector,ConstInFluxes-method
+#' 
+#' @name getConstantInFluxVector,ConstInFluxes-method
+#' @param object : object of class:\code{ConstInFluxes}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     "getConstantInFluxVector"
     ,signature=signature(
@@ -43,6 +81,18 @@ setMethod(
 
 
 
+#' Automatic description: getTimeRange,ConstInFluxes-method
+#' 
+#' @name getTimeRange,ConstInFluxes-method
+#' @param object : object of class:\code{ConstInFluxes}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getTimeRange",
     signature="ConstInFluxes",
@@ -55,6 +105,18 @@ setMethod(
 
 
 
+#' Automatic description: getFunctionDefinition,ConstInFluxes-method
+#' 
+#' @name getFunctionDefinition,ConstInFluxes-method
+#' @param object : object of class:\code{ConstInFluxes}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getFunctionDefinition",
     signature="ConstInFluxes",

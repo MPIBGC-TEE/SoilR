@@ -6,6 +6,19 @@ setClass(
 
 
 
+#' Automatic description: initialize,UnBoundInFluxes-method
+#' 
+#' @name initialize,UnBoundInFluxes-method
+#' @param .Object : object of class:\code{UnBoundInFluxes}, no manual
+#' documentation
+#' @param map : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
      f="initialize",
      signature="UnBoundInFluxes",
@@ -19,6 +32,17 @@ setMethod(
 
 
 
+#' Automatic description: UnBoundInFluxes,function-method
+#' 
+#' @name UnBoundInFluxes,function-method
+#' @param map : object of class:\code{function}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
       f="UnBoundInFluxes",
       signature=c(map="function"),
@@ -30,6 +54,18 @@ setMethod(
 
 
 
+#' Automatic description: getFunctionDefinition,UnBoundInFluxes-method
+#' 
+#' @name getFunctionDefinition,UnBoundInFluxes-method
+#' @param object : object of class:\code{UnBoundInFluxes}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getFunctionDefinition",
     signature="UnBoundInFluxes",
@@ -41,6 +77,18 @@ setMethod(
 
 
 
+#' Automatic description: getTimeRange,UnBoundInFluxes-method
+#' 
+#' @name getTimeRange,UnBoundInFluxes-method
+#' @param object : object of class:\code{UnBoundInFluxes}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getTimeRange",
     signature="UnBoundInFluxes",

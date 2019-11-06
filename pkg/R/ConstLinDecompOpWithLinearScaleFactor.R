@@ -269,6 +269,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method
+#' 
+#' @name getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method
+#' @param object : object of
+#' class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getTimeRange"
     ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -279,6 +292,20 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method
+#' 
+#' @name
+#' getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method
+#' @param object : object of
+#' class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getConstantCompartmentalMatrix",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -289,6 +316,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method
+#' 
+#' @name getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method
+#' @param object : object of
+#' class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getLinearScaleFactor",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"
@@ -299,6 +339,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method
+#' 
+#' @name getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method
+#' @param object : object of
+#' class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getConstLinDecompOp",
      ,signature="ConstLinDecompOpWithLinearScalarFactor"

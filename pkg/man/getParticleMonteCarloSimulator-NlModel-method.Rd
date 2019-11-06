@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{getParticleMonteCarloSimulator,NlModel-method}
 \alias{getParticleMonteCarloSimulator,NlModel-method}
-\title{getParticleMonteCarloSimulator,NlModel-method}
+\title{Automatic description: getParticleMonteCarloSimulator,NlModel-method}
 \usage{
 \S4method{getParticleMonteCarloSimulator}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-getParticleMonteCarloSimulator,NlModel-method
+Automatic description: getParticleMonteCarloSimulator,NlModel-method
 }

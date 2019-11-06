@@ -2,13 +2,16 @@
 % Please edit documentation in R/BoundLinDecompOp.R
 \name{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}
 \alias{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}
-\title{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}
+\title{Automatic description:
+getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}
 \usage{
 \S4method{getCompartmentalMatrixFunc}{BoundLinDecompOp,ANY,ANY}(object)
 }
 \arguments{
-\item{object}{object of class:\code{BoundLinDecompOp}. }
+\item{object}{object of class:\code{BoundLinDecompOp}. : object of class:\code{BoundLinDecompOp}, no manual
+documentation}
 }
 \description{
+Automatic description:
 getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method
 }

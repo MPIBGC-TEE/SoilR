@@ -1,6 +1,18 @@
 
 
 
+#' Automatic description: getC,Model_by_PoolNames-method
+#' 
+#' @name getC,Model_by_PoolNames-method
+#' @param object : object of class:\code{Model_by_PoolNames}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f= "getC"
     ,signature= "Model_by_PoolNames"
@@ -25,6 +37,18 @@ setMethod(
 
 
 
+#' Automatic description: getReleaseFlux,Model_by_PoolNames-method
+#' 
+#' @name getReleaseFlux,Model_by_PoolNames-method
+#' @param object : object of class:\code{Model_by_PoolNames}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getReleaseFlux",
       signature= "Model_by_PoolNames",
@@ -56,6 +80,18 @@ setMethod(
 
 
 
+#' Automatic description: getRightHandSideOfODE,Model_by_PoolNames-method
+#' 
+#' @name getRightHandSideOfODE,Model_by_PoolNames-method
+#' @param object : object of class:\code{Model_by_PoolNames}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f='getRightHandSideOfODE'
     ,signature= "Model_by_PoolNames"

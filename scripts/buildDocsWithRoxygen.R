@@ -11,7 +11,7 @@ requireNamespace('roxygen2')
       cat("
       Until the pull request to roxygen2 have been accepted 
       you need a special branch of roxygen2 to document SoilR. 
-      Please install from github by:     
+      Please install from gitby:     
 
       devtools::install_github('mamueller/roxygen2')
       ")
@@ -27,15 +27,20 @@ script.basename <- dirname(script.name)
 git.hubs.docs.dir <- file.path(script.basename,'..','docs')
 
 pkgDir='~/SoilR-exp/pkg'
-roxygen2::roxygenize(pkgDir,roclets=c('remove_autotag_roclet'))
+#roxygen2::roxygenize(pkgDir,roclets=c('remove_autotag_roclet'))
 #roxygen2::roxygenize(pkgDir,roclets=c('auto_comment_roclet','rd'))
-#roxygen2::roxygenize(pkgDir,roclets=c('autotag_roclet','rd'))
+roxygen2::roxygenize(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
 #devtools::install(pkgDir,args=c('--html'))
 
 #p='pkg.pdf'
 #if(file.exists(p)){file.remove(p)}
 #system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(pkgDir)))
-#devtools::check(pkgDir,document=FALSE,build_args = '--no-build-vignettes')
+devtools::check(
+  pkgDir,
+  document=FALSE,
+  build_args = '--no-build-vignettes',
+  args = '--ignore-vignettes'
+)
 #devtools::check(pkgDir,document=FALSE)
 #browserBin <- 'firefox'
 #

@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getValues}
 \alias{getValues}
-\title{getValues}
+\title{S4 generic: getValues}
 \usage{
 getValues(object)
 }
@@ -10,11 +10,10 @@ getValues(object)
 \item{object}{see method arguments}
 }
 \description{
-getValues
+S4 generic: getValues
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getValues,ConstFc-method}}
   \item \code{\link{getValues,ConstFc-method}}
 }
 }

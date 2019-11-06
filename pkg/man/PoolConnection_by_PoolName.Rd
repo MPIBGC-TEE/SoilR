@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{PoolConnection_by_PoolName}
 \alias{PoolConnection_by_PoolName}
-\title{PoolConnection_by_PoolName}
+\title{S4 generic: PoolConnection_by_PoolName}
 \usage{
 PoolConnection_by_PoolName(source, destination, src_to_dest)
 }
@@ -14,11 +14,10 @@ PoolConnection_by_PoolName(source, destination, src_to_dest)
 \item{src_to_dest}{see method arguments}
 }
 \description{
-PoolConnection_by_PoolName
+S4 generic: PoolConnection_by_PoolName
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{PoolConnection_by_PoolName,ANY,ANY,missing-method}}
   \item \code{\link{PoolConnection_by_PoolName,ANY,ANY,missing-method}}
 }
 }

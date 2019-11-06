@@ -2,13 +2,14 @@
 % Please edit documentation in R/Model_by_PoolNames.R
 \name{getC,Model_by_PoolNames-method}
 \alias{getC,Model_by_PoolNames-method}
-\title{getC,Model_by_PoolNames-method}
+\title{Automatic description: getC,Model_by_PoolNames-method}
 \usage{
 \S4method{getC}{Model_by_PoolNames}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model_by_PoolNames}. }
+\item{object}{object of class:\code{Model_by_PoolNames}. : object of class:\code{Model_by_PoolNames}, no manual
+documentation}
 }
 \description{
-getC,Model_by_PoolNames-method
+Automatic description: getC,Model_by_PoolNames-method
 }

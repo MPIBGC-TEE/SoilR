@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{add_plot}
 \alias{add_plot}
-\title{add_plot}
+\title{S4 generic: add_plot}
 \usage{
 add_plot(x, ...)
 }
@@ -12,11 +12,10 @@ add_plot(x, ...)
 \item{...}{see method arguments}
 }
 \description{
-add_plot
+S4 generic: add_plot
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{add_plot,TimeMap-method}}
   \item \code{\link{add_plot,TimeMap-method}}
 }
 }

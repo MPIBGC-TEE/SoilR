@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getNumberOfPools}
 \alias{getNumberOfPools}
-\title{getNumberOfPools}
+\title{S4 generic: getNumberOfPools}
 \usage{
 getNumberOfPools(object)
 }
@@ -10,13 +10,10 @@ getNumberOfPools(object)
 \item{object}{see method arguments}
 }
 \description{
-getNumberOfPools
+S4 generic: getNumberOfPools
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getNumberOfPools,MCSim-method}}
-  \item \code{\link{getNumberOfPools,NlModel-method}}
-  \item \code{\link{getNumberOfPools,TransportDecompositionOperator-method}}
   \item \code{\link{getNumberOfPools,MCSim-method}}
   \item \code{\link{getNumberOfPools,NlModel-method}}
   \item \code{\link{getNumberOfPools,TransportDecompositionOperator-method}}

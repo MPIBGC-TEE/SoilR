@@ -1,6 +1,17 @@
 
 
 
+#' Automatic description: getValues,ConstFc-method
+#' 
+#' @name getValues,ConstFc-method
+#' @param object : object of class:\code{ConstFc}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getValues",
     signature="ConstFc",
@@ -13,6 +24,17 @@ setMethod(
 
 
 
+#' Automatic description: Delta14C,ConstFc-method
+#' 
+#' @name Delta14C,ConstFc-method
+#' @param F : object of class:\code{ConstFc}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "Delta14C",
       signature("ConstFc"),
@@ -38,6 +60,17 @@ setMethod(
 
 
 
+#' Automatic description: AbsoluteFractionModern,ConstFc-method
+#' 
+#' @name AbsoluteFractionModern,ConstFc-method
+#' @param F : object of class:\code{ConstFc}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "AbsoluteFractionModern",
       signature("ConstFc"),

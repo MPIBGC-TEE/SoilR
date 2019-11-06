@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{show,Model-method}
 \alias{show,Model-method}
-\title{show,Model-method}
+\title{Automatic description: show,Model-method}
 \usage{
 \S4method{show}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}. }
+\item{object}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-show,Model-method
+Automatic description: show,Model-method
 }

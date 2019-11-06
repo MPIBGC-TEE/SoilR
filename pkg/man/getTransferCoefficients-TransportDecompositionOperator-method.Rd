@@ -2,13 +2,16 @@
 % Please edit documentation in R/TransportDecompositionOperator.R
 \name{getTransferCoefficients,TransportDecompositionOperator-method}
 \alias{getTransferCoefficients,TransportDecompositionOperator-method}
-\title{getTransferCoefficients,TransportDecompositionOperator-method}
+\title{Automatic description:
+getTransferCoefficients,TransportDecompositionOperator-method}
 \usage{
 \S4method{getTransferCoefficients}{TransportDecompositionOperator}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TransportDecompositionOperator}. }
+\item{object}{object of class:\code{TransportDecompositionOperator}. : object of class:\code{TransportDecompositionOperator}, no
+manual documentation}
 }
 \description{
+Automatic description:
 getTransferCoefficients,TransportDecompositionOperator-method
 }

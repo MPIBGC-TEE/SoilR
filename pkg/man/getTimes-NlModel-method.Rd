@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{getTimes,NlModel-method}
 \alias{getTimes,NlModel-method}
-\title{getTimes,NlModel-method}
+\title{Automatic description: getTimes,NlModel-method}
 \usage{
 \S4method{getTimes}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-getTimes,NlModel-method
+Automatic description: getTimes,NlModel-method
 }

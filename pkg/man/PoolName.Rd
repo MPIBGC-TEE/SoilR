@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{PoolName}
 \alias{PoolName}
-\title{PoolName}
+\title{S4 generic: PoolName}
 \usage{
 PoolName(id, ...)
 }
@@ -12,13 +12,10 @@ PoolName(id, ...)
 \item{...}{see method arguments}
 }
 \description{
-PoolName
+S4 generic: PoolName
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{PoolName,character-method}}
-  \item \code{\link{PoolName,PoolIndex-method}}
-  \item \code{\link{PoolName,PoolName-method}}
   \item \code{\link{PoolName,character-method}}
   \item \code{\link{PoolName,PoolIndex-method}}
   \item \code{\link{PoolName,PoolName-method}}

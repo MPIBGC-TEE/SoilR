@@ -2,7 +2,7 @@
 % Please edit documentation in R/TimeMap.R
 \name{initialize,TimeMap-method}
 \alias{initialize,TimeMap-method}
-\title{initialize,TimeMap-method}
+\title{Automatic description: initialize,TimeMap-method}
 \usage{
 \S4method{initialize}{TimeMap}(
   .Object,
@@ -12,7 +12,7 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{TimeMap}. }
+\item{.Object}{object of class:\code{TimeMap}. : object of class:\code{TimeMap}, no manual documentation}
 
 \item{starttime}{found automatically by inspection, not documented yet}
 
@@ -21,5 +21,5 @@
 \item{map}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,TimeMap-method
+Automatic description: initialize,TimeMap-method
 }

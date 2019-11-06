@@ -2,13 +2,13 @@
 % Please edit documentation in R/UnBoundLinDecompOp.R
 \name{UnBoundLinDecompOp,function-method}
 \alias{UnBoundLinDecompOp,function-method}
-\title{UnBoundLinDecompOp,function-method}
+\title{Automatic description: UnBoundLinDecompOp,function-method}
 \usage{
 \S4method{UnBoundLinDecompOp}{`function`}(matFunc)
 }
 \arguments{
-\item{matFunc}{object of class:\code{function}. }
+\item{matFunc}{object of class:\code{function}. : object of class:\code{function}, no manual documentation}
 }
 \description{
-UnBoundLinDecompOp,function-method
+Automatic description: UnBoundLinDecompOp,function-method
 }

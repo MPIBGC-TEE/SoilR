@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{GeneralPoolId}
 \alias{GeneralPoolId}
-\title{GeneralPoolId}
+\title{S4 generic: GeneralPoolId}
 \usage{
 GeneralPoolId(id)
 
@@ -12,16 +12,12 @@ GeneralPoolId(id)
 \item{id}{see method arguments}
 }
 \description{
-GeneralPoolId
+S4 generic: GeneralPoolId
 
-GeneralPoolId
+S4 generic: GeneralPoolId
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{GeneralPoolId,character-method}}
-  \item \code{\link{GeneralPoolId,numeric-method}}
-  \item \code{\link{GeneralPoolId,character-method}}
-  \item \code{\link{GeneralPoolId,numeric-method}}
   \item \code{\link{GeneralPoolId,character-method}}
   \item \code{\link{GeneralPoolId,numeric-method}}
   \item \code{\link{GeneralPoolId,character-method}}

@@ -2,13 +2,16 @@
 % Please edit documentation in R/TransportDecompositionOperator.R
 \name{getFunctionDefinition,TransportDecompositionOperator-method}
 \alias{getFunctionDefinition,TransportDecompositionOperator-method}
-\title{getFunctionDefinition,TransportDecompositionOperator-method}
+\title{Automatic description:
+getFunctionDefinition,TransportDecompositionOperator-method}
 \usage{
 \S4method{getFunctionDefinition}{TransportDecompositionOperator}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TransportDecompositionOperator}. }
+\item{object}{object of class:\code{TransportDecompositionOperator}. : object of class:\code{TransportDecompositionOperator}, no
+manual documentation}
 }
 \description{
+Automatic description:
 getFunctionDefinition,TransportDecompositionOperator-method
 }

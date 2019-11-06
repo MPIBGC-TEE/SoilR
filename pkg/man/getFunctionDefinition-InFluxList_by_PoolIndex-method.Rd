@@ -2,15 +2,16 @@
 % Please edit documentation in R/InFluxList_by_PoolIndex.R
 \name{getFunctionDefinition,InFluxList_by_PoolIndex-method}
 \alias{getFunctionDefinition,InFluxList_by_PoolIndex-method}
-\title{getFunctionDefinition,InFluxList_by_PoolIndex-method}
+\title{Automatic description: getFunctionDefinition,InFluxList_by_PoolIndex-method}
 \usage{
 \S4method{getFunctionDefinition}{InFluxList_by_PoolIndex}(object, numberOfPools)
 }
 \arguments{
-\item{object}{object of class:\code{InFluxList_by_PoolIndex}. }
+\item{object}{object of class:\code{InFluxList_by_PoolIndex}. : object of class:\code{InFluxList_by_PoolIndex}, no manual
+documentation}
 
 \item{numberOfPools}{found automatically by inspection, not documented yet}
 }
 \description{
-getFunctionDefinition,InFluxList_by_PoolIndex-method
+Automatic description: getFunctionDefinition,InFluxList_by_PoolIndex-method
 }

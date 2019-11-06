@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getFunctionDefinition}
 \alias{getFunctionDefinition}
-\title{getFunctionDefinition}
+\title{S4 generic: getFunctionDefinition}
 \usage{
 getFunctionDefinition(object, timeSymbol, poolNames, numberOfPools)
 }
@@ -16,21 +16,10 @@ getFunctionDefinition(object, timeSymbol, poolNames, numberOfPools)
 \item{numberOfPools}{see method arguments}
 }
 \description{
-getFunctionDefinition
+S4 generic: getFunctionDefinition
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getFunctionDefinition,ConstInFluxes-method}}
-  \item \code{\link{getFunctionDefinition,ConstLinDecompOp-method}}
-  \item \code{\link{getFunctionDefinition,ConstLinDecompOpWithLinearScalarFactor-method}}
-  \item \code{\link{getFunctionDefinition,DecompositionOperator-method}}
-  \item \code{\link{getFunctionDefinition,InFluxList_by_PoolIndex-method}}
-  \item \code{\link{getFunctionDefinition,InFluxList_by_PoolName-method}}
-  \item \code{\link{getFunctionDefinition,StateDependentInFluxVector-method}}
-  \item \code{\link{getFunctionDefinition,TimeMap-method}}
-  \item \code{\link{getFunctionDefinition,TransportDecompositionOperator-method}}
-  \item \code{\link{getFunctionDefinition,UnBoundInFluxes-method}}
-  \item \code{\link{getFunctionDefinition,UnBoundLinDecompOp-method}}
   \item \code{\link{getFunctionDefinition,ConstInFluxes-method}}
   \item \code{\link{getFunctionDefinition,ConstLinDecompOp-method}}
   \item \code{\link{getFunctionDefinition,ConstLinDecompOpWithLinearScalarFactor-method}}

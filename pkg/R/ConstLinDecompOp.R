@@ -33,6 +33,19 @@ from_integer_flux_lists_with_defaults=function(
 
 
 
+#' Automatic description: initialize,ConstLinDecompOp-method
+#' 
+#' @name initialize,ConstLinDecompOp-method
+#' @param .Object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @param mat : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="initialize",
     signature="ConstLinDecompOp",
@@ -166,6 +179,18 @@ no_outflux_warning=function(){
 
 
 
+#' Automatic description: getFunctionDefinition,ConstLinDecompOp-method
+#' 
+#' @name getFunctionDefinition,ConstLinDecompOp-method
+#' @param object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getFunctionDefinition",
     signature="ConstLinDecompOp",
@@ -177,6 +202,18 @@ setMethod(
 
 
 
+#' Automatic description: getTimeRange,ConstLinDecompOp-method
+#' 
+#' @name getTimeRange,ConstLinDecompOp-method
+#' @param object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getTimeRange",
     signature="ConstLinDecompOp",
@@ -189,6 +226,19 @@ setMethod(
 
 
 
+#' Automatic description: getMeanTransitTime,ConstLinDecompOp-method
+#' 
+#' @name getMeanTransitTime,ConstLinDecompOp-method
+#' @param object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @param inputDistribution : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
   f= "getMeanTransitTime",
     signature= "ConstLinDecompOp",
@@ -225,6 +275,21 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getTransitTimeDistributionDensity,ConstLinDecompOp-method
+#' 
+#' @name getTransitTimeDistributionDensity,ConstLinDecompOp-method
+#' @param object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @param inputDistribution : no manual documentation
+#' @param times : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getTransitTimeDistributionDensity",
       signature= "ConstLinDecompOp",
@@ -250,6 +315,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method
+#' 
+#' @name getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method
+#' @param object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getCompartmentalMatrixFunc",
       signature(object="ConstLinDecompOp"),
@@ -260,6 +338,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getConstantCompartmentalMatrix,ConstLinDecompOp-method
+#' 
+#' @name getConstantCompartmentalMatrix,ConstLinDecompOp-method
+#' @param object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getConstantCompartmentalMatrix",
       signature(object="ConstLinDecompOp"),
@@ -280,6 +371,19 @@ non_zero_rates=function(all_rates){
 
 
 
+#' Automatic description:
+#' getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method
+#' 
+#' @name getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method
+#' @param object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f= "getConstantOutFluxRateList_by_PoolIndex",
         signature(object="ConstLinDecompOp"),
@@ -308,6 +412,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method
+#' 
+#' @name getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method
+#' @param object : object of class:\code{ConstLinDecompOp}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f= "getConstantInternalFluxRateList_by_PoolIndex",
         signature(object="ConstLinDecompOp"),

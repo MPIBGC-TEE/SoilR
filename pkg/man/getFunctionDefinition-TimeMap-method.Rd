@@ -2,13 +2,13 @@
 % Please edit documentation in R/TimeMap.R
 \name{getFunctionDefinition,TimeMap-method}
 \alias{getFunctionDefinition,TimeMap-method}
-\title{getFunctionDefinition,TimeMap-method}
+\title{Automatic description: getFunctionDefinition,TimeMap-method}
 \usage{
 \S4method{getFunctionDefinition}{TimeMap}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TimeMap}. }
+\item{object}{object of class:\code{TimeMap}. : object of class:\code{TimeMap}, no manual documentation}
 }
 \description{
-getFunctionDefinition,TimeMap-method
+Automatic description: getFunctionDefinition,TimeMap-method
 }

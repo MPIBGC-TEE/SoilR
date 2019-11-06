@@ -2,15 +2,16 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getMeanTransitTime,ConstLinDecompOp-method}
 \alias{getMeanTransitTime,ConstLinDecompOp-method}
-\title{getMeanTransitTime,ConstLinDecompOp-method}
+\title{Automatic description: getMeanTransitTime,ConstLinDecompOp-method}
 \usage{
 \S4method{getMeanTransitTime}{ConstLinDecompOp}(object, inputDistribution)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}. }
+\item{object}{object of class:\code{ConstLinDecompOp}. : object of class:\code{ConstLinDecompOp}, no manual
+documentation}
 
 \item{inputDistribution}{found automatically by inspection, not documented yet}
 }
 \description{
-getMeanTransitTime,ConstLinDecompOp-method
+Automatic description: getMeanTransitTime,ConstLinDecompOp-method
 }

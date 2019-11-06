@@ -2,13 +2,13 @@
 % Please edit documentation in R/DecompOp.R
 \name{GeneralDecompOp,matrix-method}
 \alias{GeneralDecompOp,matrix-method}
-\title{GeneralDecompOp,matrix-method}
+\title{Automatic description: GeneralDecompOp,matrix-method}
 \usage{
 \S4method{GeneralDecompOp}{matrix}(object)
 }
 \arguments{
-\item{object}{object of class:\code{matrix}. }
+\item{object}{object of class:\code{matrix}. : object of class:\code{matrix}, no manual documentation}
 }
 \description{
-GeneralDecompOp,matrix-method
+Automatic description: GeneralDecompOp,matrix-method
 }

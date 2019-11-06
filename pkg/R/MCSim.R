@@ -8,6 +8,19 @@ setClass(
 
 
 
+#' Automatic description: initialize,MCSim-method
+#' 
+#' @name initialize,MCSim-method
+#' @param .Object : object of class:\code{MCSim}, no manual documentation
+#' @param model : no manual documentation
+#' @param tasklist : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="initialize",
     signature="MCSim",
@@ -20,6 +33,19 @@ setMethod(
 
 
 
+#' Automatic description: plot,MCSim-method
+#' 
+#' @name plot,MCSim-method
+#' @param x : object of class:\code{MCSim}, no manual documentation
+#' @param y : no manual documentation
+#' @param ... : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="plot",
     signature="MCSim",
@@ -49,6 +75,17 @@ setMethod(
 
 
 
+#' Automatic description: availableResidentSets,MCSim-method
+#' 
+#' @name availableResidentSets,MCSim-method
+#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="availableResidentSets",
     signature="MCSim",
@@ -64,6 +101,17 @@ setMethod(
 
 
 
+#' Automatic description: availableParticleSets,MCSim-method
+#' 
+#' @name availableParticleSets,MCSim-method
+#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="availableParticleSets",
     signature="MCSim",
@@ -80,6 +128,17 @@ setMethod(
 
 
 
+#' Automatic description: availableParticleProperties,MCSim-method
+#' 
+#' @name availableParticleProperties,MCSim-method
+#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="availableParticleProperties",
     signature="MCSim",
@@ -93,6 +152,18 @@ setMethod(
 
 
 
+#' Automatic description: [[,MCSim-method
+#' 
+#' @name [[,MCSim-method
+#' @param x : object of class:\code{MCSim}, no manual documentation
+#' @param i : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod("[[",
     signature(x = "MCSim"),
     definition=function 
@@ -112,6 +183,21 @@ setMethod("[[",
 
 
 
+#' Automatic description: [[<-,MCSim-method
+#' 
+#' @name [[<-,MCSim-method
+#' @param x : object of class:\code{MCSim}, no manual documentation
+#' @param i : no manual documentation
+#' @param j : no manual documentation
+#' @param ... : no manual documentation
+#' @param value : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod("[[<-",
     signature(x = "MCSim"),
     definition=function 
@@ -134,6 +220,17 @@ setMethod("[[<-",
 
 
 
+#' Automatic description: getNumberOfPools,MCSim-method
+#' 
+#' @name getNumberOfPools,MCSim-method
+#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getNumberOfPools",
       signature(object="MCSim"),
@@ -144,6 +241,17 @@ setMethod(
 
 
 
+#' Automatic description: computeResults,MCSim-method
+#' 
+#' @name computeResults,MCSim-method
+#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="computeResults",
     signature="MCSim",

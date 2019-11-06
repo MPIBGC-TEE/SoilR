@@ -2,12 +2,12 @@
 % Please edit documentation in R/MCSim.R
 \name{[[<-,MCSim-method}
 \alias{[[<-,MCSim-method}
-\title{[[<-,MCSim-method}
+\title{Automatic description: [[<-,MCSim-method}
 \usage{
 \S4method{[[}{MCSim}(x, i, j, ...) <- value
 }
 \arguments{
-\item{x}{object of class:\code{MCSim}. }
+\item{x}{object of class:\code{MCSim}. : object of class:\code{MCSim}, no manual documentation}
 
 \item{i}{found automatically by inspection, not documented yet}
 
@@ -18,5 +18,5 @@
 \item{value}{found automatically by inspection, not documented yet}
 }
 \description{
-[[<-,MCSim-method
+Automatic description: [[<-,MCSim-method
 }

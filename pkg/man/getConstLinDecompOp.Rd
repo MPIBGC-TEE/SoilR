@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getConstLinDecompOp}
 \alias{getConstLinDecompOp}
-\title{getConstLinDecompOp}
+\title{S4 generic: getConstLinDecompOp}
 \usage{
 getConstLinDecompOp(object)
 }
@@ -10,11 +10,10 @@ getConstLinDecompOp(object)
 \item{object}{see method arguments}
 }
 \description{
-getConstLinDecompOp
+S4 generic: getConstLinDecompOp
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method}}
   \item \code{\link{getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method}}
 }
 }

@@ -2,15 +2,15 @@
 % Please edit documentation in R/TimeMap.R
 \name{as.character,TimeMap-method}
 \alias{as.character,TimeMap-method}
-\title{as.character,TimeMap-method}
+\title{Automatic description: as.character,TimeMap-method}
 \usage{
 \S4method{as.character}{TimeMap}(x, ...)
 }
 \arguments{
-\item{x}{object of class:\code{TimeMap}. }
+\item{x}{object of class:\code{TimeMap}. : object of class:\code{TimeMap}, no manual documentation}
 
 \item{...}{found automatically by inspection, not documented yet}
 }
 \description{
-as.character,TimeMap-method
+Automatic description: as.character,TimeMap-method
 }

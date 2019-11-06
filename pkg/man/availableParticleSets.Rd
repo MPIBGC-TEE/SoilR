@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{availableParticleSets}
 \alias{availableParticleSets}
-\title{availableParticleSets}
+\title{S4 generic: availableParticleSets}
 \usage{
 availableParticleSets(object)
 }
@@ -10,11 +10,10 @@ availableParticleSets(object)
 \item{object}{see method arguments}
 }
 \description{
-availableParticleSets
+S4 generic: availableParticleSets
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{availableParticleSets,MCSim-method}}
   \item \code{\link{availableParticleSets,MCSim-method}}
 }
 }

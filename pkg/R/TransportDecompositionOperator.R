@@ -1,6 +1,24 @@
 
 
 
+#' Automatic description: initialize,TransportDecompositionOperator-method
+#' 
+#' @name initialize,TransportDecompositionOperator-method
+#' @param .Object : object of class:\code{TransportDecompositionOperator}, no
+#' manual documentation
+#' @param starttime : no manual documentation
+#' @param endtime : no manual documentation
+#' @param numberOfPools : no manual documentation
+#' @param alpha : no manual documentation
+#' @param f : no manual documentation
+#' @param lag : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="initialize",
     signature="TransportDecompositionOperator",
@@ -31,6 +49,18 @@ getSender=function(stri){
 
 
 
+#' Automatic description: getDotOut,TransportDecompositionOperator-method
+#' 
+#' @name getDotOut,TransportDecompositionOperator-method
+#' @param object : object of class:\code{TransportDecompositionOperator}, no
+#' manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getDotOut",
       signature(object="TransportDecompositionOperator"),
@@ -41,6 +71,20 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method
+#' 
+#' @name
+#' getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method
+#' @param object : object of class:\code{TransportDecompositionOperator}, no
+#' manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getCompartmentalMatrixFunc",
       signature(object="TransportDecompositionOperator"),
@@ -65,6 +109,20 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getOutputReceivers,TransportDecompositionOperator,numeric-method
+#' 
+#' @name getOutputReceivers,TransportDecompositionOperator,numeric-method
+#' @param object : object of class:\code{TransportDecompositionOperator}, no
+#' manual documentation
+#' @param i : object of class:\code{numeric}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getOutputReceivers",
    signature(object="TransportDecompositionOperator",i="numeric"),
@@ -88,6 +146,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getTransferMatrixFunc,TransportDecompositionOperator-method
+#' 
+#' @name getTransferMatrixFunc,TransportDecompositionOperator-method
+#' @param object : object of class:\code{TransportDecompositionOperator}, no
+#' manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getTransferMatrixFunc",
       signature(object="TransportDecompositionOperator"),
@@ -109,6 +180,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getTransferCoefficients,TransportDecompositionOperator-method
+#' 
+#' @name getTransferCoefficients,TransportDecompositionOperator-method
+#' @param object : object of class:\code{TransportDecompositionOperator}, no
+#' manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getTransferCoefficients",
       signature(object="TransportDecompositionOperator"),
@@ -119,6 +203,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getNumberOfPools,TransportDecompositionOperator-method
+#' 
+#' @name getNumberOfPools,TransportDecompositionOperator-method
+#' @param object : object of class:\code{TransportDecompositionOperator}, no
+#' manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getNumberOfPools",
       signature(object="TransportDecompositionOperator"),
@@ -129,6 +226,19 @@ setMethod(
 
 
 
+#' Automatic description:
+#' getFunctionDefinition,TransportDecompositionOperator-method
+#' 
+#' @name getFunctionDefinition,TransportDecompositionOperator-method
+#' @param object : object of class:\code{TransportDecompositionOperator}, no
+#' manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getFunctionDefinition",
       signature(object="TransportDecompositionOperator"),

@@ -2,15 +2,15 @@
 % Please edit documentation in R/BoundLinDecompOp.R
 \name{BoundLinDecompOp,ANY-method}
 \alias{BoundLinDecompOp,ANY-method}
-\title{BoundLinDecompOp,ANY-method}
+\title{Automatic description: BoundLinDecompOp,ANY-method}
 \usage{
 \S4method{BoundLinDecompOp}{ANY}(map, ...)
 }
 \arguments{
-\item{map}{object of class:\code{ANY}. }
+\item{map}{object of class:\code{ANY}. : no manual documentation}
 
 \item{...}{found automatically by inspection, not documented yet}
 }
 \description{
-BoundLinDecompOp,ANY-method
+Automatic description: BoundLinDecompOp,ANY-method
 }

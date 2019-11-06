@@ -2,13 +2,14 @@
 % Please edit documentation in R/ConstInFluxes.R
 \name{getTimeRange,ConstInFluxes-method}
 \alias{getTimeRange,ConstInFluxes-method}
-\title{getTimeRange,ConstInFluxes-method}
+\title{Automatic description: getTimeRange,ConstInFluxes-method}
 \usage{
 \S4method{getTimeRange}{ConstInFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstInFluxes}. }
+\item{object}{object of class:\code{ConstInFluxes}. : object of class:\code{ConstInFluxes}, no manual
+documentation}
 }
 \description{
-getTimeRange,ConstInFluxes-method
+Automatic description: getTimeRange,ConstInFluxes-method
 }

@@ -2,13 +2,13 @@
 % Please edit documentation in R/ConstFc.R
 \name{AbsoluteFractionModern,ConstFc-method}
 \alias{AbsoluteFractionModern,ConstFc-method}
-\title{AbsoluteFractionModern,ConstFc-method}
+\title{Automatic description: AbsoluteFractionModern,ConstFc-method}
 \usage{
 \S4method{AbsoluteFractionModern}{ConstFc}(F)
 }
 \arguments{
-\item{F}{object of class:\code{ConstFc}. }
+\item{F}{object of class:\code{ConstFc}. : object of class:\code{ConstFc}, no manual documentation}
 }
 \description{
-AbsoluteFractionModern,ConstFc-method
+Automatic description: AbsoluteFractionModern,ConstFc-method
 }

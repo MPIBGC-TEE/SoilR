@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{getDecompOp,NlModel-method}
 \alias{getDecompOp,NlModel-method}
-\title{getDecompOp,NlModel-method}
+\title{Automatic description: getDecompOp,NlModel-method}
 \usage{
 \S4method{getDecompOp}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-getDecompOp,NlModel-method
+Automatic description: getDecompOp,NlModel-method
 }

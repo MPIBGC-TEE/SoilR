@@ -2,13 +2,16 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getConstantCompartmentalMatrix,ConstLinDecompOp-method}
 \alias{getConstantCompartmentalMatrix,ConstLinDecompOp-method}
-\title{getConstantCompartmentalMatrix,ConstLinDecompOp-method}
+\title{Automatic description:
+getConstantCompartmentalMatrix,ConstLinDecompOp-method}
 \usage{
 \S4method{getConstantCompartmentalMatrix}{ConstLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}. }
+\item{object}{object of class:\code{ConstLinDecompOp}. : object of class:\code{ConstLinDecompOp}, no manual
+documentation}
 }
 \description{
+Automatic description:
 getConstantCompartmentalMatrix,ConstLinDecompOp-method
 }

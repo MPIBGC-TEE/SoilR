@@ -2,7 +2,7 @@
 % Please edit documentation in R/Model.R
 \name{initialize,Model-method}
 \alias{initialize,Model-method}
-\title{initialize,Model-method}
+\title{Automatic description: initialize,Model-method}
 \usage{
 \S4method{initialize}{Model}(
   .Object,
@@ -16,7 +16,7 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{Model}. }
+\item{.Object}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 
 \item{times}{found automatically by inspection, not documented yet}
 
@@ -31,5 +31,5 @@
 \item{pass}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,Model-method
+Automatic description: initialize,Model-method
 }

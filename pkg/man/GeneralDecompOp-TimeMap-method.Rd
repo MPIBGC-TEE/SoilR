@@ -2,13 +2,13 @@
 % Please edit documentation in R/DecompOp.R
 \name{GeneralDecompOp,TimeMap-method}
 \alias{GeneralDecompOp,TimeMap-method}
-\title{GeneralDecompOp,TimeMap-method}
+\title{Automatic description: GeneralDecompOp,TimeMap-method}
 \usage{
 \S4method{GeneralDecompOp}{TimeMap}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TimeMap}. }
+\item{object}{object of class:\code{TimeMap}. : object of class:\code{TimeMap}, no manual documentation}
 }
 \description{
-GeneralDecompOp,TimeMap-method
+Automatic description: GeneralDecompOp,TimeMap-method
 }

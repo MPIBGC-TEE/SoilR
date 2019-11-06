@@ -2,13 +2,13 @@
 % Please edit documentation in R/ConstantOutFluxRateList_by_PoolIndex.R
 \name{ConstantOutFluxRateList_by_PoolIndex,numeric-method}
 \alias{ConstantOutFluxRateList_by_PoolIndex,numeric-method}
-\title{ConstantOutFluxRateList_by_PoolIndex,numeric-method}
+\title{Automatic description: ConstantOutFluxRateList_by_PoolIndex,numeric-method}
 \usage{
 \S4method{ConstantOutFluxRateList_by_PoolIndex}{numeric}(object)
 }
 \arguments{
-\item{object}{object of class:\code{numeric}. }
+\item{object}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 }
 \description{
-ConstantOutFluxRateList_by_PoolIndex,numeric-method
+Automatic description: ConstantOutFluxRateList_by_PoolIndex,numeric-method
 }

@@ -2,13 +2,13 @@
 % Please edit documentation in R/genericFunctions.R
 \name{AbsoluteFractionModern_from_Delta14C,matrix-method}
 \alias{AbsoluteFractionModern_from_Delta14C,matrix-method}
-\title{AbsoluteFractionModern_from_Delta14C,matrix-method}
+\title{Automatic description: AbsoluteFractionModern_from_Delta14C,matrix-method}
 \usage{
 \S4method{AbsoluteFractionModern_from_Delta14C}{matrix}(delta14C)
 }
 \arguments{
-\item{delta14C}{object of class:\code{matrix}. }
+\item{delta14C}{object of class:\code{matrix}. : object of class:\code{matrix}, no manual documentation}
 }
 \description{
-AbsoluteFractionModern_from_Delta14C,matrix-method
+Automatic description: AbsoluteFractionModern_from_Delta14C,matrix-method
 }

@@ -2,15 +2,15 @@
 % Please edit documentation in R/Model.R
 \name{[,Model,character,missing,missing-method}
 \alias{[,Model,character,missing,missing-method}
-\title{[,Model,character,missing,missing-method}
+\title{Automatic description: [,Model,character,missing,missing-method}
 \usage{
 \S4method{[}{Model,character,missing,missing}(x, i)
 }
 \arguments{
-\item{x}{object of class:\code{Model}. }
+\item{x}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 
-\item{i}{object of class:\code{character}. }
+\item{i}{object of class:\code{character}. : object of class:\code{character}, no manual documentation}
 }
 \description{
-[,Model,character,missing,missing-method
+Automatic description: [,Model,character,missing,missing-method
 }

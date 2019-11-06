@@ -2,13 +2,16 @@
 % Please edit documentation in R/ConstLinDecompOpWithLinearScaleFactor.R
 \name{getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method}
 \alias{getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method}
-\title{getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method}
+\title{Automatic description:
+getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method}
 \usage{
 \S4method{getLinearScaleFactor}{ConstLinDecompOpWithLinearScalarFactor}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOpWithLinearScalarFactor}. }
+\item{object}{object of class:\code{ConstLinDecompOpWithLinearScalarFactor}. : object of
+class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation}
 }
 \description{
+Automatic description:
 getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method
 }

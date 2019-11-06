@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getTransferMatrixFunc}
 \alias{getTransferMatrixFunc}
-\title{getTransferMatrixFunc}
+\title{S4 generic: getTransferMatrixFunc}
 \usage{
 getTransferMatrixFunc(object)
 }
@@ -10,11 +10,10 @@ getTransferMatrixFunc(object)
 \item{object}{see method arguments}
 }
 \description{
-getTransferMatrixFunc
+S4 generic: getTransferMatrixFunc
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getTransferMatrixFunc,TransportDecompositionOperator-method}}
   \item \code{\link{getTransferMatrixFunc,TransportDecompositionOperator-method}}
 }
 }

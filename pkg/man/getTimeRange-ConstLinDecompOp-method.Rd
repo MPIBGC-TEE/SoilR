@@ -2,13 +2,14 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getTimeRange,ConstLinDecompOp-method}
 \alias{getTimeRange,ConstLinDecompOp-method}
-\title{getTimeRange,ConstLinDecompOp-method}
+\title{Automatic description: getTimeRange,ConstLinDecompOp-method}
 \usage{
 \S4method{getTimeRange}{ConstLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}. }
+\item{object}{object of class:\code{ConstLinDecompOp}. : object of class:\code{ConstLinDecompOp}, no manual
+documentation}
 }
 \description{
-getTimeRange,ConstLinDecompOp-method
+Automatic description: getTimeRange,ConstLinDecompOp-method
 }

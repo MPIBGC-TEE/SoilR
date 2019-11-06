@@ -2,13 +2,13 @@
 % Please edit documentation in R/PoolId.R
 \name{GeneralPoolId,character-method}
 \alias{GeneralPoolId,character-method}
-\title{GeneralPoolId,character-method}
+\title{Automatic description: GeneralPoolId,character-method}
 \usage{
 \S4method{GeneralPoolId}{character}(id)
 }
 \arguments{
-\item{id}{object of class:\code{character}. }
+\item{id}{object of class:\code{character}. : object of class:\code{character}, no manual documentation}
 }
 \description{
-GeneralPoolId,character-method
+Automatic description: GeneralPoolId,character-method
 }

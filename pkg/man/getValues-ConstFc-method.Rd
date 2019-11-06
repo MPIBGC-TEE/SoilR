@@ -2,13 +2,13 @@
 % Please edit documentation in R/ConstFc.R
 \name{getValues,ConstFc-method}
 \alias{getValues,ConstFc-method}
-\title{getValues,ConstFc-method}
+\title{Automatic description: getValues,ConstFc-method}
 \usage{
 \S4method{getValues}{ConstFc}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstFc}. }
+\item{object}{object of class:\code{ConstFc}. : object of class:\code{ConstFc}, no manual documentation}
 }
 \description{
-getValues,ConstFc-method
+Automatic description: getValues,ConstFc-method
 }

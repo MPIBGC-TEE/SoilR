@@ -2,17 +2,19 @@
 % Please edit documentation in R/TimeMap.R
 \name{TimeMap,data.frame,missing,missing,missing,missing-method}
 \alias{TimeMap,data.frame,missing,missing,missing,missing-method}
-\title{TimeMap,data.frame,missing,missing,missing,missing-method}
+\title{Automatic description:
+TimeMap,data.frame,missing,missing,missing,missing-method}
 \usage{
 \S4method{TimeMap}{data.frame,missing,missing,missing,missing}(map, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{map}{object of class:\code{data.frame}. }
+\item{map}{object of class:\code{data.frame}. : object of class:\code{data.frame}, no manual documentation}
 
 \item{lag}{found automatically by inspection, not documented yet}
 
 \item{interpolation}{found automatically by inspection, not documented yet}
 }
 \description{
+Automatic description:
 TimeMap,data.frame,missing,missing,missing,missing-method
 }

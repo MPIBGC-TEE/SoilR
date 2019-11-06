@@ -2,13 +2,14 @@
 % Please edit documentation in R/TransportDecompositionOperator.R
 \name{getDotOut,TransportDecompositionOperator-method}
 \alias{getDotOut,TransportDecompositionOperator-method}
-\title{getDotOut,TransportDecompositionOperator-method}
+\title{Automatic description: getDotOut,TransportDecompositionOperator-method}
 \usage{
 \S4method{getDotOut}{TransportDecompositionOperator}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TransportDecompositionOperator}. }
+\item{object}{object of class:\code{TransportDecompositionOperator}. : object of class:\code{TransportDecompositionOperator}, no
+manual documentation}
 }
 \description{
-getDotOut,TransportDecompositionOperator-method
+Automatic description: getDotOut,TransportDecompositionOperator-method
 }

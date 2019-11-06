@@ -2,13 +2,14 @@
 % Please edit documentation in R/UnboundInflux.R
 \name{getFunctionDefinition,UnBoundInFluxes-method}
 \alias{getFunctionDefinition,UnBoundInFluxes-method}
-\title{getFunctionDefinition,UnBoundInFluxes-method}
+\title{Automatic description: getFunctionDefinition,UnBoundInFluxes-method}
 \usage{
 \S4method{getFunctionDefinition}{UnBoundInFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundInFluxes}. }
+\item{object}{object of class:\code{UnBoundInFluxes}. : object of class:\code{UnBoundInFluxes}, no manual
+documentation}
 }
 \description{
-getFunctionDefinition,UnBoundInFluxes-method
+Automatic description: getFunctionDefinition,UnBoundInFluxes-method
 }

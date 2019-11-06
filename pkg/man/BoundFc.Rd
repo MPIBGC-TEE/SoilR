@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{BoundFc}
 \alias{BoundFc}
-\title{BoundFc}
+\title{S4 generic: BoundFc}
 \usage{
 BoundFc(format, ...)
 }
@@ -12,12 +12,10 @@ BoundFc(format, ...)
 \item{...}{see method arguments}
 }
 \description{
-BoundFc
+S4 generic: BoundFc
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{BoundFc,character-method}}
-  \item \code{\link{BoundFc,missing-method}}
   \item \code{\link{BoundFc,character-method}}
   \item \code{\link{BoundFc,missing-method}}
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getMeanTransitTime}
 \alias{getMeanTransitTime}
-\title{getMeanTransitTime}
+\title{S4 generic: getMeanTransitTime}
 \usage{
 getMeanTransitTime(object, inputDistribution)
 }
@@ -12,11 +12,10 @@ getMeanTransitTime(object, inputDistribution)
 \item{inputDistribution}{see method arguments}
 }
 \description{
-getMeanTransitTime
+S4 generic: getMeanTransitTime
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getMeanTransitTime,ConstLinDecompOp-method}}
   \item \code{\link{getMeanTransitTime,ConstLinDecompOp-method}}
 }
 }

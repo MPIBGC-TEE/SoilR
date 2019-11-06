@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getAccumulatedRelease}
 \alias{getAccumulatedRelease}
-\title{getAccumulatedRelease}
+\title{S4 generic: getAccumulatedRelease}
 \usage{
 getAccumulatedRelease(object)
 }
@@ -10,11 +10,10 @@ getAccumulatedRelease(object)
 \item{object}{see method arguments}
 }
 \description{
-getAccumulatedRelease
+S4 generic: getAccumulatedRelease
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getAccumulatedRelease,Model-method}}
   \item \code{\link{getAccumulatedRelease,Model-method}}
 }
 }

@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{getRightHandSideOfODE,Model-method}
 \alias{getRightHandSideOfODE,Model-method}
-\title{getRightHandSideOfODE,Model-method}
+\title{Automatic description: getRightHandSideOfODE,Model-method}
 \usage{
 \S4method{getRightHandSideOfODE}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}. }
+\item{object}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-getRightHandSideOfODE,Model-method
+Automatic description: getRightHandSideOfODE,Model-method
 }

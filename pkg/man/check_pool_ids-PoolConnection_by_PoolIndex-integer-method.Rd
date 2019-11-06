@@ -2,15 +2,18 @@
 % Please edit documentation in R/PoolConnection_by_PoolIndex.R
 \name{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}
 \alias{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}
-\title{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}
+\title{Automatic description:
+check_pool_ids,PoolConnection_by_PoolIndex,integer-method}
 \usage{
 \S4method{check_pool_ids}{PoolConnection_by_PoolIndex,integer}(obj, pools)
 }
 \arguments{
-\item{obj}{object of class:\code{PoolConnection_by_PoolIndex}. }
+\item{obj}{object of class:\code{PoolConnection_by_PoolIndex}. : object of class:\code{PoolConnection_by_PoolIndex}, no manual
+documentation}
 
-\item{pools}{object of class:\code{integer}. }
+\item{pools}{object of class:\code{integer}. : object of class:\code{integer}, no manual documentation}
 }
 \description{
+Automatic description:
 check_pool_ids,PoolConnection_by_PoolIndex,integer-method
 }

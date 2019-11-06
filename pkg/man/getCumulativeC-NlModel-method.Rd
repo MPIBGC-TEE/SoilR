@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{getCumulativeC,NlModel-method}
 \alias{getCumulativeC,NlModel-method}
-\title{getCumulativeC,NlModel-method}
+\title{Automatic description: getCumulativeC,NlModel-method}
 \usage{
 \S4method{getCumulativeC}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-getCumulativeC,NlModel-method
+Automatic description: getCumulativeC,NlModel-method
 }

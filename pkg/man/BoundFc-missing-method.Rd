@@ -2,15 +2,15 @@
 % Please edit documentation in R/BoundFc.R
 \name{BoundFc,missing-method}
 \alias{BoundFc,missing-method}
-\title{BoundFc,missing-method}
+\title{Automatic description: BoundFc,missing-method}
 \usage{
 \S4method{BoundFc}{missing}(format, ...)
 }
 \arguments{
-\item{format}{object of class:\code{missing}. }
+\item{format}{object of class:\code{missing}. : object of class:\code{missing}, no manual documentation}
 
 \item{...}{found automatically by inspection, not documented yet}
 }
 \description{
-BoundFc,missing-method
+Automatic description: BoundFc,missing-method
 }

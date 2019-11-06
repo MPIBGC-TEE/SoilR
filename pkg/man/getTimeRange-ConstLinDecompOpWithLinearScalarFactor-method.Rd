@@ -2,13 +2,16 @@
 % Please edit documentation in R/ConstLinDecompOpWithLinearScaleFactor.R
 \name{getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method}
 \alias{getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method}
-\title{getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method}
+\title{Automatic description:
+getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method}
 \usage{
 \S4method{getTimeRange}{ConstLinDecompOpWithLinearScalarFactor}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOpWithLinearScalarFactor}. }
+\item{object}{object of class:\code{ConstLinDecompOpWithLinearScalarFactor}. : object of
+class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation}
 }
 \description{
+Automatic description:
 getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method
 }

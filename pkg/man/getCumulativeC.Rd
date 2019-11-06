@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getCumulativeC}
 \alias{getCumulativeC}
-\title{getCumulativeC}
+\title{S4 generic: getCumulativeC}
 \usage{
 getCumulativeC(object)
 }
@@ -10,11 +10,10 @@ getCumulativeC(object)
 \item{object}{see method arguments}
 }
 \description{
-getCumulativeC
+S4 generic: getCumulativeC
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getCumulativeC,NlModel-method}}
   \item \code{\link{getCumulativeC,NlModel-method}}
 }
 }

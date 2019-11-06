@@ -2,17 +2,17 @@
 % Please edit documentation in R/MCSim.R
 \name{plot,MCSim-method}
 \alias{plot,MCSim-method}
-\title{plot,MCSim-method}
+\title{Automatic description: plot,MCSim-method}
 \usage{
 \S4method{plot}{MCSim}(x, y, ...)
 }
 \arguments{
-\item{x}{object of class:\code{MCSim}. }
+\item{x}{object of class:\code{MCSim}. : object of class:\code{MCSim}, no manual documentation}
 
 \item{y}{found automatically by inspection, not documented yet}
 
 \item{...}{found automatically by inspection, not documented yet}
 }
 \description{
-plot,MCSim-method
+Automatic description: plot,MCSim-method
 }

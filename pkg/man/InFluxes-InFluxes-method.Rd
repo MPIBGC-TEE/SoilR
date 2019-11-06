@@ -2,13 +2,13 @@
 % Please edit documentation in R/InFluxes.R
 \name{InFluxes,InFluxes-method}
 \alias{InFluxes,InFluxes-method}
-\title{InFluxes,InFluxes-method}
+\title{Automatic description: InFluxes,InFluxes-method}
 \usage{
 \S4method{InFluxes}{InFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{InFluxes}. }
+\item{object}{object of class:\code{InFluxes}. : object of class:\code{InFluxes}, no manual documentation}
 }
 \description{
-InFluxes,InFluxes-method
+Automatic description: InFluxes,InFluxes-method
 }

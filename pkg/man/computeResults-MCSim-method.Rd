@@ -2,13 +2,13 @@
 % Please edit documentation in R/MCSim.R
 \name{computeResults,MCSim-method}
 \alias{computeResults,MCSim-method}
-\title{computeResults,MCSim-method}
+\title{Automatic description: computeResults,MCSim-method}
 \usage{
 \S4method{computeResults}{MCSim}(object)
 }
 \arguments{
-\item{object}{object of class:\code{MCSim}. }
+\item{object}{object of class:\code{MCSim}. : object of class:\code{MCSim}, no manual documentation}
 }
 \description{
-computeResults,MCSim-method
+Automatic description: computeResults,MCSim-method
 }

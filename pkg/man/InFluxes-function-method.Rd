@@ -2,13 +2,13 @@
 % Please edit documentation in R/function.R
 \name{InFluxes,function-method}
 \alias{InFluxes,function-method}
-\title{InFluxes,function-method}
+\title{Automatic description: InFluxes,function-method}
 \usage{
 \S4method{InFluxes}{`function`}(object)
 }
 \arguments{
-\item{object}{object of class:\code{function}. }
+\item{object}{object of class:\code{function}. : object of class:\code{function}, no manual documentation}
 }
 \description{
-InFluxes,function-method
+Automatic description: InFluxes,function-method
 }

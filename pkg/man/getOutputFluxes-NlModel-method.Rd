@@ -2,15 +2,15 @@
 % Please edit documentation in R/NlModel.R
 \name{getOutputFluxes,NlModel-method}
 \alias{getOutputFluxes,NlModel-method}
-\title{getOutputFluxes,NlModel-method}
+\title{Automatic description: getOutputFluxes,NlModel-method}
 \usage{
 \S4method{getOutputFluxes}{NlModel}(object, as.closures = F)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 
 \item{as.closures}{found automatically by inspection, not documented yet}
 }
 \description{
-getOutputFluxes,NlModel-method
+Automatic description: getOutputFluxes,NlModel-method
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getCompartmentalMatrixFunc}
 \alias{getCompartmentalMatrixFunc}
-\title{getCompartmentalMatrixFunc}
+\title{S4 generic: getCompartmentalMatrixFunc}
 \usage{
 getCompartmentalMatrixFunc(object, timeSymbol, state_variable_names)
 }
@@ -14,15 +14,10 @@ getCompartmentalMatrixFunc(object, timeSymbol, state_variable_names)
 \item{state_variable_names}{see method arguments}
 }
 \description{
-getCompartmentalMatrixFunc
+S4 generic: getCompartmentalMatrixFunc
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}}
-  \item \code{\link{getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method}}
-  \item \code{\link{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}}
-  \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method}}
-  \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}}
   \item \code{\link{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}}
   \item \code{\link{getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method}}
   \item \code{\link{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}}

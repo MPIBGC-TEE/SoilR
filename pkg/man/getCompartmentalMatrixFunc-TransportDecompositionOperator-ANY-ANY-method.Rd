@@ -2,13 +2,16 @@
 % Please edit documentation in R/TransportDecompositionOperator.R
 \name{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}
 \alias{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}
-\title{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}
+\title{Automatic description:
+getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}
 \usage{
 \S4method{getCompartmentalMatrixFunc}{TransportDecompositionOperator,ANY,ANY}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TransportDecompositionOperator}. }
+\item{object}{object of class:\code{TransportDecompositionOperator}. : object of class:\code{TransportDecompositionOperator}, no
+manual documentation}
 }
 \description{
+Automatic description:
 getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method
 }

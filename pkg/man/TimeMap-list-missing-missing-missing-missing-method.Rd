@@ -2,17 +2,17 @@
 % Please edit documentation in R/TimeMap.R
 \name{TimeMap,list,missing,missing,missing,missing-method}
 \alias{TimeMap,list,missing,missing,missing,missing-method}
-\title{TimeMap,list,missing,missing,missing,missing-method}
+\title{Automatic description: TimeMap,list,missing,missing,missing,missing-method}
 \usage{
 \S4method{TimeMap}{list,missing,missing,missing,missing}(map, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{map}{object of class:\code{list}. }
+\item{map}{object of class:\code{list}. : object of class:\code{list}, no manual documentation}
 
 \item{lag}{found automatically by inspection, not documented yet}
 
 \item{interpolation}{found automatically by inspection, not documented yet}
 }
 \description{
-TimeMap,list,missing,missing,missing,missing-method
+Automatic description: TimeMap,list,missing,missing,missing,missing-method
 }

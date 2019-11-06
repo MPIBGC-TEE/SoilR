@@ -2,13 +2,16 @@
 % Please edit documentation in R/ConstLinDecompOpWithLinearScaleFactor.R
 \name{getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method}
 \alias{getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method}
-\title{getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method}
+\title{Automatic description:
+getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method}
 \usage{
 \S4method{getConstantCompartmentalMatrix}{ConstLinDecompOpWithLinearScalarFactor}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOpWithLinearScalarFactor}. }
+\item{object}{object of class:\code{ConstLinDecompOpWithLinearScalarFactor}. : object of
+class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation}
 }
 \description{
+Automatic description:
 getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method
 }

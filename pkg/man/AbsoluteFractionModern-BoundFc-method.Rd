@@ -2,13 +2,13 @@
 % Please edit documentation in R/BoundFc.R
 \name{AbsoluteFractionModern,BoundFc-method}
 \alias{AbsoluteFractionModern,BoundFc-method}
-\title{AbsoluteFractionModern,BoundFc-method}
+\title{Automatic description: AbsoluteFractionModern,BoundFc-method}
 \usage{
 \S4method{AbsoluteFractionModern}{BoundFc}(F)
 }
 \arguments{
-\item{F}{object of class:\code{BoundFc}. }
+\item{F}{object of class:\code{BoundFc}. : object of class:\code{BoundFc}, no manual documentation}
 }
 \description{
-AbsoluteFractionModern,BoundFc-method
+Automatic description: AbsoluteFractionModern,BoundFc-method
 }

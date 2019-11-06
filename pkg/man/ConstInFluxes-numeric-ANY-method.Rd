@@ -2,13 +2,13 @@
 % Please edit documentation in R/ConstInFluxes.R
 \name{ConstInFluxes,numeric,ANY-method}
 \alias{ConstInFluxes,numeric,ANY-method}
-\title{ConstInFluxes,numeric,ANY-method}
+\title{Automatic description: ConstInFluxes,numeric,ANY-method}
 \usage{
 \S4method{ConstInFluxes}{numeric,ANY}(map)
 }
 \arguments{
-\item{map}{object of class:\code{numeric}. }
+\item{map}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 }
 \description{
-ConstInFluxes,numeric,ANY-method
+Automatic description: ConstInFluxes,numeric,ANY-method
 }

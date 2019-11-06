@@ -2,15 +2,18 @@
 % Please edit documentation in R/ConstantOutFluxRate_by_PoolIndex.R
 \name{ConstantOutFluxRate_by_PoolIndex,numeric,numeric-method}
 \alias{ConstantOutFluxRate_by_PoolIndex,numeric,numeric-method}
-\title{ConstantOutFluxRate_by_PoolIndex,numeric,numeric-method}
+\title{Automatic description:
+ConstantOutFluxRate_by_PoolIndex,numeric,numeric-method}
 \usage{
 \S4method{ConstantOutFluxRate_by_PoolIndex}{numeric,numeric}(sourceIndex, rate_constant)
 }
 \arguments{
-\item{sourceIndex}{object of class:\code{numeric}. }
+\item{sourceIndex}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 
-\item{rate_constant}{object of class:\code{numeric}. }
+\item{rate_constant}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual
+documentation}
 }
 \description{
+Automatic description:
 ConstantOutFluxRate_by_PoolIndex,numeric,numeric-method
 }

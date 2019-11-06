@@ -2,13 +2,16 @@
 % Please edit documentation in R/StateDependentInFluxVector.R
 \name{getFunctionDefinition,StateDependentInFluxVector-method}
 \alias{getFunctionDefinition,StateDependentInFluxVector-method}
-\title{getFunctionDefinition,StateDependentInFluxVector-method}
+\title{Automatic description:
+getFunctionDefinition,StateDependentInFluxVector-method}
 \usage{
 \S4method{getFunctionDefinition}{StateDependentInFluxVector}(object)
 }
 \arguments{
-\item{object}{object of class:\code{StateDependentInFluxVector}. }
+\item{object}{object of class:\code{StateDependentInFluxVector}. : object of class:\code{StateDependentInFluxVector}, no manual
+documentation}
 }
 \description{
+Automatic description:
 getFunctionDefinition,StateDependentInFluxVector-method
 }

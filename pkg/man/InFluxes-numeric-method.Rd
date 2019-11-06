@@ -2,13 +2,13 @@
 % Please edit documentation in R/InFluxes.R
 \name{InFluxes,numeric-method}
 \alias{InFluxes,numeric-method}
-\title{InFluxes,numeric-method}
+\title{Automatic description: InFluxes,numeric-method}
 \usage{
 \S4method{InFluxes}{numeric}(object)
 }
 \arguments{
-\item{object}{object of class:\code{numeric}. }
+\item{object}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 }
 \description{
-InFluxes,numeric-method
+Automatic description: InFluxes,numeric-method
 }

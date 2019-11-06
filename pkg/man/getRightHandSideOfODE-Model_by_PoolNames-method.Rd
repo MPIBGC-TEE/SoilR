@@ -2,13 +2,14 @@
 % Please edit documentation in R/Model_by_PoolNames.R
 \name{getRightHandSideOfODE,Model_by_PoolNames-method}
 \alias{getRightHandSideOfODE,Model_by_PoolNames-method}
-\title{getRightHandSideOfODE,Model_by_PoolNames-method}
+\title{Automatic description: getRightHandSideOfODE,Model_by_PoolNames-method}
 \usage{
 \S4method{getRightHandSideOfODE}{Model_by_PoolNames}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model_by_PoolNames}. }
+\item{object}{object of class:\code{Model_by_PoolNames}. : object of class:\code{Model_by_PoolNames}, no manual
+documentation}
 }
 \description{
-getRightHandSideOfODE,Model_by_PoolNames-method
+Automatic description: getRightHandSideOfODE,Model_by_PoolNames-method
 }

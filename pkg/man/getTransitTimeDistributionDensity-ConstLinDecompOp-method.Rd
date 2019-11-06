@@ -2,17 +2,20 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
 \alias{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
-\title{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
+\title{Automatic description:
+getTransitTimeDistributionDensity,ConstLinDecompOp-method}
 \usage{
 \S4method{getTransitTimeDistributionDensity}{ConstLinDecompOp}(object, inputDistribution, times)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}. }
+\item{object}{object of class:\code{ConstLinDecompOp}. : object of class:\code{ConstLinDecompOp}, no manual
+documentation}
 
 \item{inputDistribution}{found automatically by inspection, not documented yet}
 
 \item{times}{found automatically by inspection, not documented yet}
 }
 \description{
+Automatic description:
 getTransitTimeDistributionDensity,ConstLinDecompOp-method
 }

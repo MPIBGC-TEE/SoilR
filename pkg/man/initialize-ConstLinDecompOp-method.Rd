@@ -2,15 +2,16 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{initialize,ConstLinDecompOp-method}
 \alias{initialize,ConstLinDecompOp-method}
-\title{initialize,ConstLinDecompOp-method}
+\title{Automatic description: initialize,ConstLinDecompOp-method}
 \usage{
 \S4method{initialize}{ConstLinDecompOp}(.Object, mat = matrix())
 }
 \arguments{
-\item{.Object}{object of class:\code{ConstLinDecompOp}. }
+\item{.Object}{object of class:\code{ConstLinDecompOp}. : object of class:\code{ConstLinDecompOp}, no manual
+documentation}
 
 \item{mat}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,ConstLinDecompOp-method
+Automatic description: initialize,ConstLinDecompOp-method
 }

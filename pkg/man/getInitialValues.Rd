@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getInitialValues}
 \alias{getInitialValues}
-\title{getInitialValues}
+\title{S4 generic: getInitialValues}
 \usage{
 getInitialValues(object)
 }
@@ -10,11 +10,10 @@ getInitialValues(object)
 \item{object}{see method arguments}
 }
 \description{
-getInitialValues
+S4 generic: getInitialValues
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getInitialValues,NlModel-method}}
   \item \code{\link{getInitialValues,NlModel-method}}
 }
 }

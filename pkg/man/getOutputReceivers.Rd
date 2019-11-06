@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getOutputReceivers}
 \alias{getOutputReceivers}
-\title{getOutputReceivers}
+\title{S4 generic: getOutputReceivers}
 \usage{
 getOutputReceivers(object, i)
 }
@@ -12,11 +12,10 @@ getOutputReceivers(object, i)
 \item{i}{see method arguments}
 }
 \description{
-getOutputReceivers
+S4 generic: getOutputReceivers
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getOutputReceivers,TransportDecompositionOperator,numeric-method}}
   \item \code{\link{getOutputReceivers,TransportDecompositionOperator,numeric-method}}
 }
 }

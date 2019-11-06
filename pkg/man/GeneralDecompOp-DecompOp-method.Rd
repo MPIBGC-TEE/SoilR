@@ -2,13 +2,13 @@
 % Please edit documentation in R/DecompOp.R
 \name{GeneralDecompOp,DecompOp-method}
 \alias{GeneralDecompOp,DecompOp-method}
-\title{GeneralDecompOp,DecompOp-method}
+\title{Automatic description: GeneralDecompOp,DecompOp-method}
 \usage{
 \S4method{GeneralDecompOp}{DecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{DecompOp}. }
+\item{object}{object of class:\code{DecompOp}. : object of class:\code{DecompOp}, no manual documentation}
 }
 \description{
-GeneralDecompOp,DecompOp-method
+Automatic description: GeneralDecompOp,DecompOp-method
 }

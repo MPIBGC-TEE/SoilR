@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getFormat}
 \alias{getFormat}
-\title{getFormat}
+\title{S4 generic: getFormat}
 \usage{
 getFormat(object)
 }
@@ -10,11 +10,10 @@ getFormat(object)
 \item{object}{see method arguments}
 }
 \description{
-getFormat
+S4 generic: getFormat
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getFormat,Fc-method}}
   \item \code{\link{getFormat,Fc-method}}
 }
 }

@@ -2,13 +2,13 @@
 % Please edit documentation in R/ConstantInFluxList_by_PoolIndex.R
 \name{ConstantInFluxList_by_PoolIndex,numeric-method}
 \alias{ConstantInFluxList_by_PoolIndex,numeric-method}
-\title{ConstantInFluxList_by_PoolIndex,numeric-method}
+\title{Automatic description: ConstantInFluxList_by_PoolIndex,numeric-method}
 \usage{
 \S4method{ConstantInFluxList_by_PoolIndex}{numeric}(object)
 }
 \arguments{
-\item{object}{object of class:\code{numeric}. }
+\item{object}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 }
 \description{
-ConstantInFluxList_by_PoolIndex,numeric-method
+Automatic description: ConstantInFluxList_by_PoolIndex,numeric-method
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/NlModel.R
 \name{initialize,NlModel-method}
 \alias{initialize,NlModel-method}
-\title{initialize,NlModel-method}
+\title{Automatic description: initialize,NlModel-method}
 \usage{
 \S4method{initialize}{NlModel}(
   .Object,
@@ -18,7 +18,7 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{NlModel}. }
+\item{.Object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 
 \item{times}{found automatically by inspection, not documented yet}
 
@@ -33,5 +33,5 @@
 \item{pass}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,NlModel-method
+Automatic description: initialize,NlModel-method
 }

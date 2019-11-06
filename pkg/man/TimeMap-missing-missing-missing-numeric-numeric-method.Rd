@@ -2,19 +2,21 @@
 % Please edit documentation in R/TimeMap.R
 \name{TimeMap,missing,missing,missing,numeric,numeric-method}
 \alias{TimeMap,missing,missing,missing,numeric,numeric-method}
-\title{TimeMap,missing,missing,missing,numeric,numeric-method}
+\title{Automatic description:
+TimeMap,missing,missing,missing,numeric,numeric-method}
 \usage{
 \S4method{TimeMap}{missing,missing,missing,numeric,numeric}(times, data, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{times}{object of class:\code{numeric}. }
+\item{times}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 
-\item{data}{object of class:\code{numeric}. }
+\item{data}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 
 \item{lag}{found automatically by inspection, not documented yet}
 
 \item{interpolation}{found automatically by inspection, not documented yet}
 }
 \description{
+Automatic description:
 TimeMap,missing,missing,missing,numeric,numeric-method
 }

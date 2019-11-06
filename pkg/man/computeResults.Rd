@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{computeResults}
 \alias{computeResults}
-\title{computeResults}
+\title{S4 generic: computeResults}
 \usage{
 computeResults(object)
 }
@@ -10,12 +10,10 @@ computeResults(object)
 \item{object}{see method arguments}
 }
 \description{
-computeResults
+S4 generic: computeResults
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{computeResults,MCSim-method}}
-  \item \code{\link{computeResults,NlModel-method}}
   \item \code{\link{computeResults,MCSim-method}}
   \item \code{\link{computeResults,NlModel-method}}
 }

@@ -2,13 +2,14 @@
 % Please edit documentation in R/UnBoundLinDecompOp.R
 \name{getFunctionDefinition,UnBoundLinDecompOp-method}
 \alias{getFunctionDefinition,UnBoundLinDecompOp-method}
-\title{getFunctionDefinition,UnBoundLinDecompOp-method}
+\title{Automatic description: getFunctionDefinition,UnBoundLinDecompOp-method}
 \usage{
 \S4method{getFunctionDefinition}{UnBoundLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundLinDecompOp}. }
+\item{object}{object of class:\code{UnBoundLinDecompOp}. : object of class:\code{UnBoundLinDecompOp}, no manual
+documentation}
 }
 \description{
-getFunctionDefinition,UnBoundLinDecompOp-method
+Automatic description: getFunctionDefinition,UnBoundLinDecompOp-method
 }

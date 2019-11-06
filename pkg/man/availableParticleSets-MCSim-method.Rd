@@ -2,13 +2,13 @@
 % Please edit documentation in R/MCSim.R
 \name{availableParticleSets,MCSim-method}
 \alias{availableParticleSets,MCSim-method}
-\title{availableParticleSets,MCSim-method}
+\title{Automatic description: availableParticleSets,MCSim-method}
 \usage{
 \S4method{availableParticleSets}{MCSim}(object)
 }
 \arguments{
-\item{object}{object of class:\code{MCSim}. }
+\item{object}{object of class:\code{MCSim}. : object of class:\code{MCSim}, no manual documentation}
 }
 \description{
-availableParticleSets,MCSim-method
+Automatic description: availableParticleSets,MCSim-method
 }

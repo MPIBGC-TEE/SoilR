@@ -6,6 +6,19 @@ setClass(
 
 
 
+#' Automatic description: initialize,UnBoundLinDecompOp-method
+#' 
+#' @name initialize,UnBoundLinDecompOp-method
+#' @param .Object : object of class:\code{UnBoundLinDecompOp}, no manual
+#' documentation
+#' @param matFunc : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
      f="initialize",
      signature="UnBoundLinDecompOp",
@@ -19,6 +32,17 @@ setMethod(
 
 
 
+#' Automatic description: UnBoundLinDecompOp,function-method
+#' 
+#' @name UnBoundLinDecompOp,function-method
+#' @param matFunc : object of class:\code{function}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
       f="UnBoundLinDecompOp",
       signature=c(matFunc="function"),
@@ -36,6 +60,18 @@ setMethod(
 
 
 
+#' Automatic description: getFunctionDefinition,UnBoundLinDecompOp-method
+#' 
+#' @name getFunctionDefinition,UnBoundLinDecompOp-method
+#' @param object : object of class:\code{UnBoundLinDecompOp}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getFunctionDefinition",
     signature="UnBoundLinDecompOp",
@@ -47,6 +83,18 @@ setMethod(
 
 
 
+#' Automatic description: getTimeRange,UnBoundLinDecompOp-method
+#' 
+#' @name getTimeRange,UnBoundLinDecompOp-method
+#' @param object : object of class:\code{UnBoundLinDecompOp}, no manual
+#' documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="getTimeRange",
     signature="UnBoundLinDecompOp",

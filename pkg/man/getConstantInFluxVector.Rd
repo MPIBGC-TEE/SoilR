@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getConstantInFluxVector}
 \alias{getConstantInFluxVector}
-\title{getConstantInFluxVector}
+\title{S4 generic: getConstantInFluxVector}
 \usage{
 getConstantInFluxVector(object)
 }
@@ -10,11 +10,10 @@ getConstantInFluxVector(object)
 \item{object}{see method arguments}
 }
 \description{
-getConstantInFluxVector
+S4 generic: getConstantInFluxVector
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getConstantInFluxVector,ConstInFluxes-method}}
   \item \code{\link{getConstantInFluxVector,ConstInFluxes-method}}
 }
 }

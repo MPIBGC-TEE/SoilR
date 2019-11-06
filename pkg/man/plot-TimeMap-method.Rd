@@ -2,17 +2,17 @@
 % Please edit documentation in R/TimeMap.R
 \name{plot,TimeMap-method}
 \alias{plot,TimeMap-method}
-\title{plot,TimeMap-method}
+\title{Automatic description: plot,TimeMap-method}
 \usage{
 \S4method{plot}{TimeMap}(x, y, ...)
 }
 \arguments{
-\item{x}{object of class:\code{TimeMap}. }
+\item{x}{object of class:\code{TimeMap}. : object of class:\code{TimeMap}, no manual documentation}
 
 \item{y}{found automatically by inspection, not documented yet}
 
 \item{...}{found automatically by inspection, not documented yet}
 }
 \description{
-plot,TimeMap-method
+Automatic description: plot,TimeMap-method
 }

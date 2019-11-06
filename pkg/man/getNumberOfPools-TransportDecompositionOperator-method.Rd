@@ -2,13 +2,16 @@
 % Please edit documentation in R/TransportDecompositionOperator.R
 \name{getNumberOfPools,TransportDecompositionOperator-method}
 \alias{getNumberOfPools,TransportDecompositionOperator-method}
-\title{getNumberOfPools,TransportDecompositionOperator-method}
+\title{Automatic description:
+getNumberOfPools,TransportDecompositionOperator-method}
 \usage{
 \S4method{getNumberOfPools}{TransportDecompositionOperator}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TransportDecompositionOperator}. }
+\item{object}{object of class:\code{TransportDecompositionOperator}. : object of class:\code{TransportDecompositionOperator}, no
+manual documentation}
 }
 \description{
+Automatic description:
 getNumberOfPools,TransportDecompositionOperator-method
 }

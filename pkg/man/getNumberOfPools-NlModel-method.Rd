@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{getNumberOfPools,NlModel-method}
 \alias{getNumberOfPools,NlModel-method}
-\title{getNumberOfPools,NlModel-method}
+\title{Automatic description: getNumberOfPools,NlModel-method}
 \usage{
 \S4method{getNumberOfPools}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-getNumberOfPools,NlModel-method
+Automatic description: getNumberOfPools,NlModel-method
 }

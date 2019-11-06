@@ -2,13 +2,14 @@
 % Please edit documentation in R/UnBoundLinDecompOp.R
 \name{getTimeRange,UnBoundLinDecompOp-method}
 \alias{getTimeRange,UnBoundLinDecompOp-method}
-\title{getTimeRange,UnBoundLinDecompOp-method}
+\title{Automatic description: getTimeRange,UnBoundLinDecompOp-method}
 \usage{
 \S4method{getTimeRange}{UnBoundLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundLinDecompOp}. }
+\item{object}{object of class:\code{UnBoundLinDecompOp}. : object of class:\code{UnBoundLinDecompOp}, no manual
+documentation}
 }
 \description{
-getTimeRange,UnBoundLinDecompOp-method
+Automatic description: getTimeRange,UnBoundLinDecompOp-method
 }

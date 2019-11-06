@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{by_PoolName}
 \alias{by_PoolName}
-\title{by_PoolName}
+\title{S4 generic: by_PoolName}
 \usage{
 by_PoolName(obj, poolNames)
 }
@@ -12,15 +12,10 @@ by_PoolName(obj, poolNames)
 \item{poolNames}{see method arguments}
 }
 \description{
-by_PoolName
+S4 generic: by_PoolName
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{by_PoolName,ConstantInFluxRate_by_PoolIndex-method}}
-  \item \code{\link{by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method}}
-  \item \code{\link{by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method}}
-  \item \code{\link{by_PoolName,ConstantOutFluxRate_by_PoolIndex-method}}
-  \item \code{\link{by_PoolName,ConstantOutFluxRateList_by_PoolIndex-method}}
   \item \code{\link{by_PoolName,ConstantInFluxRate_by_PoolIndex-method}}
   \item \code{\link{by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method}}
   \item \code{\link{by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method}}

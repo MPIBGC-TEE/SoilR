@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getTimes}
 \alias{getTimes}
-\title{getTimes}
+\title{S4 generic: getTimes}
 \usage{
 getTimes(object)
 }
@@ -10,12 +10,10 @@ getTimes(object)
 \item{object}{see method arguments}
 }
 \description{
-getTimes
+S4 generic: getTimes
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getTimes,Model-method}}
-  \item \code{\link{getTimes,NlModel-method}}
   \item \code{\link{getTimes,Model-method}}
   \item \code{\link{getTimes,NlModel-method}}
 }

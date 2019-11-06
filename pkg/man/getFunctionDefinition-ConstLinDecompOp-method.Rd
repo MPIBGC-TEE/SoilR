@@ -2,13 +2,14 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getFunctionDefinition,ConstLinDecompOp-method}
 \alias{getFunctionDefinition,ConstLinDecompOp-method}
-\title{getFunctionDefinition,ConstLinDecompOp-method}
+\title{Automatic description: getFunctionDefinition,ConstLinDecompOp-method}
 \usage{
 \S4method{getFunctionDefinition}{ConstLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}. }
+\item{object}{object of class:\code{ConstLinDecompOp}. : object of class:\code{ConstLinDecompOp}, no manual
+documentation}
 }
 \description{
-getFunctionDefinition,ConstLinDecompOp-method
+Automatic description: getFunctionDefinition,ConstLinDecompOp-method
 }

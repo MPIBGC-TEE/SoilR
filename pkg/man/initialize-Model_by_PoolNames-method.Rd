@@ -2,7 +2,7 @@
 % Please edit documentation in R/S4ClassDefinitions.R
 \name{initialize,Model_by_PoolNames-method}
 \alias{initialize,Model_by_PoolNames-method}
-\title{initialize,Model_by_PoolNames-method}
+\title{Automatic description: initialize,Model_by_PoolNames-method}
 \usage{
 \S4method{initialize}{Model_by_PoolNames}(
   .Object,
@@ -16,7 +16,8 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{Model_by_PoolNames}. }
+\item{.Object}{object of class:\code{Model_by_PoolNames}. : object of class:\code{Model_by_PoolNames}, no manual
+documentation}
 
 \item{times}{found automatically by inspection, not documented yet}
 
@@ -33,5 +34,5 @@
 \item{timeSymbol}{found automatically by inspection, not documented yet}
 }
 \description{
-initialize,Model_by_PoolNames-method
+Automatic description: initialize,Model_by_PoolNames-method
 }

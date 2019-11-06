@@ -2,13 +2,14 @@
 % Please edit documentation in R/DecompositionOperator_deprecated_in_1.2.R
 \name{getTimeRange,DecompositionOperator-method}
 \alias{getTimeRange,DecompositionOperator-method}
-\title{getTimeRange,DecompositionOperator-method}
+\title{Automatic description: getTimeRange,DecompositionOperator-method}
 \usage{
 \S4method{getTimeRange}{DecompositionOperator}(object)
 }
 \arguments{
-\item{object}{object of class:\code{DecompositionOperator}. }
+\item{object}{object of class:\code{DecompositionOperator}. : object of class:\code{DecompositionOperator}, no manual
+documentation}
 }
 \description{
-getTimeRange,DecompositionOperator-method
+Automatic description: getTimeRange,DecompositionOperator-method
 }

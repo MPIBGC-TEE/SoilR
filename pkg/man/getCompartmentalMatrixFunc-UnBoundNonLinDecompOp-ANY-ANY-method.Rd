@@ -2,17 +2,21 @@
 % Please edit documentation in R/UnBoundNonLinDecompOp.R
 \name{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}
 \alias{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}
-\title{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}
+\title{Automatic description:
+getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}
 \usage{
 \S4method{getCompartmentalMatrixFunc}{UnBoundNonLinDecompOp,ANY,ANY}(object)
 
 \S4method{getCompartmentalMatrixFunc}{UnBoundNonLinDecompOp,ANY,ANY}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundNonLinDecompOp}. }
+\item{object}{object of class:\code{UnBoundNonLinDecompOp}. : object of class:\code{UnBoundNonLinDecompOp}, no manual
+documentation}
 }
 \description{
+Automatic description:
 getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method
 
+Automatic description:
 getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method
 }

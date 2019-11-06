@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{getDecompOp,Model-method}
 \alias{getDecompOp,Model-method}
-\title{getDecompOp,Model-method}
+\title{Automatic description: getDecompOp,Model-method}
 \usage{
 \S4method{getDecompOp}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}. }
+\item{object}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-getDecompOp,Model-method
+Automatic description: getDecompOp,Model-method
 }

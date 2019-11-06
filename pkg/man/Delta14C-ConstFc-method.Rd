@@ -2,13 +2,13 @@
 % Please edit documentation in R/ConstFc.R
 \name{Delta14C,ConstFc-method}
 \alias{Delta14C,ConstFc-method}
-\title{Delta14C,ConstFc-method}
+\title{Automatic description: Delta14C,ConstFc-method}
 \usage{
 \S4method{Delta14C}{ConstFc}(F)
 }
 \arguments{
-\item{F}{object of class:\code{ConstFc}. }
+\item{F}{object of class:\code{ConstFc}. : object of class:\code{ConstFc}, no manual documentation}
 }
 \description{
-Delta14C,ConstFc-method
+Automatic description: Delta14C,ConstFc-method
 }

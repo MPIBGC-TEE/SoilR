@@ -2,13 +2,14 @@
 % Please edit documentation in R/DecompositionOperator_deprecated_in_1.2.R
 \name{getFunctionDefinition,DecompositionOperator-method}
 \alias{getFunctionDefinition,DecompositionOperator-method}
-\title{getFunctionDefinition,DecompositionOperator-method}
+\title{Automatic description: getFunctionDefinition,DecompositionOperator-method}
 \usage{
 \S4method{getFunctionDefinition}{DecompositionOperator}(object)
 }
 \arguments{
-\item{object}{object of class:\code{DecompositionOperator}. }
+\item{object}{object of class:\code{DecompositionOperator}. : object of class:\code{DecompositionOperator}, no manual
+documentation}
 }
 \description{
-getFunctionDefinition,DecompositionOperator-method
+Automatic description: getFunctionDefinition,DecompositionOperator-method
 }

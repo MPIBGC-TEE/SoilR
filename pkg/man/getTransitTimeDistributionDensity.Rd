@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getTransitTimeDistributionDensity}
 \alias{getTransitTimeDistributionDensity}
-\title{getTransitTimeDistributionDensity}
+\title{S4 generic: getTransitTimeDistributionDensity}
 \usage{
 getTransitTimeDistributionDensity(object, inputDistribution, times)
 }
@@ -14,11 +14,10 @@ getTransitTimeDistributionDensity(object, inputDistribution, times)
 \item{times}{see method arguments}
 }
 \description{
-getTransitTimeDistributionDensity
+S4 generic: getTransitTimeDistributionDensity
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
   \item \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
 }
 }

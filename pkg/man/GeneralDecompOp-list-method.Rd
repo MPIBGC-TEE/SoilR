@@ -2,13 +2,13 @@
 % Please edit documentation in R/list.R
 \name{GeneralDecompOp,list-method}
 \alias{GeneralDecompOp,list-method}
-\title{GeneralDecompOp,list-method}
+\title{Automatic description: GeneralDecompOp,list-method}
 \usage{
 \S4method{GeneralDecompOp}{list}(object)
 }
 \arguments{
-\item{object}{object of class:\code{list}. }
+\item{object}{object of class:\code{list}. : object of class:\code{list}, no manual documentation}
 }
 \description{
-GeneralDecompOp,list-method
+Automatic description: GeneralDecompOp,list-method
 }

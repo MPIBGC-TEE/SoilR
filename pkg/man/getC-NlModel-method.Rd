@@ -2,15 +2,15 @@
 % Please edit documentation in R/NlModel.R
 \name{getC,NlModel-method}
 \alias{getC,NlModel-method}
-\title{getC,NlModel-method}
+\title{Automatic description: getC,NlModel-method}
 \usage{
 \S4method{getC}{NlModel}(object, as.closures = FALSE)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 
 \item{as.closures}{found automatically by inspection, not documented yet}
 }
 \description{
-getC,NlModel-method
+Automatic description: getC,NlModel-method
 }

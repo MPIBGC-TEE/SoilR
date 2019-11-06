@@ -2,13 +2,14 @@
 % Please edit documentation in R/ConstInFluxes.R
 \name{getFunctionDefinition,ConstInFluxes-method}
 \alias{getFunctionDefinition,ConstInFluxes-method}
-\title{getFunctionDefinition,ConstInFluxes-method}
+\title{Automatic description: getFunctionDefinition,ConstInFluxes-method}
 \usage{
 \S4method{getFunctionDefinition}{ConstInFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstInFluxes}. }
+\item{object}{object of class:\code{ConstInFluxes}. : object of class:\code{ConstInFluxes}, no manual
+documentation}
 }
 \description{
-getFunctionDefinition,ConstInFluxes-method
+Automatic description: getFunctionDefinition,ConstInFluxes-method
 }

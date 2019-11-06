@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{availableResidentSets}
 \alias{availableResidentSets}
-\title{availableResidentSets}
+\title{S4 generic: availableResidentSets}
 \usage{
 availableResidentSets(object)
 }
@@ -10,11 +10,10 @@ availableResidentSets(object)
 \item{object}{see method arguments}
 }
 \description{
-availableResidentSets
+S4 generic: availableResidentSets
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{availableResidentSets,MCSim-method}}
   \item \code{\link{availableResidentSets,MCSim-method}}
 }
 }

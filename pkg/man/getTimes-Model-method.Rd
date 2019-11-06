@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{getTimes,Model-method}
 \alias{getTimes,Model-method}
-\title{getTimes,Model-method}
+\title{Automatic description: getTimes,Model-method}
 \usage{
 \S4method{getTimes}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}. }
+\item{object}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-getTimes,Model-method
+Automatic description: getTimes,Model-method
 }

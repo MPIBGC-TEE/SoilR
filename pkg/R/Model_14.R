@@ -1,6 +1,26 @@
 
 
 
+#' Automatic description: initialize,Model_14-method
+#' 
+#' @name initialize,Model_14-method
+#' @param .Object : object of class:\code{Model_14}, no manual documentation
+#' @param times : no manual documentation
+#' @param mat : no manual documentation
+#' @param initialValues : no manual documentation
+#' @param initialValF : no manual documentation
+#' @param inputFluxes : no manual documentation
+#' @param c14Fraction : no manual documentation
+#' @param c14DecayRate : no manual documentation
+#' @param solverfunc : no manual documentation
+#' @param pass : no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
     f="initialize",
     signature=c("Model_14"),
@@ -231,6 +251,17 @@ Model_14 <- function
 
 
 
+#' Automatic description: getC14,Model_14-method
+#' 
+#' @name getC14,Model_14-method
+#' @param object : object of class:\code{Model_14}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getC14",
       signature= "Model_14",
@@ -265,6 +296,17 @@ setMethod(
 
 
 
+#' Automatic description: getF14,Model_14-method
+#' 
+#' @name getF14,Model_14-method
+#' @param object : object of class:\code{Model_14}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getF14",
       signature= "Model_14",
@@ -282,6 +324,17 @@ setMethod(
 
 
 
+#' Automatic description: getReleaseFlux14,Model_14-method
+#' 
+#' @name getReleaseFlux14,Model_14-method
+#' @param object : object of class:\code{Model_14}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
    f= "getReleaseFlux14",
       signature= "Model_14",
@@ -305,6 +358,17 @@ setMethod(
 
 
 
+#' Automatic description: getF14R,Model_14-method
+#' 
+#' @name getF14R,Model_14-method
+#' @param object : object of class:\code{Model_14}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
   f= "getF14R",
   signature= "Model_14",
@@ -322,6 +386,17 @@ setMethod(
 
 
 
+#' Automatic description: getF14C,Model_14-method
+#' 
+#' @name getF14C,Model_14-method
+#' @param object : object of class:\code{Model_14}, no manual documentation
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setMethod(
   f= "getF14C",
   signature= "Model_14",

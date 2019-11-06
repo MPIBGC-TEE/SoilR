@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{computeResults,NlModel-method}
 \alias{computeResults,NlModel-method}
-\title{computeResults,NlModel-method}
+\title{Automatic description: computeResults,NlModel-method}
 \usage{
 \S4method{computeResults}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-computeResults,NlModel-method
+Automatic description: computeResults,NlModel-method
 }

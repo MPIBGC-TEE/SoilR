@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{UnBoundInFluxes}
 \alias{UnBoundInFluxes}
-\title{UnBoundInFluxes}
+\title{S4 generic: UnBoundInFluxes}
 \usage{
 UnBoundInFluxes(map)
 }
@@ -10,11 +10,10 @@ UnBoundInFluxes(map)
 \item{map}{see method arguments}
 }
 \description{
-UnBoundInFluxes
+S4 generic: UnBoundInFluxes
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{UnBoundInFluxes,function-method}}
   \item \code{\link{UnBoundInFluxes,function-method}}
 }
 }

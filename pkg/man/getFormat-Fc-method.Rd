@@ -2,13 +2,13 @@
 % Please edit documentation in R/Fc.R
 \name{getFormat,Fc-method}
 \alias{getFormat,Fc-method}
-\title{getFormat,Fc-method}
+\title{Automatic description: getFormat,Fc-method}
 \usage{
 \S4method{getFormat}{Fc}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Fc}. }
+\item{object}{object of class:\code{Fc}. : object of class:\code{Fc}, no manual documentation}
 }
 \description{
-getFormat,Fc-method
+Automatic description: getFormat,Fc-method
 }

@@ -2,13 +2,13 @@
 % Please edit documentation in R/BoundFc.R
 \name{Delta14C,BoundFc-method}
 \alias{Delta14C,BoundFc-method}
-\title{Delta14C,BoundFc-method}
+\title{Automatic description: Delta14C,BoundFc-method}
 \usage{
 \S4method{Delta14C}{BoundFc}(F)
 }
 \arguments{
-\item{F}{object of class:\code{BoundFc}. }
+\item{F}{object of class:\code{BoundFc}. : object of class:\code{BoundFc}, no manual documentation}
 }
 \description{
-Delta14C,BoundFc-method
+Automatic description: Delta14C,BoundFc-method
 }

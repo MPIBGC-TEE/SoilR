@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{plotPoolGraph,Model-method}
 \alias{plotPoolGraph,Model-method}
-\title{plotPoolGraph,Model-method}
+\title{Automatic description: plotPoolGraph,Model-method}
 \usage{
 \S4method{plotPoolGraph}{Model}(x)
 }
 \arguments{
-\item{x}{object of class:\code{Model}. }
+\item{x}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-plotPoolGraph,Model-method
+Automatic description: plotPoolGraph,Model-method
 }

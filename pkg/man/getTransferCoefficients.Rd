@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getTransferCoefficients}
 \alias{getTransferCoefficients}
-\title{getTransferCoefficients}
+\title{S4 generic: getTransferCoefficients}
 \usage{
 getTransferCoefficients(object, as.closures = F)
 
@@ -14,16 +14,12 @@ getTransferCoefficients(object, as.closures = F)
 \item{as.closures}{see method arguments}
 }
 \description{
-getTransferCoefficients
+S4 generic: getTransferCoefficients
 
-getTransferCoefficients
+S4 generic: getTransferCoefficients
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{getTransferCoefficients,NlModel-method}}
-  \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
-  \item \code{\link{getTransferCoefficients,NlModel-method}}
-  \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
   \item \code{\link{getTransferCoefficients,NlModel-method}}
   \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
   \item \code{\link{getTransferCoefficients,NlModel-method}}

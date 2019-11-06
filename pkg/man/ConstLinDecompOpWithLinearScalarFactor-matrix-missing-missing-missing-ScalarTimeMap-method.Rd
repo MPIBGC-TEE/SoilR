@@ -15,6 +15,4 @@ convert names of  vectors or lists to class ConstantInternalFluxRate}
 \description{
 convert names of  vectors or lists to class ConstantOutFluxRate 
 convert names of  vectors or lists to class ConstantInternalFluxRate
-
-ConstLinDecompOpWithLinearScalarFactor,matrix,missing,missing,missing,ScalarTimeMap-method
 }

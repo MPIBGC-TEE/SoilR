@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{plot,Model-method}
 \alias{plot,Model-method}
-\title{plot,Model-method}
+\title{Automatic description: plot,Model-method}
 \usage{
 \S4method{plot}{Model}(x)
 }
 \arguments{
-\item{x}{object of class:\code{Model}. }
+\item{x}{object of class:\code{Model}. : object of class:\code{Model}, no manual documentation}
 }
 \description{
-plot,Model-method
+Automatic description: plot,Model-method
 }

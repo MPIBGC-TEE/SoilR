@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{getInitialValues,NlModel-method}
 \alias{getInitialValues,NlModel-method}
-\title{getInitialValues,NlModel-method}
+\title{Automatic description: getInitialValues,NlModel-method}
 \usage{
 \S4method{getInitialValues}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-getInitialValues,NlModel-method
+Automatic description: getInitialValues,NlModel-method
 }

@@ -2,13 +2,13 @@
 % Please edit documentation in R/function.R
 \name{GeneralDecompOp,function-method}
 \alias{GeneralDecompOp,function-method}
-\title{GeneralDecompOp,function-method}
+\title{Automatic description: GeneralDecompOp,function-method}
 \usage{
 \S4method{GeneralDecompOp}{`function`}(object)
 }
 \arguments{
-\item{object}{object of class:\code{function}. }
+\item{object}{object of class:\code{function}. : object of class:\code{function}, no manual documentation}
 }
 \description{
-GeneralDecompOp,function-method
+Automatic description: GeneralDecompOp,function-method
 }

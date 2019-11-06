@@ -2,15 +2,16 @@
 % Please edit documentation in R/InFluxes.R
 \name{InFluxes,ConstantInFluxList_by_PoolIndex-method}
 \alias{InFluxes,ConstantInFluxList_by_PoolIndex-method}
-\title{InFluxes,ConstantInFluxList_by_PoolIndex-method}
+\title{Automatic description: InFluxes,ConstantInFluxList_by_PoolIndex-method}
 \usage{
 \S4method{InFluxes}{ConstantInFluxList_by_PoolIndex}(object, numberOfPools)
 }
 \arguments{
-\item{object}{object of class:\code{ConstantInFluxList_by_PoolIndex}. }
+\item{object}{object of class:\code{ConstantInFluxList_by_PoolIndex}. : object of class:\code{ConstantInFluxList_by_PoolIndex}, no
+manual documentation}
 
 \item{numberOfPools}{found automatically by inspection, not documented yet}
 }
 \description{
-InFluxes,ConstantInFluxList_by_PoolIndex-method
+Automatic description: InFluxes,ConstantInFluxList_by_PoolIndex-method
 }

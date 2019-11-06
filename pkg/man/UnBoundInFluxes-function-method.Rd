@@ -2,13 +2,13 @@
 % Please edit documentation in R/UnboundInflux.R
 \name{UnBoundInFluxes,function-method}
 \alias{UnBoundInFluxes,function-method}
-\title{UnBoundInFluxes,function-method}
+\title{Automatic description: UnBoundInFluxes,function-method}
 \usage{
 \S4method{UnBoundInFluxes}{`function`}(map)
 }
 \arguments{
-\item{map}{object of class:\code{function}. }
+\item{map}{object of class:\code{function}. : object of class:\code{function}, no manual documentation}
 }
 \description{
-UnBoundInFluxes,function-method
+Automatic description: UnBoundInFluxes,function-method
 }

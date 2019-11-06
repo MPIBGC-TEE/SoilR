@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{Delta14C}
 \alias{Delta14C}
-\title{Delta14C}
+\title{S4 generic: Delta14C}
 \usage{
 Delta14C(F)
 }
@@ -10,12 +10,10 @@ Delta14C(F)
 \item{F}{see method arguments}
 }
 \description{
-Delta14C
+S4 generic: Delta14C
 }
 \section{S4 methods for this generic}{
 \itemize{
-  \item \code{\link{Delta14C,BoundFc-method}}
-  \item \code{\link{Delta14C,ConstFc-method}}
   \item \code{\link{Delta14C,BoundFc-method}}
   \item \code{\link{Delta14C,ConstFc-method}}
 }

@@ -2,13 +2,14 @@
 % Please edit documentation in R/UnboundInflux.R
 \name{getTimeRange,UnBoundInFluxes-method}
 \alias{getTimeRange,UnBoundInFluxes-method}
-\title{getTimeRange,UnBoundInFluxes-method}
+\title{Automatic description: getTimeRange,UnBoundInFluxes-method}
 \usage{
 \S4method{getTimeRange}{UnBoundInFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundInFluxes}. }
+\item{object}{object of class:\code{UnBoundInFluxes}. : object of class:\code{UnBoundInFluxes}, no manual
+documentation}
 }
 \description{
-getTimeRange,UnBoundInFluxes-method
+Automatic description: getTimeRange,UnBoundInFluxes-method
 }

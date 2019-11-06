@@ -2,15 +2,15 @@
 % Please edit documentation in R/BoundFc.R
 \name{BoundFc,character-method}
 \alias{BoundFc,character-method}
-\title{BoundFc,character-method}
+\title{Automatic description: BoundFc,character-method}
 \usage{
 \S4method{BoundFc}{character}(format, ...)
 }
 \arguments{
-\item{format}{object of class:\code{character}. }
+\item{format}{object of class:\code{character}. : object of class:\code{character}, no manual documentation}
 
 \item{...}{found automatically by inspection, not documented yet}
 }
 \description{
-BoundFc,character-method
+Automatic description: BoundFc,character-method
 }

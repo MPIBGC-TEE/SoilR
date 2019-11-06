@@ -2,15 +2,15 @@
 % Please edit documentation in R/NlModel.R
 \name{getTransferCoefficients,NlModel-method}
 \alias{getTransferCoefficients,NlModel-method}
-\title{getTransferCoefficients,NlModel-method}
+\title{Automatic description: getTransferCoefficients,NlModel-method}
 \usage{
 \S4method{getTransferCoefficients}{NlModel}(object, as.closures = F)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 
 \item{as.closures}{found automatically by inspection, not documented yet}
 }
 \description{
-getTransferCoefficients,NlModel-method
+Automatic description: getTransferCoefficients,NlModel-method
 }

@@ -2,15 +2,18 @@
 % Please edit documentation in R/TransportDecompositionOperator.R
 \name{getOutputReceivers,TransportDecompositionOperator,numeric-method}
 \alias{getOutputReceivers,TransportDecompositionOperator,numeric-method}
-\title{getOutputReceivers,TransportDecompositionOperator,numeric-method}
+\title{Automatic description:
+getOutputReceivers,TransportDecompositionOperator,numeric-method}
 \usage{
 \S4method{getOutputReceivers}{TransportDecompositionOperator,numeric}(object, i)
 }
 \arguments{
-\item{object}{object of class:\code{TransportDecompositionOperator}. }
+\item{object}{object of class:\code{TransportDecompositionOperator}. : object of class:\code{TransportDecompositionOperator}, no
+manual documentation}
 
-\item{i}{object of class:\code{numeric}. }
+\item{i}{object of class:\code{numeric}. : object of class:\code{numeric}, no manual documentation}
 }
 \description{
+Automatic description:
 getOutputReceivers,TransportDecompositionOperator,numeric-method
 }

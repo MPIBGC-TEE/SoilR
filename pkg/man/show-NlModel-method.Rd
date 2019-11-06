@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{show,NlModel-method}
 \alias{show,NlModel-method}
-\title{show,NlModel-method}
+\title{Automatic description: show,NlModel-method}
 \usage{
 \S4method{show}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-show,NlModel-method
+Automatic description: show,NlModel-method
 }

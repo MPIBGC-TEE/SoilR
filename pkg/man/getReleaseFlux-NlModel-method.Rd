@@ -2,13 +2,13 @@
 % Please edit documentation in R/NlModel.R
 \name{getReleaseFlux,NlModel-method}
 \alias{getReleaseFlux,NlModel-method}
-\title{getReleaseFlux,NlModel-method}
+\title{Automatic description: getReleaseFlux,NlModel-method}
 \usage{
 \S4method{getReleaseFlux}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}. }
+\item{object}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
 }
 \description{
-getReleaseFlux,NlModel-method
+Automatic description: getReleaseFlux,NlModel-method
 }
