@@ -2,15 +2,15 @@
 % Please edit documentation in R/NlModel.R
 \name{$,NlModel-method}
 \alias{$,NlModel-method}
-\title{Automatic description: $,NlModel-method}
+\title{automatic title}
 \usage{
 \S4method{$}{NlModel}(x, name)
 }
 \arguments{
-\item{x}{object of class:\code{NlModel}. : object of class:\code{NlModel}, no manual documentation}
+\item{x}{object of class:\code{NlModel}, : no manual documentation}
 
-\item{name}{found automatically by inspection, not documented yet}
+\item{name}{: no manual documentation}
 }
 \description{
-Automatic description: $,NlModel-method
+automatic title
 }

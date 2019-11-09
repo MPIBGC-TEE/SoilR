@@ -2,15 +2,15 @@
 % Please edit documentation in R/MCSim.R
 \name{[[,MCSim-method}
 \alias{[[,MCSim-method}
-\title{Automatic description: [[,MCSim-method}
+\title{automatic title}
 \usage{
 \S4method{[[}{MCSim}(x, i)
 }
 \arguments{
-\item{x}{object of class:\code{MCSim}. : object of class:\code{MCSim}, no manual documentation}
+\item{x}{object of class:\code{MCSim}, : no manual documentation}
 
-\item{i}{found automatically by inspection, not documented yet}
+\item{i}{: no manual documentation}
 }
 \description{
-Automatic description: [[,MCSim-method
+automatic title
 }

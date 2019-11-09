@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{Delta14C}
 \alias{Delta14C}
-\title{S4 generic: Delta14C}
+\title{automatic title}
 \usage{
 Delta14C(F)
 }
@@ -10,7 +10,7 @@ Delta14C(F)
 \item{F}{see method arguments}
 }
 \description{
-S4 generic: Delta14C
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getTimes}
 \alias{getTimes}
-\title{S4 generic: getTimes}
+\title{automatic title}
 \usage{
 getTimes(object)
 }
@@ -10,7 +10,7 @@ getTimes(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getTimes
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

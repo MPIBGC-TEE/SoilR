@@ -1,10 +1,9 @@
 
 
 
-#' Automatic description: getValues,ConstFc-method
+#' automatic title
 #' 
-#' @name getValues,ConstFc-method
-#' @param object : object of class:\code{ConstFc}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -24,10 +23,9 @@ setMethod(
 
 
 
-#' Automatic description: Delta14C,ConstFc-method
+#' automatic title
 #' 
-#' @name Delta14C,ConstFc-method
-#' @param F : object of class:\code{ConstFc}, no manual documentation
+#' @param F : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -60,10 +58,9 @@ setMethod(
 
 
 
-#' Automatic description: AbsoluteFractionModern,ConstFc-method
+#' automatic title
 #' 
-#' @name AbsoluteFractionModern,ConstFc-method
-#' @param F : object of class:\code{ConstFc}, no manual documentation
+#' @param F : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getConstantCompartmentalMatrix}
 \alias{getConstantCompartmentalMatrix}
-\title{S4 generic: getConstantCompartmentalMatrix}
+\title{automatic title}
 \usage{
 getConstantCompartmentalMatrix(object)
 }
@@ -10,7 +10,7 @@ getConstantCompartmentalMatrix(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getConstantCompartmentalMatrix
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

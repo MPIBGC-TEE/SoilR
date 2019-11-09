@@ -6,11 +6,9 @@ setClass(
 
 
 
-#' Automatic description: initialize,UnBoundLinDecompOp-method
+#' automatic title
 #' 
-#' @name initialize,UnBoundLinDecompOp-method
-#' @param .Object : object of class:\code{UnBoundLinDecompOp}, no manual
-#' documentation
+#' @param .Object : no manual documentation
 #' @param matFunc : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -32,10 +30,9 @@ setMethod(
 
 
 
-#' Automatic description: UnBoundLinDecompOp,function-method
+#' automatic title
 #' 
-#' @name UnBoundLinDecompOp,function-method
-#' @param matFunc : object of class:\code{function}, no manual documentation
+#' @param matFunc : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -60,11 +57,9 @@ setMethod(
 
 
 
-#' Automatic description: getFunctionDefinition,UnBoundLinDecompOp-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,UnBoundLinDecompOp-method
-#' @param object : object of class:\code{UnBoundLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -83,11 +78,9 @@ setMethod(
 
 
 
-#' Automatic description: getTimeRange,UnBoundLinDecompOp-method
+#' automatic title
 #' 
-#' @name getTimeRange,UnBoundLinDecompOp-method
-#' @param object : object of class:\code{UnBoundLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

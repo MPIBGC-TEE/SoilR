@@ -28,8 +28,8 @@ git.hubs.docs.dir <- file.path(script.basename,'..','docs')
 
 pkgDir='~/SoilR-exp/pkg'
 #roxygen2::roxygenize(pkgDir,roclets=c('remove_autotag_roclet'))
-#roxygen2::roxygenize(pkgDir,roclets=c('auto_comment_roclet','rd'))
-roxygen2::roxygenize(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
+roxygen2::roxygenize(pkgDir,roclets=c('auto_comment_roclet','rd'))
+#roxygen2::roxygenize(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
 #devtools::install(pkgDir,args=c('--html'))
 
 #p='pkg.pdf'

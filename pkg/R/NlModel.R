@@ -4,10 +4,9 @@ is.negative=function(number){
 
 
 
-#' Automatic description: initialize,NlModel-method
+#' automatic title
 #' 
-#' @name initialize,NlModel-method
-#' @param .Object : object of class:\code{NlModel}, no manual documentation
+#' @param .Object : no manual documentation
 #' @param times : no manual documentation
 #' @param DepComp : no manual documentation
 #' @param initialValues : no manual documentation
@@ -74,10 +73,9 @@ setMethod(
 
 
 
-#' Automatic description: getInFluxes,NlModel-method
+#' automatic title
 #' 
-#' @name getInFluxes,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -104,10 +102,9 @@ errorPlotC=function(C,t){
 
 
 
-#' Automatic description: plot,NlModel-method
+#' automatic title
 #' 
-#' @name plot,NlModel-method
-#' @param x : object of class:\code{NlModel}, no manual documentation
+#' @param x : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -129,10 +126,9 @@ setMethod(
 
 
 
-#' Automatic description: print,NlModel-method
+#' automatic title
 #' 
-#' @name print,NlModel-method
-#' @param x : object of class:\code{NlModel}, no manual documentation
+#' @param x : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -149,10 +145,9 @@ setMethod(
 
 
 
-#' Automatic description: getNumberOfPools,NlModel-method
+#' automatic title
 #' 
-#' @name getNumberOfPools,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -170,10 +165,9 @@ setMethod(
 
 
 
-#' Automatic description: show,NlModel-method
+#' automatic title
 #' 
-#' @name show,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -190,10 +184,9 @@ setMethod(
 
 
 
-#' Automatic description: getDecompOp,NlModel-method
+#' automatic title
 #' 
-#' @name getDecompOp,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -211,10 +204,9 @@ setMethod(
 
 
 
-#' Automatic description: getParticleMonteCarloSimulator,NlModel-method
+#' automatic title
 #' 
-#' @name getParticleMonteCarloSimulator,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -232,10 +224,9 @@ setMethod(
 
 
 
-#' Automatic description: getTimes,NlModel-method
+#' automatic title
 #' 
-#' @name getTimes,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -255,10 +246,9 @@ setMethod(
 
 
 
-#' Automatic description: getCumulativeC,NlModel-method
+#' automatic title
 #' 
-#' @name getCumulativeC,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -279,10 +269,9 @@ setMethod(
 
 
 
-#' Automatic description: getInitialValues,NlModel-method
+#' automatic title
 #' 
-#' @name getInitialValues,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -310,10 +299,9 @@ res2fun=function(times,C){
 
 
 
-#' Automatic description: getTransferCoefficients,NlModel-method
+#' automatic title
 #' 
-#' @name getTransferCoefficients,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @param as.closures : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -355,10 +343,9 @@ setMethod(
 
 
 
-#' Automatic description: getOutputFluxes,NlModel-method
+#' automatic title
 #' 
-#' @name getOutputFluxes,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @param as.closures : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -388,10 +375,9 @@ setMethod(
 
 
 
-#' Automatic description: getReleaseFlux,NlModel-method
+#' automatic title
 #' 
-#' @name getReleaseFlux,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -427,10 +413,9 @@ setMethod(
 
 
 
-#' Automatic description: computeResults,NlModel-method
+#' automatic title
 #' 
-#' @name computeResults,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -447,10 +432,9 @@ setMethod(
 
 
 
-#' Automatic description: getC,NlModel-method
+#' automatic title
 #' 
-#' @name getC,NlModel-method
-#' @param object : object of class:\code{NlModel}, no manual documentation
+#' @param object : no manual documentation
 #' @param as.closures : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -505,11 +489,10 @@ setMethod(
 
 
 
-#' Automatic description: [,NlModel,character,ANY,ANY-method
+#' automatic title
 #' 
-#' @name [,NlModel,character,ANY,ANY-method
-#' @param x : object of class:\code{NlModel}, no manual documentation
-#' @param i : object of class:\code{character}, no manual documentation
+#' @param x : no manual documentation
+#' @param i : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -544,10 +527,9 @@ setMethod(
 
 
 
-#' Automatic description: $,NlModel-method
+#' automatic title
 #' 
-#' @name $,NlModel-method
-#' @param x : object of class:\code{NlModel}, no manual documentation
+#' @param x : no manual documentation
 #' @param name : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to

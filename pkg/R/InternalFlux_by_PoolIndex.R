@@ -38,11 +38,9 @@ setMethod(
 
 
 
-#' Automatic description: getFunctionDefinition,InFluxList_by_PoolName-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,InFluxList_by_PoolName-method
-#' @param object : object of class:\code{InFluxList_by_PoolName}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @param timeSymbol : no manual documentation
 #' @param poolNames : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by

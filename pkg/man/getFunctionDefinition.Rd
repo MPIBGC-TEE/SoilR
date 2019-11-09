@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getFunctionDefinition}
 \alias{getFunctionDefinition}
-\title{S4 generic: getFunctionDefinition}
+\title{automatic title}
 \usage{
 getFunctionDefinition(object, timeSymbol, poolNames, numberOfPools)
 }
@@ -16,7 +16,7 @@ getFunctionDefinition(object, timeSymbol, poolNames, numberOfPools)
 \item{numberOfPools}{see method arguments}
 }
 \description{
-S4 generic: getFunctionDefinition
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

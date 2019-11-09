@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getLinearScaleFactor}
 \alias{getLinearScaleFactor}
-\title{S4 generic: getLinearScaleFactor}
+\title{automatic title}
 \usage{
 getLinearScaleFactor(object)
 }
@@ -10,7 +10,7 @@ getLinearScaleFactor(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getLinearScaleFactor
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

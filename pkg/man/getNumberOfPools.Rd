@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getNumberOfPools}
 \alias{getNumberOfPools}
-\title{S4 generic: getNumberOfPools}
+\title{automatic title}
 \usage{
 getNumberOfPools(object)
 }
@@ -10,7 +10,7 @@ getNumberOfPools(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getNumberOfPools
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

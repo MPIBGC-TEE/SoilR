@@ -1,11 +1,9 @@
 
 
 
-#' Automatic description: getC,Model_by_PoolNames-method
+#' automatic title
 #' 
-#' @name getC,Model_by_PoolNames-method
-#' @param object : object of class:\code{Model_by_PoolNames}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -37,11 +35,9 @@ setMethod(
 
 
 
-#' Automatic description: getReleaseFlux,Model_by_PoolNames-method
+#' automatic title
 #' 
-#' @name getReleaseFlux,Model_by_PoolNames-method
-#' @param object : object of class:\code{Model_by_PoolNames}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -80,11 +76,9 @@ setMethod(
 
 
 
-#' Automatic description: getRightHandSideOfODE,Model_by_PoolNames-method
+#' automatic title
 #' 
-#' @name getRightHandSideOfODE,Model_by_PoolNames-method
-#' @param object : object of class:\code{Model_by_PoolNames}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

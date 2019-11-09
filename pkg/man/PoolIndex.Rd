@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{PoolIndex}
 \alias{PoolIndex}
-\title{S4 generic: PoolIndex}
+\title{automatic title}
 \usage{
 PoolIndex(id, ...)
 }
@@ -12,7 +12,7 @@ PoolIndex(id, ...)
 \item{...}{see method arguments}
 }
 \description{
-S4 generic: PoolIndex
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

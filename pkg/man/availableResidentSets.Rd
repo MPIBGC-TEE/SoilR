@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{availableResidentSets}
 \alias{availableResidentSets}
-\title{S4 generic: availableResidentSets}
+\title{automatic title}
 \usage{
 availableResidentSets(object)
 }
@@ -10,7 +10,7 @@ availableResidentSets(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: availableResidentSets
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

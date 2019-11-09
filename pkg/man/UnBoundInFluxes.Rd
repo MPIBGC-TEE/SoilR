@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{UnBoundInFluxes}
 \alias{UnBoundInFluxes}
-\title{S4 generic: UnBoundInFluxes}
+\title{automatic title}
 \usage{
 UnBoundInFluxes(map)
 }
@@ -10,7 +10,7 @@ UnBoundInFluxes(map)
 \item{map}{see method arguments}
 }
 \description{
-S4 generic: UnBoundInFluxes
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

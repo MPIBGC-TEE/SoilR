@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getDecompOp}
 \alias{getDecompOp}
-\title{S4 generic: getDecompOp}
+\title{automatic title}
 \usage{
 getDecompOp(object)
 }
@@ -10,7 +10,7 @@ getDecompOp(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getDecompOp
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

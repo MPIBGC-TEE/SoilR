@@ -1,11 +1,9 @@
 
 
 
-#' Automatic description: initialize,DecompositionOperator-method
+#' automatic title
 #' 
-#' @name initialize,DecompositionOperator-method
-#' @param .Object : object of class:\code{DecompositionOperator}, no manual
-#' documentation
+#' @param .Object : no manual documentation
 #' @param starttime : no manual documentation
 #' @param endtime : no manual documentation
 #' @param map : no manual documentation
@@ -39,11 +37,9 @@ setMethod(
 
 
 
-#' Automatic description: getTimeRange,DecompositionOperator-method
+#' automatic title
 #' 
-#' @name getTimeRange,DecompositionOperator-method
-#' @param object : object of class:\code{DecompositionOperator}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -63,11 +59,9 @@ setMethod(
 
 
 
-#' Automatic description: getFunctionDefinition,DecompositionOperator-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,DecompositionOperator-method
-#' @param object : object of class:\code{DecompositionOperator}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

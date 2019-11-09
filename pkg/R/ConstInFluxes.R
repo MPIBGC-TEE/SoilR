@@ -1,10 +1,9 @@
 
 
 
-#' Automatic description: ConstInFluxes,numeric,ANY-method
+#' automatic title
 #' 
-#' @name ConstInFluxes,numeric,ANY-method
-#' @param map : object of class:\code{numeric}, no manual documentation
+#' @param map : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -27,14 +26,10 @@ setMethod(
 
 
 
-#' Automatic description:
-#' ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method
+#' automatic title
 #' 
-#' @name ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method
-#' @param map : object of class:\code{ConstantInFluxList_by_PoolIndex}, no
-#' manual documentation
-#' @param numberOfPools : object of class:\code{numeric}, no manual
-#' documentation
+#' @param map : no manual documentation
+#' @param numberOfPools : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -57,11 +52,9 @@ setMethod(
 
 
 
-#' Automatic description: getConstantInFluxVector,ConstInFluxes-method
+#' automatic title
 #' 
-#' @name getConstantInFluxVector,ConstInFluxes-method
-#' @param object : object of class:\code{ConstInFluxes}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -81,11 +74,9 @@ setMethod(
 
 
 
-#' Automatic description: getTimeRange,ConstInFluxes-method
+#' automatic title
 #' 
-#' @name getTimeRange,ConstInFluxes-method
-#' @param object : object of class:\code{ConstInFluxes}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -105,11 +96,9 @@ setMethod(
 
 
 
-#' Automatic description: getFunctionDefinition,ConstInFluxes-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,ConstInFluxes-method
-#' @param object : object of class:\code{ConstInFluxes}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

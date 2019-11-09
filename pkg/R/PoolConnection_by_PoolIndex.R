@@ -38,13 +38,10 @@ setMethod(
 
 
 
-#' Automatic description:
-#' check_pool_ids,PoolConnection_by_PoolIndex,integer-method
+#' automatic title
 #' 
-#' @name check_pool_ids,PoolConnection_by_PoolIndex,integer-method
-#' @param obj : object of class:\code{PoolConnection_by_PoolIndex}, no manual
-#' documentation
-#' @param pools : object of class:\code{integer}, no manual documentation
+#' @param obj : no manual documentation
+#' @param pools : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

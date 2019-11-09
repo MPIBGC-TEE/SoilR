@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getTransferCoefficients}
 \alias{getTransferCoefficients}
-\title{S4 generic: getTransferCoefficients}
+\title{automatic title}
 \usage{
 getTransferCoefficients(object, as.closures = F)
 
@@ -14,9 +14,9 @@ getTransferCoefficients(object, as.closures = F)
 \item{as.closures}{see method arguments}
 }
 \description{
-S4 generic: getTransferCoefficients
+automatic title
 
-S4 generic: getTransferCoefficients
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

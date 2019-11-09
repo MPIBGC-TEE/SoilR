@@ -8,10 +8,9 @@ setClass(
 
 
 
-#' Automatic description: initialize,MCSim-method
+#' automatic title
 #' 
-#' @name initialize,MCSim-method
-#' @param .Object : object of class:\code{MCSim}, no manual documentation
+#' @param .Object : no manual documentation
 #' @param model : no manual documentation
 #' @param tasklist : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -33,10 +32,9 @@ setMethod(
 
 
 
-#' Automatic description: plot,MCSim-method
+#' automatic title
 #' 
-#' @name plot,MCSim-method
-#' @param x : object of class:\code{MCSim}, no manual documentation
+#' @param x : no manual documentation
 #' @param y : no manual documentation
 #' @param ... : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -75,10 +73,9 @@ setMethod(
 
 
 
-#' Automatic description: availableResidentSets,MCSim-method
+#' automatic title
 #' 
-#' @name availableResidentSets,MCSim-method
-#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -101,10 +98,9 @@ setMethod(
 
 
 
-#' Automatic description: availableParticleSets,MCSim-method
+#' automatic title
 #' 
-#' @name availableParticleSets,MCSim-method
-#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -128,10 +124,9 @@ setMethod(
 
 
 
-#' Automatic description: availableParticleProperties,MCSim-method
+#' automatic title
 #' 
-#' @name availableParticleProperties,MCSim-method
-#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -152,10 +147,9 @@ setMethod(
 
 
 
-#' Automatic description: [[,MCSim-method
+#' automatic title
 #' 
-#' @name [[,MCSim-method
-#' @param x : object of class:\code{MCSim}, no manual documentation
+#' @param x : no manual documentation
 #' @param i : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -183,10 +177,9 @@ setMethod("[[",
 
 
 
-#' Automatic description: [[<-,MCSim-method
+#' automatic title
 #' 
-#' @name [[<-,MCSim-method
-#' @param x : object of class:\code{MCSim}, no manual documentation
+#' @param x : no manual documentation
 #' @param i : no manual documentation
 #' @param j : no manual documentation
 #' @param ... : no manual documentation
@@ -220,10 +213,9 @@ setMethod("[[<-",
 
 
 
-#' Automatic description: getNumberOfPools,MCSim-method
+#' automatic title
 #' 
-#' @name getNumberOfPools,MCSim-method
-#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -241,10 +233,9 @@ setMethod(
 
 
 
-#' Automatic description: computeResults,MCSim-method
+#' automatic title
 #' 
-#' @name computeResults,MCSim-method
-#' @param object : object of class:\code{MCSim}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

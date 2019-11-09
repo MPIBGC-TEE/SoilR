@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{Delta14C_from_AbsoluteFractionModern}
 \alias{Delta14C_from_AbsoluteFractionModern}
-\title{S4 generic: Delta14C_from_AbsoluteFractionModern}
+\title{automatic title}
 \usage{
 Delta14C_from_AbsoluteFractionModern(AbsoluteFractionModern)
 }
@@ -10,7 +10,7 @@ Delta14C_from_AbsoluteFractionModern(AbsoluteFractionModern)
 \item{AbsoluteFractionModern}{see method arguments}
 }
 \description{
-S4 generic: Delta14C_from_AbsoluteFractionModern
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

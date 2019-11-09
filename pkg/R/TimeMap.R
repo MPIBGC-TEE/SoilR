@@ -83,10 +83,9 @@ CallWithPlotVars<- function(
 }
 
 
-#' Automatic description: initialize,TimeMap-method
+#' automatic title
 #' 
-#' @name initialize,TimeMap-method
-#' @param .Object : object of class:\code{TimeMap}, no manual documentation
+#' @param .Object : no manual documentation
 #' @param starttime : no manual documentation
 #' @param endtime : no manual documentation
 #' @param map : no manual documentation
@@ -113,11 +112,10 @@ setMethod(
     }
 )
 
-#' Automatic description: TimeMap,missing,missing,missing,numeric,list-method
+#' automatic title
 #' 
-#' @name TimeMap,missing,missing,missing,numeric,list-method
-#' @param times : object of class:\code{numeric}, no manual documentation
-#' @param data : object of class:\code{list}, no manual documentation
+#' @param times : no manual documentation
+#' @param data : no manual documentation
 #' @param lag : no manual documentation
 #' @param interpolation : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -235,12 +233,10 @@ setMethod(
   }
 )
 
-#' Automatic description:
-#' TimeMap,missing,missing,missing,numeric,numeric-method
+#' automatic title
 #' 
-#' @name TimeMap,missing,missing,missing,numeric,numeric-method
-#' @param times : object of class:\code{numeric}, no manual documentation
-#' @param data : object of class:\code{numeric}, no manual documentation
+#' @param times : no manual documentation
+#' @param data : no manual documentation
 #' @param lag : no manual documentation
 #' @param interpolation : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -293,11 +289,10 @@ setMethod(
   }
 )
 
-#' Automatic description: TimeMap,missing,missing,missing,numeric,matrix-method
+#' automatic title
 #' 
-#' @name TimeMap,missing,missing,missing,numeric,matrix-method
-#' @param times : object of class:\code{numeric}, no manual documentation
-#' @param data : object of class:\code{matrix}, no manual documentation
+#' @param times : no manual documentation
+#' @param data : no manual documentation
 #' @param lag : no manual documentation
 #' @param interpolation : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -363,11 +358,10 @@ setMethod(
 
 
 
-#' Automatic description: TimeMap,missing,missing,missing,numeric,array-method
+#' automatic title
 #' 
-#' @name TimeMap,missing,missing,missing,numeric,array-method
-#' @param times : object of class:\code{numeric}, no manual documentation
-#' @param data : object of class:\code{array}, no manual documentation
+#' @param times : no manual documentation
+#' @param data : no manual documentation
 #' @param lag : no manual documentation
 #' @param interpolation : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -430,10 +424,9 @@ setMethod(
 
 
 
-#' Automatic description: TimeMap,list,missing,missing,missing,missing-method
+#' automatic title
 #' 
-#' @name TimeMap,list,missing,missing,missing,missing-method
-#' @param map : object of class:\code{list}, no manual documentation
+#' @param map : no manual documentation
 #' @param lag : no manual documentation
 #' @param interpolation : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -475,11 +468,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' TimeMap,data.frame,missing,missing,missing,missing-method
+#' automatic title
 #' 
-#' @name TimeMap,data.frame,missing,missing,missing,missing-method
-#' @param map : object of class:\code{data.frame}, no manual documentation
+#' @param map : no manual documentation
 #' @param lag : no manual documentation
 #' @param interpolation : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -562,10 +553,9 @@ setMethod(
 
 
 
-#' Automatic description: TimeMap,TimeMap,ANY,ANY,ANY,ANY-method
+#' automatic title
 #' 
-#' @name TimeMap,TimeMap,ANY,ANY,ANY,ANY-method
-#' @param map : object of class:\code{TimeMap}, no manual documentation
+#' @param map : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -587,10 +577,9 @@ setMethod(
 
 
 
-#' Automatic description: as.character,TimeMap-method
+#' automatic title
 #' 
-#' @name as.character,TimeMap-method
-#' @param x : object of class:\code{TimeMap}, no manual documentation
+#' @param x : no manual documentation
 #' @param ... : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -643,10 +632,9 @@ setMethod(
 
 
 
-#' Automatic description: getFunctionDefinition,TimeMap-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,TimeMap-method
-#' @param object : object of class:\code{TimeMap}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -725,10 +713,9 @@ return(obj)
 
 
 
-#' Automatic description: plot,TimeMap-method
+#' automatic title
 #' 
-#' @name plot,TimeMap-method
-#' @param x : object of class:\code{TimeMap}, no manual documentation
+#' @param x : no manual documentation
 #' @param y : no manual documentation
 #' @param ... : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -755,10 +742,9 @@ setMethod(
 
 
 
-#' Automatic description: add_plot,TimeMap-method
+#' automatic title
 #' 
-#' @name add_plot,TimeMap-method
-#' @param x : object of class:\code{TimeMap}, no manual documentation
+#' @param x : no manual documentation
 #' @param ... : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to

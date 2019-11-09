@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{AbsoluteFractionModern}
 \alias{AbsoluteFractionModern}
-\title{S4 generic: AbsoluteFractionModern}
+\title{automatic title}
 \usage{
 AbsoluteFractionModern(F)
 }
@@ -10,7 +10,7 @@ AbsoluteFractionModern(F)
 \item{F}{see method arguments}
 }
 \description{
-S4 generic: AbsoluteFractionModern
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

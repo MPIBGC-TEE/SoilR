@@ -1,9 +1,8 @@
 
 
 
-#' S4 generic: Delta14C
+#' automatic title
 #' 
-#' @name Delta14C
 #' @param F see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -24,9 +23,8 @@ setGeneric(
 
 
 
-#' S4 generic: Delta14C_from_AbsoluteFractionModern
+#' automatic title
 #' 
-#' @name Delta14C_from_AbsoluteFractionModern
 #' @param AbsoluteFractionModern see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -56,9 +54,8 @@ setGeneric(
 
 
 
-#' S4 generic: AbsoluteFractionModern
+#' automatic title
 #' 
-#' @name AbsoluteFractionModern
 #' @param F see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -79,9 +76,8 @@ setGeneric(
 
 
 
-#' S4 generic: getFormat
+#' automatic title
 #' 
-#' @name getFormat
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -102,9 +98,8 @@ setGeneric(
 
 
 
-#' S4 generic: getValues
+#' automatic title
 #' 
-#' @name getValues
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -125,10 +120,9 @@ setGeneric(
 
 
 
-#' Automatic description: AbsoluteFractionModern_from_Delta14C,numeric-method
+#' automatic title
 #' 
-#' @name AbsoluteFractionModern_from_Delta14C,numeric-method
-#' @param delta14C : object of class:\code{numeric}, no manual documentation
+#' @param delta14C : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -149,11 +143,9 @@ setMethod(
 
 
 
-#' Automatic description: Delta14C_from_AbsoluteFractionModern,numeric-method
+#' automatic title
 #' 
-#' @name Delta14C_from_AbsoluteFractionModern,numeric-method
-#' @param AbsoluteFractionModern : object of class:\code{numeric}, no manual
-#' documentation
+#' @param AbsoluteFractionModern : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -174,10 +166,9 @@ setMethod(
 
 
 
-#' Automatic description: AbsoluteFractionModern_from_Delta14C,matrix-method
+#' automatic title
 #' 
-#' @name AbsoluteFractionModern_from_Delta14C,matrix-method
-#' @param delta14C : object of class:\code{matrix}, no manual documentation
+#' @param delta14C : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -203,11 +194,9 @@ setMethod(
 
 
 
-#' Automatic description: Delta14C_from_AbsoluteFractionModern,matrix-method
+#' automatic title
 #' 
-#' @name Delta14C_from_AbsoluteFractionModern,matrix-method
-#' @param AbsoluteFractionModern : object of class:\code{matrix}, no manual
-#' documentation
+#' @param AbsoluteFractionModern : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -232,9 +221,8 @@ setMethod(
 
 
 
-#' S4 generic: getMeanTransitTime
+#' automatic title
 #' 
-#' @name getMeanTransitTime
 #' @param object see method arguments
 #' @param inputDistribution see method arguments
 #' @s4methods
@@ -255,9 +243,8 @@ setGeneric (
 
 
 
-#' S4 generic: getTransitTimeDistributionDensity
+#' automatic title
 #' 
-#' @name getTransitTimeDistributionDensity
 #' @param object see method arguments
 #' @param inputDistribution see method arguments
 #' @param times see method arguments
@@ -280,9 +267,8 @@ setGeneric (
 
 
 
-#' S4 generic: getTimes
+#' automatic title
 #' 
-#' @name getTimes
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -300,9 +286,8 @@ setGeneric (
 
 
 
-#' S4 generic: getInitialValues
+#' automatic title
 #' 
-#' @name getInitialValues
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -343,9 +328,8 @@ setGeneric (
 
 
 
-#' S4 generic: getParticleMonteCarloSimulator
+#' automatic title
 #' 
-#' @name getParticleMonteCarloSimulator
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -377,9 +361,8 @@ setGeneric (
 
 
 
-#' S4 generic: getAccumulatedRelease
+#' automatic title
 #' 
-#' @name getAccumulatedRelease
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -408,9 +391,8 @@ setGeneric (
 
 
 
-#' S4 generic: getCumulativeC
+#' automatic title
 #' 
-#' @name getCumulativeC
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -438,9 +420,8 @@ setGeneric (
 
 
 
-#' S4 generic: getReleaseFlux14
+#' automatic title
 #' 
-#' @name getReleaseFlux14
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -477,9 +458,8 @@ setGeneric (
 
 
 
-#' S4 generic: getTimeRange
+#' automatic title
 #' 
-#' @name getTimeRange
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -498,9 +478,8 @@ setGeneric(
 
 
 
-#' S4 generic: getLaggingTimeRange
+#' automatic title
 #' 
-#' @name getLaggingTimeRange
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -519,9 +498,8 @@ setGeneric(
 
 
 
-#' S4 generic: getFunctionDefinition
+#' automatic title
 #' 
-#' @name getFunctionDefinition
 #' @param object see method arguments
 #' @param timeSymbol see method arguments
 #' @param poolNames see method arguments
@@ -543,9 +521,8 @@ setGeneric(
 
 
 
-#' S4 generic: getRightHandSideOfODE
+#' automatic title
 #' 
-#' @name getRightHandSideOfODE
 #' @param object see method arguments
 #' @param timeSymbol see method arguments
 #' @param poolNames see method arguments
@@ -567,9 +544,8 @@ setGeneric(
 
 
 
-#' S4 generic: getNumberOfPools
+#' automatic title
 #' 
-#' @name getNumberOfPools
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -588,9 +564,8 @@ setGeneric(
 
 
 
-#' S4 generic: getOutputReceivers
+#' automatic title
 #' 
-#' @name getOutputReceivers
 #' @param object see method arguments
 #' @param i see method arguments
 #' @s4methods
@@ -610,9 +585,8 @@ setGeneric(
 
 
 
-#' S4 generic: getDecompOp
+#' automatic title
 #' 
-#' @name getDecompOp
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -631,9 +605,8 @@ setGeneric(
 
 
 
-#' S4 generic: getConstantInFluxVector
+#' automatic title
 #' 
-#' @name getConstantInFluxVector
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -652,9 +625,8 @@ setGeneric(
 
 
 
-#' S4 generic: getInFluxes
+#' automatic title
 #' 
-#' @name getInFluxes
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -673,9 +645,8 @@ setGeneric(
 
 
 
-#' S4 generic: availableParticleProperties
+#' automatic title
 #' 
-#' @name availableParticleProperties
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -694,9 +665,8 @@ setGeneric(
 
 
 
-#' S4 generic: availableParticleSets
+#' automatic title
 #' 
-#' @name availableParticleSets
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -715,9 +685,8 @@ setGeneric(
 
 
 
-#' S4 generic: availableResidentSets
+#' automatic title
 #' 
-#' @name availableResidentSets
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -736,9 +705,8 @@ setGeneric(
 
 
 
-#' S4 generic: computeResults
+#' automatic title
 #' 
-#' @name computeResults
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -757,9 +725,8 @@ setGeneric(
 
 
 
-#' S4 generic: getDotOut
+#' automatic title
 #' 
-#' @name getDotOut
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -778,9 +745,8 @@ setGeneric(
 
 
 
-#' S4 generic: getTransferMatrix
+#' automatic title
 #' 
-#' @name getTransferMatrix
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -801,9 +767,8 @@ setGeneric(
 
 
 
-#' S4 generic: getTransferMatrixFunc
+#' automatic title
 #' 
-#' @name getTransferMatrixFunc
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -822,9 +787,8 @@ setGeneric(
 
 
 
-#' S4 generic: getCompartmentalMatrixFunc
+#' automatic title
 #' 
-#' @name getCompartmentalMatrixFunc
 #' @param object see method arguments
 #' @param timeSymbol see method arguments
 #' @param state_variable_names see method arguments
@@ -849,9 +813,8 @@ setGeneric(
 
 
 
-#' S4 generic: getConstantCompartmentalMatrix
+#' automatic title
 #' 
-#' @name getConstantCompartmentalMatrix
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -872,9 +835,8 @@ setGeneric(
 
 
 
-#' S4 generic: getConstantInternalFluxRateList_by_PoolIndex
+#' automatic title
 #' 
-#' @name getConstantInternalFluxRateList_by_PoolIndex
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -895,9 +857,8 @@ setGeneric(
 
 
 
-#' S4 generic: getConstantOutFluxRateList_by_PoolIndex
+#' automatic title
 #' 
-#' @name getConstantOutFluxRateList_by_PoolIndex
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -918,9 +879,8 @@ setGeneric(
 
 
 
-#' S4 generic: getConstLinDecompOp
+#' automatic title
 #' 
-#' @name getConstLinDecompOp
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -941,9 +901,8 @@ setGeneric(
 
 
 
-#' S4 generic: getLinearScaleFactor
+#' automatic title
 #' 
-#' @name getLinearScaleFactor
 #' @param object see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -964,9 +923,8 @@ setGeneric(
 
 
 
-#' S4 generic: getTransferCoefficients
+#' automatic title
 #' 
-#' @name getTransferCoefficients
 #' @param object see method arguments
 #' @param as.closures see method arguments
 #' @s4methods
@@ -986,9 +944,8 @@ setGeneric(
 
 
 
-#' S4 generic: getTransferCoefficients
+#' automatic title
 #' 
-#' @name getTransferCoefficients
 #' @param object see method arguments
 #' @param as.closures see method arguments
 #' @s4methods
@@ -1026,9 +983,8 @@ setGeneric(
 	 }
 )
 
-#' S4 generic: ScalarTimeMap
+#' automatic title
 #' 
-#' @name ScalarTimeMap
 #' @param map see method arguments
 #' @param starttime see method arguments
 #' @param endtime see method arguments
@@ -1063,9 +1019,8 @@ setGeneric(
 	 }
 )
 
-#' S4 generic: BoundFc
+#' automatic title
 #' 
-#' @name BoundFc
 #' @param format see method arguments
 #' @param ... see method arguments
 #' @s4methods
@@ -1088,9 +1043,8 @@ setGeneric(
 	 }
 )
 
-#' S4 generic: UnBoundInFluxes
+#' automatic title
 #' 
-#' @name UnBoundInFluxes
 #' @param map see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -1109,9 +1063,8 @@ setGeneric(
 	 }
 )
 
-#' S4 generic: ConstInFluxes
+#' automatic title
 #' 
-#' @name ConstInFluxes
 #' @param map see method arguments
 #' @param numberOfPools see method arguments
 #' @s4methods
@@ -1505,9 +1458,8 @@ setGeneric(
 	 }
 )
 
-#' S4 generic: add_plot
+#' automatic title
 #' 
-#' @name add_plot
 #' @param x see method arguments
 #' @param ... see method arguments
 #' @s4methods
@@ -1530,9 +1482,8 @@ setGeneric(
 	 }
 )
 
-#' S4 generic: getSrcDim
+#' automatic title
 #' 
-#' @name getSrcDim
 #' @param obj see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -1555,9 +1506,8 @@ setGeneric(
 
 
 
-#' S4 generic: GeneralPoolId
+#' automatic title
 #' 
-#' @name GeneralPoolId
 #' @param id see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -1576,34 +1526,32 @@ setGeneric(
 
 
 
-## S4 generic: PoolConnection
-## 
-## @name PoolConnection
-## @param source see method arguments
-## @param destination see method arguments
-## @param src_to_dest see method arguments
-## @s4methods
-## @autocomment These comments were created by the auto_comment_roclet by
-## inspection of the code.  You can use the "update_auto_comment_roclet" to
-## automatically adapt them to changes in the source code. This will remove
-## `@param` tags for parameters that are no longer present in the source code
-## and add `@param` tags with a default description for yet undocumented
-## parameters.  If you remove this `@autocomment` tag your comments will no
-## longer be touched by the "update_autocomment_roclet".
-#setGeneric(
-#	 name="PoolConnection",
-#	 def=function  
-#	 ( source ,destination,src_to_dest)
-#	 {
-#	     standardGeneric("PoolConnection")
-#	 }
-#)
-
-
-
-#' S4 generic: PoolConnection_by_PoolIndex
+#' automatic title
 #' 
-#' @name PoolConnection_by_PoolIndex
+#' @param source see method arguments
+#' @param destination see method arguments
+#' @param src_to_dest see method arguments
+#' @s4methods
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
+setGeneric(
+	 name="PoolConnection",
+	 def=function  
+	 ( source ,destination,src_to_dest)
+	 {
+	     standardGeneric("PoolConnection")
+	 }
+)
+
+
+
+#' automatic title
+#' 
 #' @param source see method arguments
 #' @param destination see method arguments
 #' @param src_to_dest see method arguments
@@ -1626,9 +1574,8 @@ setGeneric(
 
 
 
-#' S4 generic: PoolConnection_by_PoolName
+#' automatic title
 #' 
-#' @name PoolConnection_by_PoolName
 #' @param source see method arguments
 #' @param destination see method arguments
 #' @param src_to_dest see method arguments
@@ -1651,9 +1598,8 @@ setGeneric(
 
 
 
-#' S4 generic: PoolName
+#' automatic title
 #' 
-#' @name PoolName
 #' @param id see method arguments
 #' @param ... see method arguments
 #' @s4methods
@@ -1673,9 +1619,8 @@ setGeneric(
 
 
 
-#' S4 generic: PoolIndex
+#' automatic title
 #' 
-#' @name PoolIndex
 #' @param id see method arguments
 #' @param ... see method arguments
 #' @s4methods
@@ -1695,9 +1640,8 @@ setGeneric(
 
 
 
-#' S4 generic: check_pool_ids
+#' automatic title
 #' 
-#' @name check_pool_ids
 #' @param obj see method arguments
 #' @param pools see method arguments
 #' @s4methods
@@ -1717,9 +1661,8 @@ setGeneric(
 
 
 
-#' S4 generic: GeneralPoolId
+#' automatic title
 #' 
-#' @name GeneralPoolId
 #' @param id see method arguments
 #' @s4methods
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -1738,9 +1681,8 @@ setGeneric(
 
 
 
-#' S4 generic: by_PoolIndex
+#' automatic title
 #' 
-#' @name by_PoolIndex
 #' @param obj see method arguments
 #' @param poolNames see method arguments
 #' @param timeSymbol see method arguments
@@ -1761,9 +1703,8 @@ setGeneric(
 
 
 
-#' S4 generic: by_PoolName
+#' automatic title
 #' 
-#' @name by_PoolName
 #' @param obj see method arguments
 #' @param poolNames see method arguments
 #' @s4methods

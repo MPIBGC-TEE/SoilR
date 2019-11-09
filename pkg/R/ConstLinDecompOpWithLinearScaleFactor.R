@@ -269,12 +269,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method
+#' automatic title
 #' 
-#' @name getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method
-#' @param object : object of
-#' class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -292,13 +289,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method
+#' automatic title
 #' 
-#' @name
-#' getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method
-#' @param object : object of
-#' class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -316,12 +309,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method
+#' automatic title
 #' 
-#' @name getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method
-#' @param object : object of
-#' class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -339,12 +329,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method
+#' automatic title
 #' 
-#' @name getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method
-#' @param object : object of
-#' class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

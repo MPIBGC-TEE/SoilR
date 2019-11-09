@@ -1,10 +1,9 @@
 
 
 
-#' Automatic description: GeneralDecompOp,function-method
+#' automatic title
 #' 
-#' @name GeneralDecompOp,function-method
-#' @param object : object of class:\code{function}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -23,10 +22,9 @@ setMethod(
 
 
 
-#' Automatic description: InFluxes,function-method
+#' automatic title
 #' 
-#' @name InFluxes,function-method
-#' @param object : object of class:\code{function}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

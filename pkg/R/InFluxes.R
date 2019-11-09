@@ -1,7 +1,6 @@
-#' Automatic description: InFluxes,TimeMap-method
+#' automatic title
 #' 
-#' @name InFluxes,TimeMap-method
-#' @param object : object of class:\code{TimeMap}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -19,10 +18,9 @@ setMethod(
   }
 )
 
-#' Automatic description: InFluxes,InFluxes-method
+#' automatic title
 #' 
-#' @name InFluxes,InFluxes-method
-#' @param object : object of class:\code{InFluxes}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -39,10 +37,9 @@ setMethod(
   }
 )
 
-#' Automatic description: InFluxes,numeric-method
+#' automatic title
 #' 
-#' @name InFluxes,numeric-method
-#' @param object : object of class:\code{numeric}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -59,11 +56,9 @@ setMethod(
   }
 )
 
-#' Automatic description: InFluxes,ConstantInFluxList_by_PoolIndex-method
+#' automatic title
 #' 
-#' @name InFluxes,ConstantInFluxList_by_PoolIndex-method
-#' @param object : object of class:\code{ConstantInFluxList_by_PoolIndex}, no
-#' manual documentation
+#' @param object : no manual documentation
 #' @param numberOfPools : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to

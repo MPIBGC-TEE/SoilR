@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getCompartmentalMatrixFunc}
 \alias{getCompartmentalMatrixFunc}
-\title{S4 generic: getCompartmentalMatrixFunc}
+\title{automatic title}
 \usage{
 getCompartmentalMatrixFunc(object, timeSymbol, state_variable_names)
 }
@@ -14,7 +14,7 @@ getCompartmentalMatrixFunc(object, timeSymbol, state_variable_names)
 \item{state_variable_names}{see method arguments}
 }
 \description{
-S4 generic: getCompartmentalMatrixFunc
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

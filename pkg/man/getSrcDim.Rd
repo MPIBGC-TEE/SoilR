@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getSrcDim}
 \alias{getSrcDim}
-\title{S4 generic: getSrcDim}
+\title{automatic title}
 \usage{
 getSrcDim(obj)
 }
@@ -10,7 +10,7 @@ getSrcDim(obj)
 \item{obj}{see method arguments}
 }
 \description{
-S4 generic: getSrcDim
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

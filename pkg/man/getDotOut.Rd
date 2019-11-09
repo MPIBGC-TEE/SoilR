@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getDotOut}
 \alias{getDotOut}
-\title{S4 generic: getDotOut}
+\title{automatic title}
 \usage{
 getDotOut(object)
 }
@@ -10,7 +10,7 @@ getDotOut(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getDotOut
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

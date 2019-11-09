@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getOutputReceivers}
 \alias{getOutputReceivers}
-\title{S4 generic: getOutputReceivers}
+\title{automatic title}
 \usage{
 getOutputReceivers(object, i)
 }
@@ -12,7 +12,7 @@ getOutputReceivers(object, i)
 \item{i}{see method arguments}
 }
 \description{
-S4 generic: getOutputReceivers
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

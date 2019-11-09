@@ -1,10 +1,9 @@
 
 
 
-#' Automatic description: initialize,Model-method
+#' automatic title
 #' 
-#' @name initialize,Model-method
-#' @param .Object : object of class:\code{Model}, no manual documentation
+#' @param .Object : no manual documentation
 #' @param times : no manual documentation
 #' @param mat : no manual documentation
 #' @param initialValues : no manual documentation
@@ -186,10 +185,9 @@ Model <-function(t,
 
 
 
-#' Automatic description: getInFluxes,Model-method
+#' automatic title
 #' 
-#' @name getInFluxes,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -207,10 +205,9 @@ setMethod(
 
 
 
-#' Automatic description: plot,Model-method
+#' automatic title
 #' 
-#' @name plot,Model-method
-#' @param x : object of class:\code{Model}, no manual documentation
+#' @param x : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -229,10 +226,9 @@ setMethod(
 
 
 
-#' Automatic description: plotPoolGraph,Model-method
+#' automatic title
 #' 
-#' @name plotPoolGraph,Model-method
-#' @param x : object of class:\code{Model}, no manual documentation
+#' @param x : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -259,10 +255,9 @@ setMethod(
 
 
 
-#' Automatic description: print,Model-method
+#' automatic title
 #' 
-#' @name print,Model-method
-#' @param x : object of class:\code{Model}, no manual documentation
+#' @param x : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -280,10 +275,9 @@ setMethod(
 
 
 
-#' Automatic description: summary,Model-method
+#' automatic title
 #' 
-#' @name summary,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -301,10 +295,9 @@ setMethod(
 
 
 
-#' Automatic description: show,Model-method
+#' automatic title
 #' 
-#' @name show,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -322,10 +315,9 @@ setMethod(
 
 
 
-#' Automatic description: getDecompOp,Model-method
+#' automatic title
 #' 
-#' @name getDecompOp,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -343,10 +335,9 @@ setMethod(
 
 
 
-#' Automatic description: getTimes,Model-method
+#' automatic title
 #' 
-#' @name getTimes,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -366,10 +357,9 @@ setMethod(
 
 
 
-#' Automatic description: getRightHandSideOfODE,Model-method
+#' automatic title
 #' 
-#' @name getRightHandSideOfODE,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -392,10 +382,9 @@ setMethod(
 
 
 
-#' Automatic description: getC,Model-method
+#' automatic title
 #' 
-#' @name getC,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -418,10 +407,9 @@ setMethod(
 
 
 
-#' Automatic description: getReleaseFlux,Model-method
+#' automatic title
 #' 
-#' @name getReleaseFlux,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -452,10 +440,9 @@ setMethod(
 
 
 
-#' Automatic description: getAccumulatedRelease,Model-method
+#' automatic title
 #' 
-#' @name getAccumulatedRelease,Model-method
-#' @param object : object of class:\code{Model}, no manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -505,11 +492,10 @@ getSingleCol=function(x,slot_name){
 
 
 
-#' Automatic description: [,Model,character,missing,missing-method
+#' automatic title
 #' 
-#' @name [,Model,character,missing,missing-method
-#' @param x : object of class:\code{Model}, no manual documentation
-#' @param i : object of class:\code{character}, no manual documentation
+#' @param x : no manual documentation
+#' @param i : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

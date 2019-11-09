@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getInitialValues}
 \alias{getInitialValues}
-\title{S4 generic: getInitialValues}
+\title{automatic title}
 \usage{
 getInitialValues(object)
 }
@@ -10,7 +10,7 @@ getInitialValues(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getInitialValues
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

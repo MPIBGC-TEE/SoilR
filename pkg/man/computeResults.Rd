@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{computeResults}
 \alias{computeResults}
-\title{S4 generic: computeResults}
+\title{automatic title}
 \usage{
 computeResults(object)
 }
@@ -10,7 +10,7 @@ computeResults(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: computeResults
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

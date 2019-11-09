@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getConstLinDecompOp}
 \alias{getConstLinDecompOp}
-\title{S4 generic: getConstLinDecompOp}
+\title{automatic title}
 \usage{
 getConstLinDecompOp(object)
 }
@@ -10,7 +10,7 @@ getConstLinDecompOp(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getConstLinDecompOp
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

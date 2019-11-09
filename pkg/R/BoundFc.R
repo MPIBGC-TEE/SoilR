@@ -1,8 +1,7 @@
 
-#' Automatic description: BoundFc,character-method
+#' automatic title
 #' 
-#' @name BoundFc,character-method
-#' @param format : object of class:\code{character}, no manual documentation
+#' @param format : no manual documentation
 #' @param ... : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -26,10 +25,9 @@ setMethod(
 }
 )
 
-#' Automatic description: BoundFc,missing-method
+#' automatic title
 #' 
-#' @name BoundFc,missing-method
-#' @param format : object of class:\code{missing}, no manual documentation
+#' @param format : no manual documentation
 #' @param ... : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -54,10 +52,9 @@ setMethod(
 }
 )
 
-#' Automatic description: Delta14C,BoundFc-method
+#' automatic title
 #' 
-#' @name Delta14C,BoundFc-method
-#' @param F : object of class:\code{BoundFc}, no manual documentation
+#' @param F : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -92,10 +89,9 @@ setMethod(
     }	 
 )
 
-#' Automatic description: AbsoluteFractionModern,BoundFc-method
+#' automatic title
 #' 
-#' @name AbsoluteFractionModern,BoundFc-method
-#' @param F : object of class:\code{BoundFc}, no manual documentation
+#' @param F : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

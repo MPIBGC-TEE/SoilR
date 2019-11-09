@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getParticleMonteCarloSimulator}
 \alias{getParticleMonteCarloSimulator}
-\title{S4 generic: getParticleMonteCarloSimulator}
+\title{automatic title}
 \usage{
 getParticleMonteCarloSimulator(object)
 }
@@ -10,7 +10,7 @@ getParticleMonteCarloSimulator(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getParticleMonteCarloSimulator
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

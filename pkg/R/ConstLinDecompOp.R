@@ -33,11 +33,9 @@ from_integer_flux_lists_with_defaults=function(
 
 
 
-#' Automatic description: initialize,ConstLinDecompOp-method
+#' automatic title
 #' 
-#' @name initialize,ConstLinDecompOp-method
-#' @param .Object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param .Object : no manual documentation
 #' @param mat : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -179,11 +177,9 @@ no_outflux_warning=function(){
 
 
 
-#' Automatic description: getFunctionDefinition,ConstLinDecompOp-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,ConstLinDecompOp-method
-#' @param object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -202,11 +198,9 @@ setMethod(
 
 
 
-#' Automatic description: getTimeRange,ConstLinDecompOp-method
+#' automatic title
 #' 
-#' @name getTimeRange,ConstLinDecompOp-method
-#' @param object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -226,11 +220,9 @@ setMethod(
 
 
 
-#' Automatic description: getMeanTransitTime,ConstLinDecompOp-method
+#' automatic title
 #' 
-#' @name getMeanTransitTime,ConstLinDecompOp-method
-#' @param object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @param inputDistribution : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -275,12 +267,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getTransitTimeDistributionDensity,ConstLinDecompOp-method
+#' automatic title
 #' 
-#' @name getTransitTimeDistributionDensity,ConstLinDecompOp-method
-#' @param object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @param inputDistribution : no manual documentation
 #' @param times : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -315,12 +304,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method
+#' automatic title
 #' 
-#' @name getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method
-#' @param object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -338,12 +324,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getConstantCompartmentalMatrix,ConstLinDecompOp-method
+#' automatic title
 #' 
-#' @name getConstantCompartmentalMatrix,ConstLinDecompOp-method
-#' @param object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -371,12 +354,9 @@ non_zero_rates=function(all_rates){
 
 
 
-#' Automatic description:
-#' getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method
+#' automatic title
 #' 
-#' @name getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method
-#' @param object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -412,12 +392,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method
+#' automatic title
 #' 
-#' @name getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method
-#' @param object : object of class:\code{ConstLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

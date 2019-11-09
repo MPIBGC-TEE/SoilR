@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{ScalarTimeMap}
 \alias{ScalarTimeMap}
-\title{S4 generic: ScalarTimeMap}
+\title{automatic title}
 \usage{
 ScalarTimeMap(
   map,
@@ -33,7 +33,7 @@ ScalarTimeMap(
 \item{...}{see method arguments}
 }
 \description{
-S4 generic: ScalarTimeMap
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

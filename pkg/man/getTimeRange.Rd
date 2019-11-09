@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getTimeRange}
 \alias{getTimeRange}
-\title{S4 generic: getTimeRange}
+\title{automatic title}
 \usage{
 getTimeRange(object)
 }
@@ -10,7 +10,7 @@ getTimeRange(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getTimeRange
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

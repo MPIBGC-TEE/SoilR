@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getConstantOutFluxRateList_by_PoolIndex}
 \alias{getConstantOutFluxRateList_by_PoolIndex}
-\title{S4 generic: getConstantOutFluxRateList_by_PoolIndex}
+\title{automatic title}
 \usage{
 getConstantOutFluxRateList_by_PoolIndex(object)
 }
@@ -10,7 +10,7 @@ getConstantOutFluxRateList_by_PoolIndex(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getConstantOutFluxRateList_by_PoolIndex
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

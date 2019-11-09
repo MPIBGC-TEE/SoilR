@@ -22,15 +22,11 @@ setMethod(
 
 
 
-#' Automatic description:
-#' by_PoolIndex,OutFlux_by_PoolName,character,character-method
+#' automatic title
 #' 
-#' @name by_PoolIndex,OutFlux_by_PoolName,character,character-method
-#' @param obj : object of class:\code{OutFlux_by_PoolName}, no manual
-#' documentation
-#' @param poolNames : object of class:\code{character}, no manual documentation
-#' @param timeSymbol : object of class:\code{character}, no manual
-#' documentation
+#' @param obj : no manual documentation
+#' @param poolNames : no manual documentation
+#' @param timeSymbol : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

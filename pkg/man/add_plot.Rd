@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{add_plot}
 \alias{add_plot}
-\title{S4 generic: add_plot}
+\title{automatic title}
 \usage{
 add_plot(x, ...)
 }
@@ -12,7 +12,7 @@ add_plot(x, ...)
 \item{...}{see method arguments}
 }
 \description{
-S4 generic: add_plot
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

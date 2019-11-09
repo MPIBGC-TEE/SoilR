@@ -37,9 +37,8 @@ setMethod(
      }
 )
 
-#' Automatic description: BoundLinDecompOp,ANY-method
+#' automatic title
 #' 
-#' @name BoundLinDecompOp,ANY-method
 #' @param map : no manual documentation
 #' @param ... : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -63,12 +62,9 @@ setMethod(
   }
 )
 
-#' Automatic description:
-#' getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method
+#' automatic title
 #' 
-#' @name getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method
-#' @param object : object of class:\code{BoundLinDecompOp}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

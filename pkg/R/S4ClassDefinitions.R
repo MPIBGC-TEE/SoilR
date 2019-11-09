@@ -425,11 +425,9 @@ Model_by_PoolNames=setClass(
 
 
 
-#' Automatic description: initialize,Model_by_PoolNames-method
+#' automatic title
 #' 
-#' @name initialize,Model_by_PoolNames-method
-#' @param .Object : object of class:\code{Model_by_PoolNames}, no manual
-#' documentation
+#' @param .Object : no manual documentation
 #' @param times : no manual documentation
 #' @param mat : no manual documentation
 #' @param initialValues : no manual documentation

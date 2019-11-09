@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getRightHandSideOfODE}
 \alias{getRightHandSideOfODE}
-\title{S4 generic: getRightHandSideOfODE}
+\title{automatic title}
 \usage{
 getRightHandSideOfODE(object, timeSymbol, poolNames, numberOfPools)
 }
@@ -16,7 +16,7 @@ getRightHandSideOfODE(object, timeSymbol, poolNames, numberOfPools)
 \item{numberOfPools}{see method arguments}
 }
 \description{
-S4 generic: getRightHandSideOfODE
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

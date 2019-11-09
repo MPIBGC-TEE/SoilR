@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getLaggingTimeRange}
 \alias{getLaggingTimeRange}
-\title{S4 generic: getLaggingTimeRange}
+\title{automatic title}
 \usage{
 getLaggingTimeRange(object)
 }
@@ -10,7 +10,7 @@ getLaggingTimeRange(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getLaggingTimeRange
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

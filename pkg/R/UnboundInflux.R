@@ -6,11 +6,9 @@ setClass(
 
 
 
-#' Automatic description: initialize,UnBoundInFluxes-method
+#' automatic title
 #' 
-#' @name initialize,UnBoundInFluxes-method
-#' @param .Object : object of class:\code{UnBoundInFluxes}, no manual
-#' documentation
+#' @param .Object : no manual documentation
 #' @param map : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -32,10 +30,9 @@ setMethod(
 
 
 
-#' Automatic description: UnBoundInFluxes,function-method
+#' automatic title
 #' 
-#' @name UnBoundInFluxes,function-method
-#' @param map : object of class:\code{function}, no manual documentation
+#' @param map : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -54,11 +51,9 @@ setMethod(
 
 
 
-#' Automatic description: getFunctionDefinition,UnBoundInFluxes-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,UnBoundInFluxes-method
-#' @param object : object of class:\code{UnBoundInFluxes}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -77,11 +72,9 @@ setMethod(
 
 
 
-#' Automatic description: getTimeRange,UnBoundInFluxes-method
+#' automatic title
 #' 
-#' @name getTimeRange,UnBoundInFluxes-method
-#' @param object : object of class:\code{UnBoundInFluxes}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

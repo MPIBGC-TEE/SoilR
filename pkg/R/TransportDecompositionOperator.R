@@ -1,11 +1,9 @@
 
 
 
-#' Automatic description: initialize,TransportDecompositionOperator-method
+#' automatic title
 #' 
-#' @name initialize,TransportDecompositionOperator-method
-#' @param .Object : object of class:\code{TransportDecompositionOperator}, no
-#' manual documentation
+#' @param .Object : no manual documentation
 #' @param starttime : no manual documentation
 #' @param endtime : no manual documentation
 #' @param numberOfPools : no manual documentation
@@ -49,11 +47,9 @@ getSender=function(stri){
 
 
 
-#' Automatic description: getDotOut,TransportDecompositionOperator-method
+#' automatic title
 #' 
-#' @name getDotOut,TransportDecompositionOperator-method
-#' @param object : object of class:\code{TransportDecompositionOperator}, no
-#' manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -71,13 +67,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method
+#' automatic title
 #' 
-#' @name
-#' getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method
-#' @param object : object of class:\code{TransportDecompositionOperator}, no
-#' manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -109,13 +101,10 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getOutputReceivers,TransportDecompositionOperator,numeric-method
+#' automatic title
 #' 
-#' @name getOutputReceivers,TransportDecompositionOperator,numeric-method
-#' @param object : object of class:\code{TransportDecompositionOperator}, no
-#' manual documentation
-#' @param i : object of class:\code{numeric}, no manual documentation
+#' @param object : no manual documentation
+#' @param i : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -146,12 +135,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getTransferMatrixFunc,TransportDecompositionOperator-method
+#' automatic title
 #' 
-#' @name getTransferMatrixFunc,TransportDecompositionOperator-method
-#' @param object : object of class:\code{TransportDecompositionOperator}, no
-#' manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -180,12 +166,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getTransferCoefficients,TransportDecompositionOperator-method
+#' automatic title
 #' 
-#' @name getTransferCoefficients,TransportDecompositionOperator-method
-#' @param object : object of class:\code{TransportDecompositionOperator}, no
-#' manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -203,12 +186,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getNumberOfPools,TransportDecompositionOperator-method
+#' automatic title
 #' 
-#' @name getNumberOfPools,TransportDecompositionOperator-method
-#' @param object : object of class:\code{TransportDecompositionOperator}, no
-#' manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -226,12 +206,9 @@ setMethod(
 
 
 
-#' Automatic description:
-#' getFunctionDefinition,TransportDecompositionOperator-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,TransportDecompositionOperator-method
-#' @param object : object of class:\code{TransportDecompositionOperator}, no
-#' manual documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

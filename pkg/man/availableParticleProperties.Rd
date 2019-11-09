@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{availableParticleProperties}
 \alias{availableParticleProperties}
-\title{S4 generic: availableParticleProperties}
+\title{automatic title}
 \usage{
 availableParticleProperties(object)
 }
@@ -10,7 +10,7 @@ availableParticleProperties(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: availableParticleProperties
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

@@ -1,12 +1,9 @@
 
 
 
-#' Automatic description:
-#' getFunctionDefinition,StateDependentInFluxVector-method
+#' automatic title
 #' 
-#' @name getFunctionDefinition,StateDependentInFluxVector-method
-#' @param object : object of class:\code{StateDependentInFluxVector}, no manual
-#' documentation
+#' @param object : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

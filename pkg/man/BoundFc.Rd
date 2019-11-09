@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{BoundFc}
 \alias{BoundFc}
-\title{S4 generic: BoundFc}
+\title{automatic title}
 \usage{
 BoundFc(format, ...)
 }
@@ -12,7 +12,7 @@ BoundFc(format, ...)
 \item{...}{see method arguments}
 }
 \description{
-S4 generic: BoundFc
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

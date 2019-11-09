@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{ConstInFluxes}
 \alias{ConstInFluxes}
-\title{S4 generic: ConstInFluxes}
+\title{automatic title}
 \usage{
 ConstInFluxes(map, numberOfPools)
 }
@@ -12,7 +12,7 @@ ConstInFluxes(map, numberOfPools)
 \item{numberOfPools}{see method arguments}
 }
 \description{
-S4 generic: ConstInFluxes
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

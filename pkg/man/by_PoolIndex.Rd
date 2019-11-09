@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{by_PoolIndex}
 \alias{by_PoolIndex}
-\title{S4 generic: by_PoolIndex}
+\title{automatic title}
 \usage{
 by_PoolIndex(obj, poolNames, timeSymbol)
 }
@@ -14,7 +14,7 @@ by_PoolIndex(obj, poolNames, timeSymbol)
 \item{timeSymbol}{see method arguments}
 }
 \description{
-S4 generic: by_PoolIndex
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getReleaseFlux14}
 \alias{getReleaseFlux14}
-\title{S4 generic: getReleaseFlux14}
+\title{automatic title}
 \usage{
 getReleaseFlux14(object)
 }
@@ -10,7 +10,7 @@ getReleaseFlux14(object)
 \item{object}{see method arguments}
 }
 \description{
-S4 generic: getReleaseFlux14
+automatic title
 }
 \section{S4 methods for this generic}{
 \itemize{
