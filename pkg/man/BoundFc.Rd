@@ -7,9 +7,9 @@
 BoundFc(format, ...)
 }
 \arguments{
-\item{format}{: see method arguments}
+\item{format}{see method arguments}
 
-\item{...}{: see method arguments}
+\item{...}{see method arguments}
 }
 \description{
 automatic title

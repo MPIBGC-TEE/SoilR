@@ -7,15 +7,9 @@
 \S4method{ConstInFluxes}{ConstantInFluxList_by_PoolIndex,numeric}(map, numberOfPools)
 }
 \arguments{
-\item{map}{object of class:\code{ConstantInFluxList_by_PoolIndex}, : : no manual documentation}
+\item{map}{object of class:\code{ConstantInFluxList_by_PoolIndex}, no manual documentation}
 
-\item{numberOfPools}{object of class:\code{numeric}, : : no manual documentation
-inspection of the code.  You can use the "update_auto_comment_roclet" to
-automatically adapt them to changes in the source code. This will remove
-`@param` tags for parameters that are no longer present in the source code
-and add `@param` tags with a default description for yet undocumented
-parameters.  If you remove this `@autocomment` tag your comments will no
-longer be touched by the "update_autocomment_roclet".}
+\item{numberOfPools}{object of class:\code{numeric}, no manual documentation}
 }
 \description{
 automatic title

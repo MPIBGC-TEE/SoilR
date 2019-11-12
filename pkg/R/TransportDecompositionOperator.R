@@ -1,12 +1,15 @@
+
+
+
 #' automatic title
 #' 
-#' @param .Object  no manual documentation
-#' @param starttime  no manual documentation
-#' @param endtime  no manual documentation
-#' @param numberOfPools  no manual documentation
-#' @param alpha  no manual documentation
+#' @param .Object no manual documentation
+#' @param starttime no manual documentation
+#' @param endtime no manual documentation
+#' @param numberOfPools no manual documentation
+#' @param alpha no manual documentation
 #' @param f no manual documentation
-#' @param lag  no manual documentation
+#' @param lag no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -46,7 +49,7 @@ getSender=function(stri){
 
 #' automatic title
 #' 
-#' @param object : : no manual documentation
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -67,8 +70,8 @@ setMethod(
 #' automatic title
 #' 
 #' @param object no manual documentation
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
 #' and add `@param` tags with a default description for yet undocumented
@@ -134,7 +137,7 @@ setMethod(
 
 #' automatic title
 #' 
-#' @param object : : no manual documentation
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -165,7 +168,7 @@ setMethod(
 
 #' automatic title
 #' 
-#' @param object : : no manual documentation
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -205,7 +208,7 @@ setMethod(
 
 #' automatic title
 #' 
-#' @param object  no manual documentation
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

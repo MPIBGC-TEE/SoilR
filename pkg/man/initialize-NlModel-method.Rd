@@ -18,25 +18,19 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{NlModel}, : : no manual documentation}
+\item{.Object}{object of class:\code{NlModel}, no manual documentation}
 
-\item{times}{: : no manual documentation}
+\item{times}{no manual documentation}
 
-\item{DepComp}{: : no manual documentation}
+\item{DepComp}{no manual documentation}
 
-\item{initialValues}{: : no manual documentation}
+\item{initialValues}{no manual documentation}
 
-\item{inputFluxes}{: : no manual documentation}
+\item{inputFluxes}{no manual documentation}
 
-\item{solverfunc}{: : no manual documentation}
+\item{solverfunc}{no manual documentation}
 
-\item{pass}{: : no manual documentation
-inspection of the code.  You can use the "update_auto_comment_roclet" to
-automatically adapt them to changes in the source code. This will remove
-`@param` tags for parameters that are no longer present in the source code
-and add `@param` tags with a default description for yet undocumented
-parameters.  If you remove this `@autocomment` tag your comments will no
-longer be touched by the "update_autocomment_roclet".}
+\item{pass}{no manual documentation}
 }
 \description{
 automatic title

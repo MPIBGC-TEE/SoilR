@@ -7,7 +7,7 @@
 UnBoundInFluxes(map)
 }
 \arguments{
-\item{map}{: see method arguments}
+\item{map}{see method arguments}
 }
 \description{
 automatic title

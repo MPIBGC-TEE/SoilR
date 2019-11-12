@@ -2,15 +2,13 @@
 % Please edit documentation in R/genericFunctions.R
 \name{AbsoluteFractionModern_from_Delta14C}
 \alias{AbsoluteFractionModern_from_Delta14C}
-\title{conversion
-param delta14C Object to be converted to AbsoluteFractionModern}
+\title{conversion}
 \usage{
 AbsoluteFractionModern_from_Delta14C(delta14C)
 }
 \arguments{
-\item{delta14C}{see method arguments}
+\item{delta14C}{Object to be converted to AbsoluteFractionModern}
 }
 \description{
 conversion
-param delta14C Object to be converted to AbsoluteFractionModern
 }

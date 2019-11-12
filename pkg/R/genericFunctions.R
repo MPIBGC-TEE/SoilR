@@ -3,8 +3,8 @@
 
 #' automatic title
 #' 
+#' @param F see method arguments
 #' @s4methods
-#' @param F : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -25,8 +25,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param AbsoluteFractionModern see method arguments
 #' @s4methods
-#' @param AbsoluteFractionModern : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -44,7 +44,7 @@ setGeneric(
 )
 
 #' conversion
-#' param delta14C Object to be converted to AbsoluteFractionModern
+#' @param delta14C Object to be converted to AbsoluteFractionModern
 setGeneric(
 	 name="AbsoluteFractionModern_from_Delta14C",
 	 def=function(delta14C){
@@ -56,8 +56,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param F see method arguments
 #' @s4methods
-#' @param F : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -78,8 +78,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -100,8 +100,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -122,8 +122,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param delta14C no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param delta14C : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -145,8 +145,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param AbsoluteFractionModern no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param AbsoluteFractionModern : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -168,8 +168,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param delta14C no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param delta14C : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -196,8 +196,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param AbsoluteFractionModern no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param AbsoluteFractionModern : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -223,9 +223,9 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object see method arguments
+#' @param inputDistribution see method arguments
 #' @s4methods
-#' @param object : see method arguments
-#' @param inputDistribution : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -245,10 +245,10 @@ setGeneric (
 
 #' automatic title
 #' 
+#' @param object see method arguments
+#' @param inputDistribution see method arguments
+#' @param times see method arguments
 #' @s4methods
-#' @param object : see method arguments
-#' @param inputDistribution : see method arguments
-#' @param times : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -269,8 +269,8 @@ setGeneric (
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -288,8 +288,8 @@ setGeneric (
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -330,8 +330,8 @@ setGeneric (
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -363,8 +363,8 @@ setGeneric (
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -393,8 +393,8 @@ setGeneric (
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -422,8 +422,8 @@ setGeneric (
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -460,8 +460,8 @@ setGeneric (
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -478,16 +478,13 @@ setGeneric(
 
 
 
-
-
-
 #' automatic title
 #' 
+#' @param object see method arguments
+#' @param timeSymbol see method arguments
+#' @param poolNames see method arguments
+#' @param numberOfPools see method arguments
 #' @s4methods
-#' @param object : see method arguments
-#' @param timeSymbol : see method arguments
-#' @param poolNames : see method arguments
-#' @param numberOfPools : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -506,11 +503,11 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
+#' @param timeSymbol see method arguments
+#' @param poolNames see method arguments
+#' @param numberOfPools see method arguments
 #' @s4methods
-#' @param object : see method arguments
-#' @param timeSymbol : see method arguments
-#' @param poolNames : see method arguments
-#' @param numberOfPools : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -529,8 +526,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -549,9 +546,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
+#' @param i see method arguments
 #' @s4methods
-#' @param object : see method arguments
-#' @param i : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -570,8 +567,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -590,8 +587,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -610,8 +607,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -630,8 +627,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -650,8 +647,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -670,8 +667,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -690,8 +687,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -710,8 +707,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -728,13 +725,10 @@ setGeneric(
 
 
 
-
-
-
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -753,10 +747,10 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
+#' @param timeSymbol see method arguments
+#' @param state_variable_names see method arguments
 #' @s4methods
-#' @param object : see method arguments
-#' @param timeSymbol : see method arguments
-#' @param state_variable_names : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -779,8 +773,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -801,8 +795,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -823,8 +817,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -845,8 +839,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -867,8 +861,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
 #' @s4methods
-#' @param object : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -889,9 +883,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
+#' @param as.closures see method arguments
 #' @s4methods
-#' @param object : see method arguments
-#' @param as.closures : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -910,9 +904,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param object see method arguments
+#' @param as.closures see method arguments
 #' @s4methods
-#' @param object : see method arguments
-#' @param as.closures : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -949,15 +943,15 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param map see method arguments
+#' @param starttime see method arguments
+#' @param endtime see method arguments
+#' @param times see method arguments
+#' @param data see method arguments
+#' @param lag see method arguments
+#' @param interpolation see method arguments
+#' @param ... see method arguments
 #' @s4methods
-#' @param map : see method arguments
-#' @param starttime : see method arguments
-#' @param endtime : see method arguments
-#' @param times : see method arguments
-#' @param data : see method arguments
-#' @param lag : see method arguments
-#' @param interpolation : see method arguments
-#' @param ... : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -985,9 +979,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param format see method arguments
+#' @param ... see method arguments
 #' @s4methods
-#' @param format : see method arguments
-#' @param ... : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1009,8 +1003,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param map see method arguments
 #' @s4methods
-#' @param map : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1029,9 +1023,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param map see method arguments
+#' @param numberOfPools see method arguments
 #' @s4methods
-#' @param map : see method arguments
-#' @param numberOfPools : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1424,9 +1418,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param x see method arguments
+#' @param ... see method arguments
 #' @s4methods
-#' @param x : see method arguments
-#' @param ... : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1448,11 +1442,10 @@ setGeneric(
 
 
 
-
 #' automatic title
 #' 
+#' @param id see method arguments
 #' @s4methods
-#' @param id : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1469,15 +1462,12 @@ setGeneric(
 
 
 
-
-
-
 #' automatic title
 #' 
+#' @param source see method arguments
+#' @param destination see method arguments
+#' @param src_to_dest see method arguments
 #' @s4methods
-#' @param source : see method arguments
-#' @param destination : see method arguments
-#' @param src_to_dest : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1498,10 +1488,10 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param source see method arguments
+#' @param destination see method arguments
+#' @param src_to_dest see method arguments
 #' @s4methods
-#' @param source : see method arguments
-#' @param destination : see method arguments
-#' @param src_to_dest : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1522,9 +1512,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param id see method arguments
+#' @param ... see method arguments
 #' @s4methods
-#' @param id : see method arguments
-#' @param ... : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1543,9 +1533,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param id see method arguments
+#' @param ... see method arguments
 #' @s4methods
-#' @param id : see method arguments
-#' @param ... : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1564,9 +1554,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param obj see method arguments
+#' @param pools see method arguments
 #' @s4methods
-#' @param obj : see method arguments
-#' @param pools : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1585,8 +1575,8 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param id see method arguments
 #' @s4methods
-#' @param id : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1605,10 +1595,10 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param obj see method arguments
+#' @param poolNames see method arguments
+#' @param timeSymbol see method arguments
 #' @s4methods
-#' @param obj : see method arguments
-#' @param poolNames : see method arguments
-#' @param timeSymbol : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -1627,9 +1617,9 @@ setGeneric(
 
 #' automatic title
 #' 
+#' @param obj see method arguments
+#' @param poolNames see method arguments
 #' @s4methods
-#' @param obj : see method arguments
-#' @param poolNames : see method arguments
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove

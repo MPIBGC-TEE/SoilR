@@ -7,13 +7,7 @@
 \S4method{TimeMap}{TimeMap,ANY,ANY,ANY,ANY}(map)
 }
 \arguments{
-\item{map}{object of class:\code{TimeMap}, : : no manual documentation
-inspection of the code.  You can use the "update_auto_comment_roclet" to
-automatically adapt them to changes in the source code. This will remove
-`@param` tags for parameters that are no longer present in the source code
-and add `@param` tags with a default description for yet undocumented
-parameters.  If you remove this `@autocomment` tag your comments will no
-longer be touched by the "update_autocomment_roclet".}
+\item{map}{object of class:\code{TimeMap}, no manual documentation}
 }
 \description{
 automatic title

@@ -7,7 +7,7 @@
 AbsoluteFractionModern(F)
 }
 \arguments{
-\item{F}{: see method arguments}
+\item{F}{see method arguments}
 }
 \description{
 automatic title

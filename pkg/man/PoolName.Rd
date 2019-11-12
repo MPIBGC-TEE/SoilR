@@ -7,9 +7,9 @@
 PoolName(id, ...)
 }
 \arguments{
-\item{id}{: see method arguments}
+\item{id}{see method arguments}
 
-\item{...}{: see method arguments}
+\item{...}{see method arguments}
 }
 \description{
 automatic title

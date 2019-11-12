@@ -9,7 +9,7 @@ GeneralPoolId(id)
 GeneralPoolId(id)
 }
 \arguments{
-\item{id}{: see method arguments}
+\item{id}{see method arguments}
 }
 \description{
 automatic title

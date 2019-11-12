@@ -10,17 +10,11 @@
 \S4method{getFunctionDefinition}{InFluxList_by_PoolName}(object, timeSymbol, poolNames)
 }
 \arguments{
-\item{object}{object of class:\code{InFluxList_by_PoolName}, : : no manual documentation}
+\item{object}{object of class:\code{InFluxList_by_PoolName}, no manual documentation}
 
-\item{timeSymbol}{: : no manual documentation}
+\item{timeSymbol}{no manual documentation}
 
-\item{poolNames}{: : no manual documentation
-inspection of the code.  You can use the "update_auto_comment_roclet" to
-automatically adapt them to changes in the source code. This will remove
-`@param` tags for parameters that are no longer present in the source code
-and add `@param` tags with a default description for yet undocumented
-parameters.  If you remove this `@autocomment` tag your comments will no
-longer be touched by the "update_autocomment_roclet".}
+\item{poolNames}{no manual documentation}
 }
 \description{
 automatic title

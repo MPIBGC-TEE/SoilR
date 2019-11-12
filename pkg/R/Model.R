@@ -3,14 +3,14 @@
 
 #' automatic title
 #' 
+#' @param .Object no manual documentation
+#' @param times no manual documentation
+#' @param mat no manual documentation
+#' @param initialValues no manual documentation
+#' @param inputFluxes no manual documentation
+#' @param solverfunc no manual documentation
+#' @param pass no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param .Object : : no manual documentation
-#' @param times : : no manual documentation
-#' @param mat : : no manual documentation
-#' @param initialValues : : no manual documentation
-#' @param inputFluxes : : no manual documentation
-#' @param solverfunc : : no manual documentation
-#' @param pass : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -187,8 +187,8 @@ Model <-function(t,
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -207,8 +207,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param x no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param x : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -228,8 +228,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param x no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param x : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -257,8 +257,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param x no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param x : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -277,8 +277,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -297,8 +297,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -317,8 +317,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -337,8 +337,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -359,8 +359,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -384,8 +384,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -409,8 +409,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -442,8 +442,8 @@ setMethod(
 
 #' automatic title
 #' 
+#' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param object : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -494,9 +494,9 @@ getSingleCol=function(x,slot_name){
 
 #' automatic title
 #' 
+#' @param x no manual documentation
+#' @param i no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
-#' @param x : : no manual documentation
-#' @param i : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code

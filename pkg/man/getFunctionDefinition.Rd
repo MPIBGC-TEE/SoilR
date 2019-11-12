@@ -7,13 +7,13 @@
 getFunctionDefinition(object, timeSymbol, poolNames, numberOfPools)
 }
 \arguments{
-\item{object}{: see method arguments}
+\item{object}{see method arguments}
 
-\item{timeSymbol}{: see method arguments}
+\item{timeSymbol}{see method arguments}
 
-\item{poolNames}{: see method arguments}
+\item{poolNames}{see method arguments}
 
-\item{numberOfPools}{: see method arguments}
+\item{numberOfPools}{see method arguments}
 }
 \description{
 automatic title

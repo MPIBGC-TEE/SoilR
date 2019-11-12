@@ -7,9 +7,9 @@
 check_pool_ids(obj, pools)
 }
 \arguments{
-\item{obj}{: see method arguments}
+\item{obj}{see method arguments}
 
-\item{pools}{: see method arguments}
+\item{pools}{see method arguments}
 }
 \description{
 automatic title

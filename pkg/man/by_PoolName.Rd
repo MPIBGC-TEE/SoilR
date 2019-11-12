@@ -7,9 +7,9 @@
 by_PoolName(obj, poolNames)
 }
 \arguments{
-\item{obj}{: see method arguments}
+\item{obj}{see method arguments}
 
-\item{poolNames}{: see method arguments}
+\item{poolNames}{see method arguments}
 }
 \description{
 automatic title

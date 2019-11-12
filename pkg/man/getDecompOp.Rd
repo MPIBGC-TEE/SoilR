@@ -7,7 +7,7 @@
 getDecompOp(object)
 }
 \arguments{
-\item{object}{: see method arguments}
+\item{object}{see method arguments}
 }
 \description{
 automatic title

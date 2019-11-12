@@ -7,11 +7,11 @@
 PoolConnection_by_PoolIndex(source, destination, src_to_dest)
 }
 \arguments{
-\item{source}{: see method arguments}
+\item{source}{see method arguments}
 
-\item{destination}{: see method arguments}
+\item{destination}{see method arguments}
 
-\item{src_to_dest}{: see method arguments}
+\item{src_to_dest}{see method arguments}
 }
 \description{
 automatic title

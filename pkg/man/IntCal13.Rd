@@ -12,6 +12,11 @@
     \item{\code{Delta.14C}}{Delta.14C value in per mil.}
     \item{\code{Sigma}}{Standard deviation of \code{Delta.14C} in per mil.}
   }}
+\source{
+\url{
+  http://www.radiocarbon.org/IntCal13%20files/intcal13.14c
+  }
+}
 \usage{
 data(IntCal13)
 }
