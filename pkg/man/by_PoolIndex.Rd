@@ -7,11 +7,11 @@
 by_PoolIndex(obj, poolNames, timeSymbol)
 }
 \arguments{
-\item{obj}{see method arguments}
+\item{obj}{: see method arguments}
 
-\item{poolNames}{see method arguments}
+\item{poolNames}{: see method arguments}
 
-\item{timeSymbol}{see method arguments}
+\item{timeSymbol}{: see method arguments}
 }
 \description{
 automatic title

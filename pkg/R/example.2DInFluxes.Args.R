@@ -1,11 +1,8 @@
 #' example.2DInFluxes.Args
 #' 
-#' Create a 2-dimensionsonal examples of a Influx objects from different
+#' Create a 2-dimensionsonal examples of Influxes objects from different
 #' arguments
-#' 
-#' 
-example.2DInFluxes.Args <- function
-(){
+example.2DInFluxes.Args <- function (){
  		I.vec          =c(5,6) 
 		I.vecFunc <-	function(t){
 			c(

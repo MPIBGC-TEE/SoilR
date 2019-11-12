@@ -29,9 +29,9 @@ setMethod(
 
 #' automatic title
 #' 
-#' @param func : no manual documentation
-#' @param src_to_dest : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
+#' @param func : : no manual documentation
+#' @param src_to_dest : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -61,10 +61,10 @@ setMethod(
 
 #' automatic title
 #' 
-#' @param obj : no manual documentation
-#' @param poolNames : no manual documentation
-#' @param timeSymbol : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
+#' @param obj : : no manual documentation
+#' @param poolNames : : no manual documentation
+#' @param timeSymbol : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code

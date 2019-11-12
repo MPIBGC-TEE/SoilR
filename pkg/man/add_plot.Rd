@@ -7,9 +7,9 @@
 add_plot(x, ...)
 }
 \arguments{
-\item{x}{see method arguments}
+\item{x}{: see method arguments}
 
-\item{...}{see method arguments}
+\item{...}{: see method arguments}
 }
 \description{
 automatic title

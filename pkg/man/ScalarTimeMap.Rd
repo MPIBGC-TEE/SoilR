@@ -16,21 +16,21 @@ ScalarTimeMap(
 )
 }
 \arguments{
-\item{map}{see method arguments}
+\item{map}{: see method arguments}
 
-\item{starttime}{see method arguments}
+\item{starttime}{: see method arguments}
 
-\item{endtime}{see method arguments}
+\item{endtime}{: see method arguments}
 
-\item{times}{see method arguments}
+\item{times}{: see method arguments}
 
-\item{data}{see method arguments}
+\item{data}{: see method arguments}
 
-\item{lag}{see method arguments}
+\item{lag}{: see method arguments}
 
-\item{interpolation}{see method arguments}
+\item{interpolation}{: see method arguments}
 
-\item{...}{see method arguments}
+\item{...}{: see method arguments}
 }
 \description{
 automatic title

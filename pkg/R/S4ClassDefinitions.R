@@ -153,6 +153,15 @@ setClass(
    contains="VIRTUAL"
 )
 #--------------------------------
+#' automatic title
+#' 
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 StateDependentInFluxVector<-setClass(
    Class="StateDependentInFluxVector"
    ,contains="InFluxes"
@@ -203,6 +212,15 @@ correctnessOfFc=function
       return(res)
    }
 }
+#' automatic title
+#' 
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setClass( 
     Class="Fc",
     ,
@@ -213,6 +231,15 @@ setClass(
     validity=correctnessOfFc 
 )
 #--------------------------------
+#' automatic title
+#' 
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setClass(
     Class="BoundFc",
     contains=c("TimeMap","Fc")
@@ -227,6 +254,15 @@ setClass(
 )
 
 #--------------------------------
+#' automatic title
+#' 
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setClass(
     Class="DecompositionOperator",
     contains="DecompOp",   
@@ -280,6 +316,15 @@ setClass(
 )
 
 #--------------------------------
+#' automatic title
+#' 
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setClass(
    Class="TransportDecompositionOperator",
    contains="TimeMap",
@@ -293,6 +338,15 @@ setClass(
 ) 
 
 #--------------------------------
+#' automatic title
+#' 
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 setClass(
    Class="BoundInFluxes",
    contains=c("InFluxes","TimeMap"),
@@ -410,6 +464,15 @@ setClass(
 correctnessOfModel_by_PoolNames<-function(object){
     TRUE
 }
+#' automatic title
+#' 
+#' @autocomment These comments were created by the auto_comment_roclet by
+#' inspection of the code.  You can use the "update_auto_comment_roclet" to
+#' automatically adapt them to changes in the source code. This will remove
+#' `@param` tags for parameters that are no longer present in the source code
+#' and add `@param` tags with a default description for yet undocumented
+#' parameters.  If you remove this `@autocomment` tag your comments will no
+#' longer be touched by the "update_autocomment_roclet".
 Model_by_PoolNames=setClass(
     Class="Model_by_PoolNames"
     ,slots=c(
@@ -427,15 +490,15 @@ Model_by_PoolNames=setClass(
 
 #' automatic title
 #' 
-#' @param .Object : no manual documentation
-#' @param times : no manual documentation
-#' @param mat : no manual documentation
-#' @param initialValues : no manual documentation
-#' @param inputFluxes : no manual documentation
-#' @param solverfunc : no manual documentation
-#' @param pass : no manual documentation
-#' @param timeSymbol : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
+#' @param .Object : : no manual documentation
+#' @param times : : no manual documentation
+#' @param mat : : no manual documentation
+#' @param initialValues : : no manual documentation
+#' @param inputFluxes : : no manual documentation
+#' @param solverfunc : : no manual documentation
+#' @param pass : : no manual documentation
+#' @param timeSymbol : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code

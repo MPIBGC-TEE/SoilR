@@ -7,9 +7,9 @@
 ConstInFluxes(map, numberOfPools)
 }
 \arguments{
-\item{map}{see method arguments}
+\item{map}{: see method arguments}
 
-\item{numberOfPools}{see method arguments}
+\item{numberOfPools}{: see method arguments}
 }
 \description{
 automatic title

@@ -25,10 +25,10 @@ setMethod("InFluxList_by_PoolName",
 
 #' automatic title
 #' 
-#' @param obj : no manual documentation
-#' @param poolNames : no manual documentation
-#' @param timeSymbol : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
+#' @param obj : : no manual documentation
+#' @param poolNames : : no manual documentation
+#' @param timeSymbol : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code
@@ -57,10 +57,10 @@ setMethod(
 
 #' automatic title
 #' 
-#' @param object : no manual documentation
-#' @param timeSymbol : no manual documentation
-#' @param poolNames : no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
+#' @param object : : no manual documentation
+#' @param timeSymbol : : no manual documentation
+#' @param poolNames : : no manual documentation
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
 #' `@param` tags for parameters that are no longer present in the source code

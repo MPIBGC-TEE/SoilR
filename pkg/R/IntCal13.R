@@ -17,12 +17,6 @@
 #' @details
 #' \code{Deltal.14C} is age-corrected as per Stuiver and Polach (1977). All details about the derivation of this dataset are provided in Reimer et al. (2013).
 #' 
-#' 
-#' @source
-#' \url{
-#'   http://www.radiocarbon.org/IntCal13%20files/intcal13.14c
-#'   }
-#' 
 #' @references
 #' Reimer PJ, Bard E, Bayliss A, Beck JW, Blackwell PG, Bronk Ramsey C, Buck CE,
 #' Cheng H, Edwards RL, Friedrich M, Grootes PM, Guilderson TP, Haflidason H, 

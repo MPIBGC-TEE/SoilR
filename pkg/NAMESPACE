@@ -13,6 +13,7 @@ importFrom('igraph',"layout_with_sugiyama","graph_from_data_frame",'graph_attr<-
 importFrom("stats", "approxfun")
 import(methods)
 export(
+example.2DInFluxes.Args,
 AbsoluteFractionModern_from_Delta14C,
 ConstLinDecompOp,
 ConstantOutFluxRateList_by_PoolIndex,
@@ -58,6 +59,7 @@ TwopSeriesModel14,
 YassoModel,
 bacwaveModel,
 turnoverFit,
+by_PoolIndex,
 fT.Arrhenius,
 fT.Century1,
 fT.Century2,

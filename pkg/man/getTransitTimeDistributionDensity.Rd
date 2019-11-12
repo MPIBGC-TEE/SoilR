@@ -7,11 +7,11 @@
 getTransitTimeDistributionDensity(object, inputDistribution, times)
 }
 \arguments{
-\item{object}{see method arguments}
+\item{object}{: see method arguments}
 
-\item{inputDistribution}{see method arguments}
+\item{inputDistribution}{: see method arguments}
 
-\item{times}{see method arguments}
+\item{times}{: see method arguments}
 }
 \description{
 automatic title

@@ -7,7 +7,7 @@
 Delta14C_from_AbsoluteFractionModern(AbsoluteFractionModern)
 }
 \arguments{
-\item{AbsoluteFractionModern}{see method arguments}
+\item{AbsoluteFractionModern}{: see method arguments}
 }
 \description{
 automatic title
