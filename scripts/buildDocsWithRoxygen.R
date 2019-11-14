@@ -31,18 +31,19 @@ pkgDir='~/SoilR-exp/pkg'
 #roxygen2::roxygenize(pkgDir,roclets=c('auto_comment_roclet','rd'))
 #roxygen2::roxygenize(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
 roxygen2::roxygenize(pkgDir,roclets=c('rd'))
-devtools::install(pkgDir,args=c('--html'))
-
-p='pkg.pdf'
-if(file.exists(p)){file.remove(p)}
-devtools::check(
-  pkgDir,
-  document=FALSE,
-  build_args = '--no-build-vignettes',
-  args = '--ignore-vignettes'
-)
+#roxygen2::roxygenize(pkgDir,roclets=c('inheritance_graph_roclet'))
+#devtools::check(
+#  pkgDir,
+#  document=FALSE,
+#  build_args = '--no-build-vignettes',
+#  args = '--ignore-vignettes'
+#)
+#devtools::install(pkgDir,args=c('--html'))
+#
+#p='pkg.pdf'
+#if(file.exists(p)){file.remove(p)}
 #devtools::check(pkgDir,document=FALSE)
-system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(pkgDir)))
+#system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(pkgDir)))
 #browserBin <- 'firefox'
 #
 ## check if the browser is running 
