@@ -23,8 +23,15 @@ a model for n arbitrarily connected pools.
 <h3>Usage</h3>
 
 <pre>
-GeneralModel(t, A, ivList, inputFluxes,
-  solverfunc = deSolve.lsoda.wrapper, pass = FALSE)
+GeneralModel(
+  t,
+  A,
+  ivList,
+  inputFluxes,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE,
+  timeSymbol
+)
 </pre>
 
 
@@ -38,7 +45,7 @@ sought.</p>
 </td></tr>
 <tr valign="top"><td><code>A</code></td>
 <td>
-<p>Anything that can be converted by GeneralDecompOp to any of
+<p>Anything that can be converted by <a href="GeneralDecompOp.html">GeneralDecompOp</a> to any of
 the available DecompositionOperator classes</p>
 </td></tr>
 <tr valign="top"><td><code>ivList</code></td>
@@ -50,7 +57,7 @@ equal to the length of k. This is checked by an internal function.</p>
 <tr valign="top"><td><code>inputFluxes</code></td>
 <td>
 <p>something that can be converted to any of the available
-InFlux classes</p>
+InFluxes classes</p>
 </td></tr>
 <tr valign="top"><td><code>solverfunc</code></td>
 <td>
@@ -61,6 +68,10 @@ function with the same interface.</p>
 <tr valign="top"><td><code>pass</code></td>
 <td>
 <p>Forces the constructor to create the model even if it is invalid</p>
+</td></tr>
+<tr valign="top"><td><code>timeSymbol</code></td>
+<td>
+<p>A string (character vector of lenght 1) identifying the variable name</p>
 </td></tr>
 </table>
 
@@ -77,5 +88,5 @@ function with the same interface.</p>
 <code><a href="TwopFeedbackModel.html">TwopFeedbackModel</a></code>
 </p>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

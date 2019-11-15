@@ -20,9 +20,18 @@ determined by the supplied parameters.
 <h3>Usage</h3>
 
 <pre>
-GeneralModel_14(t, A, ivList, initialValF, inputFluxes, Fc = NULL,
-  inputFc = Fc, di = -0.0001209681,
-  solverfunc = deSolve.lsoda.wrapper, pass = FALSE)
+GeneralModel_14(
+  t,
+  A,
+  ivList,
+  initialValF,
+  inputFluxes,
+  Fc = NULL,
+  inputFc = Fc,
+  di = -0.0001209681,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 </pre>
 
 
@@ -36,7 +45,7 @@ sought.</p>
 </td></tr>
 <tr valign="top"><td><code>A</code></td>
 <td>
-<p>something that can be converted by GeneralDecompOp to any of
+<p>something that can be converted by <a href="GeneralDecompOp.html">GeneralDecompOp</a> to any of
 the available subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code>.</p>
 </td></tr>
 <tr valign="top"><td><code>ivList</code></td>
@@ -53,8 +62,8 @@ and a format string describing in which format the values are given.</p>
 </td></tr>
 <tr valign="top"><td><code>inputFluxes</code></td>
 <td>
-<p>something that can be converted by GeneralInFlux
-to any of the available subclasses of <a href="InFlux-class.html">InFlux</a>.</p>
+<p>something that can be converted by <a href="InFluxes.html">InFluxes</a>
+to any of the available subclasses of <a href="InFluxes-class.html">InFluxes</a>.</p>
 </td></tr>
 <tr valign="top"><td><code>Fc</code></td>
 <td>
@@ -98,5 +107,5 @@ function with the same interface.</p>
 <code><a href="TwopFeedbackModel.html">TwopFeedbackModel</a></code>
 </p>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

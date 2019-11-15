@@ -18,8 +18,14 @@ necessary internal building blocks.  (See the links)
 <h3>Usage</h3>
 
 <pre>
-Model(t, A, ivList, inputFluxes, solverfunc = deSolve.lsoda.wrapper,
-  pass = FALSE)
+Model(
+  t,
+  A,
+  ivList,
+  inputFluxes,
+  solverfunc = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
 </pre>
 
 
@@ -33,7 +39,7 @@ sought.</p>
 </td></tr>
 <tr valign="top"><td><code>A</code></td>
 <td>
-<p>something that can be converted by GeneralDecompOp to any of
+<p>something that can be converted by <a href="GeneralDecompOp.html">GeneralDecompOp</a> to any of
 the available subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code>.</p>
 </td></tr>
 <tr valign="top"><td><code>ivList</code></td>
@@ -44,8 +50,8 @@ is checked by an internal function.</p>
 </td></tr>
 <tr valign="top"><td><code>inputFluxes</code></td>
 <td>
-<p>something that can be converted by GeneralInFlux
-to any of the available subclasses of <a href="InFlux-class.html">InFlux</a>.</p>
+<p>something that can be converted by <a href="InFluxes.html">InFluxes</a>
+to any of the available subclasses of <a href="InFluxes-class.html">InFluxes</a>.</p>
 </td></tr>
 <tr valign="top"><td><code>solverfunc</code></td>
 <td>
@@ -66,9 +72,9 @@ pass internal sanity checks</p>
 <p>This function <code>Model</code> wraps the internal constructor of class
 <a href="Model-class.html">Model</a>. The internal constructor requires the argument <code>A</code>
 to be of class <a href="DecompOp-class.html">DecompOp</a> and argument <code>inputFluxes</code> to be
-of class <a href="InFlux-class.html">InFlux</a>. Before calling the internal constructor
-<code>Model</code> calls GeneralDecompOp on its argument <code>A</code> and
-GeneralInFlux on its argument <code>inputFluxes</code> to convert them into
+of class <a href="InFluxes-class.html">InFluxes</a>. Before calling the internal constructor
+<code>Model</code> calls <a href="GeneralDecompOp.html">GeneralDecompOp</a> on its argument <code>A</code> and
+<a href="InFluxes.html">InFluxes</a> on its argument <code>inputFluxes</code> to convert them into
 the required classes. Both are generic functions. Follow the links to see
 for which kind of inputs conversion methods are available. The attempted
 conversion allows great flexibility with respect to arguments and
@@ -77,20 +83,23 @@ wrong argument the error will most likely occur in the delegate functions.
 If this happens analyse the errormassage (or use <code>traceback()</code>) to see
 which function was called and try to call the constructor of the desired
 subclass explicitly with your arguments.  The subclasses are linked in the
-class documentation <a href="DecompOp-class.html">DecompOp</a> or <a href="InFlux-class.html">InFlux</a>
+class documentation <a href="DecompOp-class.html">DecompOp</a> or <a href="InFluxes-class.html">InFluxes</a>
 respectively.
 </p>
 <p>Note also that this function checks its arguments quite elaborately and
 tries to detect accidental unreasonable combinations, especially concerning
-two kinds of errors. </p>
- <ol>
-<li><p> unintended extrapolation of time
-series data </p>
+two kinds of errors. 
+</p>
+ 
+<ol>
+<li><p> unintended extrapolation of time series data 
+</p>
 </li>
-<li><p> violoations of massbalance by the DecompOp argument. </p>
+<li><p> violoations of massbalance by the DecompOp argument. 
+</p>
 </li></ol>
 
-<p>SoilR has a lot of unit tests which are installed i with the package and are
+<p>SoilR has a lot of unit tests which are installed with the package and are
 sometimes instructive as examples.  To see example scenarios for parameter
 check look at:
 
@@ -108,7 +117,7 @@ methods to be found there.
 
 <p>This function is called by many of the <a href="predefinedModels.html">predefinedModels</a>. <br />
 Package functions called in the examples:<br />
-<code><a href="example.2DInFlux.Args.html">example.2DInFlux.Args</a></code>,<br />
+<code><a href="example.2DInFluxes.Args.html">example.2DInFluxes.Args</a></code>,<br />
 <code><a href="example.2DGeneralDecompOpArgs.html">example.2DGeneralDecompOpArgs</a></code>,<br />
 </p>
 
@@ -140,11 +149,11 @@ Package functions called in the examples:<br />
   #) 
   possibleAs  &lt;- example.2DGeneralDecompOpArgs()
   
-  # Since "Model" will call "GeneralInFlux" on its "inputFluxes" 
+  # Since "Model" will call "InFluxes" on its "inputFluxes" 
   # argument there are again different choices
   # we have included a function in SoilR that produces 2D examples
   
-  possibleInfluxes &lt;- example.2DInFlux.Args()
+  possibleInfluxes &lt;- example.2DInFluxes.Args()
  print(possibleInfluxes$I.vec)
   # We can build a lot of  models from the possible combinations
   # for instance   
@@ -169,5 +178,5 @@ Package functions called in the examples:<br />
 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

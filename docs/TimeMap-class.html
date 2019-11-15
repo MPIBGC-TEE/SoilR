@@ -1,81 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: TimeMap S4 class</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: S4 class for a time dependent function</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for TimeMap-class {SoilR}"><tr><td>TimeMap-class {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>TimeMap S4 class</h2>
+<h2>S4 class for a time dependent function</h2>
 
 <h3>Description</h3>
 
-<p>This class enhances a time dependent function by information about its
-domain. The information about the delay is especially usefull for functions
-that interpolate data.  Assume that you are given time series data in two
-vectors <code>times</code>, <code>values</code>. You can create an interpolating
-function with <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code> <code>f &lt;-
-splinefun(x=times,y=values) </code> <code>f(t)</code> will yield sensible values for
-<i>min(times)&lt;t&lt;max(times).</i> but will produce unreasonable values for
-any t outside these limits. Unfortunately the interpolating functions
-produced by <code><a href="../../stats/html/splinefun.html">splinefun</a></code> or <code><a href="../../stats/html/approxfun.html">approxfun</a></code> do not retain
-any information about their domain which makes it possible to accidentatly
-apply them to times not at all supported by the original data.  This would
-not even cause errors in the code but silently corrupt the results. To help
-you to keep track of the domains of the many time dependent functions used
-in SoilR's Models this class <code><a href="TimeMap-class.html">TimeMap</a></code> stores the
-<code>starttime</code> and <code>endtime</code> values along with the function
-represented by <code>map</code>. SoilR functions that accept time series data will
-normally convert it to subclasses <code>TimeMap-class</code> automatically but you
-can do it explicitly.
+<p>The class represents functions which are defined on a (possibly infinite) 
+interval from [starttime,endtime]
+Instances are usually created internally from data frames or lists provided by the user in the high level interfaces.
 </p>
 
 
-<h3>Methods</h3>
+<h3>Details</h3>
 
-<p>Exported methods directly defined for class TimeMap:
-</p>
- <dl>
-<dt>GeneralDecompOp</dt><dd><p><code>signature(object = "TimeMap")</code>: ...
-</p>
-</dd> </dl>
-<p><code><a href="GeneralDecompOp-TimeMap-method.html">GeneralDecompOp,TimeMap-method</a></code>
-</p>
-<dl>
-<dt>GeneralInFlux</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
-</dd>
-</dl>
-<p><code><a href="GeneralInFlux-TimeMap-method.html">GeneralInFlux,TimeMap-method</a></code>
-</p>
-<dl>
-<dt>TimeMap</dt><dd><p><code>signature(map = "TimeMap", starttime = "ANY", endtime =
-"ANY", times = "ANY", data = "ANY")</code>: ... </p>
-</dd>
-</dl>
-<p><code><a href="TimeMap-TimeMap-ANY-ANY-ANY-ANY-method.html">TimeMap,TimeMap,ANY,ANY,ANY,ANY-method</a></code>
-</p>
-<dl>
-<dt>add_plot</dt><dd><p><code>signature(x = "TimeMap")</code>: ... </p>
-</dd>
-</dl>
-<p><code><a href="add_plot-TimeMap-method.html">add_plot,TimeMap-method</a></code> </p>
-<dl>
-<dt>as.character</dt><dd><p><code>signature(x
-= "TimeMap")</code>: ... </p>
-</dd> </dl>
-<p><code><a href="as.character-TimeMap-method.html">as.character,TimeMap-method</a></code>
-</p>
-<dl>
-<dt>getFunctionDefinition</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
-</dd>
-</dl>
-<p><code><a href="getFunctionDefinition-TimeMap-method.html">getFunctionDefinition,TimeMap-method</a></code>
-</p>
-<dl>
-<dt>getTimeRange</dt><dd><p><code>signature(object = "TimeMap")</code>: ... </p>
-</dd>
-</dl>
-<p><code><a href="getTimeRange-TimeMap-method.html">getTimeRange,TimeMap-method</a></code> 
+<p>The class is necessary to be able to detect unwanted extrapolation of 
+time line data which might otherwise occur for some of the following 
+reasons:
+SoilR allows to specify measured data for many of its arguments
+and computes the interpolating functions automatically.
+The functions returned by the standard R interpolation mechanisms
+like <code>splinefun</code> or <code>approxfun</code> do not provide a safeguard 
+against accidental extrapolation.  
+Internally SoilR converts nearly all data to time dependent functions 
+e.g. to be used in ode solvers. So the information of the domain of the
+function has to be kept.
 </p>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

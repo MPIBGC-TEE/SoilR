@@ -17,9 +17,19 @@
 <h3>Usage</h3>
 
 <pre>
-CenturyModel(t, ks = c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW =
-  0.0038, k.PAS = 0.00013), C0 = c(0, 0, 0, 0, 0), In, LN, Ls,
-  clay = 0.2, silt = 0.45, xi = 1, solver = deSolve.lsoda.wrapper)
+CenturyModel(
+  t,
+  ks = c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW = 0.0038, k.PAS = 0.00013),
+  C0 = c(0, 0, 0, 0, 0),
+  In,
+  LN,
+  Ls,
+  clay = 0.2,
+  silt = 0.45,
+  xi = 1,
+  xi_lag = 0,
+  solver = deSolve.lsoda.wrapper
+)
 </pre>
 
 
@@ -66,8 +76,15 @@ lignin.</p>
 </td></tr>
 <tr valign="top"><td><code>xi</code></td>
 <td>
-<p>A scalar or data.frame object specifying the external
-(environmental and/or edaphic) effects on decomposition rates.</p>
+<p>A scalar, data.frame, function or anything that can be 
+converted to a scalar function of time <code><a href="ScalarTimeMap-class.html">ScalarTimeMap</a></code> #'
+object  specifying the external  (environmental and/or edaphic) effects on
+decomposition rates.</p>
+</td></tr>
+<tr valign="top"><td><code>xi_lag</code></td>
+<td>
+<p>A time shift/delay  for the automatically 
+created time dependent function xi(t)</p>
 </td></tr>
 <tr valign="top"><td><code>solver</code></td>
 <td>
@@ -126,5 +143,5 @@ legend("topright", c("Structural litter","Metabolic litter",
 lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

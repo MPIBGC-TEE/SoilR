@@ -9,53 +9,59 @@
 
 <h3>Description</h3>
 
-<p>Northern Hemisphere atmospheric radiocarbon calibration curve for the period
-0 to 50,000 yr BP.
+<p>Northern Hemisphere atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(IntCal09)
+</pre>
 
 
 <h3>Format</h3>
 
 <p>A data frame with 3522 observations on the following 5 variables.
 </p>
- <dl>
-<dt>list(&quot;CAL.BP&quot;)</dt><dd><p>Calibrated age in years Before Present
-(BP).</p>
-</dd> <dt>list(&quot;C14.age&quot;)</dt><dd><p>C14 age in years BP.</p>
+
+<dl>
+<dt><code>CAL.BP</code></dt><dd><p>Calibrated age in years Before Present (BP).</p>
 </dd>
-<dt>list(&quot;Error&quot;)</dt><dd><p>Error estimate for <code>C14.age</code>.</p>
+<dt><code>C14.age</code></dt><dd><p>C14 age in years BP.</p>
 </dd>
-<dt>list(&quot;Delta.14C&quot;)</dt><dd><p>Delta.14C value in per mil.</p>
+<dt><code>Error</code></dt><dd><p>Error estimate for <code>C14.age</code>.</p>
 </dd>
-<dt>list(&quot;Sigma&quot;)</dt><dd><p>Standard deviation of <code>Delta.14C</code> in per mil.</p>
-</dd> </dl>
+<dt><code>Delta.14C</code></dt><dd><p>Delta.14C value in per mil.</p>
+</dd>
+<dt><code>Sigma</code></dt><dd><p>Standard deviation of <code>Delta.14C</code> in per mil.</p>
+</dd>
+</dl>
 
 
 <h3>Details</h3>
 
-<p><code>Deltal.14C</code> is age-corrected as per Stuiver and Polach (1977). All
-details about the derivation of this dataset are provided in Reimer et al.
-(2009).
+<p><code>Deltal.14C</code> is age-corrected as per Stuiver and Polach (1977). All details about the derivation of this dataset are provided in Reimer et al. (2009).
+</p>
+
+
+<h3>Source</h3>
+
+<p><a href="http://www.radiocarbon.org/IntCal09%20files/intcal09.14c">http://www.radiocarbon.org/IntCal09%20files/intcal09.14c</a>
 </p>
 
 
 <h3>References</h3>
 
-<p>P. Reimer, M.Baillie, E. Bard, A. Bayliss, J. Beck, P.
-Blackwell, C. Ramsey, C. Buck, G. Burr, R. Edwards, et al. 2009. IntCal09
-and Marine09 radiocarbon age calibration curves, 0 - 50,000 years cal bp.
-Radiocarbon, 51(4):1111 - 1150.
+<p>P. Reimer, M.Baillie, E. Bard, A. Bayliss, J. Beck, P. Blackwell, C. Ramsey, C. Buck, G. Burr, R. Edwards, et al. 2009. IntCal09 and Marine09 radiocarbon age calibration curves, 0 - 50,000 years cal bp. Radiocarbon, 51(4):1111 - 1150.
 </p>
-<p>M. Stuiver and H. A. Polach. 1977. Rerporting of C-14 data. Radiocarbon,
-19(3):355 - 363.
+<p>M. Stuiver and H. A. Polach. 1977. Rerporting of C-14 data. Radiocarbon, 19(3):355 - 363.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-
-
 par(mfrow=c(2,1))
 plot(IntCal09$CAL.BP, IntCal09$C14.age, type="l")
 polygon(x=c(IntCal09$CAL.BP,rev(IntCal09$CAL.BP)),
@@ -72,5 +78,5 @@ par(mfrow=c(1,1))
 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

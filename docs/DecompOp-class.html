@@ -1,42 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: decomposition operator</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: S4-class to represent compartmental operators</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for DecompOp-class {SoilR}"><tr><td>DecompOp-class {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>decomposition operator</h2>
+<h2>S4-class to represent compartmental operators</h2>
 
 <h3>Description</h3>
 
-<p>The decomposition operator is a necessary ingredient of any Model. Very
-generally it describes the fluxes between the pools and to the exterior as
-functions of time and the pool contents.  SoilR arranges different
-decomposition operators into different classes, to determine which
-computations can be performed with them (which methods can be called on
-them). The simplest and least general decomposition operator is
-<code><a href="ConstLinDecompOp-class.html">ConstLinDecompOp-class</a></code> which can be created from a constant
-reservoir matrix.  Since it is the least general (most specific) the
-additional information can be used to compute more and more specific results
-(more methods) not available for the more abstract sub classes (for instance
-<code><a href="BoundLinDecompOp-class.html">BoundLinDecompOp-class</a></code> that are necessary to model the more
-general situations where the decomposition and transfer rates are functions
-of time. The different decomposition operators are created by class-specific
-functions, called constructors. (see the constructors section of this help
-page)
+<p>S4-class to represent compartmental operators
 </p>
 
-
-<h3>Methods</h3>
-
-<p>Exported methods directly defined for class DecompOp:
-</p>
- <dl>
-<dt>GeneralDecompOp</dt><dd><p><code>signature(object = "DecompOp")</code>: ...
-</p>
-</dd> </dl>
-<p><code><a href="GeneralDecompOp-DecompOp-method.html">GeneralDecompOp,DecompOp-method</a></code> 
-</p>
-
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-82 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>
