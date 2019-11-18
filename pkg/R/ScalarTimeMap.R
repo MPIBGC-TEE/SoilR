@@ -20,8 +20,102 @@
 #    as(tm,'ScalarTimeMap')
 #}
 
+#' constructor for data and times given as vectors
+#' 
+#' @param times (the times for the values in data)
+#' @param data the timeline
+#' @param lag a (scalar) delay
+#' @param interpolation the interpolation, usually splinefun or approxfun
+#' @autocomment 
+setMethod(
+  f="TimeMap",
+  signature=signature(
+    map="missing" ,
+    starttime="missing",
+    endtime="missing",
+    times="numeric",
+    data="numeric"
+  ),
+  def=function 
+  (
+   times,
+   data,
+   lag=0, 
+   interpolation=splinefun 
+  )
+  {
+		lt <- length(times)
+    ll <- length(lag)
+    targetClass <- class(lag)
+    if (ll>1){
+      stop('For ScalarTimeMap only scalar lags are allowed')
+    }
+    if(!is.null(dim(data))){
+      stop('For ScalarTimeMap only a vector of data is allowed are allowed')
+    }
+    scalarFuncMaker(
+      times,
+      scalar_lag=lag,
+      y_vector=data,
+      interpolation
+    ) 
+  }
+)
+
+#' manual constructor for a function and an interval
 #'
+setMethod(
+    f="ScalarTimeMap",
+    signature=signature(
+      map="function",
+      starttime="numeric",
+      endtime="numeric",
+      times="missing",
+      data="missing"
+    ),
+    definition=function(
+        map, 
+        starttime,  
+        endtime,
+        lag=0
+    ){
+        new(
+            "ScalarTimeMap"
+            ,map=function(t){
+                map(t-lag)
+             }
+            ,starttime=starttime
+            ,endtime=endtime
+        )
+  }
+)
+
+#' manual constructor for just a function 
+#'
+#' The interval will be set to [-Inf,Inf]
+setMethod(
+    f="ScalarTimeMap",
+    signature=signature(
+      map="function",
+      starttime="missing",
+      endtime="missing",
+      times="missing",
+      data="missing"
+    ),
+    definition=function (map,lag=0){
+        new(
+            "ScalarTimeMap"
+            ,map=function(t){
+                map(t-lag)
+            }
+            ,starttime=-Inf
+            ,endtime=Inf
+        )
+    }
+)
+
 #' special case for a time map from a constant 
+#'
 setMethod(
   f="ScalarTimeMap",
   signature=signature(

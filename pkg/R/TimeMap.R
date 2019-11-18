@@ -4,7 +4,13 @@ arrFuncMaker <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
     lag <- rep(lag,flatDim)
   }
   funcMaker <- function(i){
-    interpolation(x=times+lag[i],y=arr[i,])
+    #interpolation(x=times+lag[i],y=arr[i,])
+    scalarFuncMaker(
+      times,
+      scalar_lag=lag[i],
+      y_vector=arr[i,],
+      interpolation
+    ) 
   }
 	funcs <- lapply(seq(flatDim),funcMaker)
 	arrFunc <- function(t){
@@ -501,6 +507,7 @@ setMethod(
 )
 
 #' manual constructor for a function and an interval
+#'
 setMethod(
     f="TimeMap",
     signature=signature(
