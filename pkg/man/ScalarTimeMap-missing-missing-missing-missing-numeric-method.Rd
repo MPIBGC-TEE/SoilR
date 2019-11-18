@@ -2,7 +2,7 @@
 % Please edit documentation in R/ScalarTimeMap.R
 \name{ScalarTimeMap,missing,missing,missing,missing,numeric-method}
 \alias{ScalarTimeMap,missing,missing,missing,missing,numeric-method}
-\title{constructor}
+\title{special case for a time map from a constant}
 \usage{
 \S4method{ScalarTimeMap}{missing,missing,missing,missing,numeric}(starttime = -Inf, endtime = +Inf, data, lag = 0)
 }

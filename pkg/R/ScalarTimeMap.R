@@ -1,34 +1,42 @@
-#' constructor 
-#'
-#setMethod(
-#  f= ScalarTimeMap<-function(...){
-#    signature(
-#            map="numeric'
-#
-#    tm=TimeMap(...)
-#    # check if it defines a scalar valued functiont
-#    f=getFunctionDefinition(tm)
-#    ts=getTimeRange(tm)[1]
-#    val<-f(ts)
-#    if ( !inherits(val,'numeric')){
-#        stop("The created TimeMap must return numeric values.")
-#    }
-#    if (length(val)!=1) {
-#        print(val)
-#        stop("The created TimeMap must return a scalar.")
-#    }
-#    as(tm,'ScalarTimeMap')
-#}
-
-#' constructor for data and times given as vectors
+#' constructor for data given as 2 column data.frame 
 #' 
-#' @param times (the times for the values in data)
-#' @param data the timeline
+#' @param map In this case a data.frame. Only the first 
+#' two columns will be used
 #' @param lag a (scalar) delay
 #' @param interpolation the interpolation, usually splinefun or approxfun
 #' @autocomment 
 setMethod(
-  f="TimeMap",
+  f="ScalarTimeMap",
+  signature=signature(
+    map="data.frame",
+    starttime="missing",
+    endtime="missing",
+    times="missing",
+    data="missing" 
+  ),
+  def=function 
+  (
+   map,
+   lag=0, 
+   interpolation=splinefun 
+  )
+  {
+    # interpret the first column as times and the second as values
+    # and the sister method for signature(times="numeric",data="numeric")  
+    ScalarTimeMap(times=map[,1], data=map[,2],lag=lag,interpolation=interpolation)
+     
+  }
+)
+
+#' constructor for data and times given as vectors
+#' 
+#' @param times (the times for the values in data)
+#' @param data the values at times
+#' @param lag a (scalar) delay
+#' @param interpolation the interpolation, usually splinefun or approxfun
+#' @autocomment 
+setMethod(
+  f="ScalarTimeMap",
   signature=signature(
     map="missing" ,
     starttime="missing",
@@ -53,12 +61,14 @@ setMethod(
     if(!is.null(dim(data))){
       stop('For ScalarTimeMap only a vector of data is allowed are allowed')
     }
-    scalarFuncMaker(
+    f<-scalarFuncMaker(
       times,
       scalar_lag=lag,
       y_vector=data,
       interpolation
     ) 
+    # call the sister method for a given function recursively
+    ScalarTimeMap(map=f,starttime=min(times),endtime=max(times))
   }
 )
 

@@ -231,18 +231,16 @@ setClass(
     validity=correctnessOfFc 
 )
 #--------------------------------
-#' automatic title
+#' S4-class to represent atmospheric 14C concentration as
+#' scalar function of time.
 #' 
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' As time dependent scalar function which remembers its
+#' domain ( see \code{\linkS4class{ScalarTimeMap}}) and its
+#' format. 
+#' @autocomment 
 setClass(
     Class="BoundFc",
-    contains=c("TimeMap","Fc")
+    contains=c("ScalarTimeMap","Fc")
 )
 
 #' S4-class to represent compartmental operators 

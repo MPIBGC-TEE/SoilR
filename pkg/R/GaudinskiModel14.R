@@ -76,7 +76,7 @@
 #' )
 #' ## We now show how to bypass soilR s parameter sanity check if nacessary 
 #' ## (e.g in for parameter estimation ) in functions
-#' ## wchich might call it with unreasonable parameters
+#' ## which might call it with unreasonable parameters
 #' years=seq(1800,2010,by=0.5)
 #' Ex=GaudinskiModel14(
 #' t=years,
@@ -103,6 +103,7 @@ GaudinskiModel14<- function
     t_stop=max(t)
     if(length(ks)!=7) stop("ks must be of length = 7")
     if(length(C0)!=7) stop("the vector with initial conditions must be of length = 7")
+
     if(length(LI)==1) inputFluxes=BoundInFluxes(
                                       function(t){
                                         matrix(

@@ -3,9 +3,15 @@ before_install:
         - sudo apt-get update
         - sudo apt-get -y install libssl-dev python3-mpi4py libcurl4-openssl-dev libxml2-dev
 install: Rscript travis/inst.R
+
+# we build a (1d)matrix of testsuites
+env:
+        - TEST_SUITE=./travis_run_roxygen_and_cran
+        - TEST_SUITE=./travis_run_all_tests.sh
+        - TEST_SUITE=./travis_install_SoilR_from_src.sh
+# run the matrix
 script:  
-        - ./travis_install_SoilR_from_src.sh
-        - ./travis_run_all_tests.sh
+        - TEST_SUITE 
 
 notifications:
   email:

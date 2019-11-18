@@ -3,17 +3,29 @@
 #' @docType package
 #' @name SoilR-package
 #' @alias SoilR-package
+#' 
+#' @description
 #' The package allows you to study compartmental Soil models.
+#'
+#' @details
 #' The typical workflow consists of the following steps:
-#'   \enumerate{
-#'     \item{Create a model}
+#'  \enumerate{
+#'     \item{Create a model(run)}
 #'     \item{Inspect it}
-#'   } 
-#' The simplest way of creating a model is to use one of the top level functions for predefined models: \code{\link{predefinedModels}}. \cr
-#'   The objects returned by these functions can be of different type, usually either \code{Model} or \code{Model14}.
-#'   To inspect the behaviour of a model object these classes provide several methods to be found in their respective descriptions: ( \code{\linkS4class{Model}} or \code{\linkS4class{Model_14}} )\cr
-#'   If none of the predefined models fits your needs you can assemble your own model. The functions that create it are the constructors of the classes \linkS4class{Model} or \linkS4class{Model_14}. By convention they have the same name as the class and are desribed here: \cr
-#'   \code{\link{Model}},\cr
-#'   \code{\link{Model_14}}.
+#'  } 
+#' The simplest way of creating a model is to use one of the top level functions for predefined models: \code{\link{predefinedModels}}. 
+#' The objects returned by these functions can be of different type, usually either 
+#' \enumerate{
+#'    \item{  \code{\linkS4class{Model}} }
+#'    \item{  \code{\linkS4class{Model_14}} }.
+#' }
+#' To inspect the behaviour of a model object these classes provide several
+#' methods to be found in their respective descriptions.
+#' If none of the predefined models fits your needs you can assemble your own model.
+#' The functions that create it are the constructors of the above mentioned classes. 
+#' By convention they have the same name as the class and are desribed here:
+#' \enumerate{
+#'    \item{  \code{\link{Model}} }
+#'    \item{  \code{\link{Model_14}} }.
 #' }
 NULL

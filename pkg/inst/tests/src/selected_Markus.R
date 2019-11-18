@@ -15,7 +15,8 @@ alltests <- defineTestSuite(
    #,testFileRegexp = "^runit.FluxConstructors.R$"
    #,testFileRegexp = "^runit.NonlinearOperators.R$"
    #,testFileRegexp = "^runit.Century2.R$"
-   ,testFileRegexp = "^runit.Century.R$"
+   #,testFileRegexp = "^runit.Century.R$"
+   ,testFileRegexp = "^runit.Gaudinsky.R$"
    #,testFileRegexp = "^runit.ConstLinDecompOpWithLinearScalarFactor.R$"
    #,testFileRegexp = "^runit.ConstLinDecompOp.R$"
    #,testFileRegexp = "^runit.NonLinDecompOp_with_linear_fluxes.R$"
@@ -26,7 +27,7 @@ alltests <- defineTestSuite(
    #,testFuncRegexp ="^test.NonLinDecompOp_with_linear_fluxes_by_Index$"
    #,testFuncRegexp="^test.ConstLinDecompOpWithLinearScalarFactor_check_external_flux_args$"
    #,testFuncRegexp ="^test.Example"
-   ,testFuncRegexp ="^test.ExtractionOfConstantLinDecompOpAndXi"
+   ,testFuncRegexp ="^test.Gaudinsky"
 
    #,testFuncRegexp ="^test.function_by_PoolIndex$"
    ,rngKind = "Marsaglia-Multicarry"

@@ -42,7 +42,7 @@ lignin.}
 \item{silt}{Proportion of silt in mineral soil.}
 
 \item{xi}{A scalar, data.frame, function or anything that can be converted
-to a scalar function of time (\code{\link{TimeMap}}  object) 
+to a scalar function of time (\code{\link{ScalarTimeMap}}  object) 
 specifying the external (environmental and/or edaphic) effects 
 on decomposition rates.}
 

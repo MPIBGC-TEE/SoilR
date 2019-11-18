@@ -5,9 +5,13 @@ requireNamespace('devtools')
 requireNamespace('getopt')
 pkgload::load_all("~/debugHelpers/pkg",export_all=FALSE)
 pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
-
 #########################################
-build_docs<-function(pkgDir){
+build_and_check<-function(pkgDir){
+  build_rd(pkgDir)
+  check_rd(pkgDir)
+}
+#########################################
+show_docs<-function(pkgDir){
   #build_rd(pkgDir,roclets=c('remove_autotag_roclet'))
   #build-rd(pkgDir,roclets=c('auto_comment_roclet','rd'))
   #build-rd(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
@@ -63,37 +67,69 @@ install_pkg_with_html<-function(pkgDir){
 }
 
 #########################################
+git.hubs.docs.dir<-function(pkgDir){
+  file.path(pkgDir,'..','docs')
+}
+
+#########################################
+git.hubs.docs.index<-function(pkgDir){
+  git.hubs.docs.dir <-git.hubs.docs.dir(pkgDir) 
+  file.path(git.hubs.docs.dir,'index.html')
+}
+#########################################
 update_github_dosc<-function(pkgDir){
-  git.hubs.docs.dir <- file.path(pkgDir,'..','docs')
+  git.hubs.docs.dir <-git.hubs.docs.dir(pkgDir) 
   #
   #p='pkg.pdf'
   #if(file.exists(p)){file.remove(p)}
   #devtools::check(pkgDir,document=FALSE)
   #system(paste(shQuote(file.path(R.home("bin"), "R")),"CMD", "Rd2pdf", shQuote(pkgDir)))
-  browserBin <- 'firefox'
   #
   SoilR.lib.dir.html <- sprintf('%s/SoilR/html/',.libPaths()[1])
-  browser()
-  succrm <- lapply(
-  	list.files(git.hubs.docs.dir),
-  	function(fp){file.remove(file.path(git.hubs.docs.dir,fp))}
+  stopifnot(
+    all(
+      as.logical(
+        lapply(
+        	list.files(git.hubs.docs.dir),
+        	function(fp){file.remove(file.path(git.hubs.docs.dir,fp))}
+        )
+      )
+    )
   )
-  succall <- lapply(
-  	list.files(full.names=TRUE,SoilR.lib.dir.html)
-  	,
-  	function(fp){file.copy(from=fp,to=git.hubs.docs.dir,overwrite=TRUE)}
+  stopifnot(
+    all(
+      as.logical(
+        lapply(
+  	      list.files(full.names=TRUE,SoilR.lib.dir.html)
+  	      ,
+  	      function(fp){file.copy(from=fp,to=git.hubs.docs.dir,overwrite=TRUE)}
+        )
+      )
+    )
   )
+  
+  #browser()
   # github alway starts with the file index.html
-  succ <- file.copy(
-  	from=file.path(SoilR.lib.dir.html,'SoilR_package.html'),
-  	to=file.path(git.hubs.docs.dir,'index.html'),
-  	overwrite=TRUE
+  stopifnot(
+    file.copy(
+  	  from=file.path(SoilR.lib.dir.html,'SoilR-package.html'),
+  	  to=git.hubs.docs.index(pkgDir),
+  	  overwrite=TRUE
+    )
   )
 }
 
 #########################################
 browse_index<-function(pkgDir){
-  system(sprintf('%s %s/index.html &',browserBin,git.hubs.docs.dir))
+  git.hubs.docs.dir <-git.hubs.docs.dir(pkgDir) 
+  browserBin <- 'firefox'
+  system(
+    sprintf(
+      '%s %s &',
+       browserBin,
+       git.hubs.docs.index(pkgDir)
+    )
+  )
 }
 
 
@@ -106,5 +142,5 @@ if(is.null(sys.calls()[[sys.nframe()-1]])){
   script.path<- getopt::get_Rscript_filename()
   script.dir<- dirname(script.path)
   pkgDir <- file.path(script.dir,'..','pkg')
-  build_docs(pkgDir)
+  build_and_check(pkgDir)
 }

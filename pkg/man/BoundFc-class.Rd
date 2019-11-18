@@ -3,7 +3,10 @@
 \docType{class}
 \name{BoundFc-class}
 \alias{BoundFc-class}
-\title{automatic title}
+\title{S4-class to represent atmospheric 14C concentration as
+scalar function of time.}
 \description{
-automatic title
+As time dependent scalar function which remembers its
+domain ( see \code{\linkS4class{ScalarTimeMap}}) and its
+format.
 }
