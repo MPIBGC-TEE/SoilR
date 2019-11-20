@@ -82,6 +82,6 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         YassoModel.R C14Atm_NH.R  C14Atm.R Hua2013.R 
 	IntCal09.R IntCal13.R incubation_experiment.R 
 	HarvardForest14CO2.R  getTransferMatrix.R
-	SoilR-package.R predefined_models.R
+	SoilR-package.R 
 RoxygenNote: 6.1.99.9001
 Encoding: UTF-8

@@ -7,3 +7,25 @@
 \description{
 automatic title
 }
+\section{S4-methods}{
+  \subsection{S4-methods with superclasses of class \code{BoundInFluxes} in their signature:}{
+    \subsection{superclass InFluxes}{
+      \itemize{
+        \item \code{\link{InFluxes,InFluxes-method}}
+      }
+    }
+    \subsection{superclass TimeMap}{
+      \itemize{
+        \item \code{\link{add_plot,TimeMap-method}}
+        \item \code{\link{as.character,TimeMap-method}}
+        \item \code{\link{GeneralDecompOp,TimeMap-method}}
+        \item \code{\link{getFunctionDefinition,TimeMap-method}}
+        \item \code{\link{getTimeRange,TimeMap-method}}
+        \item \code{\link{InFluxes,TimeMap-method}}
+        \item \code{\link{initialize,TimeMap-method}}
+        \item \code{\link{plot,TimeMap-method}}
+        \item \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
+      }
+    }
+  }
+}

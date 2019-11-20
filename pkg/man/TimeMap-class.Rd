@@ -22,3 +22,18 @@ Internally SoilR converts nearly all data to time dependent functions
 e.g. to be used in ode solvers. So the information of the domain of the
 function has to be kept.
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{TimeMap} in their signature:}{
+      \itemize{
+        \item \code{\link{add_plot,TimeMap-method}}
+        \item \code{\link{as.character,TimeMap-method}}
+        \item \code{\link{GeneralDecompOp,TimeMap-method}}
+        \item \code{\link{getFunctionDefinition,TimeMap-method}}
+        \item \code{\link{getTimeRange,TimeMap-method}}
+        \item \code{\link{InFluxes,TimeMap-method}}
+        \item \code{\link{initialize,TimeMap-method}}
+        \item \code{\link{plot,TimeMap-method}}
+        \item \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
+      }
+  }
+}

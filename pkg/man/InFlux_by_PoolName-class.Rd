@@ -7,3 +7,10 @@
 \description{
 S4 class for the influx to a single pool identified by the name
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{InFlux_by_PoolName} in their signature:}{
+      \itemize{
+        \item \code{\link{by_PoolIndex,InFlux_by_PoolName,character,character-method}}
+      }
+  }
+}

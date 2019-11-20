@@ -14,9 +14,8 @@ check_pool_ids(obj, pools)
 \description{
 automatic title
 }
-\section{S4 methods for this generic}{
-\itemize{
-  \item \code{\link{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}}
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}}
+      }
 }
-}
-

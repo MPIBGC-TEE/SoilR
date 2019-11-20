@@ -14,11 +14,10 @@ PoolName(id, ...)
 \description{
 automatic title
 }
-\section{S4 methods for this generic}{
-\itemize{
-  \item \code{\link{PoolName,character-method}}
-  \item \code{\link{PoolName,PoolIndex-method}}
-  \item \code{\link{PoolName,PoolName-method}}
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{PoolName,character-method}}
+        \item \code{\link{PoolName,PoolIndex-method}}
+        \item \code{\link{PoolName,PoolName-method}}
+      }
 }
-}
-

@@ -35,13 +35,12 @@ ScalarTimeMap(
 \description{
 automatic title
 }
-\section{S4 methods for this generic}{
-\itemize{
-  \item \code{\link{ScalarTimeMap,data.frame,missing,missing,missing,missing-method}}
-  \item \code{\link{ScalarTimeMap,function,missing,missing,missing,missing-method}}
-  \item \code{\link{ScalarTimeMap,function,numeric,numeric,missing,missing-method}}
-  \item \code{\link{ScalarTimeMap,missing,missing,missing,missing,numeric-method}}
-  \item \code{\link{ScalarTimeMap,missing,missing,missing,numeric,numeric-method}}
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{ScalarTimeMap,data.frame,missing,missing,missing,missing-method}}
+        \item \code{\link{ScalarTimeMap,function,missing,missing,missing,missing-method}}
+        \item \code{\link{ScalarTimeMap,function,numeric,numeric,missing,missing-method}}
+        \item \code{\link{ScalarTimeMap,missing,missing,missing,missing,numeric-method}}
+        \item \code{\link{ScalarTimeMap,missing,missing,missing,numeric,numeric-method}}
+      }
 }
-}
-

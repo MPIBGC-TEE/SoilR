@@ -7,3 +7,19 @@
 \description{
 automatic title
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{DecompositionOperator} in their signature:}{
+      \itemize{
+        \item \code{\link{getFunctionDefinition,DecompositionOperator-method}}
+        \item \code{\link{getTimeRange,DecompositionOperator-method}}
+        \item \code{\link{initialize,DecompositionOperator-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{DecompositionOperator} in their signature:}{
+    \subsection{superclass DecompOp}{
+      \itemize{
+        \item \code{\link{GeneralDecompOp,DecompOp-method}}
+      }
+    }
+  }
+}

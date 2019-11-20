@@ -7,3 +7,32 @@
 \description{
 automatic title
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{TransportDecompositionOperator} in their signature:}{
+      \itemize{
+        \item \code{\link{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}}
+        \item \code{\link{getDotOut,TransportDecompositionOperator-method}}
+        \item \code{\link{getFunctionDefinition,TransportDecompositionOperator-method}}
+        \item \code{\link{getNumberOfPools,TransportDecompositionOperator-method}}
+        \item \code{\link{getOutputReceivers,TransportDecompositionOperator,numeric-method}}
+        \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
+        \item \code{\link{getTransferMatrixFunc,TransportDecompositionOperator-method}}
+        \item \code{\link{initialize,TransportDecompositionOperator-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{TransportDecompositionOperator} in their signature:}{
+    \subsection{superclass TimeMap}{
+      \itemize{
+        \item \code{\link{add_plot,TimeMap-method}}
+        \item \code{\link{as.character,TimeMap-method}}
+        \item \code{\link{GeneralDecompOp,TimeMap-method}}
+        \item \code{\link{getFunctionDefinition,TimeMap-method}}
+        \item \code{\link{getTimeRange,TimeMap-method}}
+        \item \code{\link{InFluxes,TimeMap-method}}
+        \item \code{\link{initialize,TimeMap-method}}
+        \item \code{\link{plot,TimeMap-method}}
+        \item \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
+      }
+    }
+  }
+}

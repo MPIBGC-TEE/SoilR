@@ -11,3 +11,25 @@ A class to represent a constant (=nonautonomuous,linear) compartmental matrix
 or equivalently a combination of ordered constant internal flux rates and 
 constant out flux rates.
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{ConstLinDecompOp} in their signature:}{
+      \itemize{
+        \item \code{\link{getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method}}
+        \item \code{\link{getConstantCompartmentalMatrix,ConstLinDecompOp-method}}
+        \item \code{\link{getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method}}
+        \item \code{\link{getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method}}
+        \item \code{\link{getFunctionDefinition,ConstLinDecompOp-method}}
+        \item \code{\link{getMeanTransitTime,ConstLinDecompOp-method}}
+        \item \code{\link{getTimeRange,ConstLinDecompOp-method}}
+        \item \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
+        \item \code{\link{initialize,ConstLinDecompOp-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{ConstLinDecompOp} in their signature:}{
+    \subsection{superclass DecompOp}{
+      \itemize{
+        \item \code{\link{GeneralDecompOp,DecompOp-method}}
+      }
+    }
+  }
+}

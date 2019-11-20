@@ -7,3 +7,10 @@
 \description{
 automatic title
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{Fc} in their signature:}{
+      \itemize{
+        \item \code{\link{getFormat,Fc-method}}
+      }
+  }
+}

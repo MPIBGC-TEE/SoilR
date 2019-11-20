@@ -7,3 +7,10 @@
 \description{
 S4-class to represent compartmental operators
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{DecompOp} in their signature:}{
+      \itemize{
+        \item \code{\link{GeneralDecompOp,DecompOp-method}}
+      }
+  }
+}

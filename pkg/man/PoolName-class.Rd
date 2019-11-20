@@ -8,3 +8,72 @@
 used to control the creation of PoolName objects which have to be valid R identifiers 
 and to dispatch pool name specific methods like conversion to pool indices
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{PoolName} in their signature:}{
+      \itemize{
+        \item \code{\link{PoolIndex,PoolName-method}}
+        \item \code{\link{PoolName,PoolName-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{PoolName} in their signature:}{
+    \subsection{superclass character}{
+      \itemize{
+        \item \code{\link{[,Model,character,missing,missing-method}}
+        \item \code{\link{[,NlModel,character,ANY,ANY-method}}
+        \item \code{\link{BoundFc,character-method}}
+        \item \code{\link{by_PoolIndex,function,character,character-method}}
+        \item \code{\link{by_PoolIndex,InFlux_by_PoolName,character,character-method}}
+        \item \code{\link{by_PoolIndex,InFluxList_by_PoolName,character,character-method}}
+        \item \code{\link{by_PoolIndex,InternalFlux_by_PoolName,character,character-method}}
+        \item \code{\link{by_PoolIndex,InternalFluxList_by_PoolName,character,character-method}}
+        \item \code{\link{by_PoolIndex,OutFlux_by_PoolName,character,character-method}}
+        \item \code{\link{by_PoolIndex,OutFluxList_by_PoolName,character,character-method}}
+        \item \code{\link{ConstantInternalFluxRate_by_PoolIndex,missing,missing,character,numeric-method}}
+        \item \code{\link{ConstantInternalFluxRate_by_PoolName,character,character,missing,numeric-method}}
+        \item \code{\link{ConstantInternalFluxRate_by_PoolName,missing,missing,character,numeric-method}}
+        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolName,ConstantOutFluxRateList_by_PoolName,missing,character-method}}
+        \item \code{\link{GeneralPoolId,character-method}}
+        \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method}}
+        \item \code{\link{InFlux_by_PoolName,function,character-method}}
+        \item \code{\link{InternalFlux_by_PoolName,function,character,character,missing-method}}
+        \item \code{\link{InternalFlux_by_PoolName,function,missing,missing,character-method}}
+        \item \code{\link{OutFlux_by_PoolName,function,character-method}}
+        \item \code{\link{PoolConnection_by_PoolIndex,missing,missing,character-method}}
+        \item \code{\link{PoolIndex,character-method}}
+        \item \code{\link{PoolName,character-method}}
+        \item \code{\link{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}}
+        \item \code{\link{UnBoundNonLinDecompOp,missing,missing,missing,missing,character,character,UnBoundNonLinDecompOp_by_PoolNames-method}}
+      }
+    }
+    \subsection{superclass vector}{
+      \itemize{
+        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
+      }
+    }
+    \subsection{superclass index}{
+      \itemize{
+        \item \code{\link{[,abIndex,index,ANY,ANY-method}}
+        \item \code{\link{[,CsparseMatrix,index,index,logical-method}}
+        \item \code{\link{[,CsparseMatrix,index,missing,logical-method}}
+        \item \code{\link{[,CsparseMatrix,missing,index,logical-method}}
+        \item \code{\link{[,denseMatrix,index,index,logical-method}}
+        \item \code{\link{[,denseMatrix,index,missing,logical-method}}
+        \item \code{\link{[,denseMatrix,missing,index,logical-method}}
+        \item \code{\link{[,diagonalMatrix,index,index,logical-method}}
+        \item \code{\link{[,diagonalMatrix,index,missing,logical-method}}
+        \item \code{\link{[,diagonalMatrix,missing,index,logical-method}}
+        \item \code{\link{[,indMatrix,index,missing,logical-method}}
+        \item \code{\link{[,Matrix,index,index,missing-method}}
+        \item \code{\link{[,Matrix,index,missing,missing-method}}
+        \item \code{\link{[,Matrix,missing,index,missing-method}}
+        \item \code{\link{[,sparseMatrix,index,index,logical-method}}
+        \item \code{\link{[,sparseMatrix,index,missing,logical-method}}
+        \item \code{\link{[,sparseMatrix,missing,index,logical-method}}
+        \item \code{\link{[,sparseVector,index,ANY,ANY-method}}
+        \item \code{\link{[,TsparseMatrix,index,index,logical-method}}
+        \item \code{\link{[,TsparseMatrix,index,missing,logical-method}}
+        \item \code{\link{[,TsparseMatrix,missing,index,logical-method}}
+      }
+    }
+  }
+}

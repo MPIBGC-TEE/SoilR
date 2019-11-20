@@ -7,3 +7,11 @@
 \description{
 An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{UnBoundNonLinDecompOp_by_PoolNames} in their signature:}{
+      \itemize{
+        \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method}}
+        \item \code{\link{UnBoundNonLinDecompOp,missing,missing,missing,missing,character,character,UnBoundNonLinDecompOp_by_PoolNames-method}}
+      }
+  }
+}

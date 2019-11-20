@@ -7,3 +7,10 @@
 \description{
 S4-class to represent a constant internal flux rate with source and target indexed by name
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{ConstantInternalFluxRate_by_PoolName} in their signature:}{
+      \itemize{
+        \item \code{\link{by_PoolIndex,ConstantInternalFluxRate_by_PoolName,ANY,ANY-method}}
+      }
+  }
+}

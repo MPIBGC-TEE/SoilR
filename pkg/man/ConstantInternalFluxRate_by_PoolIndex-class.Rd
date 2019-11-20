@@ -7,3 +7,10 @@
 \description{
 The class is used to dispatch specific methods for the creation of the compartmental matrix which is simplified in case of constant rates.
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{ConstantInternalFluxRate_by_PoolIndex} in their signature:}{
+      \itemize{
+        \item \code{\link{by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method}}
+      }
+  }
+}

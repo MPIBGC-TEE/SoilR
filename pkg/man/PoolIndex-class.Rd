@@ -7,3 +7,84 @@
 \description{
 used to dispatch pool index specific methods like conversion to names.
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{PoolIndex} in their signature:}{
+      \itemize{
+        \item \code{\link{PoolIndex,PoolIndex-method}}
+        \item \code{\link{PoolName,PoolIndex-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{PoolIndex} in their signature:}{
+    \subsection{superclass integer}{
+      \itemize{
+        \item \code{\link{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}}
+      }
+    }
+    \subsection{superclass numeric}{
+      \itemize{
+        \item \code{\link{AbsoluteFractionModern_from_Delta14C,numeric-method}}
+        \item \code{\link{ConstantInFluxList_by_PoolIndex,numeric-method}}
+        \item \code{\link{ConstantInternalFluxRate_by_PoolIndex,missing,missing,character,numeric-method}}
+        \item \code{\link{ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method}}
+        \item \code{\link{ConstantInternalFluxRate_by_PoolName,character,character,missing,numeric-method}}
+        \item \code{\link{ConstantInternalFluxRate_by_PoolName,missing,missing,character,numeric-method}}
+        \item \code{\link{ConstantInternalFluxRateList_by_PoolIndex,numeric-method}}
+        \item \code{\link{ConstantOutFluxRate_by_PoolIndex,numeric,numeric-method}}
+        \item \code{\link{ConstantOutFluxRateList_by_PoolIndex,numeric-method}}
+        \item \code{\link{ConstantOutFluxRateList_by_PoolName,numeric-method}}
+        \item \code{\link{ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}}
+        \item \code{\link{ConstInFluxes,numeric,ANY-method}}
+        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolIndex,ConstantOutFluxRateList_by_PoolIndex,numeric,missing-method}}
+        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolIndex,missing,numeric,missing-method}}
+        \item \code{\link{ConstLinDecompOp,missing,missing,ConstantOutFluxRateList_by_PoolIndex,numeric,missing-method}}
+        \item \code{\link{Delta14C_from_AbsoluteFractionModern,numeric-method}}
+        \item \code{\link{GeneralPoolId,numeric-method}}
+        \item \code{\link{getOutputReceivers,TransportDecompositionOperator,numeric-method}}
+        \item \code{\link{InFlux_by_PoolIndex,function,numeric-method}}
+        \item \code{\link{InFluxes,numeric-method}}
+        \item \code{\link{InternalFlux_by_PoolIndex,function,numeric,numeric,missing-method}}
+        \item \code{\link{OutFlux_by_PoolIndex,function,numeric-method}}
+        \item \code{\link{PoolIndex,numeric-method}}
+        \item \code{\link{ScalarTimeMap,function,numeric,numeric,missing,missing-method}}
+        \item \code{\link{ScalarTimeMap,missing,missing,missing,missing,numeric-method}}
+        \item \code{\link{ScalarTimeMap,missing,missing,missing,numeric,numeric-method}}
+        \item \code{\link{TimeMap,function,numeric,numeric,missing,missing-method}}
+        \item \code{\link{TimeMap,missing,missing,missing,numeric,array-method}}
+        \item \code{\link{TimeMap,missing,missing,missing,numeric,list-method}}
+        \item \code{\link{TimeMap,missing,missing,missing,numeric,matrix-method}}
+        \item \code{\link{TimeMap,missing,missing,missing,numeric,numeric-method}}
+        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
+      }
+    }
+    \subsection{superclass vector}{
+      \itemize{
+        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
+      }
+    }
+    \subsection{superclass index}{
+      \itemize{
+        \item \code{\link{[,abIndex,index,ANY,ANY-method}}
+        \item \code{\link{[,CsparseMatrix,index,index,logical-method}}
+        \item \code{\link{[,CsparseMatrix,index,missing,logical-method}}
+        \item \code{\link{[,CsparseMatrix,missing,index,logical-method}}
+        \item \code{\link{[,denseMatrix,index,index,logical-method}}
+        \item \code{\link{[,denseMatrix,index,missing,logical-method}}
+        \item \code{\link{[,denseMatrix,missing,index,logical-method}}
+        \item \code{\link{[,diagonalMatrix,index,index,logical-method}}
+        \item \code{\link{[,diagonalMatrix,index,missing,logical-method}}
+        \item \code{\link{[,diagonalMatrix,missing,index,logical-method}}
+        \item \code{\link{[,indMatrix,index,missing,logical-method}}
+        \item \code{\link{[,Matrix,index,index,missing-method}}
+        \item \code{\link{[,Matrix,index,missing,missing-method}}
+        \item \code{\link{[,Matrix,missing,index,missing-method}}
+        \item \code{\link{[,sparseMatrix,index,index,logical-method}}
+        \item \code{\link{[,sparseMatrix,index,missing,logical-method}}
+        \item \code{\link{[,sparseMatrix,missing,index,logical-method}}
+        \item \code{\link{[,sparseVector,index,ANY,ANY-method}}
+        \item \code{\link{[,TsparseMatrix,index,index,logical-method}}
+        \item \code{\link{[,TsparseMatrix,index,missing,logical-method}}
+        \item \code{\link{[,TsparseMatrix,missing,index,logical-method}}
+      }
+    }
+  }
+}

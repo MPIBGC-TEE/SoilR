@@ -16,9 +16,8 @@ PoolConnection_by_PoolName(source, destination, src_to_dest)
 \description{
 automatic title
 }
-\section{S4 methods for this generic}{
-\itemize{
-  \item \code{\link{PoolConnection_by_PoolName,ANY,ANY,missing-method}}
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{PoolConnection_by_PoolName,ANY,ANY,missing-method}}
+      }
 }
-}
-

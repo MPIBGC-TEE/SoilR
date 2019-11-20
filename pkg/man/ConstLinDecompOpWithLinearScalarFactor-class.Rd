@@ -11,3 +11,21 @@ A class to represent a constant (=nonautonomuous,linear) compartmental matrix
 with a time dependent (linear) scalar pre factor 
 This is a special case of a linear compartmental operator/matrix
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{ConstLinDecompOpWithLinearScalarFactor} in their signature:}{
+      \itemize{
+        \item \code{\link{getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method}}
+        \item \code{\link{getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method}}
+        \item \code{\link{getFunctionDefinition,ConstLinDecompOpWithLinearScalarFactor-method}}
+        \item \code{\link{getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method}}
+        \item \code{\link{getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{ConstLinDecompOpWithLinearScalarFactor} in their signature:}{
+    \subsection{superclass DecompOp}{
+      \itemize{
+        \item \code{\link{GeneralDecompOp,DecompOp-method}}
+      }
+    }
+  }
+}

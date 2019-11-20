@@ -18,12 +18,9 @@ automatic title
 
 automatic title
 }
-\section{S4 methods for this generic}{
-\itemize{
-  \item \code{\link{getTransferCoefficients,NlModel-method}}
-  \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
-  \item \code{\link{getTransferCoefficients,NlModel-method}}
-  \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{getTransferCoefficients,NlModel-method}}
+        \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
+      }
 }
-}
-

@@ -7,3 +7,35 @@
 \description{
 S4-class to represent a ^{14}C model run
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{Model_14} in their signature:}{
+      \itemize{
+        \item \code{\link{getC14,Model_14-method}}
+        \item \code{\link{getF14,Model_14-method}}
+        \item \code{\link{getF14C,Model_14-method}}
+        \item \code{\link{getF14R,Model_14-method}}
+        \item \code{\link{getReleaseFlux14,Model_14-method}}
+        \item \code{\link{initialize,Model_14-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{Model_14} in their signature:}{
+    \subsection{superclass Model}{
+      \itemize{
+        \item \code{\link{[,Model,character,missing,missing-method}}
+        \item \code{\link{getAccumulatedRelease,Model-method}}
+        \item \code{\link{getC,Model-method}}
+        \item \code{\link{getDecompOp,Model-method}}
+        \item \code{\link{getInFluxes,Model-method}}
+        \item \code{\link{getReleaseFlux,Model-method}}
+        \item \code{\link{getRightHandSideOfODE,Model-method}}
+        \item \code{\link{getTimes,Model-method}}
+        \item \code{\link{initialize,Model-method}}
+        \item \code{\link{plot,Model-method}}
+        \item \code{\link{plotPoolGraph,Model-method}}
+        \item \code{\link{print,Model-method}}
+        \item \code{\link{show,Model-method}}
+        \item \code{\link{summary,Model-method}}
+      }
+    }
+  }
+}

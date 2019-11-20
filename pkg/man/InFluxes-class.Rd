@@ -7,3 +7,10 @@
 \description{
 A virtual S4-class representing (different subclasses) of in-fluxes to the system
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{InFluxes} in their signature:}{
+      \itemize{
+        \item \code{\link{InFluxes,InFluxes-method}}
+      }
+  }
+}

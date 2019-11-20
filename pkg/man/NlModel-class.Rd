@@ -7,3 +7,27 @@
 \description{
 deprecated class for a non-linear model run.
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{NlModel} in their signature:}{
+      \itemize{
+        \item \code{\link{[,NlModel,character,ANY,ANY-method}}
+        \item \code{\link{$,NlModel-method}}
+        \item \code{\link{computeResults,NlModel-method}}
+        \item \code{\link{getC,NlModel-method}}
+        \item \code{\link{getCumulativeC,NlModel-method}}
+        \item \code{\link{getDecompOp,NlModel-method}}
+        \item \code{\link{getInFluxes,NlModel-method}}
+        \item \code{\link{getInitialValues,NlModel-method}}
+        \item \code{\link{getNumberOfPools,NlModel-method}}
+        \item \code{\link{getOutputFluxes,NlModel-method}}
+        \item \code{\link{getParticleMonteCarloSimulator,NlModel-method}}
+        \item \code{\link{getReleaseFlux,NlModel-method}}
+        \item \code{\link{getTimes,NlModel-method}}
+        \item \code{\link{getTransferCoefficients,NlModel-method}}
+        \item \code{\link{initialize,NlModel-method}}
+        \item \code{\link{plot,NlModel-method}}
+        \item \code{\link{print,NlModel-method}}
+        \item \code{\link{show,NlModel-method}}
+      }
+  }
+}

@@ -7,3 +7,19 @@
 \description{
 S4 class representing a constan ^{14}C fraction
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{ConstFc} in their signature:}{
+      \itemize{
+        \item \code{\link{AbsoluteFractionModern,ConstFc-method}}
+        \item \code{\link{Delta14C,ConstFc-method}}
+        \item \code{\link{getValues,ConstFc-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{ConstFc} in their signature:}{
+    \subsection{superclass Fc}{
+      \itemize{
+        \item \code{\link{getFormat,Fc-method}}
+      }
+    }
+  }
+}

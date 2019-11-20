@@ -142,5 +142,6 @@ if(is.null(sys.calls()[[sys.nframe()-1]])){
   script.path<- getopt::get_Rscript_filename()
   script.dir<- dirname(script.path)
   pkgDir <- file.path(script.dir,'..','pkg')
-  build_and_check(pkgDir)
+  #build_and_check(pkgDir)
+  show_docs(pkgDir)
 }

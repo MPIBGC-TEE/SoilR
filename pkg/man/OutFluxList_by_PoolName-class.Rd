@@ -7,3 +7,38 @@
 \description{
 S4 class for a list of out-fluxes indexed by source pool name
 }
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{OutFluxList_by_PoolName} in their signature:}{
+      \itemize{
+        \item \code{\link{by_PoolIndex,OutFluxList_by_PoolName,character,character-method}}
+        \item \code{\link{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses of class \code{OutFluxList_by_PoolName} in their signature:}{
+    \subsection{superclass list}{
+      \itemize{
+        \item \code{\link{ConstantInFluxList_by_PoolIndex,list-method}}
+        \item \code{\link{ConstantInternalFluxRateList_by_PoolIndex,list-method}}
+        \item \code{\link{ConstantInternalFluxRateList_by_PoolName,list-method}}
+        \item \code{\link{ConstantOutFluxRateList_by_PoolIndex,list-method}}
+        \item \code{\link{ConstantOutFluxRateList_by_PoolName,list-method}}
+        \item \code{\link{GeneralDecompOp,list-method}}
+        \item \code{\link{InFluxes,list-method}}
+        \item \code{\link{InFluxList_by_PoolIndex,list-method}}
+        \item \code{\link{InFluxList_by_PoolName,list-method}}
+        \item \code{\link{InternalFluxList_by_PoolIndex,list-method}}
+        \item \code{\link{InternalFluxList_by_PoolName,list-method}}
+        \item \code{\link{OutFluxList_by_PoolIndex,list-method}}
+        \item \code{\link{OutFluxList_by_PoolName,list-method}}
+        \item \code{\link{StateIndependentInFluxList_by_PoolIndex,list-method}}
+        \item \code{\link{TimeMap,list,missing,missing,missing,missing-method}}
+        \item \code{\link{TimeMap,missing,missing,missing,numeric,list-method}}
+      }
+    }
+    \subsection{superclass vector}{
+      \itemize{
+        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
+      }
+    }
+  }
+}
