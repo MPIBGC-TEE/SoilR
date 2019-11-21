@@ -21,7 +21,7 @@ This is a special case of a linear compartmental operator/matrix
         \item \code{\link{getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{ConstLinDecompOpWithLinearScalarFactor} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{ConstLinDecompOpWithLinearScalarFactor} in their signature:}{
     \subsection{superclass DecompOp}{
       \itemize{
         \item \code{\link{GeneralDecompOp,DecompOp-method}}

@@ -18,7 +18,7 @@ S4-class to represent a ^{14}C model run
         \item \code{\link{initialize,Model_14-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{Model_14} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{Model_14} in their signature:}{
     \subsection{superclass Model}{
       \itemize{
         \item \code{\link{[,Model,character,missing,missing-method}}

@@ -15,7 +15,7 @@ automatic title
         \item \code{\link{initialize,DecompositionOperator-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{DecompositionOperator} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{DecompositionOperator} in their signature:}{
     \subsection{superclass DecompOp}{
       \itemize{
         \item \code{\link{GeneralDecompOp,DecompOp-method}}

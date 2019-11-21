@@ -8,7 +8,7 @@
 S4-class for a list of internal fluxes with source and destination pool inidices
 }
 \section{S4-methods}{
-  \subsection{S4-methods with superclasses of class \code{InternalFluxList_by_PoolIndex} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{InternalFluxList_by_PoolIndex} in their signature:}{
     \subsection{superclass list}{
       \itemize{
         \item \code{\link{ConstantInFluxList_by_PoolIndex,list-method}}
@@ -27,11 +27,6 @@ S4-class for a list of internal fluxes with source and destination pool inidices
         \item \code{\link{StateIndependentInFluxList_by_PoolIndex,list-method}}
         \item \code{\link{TimeMap,list,missing,missing,missing,missing-method}}
         \item \code{\link{TimeMap,missing,missing,missing,numeric,list-method}}
-      }
-    }
-    \subsection{superclass vector}{
-      \itemize{
-        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
       }
     }
   }

@@ -14,7 +14,7 @@ Class for a list of influxes indexed by the names of the target pools
         \item \code{\link{getFunctionDefinition,InFluxList_by_PoolName-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{InFluxList_by_PoolName} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{InFluxList_by_PoolName} in their signature:}{
     \subsection{superclass list}{
       \itemize{
         \item \code{\link{ConstantInFluxList_by_PoolIndex,list-method}}
@@ -33,11 +33,6 @@ Class for a list of influxes indexed by the names of the target pools
         \item \code{\link{StateIndependentInFluxList_by_PoolIndex,list-method}}
         \item \code{\link{TimeMap,list,missing,missing,missing,missing-method}}
         \item \code{\link{TimeMap,missing,missing,missing,numeric,list-method}}
-      }
-    }
-    \subsection{superclass vector}{
-      \itemize{
-        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
       }
     }
   }

@@ -20,7 +20,7 @@ automatic title
         \item \code{\link{initialize,TransportDecompositionOperator-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{TransportDecompositionOperator} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{TransportDecompositionOperator} in their signature:}{
     \subsection{superclass TimeMap}{
       \itemize{
         \item \code{\link{add_plot,TimeMap-method}}

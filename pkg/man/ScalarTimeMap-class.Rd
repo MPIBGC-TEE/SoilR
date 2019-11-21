@@ -13,7 +13,7 @@ S4 class for a scalar time dependent function on a finite time interval
         \item \code{\link{ConstLinDecompOpWithLinearScalarFactor,matrix,missing,missing,missing,ScalarTimeMap-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{ScalarTimeMap} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{ScalarTimeMap} in their signature:}{
     \subsection{superclass TimeMap}{
       \itemize{
         \item \code{\link{add_plot,TimeMap-method}}

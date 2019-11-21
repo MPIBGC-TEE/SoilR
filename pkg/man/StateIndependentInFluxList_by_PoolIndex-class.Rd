@@ -10,7 +10,7 @@ Subclass of list that is guaranteed to contain only elements of type
 \linkS4class{StateIndependentInFlux_by_PoolIndex}
 }
 \section{S4-methods}{
-  \subsection{S4-methods with superclasses of class \code{StateIndependentInFluxList_by_PoolIndex} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{StateIndependentInFluxList_by_PoolIndex} in their signature:}{
     \subsection{superclass list}{
       \itemize{
         \item \code{\link{ConstantInFluxList_by_PoolIndex,list-method}}
@@ -29,11 +29,6 @@ Subclass of list that is guaranteed to contain only elements of type
         \item \code{\link{StateIndependentInFluxList_by_PoolIndex,list-method}}
         \item \code{\link{TimeMap,list,missing,missing,missing,missing-method}}
         \item \code{\link{TimeMap,missing,missing,missing,numeric,list-method}}
-      }
-    }
-    \subsection{superclass vector}{
-      \itemize{
-        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
       }
     }
   }

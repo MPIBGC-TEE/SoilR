@@ -37,3 +37,12 @@ function has to be kept.
       }
   }
 }
+\section{S4-subclasses}{
+      \itemize{
+        \item \code{\linkS4class{ScalarTimeMap}}
+        \item \code{\linkS4class{BoundLinDecompOp}}
+        \item \code{\linkS4class{TransportDecompositionOperator}}
+        \item \code{\linkS4class{BoundInFluxes}}
+        \item \code{\linkS4class{BoundFc}}
+      }
+}

@@ -25,7 +25,7 @@ constant out flux rates.
         \item \code{\link{initialize,ConstLinDecompOp-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{ConstLinDecompOp} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{ConstLinDecompOp} in their signature:}{
     \subsection{superclass DecompOp}{
       \itemize{
         \item \code{\link{GeneralDecompOp,DecompOp-method}}

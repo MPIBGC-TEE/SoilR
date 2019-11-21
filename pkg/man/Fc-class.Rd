@@ -14,3 +14,9 @@ automatic title
       }
   }
 }
+\section{S4-subclasses}{
+      \itemize{
+        \item \code{\linkS4class{BoundFc}}
+        \item \code{\linkS4class{ConstFc}}
+      }
+}

@@ -8,7 +8,7 @@
 automatic title
 }
 \section{S4-methods}{
-  \subsection{S4-methods with superclasses of class \code{BoundInFluxes} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{BoundInFluxes} in their signature:}{
     \subsection{superclass InFluxes}{
       \itemize{
         \item \code{\link{InFluxes,InFluxes-method}}
@@ -28,4 +28,10 @@ automatic title
       }
     }
   }
+}
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{InFluxes}}
+        \item \code{\linkS4class{TimeMap}}
+      }
 }

@@ -24,7 +24,7 @@ none would be available for a general InFluxes argument.
         \item \code{\link{getTimeRange,ConstInFluxes-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{ConstInFluxes} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{ConstInFluxes} in their signature:}{
     \subsection{superclass InFluxes}{
       \itemize{
         \item \code{\link{InFluxes,InFluxes-method}}

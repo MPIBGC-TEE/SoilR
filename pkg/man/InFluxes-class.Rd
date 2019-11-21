@@ -14,3 +14,11 @@ A virtual S4-class representing (different subclasses) of in-fluxes to the syste
       }
   }
 }
+\section{S4-subclasses}{
+      \itemize{
+        \item \code{\linkS4class{StateDependentInFluxVector}}
+        \item \code{\linkS4class{ConstInFluxes}}
+        \item \code{\linkS4class{BoundInFluxes}}
+        \item \code{\linkS4class{UnBoundInFluxes}}
+      }
+}

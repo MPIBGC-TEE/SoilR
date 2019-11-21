@@ -2,6 +2,8 @@
 #' common class for pool ids 
 #'
 #' examples for ids are index or name
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="PoolId",
@@ -12,6 +14,8 @@ setClass(
 #' S4 class for pool indices 
 #'
 #' used to dispatch pool index specific methods like conversion to names.
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="PoolIndex",
@@ -23,6 +27,8 @@ setClass(
 #'
 #' used to control the creation of PoolName objects which have to be valid R identifiers 
 #' and to dispatch pool name specific methods like conversion to pool indices 
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="PoolName",
@@ -47,6 +53,8 @@ setClass(
 #' e.g. to be used in ode solvers. So the information of the domain of the
 #' function has to be kept.
 
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="TimeMap",
@@ -63,6 +71,8 @@ setClass(
 
 #' S4 class for a scalar time dependent function on a finite time interval
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="ScalarTimeMap",
@@ -81,6 +91,8 @@ StateIndependentInFlux_by_PoolIndex<-setClass(
 #' Subclass of list that is guaranteed to contain only elements of type
 #' \linkS4class{StateIndependentInFlux_by_PoolIndex}
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class = "StateIndependentInFluxList_by_PoolIndex",
@@ -91,6 +103,8 @@ setClass(
 #' Subclass of list that is guaranteed to contain only elements of type
 #' \linkS4class{ConstantInFlux_by_PoolIndex}
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class = "ConstantInFluxList_by_PoolIndex",
@@ -99,6 +113,8 @@ setClass(
 
 #' S4-class for a single internal flux wiht source and destination pools specified by indices 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="InternalFlux_by_PoolIndex",
@@ -108,6 +124,8 @@ setClass(
 
 #' S4-class for a single internal flux wiht source and destination pools specified by name
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="InternalFlux_by_PoolName",
@@ -118,6 +136,8 @@ setClass(
 
 #' S4-class for a list of internal fluxes with source and destination pool inidices 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class = "InternalFluxList_by_PoolIndex",
@@ -127,6 +147,8 @@ setClass(
 
 #' S4-class for a list of internal fluxes with indexed by (source and destination pool) names
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class = "InternalFluxList_by_PoolName",
@@ -135,6 +157,8 @@ setClass(
 
 #' S4 class for a single out-flux with source pool index
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="OutFlux_by_PoolIndex",
@@ -144,6 +168,8 @@ setClass(
 
 #' S4 class for a single out-flux with source pool name 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class = "OutFlux_by_PoolName",
@@ -154,6 +180,8 @@ setClass(
 
 #' S4 class for a list of out-fluxes indexed by source pool name 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class = "OutFluxList_by_PoolName",
@@ -162,6 +190,8 @@ setClass(
 
 #' A virtual S4-class representing (different subclasses) of in-fluxes to the system
 #' 
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="InFluxes",
@@ -204,6 +234,8 @@ StateDependentInFluxVector<-setClass(
 #' Accordingly a method with ConstInFluxes in the signature can be implemented, whereas 
 #' none would be available for a general InFluxes argument.
 
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="ConstInFluxes",
@@ -237,6 +269,8 @@ correctnessOfFc=function
 #' and add `@param` tags with a default description for yet undocumented
 #' parameters.  If you remove this `@autocomment` tag your comments will no
 #' longer be touched by the "update_autocomment_roclet".
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass( 
     Class="Fc",
@@ -262,6 +296,8 @@ setClass(
 
 #' S4-class to represent compartmental operators 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
     Class="DecompOp",
@@ -279,6 +315,8 @@ setClass(
 #' and add `@param` tags with a default description for yet undocumented
 #' parameters.  If you remove this `@autocomment` tag your comments will no
 #' longer be touched by the "update_autocomment_roclet".
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
     Class="DecompositionOperator",
@@ -298,6 +336,8 @@ setClass(
 #' A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
 #' or equivalently a combination of ordered constant internal flux rates and 
 #' constant out flux rates.
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
     Class="ConstLinDecompOp",
@@ -308,6 +348,8 @@ setClass(
 #' A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
 #' with a time dependent (linear) scalar pre factor 
 #' This is a special case of a linear compartmental operator/matrix 
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
     Class="ConstLinDecompOpWithLinearScalarFactor"
@@ -318,6 +360,8 @@ setClass(
 #' A S4 class to represent a linear compartmental operator 
 #' defined on time interval
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
     Class="BoundLinDecompOp",
@@ -326,6 +370,8 @@ setClass(
 
 #' An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
     Class="UnBoundNonLinDecompOp_by_PoolNames",
@@ -346,6 +392,8 @@ setClass(
 #' and add `@param` tags with a default description for yet undocumented
 #' parameters.  If you remove this `@autocomment` tag your comments will no
 #' longer be touched by the "update_autocomment_roclet".
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="TransportDecompositionOperator",
@@ -369,6 +417,8 @@ setClass(
 #' and add `@param` tags with a default description for yet undocumented
 #' parameters.  If you remove this `@autocomment` tag your comments will no
 #' longer be touched by the "update_autocomment_roclet".
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="BoundInFluxes",
@@ -379,6 +429,8 @@ setClass(
 
 #' class for a constan influx to a single pool identified by index
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="ConstantInFlux_by_PoolIndex",
@@ -387,6 +439,8 @@ setClass(
 
 #' S4 class for the influx to a single pool identified by theindex 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="InFlux_by_PoolIndex",
@@ -396,6 +450,8 @@ setClass(
 
 #' S4 class for the influx to a single pool identified by the name 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class = "InFlux_by_PoolName",
@@ -406,6 +462,8 @@ setClass(
 
 #' Class for a list of influxes indexed by the names of the target pools 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class = "InFluxList_by_PoolName",
@@ -415,6 +473,8 @@ setClass(
 #' S4 class representing a constant internal flux rate
 #'
 #' The class is used to dispatch specific methods for the creation of the compartmental matrix which is simplified in case of constant rates.
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="ConstantInternalFluxRate_by_PoolIndex",
@@ -423,6 +483,8 @@ setClass(
 
 #' S4-class to represent a constant internal flux rate with source and target indexed by name 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="ConstantInternalFluxRate_by_PoolName",
@@ -432,6 +494,8 @@ setClass(
 #' S4 Class to represent a single constant out-flux rate with the 
 #' source pool specified by an index
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="ConstantOutFluxRate_by_PoolIndex",
@@ -441,6 +505,8 @@ setClass(
 #' S4 Class to represent a single constant out-flux rate with the 
 #' source pool specified by name 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
   Class="ConstantOutFluxRate_by_PoolName",
@@ -476,6 +542,8 @@ correctnessOfNlModel <- function
 
 #' deprecated class for a non-linear model run. 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="NlModel",
@@ -631,6 +699,8 @@ correctnessOfModel <- function(object){
 
 #' S4 class representing a model run 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="Model",
@@ -650,6 +720,8 @@ setClass(
 
 #' S4 class representing a constan ^{14}C fraction
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
    Class="ConstFc",
@@ -676,6 +748,8 @@ tA_max=getTimeRange(atm_c14)["t_max"]
 }
 #' S4-class to represent a ^{14}C model run 
 #'
+#' @s4superclasses
+#' @s4subclasses
 #' @s4methods
 setClass(
     Class="Model_14",

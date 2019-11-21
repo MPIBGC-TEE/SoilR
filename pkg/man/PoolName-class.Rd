@@ -15,7 +15,7 @@ and to dispatch pool name specific methods like conversion to pool indices
         \item \code{\link{PoolName,PoolName-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{PoolName} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{PoolName} in their signature:}{
     \subsection{superclass character}{
       \itemize{
         \item \code{\link{[,Model,character,missing,missing-method}}
@@ -45,35 +45,11 @@ and to dispatch pool name specific methods like conversion to pool indices
         \item \code{\link{UnBoundNonLinDecompOp,missing,missing,missing,missing,character,character,UnBoundNonLinDecompOp_by_PoolNames-method}}
       }
     }
-    \subsection{superclass vector}{
-      \itemize{
-        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
-      }
-    }
-    \subsection{superclass index}{
-      \itemize{
-        \item \code{\link{[,abIndex,index,ANY,ANY-method}}
-        \item \code{\link{[,CsparseMatrix,index,index,logical-method}}
-        \item \code{\link{[,CsparseMatrix,index,missing,logical-method}}
-        \item \code{\link{[,CsparseMatrix,missing,index,logical-method}}
-        \item \code{\link{[,denseMatrix,index,index,logical-method}}
-        \item \code{\link{[,denseMatrix,index,missing,logical-method}}
-        \item \code{\link{[,denseMatrix,missing,index,logical-method}}
-        \item \code{\link{[,diagonalMatrix,index,index,logical-method}}
-        \item \code{\link{[,diagonalMatrix,index,missing,logical-method}}
-        \item \code{\link{[,diagonalMatrix,missing,index,logical-method}}
-        \item \code{\link{[,indMatrix,index,missing,logical-method}}
-        \item \code{\link{[,Matrix,index,index,missing-method}}
-        \item \code{\link{[,Matrix,index,missing,missing-method}}
-        \item \code{\link{[,Matrix,missing,index,missing-method}}
-        \item \code{\link{[,sparseMatrix,index,index,logical-method}}
-        \item \code{\link{[,sparseMatrix,index,missing,logical-method}}
-        \item \code{\link{[,sparseMatrix,missing,index,logical-method}}
-        \item \code{\link{[,sparseVector,index,ANY,ANY-method}}
-        \item \code{\link{[,TsparseMatrix,index,index,logical-method}}
-        \item \code{\link{[,TsparseMatrix,index,missing,logical-method}}
-        \item \code{\link{[,TsparseMatrix,missing,index,logical-method}}
-      }
-    }
   }
+}
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{PoolId}}
+        \item \code{\linkS4class{character}}
+      }
 }

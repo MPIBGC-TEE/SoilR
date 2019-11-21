@@ -15,7 +15,7 @@ S4 class representing a constan ^{14}C fraction
         \item \code{\link{getValues,ConstFc-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{ConstFc} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{ConstFc} in their signature:}{
     \subsection{superclass Fc}{
       \itemize{
         \item \code{\link{getFormat,Fc-method}}

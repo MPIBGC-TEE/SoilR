@@ -14,3 +14,13 @@ S4-class to represent compartmental operators
       }
   }
 }
+\section{S4-subclasses}{
+      \itemize{
+        \item \code{\linkS4class{DecompositionOperator}}
+        \item \code{\linkS4class{ConstLinDecompOp}}
+        \item \code{\linkS4class{ConstLinDecompOpWithLinearScalarFactor}}
+        \item \code{\linkS4class{BoundLinDecompOp}}
+        \item \code{\linkS4class{UnBoundLinDecompOp}}
+        \item \code{\linkS4class{UnBoundNonLinDecompOp}}
+      }
+}

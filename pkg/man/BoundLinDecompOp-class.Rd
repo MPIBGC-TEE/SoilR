@@ -15,7 +15,7 @@ defined on time interval
         \item \code{\link{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}}
       }
   }
-  \subsection{S4-methods with superclasses of class \code{BoundLinDecompOp} in their signature:}{
+  \subsection{S4-methods with superclasses (in the package) of class \code{BoundLinDecompOp} in their signature:}{
     \subsection{superclass DecompOp}{
       \itemize{
         \item \code{\link{GeneralDecompOp,DecompOp-method}}
@@ -35,4 +35,10 @@ defined on time interval
       }
     }
   }
+}
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{DecompOp}}
+        \item \code{\linkS4class{TimeMap}}
+      }
 }
