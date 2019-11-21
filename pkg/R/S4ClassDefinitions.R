@@ -573,6 +573,9 @@ correctnessOfModel_by_PoolNames<-function(object){
 #' and add `@param` tags with a default description for yet undocumented
 #' parameters.  If you remove this `@autocomment` tag your comments will no
 #' longer be touched by the "update_autocomment_roclet".
+#' @s4methods
+#' @s4subclasses
+#' @s4superclasses
 Model_by_PoolNames=setClass(
     Class="Model_by_PoolNames"
     ,slots=c(
