@@ -11,7 +11,7 @@ env:
         - TEST_SUITE=./travis_install_SoilR_from_src.sh
 # run the matrix
 script:  
-        - TEST_SUITE 
+        - "$TEST_SUITE" 
 
 notifications:
   email:
