@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model_by_PoolNames.R
 \name{getRightHandSideOfODE,Model_by_PoolNames-method}
 \alias{getRightHandSideOfODE,Model_by_PoolNames-method}
-\title{automatic title}
+\title{Provide the (vector valued) derivative of the stocks with respect to time}
 \usage{
 \S4method{getRightHandSideOfODE}{Model_by_PoolNames}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model_by_PoolNames}, no manual documentation}
+\item{object}{object of class:\code{Model_by_PoolNames}, The model}
 }
 \description{
-automatic title
+This function is required by the ODE solvers.
 }

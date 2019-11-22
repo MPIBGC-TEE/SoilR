@@ -2,7 +2,7 @@
 % Please edit documentation in R/Model.R
 \name{getDecompOp,Model-method}
 \alias{getDecompOp,Model-method}
-\title{automatic title}
+\title{Extract the Compartmental Operator}
 \usage{
 \S4method{getDecompOp}{Model}(object)
 }
@@ -10,5 +10,5 @@
 \item{object}{object of class:\code{Model}, no manual documentation}
 }
 \description{
-automatic title
+Extract the Compartmental Operator
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: convert a function f of to f_vec</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for by_PoolIndex,function,character,character-method {SoilR}"><tr><td>by_PoolIndex,function,character,character-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>convert a function f of to f_vec</h2>
+
+<h3>Description</h3>
+
+<p>convert a function f of to f_vec
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature ''function',character,character'
+by_PoolIndex(obj, poolNames, timeSymbol)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>object of class:<code>function</code>, For this method a function, whose formal arguments must have names that are elements of the union of poolNames and timeSymbol</p>
+</td></tr>
+<tr valign="top"><td><code>poolNames</code></td>
+<td>
+<p>object of class:<code>character</code>, The ordered poolnames</p>
+</td></tr>
+<tr valign="top"><td><code>timeSymbol</code></td>
+<td>
+<p>object of class:<code>character</code>, The name of the argument of obj that represents time.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>f_vec(vec,t)  A new function that extracts the arguments of obj from a complete vector of state variables and the time argument t and applies the orginal function to these arguments
+The ode solvers used by SoilR expect a vector valued function of the state vector and time that represents the derivative.
+The components of this vector are scalar functions of a vector argument and time. It is possible for the  user to define such functions directly, but the definition always depends on the order of state variables. Furthermore these functions usually do not use the complete state vector but only some parts of it.
+It is much clearer more intuitive and less error prone to be able to define 
+functions that have only formal arguments that are used. 
+This is what this method is used for.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+leaf_resp=function(leaf_pool_content){leaf_pool_content*4}
+leaf_resp(1)
+poolNames=c(
+   "some_thing"
+  ,"some_thing_else"
+  ,"some_thing_altogther"
+  ,"leaf_pool_content"
+)
+leaf_resp_vec=by_PoolIndex(leaf_resp,poolNames,timeSymbol='t')
+# The result is the same since the only the forth position in the vector
+leaf_resp_vec(c(1,27,3,1),5) 
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
+</body></html>

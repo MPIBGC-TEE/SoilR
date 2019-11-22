@@ -2,13 +2,13 @@
 % Please edit documentation in R/Model.R
 \name{plotPoolGraph,Model-method}
 \alias{plotPoolGraph,Model-method}
-\title{automatic title}
+\title{Plot the graph of pool connections}
 \usage{
 \S4method{plotPoolGraph}{Model}(x)
 }
 \arguments{
-\item{x}{object of class:\code{Model}, no manual documentation}
+\item{x}{object of class:\code{Model}, The model (run) the of connection graph of which is plotted}
 }
 \description{
-automatic title
+Plot the graph of pool connections
 }

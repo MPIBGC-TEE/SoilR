@@ -2,7 +2,7 @@
 % Please edit documentation in R/Model.R
 \name{getTimes,Model-method}
 \alias{getTimes,Model-method}
-\title{automatic title}
+\title{Extract the times vector}
 \usage{
 \S4method{getTimes}{Model}(object)
 }
@@ -10,5 +10,5 @@
 \item{object}{object of class:\code{Model}, no manual documentation}
 }
 \description{
-automatic title
+Extract the times vector
 }

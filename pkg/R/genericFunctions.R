@@ -315,8 +315,17 @@ setGeneric (
 	}
 )
 
-#' Generic Function to obtain the contents of the pools for all time steps
+#' Calculates the content of the pools 
 #'
+#' This function computes the content of the pools as function of time.
+#' In the original (and most of the present) Models these are Carbon pools hence the name.
+#' Have a look at the methods for details.
+#' @template Model-param
+#' @return A matrix with m columns representing where m is the number of pools, and n rows where n is the number times 
+# as specified by the \code{times} of the model. 
+
+
+
 setGeneric ( 
 	name= "getC",
 	def=function(

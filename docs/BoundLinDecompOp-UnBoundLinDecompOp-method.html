@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A converter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for BoundLinDecompOp,UnBoundLinDecompOp-method {SoilR}"><tr><td>BoundLinDecompOp,UnBoundLinDecompOp-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>A converter</h2>
+
+<h3>Description</h3>
+
+<p>The destinction between the classes BoundLinDecompOp and UnboundLinDecompOp exist for those functions, that should be only defined for objects of class UnBoundLinDecomp.
+</p>
+<p>Many functions however do not need extra methods for objects of class 
+UnBoundLinDecompOp and just treat it as a BoundLinDecompOp which is defined
+on the complete timeline (-Inf,+Inf). 
+With its default arguments this function converts its map argument to a BoundLinDecompOp with just this domain. 
+This is the most frequent internal use case. 
+If starttime and endtime are provided the domain of the operator will be restricted [starttime,endtime].
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature 'UnBoundLinDecompOp'
+BoundLinDecompOp(map, starttime = -Inf, endtime = Inf)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>map</code></td>
+<td>
+<p>object of class:<code>UnBoundLinDecompOp</code>, An object of class UnBoundLinDecompOp</p>
+</td></tr>
+<tr valign="top"><td><code>starttime</code></td>
+<td>
+<p>Begin of time interval map will be restricted to</p>
+</td></tr>
+<tr valign="top"><td><code>endtime</code></td>
+<td>
+<p>End of time interval map will be restricted to</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
+</body></html>

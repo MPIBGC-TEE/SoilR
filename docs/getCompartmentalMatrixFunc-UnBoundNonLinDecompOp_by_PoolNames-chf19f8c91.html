@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Compartmental Matrix as function of the state vector and time</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method {SoilR}"><tr><td>getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compartmental Matrix as function of the state vector and time</h2>
+
+<h3>Description</h3>
+
+<p>Compartmental Matrix as function of the state vector and time
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature 
+## 'UnBoundNonLinDecompOp_by_PoolNames,character,character'
+getCompartmentalMatrixFunc(object, timeSymbol, state_variable_names)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>object</code></td>
+<td>
+<p>object of class:<code>UnBoundNonLinDecompOp_by_PoolNames</code>, An object of the class <code>UnBoundNonLinDecompOp_by_PoolNames</code> which is a representation equivalent to the compartmental matrix
+but independent of the order of state variables (pools) which therefore 
+can be translated to any such ordering.</p>
+</td></tr>
+<tr valign="top"><td><code>timeSymbol</code></td>
+<td>
+<p>object of class:<code>character</code>, The name of the argument representing time in the functions defining the fluxes in <code>object</code></p>
+</td></tr>
+<tr valign="top"><td><code>state_variable_names</code></td>
+<td>
+<p>object of class:<code>character</code>, The vector of the names of the state variables.
+The argument object is a representation of the compartmental system as #' lists of fluxes (internal fluxes and out-fluxes) as functions of the state variables and time. This method translates it to a matrix based formulation specific to a given ordering of the state variables.
+It is assumed (and checked) that the names formal arguments of the flux functions in <code>object</code> are a subset of the names of <code>state_variable_names</code> 
+The metod is used internally to translate the more intuitive (and more general) flux based description to the matrix based description required by the ode solvers.</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
+</body></html>

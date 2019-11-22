@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: S4 class for a constant influx vector</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ConstInFluxes-class {SoilR}"><tr><td>ConstInFluxes-class {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>S4 class for a constant influx vector</h2>
+
+<h3>Description</h3>
+
+<p>It is mainly used to dispatch S4-methods for computations that 
+are valid only if the influx is constant.
+This knowledge can either be used to speed up computations or to decide if they are
+possible at all.
+E.g. the computation of equilibria for a model run requires autonomy of the model which 
+requires the influxes to be time independent. If the model is linear  
+and compartmental then the (unique) equilibrium can be computed.
+Accordingly a method with ConstInFluxes in the signature can be implemented, whereas 
+none would be available for a general InFluxes argument.
+</p>
+
+
+<h3>S4-methods</h3>
+
+
+
+<h4>S4-methods with class <code>ConstInFluxes</code> in their signature:</h4>
+
+
+<ul>
+<li> <p><code><a href="ConstantInFluxList_by_PoolIndex-ConstInFluxes-method.html">ConstantInFluxList_by_PoolIndex,ConstInFluxes-method</a></code>
+</p>
+</li>
+<li> <p><code><a href="getConstantInFluxVector-ConstInFluxes-method.html">getConstantInFluxVector,ConstInFluxes-method</a></code>
+</p>
+</li>
+<li> <p><code><a href="getFunctionDefinition-ConstInFluxes-method.html">getFunctionDefinition,ConstInFluxes-method</a></code>
+</p>
+</li>
+<li> <p><code><a href="getTimeRange-ConstInFluxes-method.html">getTimeRange,ConstInFluxes-method</a></code>
+</p>
+</li></ul>
+
+
+
+
+<h4>S4-methods with superclasses (in the package) of class <code>ConstInFluxes</code> in their signature:</h4>
+
+
+
+<h5>superclass InFluxes</h5>
+
+
+<ul>
+<li> <p><code><a href="InFluxes-InFluxes-method.html">InFluxes,InFluxes-method</a></code>
+</p>
+</li></ul>
+
+
+
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
+</body></html>

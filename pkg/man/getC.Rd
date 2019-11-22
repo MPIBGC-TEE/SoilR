@@ -2,15 +2,34 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getC}
 \alias{getC}
-\title{Generic Function to obtain the contents of the pools for all time steps}
+\title{Calculates the content of the pools}
 \usage{
 getC(object, as.closures = F)
 }
 \arguments{
-\item{object}{see method arguments}
+\item{object}{A model(run) as produced by the constructors 
+\itemize{
+ \item{\code{link{Model}}}
+ \item{\code{link{Model_by_PoolNames}}}
+ \item{\code{link{Model_14}}}
+}
+the function \code{\link{GeneralModel}} or the functions in 
+\code{\link{predefinedModels}}
+A model represents the initial value problem (IVP)  
+for the contents of the pool consisting of 
+\itemize{
+ \item{ The initial values of the pool content}
+ \item{ The system of ordinary differential oqations, as dictatet by the fluxes}
+ \item{ The times for which the IVP is solved}
+}}
 
 \item{as.closures}{see method arguments}
 }
+\value{
+A matrix with m columns representing where m is the number of pools, and n rows where n is the number times
+}
 \description{
-Generic Function to obtain the contents of the pools for all time steps
+This function computes the content of the pools as function of time.
+In the original (and most of the present) Models these are Carbon pools hence the name.
+Have a look at the methods for details.
 }

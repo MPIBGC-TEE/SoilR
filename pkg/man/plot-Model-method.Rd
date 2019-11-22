@@ -7,7 +7,7 @@
 \S4method{plot}{Model}(x)
 }
 \arguments{
-\item{x}{object of class:\code{Model}, no manual documentation}
+\item{x}{object of class:\code{Model}, The model (run) the results of which are plotted}
 }
 \description{
 automatic title

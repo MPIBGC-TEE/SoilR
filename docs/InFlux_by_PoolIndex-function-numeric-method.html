@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: constructor from an ordered pair of PoolIndex (integer like)...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for InFlux_by_PoolIndex,function,numeric-method {SoilR}"><tr><td>InFlux_by_PoolIndex,function,numeric-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>constructor from an ordered pair of PoolIndex (integer like) objects</h2>
+
+<h3>Description</h3>
+
+<p>constructor from an ordered pair of PoolIndex (integer like) objects
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature ''function',numeric'
+InFlux_by_PoolIndex(func, destinationIndex)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>func</code></td>
+<td>
+<p>object of class:<code>function</code>, A function f(X,t) where X is a vector of the state varaibles. 
+This form is required internally by the solvers and supported for backward compatibility with earlier versions of SoilR.
+Note that the function func given in this form can not be tranformed to a different ordering of state variables, since the location of a state variable in the vector argument depends on a specific order and will be 'hardcoded' into your function. 
+See <code><a href="InFlux_by_PoolName.html">InFlux_by_PoolName</a></code> for the new, more powerful interface which allows subsequent reordering of the state variables by using the names of the state variables as formal arguments for <code>func</code>. In this case SoilR can infer (and later adapt) the
+vector argument form needed for the solvers.</p>
+</td></tr>
+<tr valign="top"><td><code>destinationIndex</code></td>
+<td>
+<p>object of class:<code>numeric</code>, no manual documentation</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
+</body></html>
