@@ -4,7 +4,7 @@
 #' models, a task now fulfilled by the function \code{\link{Model}}. To ensure
 #' backward compatibility this function remains as a wrapper. In future
 #' versions it might take on the role of an abstract factory that produces
-#' several classes of models (i.e linear or non-linear) depending on different
+#' several classes of models (i.e autonomous or non-autonomous and linear or non-linear) depending on different
 #' combinations of arguments. It creates a Model object from any combination of
 #' arguments that can be converted into the required set of building blocks for
 #' a model for n arbitrarily connected pools.
@@ -36,8 +36,13 @@ GeneralModel <- function(
     ,solverfunc=deSolve.lsoda.wrapper		
     ,pass=FALSE  
     ,timeSymbol
-){
+){  
      if (
+         # this if-clause is a prelimnary solution. 
+         # At the latest when we have components of other types 
+         # from which Model_by_PoolNames instance can be created
+         # we should first convert it to the allowed superclasses
+         # if possible.
          is(A,"UnBoundNonLinDecompOp_by_PoolNames") && is(inputFluxes,"InFluxList_by_PoolName")
      ){
         return(
