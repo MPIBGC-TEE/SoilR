@@ -3,7 +3,7 @@
 
 #' automatic title
 #' 
-#' @param object no manual documentation
+#' @param The model(Run)
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -37,7 +37,7 @@ setMethod(
 
 #' automatic title
 #' 
-#' @param object no manual documentation
+#' @param object The Model(run)
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
@@ -76,9 +76,10 @@ setMethod(
 
 
 
-#' automatic title
+#' Provide the (vector valued) derivative of the stocks with respect to time  $\dot{\vec{Y}}=\vec{f}(\vec{Y},t)$  
 #' 
-#' @param object no manual documentation
+#' This function is required by the ODE solvers.
+#' @param object The model 
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
 #' automatically adapt them to changes in the source code. This will remove
