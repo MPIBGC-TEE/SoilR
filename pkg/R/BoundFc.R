@@ -18,7 +18,7 @@ setMethod(
   format,     
 	   ...    
 ){
-    obj <- as(ScalarTimeMap(...),"BoundFc")
+    obj <- as(TimeMap(...),"BoundFc")
     obj@format=format
     validObject(obj) 
     return(obj)
@@ -45,7 +45,7 @@ setMethod(
   ... 
 ){
     l <- list(...)
-    obj <- as(ScalarTimeMap(...),"BoundFc")
+    obj <- as(TimeMap(...),"BoundFc")
     obj@format=l$map$format
     validObject(obj) 
     return(obj)

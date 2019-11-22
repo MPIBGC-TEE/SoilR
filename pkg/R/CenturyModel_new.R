@@ -130,7 +130,6 @@ CenturyModel_new<- function
     A[5,4]=alpha54*abs(A[4,4])
     # whatever format xi is given in we convert it to a time map object
     # (function,constant,data.frame,list considering also the xi_lag argument)
-    browser() 
     xi=ScalarTimeMap(xi,lag=xi_lag)
     fX=getFunctionDefinition(xi)
     At=ConstLinDecompOpWithLinearScalarFactor(mat=A,xi=xi)
