@@ -2,15 +2,44 @@
 % Please edit documentation in R/NlModel.R
 \name{getC,NlModel-method}
 \alias{getC,NlModel-method}
-\title{automatic title}
+\title{Pool Contents for all times}
 \usage{
 \S4method{getC}{NlModel}(object, as.closures = FALSE)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}, no manual documentation}
+\item{object}{object of class:\code{NlModel}, A model(run) as produced by the constructors 
+\itemize{
+ \item{\code{\link{Model}}}
+ \item{\code{\link{Model_by_PoolNames}}}
+ \item{\code{\link{Model_14}}}
+}
+the function \code{\link{GeneralModel}} or the functions listed in 
+\code{\link{predefinedModels}}. 
+A model represents the initial value problem (IVP)  
+for the contents of the pool consisting of 
+\itemize{
+ \item{ The initial values of the pool content}
+ \item{ The system of ordinary differential oqations, as dictated by the fluxes}
+ \item{ The times for which the solution of the IVP is evaluated.}
+}}
 
-\item{as.closures}{no manual documentation}
+\item{as.closures}{If \code{TRUE} will return the result as a list of approximating functions of time indexed by the pool number.}
+}
+\value{
+If \code{as.closures} is \code{FALSE} (the default) the return value is a matrix with as many columns as there are pools 
+and as many rows as there are entries in the \code{times} 
+argument the model has been built with.
 }
 \description{
-automatic title
+Pool Contents for all times
+
+The solution of the IVP for the pool contents.
+Since the first models in SoilR had only Carbon pools 
+the function name \code{getC} could be interpreted as 
+refering to the C content. If the model includes other 
+element cycles e.g. N or P this interpretation is no longer 
+valid. In this case the C in 'getC' stands for 'content' 
+since the function will always return the solution for 
+all pools, regardless of the chemical element the author of 
+the model associated them with.
 }

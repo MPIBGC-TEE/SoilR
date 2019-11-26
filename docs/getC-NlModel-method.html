@@ -1,15 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: automatic title</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pool Contents for all times</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for getC,NlModel-method {SoilR}"><tr><td>getC,NlModel-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>automatic title</h2>
+<h2>Pool Contents for all times</h2>
 
 <h3>Description</h3>
 
-<p>automatic title
+<p>Pool Contents for all times
+</p>
+<p>The solution of the IVP for the pool contents.
+Since the first models in SoilR had only Carbon pools 
+the function name <code>getC</code> could be interpreted as 
+refering to the C content. If the model includes other 
+element cycles e.g. N or P this interpretation is no longer 
+valid. In this case the C in 'getC' stands for 'content' 
+since the function will always return the solution for 
+all pools, regardless of the chemical element the author of 
+the model associated them with.
 </p>
 
 
@@ -26,13 +36,50 @@ getC(object, as.closures = FALSE)
 <table summary="R argblock">
 <tr valign="top"><td><code>object</code></td>
 <td>
-<p>object of class:<code>NlModel</code>, no manual documentation</p>
+<p>object of class:<code>NlModel</code>, A model(run) as produced by the constructors 
+</p>
+
+<ul>
+<li><p><code><a href="Model.html">Model</a></code>
+</p>
+</li>
+<li><p><code><a href="Model_by_PoolNames-class.html">Model_by_PoolNames</a></code>
+</p>
+</li>
+<li><p><code><a href="Model_14.html">Model_14</a></code>
+</p>
+</li></ul>
+
+<p>the function <code><a href="GeneralModel.html">GeneralModel</a></code> or the functions listed in 
+<code><a href="predefinedModels.html">predefinedModels</a></code>. 
+A model represents the initial value problem (IVP)  
+for the contents of the pool consisting of 
+</p>
+
+<ul>
+<li><p> The initial values of the pool content
+</p>
+</li>
+<li><p> The system of ordinary differential oqations, as dictated by the fluxes
+</p>
+</li>
+<li><p> The times for which the solution of the IVP is evaluated.
+</p>
+</li></ul>
 </td></tr>
 <tr valign="top"><td><code>as.closures</code></td>
 <td>
-<p>no manual documentation</p>
+<p>If <code>TRUE</code> will return the result as a list of approximating functions of time indexed by the pool number.</p>
 </td></tr>
 </table>
+
+
+<h3>Value</h3>
+
+<p>If <code>as.closures</code> is <code>FALSE</code> (the default) the return value is a matrix with as many columns as there are pools 
+and as many rows as there are entries in the <code>times</code> 
+argument the model has been built with.
+</p>
 
 <hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

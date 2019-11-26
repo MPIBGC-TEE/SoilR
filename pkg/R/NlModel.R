@@ -431,18 +431,16 @@ setMethod(
 )
 
 
-
-#' automatic title
+#' Pool Contents for all times
 #' 
-#' @param object no manual documentation
-#' @param as.closures no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @template getC-description-common
+#' @template Model-param
+#' @param as.closures If \code{TRUE} will return the result as a list of approximating functions of time indexed by the pool number.
+#' @return 
+#' If \code{as.closures} is \code{FALSE} (the default) the return value is a matrix with as many columns as there are pools 
+#' and as many rows as there are entries in the \code{times} 
+#' argument the model has been built with.
+#' @autocomment 
 setMethod(
    f= "getC",
       signature= c("NlModel"),
