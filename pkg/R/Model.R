@@ -265,12 +265,7 @@ setMethod(
 #' creating the modelrun or can be obtained by directly transforming the
 #' arguments that were used.
 #' @template Model-param
-#' @return The actual class of the result can vary. 
-#' It will be a subclass of \code{\linkS4class{DecompOp}}. The information contained
-#' in these objects is equivalent to the "Compartmental Matrix" of 
-#' the model.
-#' In the general case of a nonautonomuous nonlinear Model this is a matrix
-#' valued function of the pool contents and time. 
+#' @template getDecompOp-description-common
 setMethod(
    f= "getDecompOp",
       signature= "Model",
@@ -301,7 +296,7 @@ setMethod(
 
 
 #' Derivative of the state variables as function 
-# 
+#' 
 #' For non-linear models or models with state dependent insfluxes 
 #' the returned function is a true function of state and time
 #' For linear models with state indendent influxes the returned 
@@ -375,11 +370,14 @@ setMethod(
 
 
 
-#' Compute the time integral of the relaese fluxes for all times
+#' Compute the time integral of the relaese fluxes over time 
 #' 
+#' The definite integral of the vector 
+#' of release fluxes over time from  start to t, computed for all t in the
+#' \code{times} argumente the modelrun has been created with. 
 #' @template Model-param
-#' @autocomment 
 #' @template PoolWiseReturnMatrix
+#' @autocomment 
 setMethod(
    f= "getAccumulatedRelease",
       signature= "Model",

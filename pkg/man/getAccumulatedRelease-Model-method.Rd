@@ -2,7 +2,7 @@
 % Please edit documentation in R/Model.R
 \name{getAccumulatedRelease,Model-method}
 \alias{getAccumulatedRelease,Model-method}
-\title{Compute the time integral of the relaese fluxes for all times}
+\title{Compute the time integral of the relaese fluxes over time}
 \usage{
 \S4method{getAccumulatedRelease}{Model}(object)
 }
@@ -26,5 +26,7 @@ A matrix with as many columns as there are pools
 and as many rows as there are entries in the \code{times} argument the model has been build with.
 }
 \description{
-Compute the time integral of the relaese fluxes for all times
+The definite integral of the vector 
+of release fluxes over time from  start to t, computed for all t in the
+\code{times} argumente the modelrun has been created with.
 }

@@ -407,7 +407,7 @@
 <tr><td style="width: 25%;"><a href="GeneralDecompOp.html">GeneralDecompOp</a></td>
 <td>A generic factory for subclasses of GeneralDecompOp</td></tr>
 <tr><td style="width: 25%;"><a href="GeneralDecompOp-DecompOp-method.html">GeneralDecompOp-method</a></td>
-<td>automatic title</td></tr>
+<td>Pass through factory for objects of subclasses of DecompOp</td></tr>
 <tr><td style="width: 25%;"><a href="GeneralDecompOp-TimeMap-method.html">GeneralDecompOp-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="GeneralDecompOp-function-method.html">GeneralDecompOp-method</a></td>
@@ -431,13 +431,13 @@
 <tr><td style="width: 25%;"><a href="getAccumulatedRelease.html">getAccumulatedRelease</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getAccumulatedRelease-Model-method.html">getAccumulatedRelease-method</a></td>
-<td>Compute the time integral of the relaese fluxes for all times</td></tr>
+<td>Compute the time integral of the relaese fluxes over time</td></tr>
 <tr><td style="width: 25%;"><a href="getC.html">getC</a></td>
 <td>Calculates the content of the pools</td></tr>
 <tr><td style="width: 25%;"><a href="getC-Model-method.html">getC-method</a></td>
 <td>Pool Contents for all times</td></tr>
 <tr><td style="width: 25%;"><a href="getC-Model_by_PoolNames-method.html">getC-method</a></td>
-<td>automatic title</td></tr>
+<td>Pool Contents for all times</td></tr>
 <tr><td style="width: 25%;"><a href="getC-NlModel-method.html">getC-method</a></td>
 <td>Pool Contents for all times</td></tr>
 <tr><td style="width: 25%;"><a href="getC14.html">getC14</a></td>
@@ -487,7 +487,7 @@
 <tr><td style="width: 25%;"><a href="getDecompOp-Model-method.html">getDecompOp-method</a></td>
 <td>Extract the Compartmental Operator</td></tr>
 <tr><td style="width: 25%;"><a href="getDecompOp-NlModel-method.html">getDecompOp-method</a></td>
-<td>automatic title</td></tr>
+<td>Extract the Compartmental Operator</td></tr>
 <tr><td style="width: 25%;"><a href="getDotOut.html">getDotOut</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getDotOut-TransportDecompositionOperator-method.html">getDotOut-method</a></td>
@@ -533,7 +533,7 @@
 <tr><td style="width: 25%;"><a href="getFunctionDefinition-UnBoundLinDecompOp-method.html">getFunctionDefinition-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getInFluxes.html">getInFluxes</a></td>
-<td>automatic title</td></tr>
+<td>Extract the influxes</td></tr>
 <tr><td style="width: 25%;"><a href="getInFluxes-Model-method.html">getInFluxes-method</a></td>
 <td>Extract the InFluxes as provided during creation of the model</td></tr>
 <tr><td style="width: 25%;"><a href="getInFluxes-NlModel-method.html">getInFluxes-method</a></td>
@@ -573,7 +573,7 @@
 <tr><td style="width: 25%;"><a href="getReleaseFlux.html">getReleaseFlux</a></td>
 <td>Generic Function to obtain the vector of release fluxes out of the pools for all times.</td></tr>
 <tr><td style="width: 25%;"><a href="getReleaseFlux-Model-method.html">getReleaseFlux-method</a></td>
-<td>The release fluxes [mass]/[time] for all pools.</td></tr>
+<td>The release fluxes [content]/[time] for all pools.</td></tr>
 <tr><td style="width: 25%;"><a href="getReleaseFlux-Model_by_PoolNames-method.html">getReleaseFlux-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getReleaseFlux-NlModel-method.html">getReleaseFlux-method</a></td>
@@ -585,7 +585,7 @@
 <tr><td style="width: 25%;"><a href="getRightHandSideOfODE.html">getRightHandSideOfODE</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getRightHandSideOfODE-Model-method.html">getRightHandSideOfODE-method</a></td>
-<td>Derivative of the state variables as function For non-linear models or models with state dependent insfluxes the returned function is a true function of state and time For linear models with state indendent influxes the returned function is in fact a function of time only.</td></tr>
+<td>Derivative of the state variables as function</td></tr>
 <tr><td style="width: 25%;"><a href="getRightHandSideOfODE-Model_by_PoolNames-method.html">getRightHandSideOfODE-method</a></td>
 <td>Provide the (vector valued) derivative of the stocks with respect to time</td></tr>
 <tr><td style="width: 25%;"><a href="getTimeRange.html">getTimeRange</a></td>
@@ -873,8 +873,6 @@
 <td>construct from string with checks</td></tr>
 <tr><td style="width: 25%;"><a href="predefinedModels.html">predefinedModels</a></td>
 <td>PREDEFINED MODELS</td></tr>
-<tr><td style="width: 25%;"><a href="print-Model-method.html">print-method</a></td>
-<td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="print-NlModel-method.html">print-method</a></td>
 <td>automatic title</td></tr>
 </table>
@@ -909,8 +907,6 @@
 <td>General m-pool linear model with series structure</td></tr>
 <tr><td style="width: 25%;"><a href="SeriesLinearModel14.html">SeriesLinearModel14</a></td>
 <td>General m-pool linear C14 model with series structure</td></tr>
-<tr><td style="width: 25%;"><a href="show-Model-method.html">show-method</a></td>
-<td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="show-NlModel-method.html">show-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="SoilR.F0.new.html">SoilR.F0.new</a></td>
@@ -931,8 +927,6 @@
 <td>Constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="StateIndependentInFlux_by_PoolIndex-class.html">StateIndependentInFlux_by_PoolIndex-class</a></td>
 <td>Constructor for the class with the same name</td></tr>
-<tr><td style="width: 25%;"><a href="summary-Model-method.html">summary-method</a></td>
-<td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="systemAge.html">systemAge</a></td>
 <td>System and pool age for compartment models</td></tr>
 </table>
@@ -1052,7 +1046,7 @@
 <tr><td style="width: 25%;"><a href="cash-NlModel-method.html">$-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="sub-Model-character-missing-missing-method.html">[-method</a></td>
-<td>automatic title</td></tr>
+<td>Experimentally overloaded index operator</td></tr>
 <tr><td style="width: 25%;"><a href="sub-NlModel-character-ANY-ANY-method.html">[-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="sub-sub-MCSim-method.html">[[-method</a></td>

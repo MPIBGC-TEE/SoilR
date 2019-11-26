@@ -9,7 +9,9 @@
 
 <h3>Description</h3>
 
-<p>Extract the times vector
+<p>Since the <code>times</code> had to be provided to create the model this method
+yields no new information. 
+It is usually called internally by other functions that deal with models.
 </p>
 
 
@@ -26,7 +28,26 @@ getTimes(object)
 <table summary="R argblock">
 <tr valign="top"><td><code>object</code></td>
 <td>
-<p>object of class:<code>Model</code>, no manual documentation</p>
+<p>object of class:<code>Model</code>, A modelrun as produced by the constructors: 
+<code><a href="Model.html">Model</a></code>,
+<code><a href="Model_by_PoolNames-class.html">Model_by_PoolNames</a></code>,
+<code><a href="Model_14.html">Model_14</a></code>
+the function <code><a href="GeneralModel.html">GeneralModel</a></code> or the functions listed in 
+<code><a href="predefinedModels.html">predefinedModels</a></code>. <br />
+A model represents the initial value problem (IVP)  
+for the contents of the pool consisting of 
+</p>
+
+<ul>
+<li><p> The initial values of the pool content
+</p>
+</li>
+<li><p> The system of ordinary differential oqations, as dictated by the fluxes
+</p>
+</li>
+<li><p> The times for which the solution of the IVP is evaluated.
+</p>
+</li></ul>
 </td></tr>
 </table>
 

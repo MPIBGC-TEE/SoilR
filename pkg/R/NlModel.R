@@ -148,9 +148,10 @@ setMethod(
 
 
 
-#' automatic title
+#' Extract the Compartmental Operator
 #' 
 #' @template Model-param
+#' @template getDecompOp-description-common
 #' @autocomment 
 setMethod(
    f= "getDecompOp",

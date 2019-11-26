@@ -2,7 +2,7 @@
 % Please edit documentation in R/Model_by_PoolNames.R
 \name{getC,Model_by_PoolNames-method}
 \alias{getC,Model_by_PoolNames-method}
-\title{automatic title}
+\title{Pool Contents for all times}
 \usage{
 \S4method{getC}{Model_by_PoolNames}(object)
 }
@@ -21,6 +21,20 @@ for the contents of the pool consisting of
  \item{ The times for which the solution of the IVP is evaluated.}
 }}
 }
+\value{
+A matrix with as many columns as there are pools 
+and as many rows as there are entries in the \code{times} argument the model has been build with.
+}
 \description{
-automatic title
+Pool Contents for all times
+
+The solution of the initial value problem (IVP) for the pool contents.
+Since the first models in SoilR had only Carbon pools 
+the function name \code{getC} could be interpreted as 
+refering to the C content. If the model includes other 
+element cycles e.g. N or P this interpretation is no longer 
+valid. In this case the C in 'getC' stands for 'content' 
+since the function will always return the solution for 
+all pools, regardless of the chemical element the author of 
+the model associated them with.
 }

@@ -1,15 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: automatic title</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pool Contents for all times</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for getC,Model_by_PoolNames-method {SoilR}"><tr><td>getC,Model_by_PoolNames-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>automatic title</h2>
+<h2>Pool Contents for all times</h2>
 
 <h3>Description</h3>
 
-<p>automatic title
+<p>Pool Contents for all times
+</p>
+<p>The solution of the initial value problem (IVP) for the pool contents.
+Since the first models in SoilR had only Carbon pools 
+the function name <code>getC</code> could be interpreted as 
+refering to the C content. If the model includes other 
+element cycles e.g. N or P this interpretation is no longer 
+valid. In this case the C in 'getC' stands for 'content' 
+since the function will always return the solution for 
+all pools, regardless of the chemical element the author of 
+the model associated them with.
 </p>
 
 
@@ -48,6 +58,13 @@ for the contents of the pool consisting of
 </li></ul>
 </td></tr>
 </table>
+
+
+<h3>Value</h3>
+
+<p>A matrix with as many columns as there are pools 
+and as many rows as there are entries in the <code>times</code> argument the model has been build with.
+</p>
 
 <hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

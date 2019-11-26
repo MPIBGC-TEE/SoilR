@@ -1,9 +1,9 @@
 
-
-
-#' automatic title
+#' Pool Contents for all times
 #' 
+#' @template getC-description-common
 #' @template Model-param
+#' @template PoolWiseReturnMatrix
 #' @autocomment 
 setMethod(
     f= "getC"

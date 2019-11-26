@@ -2,11 +2,7 @@
 % Please edit documentation in R/Model.R
 \name{getRightHandSideOfODE,Model-method}
 \alias{getRightHandSideOfODE,Model-method}
-\title{Derivative of the state variables as function 
-For non-linear models or models with state dependent insfluxes 
-the returned function is a true function of state and time
-For linear models with state indendent influxes the returned 
-function is in fact a function of time only.}
+\title{Derivative of the state variables as function}
 \usage{
 \S4method{getRightHandSideOfODE}{Model}(object)
 }
@@ -17,7 +13,6 @@ function is in fact a function of time only.}
 A function \eqn{f(t)}{f(t)}
 }
 \description{
-Derivative of the state variables as function 
 For non-linear models or models with state dependent insfluxes 
 the returned function is a true function of state and time
 For linear models with state indendent influxes the returned 
