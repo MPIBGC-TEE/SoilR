@@ -7,14 +7,12 @@
 \S4method{getC}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}, A model(run) as produced by the constructors 
-\itemize{
- \item{\code{\link{Model}}}
- \item{\code{\link{Model_by_PoolNames}}}
- \item{\code{\link{Model_14}}}
-}
+\item{object}{object of class:\code{Model}, A modelrun as produced by the constructors: 
+ \code{\link{Model}},
+ \code{\link{Model_by_PoolNames}},
+ \code{\link{Model_14}}
 the function \code{\link{GeneralModel}} or the functions listed in 
-\code{\link{predefinedModels}}. 
+\code{\link{predefinedModels}}. \cr
 A model represents the initial value problem (IVP)  
 for the contents of the pool consisting of 
 \itemize{
@@ -24,12 +22,13 @@ for the contents of the pool consisting of
 }}
 }
 \value{
-A matrix with as many columns as there are pools and as many rows as there are entries in the \code{times} argument the model has been build with.
+A matrix with as many columns as there are pools 
+and as many rows as there are entries in the \code{times} argument the model has been build with.
 }
 \description{
 Pool Contents for all times
 
-The solution of the IVP for the pool contents.
+The solution of the initial value problem (IVP) for the pool contents.
 Since the first models in SoilR had only Carbon pools 
 the function name \code{getC} could be interpreted as 
 refering to the C content. If the model includes other 

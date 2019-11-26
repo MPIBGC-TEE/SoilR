@@ -94,3 +94,24 @@ setMethod(
             return(DotY)
         }
 )
+
+##' Plot the graph of pool connections
+##' 
+##' @param x The modelrun the of connection graph of which is plotted
+##' @autocomment 
+#setMethod(
+#   f= "plotPoolGraph",
+#      signature(x="Model"),
+#      definition=function 
+#      (x){
+#      op=getDecompOp(x)
+#      iflvec=getInFluxes(x)
+#
+#      #call the function
+#      #internalConnections<-list(tuple(1,2),tuple(2,3),tuple(3,1),tuple(3,4))
+#      #inBoundConnections<-list(1,3)
+#      #outBoundConnections<-list(4)
+#      #plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
+#      
+#   }
+#)

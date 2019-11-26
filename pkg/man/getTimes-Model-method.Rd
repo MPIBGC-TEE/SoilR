@@ -7,8 +7,22 @@
 \S4method{getTimes}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}, no manual documentation}
+\item{object}{object of class:\code{Model}, A modelrun as produced by the constructors: 
+ \code{\link{Model}},
+ \code{\link{Model_by_PoolNames}},
+ \code{\link{Model_14}}
+the function \code{\link{GeneralModel}} or the functions listed in 
+\code{\link{predefinedModels}}. \cr
+A model represents the initial value problem (IVP)  
+for the contents of the pool consisting of 
+\itemize{
+ \item{ The initial values of the pool content}
+ \item{ The system of ordinary differential oqations, as dictated by the fluxes}
+ \item{ The times for which the solution of the IVP is evaluated.}
+}}
 }
 \description{
-Extract the times vector
+Since the \code{times} had to be provided to create the model this method
+yields no new information. 
+It is usually called internally by other functions that deal with models.
 }

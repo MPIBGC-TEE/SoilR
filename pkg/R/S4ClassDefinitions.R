@@ -288,6 +288,8 @@ setClass(
 #' As time dependent scalar function which remembers its
 #' domain ( see \code{\linkS4class{ScalarTimeMap}}) and its
 #' format. 
+#' @s4superclasses
+#' @s4subclasses
 #' @autocomment 
 setClass(
     Class="BoundFc",

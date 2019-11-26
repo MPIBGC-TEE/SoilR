@@ -7,8 +7,31 @@
 \S4method{getDecompOp}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}, no manual documentation}
+\item{object}{object of class:\code{Model}, A modelrun as produced by the constructors: 
+ \code{\link{Model}},
+ \code{\link{Model_by_PoolNames}},
+ \code{\link{Model_14}}
+the function \code{\link{GeneralModel}} or the functions listed in 
+\code{\link{predefinedModels}}. \cr
+A model represents the initial value problem (IVP)  
+for the contents of the pool consisting of 
+\itemize{
+ \item{ The initial values of the pool content}
+ \item{ The system of ordinary differential oqations, as dictated by the fluxes}
+ \item{ The times for which the solution of the IVP is evaluated.}
+}}
+}
+\value{
+The actual class of the result can vary. 
+It will be a subclass of \code{\linkS4class{DecompOp}}. The information contained
+in these objects is equivalent to the "Compartmental Matrix" of 
+the model.
+In the general case of a nonautonomuous nonlinear Model this is a matrix
+valued function of the pool contents and time.
 }
 \description{
-Extract the Compartmental Operator
+The method is usually used internally by other methods operating on 
+models. The information it yields has either been provided by the user in
+creating the modelrun or can be obtained by directly transforming the
+arguments that were used.
 }

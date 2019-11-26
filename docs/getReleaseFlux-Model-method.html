@@ -1,15 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: automatic title</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The release fluxes [mass]/[time] for all pools.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for getReleaseFlux,Model-method {SoilR}"><tr><td>getReleaseFlux,Model-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>automatic title</h2>
+<h2>The release fluxes <i>[mass]/[time]</i> for all pools.</h2>
 
 <h3>Description</h3>
 
-<p>automatic title
+<p>The release fluxes <i>[mass]/[time]</i> for all pools.
 </p>
 
 
@@ -26,22 +26,12 @@ getReleaseFlux(object)
 <table summary="R argblock">
 <tr valign="top"><td><code>object</code></td>
 <td>
-<p>object of class:<code>Model</code>, A model(run) as produced by the constructors 
-</p>
-
-<ul>
-<li><p><code><a href="Model.html">Model</a></code>
-</p>
-</li>
-<li><p><code><a href="Model_by_PoolNames-class.html">Model_by_PoolNames</a></code>
-</p>
-</li>
-<li><p><code><a href="Model_14.html">Model_14</a></code>
-</p>
-</li></ul>
-
-<p>the function <code><a href="GeneralModel.html">GeneralModel</a></code> or the functions listed in 
-<code><a href="predefinedModels.html">predefinedModels</a></code>. 
+<p>object of class:<code>Model</code>, A modelrun as produced by the constructors: 
+<code><a href="Model.html">Model</a></code>,
+<code><a href="Model_by_PoolNames-class.html">Model_by_PoolNames</a></code>,
+<code><a href="Model_14.html">Model_14</a></code>
+the function <code><a href="GeneralModel.html">GeneralModel</a></code> or the functions listed in 
+<code><a href="predefinedModels.html">predefinedModels</a></code>. <br />
 A model represents the initial value problem (IVP)  
 for the contents of the pool consisting of 
 </p>
@@ -58,6 +48,13 @@ for the contents of the pool consisting of
 </li></ul>
 </td></tr>
 </table>
+
+
+<h3>Value</h3>
+
+<p>A matrix with as many columns as there are pools 
+and as many rows as there are entries in the <code>times</code> argument the model has been build with.
+</p>
 
 <hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
 </body></html>

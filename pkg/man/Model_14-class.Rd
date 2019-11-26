@@ -31,10 +31,6 @@ S4-class to represent a ^{14}C model run
         \item \code{\link{getTimes,Model-method}}
         \item \code{\link{initialize,Model-method}}
         \item \code{\link{plot,Model-method}}
-        \item \code{\link{plotPoolGraph,Model-method}}
-        \item \code{\link{print,Model-method}}
-        \item \code{\link{show,Model-method}}
-        \item \code{\link{summary,Model-method}}
       }
     }
   }

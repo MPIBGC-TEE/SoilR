@@ -43,4 +43,7 @@ Functions to be removed:
 turnoverFit
 
 
-
+Version 2
+1 remove the Linear non autonomous Model as a special case since the NonLinearModel will have the 
+same methods Call the Nonlinear Model just Model
+->remove Model.R and rename NlModel.R

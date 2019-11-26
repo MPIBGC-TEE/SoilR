@@ -2,7 +2,7 @@
 % Please edit documentation in R/Model.R
 \name{[,Model,character,missing,missing-method}
 \alias{[,Model,character,missing,missing-method}
-\title{automatic title}
+\title{Experimentally overloaded index operator}
 \usage{
 \S4method{[}{Model,character,missing,missing}(x, i)
 }
@@ -12,5 +12,9 @@
 \item{i}{object of class:\code{character}, no manual documentation}
 }
 \description{
-automatic title
+The method provides shortcuts and a unified interface to some of the
+methods that can be applied to a model.
+For a given model `M` the code `M['C'] is equivalent to `getC(M)` and
+`M['ReleaseFlux']` is equivalent to `getReleaseFlux(M)`
+`M['AccumulatedRelease']` is equivalent to `getAccumulatedRelease(M)`
 }

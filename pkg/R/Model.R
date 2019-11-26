@@ -1,7 +1,7 @@
 
 
 
-#' automatic title
+#' @template Initialize-Boiler-Plate
 #' 
 #' @param .Object no manual documentation
 #' @param times no manual documentation
@@ -185,16 +185,13 @@ Model <-function(t,
 
 
 
-#' automatic title
-#' 
-#' @param object no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' Extract the InFluxes as provided during creation of the model
+#'
+#' Since the influxes had to be provided to create the model this method
+#' yields no new information that can not be obtained simpler.  
+#' It is usually called internally by other functions. 
+#' @template Model-param
+#' @autocomment 
 setMethod(
    f= "getInFluxes",
       signature(object="Model"),
@@ -205,8 +202,10 @@ setMethod(
 
 
 
-#' automatic title
+#' Create an overview plot 
 #' 
+#' The method solves the model and plots the solutions
+#' It is intended to provide a quick overview.
 #' @param x The model (run) the results of which are plotted
 #' @autocomment 
 setMethod(
@@ -217,89 +216,61 @@ setMethod(
    }
 )
 
-
-
-#' Plot the graph of pool connections
-#' 
-#' @param x The model (run) the of connection graph of which is plotted
-#' @autocomment 
-setMethod(
-   f= "plotPoolGraph",
-      signature(x="Model"),
-      definition=function 
-      (x){
-      op=getDecompOp(x)
-      iflvec=getInFluxes(x)
-
-      #call the function
-      #internalConnections<-list(tuple(1,2),tuple(2,3),tuple(3,1),tuple(3,4))
-      #inBoundConnections<-list(1,3)
-      #outBoundConnections<-list(4)
-      #plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
-      
-   }
-)
+## automatic title
+##  
+## @param x no manual documentation
+## @autocomment 
+#setMethod(
+#   f= "print",
+#      signature(x="Model"),
+#      definition=function
+#      (x){
+#   }
+#)
 
 
 
-#' automatic title
-#' 
-#' @param x no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
-setMethod(
-   f= "print",
-      signature(x="Model"),
-      definition=function
-      (x){
-   }
-)
+## automatic title
+## 
+## @param object no manual documentation
+## @autocomment 
+#setMethod(
+#   f= "summary",
+#      signature(object="Model"),
+#      definition=function 
+#      (object){
+#   }
+#)
 
 
 
-#' automatic title
-#' 
-#' @param object no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
-setMethod(
-   f= "summary",
-      signature(object="Model"),
-      definition=function 
-      (object){
-   }
-)
-
-
-
-#' automatic title
-#' 
-#' @template Model-param
-#' @autocomment 
-setMethod(
-   f= "show",
-      signature(object="Model"),
-      definition=function
-      (object){
-   }
-)
+## Transform the model to a string
+## 
+## @template Model-param
+## @autocomment 
+#setMethod(
+#   f= "show",
+#      signature(object="Model"),
+#      definition=function
+#      (object){
+#   }
+#)
 
 
 
 #' Extract the Compartmental Operator
 #' 
-#' @param object no manual documentation
-#' @autocomment 
+#' The method is usually used internally by other methods operating on 
+#' models. The information it yields has either been provided by the user in
+#' creating the modelrun or can be obtained by directly transforming the
+#' arguments that were used.
+#' @template Model-param
+#' @return The actual class of the result can vary. 
+#' It will be a subclass of \code{\linkS4class{DecompOp}}. The information contained
+#' in these objects is equivalent to the "Compartmental Matrix" of 
+#' the model.
+#' In the general case of a nonautonomuous nonlinear Model this is a matrix
+#' valued function of the pool contents and time. 
 setMethod(
    f= "getDecompOp",
       signature= "Model",
@@ -312,7 +283,10 @@ setMethod(
 
 #' Extract the times vector
 #' 
-#' @param object no manual documentation
+#' Since the \code{times} had to be provided to create the model this method
+#' yields no new information. 
+#' It is usually called internally by other functions that deal with models. 
+#' @template Model-param
 #' @autocomment 
 setMethod(
    f= "getTimes",
@@ -356,8 +330,7 @@ setMethod(
 #' 
 #' @template getC-description-common
 #' @template Model-param
-#' @return 
-#' A matrix with as many columns as there are pools and as many rows as there are entries in the \code{times} argument the model has been build with.
+#' @template PoolWiseReturnMatrix
 #' @autocomment 
 setMethod(
     f= "getC"
@@ -374,9 +347,10 @@ setMethod(
 
 
 
-#' automatic title
+#' The release fluxes \eqn{\frac{[content]}{[time]}}{[content]/[time]} for all pools.
 #' 
 #' @template Model-param
+#' @template PoolWiseReturnMatrix
 #' @autocomment 
 setMethod(
    f= "getReleaseFlux",
@@ -401,10 +375,11 @@ setMethod(
 
 
 
-#' automatic title
+#' Compute the time integral of the relaese fluxes for all times
 #' 
 #' @template Model-param
 #' @autocomment 
+#' @template PoolWiseReturnMatrix
 setMethod(
    f= "getAccumulatedRelease",
       signature= "Model",
@@ -447,17 +422,16 @@ getSingleCol=function(x,slot_name){
 
 
 
-#' automatic title
+#' Experimentally overloaded index operator 
 #' 
+#' The method provides shortcuts and a unified interface to some of the
+#' methods that can be applied to a model.
+#' For a given model `M` the code `M['C'] is equivalent to `getC(M)` and
+#' `M['ReleaseFlux']` is equivalent to `getReleaseFlux(M)`
+#' `M['AccumulatedRelease']` is equivalent to `getAccumulatedRelease(M)`
 #' @param x no manual documentation
 #' @param i no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment 
 setMethod("[",signature(x="Model",i="character",j="missing",drop="missing"), 
         definition=function 
         (x,i){

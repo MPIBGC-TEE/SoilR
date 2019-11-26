@@ -5,13 +5,7 @@
 #' 
 #' @param F see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
   name="Delta14C",
   def=function( 
@@ -27,13 +21,7 @@ setGeneric(
 #' 
 #' @param AbsoluteFractionModern see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="Delta14C_from_AbsoluteFractionModern",
 	 def=function( 
@@ -58,13 +46,7 @@ setGeneric(
 #' 
 #' @param F see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="AbsoluteFractionModern",
 	 def=function( 
@@ -80,13 +62,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getFormat",
 	 def=function( 
@@ -102,13 +78,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getValues",
 	 def=function( 
@@ -123,13 +93,7 @@ setGeneric(
 #' automatic title
 #' 
 #' @param delta14C no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setMethod(
 	f= "AbsoluteFractionModern_from_Delta14C",
 	   signature("numeric"),
@@ -146,13 +110,7 @@ setMethod(
 #' automatic title
 #' 
 #' @param AbsoluteFractionModern no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setMethod(
 	f= "Delta14C_from_AbsoluteFractionModern",
 	   signature("numeric"),
@@ -169,13 +127,7 @@ setMethod(
 #' automatic title
 #' 
 #' @param delta14C no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setMethod(
 	f= "AbsoluteFractionModern_from_Delta14C",
 	   signature("matrix"),
@@ -197,13 +149,7 @@ setMethod(
 #' automatic title
 #' 
 #' @param AbsoluteFractionModern no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setMethod(
 	f= "Delta14C_from_AbsoluteFractionModern",
 	   signature("matrix"),
@@ -226,13 +172,7 @@ setMethod(
 #' @param object see method arguments
 #' @param inputDistribution see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric ( 
 	name= "getMeanTransitTime",
 	def=function(
@@ -249,13 +189,7 @@ setGeneric (
 #' @param inputDistribution see method arguments
 #' @param times see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric ( 
 	name= "getTransitTimeDistributionDensity",
 	def=function(
@@ -271,13 +205,7 @@ setGeneric (
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric (
 	name= "getTimes",
 	def=function(
@@ -290,13 +218,7 @@ setGeneric (
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric (
 	name= "getInitialValues",
 	def=function(
@@ -341,13 +263,7 @@ setGeneric (
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric( 
 	name= "getParticleMonteCarloSimulator",
 	def=function
@@ -374,13 +290,7 @@ setGeneric (
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric ( 
 	name= "getAccumulatedRelease",
 	def=function
@@ -404,13 +314,7 @@ setGeneric (
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric ( 
 	name= "getCumulativeC",
 	def=function(
@@ -433,13 +337,7 @@ setGeneric (
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric ( 
 	name= "getReleaseFlux14",
 	def=function(
@@ -471,13 +369,7 @@ setGeneric (
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getTimeRange",
 	 def=function(object){
@@ -494,13 +386,7 @@ setGeneric(
 #' @param poolNames see method arguments
 #' @param numberOfPools see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getFunctionDefinition",
 	 def=function(object,timeSymbol,poolNames,numberOfPools){
@@ -517,13 +403,7 @@ setGeneric(
 #' @param poolNames see method arguments
 #' @param numberOfPools see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getRightHandSideOfODE",
 	 def=function(object,timeSymbol,poolNames,numberOfPools){
@@ -537,13 +417,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getNumberOfPools",
 	 def=function(object){
@@ -558,13 +432,7 @@ setGeneric(
 #' @param object see method arguments
 #' @param i see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getOutputReceivers",
 	 def=function(object,i){
@@ -578,13 +446,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment 
 setGeneric(
 	 name="getDecompOp",
 	 def=function(object){
@@ -598,13 +460,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment 
 setGeneric(
 	 name="getConstantInFluxVector",
 	 def=function(object){
@@ -614,17 +470,11 @@ setGeneric(
 
 
 
-#' automatic title
+#' Extract the influxes 
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getInFluxes",
 	 def=function(object){
@@ -638,13 +488,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="availableParticleProperties",
 	 def=function(object){
@@ -658,13 +502,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="availableParticleSets",
 	 def=function(object){
@@ -678,13 +516,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="availableResidentSets",
 	 def=function(object){
@@ -698,13 +530,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="computeResults",
 	 def=function(object){
@@ -718,13 +544,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getDotOut",
 	 def=function(object){
@@ -738,13 +558,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getTransferMatrixFunc",
 	 def=function(object){
@@ -760,13 +574,7 @@ setGeneric(
 #' @param timeSymbol see method arguments
 #' @param state_variable_names see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getCompartmentalMatrixFunc",
 	 def=function(
@@ -784,13 +592,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getConstantCompartmentalMatrix",
 	 def=function(
@@ -806,13 +608,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getConstantInternalFluxRateList_by_PoolIndex",
 	 def=function(
@@ -828,13 +624,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getConstantOutFluxRateList_by_PoolIndex",
 	 def=function(
@@ -850,13 +640,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getConstLinDecompOp",
 	 def=function(
@@ -872,13 +656,7 @@ setGeneric(
 #' 
 #' @param object see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getLinearScaleFactor",
 	 def=function(
@@ -895,13 +673,7 @@ setGeneric(
 #' @param object see method arguments
 #' @param as.closures see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getTransferCoefficients",
 	 def=function(object){
@@ -916,13 +688,7 @@ setGeneric(
 #' @param object see method arguments
 #' @param as.closures see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="getTransferCoefficients",
 	 def=function(object,as.closures=F){
@@ -961,13 +727,7 @@ setGeneric(
 #' @param interpolation see method arguments
 #' @param ... see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="ScalarTimeMap",
 	 def=function 
@@ -991,13 +751,7 @@ setGeneric(
 #' @param format see method arguments
 #' @param ... see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="BoundFc",
 	 def=function 
@@ -1014,13 +768,7 @@ setGeneric(
 #' 
 #' @param map see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="UnBoundInFluxes",
 	 def=function 
@@ -1035,13 +783,7 @@ setGeneric(
 #' @param map see method arguments
 #' @param numberOfPools see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="ConstInFluxes",
 	 def=function(map,numberOfPools)
@@ -1430,13 +1172,7 @@ setGeneric(
 #' @param x see method arguments
 #' @param ... see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="add_plot",
 	 def=function 
@@ -1455,13 +1191,7 @@ setGeneric(
 #' 
 #' @param id see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="GeneralPoolId",
 	 def=function  (id) {
@@ -1477,13 +1207,7 @@ setGeneric(
 #' @param destination see method arguments
 #' @param src_to_dest see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="PoolConnection_by_PoolIndex",
 	 def=function  
@@ -1501,13 +1225,7 @@ setGeneric(
 #' @param destination see method arguments
 #' @param src_to_dest see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="PoolConnection_by_PoolName",
 	 def=function  
@@ -1524,13 +1242,7 @@ setGeneric(
 #' @param id see method arguments
 #' @param ... see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="PoolName",
 	 def=function(id,...){
@@ -1545,13 +1257,7 @@ setGeneric(
 #' @param id see method arguments
 #' @param ... see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="PoolIndex",
 	 def=function(id,...){
@@ -1566,13 +1272,7 @@ setGeneric(
 #' @param obj see method arguments
 #' @param pools see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="check_pool_ids",
 	 def=function(obj,pools){
@@ -1586,13 +1286,7 @@ setGeneric(
 #' 
 #' @param id see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="GeneralPoolId",
 	 def=function(id){
@@ -1608,13 +1302,7 @@ setGeneric(
 #' @param poolNames see method arguments
 #' @param timeSymbol see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="by_PoolIndex",
 	 def=function(obj,poolNames,timeSymbol){
@@ -1629,13 +1317,7 @@ setGeneric(
 #' @param obj see method arguments
 #' @param poolNames see method arguments
 #' @s4methods
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment
 setGeneric(
 	 name="by_PoolName",
 	 def=function(obj,poolNames){

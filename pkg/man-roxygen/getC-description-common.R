@@ -1,4 +1,4 @@
-#' The solution of the IVP for the pool contents.
+#' The solution of the initial value problem (IVP) for the pool contents.
 #' Since the first models in SoilR had only Carbon pools 
 #' the function name \code{getC} could be interpreted as 
 #' refering to the C content. If the model includes other 

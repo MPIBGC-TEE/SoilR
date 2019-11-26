@@ -2,7 +2,7 @@
 % Please edit documentation in R/Model.R
 \name{initialize,Model-method}
 \alias{initialize,Model-method}
-\title{automatic title}
+\title{Internal method to supervise creation of objects of this class}
 \usage{
 \S4method{initialize}{Model}(
   .Object,
@@ -31,5 +31,7 @@
 \item{pass}{no manual documentation}
 }
 \description{
-automatic title
+It is usually not necessary for user code to call this method.
+It's purpose is to enforce some sanity checks since it gets automatically
+called by \code{new} whenever an object of this class is created
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/Model.R
 \name{plot,Model-method}
 \alias{plot,Model-method}
-\title{automatic title}
+\title{Create an overview plot}
 \usage{
 \S4method{plot}{Model}(x)
 }
@@ -10,5 +10,6 @@
 \item{x}{object of class:\code{Model}, The model (run) the results of which are plotted}
 }
 \description{
-automatic title
+The method solves the model and plots the solutions
+It is intended to provide a quick overview.
 }

@@ -2,13 +2,15 @@
 % Please edit documentation in R/DecompOp.R
 \name{GeneralDecompOp,DecompOp-method}
 \alias{GeneralDecompOp,DecompOp-method}
-\title{automatic title}
+\title{Pass through factory for objects of subclasses of \linkS4class{DecompOp}}
 \usage{
 \S4method{GeneralDecompOp}{DecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{DecompOp}, no manual documentation}
+\item{object}{object of class:\code{DecompOp}, An object that already is of class \code{DecompOp}}
 }
 \description{
-automatic title
+This method takes and returns an (identical) object that inherits 
+from \linkS4class{DecompOp}.
+It's purpose it to be able to call the generic function on arguments that are allready
 }

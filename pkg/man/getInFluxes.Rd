@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getInFluxes}
 \alias{getInFluxes}
-\title{automatic title}
+\title{Extract the influxes}
 \usage{
 getInFluxes(object)
 }
@@ -10,7 +10,7 @@ getInFluxes(object)
 \item{object}{see method arguments}
 }
 \description{
-automatic title
+Extract the influxes
 }
 \section{S4-methods}{
       \itemize{

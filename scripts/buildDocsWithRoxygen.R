@@ -16,7 +16,7 @@ show_docs<-function(pkgDir){
   #build-rd(pkgDir,roclets=c('auto_comment_roclet','rd'))
   #build-rd(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
   #build-rd(pkgDir,roclets=c('inheritance_graph_roclet'))
-  build_rd(pkgDir)
+  build_rd(pkgDir,roclet='rd')
 
   check_rd(pkgDir)
   install_pkg_with_html(pkgDir)
@@ -29,10 +29,6 @@ build_rd<-function(pkgDir,roclets=c('inheritance_graph_roclet','rd')){
   initial.options <- commandArgs(trailingOnly = FALSE)
   file.arg.name <- "--file="
   script.name <- sub(file.arg.name, "", initial.options[grep(file.arg.name, initial.options)])
-  
-  pkgDir='~/SoilR-exp/pkg'
-  pp('pkgDir')
-  
   
   requireNamespace('roxygen2')
     tryCatch(

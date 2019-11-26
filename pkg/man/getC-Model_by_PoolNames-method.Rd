@@ -7,14 +7,12 @@
 \S4method{getC}{Model_by_PoolNames}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model_by_PoolNames}, A model(run) as produced by the constructors 
-\itemize{
- \item{\code{\link{Model}}}
- \item{\code{\link{Model_by_PoolNames}}}
- \item{\code{\link{Model_14}}}
-}
+\item{object}{object of class:\code{Model_by_PoolNames}, A modelrun as produced by the constructors: 
+ \code{\link{Model}},
+ \code{\link{Model_by_PoolNames}},
+ \code{\link{Model_14}}
 the function \code{\link{GeneralModel}} or the functions listed in 
-\code{\link{predefinedModels}}. 
+\code{\link{predefinedModels}}. \cr
 A model represents the initial value problem (IVP)  
 for the contents of the pool consisting of 
 \itemize{
