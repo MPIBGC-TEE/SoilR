@@ -18,6 +18,13 @@ src_to_dest_parts<-function(src_to_dest){
     }
   }
 }
+src_to_dest_string <- function(sourceName,destinationName){
+  paste0(
+    sourceName,
+    rightArrowSplitter(),
+    destinationName
+  )
+}
 getRecipient=function(src_to_dest){
   #as.numeric(unlist(strsplit(stri,split=fromToSplitter()))[[2]])
   as.numeric(src_to_dest_parts(src_to_dest)[[2]])
