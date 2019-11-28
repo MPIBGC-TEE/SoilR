@@ -1,6 +1,14 @@
 #!/usr/bin/Rscript
 
-fromCran <- c( 'devtools','testthat', 'argparse', 'stringr','RUnit','getopt')
+fromCran <- c(
+  'devtools',
+	'testthat',
+	'argparse',
+	'stringr',
+	'RUnit',
+	'getopt',
+  'knitR'
+)
 lapply(fromCran,install.packages,repos='https://cran.uni-muenster.de')
 
 #fromGitHub <- c( 'R6Unit','debugHelpers')
