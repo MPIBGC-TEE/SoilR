@@ -63,3 +63,25 @@ setMethod(
         as(l,'OutFluxList_by_PoolIndex')
     }
 )
+
+#' Convert to a numeric vector with the pool names as names
+#'
+#' @template FluxListAsNumeric
+setMethod("as.numeric",
+    signature(x = "OutFluxList_by_PoolName"),
+    function (x,y,t,time_symbol,...) {
+      num_fluxes <-as.numeric(
+        lapply(
+          x,
+          function(flux){
+            apply_to_state_vec_and_time(flux@func,y,t,time_symbol)
+          }
+        )
+      )
+      names(num_fluxes) <- as.character(lapply(
+        x,
+        function(flux) flux@sourceName
+      ))
+      num_fluxes
+    }
+)

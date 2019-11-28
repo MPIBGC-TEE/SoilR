@@ -13,10 +13,16 @@ ydot_maker<-function(
 	names
 ){
   ydot<-function(t,y,parms,...){
+    # first evaluate the fluxfuntions at y and t
     num_in_fluxes <- as.numeric(in_fluxes,y,t,time_symbol)
     num_internal_fluxes <- as.numeric(internal_fluxes,y,t,time_symbol)
-    content_change<- function(name,y,t,time_symbol){
+    num_out_fluxes <- as.numeric(out_fluxes,y,t,time_symbol)
+
+    # now compute the derivative from the fluxes
+    content_change_rate<- function(name,y,t,time_symbol){
       in_to_name <- ifelse(name %in% names(num_in_fluxes),num_in_fluxes[[name]],0)
+      out_from_name <- ifelse(name %in% names(num_out_fluxes),num_in_fluxes[[name]],0)
+
       internal_to_name <- sum(
         num_internal_fluxes[
           as.character(
@@ -35,7 +41,25 @@ ydot_maker<-function(
           )
         ]
       )
-      in_to_name+internal_to_name
+      internal_from_name <- sum(
+        num_internal_fluxes[
+          as.character(
+            lapply(
+              purrr::keep(
+                internal_fluxes,
+                function(flux){flux@sourceName==name}
+              ),
+              function(flux){
+                src_to_dest_string(
+                  flux@sourceName,
+                  flux@destinationName
+                )
+              }
+            )
+          )
+        ]
+      )
+      in_to_name+internal_to_name-(internal_from_name+out_from_name)
     }
     # ydot is a vector 
     # for every component y_i we have
@@ -45,7 +69,7 @@ ydot_maker<-function(
     ydot_num <- as.numeric(
       lapply(
         names,
-        function(name) content_change(name,y,t,time_symbol)
+        function(name) content_change_rate(name,y,t,time_symbol)
       )
     )
     #with(as.list(c(parms,y)),{
@@ -58,7 +82,12 @@ ydot_maker<-function(
     #  outfluxes<-c(barrel=k_barrel*barrel,bottle=k_bottle*bottle)
     #  list(ydot,outfluxes=outfluxes)
     #})
-    list(ydot_num,influxes=num_in_fluxes,internal_fluxes=num_internal_fluxes)
+    list(
+      ydot_num,
+      influxes        =num_in_fluxes,
+      internal_fluxes =num_internal_fluxes,
+      out_fluxes      =num_out_fluxes
+    )
   }
   ydot
 }
