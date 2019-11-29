@@ -17,8 +17,9 @@ ydot_maker<-function(
     num_in_fluxes <- as.numeric(in_fluxes,y,t,time_symbol)
     num_internal_fluxes <- as.numeric(internal_fluxes,y,t,time_symbol)
     num_out_fluxes <- as.numeric(out_fluxes,y,t,time_symbol)
+    
 
-    # now compute the derivative from the fluxes
+    # now compute the derivative of the pool contents from the fluxes
     content_change_rate<- function(name,y,t,time_symbol){
       in_to_name <- ifelse(name %in% names(num_in_fluxes),num_in_fluxes[[name]],0)
       out_from_name <- ifelse(name %in% names(num_out_fluxes),num_in_fluxes[[name]],0)
@@ -72,18 +73,20 @@ ydot_maker<-function(
         function(name) content_change_rate(name,y,t,time_symbol)
       )
     )
-    #with(as.list(c(parms,y)),{
-    #  ydot<- -c(
-    #    k_barrel*barrel,
-    #    k_bottle*bottle,
-    #    k_bottle*glass
-    #  )
 
-    #  outfluxes<-c(barrel=k_barrel*barrel,bottle=k_bottle*bottle)
-    #  list(ydot,outfluxes=outfluxes)
-    #})
+    # the fluxes are also the derivative of the accumulated fluxes
+    # which we also want to compute
+    # So we add them to the derivative and get the accumulated fluxes as part
+    # of the solution (This also requires a new startvector extended by as many
+    # zeros as there are fluxes
+    
+
     list(
-      ydot_num,
+      c(ydot_num,
+        num_in_fluxes,
+        num_internal_fluxes,
+        num_out_fluxes
+      ),
       influxes        =num_in_fluxes,
       internal_fluxes =num_internal_fluxes,
       out_fluxes      =num_out_fluxes
@@ -91,7 +94,57 @@ ydot_maker<-function(
   }
   ydot
 }
-
+#-------------------------------------------------
+IVP_maker <- function(
+  in_fluxes,
+	internal_fluxes,
+	out_fluxes,
+	time_symbol,
+	startValues
+){
+  accumulated_fluxes_startvector <- rep(0,length(in_fluxes)+length(internal_fluxes)+length(out_fluxes))
+  names(accumulated_fluxes_startvector) <-c(
+    unlist(
+      lapply(
+        in_fluxes,
+        function(flux){
+          paste0('accumulated_influx','.',flux@destinationName)
+        }
+      )
+    )
+    ,
+    unlist(
+      lapply(
+        internal_fluxes,
+        function(flux){
+          paste0(
+            'accumulated_internal_flux',
+            '.',
+            src_to_dest_string(flux@sourceName,flux@destinationName)
+          )
+        }
+      )
+    )
+    ,
+    unlist(
+      lapply(
+        out_fluxes,
+        function(flux){
+          paste0('accumulated_outflux','.',flux@sourceName)
+        }
+      )
+    )
+  )
+  accumulated_fluxes_startvector
+  ydot=ydot_maker(
+    in_fluxes,
+		internal_fluxes,
+		out_fluxes,
+		time_symbol,
+		names=names(startValues)
+  )
+  list(ydot=ydot,startValues=c(startValues,accumulated_fluxes_startvector))
+}
 #------------------------------------------------------
 #test.ydotCreation=function(){
   ks<-c(k_barrel=0.1,k_bottle=0.2)
@@ -135,19 +188,26 @@ ydot_maker<-function(
         )
   )
  
-  startValues=c(barrel=1,bottle=2,glass=3) #vector
-  ydot=ydot_maker(
+   
+    
+  #ydot=ydot_maker(
+  #  in_fluxes=ifs,
+	#	internal_fluxes=intfs,
+	#	out_fluxes=ofs,
+	#	time_symbol='t',
+	#	names=names(startValues)
+  #)
+  ivp <- IVP_maker( 
     in_fluxes=ifs,
-		internal_fluxes=intfs,
-		out_fluxes=ofs,
-		time_symbol='t',
-		names=names(startValues)
+	  internal_fluxes=intfs,
+	  out_fluxes=ofs,
+	  time_symbol='t',
+	  startValues=c(barrel=1,bottle=2,glass=5)
   )
-
   #print(ydot(1,startValues,ks))
   times<-1:100
   print(
-    deSolve::lsoda(y=startValues,times=times,func=ydot,parms=ks)
+    deSolve::lsoda(y=ivp$startValues,times=times,func=ivp$ydot,parms=ks)
   )
 #}
 

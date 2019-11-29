@@ -1,7 +1,7 @@
 language: r
 before_install:
         - sudo apt-get update
-        - sudo apt-get -y install libssl-dev python3-mpi4py libcurl4-openssl-dev libxml2-dev
+        - sudo apt-get -y install libssl-dev python3-mpi4py libcurl4-openssl-dev libxml2-dev ghostscript
 install: Rscript travis/inst.R
 
 # we build a (1d)matrix of testsuites

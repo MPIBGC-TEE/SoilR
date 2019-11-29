@@ -86,3 +86,18 @@ setMethod(
         fl_by_index
     }
 )
+#' Convert to a numeric value with name of the form 'a->b'
+#'
+#' @template FluxListAsNumeric
+setMethod("as.numeric",
+    signature(x = "InternalFlux_by_PoolName"),
+    function (x,y,t,time_symbol,...) {
+      flux <- x
+      num_flux <- apply_to_state_vec_and_time(flux@func,y,t,time_symbol)
+      names(num_fluxes) <- src_to_dest_string(
+        flux@sourceName,
+        flux@destinationName
+      )
+      num_flux
+    }
+)
