@@ -1,3 +1,4 @@
+#!/usr/bin/Rscript
 requireNamespace('deSolve')
 requireNamespace('RUnit')
 requireNamespace("pkgload")
@@ -190,13 +191,6 @@ IVP_maker <- function(
  
    
     
-  #ydot=ydot_maker(
-  #  in_fluxes=ifs,
-	#	internal_fluxes=intfs,
-	#	out_fluxes=ofs,
-	#	time_symbol='t',
-	#	names=names(startValues)
-  #)
   ivp <- IVP_maker( 
     in_fluxes=ifs,
 	  internal_fluxes=intfs,
