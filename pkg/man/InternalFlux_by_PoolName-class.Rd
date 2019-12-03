@@ -10,6 +10,7 @@ S4-class for a single internal flux wiht source and destination pools specified 
 \section{S4-methods}{
   \subsection{S4-methods with class \code{InternalFlux_by_PoolName} in their signature:}{
       \itemize{
+        \item \code{\link{as.numeric,InternalFlux_by_PoolName-method}}
         \item \code{\link{by_PoolIndex,InternalFlux_by_PoolName,character,character-method}}
       }
   }

@@ -16,11 +16,6 @@
 #' \code{Deltal.14C} is age-corrected as per Stuiver and Polach (1977). All details about the derivation of this dataset are provided in Reimer et al. (2009).
 #' 
 #' 
-#' @source
-#' \url{
-#'   http://www.radiocarbon.org/IntCal09%20files/intcal09.14c
-#'   }
-#' 
 #' @references
 #' P. Reimer, M.Baillie, E. Bard, A. Bayliss, J. Beck, P. Blackwell, C. Ramsey, C. Buck, G. Burr, R. Edwards, et al. 2009. IntCal09 and Marine09 radiocarbon age calibration curves, 0 - 50,000 years cal bp. Radiocarbon, 51(4):1111 - 1150.
 #' 

@@ -1,12 +1,19 @@
-#!/usr/bin/env Rscript
-#·vim:set·ff=unix ts=2·sw=2:
+requireNamespace('knitr')
 requireNamespace('pkgload')
 requireNamespace('devtools')
 requireNamespace('getopt')
-pkgload::load_all("~/debugHelpers/pkg",export_all=FALSE)
-pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
+#pkgload::load_all("~/debugHelpers/pkg",export_all=FALSE)
+#pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
+devtools::install_github('mamueller/roxygen2')
+requireNamespace('roxygen2')
+
 #########################################
-build_and_check<-function(pkgDir){
+update_and_check_rd_and_vignettes<-function(pkgDir){
+  build_rd(pkgDir)
+  check(pkgDir)
+}
+#########################################
+build_and_check_rd<-function(pkgDir){
   build_rd(pkgDir)
   check_rd(pkgDir)
 }
@@ -49,14 +56,38 @@ build_rd<-function(pkgDir,roclets=c('inheritance_graph_roclet','rd')){
 
 #########################################
 check_rd<-function(pkgDir){
-devtools::check(
-  pkgDir,
-  document=FALSE,
-  build_args = '--no-build-vignettes',
-  args = '--ignore-vignettes'
-)
+  devtools::check(
+    pkgDir,
+    document=FALSE,
+    build_args = '--no-build-vignettes',
+    args = '--ignore-vignettes'
+  )
+}  
+#########################################
+check<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=both'){
+  ##system2("R",args=c('CMD','build','--compact-vignettes=both'))
+  #pkgTarName <- paste0(pkgload::pkg_name(pkgDir),'_',pkgload::pkg_version(pkgDir),'.tar.gz')
+  ##system2("R",args=c('CMD','build','--as-cran',pkgTarName))
+  #pkgbuild::build(pkgDir,args='--compact-vignettes=both') 
+  #devtools::check_built(pkgTarName)
+  # use a shortcut
+   devtools::check(
+     pkgDir,
+     document=document,
+     build_args=build_args,
+     error_on='note'
+   )
 }  
 
+#########################################
+release<-function(pkgDir,document='FALSE'){
+  # we use this shortcut
+  res=devtools::release(
+    pkgDir,
+    document=document,
+    args = args,
+  )
+}  
 #########################################
 install_pkg_with_html<-function(pkgDir){
   devtools::install(pkgDir,args=c('--html'))
@@ -128,16 +159,23 @@ browse_index<-function(pkgDir){
   )
 }
 
-
-
-
-############################################ 
-# find out if we are started via commandline 
-# or from a R-session
-if(is.null(sys.calls()[[sys.nframe()-1]])){
-  script.path<- getopt::get_Rscript_filename()
-  script.dir<- dirname(script.path)
-  pkgDir <- file.path(script.dir,'..','pkg')
-  #build_and_check(pkgDir)
-  show_docs(pkgDir)
+#########################################
+#' build a single vignette
+#' This is usefull if you just want to look at it.
+build_vignette<- function(vignette_src_path , buildDir='.',clean=TRUE){
+  pkgDir <- dirname(dirname(vignette_src_path))
+  on.exit(pkgload::unload(pkgDir))
+  
+  pkgload::load_all(pkgDir)
+  t=tools::file_path_sans_ext(vignette_src_path)
+  texFileName=file.path(buildDir,paste(t,'tex',sep='.'))
+  pdfFileName=file.path(buildDir,paste(t,'pdf',sep='.'))
+  if (file.exists(texFileName)){unlink(texFileName)}
+  knitr::knit(
+    vignette_src_path,
+    output=texFileName
+  )
+  tools::texi2pdf(texFileName,clean=clean)
+  tools::compactPDF( pdfFileName, gs_quality = "ebook")
+  
 }

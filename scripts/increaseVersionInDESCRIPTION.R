@@ -6,7 +6,7 @@ initial.options <- commandArgs(trailingOnly = FALSE)
 file.arg.name <- "--file="
 script.name <- sub(file.arg.name, "", initial.options[grep(file.arg.name, initial.options)])
 script.basename <- dirname(script.name)
-path.to.DESCRIPTION<- file.path(script.basename,'..','..','pkg','DESCRIPTION')
+path.to.DESCRIPTION<- file.path(script.basename,'..','pkg','DESCRIPTION')
 DescriptionMatrix <- read.dcf(path.to.DESCRIPTION)
 
 versionString <- DescriptionMatrix[[1,'Version']]  
@@ -17,5 +17,5 @@ counter <- as.integer(Parts[[2]])
 newVersionString <- paste(trunk,counter+1,sep=s) 
 print(newVersionString)
 DescriptionMatrix[[1,'Version']]   <- newVersionString
+DescriptionMatrix[[1,'Date']]   <- as.character(Sys.Date())
 write.dcf(DescriptionMatrix,file=path.to.DESCRIPTION)
-

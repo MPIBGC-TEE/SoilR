@@ -8,6 +8,7 @@ fromCran <- c(
 	'RUnit',
 	'getopt',
   'knitr',
+  'rmarkdown',
   'FME'
 )
 lapply(fromCran,install.packages,repos='https://cran.uni-muenster.de')

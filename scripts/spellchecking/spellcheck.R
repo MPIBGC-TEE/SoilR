@@ -93,5 +93,5 @@ res <- aspell(
   dictionaries=c(manDictPath) 
 )
 print(res)
-writeLines(summary(res),'possibly_mis-spelled_words')
+writeLines(summary(res),'possibly_misspelled_words')
 
