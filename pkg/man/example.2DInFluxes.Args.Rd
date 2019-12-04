@@ -7,6 +7,6 @@
 example.2DInFluxes.Args()
 }
 \description{
-Create a 2-dimensionsonal examples of a Influx objects from different
+Create a 2-dimensional examples of a Influx objects from different
 arguments
 }

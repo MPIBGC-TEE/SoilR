@@ -43,7 +43,7 @@ setMethod(
 #' @param state_variable_names The vector of the names of the state variables.
 #' The argument object is a representation of the compartmental system as #' lists of fluxes (internal fluxes and out-fluxes) as functions of the state variables and time. This method translates it to a matrix based formulation specific to a given ordering of the state variables.
 #' It is assumed (and checked) that the names formal arguments of the flux functions in \code{object} are a subset of the names of \code{state_variable_names} 
-#' The metod is used internally to translate the more intuitive (and more general) flux based description to the matrix based description required by the ode solvers. 
+#' The method is used internally to translate the more intuitive (and more general) flux based description to the matrix based description required by the ode solvers. 
 setMethod(
     f="getCompartmentalMatrixFunc"
     ,signature=signature(

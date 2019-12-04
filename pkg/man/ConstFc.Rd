@@ -20,8 +20,8 @@ the conversion is implemented.
 \description{
 The function returns an object of class ConstFc which is a building block
 for any 14C model in SoilR. The building blocks of a model have to keep
-iformation about the formats their data are in, because the high level
-function dealing wiht the models have to know. This function is actually a
-convienient wrapper for a call to R's standard constructor new, to hide its
+information about the formats their data are in, because the high level
+function dealing with the models have to know. This function is actually a
+convenient wrapper for a call to R's standard constructor new, to hide its
 complexity from the user.
 }

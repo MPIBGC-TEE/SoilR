@@ -1,6 +1,6 @@
 #' Objects that have a source and a destination determined by a string like object of class PoolName
 #'
-#' Examples are internal Fluxex and Fluxrates
+#' Examples are internal Fluxes and Fluxrates
 #' Their 'topologic' part and many related sanity checks are implemented here rather than 
 #' in every function that uses fluxes or rates
 #' The methods are also essential for the translation from (internal) 
@@ -49,7 +49,7 @@ setMethod(
 
 
 
-#' new object with the source pool id and the destination pool id guranteed to be of class PoolIndex
+#' new object with the source pool id and the destination pool id guaranteed to be of class PoolIndex
 #'
 #' converts the ids if necessary otherwise returns an 
 #' identical object

@@ -3,7 +3,7 @@
 \name{by_PoolIndex,PoolConnection_by_PoolName,ANY,ANY-method}
 \alias{by_PoolIndex,PoolConnection_by_PoolName,ANY,ANY-method}
 \title{constructor from strings of the form 'x->y'
-new object with the source pool id and the destination pool id guranteed to be of class PoolIndex}
+new object with the source pool id and the destination pool id guaranteed to be of class PoolIndex}
 \usage{
 \S4method{by_PoolIndex}{PoolConnection_by_PoolName,ANY,ANY}(obj, poolNames)
 }

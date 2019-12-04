@@ -1,9 +1,9 @@
-#' helper function to check that the length of the argumetn is exactly 1
+#' helper function to check that the length of the argument is exactly 1
 #'
 #' @param id Either a string or a number 
 check_id_length<-function(id){
     if(!length(id)==1){
-        stop('The length of a pool must be exactly 1. (either a string of a number)')
+        stop('The length of a pool-id must be exactly 1. (either a string  or a number)')
     }
 }
 
@@ -22,7 +22,7 @@ check_duplicate_pool_names<-function(poolNames){
 
 #' generic factory for this virtual class
 #'
-#' the class returned depends on the method dispached depending on the supplied arguments 
+#' the class returned depends on the method dispatched depending on the supplied arguments 
 setMethod(
     f="GeneralPoolId",
     signature=c(id='numeric'),

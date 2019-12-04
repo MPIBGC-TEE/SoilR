@@ -34,7 +34,7 @@ function with the same interface.}
 
 \item{pass}{Forces the constructor to create the model even if it is invalid}
 
-\item{timeSymbol}{A string (character vector of lenght 1) identifying the variable name}
+\item{timeSymbol}{A string (character vector of length 1) identifying the variable name}
 }
 \value{
 A model object that can be further queried.

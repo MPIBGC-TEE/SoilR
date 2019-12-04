@@ -3,9 +3,9 @@
 \docType{class}
 \name{InternalFlux_by_PoolName-class}
 \alias{InternalFlux_by_PoolName-class}
-\title{S4-class for a single internal flux wiht source and destination pools specified by name}
+\title{S4-class for a single internal flux with source and destination pools specified by name}
 \description{
-S4-class for a single internal flux wiht source and destination pools specified by name
+S4-class for a single internal flux with source and destination pools specified by name
 }
 \section{S4-methods}{
   \subsection{S4-methods with class \code{InternalFlux_by_PoolName} in their signature:}{

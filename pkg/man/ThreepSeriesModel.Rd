@@ -20,7 +20,7 @@ ThreepSeriesModel(
 \item{t}{A vector containing the points in time where the solution is
 sought.}
 
-\item{ks}{A vector of lenght 3 containing the values of the decomposition
+\item{ks}{A vector of length 3 containing the values of the decomposition
 rates for pools 1, 2, and 3.}
 
 \item{a21}{A scalar with the value of the transfer rate from pool 1 to pool

@@ -75,7 +75,7 @@ technical, rather abstract point of view.  }
 \section{Introduction}
 A large variety of compartment models can be implemented in \SoilR \ with the function
 \GeneralModel. This function is the backbone of all the different organic matter 
-decomposition models implemented in \SoilR; i.e., all other functions implemeting a model
+decomposition models implemented in \SoilR; i.e., all other functions implementing a model
 are wrappers to this function. In this vignette we show some examples on how to implement different 
 compartment models with different types of input data.
 
@@ -102,7 +102,7 @@ or a {\tt dataframe} of observed values.
 We will explore these different possibilities in the following examples.
 
 \section{Abstract example}
-Consider the following three pool model with conection in series
+Consider the following three pool model with connection in series
 
 \begin{equation}
 \frac{d{\bf C}(t)}{dt} = \left( \begin{array}{c}
@@ -245,7 +245,7 @@ Similarly, it is possible to ask the \Model object for the accumulated release o
 %%--------------------------------------------------------------------------------
 \section{Application including moisture and temperature dependence} 
 We now create a time
-dependent coeffictient matrix  where we give
+dependent coefficient matrix  where we give
 moisture and temperature as functions of time and
 create the coefficients as functions of moisture
 and temperature.  We will give the inputrate as a
@@ -266,7 +266,7 @@ plot(
     ,type="l"
 )
 @
-and something similar arbirtrary for moisture.
+and something similar arbitrary for moisture.
 <<>>=
 Moist=function(t0){#Moisture in percent
     W0=70       #average moisture in percent
@@ -380,7 +380,7 @@ Objects of classes \BoundInFluxes or \BoundLinDecompOp can be produced directly 
 time range explicitly.
 There are some small example plain text files in the  \codestyle{inst/extdata}
 directory of the package which contain 
-the data for time dependend input fluxes.
+the data for time dependent input fluxes.
 (Although every \codestyle{dataframe} could be used 
 we read the data from  plain text files here to emphasize the fact that 
 in the application of \SoilR \ this data will usually be provided 

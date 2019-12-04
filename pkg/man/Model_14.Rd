@@ -37,7 +37,7 @@ to any of the available subclasses of \linkS4class{InFluxes}.}
 \item{inputFc}{An object describing the fraction of C_14 in per mille
 (different formats are possible)}
 
-\item{c14DecayRate}{the rate at which C_14 decays radioactivly. If you don't
+\item{c14DecayRate}{the rate at which C_14 decays radioactively. If you don't
 provide a value here we assume the following value: k=-0.0001209681 y^-1 .
 This has the side effect that all your time related data are treated as if
 the time unit was year. Thus beside time itself it also affects decay rates
@@ -117,7 +117,7 @@ for n arbitrarily connected pools.
   # works for different combinations of 
   # arguments.
   # Although Model (the constructor function for objects of this class 
-  # accepts many many more convienient kinds of arguments,
+  # accepts many many more convenient kinds of arguments,
   # we will in this example call the constructor whith arguments which 
   # are of the same type as one of hte current internal 
   # representations in the 

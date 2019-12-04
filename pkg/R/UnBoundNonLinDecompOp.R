@@ -1,5 +1,5 @@
 
-#' An S4 class to represent the operation nonlinear nonautonomuous compartmental matrix 
+#' An S4 class to represent the operation nonlinear nonautonomous compartmental matrix 
 #'
 #' @family UnBoundNonLinDecompOp_constructor
 setClass(

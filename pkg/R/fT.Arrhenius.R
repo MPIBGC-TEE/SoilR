@@ -9,7 +9,7 @@
 #' Kelvin) for which the effects on decomposition rates are calculated.
 #' @param A A scalar defining the pre-exponential factor.
 #' @param Ea A scalar defining the activation energy in units of J mol^-1.
-#' @param Re A scalar defining the universal gas contant in units of J K^-1
+#' @param Re A scalar defining the universal gas contents in units of J K^-1
 #' mol^-1.
 #' @return A scalar or a vector containing the effects of temperature on
 #' decomposition rates (unitless).

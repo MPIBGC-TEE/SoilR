@@ -7,7 +7,7 @@ createDf=function(){
    tframe
 }
 #---------------------------------------------------------------------
-#                      constructors wiht dataframe
+#                      constructors with dataframe
 #---------------------------------------------------------------------
 test.BoundFc_constructorDF_lag_format_interpol=function(){
    tframe=createDf()
@@ -33,7 +33,7 @@ test.BoundFc_constructorDF_format=function(){
    checkEquals(c("t_min"=1,"t_max"=20),getTimeRange(obj))
 }
 #---------------------------------------------------------------------
-#                      constructors wiht function
+#                      constructors with function
 #---------------------------------------------------------------------
 test.BoundFc_constructor_func_tstart_tend_lag_format=function(){
    tstart=0

@@ -22,7 +22,7 @@
 #' @param Fc deprecated keyword argument, please use inputFc instead
 #' @param inputFc An object describing the fraction of C_14 in per mille
 #' (different formats are possible)
-#' @param di the rate at which C_14 decays radioactivly. If you don't provide a
+#' @param di the rate at which C_14 decays radioactively. If you don't provide a
 #' value here we assume the following value: k=-0.0001209681 y^-1 . This has
 #' the side effect that all your time related data are treated as if the time
 #' unit was year. Thus beside time itself it also affects decay rates the

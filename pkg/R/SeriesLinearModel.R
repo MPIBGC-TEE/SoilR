@@ -7,7 +7,7 @@
 #' @param t A vector containing the points in time where the solution is
 #' sought.
 #' @param m.pools An integer with the total number of pools in the model.
-#' @param ki A vector of lenght m containing the values of the decomposition
+#' @param ki A vector of length m containing the values of the decomposition
 #' rates for each pool i.
 #' @param Tij A vector of length m-1 with the transfer coefficients from pool j
 #' to pool i. The value of these coefficients must be in the range [0, 1].

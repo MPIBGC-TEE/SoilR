@@ -17,7 +17,7 @@ A model represents the initial value problem (IVP)
 for the contents of the pool consisting of 
 \itemize{
  \item{ The initial values of the pool content}
- \item{ The system of ordinary differential oqations, as dictated by the fluxes}
+ \item{ The system of ordinary differential equations, as dictated by the fluxes}
  \item{ The times for which the solution of the IVP is evaluated.}
 }}
 }
@@ -29,11 +29,11 @@ the pool system regardless of the form it is provided in.
 The information contained in these objects is equivalent to the set of internal and outward fluxes as
 functions of pool contents and time and sufficient to infer
 the "Compartmental Matrix" as a matrix valued function of the same arguments.
-In the general case of a nonautonomuous nonlinear Model this function
+In the general case of a nonautonomous nonlinear Model this function
 is a true function of  both, the pool contents and time.
 In the case of an non-autonomous linear model it is a function of time only,
 and in case of a autonomous linear model it is a constant matrix.
-The vector valued function can be infered by the generic  
+The vector valued function can be inferred by the generic  
 function \code{\link{getFunctionDefinition}}.
 }
 \description{

@@ -55,7 +55,7 @@ for which kind of inputs conversion methods are available. The attempted
 conversion allows great flexibility with respect to arguments and
 independence from the actual implementation. However if your code uses the
 wrong argument the error will most likely occur in the delegate functions.
-If this happens analyse the errormassage (or use \code{traceback()}) to see
+If this happens inspect the error message (or use \code{traceback()}) to see
 which function was called and try to call the constructor of the desired
 subclass explicitly with your arguments.  The subclasses are linked in the
 class documentation \linkS4class{DecompOp} or \linkS4class{InFluxes}
@@ -66,7 +66,7 @@ tries to detect accidental unreasonable combinations, especially concerning
 two kinds of errors. 
 \enumerate{ 
 \item unintended extrapolation of time series data 
-\item violoations of massbalance by the DecompOp argument. 
+\item violations of mass balance by the DecompOp argument. 
 }
 
 SoilR has a lot of unit tests which are installed with the package and are

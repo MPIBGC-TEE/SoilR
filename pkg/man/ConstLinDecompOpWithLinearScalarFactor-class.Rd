@@ -3,11 +3,11 @@
 \docType{class}
 \name{ConstLinDecompOpWithLinearScalarFactor-class}
 \alias{ConstLinDecompOpWithLinearScalarFactor-class}
-\title{A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
+\title{A class to represent a constant (=nonautonomous,linear) compartmental matrix 
 with a time dependent (linear) scalar pre factor 
 This is a special case of a linear compartmental operator/matrix}
 \description{
-A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
+A class to represent a constant (=nonautonomous,linear) compartmental matrix 
 with a time dependent (linear) scalar pre factor 
 This is a special case of a linear compartmental operator/matrix
 }

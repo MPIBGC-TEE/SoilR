@@ -17,7 +17,7 @@ ICBMModel(
 }
 \arguments{
 \item{t}{A vector containing the points in time where the solution is
-sougth.}
+sought.}
 
 \item{ks}{A vector of length 2 with the decomposition rates for the young
 and the old pool.}

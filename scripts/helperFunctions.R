@@ -80,12 +80,12 @@ check<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=both'){
 }  
 
 #########################################
-release<-function(pkgDir,document='FALSE'){
+release<-function(pkgDir){
   # we use this shortcut
+  # we always use check(pkgDir) before)
   res=devtools::release(
     pkgDir,
-    document=document,
-    args = args,
+    check=FALSE
   )
 }  
 #########################################

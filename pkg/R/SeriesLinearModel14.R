@@ -8,13 +8,13 @@
 #' @param t A vector containing the points in time where the solution is
 #' sought.
 #' @param m.pools An integer with the total number of pools in the model.
-#' @param ki A vector of lenght m containing the values of the decomposition
+#' @param ki A vector of length m containing the values of the decomposition
 #' rates for each pool i.
 #' @param Tij A vector of length m-1 with the transfer coefficients from pool j
 #' to pool i. The value of these coefficients must be in the range [0, 1].
 #' @param C0 A vector of length m containing the initial amount of carbon for
 #' the m pools.
-#' @param F0_Delta14C A vector of length m containig the initial amount of the
+#' @param F0_Delta14C A vector of length m containing the initial amount of the
 #' radiocarbon fraction for the m pools.
 #' @param In A scalar or data.frame object specifying the amount of litter
 #' inputs by time.

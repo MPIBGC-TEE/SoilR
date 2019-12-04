@@ -24,11 +24,11 @@ setMethod(
     }
 )
 
-#' pass throug constructor fron an object of the same class
+#' pass through constructor fron an object of the same class
 #'
-#' This is here to be able to call PoolIndex on a PoolIndex ojbect without
-#' having to chech before if it is necessary.
-#' the unnecessary poolNames argument will be ignored
+#' This is here to be able to call PoolIndex on a PoolIndex object without
+#' having to check before if it is necessary.
+#' the unnecessary poolNames argument will be ignored.
 setMethod(
     f="PoolIndex",
     signature=c(id='PoolIndex'),

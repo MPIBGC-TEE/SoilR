@@ -1,6 +1,6 @@
 #' example.2DBoundInFluxesFromFunction
 #' 
-#' Create a 2-dimensionsonal example of a BoundInFluxes object
+#' Create a 2-dimensional example of a BoundInFluxes object
 #' 
 #' 
 #' @return The returned object represents a time dependent Influx into a two

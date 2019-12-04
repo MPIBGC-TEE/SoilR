@@ -3,11 +3,11 @@
 \docType{class}
 \name{ConstLinDecompOp-class}
 \alias{ConstLinDecompOp-class}
-\title{A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
+\title{A class to represent a constant (=nonautonomous,linear) compartmental matrix 
 or equivalently a combination of ordered constant internal flux rates and 
 constant out flux rates.}
 \description{
-A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
+A class to represent a constant (=nonautonomous,linear) compartmental matrix 
 or equivalently a combination of ordered constant internal flux rates and 
 constant out flux rates.
 }

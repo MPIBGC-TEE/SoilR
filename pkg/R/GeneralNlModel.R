@@ -13,7 +13,7 @@
 #' @param ivList A numeric vector containing the initial amount of carbon for
 #' the n pools. The length of this vector is equal to the number of pools.
 #' @param inputFluxes A TimeMap object consisting of a vector valued function
-#' describing the inputs to the pools as funtions of time
+#' describing the inputs to the pools as functions of time
 #' \code{\link{TimeMap.new}}.
 #' @param solverfunc The function used by to actually solve the ODE system.
 #' @param pass Forces the constructor to create the model even if it is

@@ -4,7 +4,7 @@
 #' two-pool model with a bacterial and a substrate pool. It is a special case
 #' of the general nonlinear model.
 #' 
-#' This implementation containts default parameters presented in Zelenev et al.
+#' This implementation contains default parameters presented in Zelenev et al.
 #' (2000). It produces nonlinear damped oscillations in the form of a stable
 #' focus.
 #' 
@@ -34,7 +34,7 @@
 #' general functions like \code{\link{Model}}.
 #' @references Zelenev, V.V., A.H.C. van Bruggen, A.M. Semenov. 2000.
 #' ``BACWAVE,'' a spatial-temporal model for traveling waves of bacterial
-#' populations in response to a moving carbon source in soil. Microbail Ecology
+#' populations in response to a moving carbon source in soil. Microbial Ecology
 #' 40: 260-272.
 #' @examples
 #' hours=seq(0,800,0.1)

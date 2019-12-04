@@ -11,7 +11,7 @@ fT.Q10(Temp, k_ref = 1, T_ref = 10, Q10 = 2)
 the effects on decomposition rates are calculated.}
 
 \item{k_ref}{A scalar representing the value of the decomposition rate at a
-reference temperature vaule.}
+reference temperature value.}
 
 \item{T_ref}{A scalar representing the reference temperature.}
 

@@ -4,7 +4,7 @@
 #' @param func A function. The names of the formal arguments have to be a subset of the state variable names and the time symbol 
 #' This allows subsequent automatic reordering of the state variables.
 #' In the presence of a vector of state-variable-names the formulation can 
-#' automatically be transformed to a function of a s tate VECTOR argument and 
+#' automatically be transformed to a function of a state VECTOR argument and 
 #' time
 setMethod(
   f="InFlux_by_PoolName",
@@ -21,7 +21,7 @@ setMethod(
   }
 )
 
-#' Convert the pool names to indecies
+#' Convert the pool names to indices
 #' 
 #' @param obj no manual documentation
 #' @param poolNames no manual documentation

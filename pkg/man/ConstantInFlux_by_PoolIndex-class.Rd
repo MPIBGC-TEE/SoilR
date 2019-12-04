@@ -3,7 +3,7 @@
 \docType{class}
 \name{ConstantInFlux_by_PoolIndex-class}
 \alias{ConstantInFlux_by_PoolIndex-class}
-\title{class for a constan influx to a single pool identified by index}
+\title{class for a constant influx to a single pool identified by index}
 \description{
-class for a constan influx to a single pool identified by index
+class for a constant influx to a single pool identified by index
 }

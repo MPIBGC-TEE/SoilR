@@ -71,7 +71,7 @@ setMethod(
 #' conversion allows great flexibility with respect to arguments and
 #' independence from the actual implementation. However if your code uses the
 #' wrong argument the error will most likely occur in the delegate functions.
-#' If this happens analyse the errormassage (or use \code{traceback()}) to see
+#' If this happens inspect the error message (or use \code{traceback()}) to see
 #' which function was called and try to call the constructor of the desired
 #' subclass explicitly with your arguments.  The subclasses are linked in the
 #' class documentation \linkS4class{DecompOp} or \linkS4class{InFluxes}
@@ -82,7 +82,7 @@ setMethod(
 #' two kinds of errors. 
 #' \enumerate{ 
 #' \item unintended extrapolation of time series data 
-#' \item violoations of massbalance by the DecompOp argument. 
+#' \item violations of mass balance by the DecompOp argument. 
 #'}
 #' 
 #' SoilR has a lot of unit tests which are installed with the package and are
@@ -297,9 +297,9 @@ setMethod(
 
 #' Derivative of the state variables as function 
 #' 
-#' For non-linear models or models with state dependent insfluxes 
+#' For non-linear models or models with state dependent influxes 
 #' the returned function is a true function of state and time
-#' For linear models with state indendent influxes the returned 
+#' For linear models with state independent influxes the returned 
 #' function is in fact a function of time only.
 #' 
 #' @param object no manual documentation
@@ -374,7 +374,7 @@ setMethod(
 #' 
 #' The definite integral of the vector 
 #' of release fluxes over time from  start to t, computed for all t in the
-#' \code{times} argumente the modelrun has been created with. 
+#' \code{times} argument the modelrun has been created with. 
 #' @template Model-param
 #' @template PoolWiseReturnMatrix
 #' @autocomment 

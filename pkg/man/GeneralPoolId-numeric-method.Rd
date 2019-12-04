@@ -10,5 +10,5 @@
 \item{id}{object of class:\code{numeric}, no manual documentation}
 }
 \description{
-the class returned depends on the method dispached depending on the supplied arguments
+the class returned depends on the method dispatched depending on the supplied arguments
 }

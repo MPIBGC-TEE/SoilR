@@ -11,7 +11,7 @@
 #' @param pClay Percent clay.
 #' @param pE Evaporation coefficient. If open pan evaporation is used pE=0.75.
 #' If Potential evaporation is used, pE=1.0.
-#' @param bare Logical. Under bare soil conditions, bare=TRUE. Dafault is set
+#' @param bare Logical. Under bare soil conditions, bare=TRUE. Default is set
 #' under vegetated soil.
 #' @return A data.frame with accumulated top soil moisture deficit (Acc.TSMD)
 #' and the rate modifying factor b.

@@ -23,7 +23,7 @@
 #' This can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided
 #' function with the same interface.
 #' @param pass Forces the constructor to create the model even if it is invalid
-#' @param timeSymbol A string (character vector of lenght 1) identifying the variable name 
+#' @param timeSymbol A string (character vector of length 1) identifying the variable name 
 #  for time in the function definitions for the fluxes
 #' @return A model object that can be further queried.
 #' @seealso \code{\link{TwopParallelModel}}, \code{\link{TwopSeriesModel}},

@@ -21,7 +21,7 @@ RothCModel(
 \item{t}{A vector containing the points in time where the solution is
 sought.}
 
-\item{ks}{A vector of lenght 5 containing the values of the decomposition
+\item{ks}{A vector of length 5 containing the values of the decomposition
 rates for the different pools}
 
 \item{C0}{A vector of length 5 containing the initial amount of carbon for

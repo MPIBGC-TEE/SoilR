@@ -1,8 +1,8 @@
 #' constructor from a PoolName (integer like) object and a function 
-#' @param func A function. The names of the formal aguemnts have to be a subset of the state variable names and the time symbol 
+#' @param func A function. The names of the formal arguments have to be a subset of the state variable names and the time symbol 
 #' This allows subsequent automatic reordering of the state variables.
-#' In the presence of a vector of stave variabl names the formulation can 
-#' automatically be transformed to a function of a s tate VECTOR argument and #' time
+#' In the presence of a vector of stave variable names the formulation can 
+#' automatically be transformed to a function of a state VECTOR argument and #' time
 
 #' constructor from an ordered pair of PoolName (integer like) objects 
 setMethod(

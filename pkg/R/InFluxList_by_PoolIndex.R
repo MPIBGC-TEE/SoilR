@@ -14,7 +14,7 @@ setClass(
 
 #' constructor from a normal list
 #'
-#' after checking the elememts
+#' after checking the elements
 setMethod(
     "InFluxList_by_PoolIndex"
     ,signature=signature(object="list")

@@ -26,7 +26,7 @@ sought.}
 
 \item{m.pools}{An integer with the total number of pools in the model.}
 
-\item{ki}{A vector of lenght m containing the values of the decomposition
+\item{ki}{A vector of length m containing the values of the decomposition
 rates for each pool i.}
 
 \item{Tij}{A vector of length m-1 with the transfer coefficients from pool j
@@ -35,7 +35,7 @@ to pool i. The value of these coefficients must be in the range [0, 1].}
 \item{C0}{A vector of length m containing the initial amount of carbon for
 the m pools.}
 
-\item{F0_Delta14C}{A vector of length m containig the initial amount of the
+\item{F0_Delta14C}{A vector of length m containing the initial amount of the
 radiocarbon fraction for the m pools.}
 
 \item{In}{A scalar or data.frame object specifying the amount of litter

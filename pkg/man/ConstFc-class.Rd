@@ -3,9 +3,9 @@
 \docType{class}
 \name{ConstFc-class}
 \alias{ConstFc-class}
-\title{S4 class representing a constan ^{14}C fraction}
+\title{S4 class representing a constant ^{14}C fraction}
 \description{
-S4 class representing a constan ^{14}C fraction
+S4 class representing a constant ^{14}C fraction
 }
 \section{S4-methods}{
   \subsection{S4-methods with class \code{ConstFc} in their signature:}{

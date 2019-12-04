@@ -16,7 +16,7 @@
 data(IntCal13)
 }
 \description{
-Atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP. This is the most recent update to the internationally agreed calibration curve and superseds \code{\link{IntCal09}}.
+Atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP. This is the most recent update to the internationally agreed calibration curve and supersedes \code{\link{IntCal09}}.
 }
 \details{
 \code{Deltal.14C} is age-corrected as per Stuiver and Polach (1977). All details about the derivation of this dataset are provided in Reimer et al. (2013).

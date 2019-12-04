@@ -3,7 +3,7 @@
 \docType{class}
 \name{InFlux_by_PoolIndex-class}
 \alias{InFlux_by_PoolIndex-class}
-\title{S4 class for the influx to a single pool identified by theindex}
+\title{S4 class for the influx to a single pool identified by the index}
 \description{
-S4 class for the influx to a single pool identified by theindex
+S4 class for the influx to a single pool identified by the index
 }

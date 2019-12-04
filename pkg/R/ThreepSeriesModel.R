@@ -6,7 +6,7 @@
 #' 
 #' @param t A vector containing the points in time where the solution is
 #' sought.
-#' @param ks A vector of lenght 3 containing the values of the decomposition
+#' @param ks A vector of length 3 containing the values of the decomposition
 #' rates for pools 1, 2, and 3.
 #' @param a21 A scalar with the value of the transfer rate from pool 1 to pool
 #' 2.

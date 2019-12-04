@@ -2,7 +2,7 @@
 % Please edit documentation in R/InFlux_by_PoolName.R
 \name{by_PoolIndex,InFlux_by_PoolName,character,character-method}
 \alias{by_PoolIndex,InFlux_by_PoolName,character,character-method}
-\title{Convert the pool names to indecies}
+\title{Convert the pool names to indices}
 \usage{
 \S4method{by_PoolIndex}{InFlux_by_PoolName,character,character}(obj, poolNames, timeSymbol)
 }
@@ -14,5 +14,5 @@
 \item{timeSymbol}{object of class:\code{character}, no manual documentation}
 }
 \description{
-Convert the pool names to indecies
+Convert the pool names to indices
 }

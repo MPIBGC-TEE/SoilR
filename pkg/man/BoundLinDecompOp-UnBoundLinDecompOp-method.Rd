@@ -14,7 +14,7 @@
 \item{endtime}{End of time interval map will be restricted to}
 }
 \description{
-The destinction between the classes BoundLinDecompOp and UnboundLinDecompOp exist for those functions, that should be only defined for objects of class UnBoundLinDecomp.
+The distinction between the classes BoundLinDecompOp and UnboundLinDecompOp exist for those functions, that should be only defined for objects of class UnBoundLinDecomp.
  
 Many functions however do not need extra methods for objects of class 
 UnBoundLinDecompOp and just treat it as a BoundLinDecompOp which is defined

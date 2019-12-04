@@ -5,7 +5,7 @@
 #' 
 #' 
 #' @param t A vector containing the points in time where the solution is
-#' sougth.
+#' sought.
 #' @param ks A vector of length 2 with the decomposition rates for the young
 #' and the old pool.
 #' @param h Humufication coefficient (transfer rate from young to old pool).

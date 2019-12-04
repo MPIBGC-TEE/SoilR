@@ -13,8 +13,8 @@
 A function \eqn{f(t)}{f(t)}
 }
 \description{
-For non-linear models or models with state dependent insfluxes 
+For non-linear models or models with state dependent influxes 
 the returned function is a true function of state and time
-For linear models with state indendent influxes the returned 
+For linear models with state independent influxes the returned 
 function is in fact a function of time only.
 }

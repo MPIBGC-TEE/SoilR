@@ -41,7 +41,7 @@ by_PoolIndex(obj, poolNames, timeSymbol)
 
 <h3>Value</h3>
 
-<p>f_vec(vec,t)  A new function that extracts the arguments of obj from a complete vector of state variables and the time argument t and applies the orginal function to these arguments
+<p>f_vec(vec,t)  A new function that extracts the arguments of obj from a complete vector of state variables and the time argument t and applies the original function to these arguments
 The ode solvers used by SoilR expect a vector valued function of the state vector and time that represents the derivative.
 The components of this vector are scalar functions of a vector argument and time. It is possible for the  user to define such functions directly, but the definition always depends on the order of state variables. Furthermore these functions usually do not use the complete state vector but only some parts of it.
 It is much clearer more intuitive and less error prone to be able to define 
@@ -66,5 +66,5 @@ leaf_resp_vec=by_PoolIndex(leaf_resp,poolNames,timeSymbol='t')
 leaf_resp_vec(c(1,27,3,1),5) 
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-93 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.1-97 <a href="00Index.html">Index</a>]</div>
 </body></html>

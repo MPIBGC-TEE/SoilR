@@ -8,6 +8,6 @@
 #' for the contents of the pool consisting of 
 #' \itemize{
 #'  \item{ The initial values of the pool content}
-#'  \item{ The system of ordinary differential oqations, as dictated by the fluxes}
+#'  \item{ The system of ordinary differential equations, as dictated by the fluxes}
 #'  \item{ The times for which the solution of the IVP is evaluated.}
 #' }

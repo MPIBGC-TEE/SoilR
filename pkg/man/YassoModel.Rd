@@ -22,7 +22,7 @@ YassoModel(
 \item{t}{A vector containing the points in time where the solution is
 sought.}
 
-\item{ks}{A vector of lenght 7 containing the values of the exposure and
+\item{ks}{A vector of length 7 containing the values of the exposure and
 decomposition rates for each pool.}
 
 \item{p}{A vector of containing transfer coefficients among different pools.}
@@ -30,7 +30,7 @@ decomposition rates for each pool.}
 \item{C0}{A vector containing the initial amount of carbon for the 7 pools.
 The length of this vector must be 7.}
 
-\item{In}{A vector of constatn litter inputs.}
+\item{In}{A vector of constant litter inputs.}
 
 \item{xi}{A scalar or data.frame object specifying the external
 (environmental and/or edaphic) effects on decomposition rates.}

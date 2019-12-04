@@ -335,7 +335,7 @@ setMethod(
           if (ll!=flatDim){
             stop(
               sprintf(
-                'The lenght of a column of the matrix (refering to one timestep) was %s while
+                'The length of a column of the matrix (referring to one timestep) was %s while
                 the lag parameter had length %s.',
                 flatDim,
                 ll

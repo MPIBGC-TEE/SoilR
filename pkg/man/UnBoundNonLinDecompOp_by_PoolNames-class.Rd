@@ -3,9 +3,9 @@
 \docType{class}
 \name{UnBoundNonLinDecompOp_by_PoolNames-class}
 \alias{UnBoundNonLinDecompOp_by_PoolNames-class}
-\title{An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables}
+\title{An S4 class to represent the of  nonlinear nonautonomous compartmental system independently of the order of state variables}
 \description{
-An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables
+An S4 class to represent the of  nonlinear nonautonomous compartmental system independently of the order of state variables
 }
 \section{S4-methods}{
   \subsection{S4-methods with class \code{UnBoundNonLinDecompOp_by_PoolNames} in their signature:}{

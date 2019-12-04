@@ -34,7 +34,7 @@ setMethod(
 #' @param obj  For this method a function, whose formal arguments must have names that are elements of the union of poolNames and timeSymbol
 #' @param poolNames The ordered poolnames
 #' @param timeSymbol The name of the argument of obj that represents time.
-#' @return f_vec(vec,t)  A new function that extracts the arguments of obj from a complete vector of state variables and the time argument t and applies the orginal function to these arguments
+#' @return f_vec(vec,t)  A new function that extracts the arguments of obj from a complete vector of state variables and the time argument t and applies the original function to these arguments
 #' The ode solvers used by SoilR expect a vector valued function of the state vector and time that represents the derivative.
 #' The components of this vector are scalar functions of a vector argument and time. It is possible for the  user to define such functions directly, but the definition always depends on the order of state variables. Furthermore these functions usually do not use the complete state vector but only some parts of it.
 #' It is much clearer more intuitive and less error prone to be able to define 

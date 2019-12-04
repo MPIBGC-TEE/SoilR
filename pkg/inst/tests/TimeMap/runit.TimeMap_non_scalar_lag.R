@@ -195,7 +195,7 @@ test.TimeMap_from_Vector_and_Matrix_non_scalar_lag<- function(){
    
    # for a vector(timeslice of mat)  3D array lag is not acceptable
    checkException(TimeMap(times=times,data=mat,lag=array(dim=c(2,2,2),1:8)),silent=TRUE)
-   # for a vector(timeslice of mat) of length 2  a vector lag of lenght 3 ist not acceptable
+   # for a vector(timeslice of mat) of length 2  a vector lag of length 3 ist not acceptable
    checkException(TimeMap(times=times,data=mat,lag=c(2,2,2)),silent=TRUE)
 	 
    lag <- c(1.5,2.5)

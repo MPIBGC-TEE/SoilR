@@ -11,5 +11,5 @@ The returned object represents a time dependent Influx into a two
 pool model.
 }
 \description{
-Create a 2-dimensionsonal example of a BoundInFluxes object
+Create a 2-dimensional example of a BoundInFluxes object
 }

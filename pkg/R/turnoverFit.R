@@ -16,7 +16,7 @@
 #' @param obsyr a scalar with the year in which the soil sample was taken.
 #' @param In a scalar or data.frame with the annual amount of litter inputs to
 #' the soil.
-#' @param C0 a scalar with the initial amount of carbon stored at the begning
+#' @param C0 a scalar with the initial amount of carbon stored at the beginning
 #' of the simulation.
 #' @param yr0 The year at which simulations will start.
 #' @param Zone the hemispheric zone of atmospheric radiocarbon. Possible values

@@ -2,7 +2,7 @@
 #' 
 #' This function creates a (linear) numerical model for n independent
 #' (parallel) pools that can be queried afterwards.  It is used by the
-#' convinient wrapper functions \code{\link{TwopParallelModel}} and
+#' convenient wrapper functions \code{\link{TwopParallelModel}} and
 #' \code{\link{ThreepParallelModel}} but can also be used independently.
 #' 
 #' 
@@ -16,7 +16,7 @@
 #' n pools. <<The length of this vector is equal to the number of pools and
 #' thus equal to the length of k. This is checked by the function.
 #' @param inputrates An object consisting of a vector valued function
-#' describing the inputs to the pools as funtions of time
+#' describing the inputs to the pools as functions of time
 #' \code{\link{TimeMap.new}}
 #' @param solverfunc The function used to actually solve the ODE system. This
 #' can be \code{\link{deSolve.lsoda.wrapper}} or any other user provided

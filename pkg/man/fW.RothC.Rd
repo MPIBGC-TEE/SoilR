@@ -19,7 +19,7 @@ evapotranspiration (mm).}
 \item{pE}{Evaporation coefficient. If open pan evaporation is used pE=0.75.
 If Potential evaporation is used, pE=1.0.}
 
-\item{bare}{Logical. Under bare soil conditions, bare=TRUE. Dafault is set
+\item{bare}{Logical. Under bare soil conditions, bare=TRUE. Default is set
 under vegetated soil.}
 }
 \value{

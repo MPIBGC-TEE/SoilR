@@ -13,7 +13,7 @@
 #' pools.
 #' @param C0 A vector of length 3 containing the initial amount of carbon for
 #' the 3 pools.
-#' @param F0_Delta14C A vector of length 3 containig the initial amount of the
+#' @param F0_Delta14C A vector of length 3 containing the initial amount of the
 #' radiocarbon fraction for the 3 pools.
 #' @param In A scalar or a data.frame object specifying the amount of litter
 #' inputs by time.

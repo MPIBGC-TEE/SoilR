@@ -7,7 +7,7 @@
 #' @param Temp A scalar or vector containing values of temperature for which
 #' the effects on decomposition rates are calculated.
 #' @param k_ref A scalar representing the value of the decomposition rate at a
-#' reference temperature vaule.
+#' reference temperature value.
 #' @param T_ref A scalar representing the reference temperature.
 #' @param Q10 A scalar. Temperature coefficient Q10.
 #' @return A scalar or a vector containing the effects of temperature on

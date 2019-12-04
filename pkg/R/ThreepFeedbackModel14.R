@@ -44,7 +44,7 @@
 #' \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user
 #' provided function with the same interface.
 #' @param pass if TRUE forces the constructor to create the model even if it is
-#' invalid. This is sometimes useful when SoilR is used by externel packages
+#' invalid. This is sometimes useful when SoilR is used by external packages
 #' for parameter estimation.
 #' @seealso There are other \code{\link{predefinedModels}} and also more
 #' general functions like \code{\link{Model_14}}.

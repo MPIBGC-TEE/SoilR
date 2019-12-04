@@ -2,7 +2,7 @@
 % Please edit documentation in R/PoolName.R
 \name{PoolName,PoolName-method}
 \alias{PoolName,PoolName-method}
-\title{pass throug constructor fron an object of the same class}
+\title{pass through constructor fron an object of the same class}
 \usage{
 \S4method{PoolName}{PoolName}(id, poolNames)
 }
@@ -12,6 +12,6 @@
 \item{poolNames}{no manual documentation}
 }
 \description{
-This is here to be able to call PoolName on a PoolName ojbect without
+This is here to be able to call PoolName on a PoolName object without
 having to test before if we have to.
 }

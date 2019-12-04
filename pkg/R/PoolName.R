@@ -11,9 +11,9 @@ setMethod(
         return(new('PoolName',id))
     }
 )
-#' pass throug constructor fron an object of the same class
+#' pass through constructor fron an object of the same class
 #'
-#' This is here to be able to call PoolName on a PoolName ojbect without
+#' This is here to be able to call PoolName on a PoolName object without
 #' having to test before if we have to. 
 # This makes the calling code easier to read. 
 setMethod(

@@ -194,20 +194,21 @@ IVP_maker <- function(
    ,out_fluxes=ofs
    ,timeSymbol='t'
  )
-    
+ # define initial values for the state variables
+ iv=c(barrel=1,bottle=2,glass=5)
   ivp <- IVP_maker( 
     in_fluxes=ifs,
 	  internal_fluxes=intfs,
 	  out_fluxes=ofs,
 	  time_symbol='t',
-	  startValues=c(barrel=1,bottle=2,glass=5)
+	  startValues=iv
   )
   #print(ydot(1,startValues,ks))
   times<-1:100
   mod=GeneralModel(
         t=times
         ,A=obn
-        ,ivList=iv 
+        ,ivList=iv
         ,inputFluxes=ifs
         ,timeSymbol='t'
   )

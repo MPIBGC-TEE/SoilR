@@ -19,11 +19,11 @@
 #'    \item{  \code{\linkS4class{Model}} }
 #'    \item{  \code{\linkS4class{Model_14}} }.
 #' }
-#' To inspect the behaviour of a model object these classes provide several
+#' To inspect the behavior of a model object these classes provide several
 #' methods to be found in their respective descriptions.
 #' If none of the predefined models fits your needs you can assemble your own model.
 #' The functions that create it are the constructors of the above mentioned classes. 
-#' By convention they have the same name as the class and are desribed here:
+#' By convention they have the same name as the class and are described here:
 #' \enumerate{
 #'    \item{  \code{\link{Model}} }
 #'    \item{  \code{\link{Model_14}} }.

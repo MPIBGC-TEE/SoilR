@@ -4,7 +4,7 @@ ThreepParallelAnalytical=structure( function
 ### The function computes the solution for two independent (parallel) pools analytically
 (
  ### title<< Simple function arguments
- time,	##<< a vector containing the points in time where the solution is sougth
+ time,	##<< a vector containing the points in time where the solution is sought
  k1,    ##<< the rate of decay in pool 1
  k2,	##<< the same for pool 2
  k3,	##<< the same for pool 3

@@ -22,7 +22,7 @@ sought.}
 
 \item{m.pools}{An integer with the total number of pools in the model.}
 
-\item{ki}{A vector of lenght m containing the values of the decomposition
+\item{ki}{A vector of length m containing the values of the decomposition
 rates for each pool i.}
 
 \item{Tij}{A vector of length m-1 with the transfer coefficients from pool j

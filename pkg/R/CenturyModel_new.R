@@ -6,7 +6,7 @@
 #' 
 #' @param t A vector containing the points in time where the solution is
 #' sought.
-#' @param ks A vector of lenght 5 containing the values of the decomposition
+#' @param ks A vector of length 5 containing the values of the decomposition
 #' rates for the different pools. Units in per week.
 #' @param C0 A vector of length 5 containing the initial amount of carbon for
 #' the 5 pools.

@@ -15,7 +15,7 @@ Kelvin) for which the effects on decomposition rates are calculated.}
 
 \item{Ea}{A scalar defining the activation energy in units of J mol^-1.}
 
-\item{Re}{A scalar defining the universal gas contant in units of J K^-1
+\item{Re}{A scalar defining the universal gas contents in units of J K^-1
 mol^-1.}
 }
 \value{

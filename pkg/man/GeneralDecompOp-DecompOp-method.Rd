@@ -12,5 +12,5 @@
 \description{
 This method takes and returns an (identical) object that inherits 
 from \linkS4class{DecompOp}.
-It's purpose it to be able to call the generic function on arguments that are allready
+It's purpose it to be able to call the generic function on arguments that are already
 }

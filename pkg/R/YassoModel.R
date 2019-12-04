@@ -8,12 +8,12 @@
 #' 
 #' @param t A vector containing the points in time where the solution is
 #' sought.
-#' @param ks A vector of lenght 7 containing the values of the exposure and
+#' @param ks A vector of length 7 containing the values of the exposure and
 #' decomposition rates for each pool.
 #' @param p A vector of containing transfer coefficients among different pools.
 #' @param C0 A vector containing the initial amount of carbon for the 7 pools.
 #' The length of this vector must be 7.
-#' @param In A vector of constatn litter inputs.
+#' @param In A vector of constant litter inputs.
 #' @param xi A scalar or data.frame object specifying the external
 #' (environmental and/or edaphic) effects on decomposition rates.
 #' @param solver A function that solves the system of ODEs. This can be

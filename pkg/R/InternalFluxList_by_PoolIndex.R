@@ -1,6 +1,6 @@
 #' constructor from a normal list
 #'
-#' after checking the elememts
+#' after checking the elements
 setMethod("InternalFluxList_by_PoolIndex",
     signature=signature(object="list"),
     definition=function(object){

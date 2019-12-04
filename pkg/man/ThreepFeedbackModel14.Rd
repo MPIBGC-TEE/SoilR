@@ -72,7 +72,7 @@ enter the system.}
 provided function with the same interface.}
 
 \item{pass}{if TRUE forces the constructor to create the model even if it is
-invalid. This is sometimes useful when SoilR is used by externel packages
+invalid. This is sometimes useful when SoilR is used by external packages
 for parameter estimation.}
 }
 \description{

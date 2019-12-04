@@ -2,7 +2,7 @@
 % Please edit documentation in R/PoolId.R
 \name{check_id_length}
 \alias{check_id_length}
-\title{helper function to check that the length of the argumetn is exactly 1}
+\title{helper function to check that the length of the argument is exactly 1}
 \usage{
 check_id_length(id)
 }
@@ -10,5 +10,5 @@ check_id_length(id)
 \item{id}{Either a string or a number}
 }
 \description{
-helper function to check that the length of the argumetn is exactly 1
+helper function to check that the length of the argument is exactly 1
 }

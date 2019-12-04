@@ -7,7 +7,7 @@ CorrectNonautonomousLinearModelExplicit <- function(){
   # works for different combinations of 
   # arguments.
   # Although Model (the constructor function for objects of this class 
-  # accepts many many more convienient kinds of arguments,
+  # accepts many many more convenient kinds of arguments,
   # we will in this example call the constructor whith arguments which 
   # are of the same type as one of hte current internal 
   # representations in the 

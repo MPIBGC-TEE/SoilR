@@ -2,7 +2,7 @@
 % Please edit documentation in R/PoolIndex.R
 \name{PoolIndex,PoolIndex-method}
 \alias{PoolIndex,PoolIndex-method}
-\title{pass throug constructor fron an object of the same class}
+\title{pass through constructor fron an object of the same class}
 \usage{
 \S4method{PoolIndex}{PoolIndex}(id, poolNames)
 }
@@ -12,7 +12,7 @@
 \item{poolNames}{no manual documentation}
 }
 \description{
-This is here to be able to call PoolIndex on a PoolIndex ojbect without
-having to chech before if it is necessary.
-the unnecessary poolNames argument will be ignored
+This is here to be able to call PoolIndex on a PoolIndex object without
+having to check before if it is necessary.
+the unnecessary poolNames argument will be ignored.
 }

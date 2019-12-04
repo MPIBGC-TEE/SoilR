@@ -2,7 +2,7 @@
 #'
 #' This method takes and returns an (identical) object that inherits 
 #' from \linkS4class{DecompOp}.
-#' It's purpose it to be able to call the generic function on arguments that are allready
+#' It's purpose it to be able to call the generic function on arguments that are already
 # of class \linkS4clas{DecompOp} without having to check if this is necessary.  
 #' @param object An object that already is of class \code{DecompOp}
 #' @autocomment 

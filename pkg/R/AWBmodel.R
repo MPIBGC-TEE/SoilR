@@ -5,7 +5,7 @@
 #' Bradford, 2010), a four-pool model with a microbial biomass, enzyme, SOC and
 #' DOC pools. It is a special case of the general nonlinear model.
 #' 
-#' This implementation containts default parameters presented in Allison et al.
+#' This implementation contains default parameters presented in Allison et al.
 #' (2010).
 #' 
 #' @param t vector of times (in hours) to calculate a solution.

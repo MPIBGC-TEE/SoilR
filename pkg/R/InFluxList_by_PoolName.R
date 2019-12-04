@@ -1,6 +1,6 @@
 #' constructor from a normal list
 #'
-#' after checking the elememts
+#' after checking the elements
 
 setMethod("InFluxList_by_PoolName",
     signature=signature(object="list"),
@@ -23,7 +23,7 @@ setMethod("InFluxList_by_PoolName",
 
 
 
-#' Tranform pool names to indecies
+#' Transform pool names to indices
 #' 
 #' @param obj no manual documentation
 #' @param poolNames no manual documentation

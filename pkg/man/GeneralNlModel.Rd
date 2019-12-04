@@ -25,7 +25,7 @@ consistent with the number of initial values and input fluxes.}
 the n pools. The length of this vector is equal to the number of pools.}
 
 \item{inputFluxes}{A TimeMap object consisting of a vector valued function
-describing the inputs to the pools as funtions of time
+describing the inputs to the pools as functions of time
 \code{\link{TimeMap.new}}.}
 
 \item{solverfunc}{The function used by to actually solve the ODE system.}

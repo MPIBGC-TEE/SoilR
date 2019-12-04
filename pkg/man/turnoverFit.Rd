@@ -24,7 +24,7 @@ the soil sample.}
 \item{In}{a scalar or data.frame with the annual amount of litter inputs to
 the soil.}
 
-\item{C0}{a scalar with the initial amount of carbon stored at the begning
+\item{C0}{a scalar with the initial amount of carbon stored at the beginning
 of the simulation.}
 
 \item{yr0}{The year at which simulations will start.}

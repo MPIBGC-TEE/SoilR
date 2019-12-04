@@ -10,7 +10,7 @@
 \item{func}{object of class:\code{function}, A function. The names of the formal arguments have to be a subset of the state variable names and the time symbol 
 This allows subsequent automatic reordering of the state variables.
 In the presence of a vector of state-variable-names the formulation can 
-automatically be transformed to a function of a s tate VECTOR argument and 
+automatically be transformed to a function of a state VECTOR argument and 
 time}
 
 \item{destinationName}{object of class:\code{character}, PoolName (string like) object and a function}

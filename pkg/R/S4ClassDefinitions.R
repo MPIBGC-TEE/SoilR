@@ -111,7 +111,7 @@ setClass(
   contains=c("list")
 )
 
-#' S4-class for a single internal flux wiht source and destination pools specified by indices 
+#' S4-class for a single internal flux with source and destination pools specified by indices 
 #'
 #' @s4superclasses
 #' @s4subclasses
@@ -122,7 +122,7 @@ setClass(
   slots=c(sourceIndex='PoolIndex',destinationIndex='PoolIndex',func='function')
 )
 
-#' S4-class for a single internal flux wiht source and destination pools specified by name
+#' S4-class for a single internal flux with source and destination pools specified by name
 #'
 #' @s4superclasses
 #' @s4subclasses
@@ -335,7 +335,7 @@ setClass(
 )
 
 #--------------------------------
-#' A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
+#' A class to represent a constant (=nonautonomous,linear) compartmental matrix 
 #' or equivalently a combination of ordered constant internal flux rates and 
 #' constant out flux rates.
 #' @s4superclasses
@@ -347,7 +347,7 @@ setClass(
     slots=list( mat="matrix")
 )
 
-#' A class to represent a constant (=nonautonomuous,linear) compartmental matrix 
+#' A class to represent a constant (=nonautonomous,linear) compartmental matrix 
 #' with a time dependent (linear) scalar pre factor 
 #' This is a special case of a linear compartmental operator/matrix 
 #' @s4superclasses
@@ -370,7 +370,7 @@ setClass(
     contains=c("DecompOp","TimeMap"),   
    )
 
-#' An S4 class to represent the of  nonlinear nonautonomuous compartmental system independently of the order of state variables 
+#' An S4 class to represent the of  nonlinear nonautonomous compartmental system independently of the order of state variables 
 #'
 #' @s4superclasses
 #' @s4subclasses
@@ -429,7 +429,7 @@ setClass(
 
 
 
-#' class for a constan influx to a single pool identified by index
+#' class for a constant influx to a single pool identified by index
 #'
 #' @s4superclasses
 #' @s4subclasses
@@ -439,7 +439,7 @@ setClass(
   slots=c(destinationIndex='PoolIndex',flux_constant='numeric')
 )
 
-#' S4 class for the influx to a single pool identified by theindex 
+#' S4 class for the influx to a single pool identified by the index 
 #'
 #' @s4superclasses
 #' @s4subclasses
@@ -723,7 +723,7 @@ setClass(
    validity=correctnessOfModel 
 )
 
-#' S4 class representing a constan ^{14}C fraction
+#' S4 class representing a constant ^{14}C fraction
 #'
 #' @s4superclasses
 #' @s4subclasses
