@@ -1,7 +1,7 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.1-96
-Date: 2019-12-03
+Version: 1.1-97
+Date: 2019-12-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
 Description: Functions for modeling Soil Organic Matter decomposition

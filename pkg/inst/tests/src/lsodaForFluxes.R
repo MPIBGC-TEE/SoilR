@@ -189,7 +189,11 @@ IVP_maker <- function(
         )
   )
  
-   
+ obn<- UnBoundNonLinDecompOp_by_PoolNames(
+   internal_fluxes=intfs
+   ,out_fluxes=ofs
+   ,timeSymbol='t'
+ )
     
   ivp <- IVP_maker( 
     in_fluxes=ifs,
@@ -200,6 +204,14 @@ IVP_maker <- function(
   )
   #print(ydot(1,startValues,ks))
   times<-1:100
+  mod=GeneralModel(
+        t=times
+        ,A=obn
+        ,ivList=iv 
+        ,inputFluxes=ifs
+        ,timeSymbol='t'
+  )
+   
   print(
     deSolve::lsoda(y=ivp$startValues,times=times,func=ivp$ydot,parms=ks)
   )

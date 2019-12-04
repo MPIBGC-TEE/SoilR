@@ -1,4 +1,38 @@
                                    
+				   Changes to version 1.1-97
+==============================================================================================
+- This is an intermediate release in response to requests from users who have
+  trouble to install from github. The version has many new features but needs
+  more refactoring to integrate the existing codebase with the new concepts.
+  Everything that used to work still does but behind the scenes a lot of
+  changes are in progress.
+
+- A new way of describing models entirely by fluxes has been experimentally
+  included.  This additional way is independent of the order of the state 
+  variables and requires much less effort in describing huge models.  
+  Instead of the $n^2$ matrix entries for a n-pool system only the usually far fewer 
+  existing fluxes have to be provided. Furthermore these can be formulated as
+  functions of only those state-variables they depend on. This information is
+  sufficient to compute the matrices automatically and produce graphs showing
+  the connections between the pools, something that could not be inferred from
+  the previously exclusively used matrix valued functions. The new formulation
+  incorporates nonlinear models and even state dependent inputs by default.
+
+- A new solution method is implemented which speeds up computations that can be expressed
+  by automatically extending the ODE system and solving it immediately for derived properties.
+
+- While all this is possible, most of the front end models internally still use the old interface 
+  and some of the functionality of the old models has not been implemented for the new ones, let
+  alone factored out. 
+
+- The documentation is still incomplete since we changed to roxygen and have to rewrite 
+  many S4-generic, class and method descriptions as comments. 
+
+- With the generalization of most of the functionality for linear to nonlinear models 
+  some of the old classes themselves become obsolete and will have to be removed 
+  when the internal clients will have been converted to the new internal infrastructure.
+
+
 				   Changes to version 1.1-29
 ==============================================================================================
 - Two new functions were added to compute transit time and age densities for linear models.
