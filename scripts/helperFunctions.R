@@ -1,12 +1,14 @@
 requireNamespace('knitr')
 requireNamespace('pkgload')
 requireNamespace('devtools')
+requireNamespace('rhub')
 requireNamespace('getopt')
 #requireNamespace('git2r')
 #pkgload::load_all("~/debugHelpers/pkg",export_all=FALSE)
 #pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
 devtools::install_github('mamueller/roxygen2')
 requireNamespace('roxygen2')
+
 
 #########################################
 update_and_check_rd_and_vignettes<-function(pkgDir){
@@ -32,11 +34,12 @@ show_docs<-function(pkgDir){
   browse_index(pkgDir)
 }
 #########################################
-build <- function(pkgDir,path,args='--compact-vignettes=both',manual=TRUE){
+build_devtools <- function(pkgDir,path,args='--compact-vignettes=both',manual=TRUE){
   devtools::build(
     pkgDir,
     path=path,
     args=args,
+    manual=manual # very important since rhub will complain otherwise
   )
 }
 #########################################
@@ -73,7 +76,7 @@ check_rd<-function(pkgDir){
   )
 }  
 #########################################
-check<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=both'){
+check_devtools<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=both'){
   ##system2("R",args=c('CMD','build','--compact-vignettes=both'))
   #pkgTarName <- paste0(pkgload::pkg_name(pkgDir),'_',pkgload::pkg_version(pkgDir),'.tar.gz')
   ##system2("R",args=c('CMD','build','--as-cran',pkgTarName))
@@ -89,15 +92,63 @@ check<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=both'){
 }  
 
 #########################################
-check_rhub<-function(pkgDir,build_args='--compact-vignettes=both'){
-   devtools::check_rhub(
-     pkgDir,
-     build_args=build_args
+# this is a slightly changed copy of devtools::check_rhub
+# that differs in two points 
+# 1.) it sets a default flag for vignette compaction, which (when unset) leads to a "NOTE" in the cranchecks
+#     recommending to compact the vignettes ...
+# 2.) It makes sure that the pdfs
+#     for the help files are built before the package
+#     is uploaded to r_hub which complains in some cases
+#     with "Package has help file(s) containing install/render-stage \Sexpr{} expressions but no prebuilt PDF manual."
+# 3.) 
+check_devtools_rhub  <- function (
+  pkg = ".", 
+  platforms = NULL, 
+  email = NULL, 
+  interactive = TRUE, 
+  build_args ='--compact-vignettes=both' , # 1.)
+  ...
+) 
+{
+  devtools:::check_suggested("rhub")
+    pkg <- devtools::as.package(pkg)
+    built_path <- devtools::build(
+      pkg$path, 
+      tempdir(), 
+      quiet = !interactive, 
+      args = build_args,
+      manual=TRUE  # 2.)
+    )
+    on.exit(unlink(built_path), add = TRUE)
+    #check_dots_used()
+    status <- rhub::check_for_cran(path = built_path, email = email, 
+        platforms = platforms, show_status = interactive, ...)
+    if (!interactive) {
+        message("R-hub check for package ", sQuote(pkg$package), 
+            " submitted.")
+        status
+    }
+    else {
+        status
+    }
+}
+#########################################
+check_tar_rhub<-function(path){
+   rhub::check_for_cran(
+     path=path
    )
 }  
 #########################################
-check_win_release<-function(pkgDir,args='--compact-vignettes=both'){
+check_win_releases<-function(pkgDir,args='--compact-vignettes=both'){
    devtools::check_win_release(
+     pkgDir,
+     args=args
+   )
+   devtools::check_win_devel(
+     pkgDir,
+     args=args
+   )
+   devtools::check_win_oldrelease(
      pkgDir,
      args=args
    )
@@ -108,7 +159,7 @@ release<-function(pkgDir){
   # we use this shortcut
   # we always use check(pkgDir) before)
   res=devtools::release(
-    pkgDir,
+    pkg=pkgDir,
     check=FALSE
   )
 }  
