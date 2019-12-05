@@ -6,6 +6,7 @@ install: Rscript travis/inst.R
 
 # we build a (1d)matrix of testsuites
 env:
+        - TEST_SUITE=./travis_check_pkg_on_rhub.sh
         - TEST_SUITE=./travis_check_pkg.sh
         - TEST_SUITE=./travis_run_all_tests.sh
         - TEST_SUITE=./travis_install_SoilR_from_src.sh

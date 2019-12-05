@@ -54,7 +54,7 @@
 #' ##Time solution
 #' # fixme mm:
 #' # the next line causes trouble on Rforge Windows patched build
-#' matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
+#' # matplot(hours,Cpools,type="l",ylab="Concentrations",xlab="Hours",lty=1,ylim=c(0,max(Cpools)*1.2))
 #' ##State-space diagram
 #' plot(as.data.frame(Cpools))
 AWBmodel<- function 

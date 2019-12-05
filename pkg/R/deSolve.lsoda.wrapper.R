@@ -14,18 +14,17 @@
 #' @return A matrix. Every column represents a pool and every row a point in
 #' time
 deSolve.lsoda.wrapper=function(
-	       t,	
-	       ydot,    
-	       startValues 
-	       ){
+  t,	
+  ydot,    
+  startValues 
+){
    parms=NULL
-   lsexamp <- function(t, y,parms)
-     {
-	yv=cbind(y)
-	YD=ydot(y,t)
-	yd=as.vector(YD)
-       list(yd)
-     }
+   lsexamp <- function(t, y,parms){
+	    yv=cbind(y)
+	    YD=ydot(y,t)
+	    yd=as.vector(YD)
+           list(yd)
+   }
    out <- lsoda(startValues,t,lsexamp)
    n=length(startValues)
    if (n==1) { Yt=matrix(ncol=n,out[,-1])}

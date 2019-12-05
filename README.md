@@ -1,4 +1,5 @@
 [![Travis-CI Build Status](https://travis-ci.org/MPIBGC-TEE/SoilR-exp.svg?branch=master)](https://travis-ci.org/MPIBGC-TEE/SoilR-exp)
+[![CRAN status](https://www.r-pkg.org/badges/version/SoilR)](https://CRAN.R-project.org/package=SoilR)
 # SoilR: Models of Soil Organic Matter Decomposition
 This is the development version of SoilR. It is a rapidly evolving version that may be less
 stable than the official stable version in [CRAN](https://cran.r-project.org/web/packages/SoilR/index.html).

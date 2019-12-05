@@ -2,6 +2,7 @@ requireNamespace('knitr')
 requireNamespace('pkgload')
 requireNamespace('devtools')
 requireNamespace('getopt')
+#requireNamespace('git2r')
 #pkgload::load_all("~/debugHelpers/pkg",export_all=FALSE)
 #pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
 devtools::install_github('mamueller/roxygen2')
@@ -29,6 +30,14 @@ show_docs<-function(pkgDir){
   install_pkg_with_html(pkgDir)
   update_github_dosc(pkgDir)
   browse_index(pkgDir)
+}
+#########################################
+build <- function(pkgDir,path,args='--compact-vignettes=both',manual=TRUE){
+  devtools::build(
+    pkgDir,
+    path=path,
+    args=args,
+  )
 }
 #########################################
 build_rd<-function(pkgDir,roclets=c('inheritance_graph_roclet','rd')){
@@ -76,6 +85,21 @@ check<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=both'){
      document=document,
      build_args=build_args,
      error_on='note'
+   )
+}  
+
+#########################################
+check_rhub<-function(pkgDir,build_args='--compact-vignettes=both'){
+   devtools::check_rhub(
+     pkgDir,
+     build_args=build_args
+   )
+}  
+#########################################
+check_win_release<-function(pkgDir,args='--compact-vignettes=both'){
+   devtools::check_win_release(
+     pkgDir,
+     args=args
    )
 }  
 

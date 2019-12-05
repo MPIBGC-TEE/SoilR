@@ -311,7 +311,7 @@ setMethod(
       ){
       DecOp=object@DepComp
       DotO=getDotOut(DecOp) 
-      Tr=getTransferMatrix(DecOp)
+      Tr=getTransferMatrixFunc(DecOp)
       C=getC(object)
       nc=ncol(C)
       t=getTimes(object)
@@ -330,16 +330,6 @@ setMethod(
 
 
 
-#' automatic title
-#' 
-#' @param object no manual documentation
-#' @autocomment
-setMethod(
-   f= "computeResults",
-      signature= "NlModel",
-      definition=function(object){
-}
-)
 
 
 #' Pool Contents for all times
@@ -363,7 +353,7 @@ setMethod(
       times=object@times
       DepComp=object@DepComp
       DotO=getDotOut(DepComp) 
-      Tr=getTransferMatrix(DepComp) 
+      Tr=getTransferMatrixFunc(DepComp) 
       force(DotO) 
       itm=object@inputFluxes
       inputrates=getFunctionDefinition(itm)
@@ -371,27 +361,47 @@ setMethod(
         return(Tr(C,t)%*%DotO(C,t)+inputrates(t))
       }
       sVmat=matrix(object@initialValues,ncol=1)
-      C=solver(times,DotC,sVmat,object@solverfunc) 
+
+      # the solver will give back a matrix with as many columns as pools
+      # and as many rows as times
+      C_values=solver(times,DotC,sVmat,object@solverfunc) 
       prec=1e-5
-      pos=which(C< -prec,arr.ind=T)
+      pos=which(C_values< -prec,arr.ind=T)
       timesOfNegativeCStocks=times[pos[,1]]
       if(length(timesOfNegativeCStocks)>0){
-        errorPlotC(C,times)
+        errorPlotC(C_values,times)
         stop("negative CStocks")
       }
-      n=nrow(C)
-      kts=matrix(nrow=n,mcmapply(FUN=function(C,t){DotO(C,t)/C},C,times)) 
-      pos=which(kts< -prec,arr.ind=T)
+      n <- nrow(C_values)
+      # create a list of row vectors one for each time step
+      ktvec_list <- mclapply(
+        1:length(times),
+        function(i){
+          C_t<- C_values[i,]
+          t <- times[[i]]
+          DotO(C_t,t)/C_t
+        }
+      )
+      # tranform the list into a matrix like the C/values
+      kt_values=matrix(
+        ncol=ncol(C_values),
+        byrow=TRUE,
+        unlist(ktvec_list)
+      )
+      # in this matrix we can now look 
+
+      #browser()
+      pos=which(kt_values< -prec,arr.ind=T)
       timesOfSOMCreation=times[pos[,1]]
       if(length(timesOfSOMCreation)>0){
         print(timesOfSOMCreation)
-        errorPlotC(C,times)
+        errorPlotC(C_values,times)
         stop("SOM creation")
       }
       if (as.closures){
-        return(res2fun(times,C))
+        return(res2fun(times,C_values))
       }else{
-        return(C)
+        return(C_values)
       }
    }
 )
