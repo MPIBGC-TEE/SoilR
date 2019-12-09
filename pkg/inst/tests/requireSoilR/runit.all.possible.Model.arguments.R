@@ -6,11 +6,8 @@ test.all.possible.Model.arguments <- function(){
   #  - two pools 
   #  - initial values 
 
-       iv<-  c(5,6)
-
-  #  - times 
-
-       times <- seq(1,10,by=0.1)
+  iv<-  c(5,6)
+  times <- seq(1,10,by=0.1)
 
   # The other parameters A and inputFluxes will be different
   # The function Model will transform these arguments 

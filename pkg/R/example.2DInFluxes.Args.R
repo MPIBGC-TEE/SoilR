@@ -4,8 +4,7 @@
 #' arguments
 #' 
 #' 
-example.2DInFluxes.Args <- function
-(){
+example.2DInFluxes.Args <- function(){
  		I.vec          =c(5,6) 
 		I.vecFunc <-	function(t){
 			c(

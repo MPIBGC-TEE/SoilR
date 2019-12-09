@@ -10,7 +10,7 @@ alltests <- defineTestSuite(
    name="allTests",
    #dirs=c("."),
    #dirs=c(".","protected","automatic"),
-   dirs=c("src","automatic","automaticR","TimeMap"),
+   dirs=c("src","automatic","automaticR","TimeMap",'requireSoilR'),
    testFileRegexp = "^runit.+\\.[rR]$",
    testFuncRegexp = "^test.+",
    rngKind = "Marsaglia-Multicarry",
