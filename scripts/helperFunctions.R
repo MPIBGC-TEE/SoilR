@@ -76,6 +76,17 @@ check_rd<-function(pkgDir){
   )
 }  
 #########################################
+build_tar <- function(pkgDir,dest_path){
+  pkgTarName <- paste0(pkgload::pkg_name(pkgDir),'_',pkgload::pkg_version(pkgDir),'.tar.gz')
+  #pkgbuild::build(path=pkgDir,dest_path=dest_path,args='--compact-vignettes=both') #does not build pdf of Rd files
+  devtools::build(
+    pkg=pkgDir,
+    path=dest_path,
+    args='--comppact-vignettes=both',
+    manual=TRUE
+  )
+}
+#########################################
 check_devtools<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=both'){
   ##system2("R",args=c('CMD','build','--compact-vignettes=both'))
   #pkgTarName <- paste0(pkgload::pkg_name(pkgDir),'_',pkgload::pkg_version(pkgDir),'.tar.gz')
