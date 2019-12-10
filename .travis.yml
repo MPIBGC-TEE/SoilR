@@ -6,13 +6,13 @@ install: Rscript travis/inst.R
 
 # we build a (1d)matrix of testsuites
 env:
-        - TEST_SUITE= "cd scripts; Rscript check_rhub.R"
-        - TEST_SUITE= "cd scripts; Rscript check_local.R"
-        - TEST_SUITE= "cd pkg/inst/tests; Rscript all.R ;Rscript sall.R"
-        - TEST_SUITE= "cd pkg/inst/tests; Rscript inst.R"
+        - TEST_SUITE="./scripts/check_rhub.R"
+          #        - TEST_SUITE= "cd scripts; Rscript check_local.R"
+          #        - TEST_SUITE= "cd pkg/inst/tests; Rscript all.R ;Rscript sall.R"
+          #        - TEST_SUITE= "cd pkg/inst/tests; Rscript inst.R"
 # run the matrix
 # we use bash eval
-script:  eval "$TEST_SUITE" 
+script:  bash "$TEST_SUITE" 
 
 notifications:
   email:
