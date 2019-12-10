@@ -111,7 +111,9 @@ check_devtools<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=b
 #     for the help files are built before the package
 #     is uploaded to r_hub which complains in some cases
 #     with "Package has help file(s) containing install/render-stage \Sexpr{} expressions but no prebuilt PDF manual."
-# 3.) 
+# 3.) it validates the email address mamueller@bgc-jena.mpg.de 
+#     On the building machine (e.g.travis)
+#     I had to do this once but we need to add the file 
 check_devtools_rhub  <- function (
   pkg = ".", 
   platforms = NULL, 
@@ -132,6 +134,7 @@ check_devtools_rhub  <- function (
     )
     on.exit(unlink(built_path), add = TRUE)
     #check_dots_used()
+    rhub::validate_email(email='mamueller@bgc-jena.mpg.de',token='8b48b62f582c4a7b9684a507d64704ac')
     status <- rhub::check_for_cran(path = built_path, email = email, 
         platforms = platforms, show_status = interactive, ...)
     if (!interactive) {

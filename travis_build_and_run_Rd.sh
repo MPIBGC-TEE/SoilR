@@ -1,2 +1,3 @@
 #!/bin/bash
-./scripts/build_and_check_Rd.R"
+cd scripts
+Rscript build_and_check_Rd.R

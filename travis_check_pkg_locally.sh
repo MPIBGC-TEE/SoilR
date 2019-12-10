@@ -1,2 +1,3 @@
 #!/bin/bash
-./scripts/check_local.R"
+cd scripts
+Rscript check_local.R"
