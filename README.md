@@ -24,7 +24,7 @@ devtools::install_github('MPIBGC-TEE/SoilR-exp/pkg')
 ```
 
 2. Download package file (this might be slightly older) 
-  go to the [builds](https://github.com/MPIBGC-TEE/SoilR-exp/tree/master/builds) directory
+  go to the [package_builds](https://github.com/MPIBGC-TEE/SoilR-exp/tree/master/scripts/package_builds) directory
   and download the latest SoilR_\*.tar.gz file
   and install it with 
   ```r
