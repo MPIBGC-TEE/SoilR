@@ -31,7 +31,7 @@ alltests <- defineTestSuite(
    #,testFuncRegexp ="^test.Gaudinsky"
 
    #,testFuncRegexp ="^test.function_by_PoolIndex$"
-   ,testFuncRegexp ="^test.*$"
+   #,testFuncRegexp ="^test.*$"
    ,rngKind = "Marsaglia-Multicarry"
    ,rngNormalKind = "Kinderman-Ramage"
 )

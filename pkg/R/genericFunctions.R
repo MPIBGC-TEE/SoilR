@@ -1,6 +1,3 @@
-
-
-
 #' automatic title
 #' 
 #' @param F see method arguments
@@ -244,10 +241,7 @@ setGeneric (
 #' Have a look at the methods for details.
 #' @template Model-param
 #' @return A matrix with m columns representing where m is the number of pools, and n rows where n is the number times 
-# as specified by the \code{times} of the model. 
-
-
-
+#' as specified by the \code{times} of the model. 
 setGeneric ( 
 	name= "getC",
 	def=function(
@@ -257,6 +251,22 @@ setGeneric (
 	}
 )
 
+#' Calculates all stocks all fluxes to ,in and out of  the compartment system and also their integrals over time
+#'
+#' Have a look at the methods for details.
+#' @template Model-param
+#' @return A matrix with columns representing the name of the statevariable, flux and accumulated flux for every time
+#' 
+#' as specified by the \code{times} of the model. 
+
+setGeneric ( 
+	name= "getSolution",
+	def=function(
+	object 
+  ,as.closures=F 
+	){standardGeneric("getSolution")
+	}
+)
 
 
 #' automatic title

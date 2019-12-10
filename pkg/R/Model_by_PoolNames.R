@@ -1,4 +1,3 @@
-
 #' Pool Contents for all times
 #' 
 #' @template getC-description-common
@@ -26,6 +25,42 @@ setMethod(
         }
     )
 
+
+#' All Fluxes for all times
+#' 
+#' @template Model-param
+#' @template PoolWiseReturnMatrix
+#' @autocomment 
+setMethod(
+    f= "getSolution"
+    ,signature= "Model_by_PoolNames"
+    ,definition=
+        function(object){
+            obn <- object@mat
+            intfs <- obn@internal_fluxes
+            ofs <- obn@out_fluxes
+            
+            ivp <- IVP_maker( 
+              in_fluxes=object@inputFluxes,
+	            internal_fluxes=intfs,
+	            out_fluxes=ofs,
+	            time_symbol=object@timeSymbol,
+	            startValues=object@initialValues
+            )
+            #sVmat=matrix(object@initialValues,nrow=length(object@initialValues),ncol=1)
+            ks<-c(k_barrel=0.1,k_bottle=0.2)
+            ks<-c()
+            sol <- deSolve::lsoda(
+              y=ivp$startValues,
+              times=times,
+              func=ivp$ydot,
+              parms=ks
+            )
+            sol <- deSolve::lsoda(y=ivp$startValues,times=times,func=ivp$ydot,parms=ks)
+
+            return(sol)
+        }
+    )
 
 
 

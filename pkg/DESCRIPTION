@@ -81,5 +81,6 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         C14Atm_NH.R C14Atm.R Hua2013.R IntCal09.R IntCal13.R
         incubation_experiment.R HarvardForest14CO2.R
         getTransferMatrix.R SoilR-package.R
+	IVP_maker.R ydot_maker.R
 RoxygenNote: 6.1.99.9001
 Encoding: UTF-8

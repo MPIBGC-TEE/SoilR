@@ -3,3 +3,4 @@ man-roxygen
 ^Meta$
 cran-comments.md
 
+^README\.Rmd$
