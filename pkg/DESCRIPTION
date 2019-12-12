@@ -8,7 +8,7 @@ Description: Functions for modeling Soil Organic Matter decomposition
         in terrestrial ecosystems with linear and nonlinear models.
 License: GPL-3
 Depends: R (>= 3.5.0), deSolve,methods
-Imports: igraph,assertthat,parallel,expm,sets
+Imports: igraph,assertthat,parallel,expm,sets,purrr
 Suggests: FME,lattice,MASS,knitr,rmarkdown,getopt
 LazyData: TRUE
 VignetteBuilder: knitr

@@ -262,8 +262,9 @@ setGeneric (
 setGeneric ( 
 	name= "getSolution",
 	def=function(
-	object 
-  ,as.closures=F 
+	  object
+    ,params 
+    ,as.closures=F 
 	){standardGeneric("getSolution")
 	}
 )

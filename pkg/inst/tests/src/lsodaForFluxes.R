@@ -42,8 +42,8 @@ pkgload::load_all('../../../')
                 destinationName='barrel'
                 ,func=function(barrel,glass,t){
                     # ignore arguments
-                    #res <- (barrel+glass)*(1+sin(t))/100
-                    res <- 1
+                    res <- (barrel+glass)*(1+sin(t))/100
+                    #res <- 1
                     res
                 }
             )
@@ -77,6 +77,7 @@ pkgload::load_all('../../../')
   dir_sol <- deSolve::lsoda(y=ivp$startValues,times=times,func=ivp$ydot,parms=ks)
   #print(dir_sol)
   print(getSolution(mod))
+  plotPoolGraph(mod)
 #}
 
 #------------------------------------------------------

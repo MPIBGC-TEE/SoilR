@@ -12,7 +12,6 @@ deprecated class for a non-linear model run.
       \itemize{
         \item \code{\link{[,NlModel,character,ANY,ANY-method}}
         \item \code{\link{$,NlModel-method}}
-        \item \code{\link{computeResults,NlModel-method}}
         \item \code{\link{getC,NlModel-method}}
         \item \code{\link{getCumulativeC,NlModel-method}}
         \item \code{\link{getDecompOp,NlModel-method}}

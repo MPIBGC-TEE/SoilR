@@ -26,7 +26,7 @@ setMethod(
     )
 
 
-#' All Fluxes for all times
+#' All Fluxes and stocks for all times
 #' 
 #' @template Model-param
 #' @template PoolWiseReturnMatrix
@@ -35,7 +35,7 @@ setMethod(
     f= "getSolution"
     ,signature= "Model_by_PoolNames"
     ,definition=
-        function(object){
+        function(object,params){
             obn <- object@mat
             intfs <- obn@internal_fluxes
             ofs <- obn@out_fluxes
@@ -48,15 +48,14 @@ setMethod(
 	            startValues=object@initialValues
             )
             #sVmat=matrix(object@initialValues,nrow=length(object@initialValues),ncol=1)
-            ks<-c(k_barrel=0.1,k_bottle=0.2)
             ks<-c()
             sol <- deSolve::lsoda(
               y=ivp$startValues,
-              times=times,
+              times=object@times,
               func=ivp$ydot,
-              parms=ks
+              #parms=ks
             )
-            sol <- deSolve::lsoda(y=ivp$startValues,times=times,func=ivp$ydot,parms=ks)
+            #sol <- deSolve::lsoda(y=ivp$startValues,times=times,func=ivp$ydot,parms=ks)
 
             return(sol)
         }
@@ -130,23 +129,39 @@ setMethod(
         }
 )
 
-##' Plot the graph of pool connections
-##' 
-##' @param x The modelrun the of connection graph of which is plotted
-##' @autocomment 
-#setMethod(
-#   f= "plotPoolGraph",
-#      signature(x="Model"),
-#      definition=function 
-#      (x){
-#      op=getDecompOp(x)
-#      iflvec=getInFluxes(x)
-#
-#      #call the function
-#      #internalConnections<-list(tuple(1,2),tuple(2,3),tuple(3,1),tuple(3,4))
-#      #inBoundConnections<-list(1,3)
-#      #outBoundConnections<-list(4)
-#      #plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
-#      
-#   }
-#)
+#' Plot the graph of pool connections
+#' 
+#' @param x The modelrun the connection graph of which is plotted
+#' @autocomment 
+setMethod(
+   f= "plotPoolGraph",
+      signature(x="Model_by_PoolNames"),
+      definition=function 
+      (x){
+        obn <- x@mat
+        intfs <- obn@internal_fluxes
+        ofs <- obn@out_fluxes
+        
+        internalConnections<-lapply(
+          intfs, 
+          function(flr){
+            tuple(
+                as.character(flr@sourceName)
+                ,as.character(flr@destinationName)
+            )
+          }
+        )
+        
+        inBoundConnections<-lapply(
+            x@inputFluxes,
+            function(fl){ as.character(fl@destinationName) }
+        )
+
+        outBoundConnections<- lapply(
+            ofs,
+            function(fl){ as.character(fl@sourceName) }
+        )
+        plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
+      
+   }
+)

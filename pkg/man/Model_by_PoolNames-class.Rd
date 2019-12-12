@@ -14,7 +14,9 @@ automatic title
         \item \code{\link{getC,Model_by_PoolNames-method}}
         \item \code{\link{getReleaseFlux,Model_by_PoolNames-method}}
         \item \code{\link{getRightHandSideOfODE,Model_by_PoolNames-method}}
+        \item \code{\link{getSolution,Model_by_PoolNames-method}}
         \item \code{\link{initialize,Model_by_PoolNames-method}}
+        \item \code{\link{plotPoolGraph,Model_by_PoolNames-method}}
       }
   }
 }

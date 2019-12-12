@@ -24,7 +24,8 @@ for the contents of the pool consisting of
 \item{as.closures}{see method arguments}
 }
 \value{
-A matrix with m columns representing where m is the number of pools, and n rows where n is the number times
+A matrix with m columns representing where m is the number of pools, and n rows where n is the number times 
+as specified by the \code{times} of the model.
 }
 \description{
 This function computes the content of the pools as function of time.
