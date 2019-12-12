@@ -16,11 +16,6 @@ update_and_check_rd_and_vignettes<-function(pkgDir){
   check(pkgDir)
 }
 #########################################
-build_and_check_rd<-function(pkgDir){
-  build_rd(pkgDir)
-  check_rd(pkgDir)
-}
-#########################################
 show_docs<-function(pkgDir){
   #build_rd(pkgDir,roclets=c('remove_autotag_roclet'))
   #build-rd(pkgDir,roclets=c('auto_comment_roclet','rd'))
@@ -82,8 +77,7 @@ build_tar <- function(pkgDir,dest_path){
   devtools::build(
     pkg=pkgDir,
     path=dest_path,
-    args='--comppact-vignettes=both',
-    manual=TRUE
+    args='--compact-vignettes=both',
   )
 }
 #########################################
