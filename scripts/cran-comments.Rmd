@@ -1,0 +1,57 @@
+---
+output: github_document
+---
+
+<!-- cran-comments.md is generated from cran-comments.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+## Test environments
+
+* local OS X install:\\
+  Ubuntu 18.04 LTS, R 3.6.1 \\
+  ## R CMD check results\\
+  0 ERRORs | 0 WARNINGs | 0 NOTES.
+  
+* on travis-ci:\\
+  Ubuntu 16.04.6 LTS () \\
+  ## R CMD check results\\
+  0 ERRORs | 0 WARNINGs | 0 NOTES.
+* on Rhub 
+  * Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+
+  * Ubuntu Linux 16.04 LTS, R-release, GCC
+
+* win-builder (devel release oldrelease)
+
+
+```{r ,echo=FALSE}
+script.dir='.' 
+pkgDir <- file.path(script.dir,'..','pkg')
+
+versionString <- pkgload::pkg_version(pkgDir) 
+#versionString=pkgload::pkg_desc(pkgDir)$get_field('Version')
+trunk <- paste0(pkgload::pkg_name(pkgDir),'_',versionString)
+pkgTarName <- paste0(trunk,versionString,'.tar.gz')
+reportName <- paste('check_report',trunk,collapse="_")
+pkgBuildDir <-file.path(script.dir, 'package_builds')
+
+if (!file.exists(pkgBuildDir)){dir.create(pkgBuildDir,recursive=TRUE)}
+p <- file.path(script.dir,pkgBuildDir,pkgTarName)
+requireNamespace('rhub')
+here <- getwd()
+p=file.path('package_builds','SoilR_1.2.99.tar.gz')
+chk <- rhub::check_with_rdevel(p)
+capture.output(chk$capture
+#chk <- devtools::check_built(p)
+#chk <- rhub::check_on_windows(path=p)
+#chk <- rhub::local_check_linux(path=p, image = "rhub/fedora-gcc-devel")
+#chk <- rhub::local_check_linux(path=p, image = "rhub/ubuntu-gcc-devel")
+#chk <- rhub::local_check_linux(path=p, image = "rhub/fedora-clang-devel")
+```
