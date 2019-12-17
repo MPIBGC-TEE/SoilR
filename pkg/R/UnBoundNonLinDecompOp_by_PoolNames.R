@@ -61,6 +61,7 @@ setMethod(
             ,timeSymbol=timeSymbol
             ,operator=object
         )
+        
         o_by_Index@matFunc 
     }
 )
@@ -88,7 +89,6 @@ setMethod(
         operator@out_fluxes
         ,poolNames  =   state_variable_names
         ,timeSymbol =   timeSymbol)
-
       op_by_ind<-UnBoundNonLinDecompOp(
         internal_fluxes =   internal_fluxes_by_index
         ,out_fluxes     =   out_fluxes_by_index

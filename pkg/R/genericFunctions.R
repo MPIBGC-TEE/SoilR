@@ -707,6 +707,25 @@ setGeneric(
 	 }
 )
 
+#' Constructor for \code{\linkS4class{Model_by_PoolNames}}
+#' 
+setGeneric(
+	 name="Model_by_PoolNames",
+	 def=function 
+	 (
+	   mod,
+     times,
+     mat,
+     initialValues,
+     inputFluxes,
+     internal_fluxes,
+     out_fluxes ,
+     solverFunc,
+     timeSymbol
+   ) {
+	     standardGeneric("Model_by_PoolNames")
+	 }
+)
 #' constructor for \code{\link{TimeMap-class}}
 #' 
 setGeneric(

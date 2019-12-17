@@ -563,29 +563,44 @@ setClass(
    , validity=correctnessOfNlModel 
 )
 #-----------------------------------------
-correctnessOfModel_by_PoolNames<-function(object){
-    TRUE
-}
-#' automatic title
+#' A symbolic model description based on flux functions
 #' 
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' The set of flux functions along with the timesymbol
+#' is complete description of the structure 
+#' @autocomment 
 #' @s4methods
 #' @s4subclasses
 #' @s4superclasses
-Model_by_PoolNames=setClass(
+SymbolicModel_by_PoolNames=setClass(
+    Class="SymbolicModel_by_PoolNames"
+    ,slots=c(
+        in_fluxes="InFluxList_by_PoolName"
+        ,internal_fluxes="InternalFluxList_by_PoolName"
+        ,out_fluxes="OutFluxList_by_PoolName"
+        ,timeSymbol='character'
+   )
+   #,validity=correctnessOfModel_by_PoolNames
+)
+
+correctnessOfModel_by_PoolNames<-function(object){
+    TRUE
+}
+#' A model run based on flux functions 
+#' 
+#' 
+#' @autocomment 
+#' @s4methods
+#' @s4subclasses
+#' @s4superclasses
+#Model_by_PoolNames=setClass(
+setClass(
     Class="Model_by_PoolNames"
     ,slots=c(
          times="numeric"
         ,mat="UnBoundNonLinDecompOp_by_PoolNames"
         ,initialValues="numeric"
         ,inputFluxes="InFluxList_by_PoolName"
-        ,solverfunc="function"
+        ,solverFunc="function"
         ,timeSymbol='character'
    )
    #,validity=correctnessOfModel_by_PoolNames
@@ -619,7 +634,7 @@ setMethod(
         ,mat
         ,initialValues
         ,inputFluxes
-        ,solverfunc
+        ,solverFunc
         ,pass
         ,timeSymbol
     ){
@@ -627,7 +642,7 @@ setMethod(
         .Object@mat=mat
         .Object@initialValues=initialValues
         .Object@inputFluxes=inputFluxes
-        .Object@solverfunc=solverfunc
+        .Object@solverFunc=solverFunc
         .Object@timeSymbol=timeSymbol
         .Object
     }

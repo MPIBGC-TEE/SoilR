@@ -1,3 +1,36 @@
+
+setMethod(
+  f= "Model_by_PoolNames"
+  ,signature= c(
+       mod='missing'
+      ,times="numeric"
+      ,mat="UnBoundNonLinDecompOp_by_PoolNames"
+      ,initialValues="numeric"
+      ,inputFluxes="InFluxList_by_PoolName"
+      #,solverFunc="function"# =ANY
+      ,timeSymbol='character'
+   )
+  ,definition= function(
+        times
+        ,mat
+        ,initialValues
+        ,inputFluxes
+        ,solverFunc=deSolve.lsoda.wrapper		
+        ,timeSymbol='t'
+  ){
+      new(
+        Class='Model_by_PoolNames'
+        ,times=times
+        ,mat=mat
+        ,initialValues=initialValues
+        ,inputFluxes=inputFluxes
+        ,solverFunc=solverFunc
+        ,timeSymbol=timeSymbol
+  
+      )
+   }
+ )
+
 #' Pool Contents for all times
 #' 
 #' @template getC-description-common
@@ -118,7 +151,8 @@ setMethod(
 
             DotY=function(Y,t){
                 # fixme mm 07-31:
-                # we could computed the combination of InternalFluxes and
+                # we could compute the righthandside from 
+                # the combination of InternalFluxes and
                 # OutFluxes directly (as opposed to multiplication with the 
                 # Compartmental matrix
                 A=AFunc(Y,t)
@@ -163,5 +197,35 @@ setMethod(
         )
         plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
       
+   }
+)
+#' Create an overview plot 
+#' 
+#' The method solves the model and plots the solutions
+#' It is intended to provide a quick overview.
+#' @param x The model (run) the results of which are plotted
+#' @autocomment 
+setMethod(
+   f= "plot",
+   signature(x="Model_by_PoolNames"),
+   definition=function (x){
+     plot(getTimes(x),getC(x)[,1])
+   }
+)
+#' Extract the times vector
+#' 
+#' Since the \code{times} had to be provided to create the model this method
+#' yields no new information. 
+#' It is usually called internally by other functions that deal with models. 
+#' @template Model-param
+#' @autocomment 
+#fixme 12/17/2019: should be defined only once and inherited  by the other modelrun classes
+setMethod(
+   f= "getTimes",
+      signature= "Model_by_PoolNames",
+      definition=function(object){
+         times=matrix(ncol=1,object@times)
+         colnames(times)="times"
+      return(times)
    }
 )

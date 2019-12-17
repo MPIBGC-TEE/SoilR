@@ -66,7 +66,7 @@ setMethod(
         funcOfVars<-obj
         arg_names<-names(formals(funcOfVars))
         possibleArgs=c(poolNames,timeSymbol)
-        positions<-unlist(lapply(arg_names,function(arg){grep(arg,possibleArgs)}))
+        positions<-unlist(lapply(arg_names,function(arg){match(arg,possibleArgs)}))
         
         vec_func<-function(state_vec,t){
             # append t argument to state vector as time symbol to poolNames

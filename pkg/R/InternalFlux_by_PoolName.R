@@ -2,7 +2,7 @@
 #' subset of the state_variable_names
 #' 
 #' @param func A real valued function describing the flux (mass/time)
-#' as function of the state variables and time.  
+#' as function of (some of ) the state variables and time.  
 #' @param sourceName A string identifying the source pool of the flux
 #' @param destinationName A string identifying the destination pool of the flux
 setMethod(
@@ -79,8 +79,8 @@ setMethod(
             )
             ,func=by_PoolIndex(
                 obj@func
-                ,timeSymbol=timeSymbol
                 ,poolNames=poolNames
+                ,timeSymbol=timeSymbol
             )
         )
         fl_by_index
