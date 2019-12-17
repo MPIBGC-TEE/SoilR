@@ -9,6 +9,7 @@ fromCran <- c(
 	'getopt',
   'knitr',
   'rmarkdown',
+  'tinytex',
   'rhub',
   'FME'
 )

@@ -14,8 +14,7 @@ knitr::opts_chunk$set(
 ```
 ## Test environments
 
-* local OS X install:\\
-  Ubuntu 18.04 LTS, R 3.6.1 \\
+* Ubuntu 18.04 LTS, R 3.6.1 \\
   ## R CMD check results\\
   0 ERRORs | 0 WARNINGs | 0 NOTES.
   

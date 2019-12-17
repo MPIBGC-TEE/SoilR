@@ -44,6 +44,10 @@ library(knitr)
 opts_chunk$set(
 concordance=TRUE
 )
+library(tinytex)
+tinytex::install_tinytex()
+tinytex::tlmgr_install(pkgs='framed')
+#tinytex:::install_yihui_pkgs()
 @
 
 \maketitle

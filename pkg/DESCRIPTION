@@ -9,7 +9,7 @@ Description: Functions for modeling Soil Organic Matter decomposition
 License: GPL-3
 Depends: R (>= 3.5.0), deSolve,methods
 Imports: igraph,assertthat,parallel,expm,sets,purrr
-Suggests: FME,lattice,MASS,knitr,rmarkdown,getopt
+Suggests: FME,lattice,MASS,knitr,rmarkdown,getopt,tinytex
 LazyData: TRUE
 VignetteBuilder: knitr
 Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
