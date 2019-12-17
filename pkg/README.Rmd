@@ -39,22 +39,18 @@ devtools::install_github("MPIBGC-TEE/SoilR-exp")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(SoilR)
 ## basic example code
+#library(SoilR)
+requireNamespace('pkgload')
+pkgload::load_all('.')
+# define initial values for the state variables
+iv=c(barrel=1,bottle=2,glass=5)
+times<-1:100
+mod=Wang3p(iv,times)
+   
+#sol <- getSolution(mod)
+#plotPoolGraph(mod)
+# shortcut overview plot
+plot(mod)
+  
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!

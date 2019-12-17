@@ -390,7 +390,6 @@ setMethod(
       )
       # in this matrix we can now look 
 
-      #browser()
       pos=which(kt_values< -prec,arr.ind=T)
       timesOfSOMCreation=times[pos[,1]]
       if(length(timesOfSOMCreation)>0){
