@@ -1,5 +1,5 @@
 #!/usr/bin/Rscript
-# This script uses kniter to create a markdown document
+# This script creates a markdown document
 # reporting the status of several checks which are encoded in the 
 # Rmd file
 if(is.null(sys.calls()[[sys.nframe()-1]])){
@@ -16,6 +16,10 @@ if(is.null(sys.calls()[[sys.nframe()-1]])){
   # script.dir <- file.path(relative/path/to/this/script)
   #
   # setwd(relative/path/to/this/script)  
+  #
+  # the following line duplicates the name (which is not needed if called by Rscript)
+  # but done to be able to test it in an R session if you prefer to work there.
+  script.path=file.path(script.dir,'check_tar.R')
 }
 
 requireNamespace('parallel')
@@ -34,8 +38,8 @@ p <- file.path(pkgBuildDir,pkgTarName)
 # helper function to perform the actual checks and convert
 # the output to a string 
 # (the toStrFun function has to be an argument since the different checking functions
-# return different result types that can not be converted to string in the
-# same way
+# return different result types that can not be converted to strings in a 
+# uniform way
 call2str <- function(call,toStrFunc){
   res <- tryCatch(
     error=function(e){e} # propagate errors upwards
@@ -52,11 +56,13 @@ call2str <- function(call,toStrFunc){
   }
   str_res
 }
+
 # define functions to unwrap the testresults to a string
 rhub_remote_2str <- function(chk){ capture.output(chk$cran_summary())}
 
 rhub_local_2str <- function(chk){
-    c(chk$image,capture.output(chk$check_result))
+    browser()
+    c(chk$image,(capture.output(chk$check_result))[0:-3])
   }
 
 # now compute the acutal resultstrings
@@ -82,18 +88,17 @@ chk_rhub_local_fedora_clang_devel <- call2str(
   as.call(list(rhub::local_check_linux, path=p ,image ="rhub/fedora-clang-devel"))
   ,rhub_local_2str
 )
-browser()
 text=c(
-  "# local installation 
-  Ubuntu 18.04 LTS, R 3.6.1 
-  "
+  paste("# Check report for: ",pkgTarName,collapse="")
+  ,paste("# created automatically by the script: ",script.path,collapse=" ")
+  ,paste("date:", as.character(Sys.Date()),collapse=" ")
+  ,"# local installation 
+  Ubuntu 18.04 LTS, R 3.6.1"
   ,chk_local
   ,"# remote Rhub checks"
-  ,
-  c( chk_rhub_remote_rdevel ,chk_rhub_remote_windows)
+  ,c( chk_rhub_remote_rdevel ,chk_rhub_remote_windows)
   ,'# local Rhub containers'
-  ,
-  c(chk_rhub_local_debian_gcc_devel, chk_rhub_local_fedora_clang_devel)
+  ,c(chk_rhub_local_debian_gcc_devel, chk_rhub_local_fedora_clang_devel)
 )
 
 writeLines(

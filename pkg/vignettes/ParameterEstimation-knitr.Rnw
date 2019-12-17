@@ -49,10 +49,6 @@ library(knitr)
 opts_chunk$set(concordance=TRUE)
 opts_chunk$set( engine='R')
 opts_chunk$set( tidy=FALSE)
-library(tinytex)#for systems with incomplete latex
-tinytex::install_tinytex()
-tinytex::tlmgr_install(pkgs='framed')
-#tinytex:::install_yihui_pkgs()
 @
 
 
