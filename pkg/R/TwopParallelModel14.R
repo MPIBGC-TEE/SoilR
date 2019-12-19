@@ -114,5 +114,5 @@ TwopParallelModel14<- function
              t_stop
              ) 
       Fc=BoundFc(inputFc,lag=lag,format="Delta14C")
-      mod=GeneralModel_14(t,At,ivList=C0,initialValF=ConstFc(F0_Delta14C,"Delta14C"),inputFluxes=inputrates,Fc,di=lambda,pass=pass)
+      mod=GeneralModel_14(t,At,ivList=C0,initialValF=ConstFc(F0_Delta14C,"Delta14C"),inputFluxes=inputrates,inputFc=Fc,di=lambda,pass=pass)
 }

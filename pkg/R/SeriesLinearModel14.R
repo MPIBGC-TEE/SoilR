@@ -121,6 +121,6 @@ SeriesLinearModel14<- function
       t_end
     )
     Fc=BoundFc(inputFc,lag=lag,format="Delta14C")
-    Mod=GeneralModel_14(t=t,A=Af,ivList=C0,initialValF=ConstFc(F0_Delta14C,"Delta14C"),inputFluxes=inputFluxes,Fc,di=lambda,pass=pass)
+    Mod=GeneralModel_14(t=t,A=Af,ivList=C0,initialValF=ConstFc(F0_Delta14C,"Delta14C"),inputFluxes=inputFluxes,inputFc=Fc,di=lambda,pass=pass)
     return(Mod)
   }
