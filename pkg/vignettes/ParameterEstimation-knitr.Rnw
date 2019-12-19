@@ -42,7 +42,6 @@
 
 
 \begin{document}
-\SweaveOpts{concordance=TRUE}
 \maketitle
 
 <<include=FALSE>>=
