@@ -42,6 +42,7 @@
 
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 \maketitle
 
 <<include=FALSE>>=
@@ -58,11 +59,11 @@ combination with package \FME to infer parameter values of soil organic matter
 decomposition models using observed data. Parameter estimation for dynamical
 systems is an advanced topic of inverse modeling and as such is far beyond the
 scope of this vignette. We will point to some principal questions and possible
-problems as they arise but this treatment will be far from comprehensive. This
+problems as they arise, but this treatment will be far from comprehensive. This
 document also does not replace the documentation of package \FME
-\citep{Soetaert} which we strongly recommend to consult. Instead, we show
-firstly, how a thin wrapper function makes a \SoilR model available for the
-functions in \FME and secondly how to choose the right parameterizations of
+\citep{Soetaert}, which we strongly recommend to consult. Instead, we show
+first how a small wrapper function makes a \SoilR model available for the
+functions in \FME , and second, how to choose the right parameterizations of
 \SoilR models to meet the requirements of the \FME algorithms. We present two
 examples. One is the parameterization of a two-pool model applied to a soil
 incubation experiment. The other example uses observed radiocarbon data from
@@ -98,10 +99,10 @@ plot(
 arrows(BorealCO2[,1],BorealCO2[,2]-BorealCO2[,3],BorealCO2[,1], 
        BorealCO2[,2]+BorealCO2[,3],code=3,angle=90,length=0.1)
 @
-   \caption{Cumulative evolved CO$_2$ from an incubation experiment with a boreal forest soil.}
+   \caption{Respired CO$_2$ from an incubation experiment with a boreal forest soil.}
    \label{fig:eCO2}
  \end{figure}
-The models in SoilR do not use units, but rather assume that the input data is consistent in this respect. If we want to supply the initial mass in $g$ and the time in days then we have to provide the flux in $g$ per day, whereas the original data is given in mg carbon per g of soil per day. We therefore rescale the columns for the fluxes and the error. 
+The models in \SoilR \, do not use units, but rather assume that the input data is consistent in this respect. If we want to supply the initial mass in $g$ and the time in days, then we have to provide the flux in $g$ per day, whereas the original data is given in mg carbon per g of soil per day. We therefore rescale the columns for the fluxes and the error. 
 <<echo=TRUE>>=
 Ctotal<- mean(incubation_experiment$c_concentrations) *
 	incubation_experiment$soil_mass
@@ -134,20 +135,20 @@ plot_with_data<-function(x){
     )
 }
 @
- Before we embroil ourselves in technicalities we should think about the general possibility to identify the parameters from a single time line of the combined release of an yet unknown number of pools with yet unknown connections and outlets. 
+ Before we embroil ourselves in technicalities we should think about the general possibility to identify the parameters from a single time line of the combined release of a yet unknown number of pools with yet unknown connections and outlets. 
  We face several challenges, in particular we have to:
  \begin{enumerate}
  \item 
- 	\label{accuracy} Find a class of models that is large enough to contain a model that is capable of reproducing the observed data. If the class is to small we will ``underfit'' our data and the model will be ``biased''.
+ 	\label{accuracy} Find a class of models that is large enough to contain a model that is capable of reproducing the observed data. If the class is too small, we will ``underfit'' our data and the model will be ``biased''.
  \item 
- 	\label{identifiability} Find a number of parameters that is small enough to be actually determined unambiguously from the data. If we have parameters whose effects enhance or cancel the effects of other parameters the parameterized model will be ``overfitted'' and make (possibly extremely) misleading predictions for data not included in the training set. (In our case the predicted timeline of an overfitted model could meet all the measurements very well but be completely unreasonable in between or beyond the measurement times.)
+ 	\label{identifiability} Find a number of parameters that is small enough to be actually determined unambiguously from the data. If we have parameters whose effects enhance or cancel the effects of other parameters, the parameterized model will be ``overfitted'' and make (possibly extremely) misleading predictions for data not included in the training set. (In our case the predicted timeline of an overfitted model could meet all the measurements very well but be completely unreasonable in between or beyond the measurement times.)
  \item 
  	\label{independence} Make sure that the parameters can at least be tested independently by the optimization procedure. 
- 		(We refer here not to the desired independence of the parameters w.r.t (with respect to) the impact on the result as mentioned under \enumref{identifiability} but to the shape of the set of valid parameters. 
+ 		(We refer here not to the desired independence of the parameters w.r.t (with respect to) the impact on the result as mentioned under \enumref{identifiability}, but to the shape of the set of valid parameters. 
  		For n parameters the algorithms that we will use accept 
  		n ranges and assume to be able to choose \emph{any} combination 
  		of parameters out of this n-dimensional rectangular set to form a \emph{valid} model.
- 		E.g. an optimization algorithm that changes parameters independently should 
+ 		For example, an optimization algorithm that changes parameters independently should 
  		not accidentally create a model that breaks mass conservation or produces negative fluxes.
  		\SoilR allows many ways to specify models, including functions whose arguments include matrices whose parameters are \emph{not} independent.
  		Since it always checks that the specified model is a valid compartmental system, it would actually stop the optimization procedure from trying 
@@ -162,11 +163,11 @@ We can usually only hope to identify 2 or maybe 3 parameters.
 Our first attempt to model the data is therefore a very modest one pool model with a constant decomposition rate k.
 % 
 \subsection{One pool, one parameter model}
-The first \FME function that we want to use is {\tt modFit}. A look at its documentation \mbox{(type {\tt? modFit})} suggests that we at least have to provide a function {\tt f} to be minimized, a vector of start values for the parameters and in our case a lower limit for the parameter $k$ since we know that a negative value would create an invalid (not mass conserving) model. 
+The first \FME function that we want to use is {\tt modFit}. A look at its documentation \mbox{(type {\tt? modFit})} suggests that we at least have to provide a function {\tt f} to be minimized, a vector of start values for the parameters, and in our case, a lower limit for the parameter $k$ since we know that a negative value would create an invalid (not mass conserving) model. 
  The function {\tt f} will be a ``costfunction'' that will actually 
  need to evaluate the model as a function of the parameter(s) at the times where we have data and compare the output to the measured data.
  It will return a vector of residuals (one entry for every measurement time) possibly weighted by the accuracy of our data.
-To help us write such a function \FME provides the function {\tt modCost} to create to automatically compare the result of our model run with our data and compute the residuals weighted by the measurement errors if available. 
+To help us write such a function, \FME provides the function {\tt modCost} to automatically create the cost function that compares the result of our model run with our data and computes the residuals weighted by the measurement errors if available. 
 What remains to be done for us is to create a function of the parameter(s) that produces the release flux for the times in our dataset.
   
 <<results='hide'>>=
@@ -192,8 +193,8 @@ eCO2P1=function(pars){
 @
 Notice that our function, {\tt eCO2func}, requires a (for this first example
 one dimensional) vector of parameters {\tt pars} with the values of the first
-decomposition rate in positions 1. Our function returns a {\tt data.frame} with
-two columns, time in days and the sum of the cumulative release for the two
+decomposition rate in position 1. Our function returns a {\tt data.frame} with
+two columns, time in days and the sum of the release flux for the two
 pools.  The next step is to create a cost function according to \FME \,
 requirements. This cost function takes as arguments a function with the model,
 the set of observations, and a measure of the error in the observations. The
@@ -215,8 +216,8 @@ eCO2P1cost=function(pars){
 Having defined the cost function we only need initial values ({\tt inivars})
 and (optional) lower and upper bounds ({\tt upP1, loP1})  for the parameters to
 finally use the function {\tt modFit}.  It implements the optimization as an
-iterative process.  First the cost function will be evaluated on the initial
-parameter values.  Then the algorithm will try to guess new parameters,
+iterative process.  First, the cost function will be evaluated on the initial
+parameter values.  Then, the algorithm will try to guess new parameters,
 evaluate the cost function again and repeat this process until the cost is
 small enough or the number of permitted iterations exceeded. 
 <<>>=
@@ -285,11 +286,11 @@ This time we also look at some estimated statistics.
 eCO2P1afit$par
 summary(eCO2P1afit)
 @
-According to this results we can say: Assuming  a one pool model with constant decomposition rate with only a fraction of the total carbon accessible for decomposition, the best fitting model has a decomposition rate of {\tt 2.3\% per day} where only {\tt 0.12\%} of the total carbon are accessible for decomposition.
+According to these results we can say: Assuming  a one pool model with constant decomposition rate with only a fraction of the total carbon accessible for decomposition, the best fitting model has a decomposition rate of {\tt 2.3\% per day} where only {\tt 0.12\%} of the total carbon are accessible for decomposition.
 
 We can also check the estimated correlation between our two parameters. The high (anti)correlation indicates that it is difficult to identify the best model confidently since increasing the decomposition rate and decreasing the accessible fraction of carbon have similar effects on the model output (the release flux) .   
 
-The results of {\tt modFit} can be used for Bayesian parameter estimation with \FME's Monte Carlos Markov Chain function {\tt modMCMC}. In our example, we used the default values to avoid explanations about \FME, but there are many possibilities to influence the result which are briefly mentioned in the help \mbox{(type {\tt? modMCMC})} and explained in more detail in \citet{Soetaert}.
+The results of {\tt modFit} can be used for Bayesian parameter estimation with \FME's Markov Chain Monte Carlo function {\tt modMCMC}. In our example, we used the default values to avoid explanations about \FME, but there are many possibilities to influence the result, which are briefly mentioned in the help \mbox{(type {\tt? modMCMC})} and explained in more detail in \citet{Soetaert}.
 To avoid long runtimes,  we only use 3000 iterations in this example, but this number can be much larger to guarantee convergence of the chains. 
 The results of the MCMC procedure can be obtained with the function {\tt summary()}. The output gives the mean, standard deviation, min and max, and 25\% quantiles for all parameter values. It also produces summary statistics for the variance of the observed variable. 
 <<>>=
@@ -318,10 +319,10 @@ and plotting the results as a function of time.
   )
 @
 Note that the results depend not only on our equations (as they would if we had
-sampled the complete parameter space with infinitely close parameter pairs)
-but also on the the other arguments of {\tt modMCMC} which for instance
+sampled the complete parameter space with infinitely close parameter pairs),
+but also on the the other arguments of {\tt modMCMC}, which for instance
 determine how many parameter combinations will be tested or how much they
-differ, or in general how well the parameter space has been probed.
+differ, or in general how well the parameter space has been sampled.
 
 \subsection{Two pool model with three parameters}
 As a last example we try to further improve the fit of the model by allowing a
@@ -386,7 +387,7 @@ summary(eCO2P2fit)
 @
 We see again a high correlation between the parameters, which indicates poor identifiability. 
 Numerical experiments (e.g. variation of the startvalues) also show that the algorithms occasionally get lost in local minima, so that including more pools or fluxes does not seem to be a very good idea.
-Note however that although we probably can not hope to fit models that are structurally more complex there are infinitely more ways to choose parameters. We could for instance define a time dependent decomposition rate whose shape depends on more than the one parameter we chose for a constant rate.
+Note however that although we probably cannot hope to fit models that are structurally more complex there are infinitely more ways to choose parameters. We could for instance define a time dependent decomposition rate whose shape depends on more than the one parameter we chose for a constant rate.
 \clearpage
 
 \section{Second Example: Radiocarbon in respired CO$_2$}
@@ -420,7 +421,7 @@ where $\gamma_1$ and $\gamma_2$ are known.
 However the parameter $a_{21}$ is not independent from $ k_2$ , which is a condition for the parameter estimation with \FME. 
 We therefore formulate the model again based on the independent flux rates.
 
-The radiocarbon content of CO$_2$ in the atmosphere is necessary for running the model, because it informs us about the concentration and rate of radiocarbon input to the soil. For this example we will use the dataset {\tt C14Atm\_ NH} provided with \SoilR, but other provided datasets such as {\tt Hua2013} can also be used. 
+The radiocarbon content of CO$_2$ in the atmosphere is necessary for running the model, because it informs us about the concentration and rate of radiocarbon input to the soil. For this example, we will use the dataset {\tt C14Atm\_ NH} provided with \SoilR, but other provided datasets such as {\tt Hua2013} can also be used. 
 
 First, we define the points in time to run the model from the atmospheric radiocarbon dataset
 <<>>=
