@@ -5,7 +5,8 @@ This is the development version of SoilR. It is a rapidly evolving version that 
 stable than the official stable version in [CRAN](https://cran.r-project.org/web/packages/SoilR/index.html).
 
 ## Documentation
-The latest build of the package documentation can be found [here:](https://mpibgc-tee.github.io/SoilR-exp/)
+* The latest build of the package documentation can be found [here:](https://mpibgc-tee.github.io/SoilR-exp/).
+* To find examples you can also look at the [workflows](http://www.bgc-jena.mpg.de/TEE/software/soilr/).
 
 ## Installation
 There are several options.
@@ -46,14 +47,18 @@ devtools::install_github('MPIBGC-TEE/SoilR-exp/pkg')
     ```
 
 ## Source code and contributing
-<a name='source'></a>
-You can download the source code of `SoilR` by cloning this repository
 
+
+1. You can download the source code of `SoilR` by cloning this repository
+<a name='source'></a>
 ```
 git clone https://github.com/MPIBGC-TEE/SoilR-exp.git
 ```
+2. If you are already contributing and want to update a vignette or correct a typo in the documentation 
+look at the [tools for package maintenance](scripts/README.md).
 
-If you want to contribute new functions or repair bugs, send us a pull request.
+3. If you want to contribute new functions or repair bugs, create  a pull request.
+
 
 ## References
 To learn more about `SoilR` check the references below, and consult the
