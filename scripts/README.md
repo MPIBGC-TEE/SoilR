@@ -30,8 +30,12 @@ path to the vignette you want to build.
 
 
 ## Check the package as cran:
-``` ./testPkg.R ``` Will run local checks wiht devtools::check, 
- note that it will not build the updated docs, so run build_and_check_Rd.R first)"
+``` 
+./testPkg.R 
+``` 
+ Will run local checks wiht devtools::check, 
+ note that it will not build the updated docs, so run `build_and_check_Rd.R` 
+ first, if you want the latest version of the docs.
 
 ## Build and check a downloadable package ```SoilR.*tar.gz```
  
