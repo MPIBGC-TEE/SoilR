@@ -51,9 +51,6 @@ GeneralModel <- function(
                 ,mat=A
                 ,initialValues=ivList
                 ,inputFluxes=inputFluxes
-                ,solverfunc
-                ,pass
-                ,timeSymbol
             )
         )
      }else{

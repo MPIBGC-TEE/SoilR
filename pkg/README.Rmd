@@ -39,18 +39,18 @@ devtools::install_github("MPIBGC-TEE/SoilR-exp")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-## basic example code
-#library(SoilR)
 requireNamespace('pkgload')
 pkgload::load_all('.')
 # define initial values for the state variables
-iv=c(barrel=1,bottle=2,glass=5)
-times<-1:100
-mod=Wang3p(iv,times)
-   
-#sol <- getSolution(mod)
-#plotPoolGraph(mod)
-# shortcut overview plot
-plot(mod)
-  
+times<-seq(from=1,to=100,by=0.1)
+smod <- Wang3psym()
+plotPoolGraph(smod)
+state_variable_names(smod)
+iv=c(barrel=1,glass=5)
+modrun=Model_by_PoolNames( smod=smod ,times=times ,initialValues=iv)
+#   
+sol <- getSolution(modrun)
+##plotPoolGraph(modrun)
+## shortcut overview plot
+plot(modrun)
 ```

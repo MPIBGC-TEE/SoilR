@@ -600,7 +600,7 @@ setClass(
         ,mat="UnBoundNonLinDecompOp_by_PoolNames"
         ,initialValues="numeric"
         ,inputFluxes="InFluxList_by_PoolName"
-        ,solverFunc="function"
+        ,solverfunc="function"
         ,timeSymbol='character'
    )
    #,validity=correctnessOfModel_by_PoolNames
@@ -618,13 +618,7 @@ setClass(
 #' @param solverfunc no manual documentation
 #' @param pass no manual documentation
 #' @param timeSymbol no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @autocomment 
 setMethod(
     'initialize'
     ,signature= signature(.Object='Model_by_PoolNames')
@@ -634,16 +628,16 @@ setMethod(
         ,mat
         ,initialValues
         ,inputFluxes
-        ,solverFunc
-        ,pass
         ,timeSymbol
+        ,pass=FALSE
+        ,solverfunc=deSolve.lsoda.wrapper		
     ){
         .Object@times=times
         .Object@mat=mat
         .Object@initialValues=initialValues
         .Object@inputFluxes=inputFluxes
-        .Object@solverFunc=solverFunc
         .Object@timeSymbol=timeSymbol
+        .Object@solverfunc=solverfunc
         .Object
     }
 )

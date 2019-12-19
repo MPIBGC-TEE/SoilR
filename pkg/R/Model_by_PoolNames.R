@@ -2,31 +2,64 @@
 setMethod(
   f= "Model_by_PoolNames"
   ,signature= c(
-       mod='missing'
+       smod='SymbolicModel_by_PoolNames'
+      ,times="numeric"
+      ,mat="missing"
+      ,initialValues="numeric"
+      ,inputFluxes="missing"
+      ,internal_fluxes="missing"
+      ,out_fluxes="missing" 
+      ,timeSymbol='missing'
+      ,pass="missing"
+      ,solverfunc="missing"
+   )
+  ,definition= function(
+        smod
+        ,times
+        ,initialValues
+  ){
+       obn<- UnBoundNonLinDecompOp_by_PoolNames(
+         internal_fluxes=smod@internal_fluxes
+         ,out_fluxes=smod@out_fluxes
+         ,timeSymbol=smod@timeSymbol
+       )
+       new(
+         'Model_by_PoolNames'
+         ,times=times
+         ,mat=obn
+         ,initialValues=initialValues
+         ,inputFluxes=smod@in_fluxes
+         ,timeSymbol=smod@timeSymbol
+       )
+    }
+ )
+setMethod(
+  f= "Model_by_PoolNames"
+  ,signature= c(
+       smod='missing'
       ,times="numeric"
       ,mat="UnBoundNonLinDecompOp_by_PoolNames"
       ,initialValues="numeric"
       ,inputFluxes="InFluxList_by_PoolName"
-      #,solverFunc="function"# =ANY
-      ,timeSymbol='character'
+      ,internal_fluxes="missing"
+      ,out_fluxes="missing" 
+      ,timeSymbol='missing' # if we have this kind of mat we can infer the timeSymbol
+      ,pass="missing"
+      ,solverfunc="missing"
    )
   ,definition= function(
         times
         ,mat
         ,initialValues
         ,inputFluxes
-        ,solverFunc=deSolve.lsoda.wrapper		
-        ,timeSymbol='t'
   ){
       new(
-        Class='Model_by_PoolNames'
+        'Model_by_PoolNames'
         ,times=times
         ,mat=mat
         ,initialValues=initialValues
         ,inputFluxes=inputFluxes
-        ,solverFunc=solverFunc
-        ,timeSymbol=timeSymbol
-  
+        ,timeSymbol=mat@timeSymbol
       )
    }
  )
@@ -155,6 +188,7 @@ setMethod(
                 # the combination of InternalFluxes and
                 # OutFluxes directly (as opposed to multiplication with the 
                 # Compartmental matrix
+                # we do that now in the getSolution method
                 A=AFunc(Y,t)
                 I=inputFunc(Y,t)
                 res=A%*%Y+I
@@ -163,42 +197,43 @@ setMethod(
         }
 )
 
-#' Plot the graph of pool connections
-#' 
-#' @param x The modelrun the connection graph of which is plotted
-#' @autocomment 
-setMethod(
-   f= "plotPoolGraph",
-      signature(x="Model_by_PoolNames"),
-      definition=function 
-      (x){
-        obn <- x@mat
-        intfs <- obn@internal_fluxes
-        ofs <- obn@out_fluxes
-        
-        internalConnections<-lapply(
-          intfs, 
-          function(flr){
-            tuple(
-                as.character(flr@sourceName)
-                ,as.character(flr@destinationName)
-            )
-          }
-        )
-        
-        inBoundConnections<-lapply(
-            x@inputFluxes,
-            function(fl){ as.character(fl@destinationName) }
-        )
+##' Plot the graph of pool connections
+##' 
+##' @param x The modelrun the connection graph of which is plotted
+##' @autocomment 
+#setMethod(
+#   f= "plotPoolGraph",
+#      signature(x="Model_by_PoolNames"),
+#      definition=function 
+#      (x){
+#        obn <- x@mat
+#        intfs <- obn@internal_fluxes
+#        ofs <- obn@out_fluxes
+#        
+#        internalConnections<-lapply(
+#          intfs, 
+#          function(flr){
+#            tuple(
+#                as.character(flr@sourceName)
+#                ,as.character(flr@destinationName)
+#            )
+#          }
+#        )
+#        
+#        inBoundConnections<-lapply(
+#            x@inputFluxes,
+#            function(fl){ as.character(fl@destinationName) }
+#        )
+#
+#        outBoundConnections<- lapply(
+#            ofs,
+#            function(fl){ as.character(fl@sourceName) }
+#        )
+#        plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
+#      
+#   }
+#)
 
-        outBoundConnections<- lapply(
-            ofs,
-            function(fl){ as.character(fl@sourceName) }
-        )
-        plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
-      
-   }
-)
 #' Create an overview plot 
 #' 
 #' The method solves the model and plots the solutions

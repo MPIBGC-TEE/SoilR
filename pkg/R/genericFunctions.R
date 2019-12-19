@@ -713,15 +713,16 @@ setGeneric(
 	 name="Model_by_PoolNames",
 	 def=function 
 	 (
-	   mod,
+	   smod,
      times,
      mat,
      initialValues,
      inputFluxes,
      internal_fluxes,
      out_fluxes ,
-     solverFunc,
-     timeSymbol
+     timeSymbol,
+     pass,
+     solverfunc
    ) {
 	     standardGeneric("Model_by_PoolNames")
 	 }
