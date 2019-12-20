@@ -13,7 +13,6 @@ Model_by_PoolNames(
   internal_fluxes,
   out_fluxes,
   timeSymbol,
-  pass,
   solverfunc
 )
 }
@@ -33,8 +32,6 @@ Model_by_PoolNames(
 \item{out_fluxes}{see method arguments}
 
 \item{timeSymbol}{see method arguments}
-
-\item{pass}{see method arguments}
 
 \item{solverfunc}{see method arguments}
 }

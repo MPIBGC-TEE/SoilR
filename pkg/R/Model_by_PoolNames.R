@@ -10,7 +10,7 @@ setMethod(
       ,internal_fluxes="missing"
       ,out_fluxes="missing" 
       ,timeSymbol='missing'
-      ,pass="missing"
+      #,pass="missing"
       ,solverfunc="missing"
    )
   ,definition= function(
@@ -46,7 +46,7 @@ setMethod(
       ,internal_fluxes="missing"
       ,out_fluxes="missing" 
       ,timeSymbol='missing' # if we have this kind of mat we can infer the timeSymbol
-      ,pass="missing"
+      #,pass="missing"
       ,solverfunc="missing"
    )
   ,definition= function(

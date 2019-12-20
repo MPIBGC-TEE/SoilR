@@ -47,10 +47,12 @@ with state_variables:
    desc: microbial biomass
    unit: "g C m^{-2}"
 }
-The time dependencies have been added arbitrarily to demonstrate that this is 
-now possible everywhere. 
-At the moment t is mostly ignored like in the original Wang Model except for the first
-in_flux to pool C_l.
-But this example is intended as a blueprint for non autonomous 
-models.
+Note that this is not a complete model run like most of the models in SoilR but a 
+description of the fluxes that can be extended to a model run if initial values
+and times are specified.
+The default values are completely arbitrary.
+So is one time dependency that has been added to demonstrate that this is possible everywhere and every 
+part of the model can become non-autonomous. 
+At the moment the variable t is mostly ignored like in the original Wang Model except for the first
+influx to pool C_l.
 }
