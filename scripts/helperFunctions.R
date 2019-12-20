@@ -243,29 +243,36 @@ browse_index<-function(pkgDir){
 }
 
 #########################################
-#' build a single vignette
+#' build a SINGLE vignette (as opposed to devtools::build_vignettes(
 #' This is usefull if you just want to look at it.
 #' while you are working with the vignette and the code simultaniuously
 #' It will load the package from source and reflect every change in the code 
 #' immidiately.
-#' This avoids confusion sometimes arising from using the installed version of the package
-#' rather than the most recent version
-#' while working on the vignette
+#' This avoids confusion that sometimes arises from using the installed version of the package
+#' rather than the most recent version while working on the vignette
 
 build_vignette<- function(vignette_src_path , buildDir='.',clean=TRUE){
-  pkgDir <- dirname(dirname(vignette_src_path)) # load everything from the src
-  on.exit(pkgload::unload(pkgload::pkg_name(pkgDir)))
+  pkgDir <- dirname(dirname(vignette_src_path)) 
+  old <- getwd()
+  on.exit(
+    {
+      setwd(old);
+      pkgload::unload(pkgload::pkg_name(pkgDir))
+    }
+  ) 
   
-  pkgload::load_all(pkgDir,export_all=FALSE)
-  t=tools::file_path_sans_ext(vignette_src_path)
-  texFilePath=file.path(buildDir,paste(t,'tex',sep='.'))
-  pdfFilePath=file.path(buildDir,paste(t,'pdf',sep='.'))
+  pkgload::load_all(pkgDir,export_all=FALSE)# load SoilR src
+  t <- basename(tools::file_path_sans_ext(vignette_src_path))
+  texFileName  <- paste(t,'tex',sep='.')
+  texFilePath=file.path(buildDir,texFileName)
   if (file.exists(texFilePath)){unlink(texFilePath)}
   knitr::knit(
     vignette_src_path,
     output=texFilePath
   )
-  tools::texi2pdf(texFilePath,clean=clean)
-  tools::compactPDF( pdfFilePath, gs_quality = "ebook")
-  
+  setwd(buildDir)
+  tools::texi2pdf(texFileName,clean=clean)
+  pdfFilePath=file.path(paste(t,'pdf',sep='.'))
+  browser()
+  tools::compactPDF(pdfFilePath, gs_quality = "ebook")
 }

@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;SoilR&rsquo; version 1.2-98</h2>
+</div><h2>Documentation for package &lsquo;SoilR&rsquo; version 1.2.103</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../NEWS">Package NEWS</a>.</li>
@@ -40,6 +40,7 @@
 <a href="#S">S</a>
 <a href="#T">T</a>
 <a href="#U">U</a>
+<a href="#W">W</a>
 <a href="#Y">Y</a>
 <a href="#misc">misc</a>
 </p>
@@ -618,6 +619,8 @@
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getTimes-Model-method.html">getTimes-method</a></td>
 <td>Extract the times vector</td></tr>
+<tr><td style="width: 25%;"><a href="getTimes-Model_by_PoolNames-method.html">getTimes-method</a></td>
+<td>Extract the times vector</td></tr>
 <tr><td style="width: 25%;"><a href="getTimes-NlModel-method.html">getTimes-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getTransferCoefficients.html">getTransferCoefficients</a></td>
@@ -776,10 +779,14 @@
 <td>general constructor for class Model_14</td></tr>
 <tr><td style="width: 25%;"><a href="Model_14-class.html">Model_14-class</a></td>
 <td>S4-class to represent a ^14C model run</td></tr>
-<tr><td style="width: 25%;"><a href="Model_by_PoolNames-class.html">Model_by_PoolNames</a></td>
-<td>automatic title</td></tr>
+<tr><td style="width: 25%;"><a href="Model_by_PoolNames.html">Model_by_PoolNames</a></td>
+<td>Constructor for 'Model_by_PoolNames'</td></tr>
 <tr><td style="width: 25%;"><a href="Model_by_PoolNames-class.html">Model_by_PoolNames-class</a></td>
-<td>automatic title</td></tr>
+<td>A model run based on flux functions</td></tr>
+<tr><td style="width: 25%;"><a href="Model_by_PoolNames-SymbolicModel_by_PoolNames-numeric-missing-nu509e8e9c.html">Model_by_PoolNames-method</a></td>
+<td>Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing,missing-method</td></tr>
+<tr><td style="width: 25%;"><a href="Model_by_PoolNames-missing-numeric-UnBoundNonLinDecompOp_by_Pool8ab16ceb.html">Model_by_PoolNames-method</a></td>
+<td>Model_by_PoolNames,missing,numeric,UnBoundNonLinDecompOp_by_PoolNames,numeric,InFluxList_by_PoolName,missing,missing,missing,missing,missing-method</td></tr>
 </table>
 
 <h2><a name="N">-- N --</a></h2>
@@ -833,6 +840,8 @@
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="plot-Model-method.html">plot-method</a></td>
 <td>Create an overview plot</td></tr>
+<tr><td style="width: 25%;"><a href="plot-Model_by_PoolNames-method.html">plot-method</a></td>
+<td>Plot the graph of pool connections</td></tr>
 <tr><td style="width: 25%;"><a href="plot-NlModel-method.html">plot-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="plot-TimeMap-method.html">plot-method</a></td>
@@ -843,7 +852,7 @@
 <td>Plots the output of 'getC' or 'getReleaseFlux' for each pool over time</td></tr>
 <tr><td style="width: 25%;"><a href="plotPoolGraph.html">plotPoolGraph</a></td>
 <td>Generic plotter</td></tr>
-<tr><td style="width: 25%;"><a href="plotPoolGraph-Model_by_PoolNames-method.html">plotPoolGraph-method</a></td>
+<tr><td style="width: 25%;"><a href="plotPoolGraph-SymbolicModel_by_PoolNames-method.html">plotPoolGraph-method</a></td>
 <td>Plot the graph of pool connections</td></tr>
 <tr><td style="width: 25%;"><a href="PoolConnection_by_PoolIndex.html">PoolConnection_by_PoolIndex</a></td>
 <td>automatic title</td></tr>
@@ -939,6 +948,12 @@
 <td>Constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="StateIndependentInFlux_by_PoolIndex-class.html">StateIndependentInFlux_by_PoolIndex-class</a></td>
 <td>Constructor for the class with the same name</td></tr>
+<tr><td style="width: 25%;"><a href="state_variable_names.html">state_variable_names</a></td>
+<td>determine the minimum set of statevariables</td></tr>
+<tr><td style="width: 25%;"><a href="SymbolicModel_by_PoolNames-class.html">SymbolicModel_by_PoolNames</a></td>
+<td>A symbolic model description based on flux functions</td></tr>
+<tr><td style="width: 25%;"><a href="SymbolicModel_by_PoolNames-class.html">SymbolicModel_by_PoolNames-class</a></td>
+<td>A symbolic model description based on flux functions</td></tr>
 <tr><td style="width: 25%;"><a href="systemAge.html">systemAge</a></td>
 <td>System and pool age for compartment models</td></tr>
 </table>
@@ -1041,6 +1056,13 @@
 <td>An S4 class to represent the of nonlinear nonautonomous compartmental system independently of the order of state variables</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp_by_PoolNames-InternalFluxList_by_PoolName-11a8362e.html">UnBoundNonLinDecompOp_by_PoolNames-method</a></td>
 <td>automatic title</td></tr>
+</table>
+
+<h2><a name="W">-- W --</a></h2>
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="WangThreePoolNonAutonomous_sym.html">WangThreePoolNonAutonomous_sym</a></td>
+<td>A non-autonomous version of the original Wang 3 pool model</td></tr>
 </table>
 
 <h2><a name="Y">-- Y --</a></h2>

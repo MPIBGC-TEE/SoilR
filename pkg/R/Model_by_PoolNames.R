@@ -1,4 +1,4 @@
-
+#' @auto
 setMethod(
   f= "Model_by_PoolNames"
   ,signature= c(
@@ -33,6 +33,8 @@ setMethod(
        )
     }
  )
+
+#' @auto
 setMethod(
   f= "Model_by_PoolNames"
   ,signature= c(

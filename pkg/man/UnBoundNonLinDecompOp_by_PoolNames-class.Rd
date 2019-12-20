@@ -11,6 +11,7 @@ An S4 class to represent the of  nonlinear nonautonomous compartmental system in
   \subsection{S4-methods with class \code{UnBoundNonLinDecompOp_by_PoolNames} in their signature:}{
       \itemize{
         \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method}}
+        \item \code{\link{Model_by_PoolNames,missing,numeric,UnBoundNonLinDecompOp_by_PoolNames,numeric,InFluxList_by_PoolName,missing,missing,missing,missing,missing-method}}
         \item \code{\link{UnBoundNonLinDecompOp,missing,missing,missing,missing,character,character,UnBoundNonLinDecompOp_by_PoolNames-method}}
       }
   }

@@ -1,3 +1,10 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
 [![Travis-CI Build Status](https://travis-ci.org/MPIBGC-TEE/SoilR-exp.svg?branch=master)](https://travis-ci.org/MPIBGC-TEE/SoilR-exp)
 [![CRAN status](https://www.r-pkg.org/badges/version/SoilR)](https://CRAN.R-project.org/package=SoilR)
 # SoilR: Models of Soil Organic Matter Decomposition
@@ -7,6 +14,80 @@ stable than the official stable version in [CRAN](https://cran.r-project.org/web
 ## Documentation
 * The latest build of the package documentation can be found [here:](https://mpibgc-tee.github.io/SoilR-exp/).
 * To find examples you can also look at the [workflows](http://www.bgc-jena.mpg.de/TEE/software/soilr/).
+
+## Example
+This is a working example which demostrates some of the new functionality.
+
+
+```r
+requireNamespace('pkgload')
+pkgload::load_all('pkg')
+#> Loading SoilR
+# define initial values for the state variables
+times<-seq(from=1,to=1000,by=10)
+smod <- WangThreePoolNonAutonomous_sym() 
+# (look at the source code of WangThreePoolNonAutonomous_sym )
+
+plotPoolGraph(smod)
+```
+
+<img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+
+```r
+state_variable_names(smod)
+#> [1] "C_l" "C_b" "C_s"
+iv=c(C_l=1000,C_b=5000,C_s=1000)
+modrun=Model_by_PoolNames( smod=smod ,times=times ,initialValues=iv)
+sol <- getSolution(modrun)
+# show what we have computed
+colnames(sol)
+#>  [1] "time"                              
+#>  [2] "C_l"                               
+#>  [3] "C_b"                               
+#>  [4] "C_s"                               
+#>  [5] "accumulated_influx.C_l"            
+#>  [6] "accumulated_influx.C_s"            
+#>  [7] "accumulated_internal_flux.C_l->C_b"
+#>  [8] "accumulated_internal_flux.C_s->C_b"
+#>  [9] "accumulated_internal_flux.C_b->C_s"
+#> [10] "accumulated_outflux.C_l"           
+#> [11] "accumulated_outflux.C_s"           
+#> [12] "influxes.C_l"                      
+#> [13] "influxes.C_s"                      
+#> [14] "internal_fluxes.C_l->C_b"          
+#> [15] "internal_fluxes.C_s->C_b"          
+#> [16] "internal_fluxes.C_b->C_s"          
+#> [17] "out_fluxes.C_l"                    
+#> [18] "out_fluxes.C_s"
+# shortcut overview plot for all phase plane projections and time lines
+# of the pool contents
+ plot(data.frame(times=times,sol[,c('C_l','C_s','C_b')]))
+```
+
+<img src="man/figures/README-example-2.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+
+```r
+# plot fluxes as functions of time
+internal_fluxes <- sol[,grep('internal_fluxes',colnames(sol))]
+plot(
+  times, sol[,'internal_fluxes.C_l->C_b'] ,type='l'
+  ,ylim=c(min(internal_fluxes),max(internal_fluxes))
+)
+lines(times,sol[,'internal_fluxes.C_b->C_s'],col='dark red')
+lines(times,sol[,'internal_fluxes.C_s->C_b'],col='blue')
+```
+
+<img src="man/figures/README-example-3.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+
+```r
+# plot the stocks as functions of time
+stocks <- sol[,c('C_l','C_s','C_b')]
+plot(times,sol[,'C_l'],type='l',ylim=c(min(stocks),max(stocks)))
+lines(times,sol[,'C_s'])
+lines(times,sol[,'C_b'])
+```
+
+<img src="man/figures/README-example-4.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
 
 ## Installation
 There are several options.
@@ -65,3 +146,4 @@ To learn more about `SoilR` check the references below, and consult the
 [workflows](http://www.bgc-jena.mpg.de/TEE/software/soilr/)
 * Sierra, C. A., Müller, M., & Trumbore, S. E. (2014). Modeling radiocarbon dynamics in soils: SoilR version 1.1. Geoscientific Model Development, 7(5), 1919–1931. [doi:10.5194/gmd-7-1919-2014](https://www.geosci-model-dev.net/7/1919/2014/)
 * Sierra, C. A., Müller, M., & Trumbore, S. E. (2012). Models of soil organic matter decomposition: the SoilR package, version 1.0. Geosci. Model Dev., 5(4), 1045–1060. [doi:10.5194/gmd-5-1045-2012](https://www.geosci-model-dev.net/5/1045/2012/)
+

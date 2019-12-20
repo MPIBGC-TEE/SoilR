@@ -10,9 +10,9 @@
   mat,
   initialValues,
   inputFluxes,
-  solverfunc,
-  pass,
-  timeSymbol
+  timeSymbol,
+  pass = FALSE,
+  solverfunc = deSolve.lsoda.wrapper
 )
 }
 \arguments{
@@ -26,11 +26,11 @@
 
 \item{inputFluxes}{no manual documentation}
 
-\item{solverfunc}{no manual documentation}
+\item{timeSymbol}{no manual documentation}
 
 \item{pass}{no manual documentation}
 
-\item{timeSymbol}{no manual documentation}
+\item{solverfunc}{no manual documentation}
 }
 \description{
 automatic title

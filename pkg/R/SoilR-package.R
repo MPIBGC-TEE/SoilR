@@ -2,7 +2,6 @@
 #'
 #' @docType package
 #' @name SoilR-package
-#' @alias SoilR-package
 #' 
 #' @description
 #' The package allows you to study compartmental Soil models.

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A non-autonomous version of the original Wang 3 pool model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for WangThreePoolNonAutonomous_sym {SoilR}"><tr><td>WangThreePoolNonAutonomous_sym {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>A non-autonomous version of the original Wang 3 pool model</h2>
+
+<h3>Description</h3>
+
+<p>An Example based on the original non-linear autonomous model as described in  
+<a href="http://doi.org/10.5194/bg-11-1817-2014">http://doi.org/10.5194/bg-11-1817-2014</a>
+with state_variables:
+</p>
+
+<ol>
+<li><p> C_l
+desc: litter carbon
+unit: &quot;g C m^-2&quot;
+</p>
+</li>
+<li><p> C_s
+desc: soil organic matter
+unit: &quot;g C m^-2&quot;
+</p>
+</li>
+<li><p> C_b: 
+desc: microbial biomass
+unit: &quot;g C m^-2&quot;
+</p>
+</li></ol>
+
+<p>The time dependencies have been added arbitrarily to demonstrate that this is 
+now possible everywhere. 
+At the moment t is mostly ignored like in the original Wang Model except for the first
+in_flux to pool C_l.
+But this example is intended as a blueprint for non autonomous 
+models.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+WangThreePoolNonAutonomous_sym(
+  alpha = 0.5,
+  epsilon = 0.4,
+  mu_b = 0.2,
+  F_NPP = 3e+06,
+  V_l = 0.5,
+  V_s = 0.5,
+  K_l = 1e+05,
+  K_s = 100
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>alpha</code></td>
+<td>
+<p>fraction of carbon influx that directly enters the soil organic matter pool</p>
+</td></tr>
+<tr valign="top"><td><code>epsilon</code></td>
+<td>
+<p>microbial growth efficiency</p>
+</td></tr>
+<tr valign="top"><td><code>mu_b</code></td>
+<td>
+<p>turnover rate of microbial biomass per year, unit: &quot;year^-1&quot;</p>
+</td></tr>
+<tr valign="top"><td><code>F_NPP</code></td>
+<td>
+<p>carbon influx into soil, unit: &quot;g C*m^-2*year^-1&quot;</p>
+</td></tr>
+<tr valign="top"><td><code>V_l</code></td>
+<td>
+<p>maximum rate of litter carbon assimilation per unit microbial biomass per year</p>
+</td></tr>
+<tr valign="top"><td><code>V_s</code></td>
+<td>
+<p>maximum rate of soil carbon assimilation per unit microbial biomass per year</p>
+</td></tr>
+<tr valign="top"><td><code>K_l</code></td>
+<td>
+<p>half-saturation constant for litter carbon assimilation by microbial biomass</p>
+</td></tr>
+<tr valign="top"><td><code>K_s</code></td>
+<td>
+<p>half-saturation constant for soil carbon assimilation by microbial biomass</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.103 <a href="00Index.html">Index</a>]</div>
+</body></html>

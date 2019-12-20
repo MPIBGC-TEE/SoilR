@@ -28,5 +28,6 @@
 		\code{\link{SeriesLinearModel}}\cr
 		\code{\link{SeriesLinearModel14}}\cr
 		\code{\link{CenturyModel}}\cr
+		\code{\link{WangThreePoolNonAutonomous_sym}}\cr
 	}
 }

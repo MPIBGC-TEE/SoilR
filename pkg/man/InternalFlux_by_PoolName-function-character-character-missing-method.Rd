@@ -9,7 +9,7 @@ subset of the state_variable_names}
 }
 \arguments{
 \item{func}{object of class:\code{function}, A real valued function describing the flux (mass/time)
-as function of the state variables and time.}
+as function of (some of ) the state variables and time.}
 
 \item{sourceName}{object of class:\code{character}, A string identifying the source pool of the flux}
 
