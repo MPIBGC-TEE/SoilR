@@ -22,8 +22,9 @@ This is a working example which demostrates some of the new functionality.
 
 
 ```r
-requireNamespace('pkgload')
-pkgload::load_all('../pkg',quiet=TRUE)
+#requireNamespace('pkgload')
+#pkgload::load_all('../pkg',quiet=TRUE)
+require('SoilR')
 # define initial values for the state variables
 times<-seq(from=1,to=1000,by=10)
 smod <- WangThreePoolNonAutonomous_sym() 

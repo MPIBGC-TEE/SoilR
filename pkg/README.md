@@ -22,33 +22,16 @@ This is a working example which demostrates some of the new functionality.
 
 
 ```r
-requireNamespace('pkgload')
-#> Loading required namespace: pkgload
-pkgload::load_all('../pkg',quiet=TRUE)
+#requireNamespace('pkgload')
+#pkgload::load_all('../pkg',quiet=TRUE)
+require('SoilR')
+#> Loading required package: SoilR
 #> Loading required package: deSolve
-#> Loading required package: igraph
 #> 
-#> Attaching package: 'igraph'
-#> The following objects are masked from 'package:stats':
+#> Attaching package: 'SoilR'
+#> The following object is masked from 'package:deSolve':
 #> 
-#>     decompose, spectrum
-#> The following object is masked from 'package:base':
-#> 
-#>     union
-#> Loading required package: sets
-#> 
-#> Attaching package: 'sets'
-#> The following object is masked from 'package:igraph':
-#> 
-#>     %>%
-#> 
-#> Attaching package: 'testthat'
-#> The following object is masked from 'package:sets':
-#> 
-#>     %>%
-#> The following object is masked from 'package:igraph':
-#> 
-#>     compare
+#>     euler
 # define initial values for the state variables
 times<-seq(from=1,to=1000,by=10)
 smod <- WangThreePoolNonAutonomous_sym() 

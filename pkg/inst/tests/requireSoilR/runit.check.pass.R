@@ -69,7 +69,7 @@ test.check.pass=function(){
   t_start,
   t_end,
   function(t0){
-        matrix(nrow=n,ncol=n,byrow=TRUE 
+        matrix(nrow=n,ncol=n,byrow=TRUE,
           c(-0.2,    0,    0, 
              0  , -0.3,    0,   
              0,      0,   -0.4)

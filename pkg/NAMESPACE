@@ -86,6 +86,7 @@ linesCPool,
 plotC14Pool,
 plotCPool,
 getAccumulatedRelease,
+getSolution,
 getC,
 getC14,
 getF14,
@@ -110,6 +111,7 @@ BoundLinDecompOp,
 UnBoundLinDecompOp,
 BoundFc,
 Model,
+Model_by_PoolNames,
 Model_14,
 AWBmodel,
 SeriesLinearModel,
@@ -117,6 +119,7 @@ SeriesLinearModel14,
 TimeMap,
 CenturyModel,
 systemAge,
+state_variable_names,
 transitTime,
 cycling ,
 listProduct,
@@ -133,7 +136,8 @@ example.2DGeneralDecompOpArgs,
 example.2DConstFc.Args,
 example.nestedTime2DMatrixList,
 example.Time3DArrayList,
-example.Time2DArrayList
+example.Time2DArrayList,
+WangThreePoolNonAutonomous_sym
 )
 exportClasses(
 NlModel,
@@ -156,5 +160,6 @@ BoundFc
 )
 exportMethods(
 #initialize
-plot
+plot,
+plotPoolGraph
 )
