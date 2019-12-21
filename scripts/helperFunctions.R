@@ -107,7 +107,7 @@ check_devtools<-function(pkgDir,document=FALSE,build_args='--compact-vignettes=b
 #     with "Package has help file(s) containing install/render-stage \Sexpr{} expressions but no prebuilt PDF manual."
 # 3.) it validates the email address mamueller@bgc-jena.mpg.de 
 #     On the building machine (e.g.travis)
-#     I had to do this once but we need to add the file 
+#     I had to do this only once but we need to add the file everytime 
 check_devtools_rhub  <- function (
   pkg = ".", 
   platforms = NULL, 

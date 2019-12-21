@@ -4,7 +4,7 @@ date: 2019-12-21
 # local installation 
   Ubuntu 18.04 LTS, R 3.6.1
 ── R CMD check results ────────────────────────────────────── SoilR 1.2.103 ────
-Duration: 2m 41.7s
+Duration: 2m 51.2s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 # remote Rhub checks

@@ -6,8 +6,14 @@
 # before we start we make sure that we use the newest version
 devtools::install('../pkg')
 srcText<- readLines(file.path('pkg_readme_template.Rmd'))
-knitr::opts_chunk$set(fig.path='man/figures/README-')
-knitr::knit(text=srcText,output=file.path('..','pkg','README.md'))
+here <- getwd()
 
+setwd(file.path('..','pkg'))
+knitr::opts_chunk$set(fig.path='man/figures/README-')
+knitr::knit(text=srcText,output='README.md')
+setwd(here)
+
+setwd('..')
 knitr::opts_chunk$set(fig.path='pkg/man/figures/README-')
-knitr::knit(text=srcText,output=file.path('..','README.md'))
+knitr::knit(text=srcText,output='README.md')
+setwd(here)

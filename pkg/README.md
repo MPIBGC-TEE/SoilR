@@ -1,9 +1,6 @@
 ---
 output: github_document
-header-includes:
-	\usepackage{svg}
 ---
-\include{svg-image}
 <!-- README.md is generated from README.Rmd. by scripts/knit_READMEs.R which builds the cran and the github readme which share the same figures but must use different relative paths to them -->
 
 
@@ -69,15 +66,18 @@ colnames(sol)
 ```r
 # plot fluxes as functions of time
 
-in_fluxes <- sol[,grep('in_fluxes',colnames(sol))]
-plot( times, sol[,'in_fluxes.C_l'] ,type='l'
+in_fluxes <- sol[,grep('influxes',colnames(sol))]
+plot( times, sol[,'influxes.C_l'] ,type='l'
   ,ylim=c(min(in_fluxes),max(in_fluxes))
 )
-#> Error in sol[, "in_fluxes.C_l"]: subscript out of bounds
-lines( times, sol[,'in_fluxes.C_l'] ,type='l'
+lines( times, sol[,'influxes.C_l'] ,type='l'
   ,ylim=c(min(in_fluxes),max(in_fluxes))
 )
-#> Error in sol[, "in_fluxes.C_l"]: subscript out of bounds
+```
+
+<img src="man/figures/README-unnamed-chunk-2-3.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
+
+```r
 internal_fluxes <- sol[,grep('internal_fluxes',colnames(sol))]
 plot(
   times, sol[,'internal_fluxes.C_l->C_b'] ,type='l'
@@ -87,7 +87,7 @@ lines(times,sol[,'internal_fluxes.C_b->C_s'],col='dark red')
 lines(times,sol[,'internal_fluxes.C_s->C_b'],col='blue')
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-3.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-4.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
 
 ```r
 # plot the stocks as functions of time
@@ -97,7 +97,7 @@ lines(times,sol[,'C_s'])
 lines(times,sol[,'C_b'])
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-4.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-5.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
 
 ## Installation
 There are several options.

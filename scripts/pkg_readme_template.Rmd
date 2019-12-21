@@ -1,9 +1,6 @@
 ---
 output: github_document
-header-includes:
-	\usepackage{svg}
 ---
-\include{svg-image}
 <!-- README.md is generated from README.Rmd. by scripts/knit_READMEs.R which builds the cran and the github readme which share the same figures but must use different relative paths to them -->
 
 ```{r, include = FALSE}
@@ -48,11 +45,11 @@ colnames(sol)
  plot(data.frame(times=times,sol[,c('C_l','C_s','C_b')]))
 # plot fluxes as functions of time
 
-in_fluxes <- sol[,grep('in_fluxes',colnames(sol))]
-plot( times, sol[,'in_fluxes.C_l'] ,type='l'
+in_fluxes <- sol[,grep('influxes',colnames(sol))]
+plot( times, sol[,'influxes.C_l'] ,type='l'
   ,ylim=c(min(in_fluxes),max(in_fluxes))
 )
-lines( times, sol[,'in_fluxes.C_l'] ,type='l'
+lines( times, sol[,'influxes.C_l'] ,type='l'
   ,ylim=c(min(in_fluxes),max(in_fluxes))
 )
 internal_fluxes <- sol[,grep('internal_fluxes',colnames(sol))]
