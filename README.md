@@ -20,11 +20,8 @@ This is a working example which demostrates some of the new functionality.
 
 ```r
 require('SoilR',quietly =TRUE)
-# define initial values for the state variables
-times<-seq(from=1,to=1000,by=10)
 smod <- WangThreePoolNonAutonomous_sym() 
 # (look at the source code of WangThreePoolNonAutonomous_sym )
-
 plotPoolGraph(smod)
 ```
 
@@ -33,7 +30,9 @@ plotPoolGraph(smod)
 ```r
 state_variable_names(smod)
 #> [1] "C_l" "C_b" "C_s"
+# define initial values for the state variables
 iv=c(C_l=1000,C_b=5000,C_s=1000)
+times<-seq(from=1,to=1000,by=10)
 modrun=Model_by_PoolNames( smod=smod ,times=times ,initialValues=iv)
 sol <- getSolution(modrun)
 # Let's see what we have computed
