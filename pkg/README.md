@@ -19,11 +19,7 @@ This is a working example which demostrates some of the new functionality.
 
 
 ```r
-#requireNamespace('pkgload')
-#pkgload::load_all('../pkg',quiet=TRUE)
-require('SoilR')
-#> Loading required package: SoilR
-#> Loading required package: deSolve
+require('SoilR',quietly =TRUE)
 #> 
 #> Attaching package: 'SoilR'
 #> The following object is masked from 'package:deSolve':
