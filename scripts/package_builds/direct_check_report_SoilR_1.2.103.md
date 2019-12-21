@@ -1,8 +1,12 @@
+# Check report for:  SoilR_1.2.103.tar.gz
+# created automatically by the script:  ./check_tar.R
+date: 2019-12-21
 # local installation 
-  Ubuntu 18.04 LTS, R 3.6.1 
-  
-Error: R CMD check found WARNINGs
+  Ubuntu 18.04 LTS, R 3.6.1
+── R CMD check results ────────────────────────────────────── SoilR 1.2.103 ────
+Duration: 2m 48.9s
 
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 # remote Rhub checks
 ## Test environments
 - R-hub debian-gcc-devel (r-devel)
@@ -15,17 +19,7 @@ Error: R CMD check found WARNINGs
 ## R CMD check results
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 # local Rhub containers
-rhub/debian-gcc-devel
-── R CMD check results ────────────────────────────────────── SoilR 1.2.100 ────
-Duration: 0ms
+Error in run(bash, c(file.path(wd, "rhub-linux.sh"), args), echo = TRUE, : System command error, exit status: 1, see stdout + stderr above
 
-0 errors ✔ | 0 warnings ✔ | 0 notes ✔
-rhub/fedora-clang-devel
-── R CMD check results ────────────────────────────────────── SoilR 1.2.100 ────
-Duration: 0ms
+Error in run(bash, c(file.path(wd, "rhub-linux.sh"), args), echo = TRUE, : System command error, exit status: 1, see stdout + stderr above
 
-❯ checking re-building of vignette outputs ... WARNING
-  Error(s) in re-building vignettes:
-  --- re-building ‘GeneralModel-knitr.Rnw’ using knitr
-
-0 errors ✔ | 1 warning ✖ | 0 notes ✔

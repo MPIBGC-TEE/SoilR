@@ -27,6 +27,13 @@ path to the vignette you want to build.
 ./build_vignette.R relative/path/to/the/vignette.Rnw
 ```
 
+## Updating the SoilR-exp/pkg/README.md and SoilR-exp/README.md
+Both files are created from the same source but have different
+relative paths to their figures. So we use this script to set a different 
+fig.path option.
+```
+./knit_READMEs.R
+```
 
 
 ## Check the package as cran:

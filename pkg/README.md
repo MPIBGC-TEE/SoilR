@@ -1,8 +1,10 @@
 ---
 output: github_document
+header-includes:
+	\usepackage{svg}
 ---
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+\include{svg-image}
+<!-- README.md is generated from README.Rmd. by scripts/knit_READMEs.R which builds the cran and the github readme which share the same figures but must use different relative paths to them -->
 
 
 [![Travis-CI Build Status](https://travis-ci.org/MPIBGC-TEE/SoilR-exp.svg?branch=master)](https://travis-ci.org/MPIBGC-TEE/SoilR-exp)
@@ -21,8 +23,8 @@ This is a working example which demostrates some of the new functionality.
 
 ```r
 requireNamespace('pkgload')
-pkgload::load_all('.')
-#> Loading SoilR
+#> Loading required namespace: pkgload
+pkgload::load_all('../pkg',quiet=TRUE)
 #> Loading required package: deSolve
 #> Loading required package: igraph
 #> 
@@ -55,7 +57,7 @@ smod <- WangThreePoolNonAutonomous_sym()
 plotPoolGraph(smod)
 ```
 
-<img src="man/figures/README-example-1.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-1.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
 
 ```r
 state_variable_names(smod)
@@ -79,7 +81,7 @@ colnames(sol)
  plot(data.frame(times=times,sol[,c('C_l','C_s','C_b')]))
 ```
 
-<img src="man/figures/README-example-2.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-2.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
 
 ```r
 # plot fluxes as functions of time
@@ -102,7 +104,7 @@ lines(times,sol[,'internal_fluxes.C_b->C_s'],col='dark red')
 lines(times,sol[,'internal_fluxes.C_s->C_b'],col='blue')
 ```
 
-<img src="man/figures/README-example-3.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-3.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
 
 ```r
 # plot the stocks as functions of time
@@ -112,7 +114,7 @@ lines(times,sol[,'C_s'])
 lines(times,sol[,'C_b'])
 ```
 
-<img src="man/figures/README-example-4.png" title="plot of chunk example" alt="plot of chunk example" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-4.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
 
 ## Installation
 There are several options.
