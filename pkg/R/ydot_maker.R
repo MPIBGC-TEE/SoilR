@@ -15,7 +15,7 @@ ydot_maker<-function(
     # now compute the derivative of the pool contents from the fluxes
     content_change_rate<- function(name,y,t,time_symbol){
       in_to_name <- ifelse(name %in% names(num_in_fluxes),num_in_fluxes[[name]],0)
-      out_from_name <- ifelse(name %in% names(num_out_fluxes),num_in_fluxes[[name]],0)
+      out_from_name <- ifelse(name %in% names(num_out_fluxes),num_out_fluxes[[name]],0)
 
       internal_to_name <- sum(
         num_internal_fluxes[

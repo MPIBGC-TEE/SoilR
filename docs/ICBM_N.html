@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Implementation of the ICBM/N model</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ICBM_N {SoilR}"><tr><td>ICBM_N {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Implementation of the ICBM/N model</h2>
+
+<h3>Description</h3>
+
+<p>This implementations follows the description in Katterer and Andren (2001, Eco Mod 136:191).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+ICBM_N(
+  i = 0.47,
+  k_Y = 0.259,
+  k_O = 0.0154,
+  r_e = 1,
+  e_Y = 0.362,
+  h = 0.243,
+  q_i = 18.8,
+  q_b = 5
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>i</code></td>
+<td>
+<p>carbon input to the soil from plant production</p>
+</td></tr>
+<tr valign="top"><td><code>k_Y</code></td>
+<td>
+<p>decomposition rate of young pool Y</p>
+</td></tr>
+<tr valign="top"><td><code>k_O</code></td>
+<td>
+<p>decomposition rate of old pool O</p>
+</td></tr>
+<tr valign="top"><td><code>r_e</code></td>
+<td>
+<p>external effects on decomposition rates</p>
+</td></tr>
+<tr valign="top"><td><code>e_Y</code></td>
+<td>
+<p>yield efficiency of the soil organism community</p>
+</td></tr>
+<tr valign="top"><td><code>h</code></td>
+<td>
+<p>humification coefficient. Fraction of outflux from Y that is not respired and enters O</p>
+</td></tr>
+<tr valign="top"><td><code>q_i</code></td>
+<td>
+<p>C:N ratio of plant inputs</p>
+</td></tr>
+<tr valign="top"><td><code>q_b</code></td>
+<td>
+<p>C:N ratio of soil organism biomass</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.103 <a href="00Index.html">Index</a>]</div>
+</body></html>
