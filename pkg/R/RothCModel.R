@@ -80,6 +80,7 @@ RothCModel<- function
             t_end
         )
       }
+      # Fix me. This code needs to be refactored to do interpolation by TimeMap instead of manually. 
       if(class(In)=="data.frame"){
          inputFlux=splinefun(In[,1],In[,2])
          FYMflux=splinefun(FYM[,1],FYM[,2])
