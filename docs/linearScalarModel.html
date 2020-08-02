@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Implementation of a general model for linear non-autonomous...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for linearScalarModel {SoilR}"><tr><td>linearScalarModel {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Implementation of a general model for linear non-autonomous systems with scalar modifiers</h2>
+
+<h3>Description</h3>
+
+<p>This function implements a linear model with scalar modifier for inputs
+and compartmental matrix.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+linearScalarModel(
+  t,
+  A,
+  C0,
+  u,
+  gamma,
+  xi,
+  xi_lag = 0,
+  solver = deSolve.lsoda.wrapper,
+  pass = FALSE
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>t</code></td>
+<td>
+<p>A vector containing the points in time where the solution is
+sought.</p>
+</td></tr>
+<tr valign="top"><td><code>A</code></td>
+<td>
+<p>A square (n x n) matrix with compartmental structure</p>
+</td></tr>
+<tr valign="top"><td><code>C0</code></td>
+<td>
+<p>A vector of length n containing the initial amount of carbon for
+the n pools.</p>
+</td></tr>
+<tr valign="top"><td><code>u</code></td>
+<td>
+<p>A vector of length n with constant mass inputs for the n pools.</p>
+</td></tr>
+<tr valign="top"><td><code>gamma</code></td>
+<td>
+<p>A scalar or data.frame object specifying the modifier for the
+mass inputs.</p>
+</td></tr>
+<tr valign="top"><td><code>xi</code></td>
+<td>
+<p>A scalar, data.frame, function or anything that can be 
+converted to a scalar function of time <code><a href="ScalarTimeMap-class.html">ScalarTimeMap</a></code> 
+object  specifying the external  (environmental and/or edaphic) effects on
+decomposition rates.</p>
+</td></tr>
+<tr valign="top"><td><code>xi_lag</code></td>
+<td>
+<p>A time shift/delay  for the automatically 
+created time dependent function xi(t)</p>
+</td></tr>
+<tr valign="top"><td><code>solver</code></td>
+<td>
+<p>A function that solves the system of ODEs. This can be
+<code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user
+provided function with the same interface.</p>
+</td></tr>
+<tr valign="top"><td><code>pass</code></td>
+<td>
+<p>Conditional. Whether a check for compartmental matrix is applied.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A Model Object that can be further queried
+</p>
+
+
+<h3>References</h3>
+
+<p>C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic
+matter decomposition: the SoilR package version 1.0. Geoscientific Model
+Development 5, 1045-1060.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="RothCModel.html">RothCModel</a></code>. There are other
+<code><a href="predefinedModels.html">predefinedModels</a></code> and also more general functions like
+<code><a href="Model.html">Model</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+t=seq(0,52*200,1) # Fix me! Add an example.  
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.103 <a href="00Index.html">Index</a>]</div>
+</body></html>

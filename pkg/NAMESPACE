@@ -138,7 +138,8 @@ example.nestedTime2DMatrixList,
 example.Time3DArrayList,
 example.Time2DArrayList,
 WangThreePoolNonAutonomous_sym,
-ICBM_N
+ICBM_N,
+linearScalarModel
 )
 exportClasses(
 NlModel,
