@@ -18,9 +18,9 @@
 #' lignin.
 #' @param clay Proportion of clay in mineral soil.
 #' @param silt Proportion of silt in mineral soil.
-#' @param xi A scalar, data.frame, function or anything that can be 
-#' converted to a scalar function of time \code{\linkS4class{ScalarTimeMap}} #'
-#' object  specifying the external  (environmental and/or edaphic) effects on
+#' @param xi A scalar, data.frame, function or anything that can be converted
+#' to a scalar function of time \code{\linkS4class{ScalarTimeMap}} #' object
+#' specifying the external  (environmental and/or edaphic) effects on
 #' decomposition rates.
 #' @param xi_lag A time shift/delay  for the automatically 
 #' created time dependent function xi(t) 
@@ -67,6 +67,7 @@ CenturyModel<- function
    silt=0.45, 
    xi=1,  
    xi_lag=0,
+   input_lag=0,
    solver=deSolve.lsoda.wrapper  
   )	
   { 
@@ -76,55 +77,73 @@ CenturyModel<- function
     if(length(C0)!=5) stop("the vector with initial conditions must be of length = 5")
     Fm=0.85-0.18*LN
     Fs=1-Fm
-    if(length(In)==1){
-      inputFluxes=BoundInFluxes(
-        function(t){matrix(nrow=5,ncol=1,c(In*Fm,In*Fs,0,0,0))},
-        t_start,
-        t_end
-      )
+    #if(length(In)==1){
+    #  inputFluxes=BoundInFluxes(
+    #    function(t){matrix(nrow=5,ncol=1,c(In*Fm,In*Fs,0,0,0))},
+    #    t_start,
+    #    t_end
+    #  )
+    #}
+   
+    if(class(In)=='numeric') {
+      if(length(In)==1){
+        inputFluxes=ConstantInFluxList_by_PoolIndex(
+            list(
+                ConstantInFlux_by_PoolIndex(
+                    destinationIndex=1
+                    ,flux_constant=In*Fm
+                )
+                ,
+                ConstantInFlux_by_PoolIndex(
+                    destinationIndex=2
+                    ,flux_constant=In*Fs
+                )
+            )
+        )
+      } 
     }
     if(class(In)=="data.frame"){
-      x=In[,1]  
-      y=In[,2]  
-      inputFlux=splinefun(x,y)
-      inputFluxes=BoundInFluxes(
-        function(t){matrix(nrow=5,ncol=1,c(inputFlux(t)*Fm,inputFlux(t)*Fs,0,0,0))},
-        min(x),
-        max(x)
-      )
+        # we want to be as specific as possible
+        # and especially retain the information that only
+        # 2 of the 5 pools receive inputs.
+
+        # This would be lost in the old style description as a vector valued
+        # function, since R cannot detect which pools are permanently zero in 
+        # a vector:
+        # if(class(In)=="data.frame"){
+        #   x=In[,1]  
+        #   y=In[,2]  
+        #   inputFlux=splinefun(x,y)
+        #   inputFluxes=BoundInFluxes(
+        #     function(t){
+        #       matrix(
+        #        nrow=5,
+        #        ncol=1,
+        #        c(inputFlux(t)*Fm,inputFlux(t)*Fs,0,0,0)
+        #       ) 
+        #     },
+        #     min(x),
+        #     max(x)
+        #   )
+        # }
+
+        # We therefore describe only the non zero fluxes
+        in_times=In[,1]
+        in_vals =In[,2]
+        inputFluxes=StateIndependentInFluxList_by_PoolIndex(
+            list(
+                StateIndependentInFlux_by_PoolIndex(
+                    destinationIndex=PoolIndex(1)
+                    ,flux=ScalarTimeMap(data.frame(time=In[,1],val=Fm*in_vals))
+                )
+                ,
+                StateIndependentInFlux_by_PoolIndex(
+                    destinationIndex=PoolIndex(2)
+                    ,flux=ScalarTimeMap(data.frame(time=In[,1],val=Fs*in_vals))
+                )
+            )
+       )
     }
-   
-    #if(length(In)==1){
-    #    InputFluxes=ConstantInFluxList_by_PoolIndex(
-    #        list(
-    #            ConstantInFlux_by_PoolIndex(
-    #                destinationIndex=1
-    #                ,flux_constant=In*Fm
-    #            )
-    #            ,
-    #            ConstantInFlux_by_PoolIndex(
-    #                destinationIndex=2
-    #                ,flux_constant=In*Fs
-    #            )
-    #        )
-    #  )
-    #}
-    #if(class(In)=="data.frame"){
-    #    InScaled=data.frame(In[,1]*Fm,In[,2]*Fs)
-    #    InputFluxes=StateIndependentInFluxList_by_PoolIndex(
-    #        list(
-    #            StateIndependentInFlux_by_PoolIndex(
-    #                destinationIndex=1
-    #                ,flux=ScalarTimeMap(InScaled)
-    #            )
-    #            ,
-    #            StateIndependentInFlux_by_PoolIndex(
-    #                destinationIndex=2
-    #                ,flux=ScalarTimeMap(InScaled)
-    #            )
-    #        )
-    #  )
-    #}
     Txtr=clay+silt
     fTxtr=1-0.75*Txtr
     Es=0.85-0.68*Txtr
@@ -149,14 +168,21 @@ CenturyModel<- function
     A[5,4]=alpha54*abs(A[4,4])
     # whatever format xi is given in we convert it to a time map object
     # (function,constant,data.frame,list considering also the xi_lag argument)
-    if(length(xi)==1){
-    xi=ScalarTimeMap(data=xi,lag=xi_lag)
-    } else {
-    #if(class(xi)=='data.frame') {
+    if(class(xi) == 'numeric' && length(xi)==1){
+      xi=ScalarTimeMap(data=xi,lag=xi_lag)
+    }
+    if(class(xi)=='data.frame') {
      xi=ScalarTimeMap(map=xi, lag=xi_lag)
     }
-    fX=getFunctionDefinition(xi)
+    if(class(xi)=='function') {
+     xi=ScalarTimeMap(map=xi, lag=xi_lag)
+    }
+    #fX=getFunctionDefinition(xi)
     At=ConstLinDecompOpWithLinearScalarFactor(mat=A,xi=xi)
+    
+    # At the moment we still create an old style Matrix vector based model 
+    # but with the ingredients provided in this more specific form we can later
+    # build Instances of more specific Model classes.
     Mod=GeneralModel(t=t,A=At,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver,pass=FALSE)
     return(Mod)
   }

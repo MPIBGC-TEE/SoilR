@@ -527,17 +527,19 @@ correctnessOfNlModel <- function
     ivList=object@initialValues
     InFluxes=object@inputFluxes
     res=TRUE
-    tI_min=getTimeRange(InFluxes)["t_min"]
-    tI_max=getTimeRange(InFluxes)["t_max"]
+    tr_in=getTimeRange(InFluxes)
+    tI_min=tr_in["t_min"]
+    tI_max=tr_in["t_max"]
     t_min=min(times)
     t_max=max(times)
+    tr=c(t_min=t_min,t_max=t_max)
     if (t_min<tI_min) {
-        stop(simpleError("You ordered a timeinterval that starts earlier than the interval your function I(t) (InFluxes) is defined for. \n Have look at the timeMap object of I(t) or the data it is created from")
-        )
+        stop(simpleError(paste("You ordered a timeinterval",tr," that starts earlier than the interval your function I(t) (InFluxes) is defined for.",r_in,"Have look at the timeMap object of I(t) or the data it is created from")
+        ))
     }
     if (t_max>tI_max) {
-        stop(simpleError("You ordered a timeinterval that ends later than the interval your function I(t) (InFluxes) is defined for. \n Have look at the timeMap object of I(t) or the data it is created from")
-        )
+        stop(simpleError(paste("You ordered a timeinterval",tr," that ends later than the interval your function I(t) (InFluxes) is defined for.", r_in, "Have look at the timeMap object of I(t) or the data it is created from")
+        ))
     }
     return(res)
 }
@@ -663,13 +665,15 @@ correctnessOfModel <- function(object){
     tI_max=getTimeRange(InFluxes)["t_max"]
     t_min=min(times)
     t_max=max(times)
-    haveALook="Have look at the object containing  A(t) or the data it is created from\n"
+    haveALook=function(str){
+      paste("Have look at the object containing ", str, " or the data it is created from\n")
+    }
     if (t_min<tA_min) {
         stop(
           simpleError(
             paste(
               "You ordered a timeinterval that starts earlier than the interval your matrix valued function A(t) is defined for. \n "
-              ,haveALook
+              ,haveALook("A(t)")
               ,paste('tA_min=',tA_min,'\n')
               ,paste('t_min=',t_min,'\n')
             )
@@ -681,7 +685,7 @@ correctnessOfModel <- function(object){
           simpleError(
             paste(
               "You ordered a timeinterval that ends later than the interval your matrix valued function A(t) is defined for. \n "
-              ,haveALook
+              ,haveALook("A(t)")
               ,paste('tA_max=',tA_max,'\n')
               ,paste('t_max=',t_max,'\n')
             )
@@ -692,8 +696,10 @@ correctnessOfModel <- function(object){
         stop(
           simpleError(
             paste(
-              "You ordered a timeinterval that starts earlier than the interval your function I(t) (InFluxes) is defined for. \n ",
-              haveALook
+              "You ordered a timeinterval that starts earlier than the interval your function I(t) (InFluxes) is defined for. \n "
+              ,haveALook("I(t)")
+              ,paste('tI_min=',tI_min,'\n')
+              ,paste('t_min=',t_min,'\n')
             )
           )
         )
@@ -702,8 +708,10 @@ correctnessOfModel <- function(object){
         stop(
           simpleError(
             paste(
-              "You ordered a timeinterval that ends later than the interval your function I(t) (InFluxes) is defined for. \n ",
-              haveALook
+              "You ordered a timeinterval that ends later than the interval your function I(t) (InFluxes) is defined for. \n "
+              ,haveALook("I(t)")
+              ,paste('tI_max=',tI_max,'\n')
+              ,paste('t_max=',t_max,'\n')
             )
           )
         )

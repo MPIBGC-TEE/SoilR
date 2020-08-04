@@ -74,3 +74,38 @@ setMethod(
     ConstInFluxes(map=object,numberOfPools=numberOfPools)
   }
 )
+
+#' automatic title
+#' 
+#' @param object no manual documentation
+#' @param numberOfPools no manual documentation
+#' basically produces a vector valued function from a list of scalar functions
+setMethod(
+  f="InFluxes",
+  signature=signature(object="StateIndependentInFluxList_by_PoolIndex"),
+  def=function(object,numberOfPools){
+
+    vecFunc=function(t){
+      res=matrix(nrow=numberOfPools,0)
+      for (f in object){
+        fluxFunc=getFunctionDefinition(f@flux)
+        res[[f@destinationIndex]]<-fluxFunc(t)
+      }
+      res
+    }
+    # determine the time domain of the vecFunc
+    t_mins=sapply(
+      object,
+      function(f){getTimeRange(f@flux)[[1]]}
+    )
+    t_maxs=sapply(
+      object,
+      function(f){getTimeRange(f@flux)[[2]]}
+    )
+    BoundInFluxes(
+      map=vecFunc,
+      starttime=max(t_mins),
+      endtime=min(t_maxs)
+    )
+  }
+)

@@ -3,7 +3,7 @@ test.ExtractionOfConstantLinDecompOpAndXi<-function(){
     xi_func=function(t){2+sin(t)}
     t_model1=seq(0,5200,1) #
     lag=1
-    Ex1=CenturyModel_new(t_model1,LN=0.5,Ls=0.1,In=0.1,xi=xi_func,xi_lag=lag)
+    Ex1=CenturyModel(t_model1,LN=0.5,Ls=0.1,In=0.1,xi=xi_func,xi_lag=lag)
     Ct=getC(Ex1)
     Rt=getReleaseFlux(Ex1)
     # now extract the operator (all model objects can do this)
@@ -57,12 +57,12 @@ test.ExtractionOfConstantLinDecompOpAndXi<-function(){
     # zero for all times and SoilR would have to assume the most general case
     # that all components are non zero....
     # To achieve structural transparency it is much better to have a 'vector
-    # of functions', which is the reason I changed the way CenturyModel_new
+    # of functions', which is the reason I changed the way CenturyModel
     # defines the influxes. This will scale also to nonautonomous fluxes. It
     # will reach its limits though for nonlinear fluxes as it turns out that
     # for these the only way that preserves the full structural information is
     # to use scalar functions that do not even have vector arguments.  I have
-    # not implemented this yet in 'Century_new' because I did not know how the
+    # not implemented this yet in 'Century' because I did not know how the
     # pools are called in Century, but it will be shown in Corrados example.
     ifls=getInFluxes(Ex1)
     cifls_by_ind<-ConstantInFluxList_by_PoolIndex(ifls)
@@ -94,22 +94,23 @@ test.ExtractionOfConstantLinDecompOpAndXi<-function(){
     )
 
     plotPoolGraphFromTupleLists(internalConnections,inBoundConnections,outBoundConnections)
-#
-#    #now we try to plot the pool graph
-#    plotPoolGraph(Ex1)
-#
-#
-#    ## second example with data
-#    #t_data=100:4000
-#    #xi_df=xi=data.frame(t=t_data,xi=xi_func(t_data))
-#    #t_model2=seq(101,4001,1) # In the time range of t_data considering the lag  
-#    #Ex2=CenturyModel_new(t_model2,LN=0.5,Ls=0.1,In=0.1,xi=xi_df,lag=lag)
-#    #Ct=getC(Ex2)
-#    #Rt=getReleaseFlux(Ex2)
-#
+
 }
 
-test.Example<-function(){
+test.withXiDataframe<-function(){
+    ## second example with data
+    xi_func=function(t){2+sin(t)}
+    t_data=100:4000
+    xi_df=xi=data.frame(t=t_data,xi=xi_func(t_data))
+    lag=1
+    t_model2= t_data 
+    Ex2=CenturyModel(t_model2,LN=0.5,Ls=0.1,In=0.1,xi=xi_df,xi_lag=lag)
+    Ct=getC(Ex2)
+    Rt=getReleaseFlux(Ex2)
+
+}
+
+test.oldExample<-function(){
   t=seq(0,52*200,1) #200 years
   LNcorn=0.17/0.004 # Values for corn clover reported in Parton et al. 1987
   Ex<-CenturyModel(t,LN=0.5,Ls=0.1,In=0.1)
@@ -151,7 +152,7 @@ test.timedependentInput<-function(){
 	pet <- c(35, 16, 48, 59, 115, 110, 139, 114, 103, 71, 47, 46, 42)
 	xi <- fT.Century1(temp) * fW.Century(rainfall, pet)
 	xi <- data.frame(time, xi=xi[1:length(time)])
-        ut <- data.frame(time, rep(10, length.out=length(time)))
+  ut <- data.frame(time, rep(10, length.out=length(time)))
 	
 	Century <- CenturyModel(t = time, C0 = C0, LN = 0.5, Ls = 0.1, In = ut, clay = 0.1, silt = 0.2, xi = xi, xi_lag = 0)
 	ct=getC(Century)

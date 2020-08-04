@@ -34,6 +34,7 @@ alltests <- defineTestSuite(
    #,testFuncRegexp = "^test.Gaudinsky"
    #,testFuncRegexp = "^test.Gaudinsky"
    #,testFuncRegexp = "^test.function_by_PoolIndex$"
+   #,testFuncRegexp ="^test.timedependentInput$"
    ,testFuncRegexp ="^test.*$"
 
    ,rngKind = "Marsaglia-Multicarry"
