@@ -14,6 +14,7 @@ stable than the official stable version in [CRAN](https://cran.r-project.org/web
 * The latest build of the package documentation can be found [here:](https://mpibgc-tee.github.io/SoilR-exp/).
 * To find examples you can also look at the [workflows](http://www.bgc-jena.mpg.de/TEE/software/soilr/).
 
+<!--
 ## Example
 This is a working example which demostrates some of the new functionality.
 
@@ -88,6 +89,7 @@ lines(times,sol[,'C_b'])
 ```
 
 <img src="pkg/man/figures/README-unnamed-chunk-2-5.svg" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="100%" />
+-->
 
 ## Installation
 There are several options.
