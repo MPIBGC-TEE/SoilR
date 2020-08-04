@@ -39,8 +39,7 @@ linearScalarModel<- function
    gamma, 
    xi,  
    xi_lag=0,
-   solver=deSolve.lsoda.wrapper,
-   pass=FALSE  
+   solver=deSolve.lsoda.wrapper
   )	
   { 
     t_start=min(t)
@@ -71,6 +70,6 @@ linearScalarModel<- function
     xi=ScalarTimeMap(xi,lag=xi_lag)
     fX=getFunctionDefinition(xi)
     At=ConstLinDecompOpWithLinearScalarFactor(mat=A,xi=xi)
-    Mod=GeneralModel(t=t,A=At,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver,pass=pass)
+    Mod=GeneralModel(t=t,A=At,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver)
     return(Mod)
   }

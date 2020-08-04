@@ -93,6 +93,38 @@ CenturyModel<- function
         max(x)
       )
     }
+   
+    #if(length(In)==1){
+    #    InputFluxes=ConstantInFluxList_by_PoolIndex(
+    #        list(
+    #            ConstantInFlux_by_PoolIndex(
+    #                destinationIndex=1
+    #                ,flux_constant=In*Fm
+    #            )
+    #            ,
+    #            ConstantInFlux_by_PoolIndex(
+    #                destinationIndex=2
+    #                ,flux_constant=In*Fs
+    #            )
+    #        )
+    #  )
+    #}
+    #if(class(In)=="data.frame"){
+    #    InScaled=data.frame(In[,1]*Fm,In[,2]*Fs)
+    #    InputFluxes=StateIndependentInFluxList_by_PoolIndex(
+    #        list(
+    #            StateIndependentInFlux_by_PoolIndex(
+    #                destinationIndex=1
+    #                ,flux=ScalarTimeMap(InScaled)
+    #            )
+    #            ,
+    #            StateIndependentInFlux_by_PoolIndex(
+    #                destinationIndex=2
+    #                ,flux=ScalarTimeMap(InScaled)
+    #            )
+    #        )
+    #  )
+    #}
     Txtr=clay+silt
     fTxtr=1-0.75*Txtr
     Es=0.85-0.68*Txtr
@@ -117,7 +149,12 @@ CenturyModel<- function
     A[5,4]=alpha54*abs(A[4,4])
     # whatever format xi is given in we convert it to a time map object
     # (function,constant,data.frame,list considering also the xi_lag argument)
-    xi=ScalarTimeMap(xi,lag=xi_lag)
+    if(length(xi)==1){
+    xi=ScalarTimeMap(data=xi,lag=xi_lag)
+    } else {
+    #if(class(xi)=='data.frame') {
+     xi=ScalarTimeMap(map=xi, lag=xi_lag)
+    }
     fX=getFunctionDefinition(xi)
     At=ConstLinDecompOpWithLinearScalarFactor(mat=A,xi=xi)
     Mod=GeneralModel(t=t,A=At,ivList=C0,inputFluxes=inputFluxes,solverfunc=solver,pass=FALSE)

@@ -108,3 +108,51 @@ test.ExtractionOfConstantLinDecompOpAndXi<-function(){
 #    #Rt=getReleaseFlux(Ex2)
 #
 }
+
+test.Example<-function(){
+  t=seq(0,52*200,1) #200 years
+  LNcorn=0.17/0.004 # Values for corn clover reported in Parton et al. 1987
+  Ex<-CenturyModel(t,LN=0.5,Ls=0.1,In=0.1)
+  Ct=getC(Ex)
+  Rt=getReleaseFlux(Ex)
+
+  matplot(t,Ct,type="l", col=1:5,lty=1,ylim=c(0,max(Ct)*2.5),
+  ylab=expression(paste("Carbon stores (kg C", ha^-1,")")),xlab="Time (weeks)")
+  lines(t,rowSums(Ct),lwd=2)
+  legend("topright", c("Structural litter","Metabolic litter",
+  "Active SOM","Slow SOM","Passive SOM","Total Carbon"),
+  lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
+
+  matplot(t,Rt,type="l",lty=1,ylim=c(0,max(Rt)*3),ylab="Respiration (kg C ha-1 week-1)",xlab="Time")
+  lines(t,rowSums(Rt),lwd=2)
+  legend("topright", c("Structural litter","Metabolic litter",
+  "Active SOM","Slow SOM","Passive SOM","Total Respiration"),
+  lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
+}
+
+test.user.Example<-function(){
+	C0 <- c(1, 2, 15, 8, 3)
+	time <- seq(0, 1, 1/12)
+	temp <- c(0, -7, 2, 5, 11, 12, 16, 13, 13, 8, 4, 3, 2)
+	rainfall <- c(63, 12, 33, 22, 24, 80, 52, 133, 57, 76, 55, 92, 71)
+	pet <- c(35, 16, 48, 59, 115, 110, 139, 114, 103, 71, 47, 46, 42)
+	xi <- fT.Century1(temp) * fW.Century(rainfall, pet)
+	xi <- data.frame(time, xi=xi[1:length(time)])
+	
+	Century <- CenturyModel(t = time, C0 = C0, LN = 0.5, Ls = 0.1, In = 0, clay = 0.1, silt = 0.2, xi = xi, xi_lag = 0)
+	ct=getC(Century)
+}
+
+test.timedependentInput<-function(){
+	C0 <- c(1, 2, 15, 8, 3)
+	time <- seq(0, 1, 1/12)
+	temp <- c(0, -7, 2, 5, 11, 12, 16, 13, 13, 8, 4, 3, 2)
+	rainfall <- c(63, 12, 33, 22, 24, 80, 52, 133, 57, 76, 55, 92, 71)
+	pet <- c(35, 16, 48, 59, 115, 110, 139, 114, 103, 71, 47, 46, 42)
+	xi <- fT.Century1(temp) * fW.Century(rainfall, pet)
+	xi <- data.frame(time, xi=xi[1:length(time)])
+        ut <- data.frame(time, rep(10, length.out=length(time)))
+	
+	Century <- CenturyModel(t = time, C0 = C0, LN = 0.5, Ls = 0.1, In = ut, clay = 0.1, silt = 0.2, xi = xi, xi_lag = 0)
+	ct=getC(Century)
+}
