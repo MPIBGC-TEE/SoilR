@@ -1,6 +1,6 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
-Version: 1.2.104
+Version: 1.2.105
 Date: 2020-08-04
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
@@ -43,9 +43,8 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         DecompositionOperator_deprecated_in_1.2.R Model_by_PoolNames.R
         Model.R Model_14.R NlModel.R AutonomousLinearModel.R
         NonAutonomousLinearModel.R AWBmodel.R bacwaveModel.R
-        bind.C14curves.R BoundFc.R CenturyModel.R CenturyModel_new.R
-        ConstFc.R ConstLinDecompOp.R
-        ConstLinDecompOpWithLinearScaleFactor.R
+        bind.C14curves.R BoundFc.R CenturyModel.R ConstFc.R
+        ConstLinDecompOp.R ConstLinDecompOpWithLinearScaleFactor.R
         UnBoundNonLinDecompOp_by_PoolNames.R cycling.R euler.R
         example.2DBoundInFluxesFromFunction.R
         example.2DBoundLinDecompOpFromFunction.R

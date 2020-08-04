@@ -21,7 +21,6 @@
 #' @param solver A function that solves the system of ODEs. This can be
 #' \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user
 #' provided function with the same interface.
-#' @param pass Conditional. Whether a check for compartmental matrix is applied.
 #' @return A Model Object that can be further queried
 #' @seealso \code{\link{RothCModel}}. There are other
 #' \code{\link{predefinedModels}} and also more general functions like

@@ -12,8 +12,7 @@ linearScalarModel(
   gamma,
   xi,
   xi_lag = 0,
-  solver = deSolve.lsoda.wrapper,
-  pass = FALSE
+  solver = deSolve.lsoda.wrapper
 )
 }
 \arguments{
@@ -41,8 +40,6 @@ created time dependent function xi(t)}
 \item{solver}{A function that solves the system of ODEs. This can be
 \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user
 provided function with the same interface.}
-
-\item{pass}{Conditional. Whether a check for compartmental matrix is applied.}
 }
 \value{
 A Model Object that can be further queried

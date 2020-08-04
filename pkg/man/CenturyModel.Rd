@@ -41,9 +41,9 @@ lignin.}
 
 \item{silt}{Proportion of silt in mineral soil.}
 
-\item{xi}{A scalar, data.frame, function or anything that can be 
-converted to a scalar function of time \code{\linkS4class{ScalarTimeMap}} #'
-object  specifying the external  (environmental and/or edaphic) effects on
+\item{xi}{A scalar, data.frame, function or anything that can be converted
+to a scalar function of time \code{\linkS4class{ScalarTimeMap}} #' object
+specifying the external  (environmental and/or edaphic) effects on
 decomposition rates.}
 
 \item{xi_lag}{A time shift/delay  for the automatically 

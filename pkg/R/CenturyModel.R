@@ -67,7 +67,6 @@ CenturyModel<- function
    silt=0.45, 
    xi=1,  
    xi_lag=0,
-   input_lag=0,
    solver=deSolve.lsoda.wrapper  
   )	
   { 

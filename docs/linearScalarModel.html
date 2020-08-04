@@ -25,8 +25,7 @@ linearScalarModel(
   gamma,
   xi,
   xi_lag = 0,
-  solver = deSolve.lsoda.wrapper,
-  pass = FALSE
+  solver = deSolve.lsoda.wrapper
 )
 </pre>
 
@@ -75,10 +74,6 @@ created time dependent function xi(t)</p>
 <code><a href="euler.html">euler</a></code> or <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> or any other user
 provided function with the same interface.</p>
 </td></tr>
-<tr valign="top"><td><code>pass</code></td>
-<td>
-<p>Conditional. Whether a check for compartmental matrix is applied.</p>
-</td></tr>
 </table>
 
 
@@ -110,5 +105,5 @@ Development 5, 1045-1060.
 t=seq(0,52*200,1) # Fix me! Add an example.  
 </pre>
 
-<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.103 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.104 <a href="00Index.html">Index</a>]</div>
 </body></html>

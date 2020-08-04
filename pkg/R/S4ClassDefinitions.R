@@ -534,11 +534,11 @@ correctnessOfNlModel <- function
     t_max=max(times)
     tr=c(t_min=t_min,t_max=t_max)
     if (t_min<tI_min) {
-        stop(simpleError(paste("You ordered a timeinterval",tr," that starts earlier than the interval your function I(t) (InFluxes) is defined for.",r_in,"Have look at the timeMap object of I(t) or the data it is created from")
+        stop(simpleError(paste("You ordered a timeinterval",tr," that starts earlier than the interval your function I(t) (InFluxes) is defined for.",tr_in,"Have look at the timeMap object of I(t) or the data it is created from")
         ))
     }
     if (t_max>tI_max) {
-        stop(simpleError(paste("You ordered a timeinterval",tr," that ends later than the interval your function I(t) (InFluxes) is defined for.", r_in, "Have look at the timeMap object of I(t) or the data it is created from")
+        stop(simpleError(paste("You ordered a timeinterval",tr," that ends later than the interval your function I(t) (InFluxes) is defined for.", tr_in, "Have look at the timeMap object of I(t) or the data it is created from")
         ))
     }
     return(res)
