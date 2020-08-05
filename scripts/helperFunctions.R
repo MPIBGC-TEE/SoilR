@@ -5,8 +5,8 @@ requireNamespace('rhub')
 requireNamespace('getopt')
 #requireNamespace('git2r')
 #pkgload::load_all("~/debugHelpers/pkg",export_all=FALSE)
-pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
-#devtools::install_github('mamueller/roxygen2')
+#pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
+devtools::install_github('mamueller/roxygen2')
 requireNamespace('roxygen2')
 
 
