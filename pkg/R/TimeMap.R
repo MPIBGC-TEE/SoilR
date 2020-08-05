@@ -10,7 +10,7 @@ arrFuncMaker <- function(times,arr,srcDim,targetClass,interpolation,lag=0){
       scalar_lag=lag[i],
       y_vector=arr[i,],
       interpolation
-    ) 
+    )
   }
 	funcs <- lapply(seq(flatDim),funcMaker)
 	arrFunc <- function(t){
@@ -62,10 +62,10 @@ CallWithPlotVars<- function(
     f <- getFunctionDefinition(obj)
     tr <- getTimeRange(obj)
     times <- seq(min(tr),max(tr),length.out=lt)
-    f_1 <- f(times[[1]]) 
+    f_1 <- f(times[[1]])
     flatDim <- length(f_1)
     srcDim <- dim(f_1)
-    if(is.null(srcDim)){ 
+    if(is.null(srcDim)){
       srcDim <- flatDim
     }
     values <- array(
@@ -82,7 +82,7 @@ CallWithPlotVars<- function(
 	  e <- environment()
 	  valuesProvidedByThisFuntions <- as.list(e)[varNamesFromPackageEnv]
     valuesProvidedByCaller <- list(...)
-	  values <- c( valuesProvidedByThisFuntions, valuesProvidedByCaller) 
+	  values <- c( valuesProvidedByThisFuntions, valuesProvidedByCaller)
   	funcCall <- as.call(append(list(workerFunc),values))
   	res <- eval(funcCall)
   res
@@ -90,7 +90,7 @@ CallWithPlotVars<- function(
 
 
 #' automatic title
-#' 
+#'
 #' @param .Object no manual documentation
 #' @param starttime no manual documentation
 #' @param endtime no manual documentation
@@ -105,7 +105,7 @@ CallWithPlotVars<- function(
 setMethod(
     f="initialize",
     signature="TimeMap",
-    definition=function 
+    definition=function
     (.Object,
     starttime=numeric(),
     endtime=numeric(),
@@ -119,7 +119,7 @@ setMethod(
 )
 
 #' automatic title
-#' 
+#'
 #' @param times no manual documentation
 #' @param data no manual documentation
 #' @param lag no manual documentation
@@ -140,20 +140,22 @@ setMethod(
     times="numeric",
     data="list"
   ),
-  def=function 
+  def=function
   (
-   times, 
-   data,  
-   lag=0, 
-   interpolation=splinefun 
+   times,
+   data,
+   lag=0,
+   interpolation=splinefun
   ){
 		lt <- length(times)
     ll <- length(lag)
     dl <- dim(lag)
     fe <- data[[1]]
-		targetClass <- class(fe)
+		lt <- length(times)
+		targetClass <- class(fe)[[1]] #since R4.0 matrix class(m) =c("matrix","array")
     if(inherits(fe,'numeric')){
-      if(length(fe)==1){ 
+      if(length(fe)==1){
+        # numbers
         return(
           TimeMap(
             times=times,
@@ -162,16 +164,16 @@ setMethod(
             interpolation=interpolation
           )
         )
-      }else{ 
+      }else{
         srcDim <- c(length(fe))
 		    flatDim <- prod(srcDim)
-        if(ll>1){ 
-          if(is.null(dl)){ 
+        if(ll>1){
+          if(is.null(dl)){
             if(ll!=flatDim){
               stop(
-                sprintf('If data is a list of vectors, 
+                sprintf('If data is a list of vectors,
                   the lag element has to be a scalar or a vector of the same legth as
-                  the elemenst of the data list. 
+                  the elemenst of the data list.
                   You gave a lag argument that was a vector of length %s ,
                   while the elements of the data list have length %s',
                   ll,
@@ -179,9 +181,9 @@ setMethod(
                 )
               )
             }
-          }else{ 
+          }else{
             stop(
-              sprintf('If data is a list of vectors 
+              sprintf('If data is a list of vectors
                 the lag element has to be a scalar or a vector too.
                 You gave a lag argument that was an array or matrix of dimension %s ,
                 while the elements of the data list where vectors (dim=NULL)' ,
@@ -196,14 +198,16 @@ setMethod(
       if(inherits(fe,'array')|inherits(fe,'matrix')){
 		    srcDim <- dim(fe)
 		    flatDim=prod(srcDim)
-        if(ll>1){ 
-          if(is.null(dl)){ 
-            stop(
-              sprintf('If data is a list of matrices or arrays, 
-                the lag element has to either be a scalar or  
-                a matrix or array of the same shape as the elemenst of the data list. 
+        template_str= 'If data is a list of matrices or arrays,
+                the lag element has to either be a scalar or
+                a matrix or array of the same shape as the elemenst of the data list.
                 You gave a lag argument that was a vector of length %s,
-                while the elements of the data list have dimension %s.',
+                while the elements of the data list have dimension %s.'
+        if(ll>1){
+          if(is.null(dl)){
+            stop(
+              sprintf(
+                template_str,
                 ll,
                 toString(srcDim)
               )
@@ -211,11 +215,8 @@ setMethod(
           }else{
             if(!identical(dl,srcDim)){
               stop(
-                sprintf('If data is a list of matrices or arrays, 
-                  the lag element has to either be a scalar or  
-                  a matrix or an array of the same shape as the elemenst of the data list. 
-                  You gave a lag argument of dimension %s,
-                  while the elements of the data list have dimension %s.',
+                sprintf(
+                  template_str,
                   toString(dl),
                   toString(srcDim)
                 )
@@ -240,18 +241,14 @@ setMethod(
 )
 
 #' automatic title
-#' 
+#'
 #' @param times no manual documentation
 #' @param data no manual documentation
 #' @param lag no manual documentation
 #' @param interpolation no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#'
+#' Interpolates the data as function of times and remembers the limits
+#' of the time domain.
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -261,12 +258,12 @@ setMethod(
     times="numeric",
     data="numeric"
   ),
-  def=function 
+  def=function
   (
    times,
    data,
-   lag=0, 
-   interpolation=splinefun 
+   lag=0,
+   interpolation=splinefun
   )
   {
 		lt <- length(times)
@@ -296,7 +293,7 @@ setMethod(
 )
 
 #' automatic title
-#' 
+#'
 #' @param times no manual documentation
 #' @param data no manual documentation
 #' @param lag no manual documentation
@@ -317,12 +314,12 @@ setMethod(
     times="numeric",
     data="matrix"
   ),
-  def=function 
+  def=function
   (
    times,
-   data, 
+   data,
    lag=0,
-   interpolation=splinefun 
+   interpolation=splinefun
   ){
     srcDim <-c(dim(data)[[1]])
     flatDim=prod(srcDim)
@@ -330,8 +327,8 @@ setMethod(
     targetClass <-'numeric'
     dl <- dim(lag)
     ll <- length(lag)
-    if (ll>1){ 
-      if (is.null(dl)){ 
+    if (ll>1){
+      if (is.null(dl)){
           if (ll!=flatDim){
             stop(
               sprintf(
@@ -342,7 +339,7 @@ setMethod(
               )
             )
           }
-       }else{ 
+       }else{
          if(!identical(dl,c(flatDim,1))){
           stop(
             sprintf(
@@ -365,7 +362,7 @@ setMethod(
 
 
 #' automatic title
-#' 
+#'
 #' @param times no manual documentation
 #' @param data no manual documentation
 #' @param lag no manual documentation
@@ -386,22 +383,22 @@ setMethod(
     times="numeric",
     data="array"
   ),
-  def=function 
+  def=function
   (
    times,
    data,
-   lag=0, 
-   interpolation=splinefun 
+   lag=0,
+   interpolation=splinefun
   ){
     dd <- dim(data)
     dl <- dim(lag)
     ll <- length(lag)
-    srcDim <-dd[1:(length(dd)-1)] 
+    srcDim <-dd[1:(length(dd)-1)]
 	  flatDim=prod(srcDim)
-    if(ll>1){ 
+    if(ll>1){
       if(is.null(dl)){
         stop(
-          sprintf('The lag element has to either be a scalar or  
+          sprintf('The lag element has to either be a scalar or
             have the same dimension as the array slices per time step.
             You gave a lag argument that was a vector of length %s ,while  dim(data)[1:(length(dim(data))-1)]=%s',
             ll,
@@ -410,7 +407,7 @@ setMethod(
       }else{
         if(ll!=flatDim){
         stop(
-          sprintf('The lag element has to either be a scalar or  
+          sprintf('The lag element has to either be a scalar or
             have the same dimension as the array slices per time step.
             dim(lag)=%s, dim(data)[1:(length(dim(data))-1)]=%s',
             dl,
@@ -431,17 +428,14 @@ setMethod(
 
 
 #' automatic title
-#' 
-#' @param map no manual documentation
-#' @param lag no manual documentation
-#' @param interpolation no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#'
+#' @param map A nested list of the form list(times=l1,data=l2)
+#' where l1 is a vector or list of the time values
+#' and l2 is a list of numbers, vectors, matrices or arrays.
+#' @param lag Time delay for the created function of time
+#' @param interpolation The function used to compute the interpolation e.g splinefun
+#'
+#' Interprets the received list as value table of a time dependent function 
 setMethod(
   f="TimeMap",
   signature=signature(
@@ -451,11 +445,11 @@ setMethod(
     times="missing",
     data="missing"
   ),
-  def=function 
+  def=function
   (
    map,
-   lag=0, 
-   interpolation=splinefun 
+   lag=0,
+   interpolation=splinefun
   ){
 	  if (length(map)<2){
 	  	stop('Your list has to have at least 2 elements: a vector usually labeled "times" and a list of arrays or matrices.')
@@ -475,7 +469,7 @@ setMethod(
 
 
 #' automatic title
-#' 
+#'
 #' @param map no manual documentation
 #' @param lag no manual documentation
 #' @param interpolation no manual documentation
@@ -495,11 +489,11 @@ setMethod(
       times="missing",
       data="missing"
     ),
-    definition=function 
+    definition=function
     (
       map,
-      lag=0, 
-      interpolation=splinefun 
+      lag=0,
+      interpolation=splinefun
     ){
       obj <- TimeMap(times=as.vector(map[,1]),data=as.vector(map[,2]),lag=lag,interpolation=interpolation)
      return(obj)
@@ -518,8 +512,8 @@ setMethod(
       data="missing"
     ),
     definition=function(
-        map, 
-        starttime,  
+        map,
+        starttime,
         endtime,
         lag=0
     ){
@@ -534,7 +528,7 @@ setMethod(
   }
 )
 
-#' manual constructor for just a function 
+#' manual constructor for just a function
 #'
 #' The interval will be set to [-Inf,Inf]
 setMethod(
@@ -561,7 +555,7 @@ setMethod(
 
 
 #' automatic title
-#' 
+#'
 #' @param map no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -575,17 +569,17 @@ setMethod(
     signature=signature(
       map="TimeMap"
     ),
-    definition=function 
-    (map 
+    definition=function
+    (map
     ){
-   map 
+   map
   }
 )
 
 
 
 #' automatic title
-#' 
+#'
 #' @param x no manual documentation
 #' @param ... no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -598,9 +592,9 @@ setMethod(
 setMethod(
     f="as.character",
     signature=c(x="TimeMap"),
-    definition=function 
-    (x, 
-     ... 
+    definition=function
+    (x,
+     ...
      ){
         return(
             paste( class(x),
@@ -613,14 +607,14 @@ setMethod(
             )
         )
     }
-)    
+)
 
 #' The time interval where the function is defined
 setMethod(
     f="getTimeRange",
     signature="TimeMap",
-    definition=function 
-    (object 
+    definition=function
+    (object
     ){
         return( c("t_min"=object@starttime,"t_max"=object@endtime))
     }
@@ -629,8 +623,8 @@ setMethod(
 #setMethod(
 #    f="getLaggingTimeRange",
 #    signature="TimeMap",
-#    definition=function 
-#    (object 
+#    definition=function
+#    (object
 #    ){
 #        lag=object@lag
 #        return( c("t_min"=object@starttime+lag,"t_max"=object@endtime+lag))
@@ -640,7 +634,7 @@ setMethod(
 
 
 #' automatic title
-#' 
+#'
 #' @param object no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -658,25 +652,25 @@ setMethod(
 )
 
 #' deprecated constructor of the class TimeMap.
-#' 
+#'
 #' deprecated functions #################### use the generic TimeMap(...)
 #' instead
-#' 
-#' 
+#'
+#'
 #' @param t_start A number marking the begin of the time domain where the
 #' function is valid
 #' @param t_end A number the end of the time domain where the function is valid
 #' @param f The time dependent function definition (a function in R's sense)
 #' @return An object of class TimeMap that can be used to describe models.
 TimeMap.new=function
-(t_start, 
- t_end,   
- f        
+(t_start,
+ t_end,
+ f
  ){
    warning("This function is going deprecated because:\n
       Constructors for SoilR classes have been renamed consistently to the name of the class (NameOfClass( ) instead of NameOfClass.new() )
    ")
-   obj=TimeMap(map=f,t_start,t_end) 
+   obj=TimeMap(map=f,t_start,t_end)
 return(obj)
 }
 
@@ -686,10 +680,10 @@ return(obj)
 
 
 #' TimeMap.from.Dataframe
-#' 
+#'
 #' This function is a deprecated constructor of the class TimeMap.
-#' 
-#' 
+#'
+#'
 #' @param dframe A data frame containing exactly two columns: the first one is
 #' interpreted as time
 #' @param lag a scalar describing the time lag. Positive Values shift the
@@ -703,25 +697,25 @@ return(obj)
 #' which thus can check that all involved functions of time are actually
 #' defined for the times of interest
 TimeMap.from.Dataframe=function
-(dframe, 
-lag=0, 
-interpolation=splinefun 
+(dframe,
+lag=0,
+interpolation=splinefun
  ){
    warning(
    "This function will be deprecated because constructors are now called like the classes they produce objects of.(In this case TimeMap(...)
-   These constructors are frequently generic functions and implement 
-   (usually many) methods with different signatures (types of arguments) 
+   These constructors are frequently generic functions and implement
+   (usually many) methods with different signatures (types of arguments)
    to  assemble the object from different components.
-   You can find all methods by typing 
+   You can find all methods by typing
    'getMethod('TimeMap')'")
-   obj=TimeMap(dframe,interpolation=interpolation) 
+   obj=TimeMap(dframe,interpolation=interpolation)
 return(obj)
 }
 
 
 
 #' automatic title
-#' 
+#'
 #' @param x no manual documentation
 #' @param y no manual documentation
 #' @param ... no manual documentation
@@ -750,7 +744,7 @@ setMethod(
 
 
 #' automatic title
-#' 
+#'
 #' @param x no manual documentation
 #' @param ... no manual documentation
 #' @autocomment These comments were created by the auto_comment_roclet by
@@ -763,10 +757,10 @@ setMethod(
 setMethod(
   f= "add_plot",
   signature=c(x="TimeMap"),
-  def=function 
+  def=function
   (
-    x,  
-    ... 
+    x,
+    ...
     ){
     CallWithPlotVars(
       x,
