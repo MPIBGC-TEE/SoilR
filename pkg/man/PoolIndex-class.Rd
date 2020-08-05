@@ -14,17 +14,4 @@ used to dispatch pool index specific methods like conversion to names.
         \item \code{\link{PoolName,PoolIndex-method}}
       }
   }
-  \subsection{S4-methods with superclasses (in the package) of class \code{PoolIndex} in their signature:}{
-    \subsection{superclass integer}{
-      \itemize{
-        \item \code{\link{check_pool_ids,PoolConnection_by_PoolIndex,integer-method}}
-      }
-    }
-  }
-}
-\section{S4-superclasses (in the package)}{
-      \itemize{
-        \item \code{\linkS4class{PoolId}}
-        \item \code{\linkS4class{integer}}
-      }
 }

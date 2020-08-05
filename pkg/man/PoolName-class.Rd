@@ -15,41 +15,4 @@ and to dispatch pool name specific methods like conversion to pool indices
         \item \code{\link{PoolName,PoolName-method}}
       }
   }
-  \subsection{S4-methods with superclasses (in the package) of class \code{PoolName} in their signature:}{
-    \subsection{superclass character}{
-      \itemize{
-        \item \code{\link{[,Model,character,missing,missing-method}}
-        \item \code{\link{[,NlModel,character,ANY,ANY-method}}
-        \item \code{\link{BoundFc,character-method}}
-        \item \code{\link{by_PoolIndex,function,character,character-method}}
-        \item \code{\link{by_PoolIndex,InFlux_by_PoolName,character,character-method}}
-        \item \code{\link{by_PoolIndex,InFluxList_by_PoolName,character,character-method}}
-        \item \code{\link{by_PoolIndex,InternalFlux_by_PoolName,character,character-method}}
-        \item \code{\link{by_PoolIndex,InternalFluxList_by_PoolName,character,character-method}}
-        \item \code{\link{by_PoolIndex,OutFlux_by_PoolName,character,character-method}}
-        \item \code{\link{by_PoolIndex,OutFluxList_by_PoolName,character,character-method}}
-        \item \code{\link{ConstantInternalFluxRate_by_PoolIndex,missing,missing,character,numeric-method}}
-        \item \code{\link{ConstantInternalFluxRate_by_PoolName,character,character,missing,numeric-method}}
-        \item \code{\link{ConstantInternalFluxRate_by_PoolName,missing,missing,character,numeric-method}}
-        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolName,ConstantOutFluxRateList_by_PoolName,missing,character-method}}
-        \item \code{\link{GeneralPoolId,character-method}}
-        \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method}}
-        \item \code{\link{InFlux_by_PoolName,function,character-method}}
-        \item \code{\link{InternalFlux_by_PoolName,function,character,character,missing-method}}
-        \item \code{\link{InternalFlux_by_PoolName,function,missing,missing,character-method}}
-        \item \code{\link{OutFlux_by_PoolName,function,character-method}}
-        \item \code{\link{PoolConnection_by_PoolIndex,missing,missing,character-method}}
-        \item \code{\link{PoolIndex,character-method}}
-        \item \code{\link{PoolName,character-method}}
-        \item \code{\link{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}}
-        \item \code{\link{UnBoundNonLinDecompOp,missing,missing,missing,missing,character,character,UnBoundNonLinDecompOp_by_PoolNames-method}}
-      }
-    }
-  }
-}
-\section{S4-superclasses (in the package)}{
-      \itemize{
-        \item \code{\linkS4class{PoolId}}
-        \item \code{\linkS4class{character}}
-      }
 }

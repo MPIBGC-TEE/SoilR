@@ -7,11 +7,15 @@
 \S4method{TimeMap}{list,missing,missing,missing,missing}(map, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{map}{object of class:\code{list}, no manual documentation}
+\item{map}{object of class:\code{list}, A nested list of the form list(times=l1,data=l2)
+where l1 is a vector or list of the time values
+and l2 is a list of numbers, vectors, matrices or arrays.}
 
-\item{lag}{no manual documentation}
+\item{lag}{Time delay for the created function of time}
 
-\item{interpolation}{no manual documentation}
+\item{interpolation}{The function used to compute the interpolation e.g splinefun
+
+Interprets the received list as value table of a time dependent function}
 }
 \description{
 automatic title

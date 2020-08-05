@@ -13,7 +13,10 @@
 
 \item{lag}{no manual documentation}
 
-\item{interpolation}{no manual documentation}
+\item{interpolation}{no manual documentation
+
+Interpolates the data as function of times and remembers the limits
+of the time domain.}
 }
 \description{
 automatic title

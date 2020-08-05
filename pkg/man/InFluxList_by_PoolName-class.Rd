@@ -16,26 +16,4 @@ Class for a list of influxes indexed by the names of the target pools
         \item \code{\link{Model_by_PoolNames,missing,numeric,UnBoundNonLinDecompOp_by_PoolNames,numeric,InFluxList_by_PoolName,missing,missing,missing,missing-method}}
       }
   }
-  \subsection{S4-methods with superclasses (in the package) of class \code{InFluxList_by_PoolName} in their signature:}{
-    \subsection{superclass list}{
-      \itemize{
-        \item \code{\link{ConstantInFluxList_by_PoolIndex,list-method}}
-        \item \code{\link{ConstantInternalFluxRateList_by_PoolIndex,list-method}}
-        \item \code{\link{ConstantInternalFluxRateList_by_PoolName,list-method}}
-        \item \code{\link{ConstantOutFluxRateList_by_PoolIndex,list-method}}
-        \item \code{\link{ConstantOutFluxRateList_by_PoolName,list-method}}
-        \item \code{\link{GeneralDecompOp,list-method}}
-        \item \code{\link{InFluxes,list-method}}
-        \item \code{\link{InFluxList_by_PoolIndex,list-method}}
-        \item \code{\link{InFluxList_by_PoolName,list-method}}
-        \item \code{\link{InternalFluxList_by_PoolIndex,list-method}}
-        \item \code{\link{InternalFluxList_by_PoolName,list-method}}
-        \item \code{\link{OutFluxList_by_PoolIndex,list-method}}
-        \item \code{\link{OutFluxList_by_PoolName,list-method}}
-        \item \code{\link{StateIndependentInFluxList_by_PoolIndex,list-method}}
-        \item \code{\link{TimeMap,list,missing,missing,missing,missing-method}}
-        \item \code{\link{TimeMap,missing,missing,missing,numeric,list-method}}
-      }
-    }
-  }
 }
