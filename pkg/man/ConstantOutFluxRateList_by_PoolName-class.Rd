@@ -3,12 +3,17 @@
 \docType{class}
 \name{ConstantOutFluxRateList_by_PoolName-class}
 \alias{ConstantOutFluxRateList_by_PoolName-class}
-\title{Subclass of list that is guaranteed to contain only elements of type
-\linkS4class{ConstantOutFluxRate_by_PoolName}}
+\title{Describes a list of flux rates.}
 \description{
-The main purpose of the class is to be used in method signatures 
-which would otherwise only indicate an object of class \code{'list'}
-in their signature an then check that the list contains the right
-kind of elements inside the function.
-Using this class the method signature becomes much more informative.
+The purpose is to avoid creation of lists that contain negative rates
+or in accidental confusion with list of fluxes.
+Instances are usually automatically created from data
+}
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{ConstantOutFluxRateList_by_PoolName} in their signature:}{
+      \itemize{
+        \item \code{\link{by_PoolIndex,ConstantOutFluxRateList_by_PoolName,ANY,ANY-method}}
+        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolName,ConstantOutFluxRateList_by_PoolName,missing,character-method}}
+      }
+  }
 }

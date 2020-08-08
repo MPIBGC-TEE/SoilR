@@ -152,7 +152,11 @@
 <td>convert a function f of to f_vec</td></tr>
 <tr><td style="width: 25%;"><a href="by_PoolName.html">by_PoolName</a></td>
 <td>automatic title</td></tr>
+<tr><td style="width: 25%;"><a href="by_PoolName-ConstantInFluxList_by_PoolIndex-method.html">by_PoolName-method</a></td>
+<td>convert to a list indexed by pool names</td></tr>
 <tr><td style="width: 25%;"><a href="by_PoolName-ConstantInFluxRate_by_PoolIndex-method.html">by_PoolName-method</a></td>
+<td>new object with the source pool id converted to a PoolIndex if necessary</td></tr>
+<tr><td style="width: 25%;"><a href="by_PoolName-ConstantInFlux_by_PoolIndex-method.html">by_PoolName-method</a></td>
 <td>new object with the source pool id converted to a PoolIndex if necessary</td></tr>
 <tr><td style="width: 25%;"><a href="by_PoolName-ConstantInternalFluxRateList_by_PoolIndex-method.html">by_PoolName-method</a></td>
 <td>convert to a list indexed by pool names</td></tr>
@@ -194,19 +198,25 @@
 <tr><td style="width: 25%;"><a href="ConstantInFluxList_by_PoolIndex-list-method.html">ConstantInFluxList_by_PoolIndex-method</a></td>
 <td>constructor from a normal list</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInFluxList_by_PoolIndex-numeric-method.html">ConstantInFluxList_by_PoolIndex-method</a></td>
-<td>automatic title</td></tr>
+<td>constructor from numeric vector</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInFluxList_by_PoolName.html">ConstantInFluxList_by_PoolName</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
+<tr><td style="width: 25%;"><a href="ConstantInFluxList_by_PoolName-class.html">ConstantInFluxList_by_PoolName-class</a></td>
+<td>Subclass of list that is guaranteed to contain only elements of type ConstantInFlux_by_PoolName</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInFluxRate_by_PoolIndex-class.html">ConstantInFluxRate_by_PoolIndex-class</a></td>
-<td>automatic title</td></tr>
+<td>Describes a flux rates.</td></tr>
+<tr><td style="width: 25%;"><a href="ConstantInFluxRate_by_PoolName.html">ConstantInFluxRate_by_PoolName</a></td>
+<td>Constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInFluxRate_by_PoolName-class.html">ConstantInFluxRate_by_PoolName-class</a></td>
-<td>automatic title</td></tr>
+<td>Describes a flux rates.</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInFlux_by_PoolIndex-class.html">ConstantInFlux_by_PoolIndex-class</a></td>
 <td>class for a constant influx to a single pool identified by index</td></tr>
+<tr><td style="width: 25%;"><a href="ConstantInFlux_by_PoolName-class.html">ConstantInFlux_by_PoolName-class</a></td>
+<td>class for a constant influx to a single pool identified by pool name</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRateList_by_PoolIndex.html">ConstantInternalFluxRateList_by_PoolIndex</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRateList_by_PoolIndex-class.html">ConstantInternalFluxRateList_by_PoolIndex-class</a></td>
-<td>Subclass of list that is guaranteed to contain only elements of type ConstantInternalFluxRate_by_PoolIndex</td></tr>
+<td>Describes a list of flux rates.</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRateList_by_PoolIndex-list-method.html">ConstantInternalFluxRateList_by_PoolIndex-method</a></td>
 <td>constructor from a normal list</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRateList_by_PoolIndex-numeric-method.html">ConstantInternalFluxRateList_by_PoolIndex-method</a></td>
@@ -214,9 +224,9 @@
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRateList_by_PoolName.html">ConstantInternalFluxRateList_by_PoolName</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRateList_by_PoolName-class.html">ConstantInternalFluxRateList_by_PoolName-class</a></td>
-<td>Subclass of list that is guaranteed to contain only elements of type ConstantInternalFluxRate_by_PoolName</td></tr>
+<td>Describes a list of flux rates.</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRateList_by_PoolName-list-method.html">ConstantInternalFluxRateList_by_PoolName-method</a></td>
-<td>constructor from a normal list</td></tr>
+<td>Constructor from a normal list of fluxes</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRate_by_PoolIndex.html">ConstantInternalFluxRate_by_PoolIndex</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantInternalFluxRate_by_PoolIndex-class.html">ConstantInternalFluxRate_by_PoolIndex-class</a></td>
@@ -236,7 +246,7 @@
 <tr><td style="width: 25%;"><a href="ConstantOutFluxRateList_by_PoolIndex.html">ConstantOutFluxRateList_by_PoolIndex</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantOutFluxRateList_by_PoolIndex-class.html">ConstantOutFluxRateList_by_PoolIndex-class</a></td>
-<td>Subclass of list that is guaranteed to contain only elements of type ConstantOutFluxRate_by_PoolIndex</td></tr>
+<td>Describes a list of flux rates.</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantOutFluxRateList_by_PoolIndex-list-method.html">ConstantOutFluxRateList_by_PoolIndex-method</a></td>
 <td>constructor from a normal list</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantOutFluxRateList_by_PoolIndex-numeric-method.html">ConstantOutFluxRateList_by_PoolIndex-method</a></td>
@@ -244,7 +254,7 @@
 <tr><td style="width: 25%;"><a href="ConstantOutFluxRateList_by_PoolName.html">ConstantOutFluxRateList_by_PoolName</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantOutFluxRateList_by_PoolName-class.html">ConstantOutFluxRateList_by_PoolName-class</a></td>
-<td>Subclass of list that is guaranteed to contain only elements of type ConstantOutFluxRate_by_PoolName</td></tr>
+<td>Describes a list of flux rates.</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantOutFluxRateList_by_PoolName-list-method.html">ConstantOutFluxRateList_by_PoolName-method</a></td>
 <td>constructor from a normal list</td></tr>
 <tr><td style="width: 25%;"><a href="ConstantOutFluxRateList_by_PoolName-numeric-method.html">ConstantOutFluxRateList_by_PoolName-method</a></td>
@@ -458,7 +468,7 @@
 <tr><td style="width: 25%;"><a href="getCompartmentalMatrixFunc-TransportDecompositionOperator-ANY-ANY-method.html">getCompartmentalMatrixFunc-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getCompartmentalMatrixFunc-UnBoundNonLinDecompOp-ANY-ANY-method.html">getCompartmentalMatrixFunc-method</a></td>
-<td>automatic title</td></tr>
+<td>Extract the matrix valued function of time and state vector for the compartmental matrix</td></tr>
 <tr><td style="width: 25%;"><a href="getCompartmentalMatrixFunc-UnBoundNonLinDecompOp_by_PoolNames-chf19f8c91.html">getCompartmentalMatrixFunc-method</a></td>
 <td>Compartmental Matrix as function of the state vector and time</td></tr>
 <tr><td style="width: 25%;"><a href="getConstantCompartmentalMatrix.html">getConstantCompartmentalMatrix</a></td>
@@ -536,7 +546,7 @@
 <tr><td style="width: 25%;"><a href="getFunctionDefinition-UnBoundInFluxes-method.html">getFunctionDefinition-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getFunctionDefinition-UnBoundLinDecompOp-method.html">getFunctionDefinition-method</a></td>
-<td>automatic title</td></tr>
+<td>Extracts the time dependent matrix valued function (compartmental matrix)</td></tr>
 <tr><td style="width: 25%;"><a href="getInFluxes.html">getInFluxes</a></td>
 <td>Extract the influxes</td></tr>
 <tr><td style="width: 25%;"><a href="getInFluxes-Model-method.html">getInFluxes-method</a></td>
@@ -612,7 +622,7 @@
 <tr><td style="width: 25%;"><a href="getTimeRange-UnBoundInFluxes-method.html">getTimeRange-method</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getTimeRange-UnBoundLinDecompOp-method.html">getTimeRange-method</a></td>
-<td>automatic title</td></tr>
+<td>Extracts the time interval for which the function is valid.</td></tr>
 <tr><td style="width: 25%;"><a href="getTimes.html">getTimes</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="getTimes-Model-method.html">getTimes-method</a></td>
@@ -684,7 +694,7 @@
 <tr><td style="width: 25%;"><a href="InFluxList_by_PoolIndex.html">InFluxList_by_PoolIndex</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="InFluxList_by_PoolIndex-class.html">InFluxList_by_PoolIndex-class</a></td>
-<td>automatic title</td></tr>
+<td>Describes a list of flux rates.</td></tr>
 <tr><td style="width: 25%;"><a href="InFluxList_by_PoolIndex-list-method.html">InFluxList_by_PoolIndex-method</a></td>
 <td>constructor from a normal list</td></tr>
 <tr><td style="width: 25%;"><a href="InFluxList_by_PoolName.html">InFluxList_by_PoolName</a></td>
@@ -774,7 +784,7 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="MCSim-class.html">MCSim-class</a></td>
-<td>automatic title</td></tr>
+<td>Experimental Class for a Monte Carlo Simulation of particles leaving the pool</td></tr>
 <tr><td style="width: 25%;"><a href="Model.html">Model</a></td>
 <td>Constructor for class Model</td></tr>
 <tr><td style="width: 25%;"><a href="Model-class.html">Model-class</a></td>
@@ -788,9 +798,9 @@
 <tr><td style="width: 25%;"><a href="Model_by_PoolNames-class.html">Model_by_PoolNames-class</a></td>
 <td>A model run based on flux functions</td></tr>
 <tr><td style="width: 25%;"><a href="Model_by_PoolNames-SymbolicModel_by_PoolNames-numeric-missing-nu37a011e6.html">Model_by_PoolNames-method</a></td>
-<td>Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method</td></tr>
+<td>Create a model(run) described by fluxes</td></tr>
 <tr><td style="width: 25%;"><a href="Model_by_PoolNames-missing-numeric-UnBoundNonLinDecompOp_by_Poole522475a.html">Model_by_PoolNames-method</a></td>
-<td>Model_by_PoolNames,missing,numeric,UnBoundNonLinDecompOp_by_PoolNames,numeric,InFluxList_by_PoolName,missing,missing,missing,missing-method</td></tr>
+<td>Create a model(run) described by fluxes</td></tr>
 </table>
 
 <h2><a name="N">-- N --</a></h2>
@@ -812,7 +822,7 @@
 <tr><td style="width: 25%;"><a href="OutFluxList_by_PoolIndex.html">OutFluxList_by_PoolIndex</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="OutFluxList_by_PoolIndex-class.html">OutFluxList_by_PoolIndex-class</a></td>
-<td>automatic title</td></tr>
+<td>A list of outfluxes</td></tr>
 <tr><td style="width: 25%;"><a href="OutFluxList_by_PoolIndex-list-method.html">OutFluxList_by_PoolIndex-method</a></td>
 <td>constructor from a normal list</td></tr>
 <tr><td style="width: 25%;"><a href="OutFluxList_by_PoolName.html">OutFluxList_by_PoolName</a></td>
@@ -858,6 +868,8 @@
 <td>Generic plotter</td></tr>
 <tr><td style="width: 25%;"><a href="plotPoolGraph-SymbolicModel_by_PoolNames-method.html">plotPoolGraph-method</a></td>
 <td>Plot the graph of pool connections</td></tr>
+<tr><td style="width: 25%;"><a href="plotPoolGraphFromTupleLists.html">plotPoolGraphFromTupleLists</a></td>
+<td>Helper function to draw connectivity graphs</td></tr>
 <tr><td style="width: 25%;"><a href="PoolConnection_by_PoolIndex.html">PoolConnection_by_PoolIndex</a></td>
 <td>automatic title</td></tr>
 <tr><td style="width: 25%;"><a href="PoolConnection_by_PoolIndex-class.html">PoolConnection_by_PoolIndex-class</a></td>
@@ -915,7 +927,7 @@
 
 <table width="100%">
 <tr><td style="width: 25%;"><a href="ScalarTimeMap.html">ScalarTimeMap</a></td>
-<td>automatic title</td></tr>
+<td>Constructor for 'ScalarTimeMap-class'</td></tr>
 <tr><td style="width: 25%;"><a href="ScalarTimeMap-class.html">ScalarTimeMap-class</a></td>
 <td>S4 class for a scalar time dependent function on a finite time interval</td></tr>
 <tr><td style="width: 25%;"><a href="ScalarTimeMap-data.frame-missing-missing-missing-missing-method.html">ScalarTimeMap-method</a></td>
@@ -937,9 +949,9 @@
 <tr><td style="width: 25%;"><a href="SoilR.F0.new.html">SoilR.F0.new</a></td>
 <td>deprecated function that used to create an object of class SoilR.F0</td></tr>
 <tr><td style="width: 25%;"><a href="StateDependentInFluxVector-class.html">StateDependentInFluxVector</a></td>
-<td>automatic title</td></tr>
+<td>Input vector that is a function of the pool contenst and time</td></tr>
 <tr><td style="width: 25%;"><a href="StateDependentInFluxVector-class.html">StateDependentInFluxVector-class</a></td>
-<td>automatic title</td></tr>
+<td>Input vector that is a function of the pool contenst and time</td></tr>
 <tr><td style="width: 25%;"><a href="StateIndependentInFluxList_by_PoolIndex.html">StateIndependentInFluxList_by_PoolIndex</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="StateIndependentInFluxList_by_PoolIndex-class.html">StateIndependentInFluxList_by_PoolIndex-class</a></td>
@@ -959,7 +971,7 @@
 <tr><td style="width: 25%;"><a href="SymbolicModel_by_PoolNames-class.html">SymbolicModel_by_PoolNames-class</a></td>
 <td>A symbolic model description based on flux functions</td></tr>
 <tr><td style="width: 25%;"><a href="systemAge.html">systemAge</a></td>
-<td>System and pool age for compartment models</td></tr>
+<td>System and pool age for constant compartment models</td></tr>
 </table>
 
 <h2><a name="T">-- T --</a></h2>
@@ -980,7 +992,7 @@
 <tr><td style="width: 25%;"><a href="ThreepSeriesModel14.html">ThreepSeriesModel14</a></td>
 <td>Implementation of a three-pool C14 model with series structure</td></tr>
 <tr><td style="width: 25%;"><a href="TimeMap.html">TimeMap</a></td>
-<td>constructor for 'TimeMap-class'</td></tr>
+<td>Constructor for 'TimeMap-class'</td></tr>
 <tr><td style="width: 25%;"><a href="TimeMap-class.html">TimeMap-class</a></td>
 <td>S4 class for a time dependent function</td></tr>
 <tr><td style="width: 25%;"><a href="TimeMap-TimeMap-ANY-ANY-ANY-ANY-method.html">TimeMap-method</a></td>
@@ -1041,25 +1053,25 @@
 <tr><td style="width: 25%;"><a href="UnBoundLinDecompOp.html">UnBoundLinDecompOp</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundLinDecompOp-class.html">UnBoundLinDecompOp-class</a></td>
-<td>automatic title</td></tr>
+<td>An S4 class to represent a linear nonautonomous compartmental matrix</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundLinDecompOp-function-method.html">UnBoundLinDecompOp-method</a></td>
-<td>automatic title</td></tr>
+<td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp.html">UnBoundNonLinDecompOp</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp-class.html">UnBoundNonLinDecompOp-class</a></td>
-<td>An S4 class to represent the operation nonlinear nonautonomous compartmental matrix</td></tr>
+<td>An S4 class to represent a nonlinear nonautonomous compartmental matrix</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp-function-missing-missing-missing-ANY-ANY-A4c673fb7.html">UnBoundNonLinDecompOp-method</a></td>
-<td>automatic title</td></tr>
+<td>Constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp-missing-missing-missing-missing-character-ee27243e.html">UnBoundNonLinDecompOp-method</a></td>
 <td>convert to Indexed version</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp-missing-vector-vector-numeric-ANY-ANY-ANY-method.html">UnBoundNonLinDecompOp-method</a></td>
-<td>constructor</td></tr>
+<td>Constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp_by_PoolNames.html">UnBoundNonLinDecompOp_by_PoolNames</a></td>
 <td>Generic constructor for the class with the same name</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp_by_PoolNames-class.html">UnBoundNonLinDecompOp_by_PoolNames-class</a></td>
 <td>An S4 class to represent the of nonlinear nonautonomous compartmental system independently of the order of state variables</td></tr>
 <tr><td style="width: 25%;"><a href="UnBoundNonLinDecompOp_by_PoolNames-InternalFluxList_by_PoolName-11a8362e.html">UnBoundNonLinDecompOp_by_PoolNames-method</a></td>
-<td>automatic title</td></tr>
+<td>A flux and pool name based representation of a possibly nonlinear and nonautonomous Compartmental Matrix</td></tr>
 </table>
 
 <h2><a name="W">-- W --</a></h2>

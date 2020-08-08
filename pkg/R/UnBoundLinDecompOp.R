@@ -1,4 +1,4 @@
-#' automatic title
+#' An S4 class to represent a linear nonautonomous compartmental matrix 
 #' 
 #' @autocomment 
 setClass(
@@ -25,7 +25,9 @@ setMethod(
 
 
 
-#' automatic title
+#' Generic constructor for the class with the same name
+#' 
+#' @family UnBoundLinDecompOp_constructor
 #' 
 #' @param matFunc no manual documentation
 #' @autocomment 
@@ -46,8 +48,9 @@ setMethod(
 
 
 
-#' automatic title
+#' Extracts the time dependent matrix valued function (compartmental matrix)
 #' 
+#' @family UnBoundLinDecompOp_constructor
 #' @param object no manual documentation
 #' @autocomment 
 setMethod(
@@ -61,10 +64,11 @@ setMethod(
 
 
 
-#' automatic title
+#' Extracts the time interval for which the function is valid.  
 #' 
 #' @param object no manual documentation
 #' @autocomment 
+#' This is espcially important for internal checking to avoid extrapolation
 setMethod(
     f="getTimeRange",
     signature="UnBoundLinDecompOp",

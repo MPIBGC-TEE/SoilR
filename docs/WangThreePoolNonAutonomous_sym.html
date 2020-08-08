@@ -95,5 +95,41 @@ WangThreePoolNonAutonomous_sym(
 </td></tr>
 </table>
 
+
+<h3>Examples</h3>
+
+<pre>
+# This is a working example which demostrates some of the new functionality.
+require('SoilR',quietly =TRUE)
+smod &lt;- WangThreePoolNonAutonomous_sym() 
+# (look at the source code of WangThreePoolNonAutonomous_sym )
+plotPoolGraph(smod)
+state_variable_names(smod)
+# define initial values for the state variables
+iv=c(C_l=1000,C_b=5000,C_s=1000)
+times&lt;-seq(from=1,to=1000,by=10)
+modrun=Model_by_PoolNames( smod=smod ,times=times ,initialValues=iv)
+sol &lt;- getSolution(modrun)
+# Let's see what we have computed
+colnames(sol)
+# shortcut overview plot for all phase plane projections and time lines
+# of the pool contents
+ plot(data.frame(times=times,sol[,c('C_l','C_s','C_b')]))
+# plot fluxes as functions of time
+
+in_fluxes &lt;- sol[,grep('influxes',colnames(sol))]
+plot( times, sol[,'influxes.C_l'] ,type='l'
+  ,ylim=c(min(in_fluxes),max(in_fluxes))
+)
+lines( times, sol[,'influxes.C_l'] ,type='l'
+  ,ylim=c(min(in_fluxes),max(in_fluxes))
+)
+internal_fluxes &lt;- sol[,grep('internal_fluxes',colnames(sol))]
+plot(
+  times, sol[,'internal_fluxes.C_l-&gt;C_b'] ,type='l'
+  ,ylim=c(min(internal_fluxes),max(internal_fluxes))
+)
+</pre>
+
 <hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.105 <a href="00Index.html">Index</a>]</div>
 </body></html>

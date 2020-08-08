@@ -12,3 +12,10 @@ ConstantInFluxList_by_PoolIndex(object)
 \description{
 Generic constructor for the class with the same name
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{ConstantInFluxList_by_PoolIndex,ConstInFluxes-method}}
+        \item \code{\link{ConstantInFluxList_by_PoolIndex,list-method}}
+        \item \code{\link{ConstantInFluxList_by_PoolIndex,numeric-method}}
+      }
+}

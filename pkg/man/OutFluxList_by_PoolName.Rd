@@ -12,3 +12,8 @@ OutFluxList_by_PoolName(object)
 \description{
 Generic constructor for the class with the same name
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{OutFluxList_by_PoolName,list-method}}
+      }
+}

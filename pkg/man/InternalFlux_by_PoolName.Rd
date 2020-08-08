@@ -18,3 +18,9 @@ InternalFlux_by_PoolName(func, sourceName, destinationName, src_to_dest)
 \description{
 Generic constructor for the class with the same name
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{InternalFlux_by_PoolName,function,character,character,missing-method}}
+        \item \code{\link{InternalFlux_by_PoolName,function,missing,missing,character-method}}
+      }
+}

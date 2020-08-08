@@ -131,6 +131,7 @@ setMethod(
 #' and add `@param` tags with a default description for yet undocumented
 #' parameters.  If you remove this `@autocomment` tag your comments will no
 #' longer be touched by the "update_autocomment_roclet".
+#' @s4methods
 setMethod(
   f="TimeMap",
   signature=signature(

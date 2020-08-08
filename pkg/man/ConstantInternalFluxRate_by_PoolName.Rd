@@ -23,3 +23,9 @@ ConstantInternalFluxRate_by_PoolName(
 \description{
 Generic constructor for the class with the same name
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{ConstantInternalFluxRate_by_PoolName,character,character,missing,numeric-method}}
+        \item \code{\link{ConstantInternalFluxRate_by_PoolName,missing,missing,character,numeric-method}}
+      }
+}

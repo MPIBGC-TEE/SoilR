@@ -3,7 +3,16 @@
 \docType{class}
 \name{InFluxList_by_PoolIndex-class}
 \alias{InFluxList_by_PoolIndex-class}
-\title{automatic title}
+\title{Describes a list of flux rates.}
 \description{
-automatic title
+The purpose is to avoid creation of lists that contain negative rates
+or in accidental confusion with list of fluxes.
+Instances are usually automatically created from data
+}
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{InFluxList_by_PoolIndex} in their signature:}{
+      \itemize{
+        \item \code{\link{getFunctionDefinition,InFluxList_by_PoolIndex-method}}
+      }
+  }
 }

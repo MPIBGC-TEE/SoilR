@@ -16,3 +16,8 @@ and to dispatch pool name specific methods like conversion to pool indices
       }
   }
 }
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{PoolId}}
+      }
+}

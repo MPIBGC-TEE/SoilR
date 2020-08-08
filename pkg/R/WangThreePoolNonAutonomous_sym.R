@@ -32,7 +32,37 @@
 #' @param V_s maximum rate of soil carbon assimilation per unit microbial biomass per year
 #' @param K_l half-saturation constant for litter carbon assimilation by microbial biomass
 #' @param K_s half-saturation constant for soil carbon assimilation by microbial biomass
-# everything could be copied from the yaml file. 
+#' @examples
+#' # This is a working example which demostrates some of the new functionality.
+#' require('SoilR',quietly =TRUE)
+#' smod <- WangThreePoolNonAutonomous_sym() 
+#' # (look at the source code of WangThreePoolNonAutonomous_sym )
+#' plotPoolGraph(smod)
+#' state_variable_names(smod)
+#' # define initial values for the state variables
+#' iv=c(C_l=1000,C_b=5000,C_s=1000)
+#' times<-seq(from=1,to=1000,by=10)
+#' modrun=Model_by_PoolNames( smod=smod ,times=times ,initialValues=iv)
+#' sol <- getSolution(modrun)
+#' # Let's see what we have computed
+#' colnames(sol)
+#' # shortcut overview plot for all phase plane projections and time lines
+#' # of the pool contents
+#'  plot(data.frame(times=times,sol[,c('C_l','C_s','C_b')]))
+#' # plot fluxes as functions of time
+#' 
+#' in_fluxes <- sol[,grep('influxes',colnames(sol))]
+#' plot( times, sol[,'influxes.C_l'] ,type='l'
+#'   ,ylim=c(min(in_fluxes),max(in_fluxes))
+#' )
+#' lines( times, sol[,'influxes.C_l'] ,type='l'
+#'   ,ylim=c(min(in_fluxes),max(in_fluxes))
+#' )
+#' internal_fluxes <- sol[,grep('internal_fluxes',colnames(sol))]
+#' plot(
+#'   times, sol[,'internal_fluxes.C_l->C_b'] ,type='l'
+#'   ,ylim=c(min(internal_fluxes),max(internal_fluxes))
+#' )
 WangThreePoolNonAutonomous_sym<- function(
     alpha=0.5,
     epsilon=0.4,

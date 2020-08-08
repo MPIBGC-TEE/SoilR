@@ -2,13 +2,18 @@
 % Please edit documentation in R/UnBoundNonLinDecompOp.R
 \name{UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method}
 \alias{UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method}
-\title{automatic title}
+\title{Constructor for the class with the same name}
 \usage{
 \S4method{UnBoundNonLinDecompOp}{`function`,missing,missing,missing,ANY,ANY,ANY}(matFunc)
 }
 \arguments{
-\item{matFunc}{object of class:\code{function}, no manual documentation}
+\item{matFunc}{object of class:\code{function}, A matrix valued function of the state vector and time}
 }
 \description{
-automatic title
+Constructor for the class with the same name
 }
+\seealso{
+Other UnBoundNonLinDecompOp_constructor: 
+\code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
+}
+\concept{UnBoundNonLinDecompOp_constructor}

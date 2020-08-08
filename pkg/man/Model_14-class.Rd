@@ -35,3 +35,8 @@ S4-class to represent a ^{14}C model run
     }
   }
 }
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{Model}}
+      }
+}

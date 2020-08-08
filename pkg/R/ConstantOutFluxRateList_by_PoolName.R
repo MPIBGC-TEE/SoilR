@@ -1,12 +1,17 @@
 
+#' @template FluxRateList
+#'
+#' @autocomment 
 #' Subclass of list that is guaranteed to contain only elements of type
 #' \linkS4class{ConstantOutFluxRate_by_PoolName}
-#'
 #' The main purpose of the class is to be used in method signatures 
 #' which would otherwise only indicate an object of class \code{'list'}
 #' in their signature an then check that the list contains the right
 #' kind of elements inside the function.
 #' Using this class the method signature becomes much more informative. 
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
 setClass(
   Class = "ConstantOutFluxRateList_by_PoolName",
   contains=c("list")

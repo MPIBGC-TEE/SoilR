@@ -10,5 +10,14 @@ GeneralDecompOp(object)
 \item{object}{see method arguments}
 }
 \description{
-The class of the output depends on the provided arguments
+A generic factory for subclasses of GeneralDecompOp
+}
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{GeneralDecompOp,DecompOp-method}}
+        \item \code{\link{GeneralDecompOp,function-method}}
+        \item \code{\link{GeneralDecompOp,list-method}}
+        \item \code{\link{GeneralDecompOp,matrix-method}}
+        \item \code{\link{GeneralDecompOp,TimeMap-method}}
+      }
 }

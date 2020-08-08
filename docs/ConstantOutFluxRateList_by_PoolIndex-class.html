@@ -1,21 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Subclass of list that is guaranteed to contain only elements...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Describes a list of flux rates.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for ConstantOutFluxRateList_by_PoolIndex-class {SoilR}"><tr><td>ConstantOutFluxRateList_by_PoolIndex-class {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Subclass of list that is guaranteed to contain only elements of type
-<a href="ConstantOutFluxRate_by_PoolIndex-class.html">ConstantOutFluxRate_by_PoolIndex</a></h2>
+<h2>Describes a list of flux rates.</h2>
 
 <h3>Description</h3>
 
-<p>The main purpose of the class is to be used in method signatures 
-which would otherwise only indicate an object of class <code>'list'</code>
-in their signature an then check that the list contains the right
-kind of elements inside the function.
-Using this class the method signature becomes much more informative.
+<p>The purpose is to avoid creation of lists that contain negative rates
+or in accidental confusion with list of fluxes.
+Instances are usually automatically created from data
 </p>
+
+
+<h3>S4-methods</h3>
+
+
+
+<h4>S4-methods with class <code>ConstantOutFluxRateList_by_PoolIndex</code> in their signature:</h4>
+
+
+<ul>
+<li> <p><code><a href="by_PoolName-ConstantOutFluxRateList_by_PoolIndex-method.html">by_PoolName,ConstantOutFluxRateList_by_PoolIndex-method</a></code>
+</p>
+</li>
+<li> <p><code><a href="ConstLinDecompOp-missing-ConstantInternalFluxRateList_by_PoolInd637fbcaf.html">ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolIndex,ConstantOutFluxRateList_by_PoolIndex,numeric,missing-method</a></code>
+</p>
+</li>
+<li> <p><code><a href="ConstLinDecompOp-missing-missing-ConstantOutFluxRateList_by_Pooleee52cd9.html">ConstLinDecompOp,missing,missing,ConstantOutFluxRateList_by_PoolIndex,numeric,missing-method</a></code>
+</p>
+</li></ul>
+
+
 
 <hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.105 <a href="00Index.html">Index</a>]</div>
 </body></html>

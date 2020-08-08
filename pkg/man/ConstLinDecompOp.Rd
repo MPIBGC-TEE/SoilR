@@ -26,3 +26,12 @@ ConstLinDecompOp(
 \description{
 Generic constructor for the class with the same name
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{ConstLinDecompOp,matrix,missing,missing,missing,missing-method}}
+        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolIndex,ConstantOutFluxRateList_by_PoolIndex,numeric,missing-method}}
+        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolIndex,missing,numeric,missing-method}}
+        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolName,ConstantOutFluxRateList_by_PoolName,missing,character-method}}
+        \item \code{\link{ConstLinDecompOp,missing,missing,ConstantOutFluxRateList_by_PoolIndex,numeric,missing-method}}
+      }
+}

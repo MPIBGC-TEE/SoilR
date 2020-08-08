@@ -1,4 +1,10 @@
-#' @auto
+#' Create a model(run) described by fluxes 
+#' @param smod \code{\link{SymbolicModel_by_PoolNames}}
+#' @param times A vector
+#' @param initialValues no manual documentation
+#' @template FluxBased-common
+#' @template Model_by_PoolNames_Result
+#' @autocomment 
 setMethod(
   f= "Model_by_PoolNames"
   ,signature= c(
@@ -34,7 +40,15 @@ setMethod(
     }
  )
 
-#' @auto
+#' Create a model(run) described by fluxes 
+#' 
+#' @param mat \code{\link{UnBoundNonLinDecompOp_by_PoolNames}}
+#' @param inputFluxes code{\link{InFluxList_by_PoolName}}
+#' @param times no manual documentation
+#' @param initialValues no manual documentation
+#' @template  FluxBased-common
+#' @template  Model_by_PoolNames_Result
+#' @autocomment 
 setMethod(
   f= "Model_by_PoolNames"
   ,signature= c(
@@ -71,7 +85,6 @@ setMethod(
 #' @template getC-description-common
 #' @template Model-param
 #' @template PoolWiseReturnMatrix
-#' @autocomment 
 setMethod(
     f= "getC"
     ,signature= "Model_by_PoolNames"
@@ -98,7 +111,6 @@ setMethod(
 #' 
 #' @template Model-param
 #' @template PoolWiseReturnMatrix
-#' @autocomment 
 setMethod(
     f= "getSolution"
     ,signature= "Model_by_PoolNames"
@@ -169,7 +181,7 @@ setMethod(
 #' Provide the (vector valued) derivative of the stocks with respect to time  
 #' 
 #' This function is required by the ODE solvers.
-#' @param object The model 
+#' @param object The model
 #' @autocomment 
 setMethod(
     f='getRightHandSideOfODE'
@@ -201,7 +213,8 @@ setMethod(
 
 ##' Plot the graph of pool connections
 ##' 
-##' @param x The modelrun the connection graph of which is plotted
+#' @param x The modelrun the connection graph of which is plotted
+#' @param x The model (run) the results of which are plotted
 ##' @autocomment 
 #setMethod(
 #   f= "plotPoolGraph",
@@ -240,7 +253,6 @@ setMethod(
 #' 
 #' The method solves the model and plots the solutions
 #' It is intended to provide a quick overview.
-#' @param x The model (run) the results of which are plotted
 #' @autocomment 
 setMethod(
    f= "plot",
@@ -249,6 +261,7 @@ setMethod(
      plot(getTimes(x),getC(x)[,1])
    }
 )
+
 #' Extract the times vector
 #' 
 #' Since the \code{times} had to be provided to create the model this method

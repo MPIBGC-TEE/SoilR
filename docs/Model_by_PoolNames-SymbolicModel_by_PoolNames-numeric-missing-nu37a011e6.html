@@ -1,16 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Create a model(run) described by fluxes</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method {SoilR}"><tr><td>Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method</h2>
+<h2>Create a model(run) described by fluxes</h2>
 
 <h3>Description</h3>
 
-<p>Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method
+<p>Create a model(run) described by fluxes
 </p>
+<p>A flux and pool name based description is interesting for models 
+where the traditional matrix based approach becomes difficult to manage:
+</p>
+
+<ol>
+<li><p>  For models with many pools the matrix representation makes the source code noisy and difficult to check.
+</p>
+</li>
+<li><p>  Especially for nonlinear models, where the matrix is not only a function of time but also of the state vector
+the latter has to be decomposed in the user code.
+</p>
+</li>
+<li><p>  Although mathematically equivalent the traditional matrix based representation is more opaque to automatic inspection by R.
+As a result it is not possible to automatically resolve the connectivity between the pools, or determine which pools have in/out-fluxes
+since for vector and matrix valued functions R can not determine which components are allways zero.
+</p>
+</li></ol>
+
+<p>The newer flux and pool name based approach has several advantages:
+</p>
+
+<ol>
+<li><p>  Instead of the whole matrix (nxn) only the existing fluxes have to be provided.
+</p>
+</li>
+<li><p>  The fluxfunctions are scalar.
+</p>
+</li>
+<li><p>  Nonlinear fluxfunctions can be written as functions of the state variable. The correct arguments are mapped automatically.
+</p>
+</li>
+<li><p>  Since only the existing fluxes are provided the model structure can be found by inspection. 
+E.g. connectivity graph can be drawn, which is very helpful top find mistakes in models with many pools.
+</p>
+</li></ol>
+
 
 
 <h3>Usage</h3>
@@ -35,17 +71,25 @@ Model_by_PoolNames(smod, times, initialValues)
 <table summary="R argblock">
 <tr valign="top"><td><code>smod</code></td>
 <td>
-<p>object of class:<code>SymbolicModel_by_PoolNames</code>, no manual documentation</p>
+<p>object of class:<code>SymbolicModel_by_PoolNames</code>, <code><a href="SymbolicModel_by_PoolNames-class.html">SymbolicModel_by_PoolNames</a></code></p>
 </td></tr>
 <tr valign="top"><td><code>times</code></td>
 <td>
-<p>object of class:<code>numeric</code>, no manual documentation</p>
+<p>object of class:<code>numeric</code>, A vector</p>
 </td></tr>
 <tr valign="top"><td><code>initialValues</code></td>
 <td>
 <p>object of class:<code>numeric</code>, no manual documentation</p>
 </td></tr>
 </table>
+
+
+<h3>Value</h3>
+
+<p>A possibly nonlinear Model(run) that contains information about the
+pool names and connectivity of the pools and is therefore the preferred
+representation for new code.
+</p>
 
 <hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.105 <a href="00Index.html">Index</a>]</div>
 </body></html>

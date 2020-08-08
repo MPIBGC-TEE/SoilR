@@ -2,7 +2,7 @@
 % Please edit documentation in R/ConstantInFluxList_by_PoolIndex.R
 \name{ConstantInFluxList_by_PoolIndex,numeric-method}
 \alias{ConstantInFluxList_by_PoolIndex,numeric-method}
-\title{automatic title}
+\title{constructor from numeric vector}
 \usage{
 \S4method{ConstantInFluxList_by_PoolIndex}{numeric}(object)
 }
@@ -10,5 +10,5 @@
 \item{object}{object of class:\code{numeric}, no manual documentation}
 }
 \description{
-automatic title
+constructor from numeric vector
 }

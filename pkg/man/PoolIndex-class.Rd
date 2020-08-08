@@ -15,3 +15,8 @@ used to dispatch pool index specific methods like conversion to names.
       }
   }
 }
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{PoolId}}
+      }
+}

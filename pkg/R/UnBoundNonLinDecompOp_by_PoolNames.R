@@ -1,18 +1,12 @@
 
 
 
-#' automatic title
+#' A flux and pool name based representation of a possibly nonlinear and nonautonomous 
+#' Compartmental Matrix 
 #' 
-#' @param internal_fluxes no manual documentation
-#' @param out_fluxes no manual documentation
-#' @param timeSymbol no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @param internal_fluxes \code{\link{InternalFluxList_by_PoolName}}
+#' @param out_fluxes \code{\link{OutFluxList_by_PoolName}}
+#' @param timeSymbol 
 setMethod(
     f="UnBoundNonLinDecompOp_by_PoolNames",
     signature=c(

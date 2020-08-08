@@ -4,7 +4,26 @@
 \name{StateDependentInFluxVector-class}
 \alias{StateDependentInFluxVector-class}
 \alias{StateDependentInFluxVector}
-\title{automatic title}
+\title{Input vector that is a function of the pool contenst and time}
 \description{
-automatic title
+Input vector that is a function of the pool contenst and time
+}
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{StateDependentInFluxVector} in their signature:}{
+      \itemize{
+        \item \code{\link{getFunctionDefinition,StateDependentInFluxVector-method}}
+      }
+  }
+  \subsection{S4-methods with superclasses (in the package) of class \code{StateDependentInFluxVector} in their signature:}{
+    \subsection{superclass InFluxes}{
+      \itemize{
+        \item \code{\link{InFluxes,InFluxes-method}}
+      }
+    }
+  }
+}
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{InFluxes}}
+      }
 }

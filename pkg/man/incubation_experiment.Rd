@@ -4,12 +4,14 @@
 \name{incubation_experiment}
 \alias{incubation_experiment}
 \title{Soil CO2 efflux from an incubation experiment, along with the soil mass and carbon concentration measurements.}
-\format{A list with 3 variables.
+\format{
+A list with 3 variables.
   \describe{
       \item{\code{eCO2}}{A data.frame with the flux data.}
       \item{\code{c_concentrations}}{a vector with 3 measurement of the concentration of carbon in the soil.}
       \item{\code{soil_mass}}{the mass of the soil column in g}
-  }}
+  }
+}
 \usage{
 data(incubation_experiment)
 }

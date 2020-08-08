@@ -2,7 +2,7 @@
 % Please edit documentation in R/ConstantInternalFluxRateList_by_PoolName.R
 \name{ConstantInternalFluxRateList_by_PoolName,list-method}
 \alias{ConstantInternalFluxRateList_by_PoolName,list-method}
-\title{constructor from a normal list}
+\title{Constructor from a normal list of fluxes}
 \usage{
 \S4method{ConstantInternalFluxRateList_by_PoolName}{list}(object)
 }
@@ -23,5 +23,5 @@ converted to it. It is mainly used internally and usually called
 by the front end functions to convert the user supplied arguments.
 }
 \description{
-constructor from a normal list
+Constructor from a normal list of fluxes
 }

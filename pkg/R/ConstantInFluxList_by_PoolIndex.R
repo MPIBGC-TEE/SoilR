@@ -31,16 +31,9 @@ setMethod("ConstantInFluxList_by_PoolIndex",
     }
 )
 
-#' automatic title
+#' constructor from numeric vector
 #' 
 #' @param object no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
 setMethod("ConstantInFluxList_by_PoolIndex",
     signature=signature(object="numeric"),
     definition=function(object){
@@ -73,18 +66,18 @@ setMethod(
     }
 )
 
-##' convert to a list indexed by pool names
-##'
-#setMethod("by_PoolName",
-#    signature=signature(obj="ConstantInFluxList_by_PoolIndex"),
-#    definition=function(obj,poolNames){
-#        l=lapply(
-#                obj
-#                ,function(rate){
-#                    by_PoolName(rate,poolNames)
-#                }
-#        )
-#        as(l,'ConstantInFluxList_by_PoolName')
-#    }
-#)
+#' convert to a list indexed by pool names
+#'
+setMethod("by_PoolName",
+    signature=signature(obj="ConstantInFluxList_by_PoolIndex"),
+    definition=function(obj,poolNames){
+        l=lapply(
+                obj
+                ,function(rate){
+                    by_PoolName(rate,poolNames)
+                }
+        )
+        as(l,'ConstantInFluxList_by_PoolName')
+    }
+)
 

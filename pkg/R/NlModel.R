@@ -336,7 +336,9 @@ setMethod(
 #' 
 #' @template getC-description-common
 #' @template Model-param
-#' @param as.closures If \code{TRUE} will return the result as a list of approximating functions of time indexed by the pool number.
+#' @param as.closures If \code{TRUE} will return the result as a list of
+#' approximating functions of time indexed by the pool number.
+#' @param object no manual documentation
 #' @return 
 #' If \code{as.closures} is \code{FALSE} (the default) the return value is a matrix with as many columns as there are pools 
 #' and as many rows as there are entries in the \code{times} 

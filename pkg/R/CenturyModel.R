@@ -19,8 +19,8 @@
 #' @param clay Proportion of clay in mineral soil.
 #' @param silt Proportion of silt in mineral soil.
 #' @param xi A scalar, data.frame, function or anything that can be converted
-#' to a scalar function of time \code{\linkS4class{ScalarTimeMap}} #' object
-#' specifying the external  (environmental and/or edaphic) effects on
+#' to a scalar function of time \code{\linkS4class{ScalarTimeMap}}  object
+#' specifying the external (environmental and/or edaphic) effects on
 #' decomposition rates.
 #' @param xi_lag A time shift/delay  for the automatically 
 #' created time dependent function xi(t) 
@@ -28,6 +28,9 @@
 #' \code{\link{euler}} or \code{\link{deSolve.lsoda.wrapper}} or any other user
 #' provided function with the same interface.
 #' @return A Model Object that can be further queried
+#' @details This is one of the few examples that internally make use of
+#' the new infrastructure for flux based descriptions of models (see examples). 
+#' @template FluxBased-common
 #' @seealso \code{\link{RothCModel}}. There are other
 #' \code{\link{predefinedModels}} and also more general functions like
 #' \code{\link{Model}}.
@@ -37,25 +40,7 @@
 #' C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter
 #' decomposition: the SoilR package version 1.0. Geoscientific Model
 #' Development 5, 1045-1060.
-# #' @examples
-# #' t=seq(0,52*200,1) #200 years  
-# #' LNcorn=0.17/0.004 # Values for corn clover reported in Parton et al. 1987
-# #' Ex=CenturyModel(t,LN=0.5,Ls=0.1,In=0.1)
-# #' Ct=getC(Ex)
-# #' Rt=getReleaseFlux(Ex)
-# #' 
-# #' matplot(t,Ct,type="l", col=1:5,lty=1,ylim=c(0,max(Ct)*2.5),
-# #' ylab=expression(paste("Carbon stores (kg C", ha^-1,")")),xlab="Time (weeks)") 
-# #' lines(t,rowSums(Ct),lwd=2)
-# #' legend("topright", c("Structural litter","Metabolic litter",
-# #' "Active SOM","Slow SOM","Passive SOM","Total Carbon"),
-# #' lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
-# #' 
-# #' matplot(t,Rt,type="l",lty=1,ylim=c(0,max(Rt)*3),ylab="Respiration (kg C ha-1 week-1)",xlab="Time") 
-# #' lines(t,rowSums(Rt),lwd=2) 
-# #' legend("topright", c("Structural litter","Metabolic litter",
-# #' "Active SOM","Slow SOM","Passive SOM","Total Respiration"),
-# #' lty=1,lwd=c(rep(1,5),2),col=c(1:5,1),bty="n")
+#' @example ./inst/tests/src/runit.Century.R
 CenturyModel<- function 
   (t,      
    ks=c(k.STR=0.094,k.MET=0.35,k.ACT=0.14,k.SLW=0.0038,k.PAS=0.00013),  
@@ -133,12 +118,12 @@ CenturyModel<- function
             list(
                 StateIndependentInFlux_by_PoolIndex(
                     destinationIndex=PoolIndex(1)
-                    ,flux=ScalarTimeMap(data.frame(time=In[,1],val=Fm*in_vals))
+                    ,flux=ScalarTimeMap(timee=in_times,data=Fm*in_vals)
                 )
                 ,
                 StateIndependentInFlux_by_PoolIndex(
                     destinationIndex=PoolIndex(2)
-                    ,flux=ScalarTimeMap(data.frame(time=In[,1],val=Fs*in_vals))
+                    ,flux=ScalarTimeMap(times=in_times,data=Fs*in_vals)
                 )
             )
        )

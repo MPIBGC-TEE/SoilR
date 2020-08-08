@@ -3,7 +3,7 @@
 \docType{class}
 \name{OutFluxList_by_PoolIndex-class}
 \alias{OutFluxList_by_PoolIndex-class}
-\title{automatic title}
+\title{A list of outfluxes}
 \description{
-automatic title
+A list of outfluxes
 }

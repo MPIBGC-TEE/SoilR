@@ -1,7 +1,5 @@
-
-#' An S4 class to represent the operation nonlinear nonautonomous compartmental matrix 
+#' An S4 class to represent a nonlinear nonautonomous compartmental matrix 
 #'
-#' @family UnBoundNonLinDecompOp_constructor
 setClass(
     Class="UnBoundNonLinDecompOp",
     contains=c("DecompOp"),
@@ -23,16 +21,10 @@ setClass(
 
 
 
-#' automatic title
-#' 
-#' @param matFunc no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @template StandardConstructor
+#' @family UnBoundNonLinDecompOp_constructor
+#' @param matFunc A matrix valued function of the state vector and time
+#' @autocomment 
 setMethod(
       f="UnBoundNonLinDecompOp",
       signature=c(
@@ -53,26 +45,8 @@ setMethod(
      }
 )
 
-
-
-
-#' automatic title
-#' 
-#' @param object no manual documentation
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
-setMethod(
-   f= "getCompartmentalMatrixFunc",
-      signature(object="UnBoundNonLinDecompOp"),
-      definition=function(object){ object@matFunc }
-)
-
-#' constructor
+#' @template StandardConstructor
+#' @family UnBoundNonLinDecompOp_constructor
 #' @param internal_fluxes vector of elements of type InternalFlux_by_PoolName
 #' @param out_fluxes vector of elements of type OutFlux_by_PoolName
                     #if (dest> numberOfPools){stop("The index of the destination pool must be smaller than the number of pools")}
@@ -138,7 +112,17 @@ setMethod(
         return(new('UnBoundNonLinDecompOp',matFunc=BFunc))
       }
 )
-#
+
+#' Extract the matrix valued function of time and state vector for the compartmental matrix 
+#' 
+#' @param object
+#' @autocomment These comments were created by the auto_comment_roclet by
+setMethod(
+   f= "getCompartmentalMatrixFunc",
+      signature(object="UnBoundNonLinDecompOp"),
+      definition=function(object){ object@matFunc }
+)
+
 #setMethod(
 #      f="UnBoundNonLinDecompOp",
 #      signature=c(

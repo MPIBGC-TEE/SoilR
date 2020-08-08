@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{ScalarTimeMap}
 \alias{ScalarTimeMap}
-\title{automatic title}
+\title{Constructor for \code{\link{ScalarTimeMap-class}}}
 \usage{
 ScalarTimeMap(
   map,
@@ -33,7 +33,7 @@ ScalarTimeMap(
 \item{...}{see method arguments}
 }
 \description{
-automatic title
+Constructor for \code{\link{ScalarTimeMap-class}}
 }
 \section{S4-methods}{
       \itemize{

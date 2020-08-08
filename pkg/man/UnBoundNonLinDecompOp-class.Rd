@@ -3,8 +3,7 @@
 \docType{class}
 \name{UnBoundNonLinDecompOp-class}
 \alias{UnBoundNonLinDecompOp-class}
-\title{An S4 class to represent the operation nonlinear nonautonomous compartmental matrix}
+\title{An S4 class to represent a nonlinear nonautonomous compartmental matrix}
 \description{
-An S4 class to represent the operation nonlinear nonautonomous compartmental matrix
+An S4 class to represent a nonlinear nonautonomous compartmental matrix
 }
-\concept{UnBoundNonLinDecompOp_constructor}

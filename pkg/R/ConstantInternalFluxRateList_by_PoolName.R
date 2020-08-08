@@ -1,13 +1,17 @@
-
+#' @template FluxRateList
+#' 
+#' @autocomment 
 #' Subclass of list that is guaranteed to contain only elements of type
 #' \linkS4class{ConstantInternalFluxRate_by_PoolName}
-#'
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
 setClass(
   Class = "ConstantInternalFluxRateList_by_PoolName",
   contains=c("list")
 )
 
-#' constructor from a normal list 
+#' Constructor from a normal list of fluxes
 #' 
 #' @param object A list. Either a list of elements of type  
 #' \linkS4class{ConstantInternalFluxRate_by_PoolName} or 
@@ -22,7 +26,6 @@ setClass(
 #' The function checks if the elements are of the desired type or can be
 #' converted to it. It is mainly used internally and usually called 
 #' by the front end functions to convert the user supplied arguments.
-
 setMethod("ConstantInternalFluxRateList_by_PoolName",
     signature=signature(object="list"),
     definition=function(object){

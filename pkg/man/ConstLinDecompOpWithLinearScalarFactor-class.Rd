@@ -29,3 +29,8 @@ This is a special case of a linear compartmental operator/matrix
     }
   }
 }
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{DecompOp}}
+      }
+}

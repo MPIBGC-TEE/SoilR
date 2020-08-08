@@ -16,14 +16,14 @@ alltests <- defineTestSuite(
    #,testFileRegexp = "^runit.FluxRateConstructors.R$"
    #,testFileRegexp = "^runit.FluxConstructors.R$"
    #,testFileRegexp = "^runit.NonlinearOperators.R$"
-   #,testFileRegexp = "^runit.Century.R$"
+   ,testFileRegexp = "^runit.Century.R$"
    #,testFileRegexp = "^runit.Gaudinsky.R$"
    #,testFileRegexp = "^runit.ConstLinDecompOpWithLinearScalarFactor.R$"
    #,testFileRegexp = "^runit.ConstLinDecompOp.R$"
    #,testFileRegexp = "^runit.NonLinDecompOp_with_linear_fluxes.R$"
    #,testFileRegexp = "^runit.check.pass.R$"
    #,testFileRegexp = "^runit.all.possible.GeneralDecompOp.arguments.R"
-   ,testFileRegexp = "^runit.TimeMap_no_lag.R"
+   #,testFileRegexp = "^runit.TimeMap_no_lag.R"
 
    ################################################################
    #,testFuncRegexp = "^test.ConstLinDecompOpWithoutOutFluxes$"
@@ -37,7 +37,8 @@ alltests <- defineTestSuite(
    #,testFuncRegexp = "^test.Gaudinsky"
    #,testFuncRegexp = "^test.function_by_PoolIndex$"
    #,testFuncRegexp ="^test.timedependentInput$"
-   ,testFuncRegexp ="^test.TimeMapFromListOfVectorAndListZeroLag$"
+   #,testFuncRegexp ="^test.TimeMapFromListOfVectorAndListZeroLag$"
+   ,testFuncRegexp ="^test.ExtractionOfConstantLinDecompOpAndXi$"
    #,testFuncRegexp ="^test.*$"
 
    ,rngKind = "Marsaglia-Multicarry"

@@ -56,3 +56,35 @@ part of the model can become non-autonomous.
 At the moment the variable t is mostly ignored like in the original Wang Model except for the first
 influx to pool C_l.
 }
+\examples{
+# This is a working example which demostrates some of the new functionality.
+require('SoilR',quietly =TRUE)
+smod <- WangThreePoolNonAutonomous_sym() 
+# (look at the source code of WangThreePoolNonAutonomous_sym )
+plotPoolGraph(smod)
+state_variable_names(smod)
+# define initial values for the state variables
+iv=c(C_l=1000,C_b=5000,C_s=1000)
+times<-seq(from=1,to=1000,by=10)
+modrun=Model_by_PoolNames( smod=smod ,times=times ,initialValues=iv)
+sol <- getSolution(modrun)
+# Let's see what we have computed
+colnames(sol)
+# shortcut overview plot for all phase plane projections and time lines
+# of the pool contents
+ plot(data.frame(times=times,sol[,c('C_l','C_s','C_b')]))
+# plot fluxes as functions of time
+
+in_fluxes <- sol[,grep('influxes',colnames(sol))]
+plot( times, sol[,'influxes.C_l'] ,type='l'
+  ,ylim=c(min(in_fluxes),max(in_fluxes))
+)
+lines( times, sol[,'influxes.C_l'] ,type='l'
+  ,ylim=c(min(in_fluxes),max(in_fluxes))
+)
+internal_fluxes <- sol[,grep('internal_fluxes',colnames(sol))]
+plot(
+  times, sol[,'internal_fluxes.C_l->C_b'] ,type='l'
+  ,ylim=c(min(internal_fluxes),max(internal_fluxes))
+)
+}

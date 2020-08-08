@@ -14,3 +14,8 @@ ConstantOutFluxRate_by_PoolIndex(sourceIndex, rate_constant)
 \description{
 Generic constructor for the class with the same name
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{ConstantOutFluxRate_by_PoolIndex,numeric,numeric-method}}
+      }
+}

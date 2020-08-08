@@ -12,3 +12,10 @@ getReleaseFlux(object)
 \description{
 Generic Function to obtain the vector of release fluxes out of the pools for all times.
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{getReleaseFlux,Model-method}}
+        \item \code{\link{getReleaseFlux,Model_by_PoolNames-method}}
+        \item \code{\link{getReleaseFlux,NlModel-method}}
+      }
+}

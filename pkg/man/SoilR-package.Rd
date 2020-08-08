@@ -28,4 +28,12 @@ By convention they have the same name as the class and are described here:
    \item{  \code{\link{Model}} }
    \item{  \code{\link{Model_14}} }.
 }
+There is also a new way to describe models which could be very useful for the definition 
+of nonlinear nonautonomous models with many pools.
+Parts of the new infrastructure, which is still under development, are used 
+in the source code and examples of:
+\enumerate{
+   \item{\code{\link{CenturyModel}}}
+   \item{\code{\link{WangThreePoolNonAutonomous_sym}}}
+}
 }

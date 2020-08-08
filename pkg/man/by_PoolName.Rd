@@ -16,6 +16,8 @@ automatic title
 }
 \section{S4-methods}{
       \itemize{
+        \item \code{\link{by_PoolName,ConstantInFlux_by_PoolIndex-method}}
+        \item \code{\link{by_PoolName,ConstantInFluxList_by_PoolIndex-method}}
         \item \code{\link{by_PoolName,ConstantInFluxRate_by_PoolIndex-method}}
         \item \code{\link{by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method}}
         \item \code{\link{by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method}}

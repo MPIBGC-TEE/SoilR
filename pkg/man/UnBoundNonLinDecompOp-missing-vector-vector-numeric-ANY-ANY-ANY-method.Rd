@@ -2,7 +2,7 @@
 % Please edit documentation in R/UnBoundNonLinDecompOp.R
 \name{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}
 \alias{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}
-\title{constructor}
+\title{Constructor for the class with the same name}
 \usage{
 \S4method{UnBoundNonLinDecompOp}{missing,vector,vector,numeric,ANY,ANY,ANY}(internal_fluxes, out_fluxes, numberOfPools)
 }
@@ -14,5 +14,10 @@
 \item{numberOfPools}{object of class:\code{numeric}, no manual documentation}
 }
 \description{
-constructor
+Constructor for the class with the same name
 }
+\seealso{
+Other UnBoundNonLinDecompOp_constructor: 
+\code{\link{UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method}}
+}
+\concept{UnBoundNonLinDecompOp_constructor}

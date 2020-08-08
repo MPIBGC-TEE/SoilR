@@ -32,3 +32,8 @@ none would be available for a general InFluxes argument.
     }
   }
 }
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{InFluxes}}
+      }
+}

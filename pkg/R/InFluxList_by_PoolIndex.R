@@ -1,4 +1,4 @@
-#' automatic title
+#' @template FluxRateList
 #' 
 #' @autocomment These comments were created by the auto_comment_roclet by
 #' inspection of the code.  You can use the "update_auto_comment_roclet" to
@@ -7,6 +7,9 @@
 #' and add `@param` tags with a default description for yet undocumented
 #' parameters.  If you remove this `@autocomment` tag your comments will no
 #' longer be touched by the "update_autocomment_roclet".
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
 setClass(
   Class = "InFluxList_by_PoolIndex",
   contains=c("list")

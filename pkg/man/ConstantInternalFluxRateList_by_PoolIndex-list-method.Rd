@@ -16,7 +16,6 @@ a list where the names of the elements are strings of the form
 An object of class
 \linkS4class{ConstantInternalFluxRateList_by_PoolIndex} 
 
-
 The function checks if the elements are of the desired type or can be
 converted to it. It is mainly used internally and usually called 
 by the front end functions to convert the user supplied arguments.

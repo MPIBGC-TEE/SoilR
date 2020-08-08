@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Helper function to draw connectivity graphs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plotPoolGraphFromTupleLists {SoilR}"><tr><td>plotPoolGraphFromTupleLists {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Helper function to draw connectivity graphs</h2>
+
+<h3>Description</h3>
+
+<p>Helper function to draw connectivity graphs
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plotPoolGraphFromTupleLists(
+  internalConnections,
+  inBoundConnections,
+  outBoundConnections
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>internalConnections</code></td>
+<td>
+<p>A list of tuples(source,dest) where
+src and dest are either both integers or both strings(poolnames)</p>
+</td></tr>
+<tr valign="top"><td><code>inBoundConnections</code></td>
+<td>
+<p>A list of either integers or strings (poolnames)</p>
+</td></tr>
+<tr valign="top"><td><code>outBoundConnections</code></td>
+<td>
+<p>A list of either integers or strings (poolnames)
+The function is used by the <code><a href="plotPoolGraph.html">plotPoolGraph</a></code> generic of the 
+newer model classes <code><a href="SymbolicModel_by_PoolNames-class.html">SymbolicModel_by_PoolNames</a></code>.</p>
+</td></tr>
+</table>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.105 <a href="00Index.html">Index</a>]</div>
+</body></html>

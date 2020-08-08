@@ -23,3 +23,8 @@ S4 class representing a constant ^{14}C fraction
     }
   }
 }
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{Fc}}
+      }
+}

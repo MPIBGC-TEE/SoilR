@@ -125,19 +125,16 @@ Package functions called in the examples:<br />
 <h3>Examples</h3>
 
 <pre>
-# examples from external files
-# inst/tests/requireSoilR/runit.all.possible.Model.arguments.R test.all.possible.Model.arguments:
 
+# vim:set ff=unix expandtab ts=2 sw=2:
+test.all.possible.Model.arguments &lt;- function(){
   # This example shows different kinds of arguments to the function Model.
   # The model objects we will build will share some common features.
   #  - two pools 
   #  - initial values 
 
-       iv&lt;-  c(5,6)
-
-  #  - times 
-
-       times &lt;- seq(1,10,by=0.1)
+  iv&lt;-  c(5,6)
+  times &lt;- seq(1,10,by=0.1)
 
   # The other parameters A and inputFluxes will be different
   # The function Model will transform these arguments 
@@ -162,10 +159,10 @@ Package functions called in the examples:<br />
   #        A=matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2)),
   #        ivList=iv,
   #        inputFluxes=possibleInfluxes$I.vec) 
-  ## We now produce that all combinations of As and InputFluxes
+  ## We now produce all combinations of As and InputFluxes
   combinations &lt;- listProduct(possibleAs,possibleInfluxes)
   print(length(combinations))
-  # an a Model for each
+  # and a Model for each
   models &lt;- lapply(
               combinations,
               function(combi){
@@ -175,7 +172,7 @@ Package functions called in the examples:<br />
             )
   ## lets check that we can compute something# 
   lapply(models,getC)
-
+}
 </pre>
 
 <hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.105 <a href="00Index.html">Index</a>]</div>

@@ -33,3 +33,8 @@ constant out flux rates.
     }
   }
 }
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{DecompOp}}
+      }
+}

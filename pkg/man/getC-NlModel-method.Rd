@@ -7,21 +7,10 @@
 \S4method{getC}{NlModel}(object, as.closures = FALSE)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}, A modelrun as produced by the constructors: 
- \code{\link{Model}},
- \code{\link{Model_by_PoolNames}},
- \code{\link{Model_14}}
-the function \code{\link{GeneralModel}} or the functions listed in 
-\code{\link{predefinedModels}}. \cr
-A model represents the initial value problem (IVP)  
-for the contents of the pool consisting of 
-\itemize{
- \item{ The initial values of the pool content}
- \item{ The system of ordinary differential equations, as dictated by the fluxes}
- \item{ The times for which the solution of the IVP is evaluated.}
-}}
+\item{object}{object of class:\code{NlModel}, no manual documentation}
 
-\item{as.closures}{If \code{TRUE} will return the result as a list of approximating functions of time indexed by the pool number.}
+\item{as.closures}{If \code{TRUE} will return the result as a list of
+approximating functions of time indexed by the pool number.}
 }
 \value{
 If \code{as.closures} is \code{FALSE} (the default) the return value is a matrix with as many columns as there are pools 

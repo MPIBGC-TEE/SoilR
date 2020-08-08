@@ -19,3 +19,15 @@ ConstantInFlux_by_PoolIndex<-function(
     )    
     
 }
+#' new object with the source pool id converted to a PoolIndex if necessary 
+setMethod(
+    f="by_PoolName",
+    signature=c(obj='ConstantInFlux_by_PoolIndex'),
+    def=function(obj,poolNames){
+        new(
+            "ConstantInFlux_by_PoolName"
+            ,destinationName=PoolName(id=obj@destinationIndex ,poolNames)
+            ,flux_constant=obj@flux_constant
+        )
+    }
+)

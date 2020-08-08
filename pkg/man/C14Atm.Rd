@@ -4,10 +4,12 @@
 \name{C14Atm}
 \alias{C14Atm}
 \title{Atmospheric 14C fraction}
-\format{A data frame with 108 observations on the following 2 variables.
+\format{
+A data frame with 108 observations on the following 2 variables.
 	\enumerate{ 
    \item V1 a numeric vector 
-}}
+}
+}
 \usage{
 data(C14Atm)
 }

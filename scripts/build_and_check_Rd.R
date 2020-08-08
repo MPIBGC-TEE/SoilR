@@ -24,6 +24,13 @@ if(is.null(sys.calls()[[sys.nframe()-1]])){
 source(file.path(script.dir,'helperFunctions.R'))
 pkgDir <- file.path(script.dir,'..','pkg')
 
+#build_rd(pkgDir,roclets=c('remove_autotag_roclet'))
+#build-rd(pkgDir,roclets=c('auto_comment_roclet','rd'))
+#build-rd(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
+#build-rd(pkgDir,roclets=c('inheritance_graph_roclet'))
+#build_rd(pkgDir,roclets=c('inheritance_graph_roclet','rd'))
+#build_rd(pkgDir,roclets=c('auto_comment_roclet','rd'))
+#build_rd(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
 build_rd(pkgDir)
 check_rd(pkgDir)
 show_docs(pkgDir)

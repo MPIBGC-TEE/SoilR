@@ -6,21 +6,18 @@ requireNamespace('getopt')
 #requireNamespace('git2r')
 #pkgload::load_all("~/debugHelpers/pkg",export_all=FALSE)
 #pkgload::load_all("~/roxygen2_mm",export_all=FALSE)
-devtools::install_github('mamueller/roxygen2')
-requireNamespace('roxygen2')
+#pkgload::load_all("~/roxygen2_mm2",export_all=FALSE)
+devtools::install_github('mamueller/roxygen2',ref='s4-objects')
+#requireNamespace('roxygen2')
 
 
 #########################################
 update_and_check_rd_and_vignettes<-function(pkgDir){
-  build_rd(pkgDir)
+  build_rd(pkgDir,roclets=c('rd'))
   check(pkgDir)
 }
 #########################################
 show_docs<-function(pkgDir){
-  #build_rd(pkgDir,roclets=c('remove_autotag_roclet'))
-  #build-rd(pkgDir,roclets=c('auto_comment_roclet','rd'))
-  #build-rd(pkgDir,roclets=c('update_auto_comment_roclet','rd'))
-  #build-rd(pkgDir,roclets=c('inheritance_graph_roclet'))
   build_rd(pkgDir,roclet='rd')
 
   check_rd(pkgDir)
@@ -38,26 +35,26 @@ build_devtools <- function(pkgDir,path,args='--compact-vignettes=both',manual=TR
   )
 }
 #########################################
-build_rd<-function(pkgDir,roclets=c('inheritance_graph_roclet','rd')){
+build_rd<-function(pkgDir,roclets=c('rd')){
   # find relative path to this script from the current wd
   initial.options <- commandArgs(trailingOnly = FALSE)
   file.arg.name <- "--file="
   script.name <- sub(file.arg.name, "", initial.options[grep(file.arg.name, initial.options)])
   
   requireNamespace('roxygen2')
-    tryCatch(
-      roxygen2::SoilR_approved(),
-      error=function(e){
-        cat("
-        Until the pull request to roxygen2 have been accepted 
-        you need a special branch of roxygen2 to document SoilR. 
-        Please install from github by:     
-  
-        devtools::install_github('mamueller/roxygen2')
-        ")
-        e
-    }
-  )
+  #  tryCatch(
+  #    roxygen2::SoilR_approved(),
+  #    error=function(e){
+  #      cat("
+  #      Until the pull request to roxygen2 have been accepted 
+  #      you need a special branch of roxygen2 to document SoilR. 
+  #      Please install from github by:     
+  #
+  #      devtools::install_github('mamueller/roxygen2')
+  #      ")
+  #      e
+  #  }
+  #)
   roxygen2::roxygenize(pkgDir,roclets)
 }
 

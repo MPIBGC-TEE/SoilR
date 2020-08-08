@@ -2,7 +2,7 @@
 % Please edit documentation in R/UnBoundLinDecompOp.R
 \name{UnBoundLinDecompOp,function-method}
 \alias{UnBoundLinDecompOp,function-method}
-\title{automatic title}
+\title{Generic constructor for the class with the same name}
 \usage{
 \S4method{UnBoundLinDecompOp}{`function`}(matFunc)
 }
@@ -10,5 +10,10 @@
 \item{matFunc}{object of class:\code{function}, no manual documentation}
 }
 \description{
-automatic title
+Generic constructor for the class with the same name
 }
+\seealso{
+Other UnBoundLinDecompOp_constructor: 
+\code{\link{getFunctionDefinition,UnBoundLinDecompOp-method}}
+}
+\concept{UnBoundLinDecompOp_constructor}

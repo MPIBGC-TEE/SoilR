@@ -3,7 +3,7 @@
 \docType{class}
 \name{UnBoundLinDecompOp-class}
 \alias{UnBoundLinDecompOp-class}
-\title{automatic title}
+\title{An S4 class to represent a linear nonautonomous compartmental matrix}
 \description{
-automatic title
+An S4 class to represent a linear nonautonomous compartmental matrix
 }

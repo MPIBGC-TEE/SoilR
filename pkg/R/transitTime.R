@@ -1,10 +1,10 @@
 #' Transit times for compartment models
 #' 
 #' Computes the density distribution and mean for the transit time of a
-#' compartmental model
+#' constant compartmental model
 #' 
 #' 
-#' @param A A compartmental linear square matrix with cycling rates in the
+#' @param A A constant compartmental square matrix with cycling rates in the
 #' diagonal and transfer rates in the off-diagonal.
 #' @param u A one-column matrix defining the amount of inputs per compartment.
 #' @param a A sequence of ages to calculate density functions

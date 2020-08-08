@@ -111,6 +111,18 @@ setClass(
   contains=c("list")
 )
 
+
+#' Subclass of list that is guaranteed to contain only elements of type
+#' \linkS4class{ConstantInFlux_by_PoolName}
+#'
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
+setClass(
+  Class = "ConstantInFluxList_by_PoolName",
+  contains=c("list")
+)
+
 #' S4-class for a single internal flux with source and destination pools specified by indices 
 #'
 #' @s4superclasses
@@ -197,16 +209,12 @@ setClass(
    Class="InFluxes",
    contains="VIRTUAL"
 )
-#--------------------------------
-#' automatic title
+
+#' Input vector that is a function of the pool contenst and time
 #' 
-#' @autocomment These comments were created by the auto_comment_roclet by
-#' inspection of the code.  You can use the "update_auto_comment_roclet" to
-#' automatically adapt them to changes in the source code. This will remove
-#' `@param` tags for parameters that are no longer present in the source code
-#' and add `@param` tags with a default description for yet undocumented
-#' parameters.  If you remove this `@autocomment` tag your comments will no
-#' longer be touched by the "update_autocomment_roclet".
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
 StateDependentInFluxVector<-setClass(
    Class="StateDependentInFluxVector"
    ,contains="InFluxes"
@@ -428,7 +436,6 @@ setClass(
 )
 
 
-
 #' class for a constant influx to a single pool identified by index
 #'
 #' @s4superclasses
@@ -437,6 +444,16 @@ setClass(
 setClass(
   Class="ConstantInFlux_by_PoolIndex",
   slots=c(destinationIndex='PoolIndex',flux_constant='numeric')
+)
+
+#' class for a constant influx to a single pool identified by pool name 
+#'
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
+setClass(
+  Class="ConstantInFlux_by_PoolName",
+  slots=c(destinationName='PoolName',flux_constant='numeric')
 )
 
 #' S4 class for the influx to a single pool identified by the index 
@@ -587,6 +604,7 @@ SymbolicModel_by_PoolNames=setClass(
 correctnessOfModel_by_PoolNames<-function(object){
     TRUE
 }
+
 #' A model run based on flux functions 
 #' 
 #' 
@@ -768,6 +786,7 @@ tA_max=getTimeRange(atm_c14)["t_max"]
         stop(simpleError(sprintf("You ordered a timeinterval that ends later (tmax=%s) than the interval your  your atmospheric 14C fraction is defined for (tA_max=%s). \n Have look at the object or the data it is created from",t_max,tA_max)))
     }
 }
+
 #' S4-class to represent a ^{14}C model run 
 #'
 #' @s4superclasses

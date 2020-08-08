@@ -1,6 +1,130 @@
+
+#' @template FluxRate
+#'
+#' @autocomment 
 #' Subclass of list that is guaranteed to contain only elements of type
 #' \linkS4class{ConstantInternalFluxRate_by_PoolIndex}
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
+setClass(
+   Class="ConstantInFluxRate_by_PoolName",
+   slots=c(destinationName='PoolName',rate_constant='numeric')
+)
+
+ConstantInFluxRate_by_PoolName<-function(destinationName,rate_constant){
+    if (rate_constant<0){
+      stop(
+        "Negative rate constant. 
+        A rate_constant defines a flux F with F = rate_constant*pool_content. 
+        Since fluxes have to be positive and pool contents are positive
+        rate constants have to be positive too."
+      )
+    }
+    new(
+        'ConstantInFluxRate_by_PoolName'
+        ,destinationName=PoolName(id=destinationName)
+        ,rate_constant=rate_constant
+    )
+}
+
+#' @template FluxRateList
 #'
+#' @autocomment 
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
+setClass(
+   Class="ConstantInFluxRate_by_PoolName",
+   slots=c(destinationName='PoolName',rate_constant='numeric')
+)
+
+ConstantInFluxRate_by_PoolName<-function(destinationName,rate_constant){
+    if (rate_constant<0){
+      stop(
+        "Negative rate constant. 
+        A rate_constant defines a flux F with F = rate_constant*pool_content. 
+        Since fluxes have to be positive and pool contents are positive
+        rate constants have to be positive too."
+      )
+    }
+    new(
+        'ConstantInFluxRate_by_PoolName'
+        ,destinationName=PoolName(id=destinationName)
+        ,rate_constant=rate_constant
+    )
+}
+
+#' new object with the source pool id converted to a PoolIndex if necessary 
+setMethod(
+  f="by_PoolIndex",
+  signature=c(obj='ConstantInFluxRate_by_PoolName'),
+  def=function(obj,poolNames){
+      new(
+        "ConstantInFluxRate_by_PoolIndex"
+        ,destinationIndex=PoolIndex(id=obj@destinationName,poolNames)
+        ,rate_constant=obj@rate_constant
+      )
+  }
+)
+setMethod(
+  f="by_PoolIndex",
+  signature=c(obj='ConstantInFluxRate_by_PoolName'),
+  def=function(obj,poolNames){
+      new(
+        "ConstantInFluxRate_by_PoolIndex"
+        ,destinationIndex=PoolIndex(id=obj@destinationName,poolNames)
+        ,rate_constant=obj@rate_constant
+      )
+  }
+)
+
+#' @template FluxRateList
+#'
+#' @autocomment 
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
+setClass(
+   Class="ConstantInFluxRate_by_PoolName",
+   slots=c(destinationName='PoolName',rate_constant='numeric')
+)
+
+ConstantInFluxRate_by_PoolName<-function(destinationName,rate_constant){
+    if (rate_constant<0){
+      stop(
+        "Negative rate constant. 
+        A rate_constant defines a flux F with F = rate_constant*pool_content. 
+        Since fluxes have to be positive and pool contents are positive
+        rate constants have to be positive too."
+      )
+    }
+    new(
+        'ConstantInFluxRate_by_PoolName'
+        ,destinationName=PoolName(id=destinationName)
+        ,rate_constant=rate_constant
+    )
+}
+
+#' new object with the source pool id converted to a PoolIndex if necessary 
+setMethod(
+  f="by_PoolIndex",
+  signature=c(obj='ConstantInFluxRate_by_PoolName'),
+  def=function(obj,poolNames){
+      new(
+        "ConstantInFluxRate_by_PoolIndex"
+        ,destinationIndex=PoolIndex(id=obj@destinationName,poolNames)
+        ,rate_constant=obj@rate_constant
+      )
+  }
+)
+
+#' @template FluxRateList
+#'
+#' @autocomment 
+#' @s4superclasses
+#' @s4subclasses
+#' @s4methods
 setClass(
   Class = "ConstantInternalFluxRateList_by_PoolIndex",
   contains=c("list")
@@ -16,11 +140,9 @@ setClass(
 #' @return An object of class
 #' \linkS4class{ConstantInternalFluxRateList_by_PoolIndex} 
 #' 
-#' 
 #' The function checks if the elements are of the desired type or can be
 #' converted to it. It is mainly used internally and usually called 
 #' by the front end functions to convert the user supplied arguments.
-
 setMethod("ConstantInternalFluxRateList_by_PoolIndex",
     signature=signature(object="list"),
     definition=function(object){

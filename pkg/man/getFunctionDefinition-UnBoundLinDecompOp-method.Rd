@@ -2,7 +2,7 @@
 % Please edit documentation in R/UnBoundLinDecompOp.R
 \name{getFunctionDefinition,UnBoundLinDecompOp-method}
 \alias{getFunctionDefinition,UnBoundLinDecompOp-method}
-\title{automatic title}
+\title{Extracts the time dependent matrix valued function (compartmental matrix)}
 \usage{
 \S4method{getFunctionDefinition}{UnBoundLinDecompOp}(object)
 }
@@ -10,5 +10,10 @@
 \item{object}{object of class:\code{UnBoundLinDecompOp}, no manual documentation}
 }
 \description{
-automatic title
+Extracts the time dependent matrix valued function (compartmental matrix)
 }
+\seealso{
+Other UnBoundLinDecompOp_constructor: 
+\code{\link{UnBoundLinDecompOp,function-method}}
+}
+\concept{UnBoundLinDecompOp_constructor}

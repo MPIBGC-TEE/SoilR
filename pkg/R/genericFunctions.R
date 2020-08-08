@@ -30,6 +30,7 @@ setGeneric(
 
 #' conversion
 #' @param delta14C Object to be converted to AbsoluteFractionModern
+#' @s4methods
 setGeneric(
 	 name="AbsoluteFractionModern_from_Delta14C",
 	 def=function(delta14C){
@@ -242,6 +243,7 @@ setGeneric (
 #' @template Model-param
 #' @return A matrix with m columns representing where m is the number of pools, and n rows where n is the number times 
 #' as specified by the \code{times} of the model. 
+#' @s4methods
 setGeneric ( 
 	name= "getC",
 	def=function(
@@ -258,6 +260,7 @@ setGeneric (
 #' @return A matrix with columns representing the name of the statevariable, flux and accumulated flux for every time
 #' 
 #' as specified by the \code{times} of the model. 
+#' @s4methods
 
 setGeneric ( 
 	name= "getSolution",
@@ -285,6 +288,7 @@ setGeneric(
 
 #' Generic Function to obtain the vector of release fluxes out of the pools for all times.
 #'
+#' @s4methods
 setGeneric ( 
 	name= "getReleaseFlux",
   valueClass='matrix',
@@ -312,6 +316,7 @@ setGeneric (
 
 #' Generic that yields the ^{14}C content for all pools and all times
 #'
+#' @s4methods
 setGeneric ( 
 	name= "getC14",
 	def=function(
@@ -335,6 +340,7 @@ setGeneric (
 
 #' Generic that yields the ^{14}C fraction for the content all pools and all times
 #'
+#' @s4methods
 setGeneric ( 
 	name= "getF14",
 	def=function(
@@ -358,6 +364,7 @@ setGeneric (
 
 #' Generic that yields the ^{14}C fraction for the release flux of all pools and all times
 #'
+#' @s4methods
 setGeneric ( 
   name= "getF14R",
   def=function(
@@ -367,6 +374,7 @@ setGeneric (
 
 #' Generic that yields the ^{14}C fraction for the cumulative content of all pools and all times
 #'
+#' @s4methods
 setGeneric ( 
   name= "getF14C",
   def=function(
@@ -709,6 +717,9 @@ setGeneric(
 
 #' Constructor for \code{\linkS4class{Model_by_PoolNames}}
 #' 
+#' @template  Model_by_PoolNames_Result
+#' @s4methods
+#' @autocomment 
 setGeneric(
 	 name="Model_by_PoolNames",
 	 def=function 
@@ -727,8 +738,18 @@ setGeneric(
 	     standardGeneric("Model_by_PoolNames")
 	 }
 )
-#' constructor for \code{\link{TimeMap-class}}
+
+#' Constructor for \code{\link{TimeMap-class}}
 #' 
+#' @param map see method arguments
+#' @param starttime see method arguments
+#' @param endtime see method arguments
+#' @param times see method arguments
+#' @param data see method arguments
+#' @param lag see method arguments
+#' @param interpolation see method arguments
+#' @param ... see method arguments
+#' @s4methods
 setGeneric(
 	 name="TimeMap",
 	 def=function 
@@ -747,7 +768,7 @@ setGeneric(
 	 }
 )
 
-#' automatic title
+#' Constructor for \code{\link{ScalarTimeMap-class}}
 #' 
 #' @param map see method arguments
 #' @param starttime see method arguments
@@ -825,6 +846,7 @@ setGeneric(
 
 #' A generic factory for subclasses of GeneralDecompOp
 #'
+#' @s4methods
 #' The class of the output depends on the provided arguments
 setGeneric(
 	 name="GeneralDecompOp",
@@ -837,6 +859,7 @@ setGeneric(
 
 #' A generic factory for subclasses of \linkS4class{InFluxes}
 #'
+#' @s4methods
 #' The actual class of the returned object depends on the arguments 
 #' provided
 setGeneric(
@@ -850,6 +873,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstantInternalFluxRate_by_PoolName",
 	 def=function(sourceName,destinationName,src_to_dest,rate_constant)
@@ -860,6 +884,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstantInternalFluxRate_by_PoolIndex",
 	 def=function(sourceIndex,destinationIndex,src_to_dest,rate_constant)
@@ -870,6 +895,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
      name='ConstantInFluxList_by_PoolName',
 	 def=function(object)
@@ -880,6 +906,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
      name='StateIndependentInFluxList_by_PoolIndex',
 	 def=function(object)
@@ -890,6 +917,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
      name='StateIndependentInFluxList_by_PoolName',
 	 def=function(object)
@@ -900,6 +928,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
      name='ConstantInFluxList_by_PoolIndex',
 	 def=function(object)
@@ -910,6 +939,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="InternalFlux_by_PoolIndex",
 	 def=function(func,sourceIndex,destinationIndex,src_to_dest)
@@ -920,6 +950,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="InternalFlux_by_PoolName",
 	 def=function(func,sourceName,destinationName,src_to_dest)
@@ -930,6 +961,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="InternalFluxList_by_PoolName",
 	 def=function(object) {
@@ -939,6 +971,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="InternalFluxList_by_PoolIndex",
 	 def=function(object)
@@ -949,6 +982,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="InFlux_by_PoolIndex",
 	 def=function(func,destinationIndex)
@@ -959,6 +993,7 @@ setGeneric(
 
 #' Generic constructor for an influx to a single pool from an ordered pair of PoolName (string like) and function  objects 
 #'
+#' @s4methods
 setGeneric(
 	 name="InFlux_by_PoolName",
 	 def=function(func,destinationName)
@@ -969,6 +1004,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="OutFlux_by_PoolIndex",
 	 def=function(func,sourceIndex)
@@ -979,6 +1015,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="OutFlux_by_PoolName",
 	 def=function(func,sourceName)
@@ -989,6 +1026,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="InFluxList_by_PoolName",
 	 def=function(object)
@@ -999,6 +1037,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="InFluxList_by_PoolIndex",
 	 def=function(object)
@@ -1009,6 +1048,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="OutFluxList_by_PoolName",
 	 def=function(object)
@@ -1019,6 +1059,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstantOutFluxRateList_by_PoolName",
 	 def=function(object)
@@ -1029,6 +1070,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstantOutFluxRate_by_PoolIndex",
 	 def=function(sourceIndex,rate_constant)
@@ -1039,6 +1081,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstantOutFluxRateList_by_PoolIndex",
 	 def=function(object)
@@ -1049,6 +1092,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstantInternalFluxRateList_by_PoolName",
 	 def=function(object){
@@ -1058,6 +1102,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstantInternalFluxRateList_by_PoolIndex",
 	 def=function(object){
@@ -1067,6 +1112,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="OutFluxList_by_PoolIndex",
 	 def=function(object){
@@ -1076,6 +1122,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="InFlux",
 	 def=function(map,...) {
@@ -1085,6 +1132,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="OutFlux",
 	 def=function (map,...) {
@@ -1095,6 +1143,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstLinDecompOp",
 	 def=function(
@@ -1110,6 +1159,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstLinDecompOp_by_PoolName",
 	 def=function(internal_flux_rates,out_flux_rates,poolNames) {
@@ -1119,6 +1169,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="ConstLinDecompOpWithLinearScalarFactor",
 	 def=function(
@@ -1136,6 +1187,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="UnBoundLinDecompOp",
 	 def=function 
@@ -1147,6 +1199,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="BoundLinDecompOp",
 	 def=function 
@@ -1161,6 +1214,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="UnBoundNonLinDecompOp",
 	 def=function(
@@ -1178,6 +1232,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @s4methods
 setGeneric(
 	 name="UnBoundNonLinDecompOp_by_PoolNames",
 	 def=function 
@@ -1190,6 +1245,7 @@ setGeneric(
 #' Generic plotter
 #'
 #' @param x An argument containing sufficient information about the connections between the pools as well as from and to the exterior.  
+#' @s4methods
 setGeneric(
 	 name="plotPoolGraph",
 	 def=function (x)

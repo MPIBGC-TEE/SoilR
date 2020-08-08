@@ -23,3 +23,8 @@ automatic title
     }
   }
 }
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{DecompOp}}
+      }
+}

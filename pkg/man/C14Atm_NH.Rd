@@ -4,12 +4,14 @@
 \name{C14Atm_NH}
 \alias{C14Atm_NH}
 \title{Post-bomb atmospheric 14C fraction}
-\format{A data frame with 111 observations on the following 2 variables.
+\format{
+A data frame with 111 observations on the following 2 variables.
 \enumerate{ 
  \item YEAR a numeric vector with year of measurement.
  \item Atmosphere
 a numeric vector with the Delta 14 value of atmospheric CO2 in per mil.
-}}
+}
+}
 \usage{
 data(C14Atm_NH)
 }

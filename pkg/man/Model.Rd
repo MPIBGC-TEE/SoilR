@@ -75,19 +75,16 @@ check look at:
 \Sexpr{system.file('tests','runit.correctness_of_Model.R',package='SoilR')}
 }
 \examples{
-# examples from external files
-# inst/tests/requireSoilR/runit.all.possible.Model.arguments.R test.all.possible.Model.arguments:
 
+# vim:set ff=unix expandtab ts=2 sw=2:
+test.all.possible.Model.arguments <- function(){
   # This example shows different kinds of arguments to the function Model.
   # The model objects we will build will share some common features.
   #  - two pools 
   #  - initial values 
 
-       iv<-  c(5,6)
-
-  #  - times 
-
-       times <- seq(1,10,by=0.1)
+  iv<-  c(5,6)
+  times <- seq(1,10,by=0.1)
 
   # The other parameters A and inputFluxes will be different
   # The function Model will transform these arguments 
@@ -112,10 +109,10 @@ check look at:
   #        A=matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2)),
   #        ivList=iv,
   #        inputFluxes=possibleInfluxes$I.vec) 
-  ## We now produce that all combinations of As and InputFluxes
+  ## We now produce all combinations of As and InputFluxes
   combinations <- listProduct(possibleAs,possibleInfluxes)
   print(length(combinations))
-  # an a Model for each
+  # and a Model for each
   models <- lapply(
               combinations,
               function(combi){
@@ -125,7 +122,7 @@ check look at:
             )
   ## lets check that we can compute something# 
   lapply(models,getC)
-
+}
 }
 \seealso{
 This function is called by many of the \link{predefinedModels}. \cr

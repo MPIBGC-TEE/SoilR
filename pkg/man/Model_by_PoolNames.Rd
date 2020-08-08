@@ -35,6 +35,17 @@ Model_by_PoolNames(
 
 \item{solverfunc}{see method arguments}
 }
+\value{
+A possibly nonlinear Model(run) that contains information about the
+pool names and connectivity of the pools and is therefore the preferred
+representation for new code.
+}
 \description{
 Constructor for \code{\linkS4class{Model_by_PoolNames}}
+}
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{Model_by_PoolNames,missing,numeric,UnBoundNonLinDecompOp_by_PoolNames,numeric,InFluxList_by_PoolName,missing,missing,missing,missing-method}}
+        \item \code{\link{Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method}}
+      }
 }

@@ -25,9 +25,10 @@ initialize(
   mat = ConstLinDecompOp(matrix(nrow = 1, ncol = 1, 0)),
   initialValues = numeric(),
   initialValF = ConstFc(values = c(0), format = "Delta14C"),
-  inputFluxes = BoundInFluxes(function(t) {     return(matrix(nrow = 1, ncol = 1, 1)) },
-    0, 1),
-  c14Fraction = BoundFc(function(t) {     return(matrix(nrow = 1, ncol = 1, 1)) }, 0, 1),
+  inputFluxes = BoundInFluxes(function(t) {     return(matrix(nrow = 1, ncol = 1, 1))
+    }, 0, 1),
+  c14Fraction = BoundFc(function(t) {     return(matrix(nrow = 1, ncol = 1, 1)) }, 0,
+    1),
   c14DecayRate = 0,
   solverfunc = deSolve.lsoda.wrapper,
   pass = FALSE

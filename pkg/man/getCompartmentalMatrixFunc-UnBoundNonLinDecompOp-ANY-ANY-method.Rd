@@ -2,7 +2,7 @@
 % Please edit documentation in R/UnBoundNonLinDecompOp.R
 \name{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}
 \alias{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}
-\title{automatic title}
+\title{Extract the matrix valued function of time and state vector for the compartmental matrix}
 \usage{
 \S4method{getCompartmentalMatrixFunc}{UnBoundNonLinDecompOp,ANY,ANY}(object)
 
@@ -12,7 +12,7 @@
 \item{object}{object of class:\code{UnBoundNonLinDecompOp}, no manual documentation}
 }
 \description{
-automatic title
+Extract the matrix valued function of time and state vector for the compartmental matrix
 
 automatic title
 }

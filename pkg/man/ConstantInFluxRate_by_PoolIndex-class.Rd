@@ -3,7 +3,17 @@
 \docType{class}
 \name{ConstantInFluxRate_by_PoolIndex-class}
 \alias{ConstantInFluxRate_by_PoolIndex-class}
-\title{automatic title}
+\title{Describes a flux rates.}
 \description{
-automatic title
+The purpose is to avoid creation of negative rates
+or in accidental confusion with fluxes.
+Instances are usually automatically created from data.
+If the state variables are known indices can be converted to pool names.
+}
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{ConstantInFluxRate_by_PoolIndex} in their signature:}{
+      \itemize{
+        \item \code{\link{by_PoolName,ConstantInFluxRate_by_PoolIndex-method}}
+      }
+  }
 }

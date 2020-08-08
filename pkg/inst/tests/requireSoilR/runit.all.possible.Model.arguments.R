@@ -32,10 +32,10 @@ test.all.possible.Model.arguments <- function(){
   #        A=matrix(nrow=2,byrow=TRUE,c(-0.1,0,0,-0.2)),
   #        ivList=iv,
   #        inputFluxes=possibleInfluxes$I.vec) 
-  ## We now produce that all combinations of As and InputFluxes
+  ## We now produce all combinations of As and InputFluxes
   combinations <- listProduct(possibleAs,possibleInfluxes)
   print(length(combinations))
-  # an a Model for each
+  # and a Model for each
   models <- lapply(
               combinations,
               function(combi){

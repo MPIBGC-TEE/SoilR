@@ -14,3 +14,8 @@ InFlux_by_PoolName(func, destinationName)
 \description{
 Generic constructor for an influx to a single pool from an ordered pair of PoolName (string like) and function  objects
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{InFlux_by_PoolName,function,character-method}}
+      }
+}

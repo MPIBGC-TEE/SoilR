@@ -3,9 +3,17 @@
 \docType{class}
 \name{ConstantInternalFluxRateList_by_PoolName-class}
 \alias{ConstantInternalFluxRateList_by_PoolName-class}
-\title{Subclass of list that is guaranteed to contain only elements of type
-\linkS4class{ConstantInternalFluxRate_by_PoolName}}
+\title{Describes a list of flux rates.}
 \description{
-Subclass of list that is guaranteed to contain only elements of type
-\linkS4class{ConstantInternalFluxRate_by_PoolName}
+The purpose is to avoid creation of lists that contain negative rates
+or in accidental confusion with list of fluxes.
+Instances are usually automatically created from data
+}
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{ConstantInternalFluxRateList_by_PoolName} in their signature:}{
+      \itemize{
+        \item \code{\link{by_PoolIndex,ConstantInternalFluxRateList_by_PoolName,ANY,ANY-method}}
+        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolName,ConstantOutFluxRateList_by_PoolName,missing,character-method}}
+      }
+  }
 }

@@ -23,3 +23,8 @@ S4 class representing a model run
       }
   }
 }
+\section{S4-subclasses}{
+      \itemize{
+        \item \code{\linkS4class{Model_14}}
+      }
+}

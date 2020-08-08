@@ -9,8 +9,8 @@
   times = c(0, 1),
   mat = ConstLinDecompOp(matrix(nrow = 1, ncol = 1, 0)),
   initialValues = numeric(),
-  inputFluxes = BoundInFluxes(function(t) {     return(matrix(nrow = 1, ncol = 1, 1)) },
-    0, 1),
+  inputFluxes = BoundInFluxes(function(t) {     return(matrix(nrow = 1, ncol = 1, 1))
+    }, 0, 1),
   solverfunc = deSolve.lsoda.wrapper,
   pass = FALSE
 )

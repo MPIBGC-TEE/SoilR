@@ -12,3 +12,8 @@ getC14(object)
 \description{
 Generic that yields the ^{14}C content for all pools and all times
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{getC14,Model_14-method}}
+      }
+}

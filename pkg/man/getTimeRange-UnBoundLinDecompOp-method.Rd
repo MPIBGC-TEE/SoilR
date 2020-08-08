@@ -2,7 +2,7 @@
 % Please edit documentation in R/UnBoundLinDecompOp.R
 \name{getTimeRange,UnBoundLinDecompOp-method}
 \alias{getTimeRange,UnBoundLinDecompOp-method}
-\title{automatic title}
+\title{Extracts the time interval for which the function is valid.}
 \usage{
 \S4method{getTimeRange}{UnBoundLinDecompOp}(object)
 }
@@ -10,5 +10,5 @@
 \item{object}{object of class:\code{UnBoundLinDecompOp}, no manual documentation}
 }
 \description{
-automatic title
+Extracts the time interval for which the function is valid.
 }

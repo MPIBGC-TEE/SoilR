@@ -3,7 +3,22 @@
 \docType{class}
 \name{MCSim-class}
 \alias{MCSim-class}
-\title{automatic title}
+\title{Experimental Class for a Monte Carlo Simulation of particles leaving the pool}
 \description{
-automatic title
+Experimental Class for a Monte Carlo Simulation of particles leaving the pool
+}
+\section{S4-methods}{
+  \subsection{S4-methods with class \code{MCSim} in their signature:}{
+      \itemize{
+        \item \code{\link{[[,MCSim-method}}
+        \item \code{\link{[[<-,MCSim-method}}
+        \item \code{\link{availableParticleProperties,MCSim-method}}
+        \item \code{\link{availableParticleSets,MCSim-method}}
+        \item \code{\link{availableResidentSets,MCSim-method}}
+        \item \code{\link{computeResults,MCSim-method}}
+        \item \code{\link{getNumberOfPools,MCSim-method}}
+        \item \code{\link{initialize,MCSim-method}}
+        \item \code{\link{plot,MCSim-method}}
+      }
+  }
 }

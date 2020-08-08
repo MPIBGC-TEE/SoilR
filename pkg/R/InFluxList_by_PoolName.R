@@ -9,6 +9,9 @@ setMethod("InFluxList_by_PoolName",
             object
             ,targetClassName='InFlux_by_PoolName'
             ,targetListClassName="InFluxList_by_PoolName"
+            # fixme mm: 08/08/2020
+            # the function should also be able to convert constant
+            # InFluxes among the list elements
             ,permittedValueClassName='function'
             ,key_value_func=function(key,val){
                 InFlux_by_PoolName(

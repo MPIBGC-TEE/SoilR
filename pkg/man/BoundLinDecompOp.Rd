@@ -14,3 +14,9 @@ BoundLinDecompOp(map, ...)
 \description{
 Generic constructor for the class with the same name
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{BoundLinDecompOp,ANY-method}}
+        \item \code{\link{BoundLinDecompOp,UnBoundLinDecompOp-method}}
+      }
+}

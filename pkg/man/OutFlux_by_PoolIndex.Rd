@@ -14,3 +14,8 @@ OutFlux_by_PoolIndex(func, sourceIndex)
 \description{
 Generic constructor for the class with the same name
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{OutFlux_by_PoolIndex,function,numeric-method}}
+      }
+}

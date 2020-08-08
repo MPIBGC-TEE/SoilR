@@ -2,17 +2,19 @@
 % Please edit documentation in R/UnBoundNonLinDecompOp_by_PoolNames.R
 \name{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}
 \alias{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}
-\title{automatic title}
+\title{A flux and pool name based representation of a possibly nonlinear and nonautonomous 
+Compartmental Matrix}
 \usage{
 \S4method{UnBoundNonLinDecompOp_by_PoolNames}{InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character}(internal_fluxes, out_fluxes, timeSymbol)
 }
 \arguments{
-\item{internal_fluxes}{object of class:\code{InternalFluxList_by_PoolName}, no manual documentation}
+\item{internal_fluxes}{object of class:\code{InternalFluxList_by_PoolName}, \code{\link{InternalFluxList_by_PoolName}}}
 
-\item{out_fluxes}{object of class:\code{OutFluxList_by_PoolName}, no manual documentation}
+\item{out_fluxes}{object of class:\code{OutFluxList_by_PoolName}, \code{\link{OutFluxList_by_PoolName}}}
 
-\item{timeSymbol}{object of class:\code{character}, no manual documentation}
+\item{timeSymbol}{object of class:\code{character}, }
 }
 \description{
-automatic title
+A flux and pool name based representation of a possibly nonlinear and nonautonomous 
+Compartmental Matrix
 }

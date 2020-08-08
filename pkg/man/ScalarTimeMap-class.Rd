@@ -29,3 +29,13 @@ S4 class for a scalar time dependent function on a finite time interval
     }
   }
 }
+\section{S4-subclasses}{
+      \itemize{
+        \item \code{\linkS4class{BoundFc}}
+      }
+}
+\section{S4-superclasses (in the package)}{
+      \itemize{
+        \item \code{\linkS4class{TimeMap}}
+      }
+}

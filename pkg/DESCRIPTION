@@ -82,5 +82,5 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         getTransferMatrix.R SoilR-package.R IVP_maker.R ydot_maker.R
         WangThreePoolNonAutonomous_sym.R SymbolicModel_by_PoolName.R
         ICBM_N.R linearScalarModel.R
-RoxygenNote: 6.1.99.9001
+RoxygenNote: 7.1.1.9000
 Encoding: UTF-8

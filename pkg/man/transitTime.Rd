@@ -7,7 +7,7 @@
 transitTime(A, u, a = seq(0, 100), q = c(0.05, 0.5, 0.95))
 }
 \arguments{
-\item{A}{A compartmental linear square matrix with cycling rates in the
+\item{A}{A constant compartmental square matrix with cycling rates in the
 diagonal and transfer rates in the off-diagonal.}
 
 \item{u}{A one-column matrix defining the amount of inputs per compartment.}
@@ -23,7 +23,7 @@ distribution, and quantiles.
 }
 \description{
 Computes the density distribution and mean for the transit time of a
-compartmental model
+constant compartmental model
 }
 \seealso{
 \code{\link{systemAge}}

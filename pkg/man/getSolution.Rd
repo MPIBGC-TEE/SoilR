@@ -33,3 +33,8 @@ as specified by the \code{times} of the model.
 \description{
 Have a look at the methods for details.
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{getSolution,Model_by_PoolNames-method}}
+      }
+}

@@ -32,3 +32,10 @@ This function computes the content of the pools as function of time.
 In the original (and most of the present) Models these are Carbon pools hence the name.
 Have a look at the methods for details.
 }
+\section{S4-methods}{
+      \itemize{
+        \item \code{\link{getC,Model-method}}
+        \item \code{\link{getC,Model_by_PoolNames-method}}
+        \item \code{\link{getC,NlModel-method}}
+      }
+}

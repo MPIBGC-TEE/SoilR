@@ -4,7 +4,8 @@
 \name{HarvardForest14CO2}
 \alias{HarvardForest14CO2}
 \title{Delta14C in soil CO2 efflux from Harvard Forest}
-\format{A data frame with the following 3 variables.  
+\format{
+A data frame with the following 3 variables.  
 \enumerate{
  \item Year 
    A numeric vector with the date of measurement in years
@@ -14,7 +15,8 @@
    A factor indicating the site where measurements were 
    made. NWN: Northwest Near, Drydown:
    Rainfall exclusion experiment. 
-}}
+}
+}
 \usage{
 HarvardForest14CO2
 }

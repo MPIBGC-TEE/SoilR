@@ -1,7 +1,7 @@
 #' constructor for data given as 2 column data.frame 
 #' 
-#' @param map In this case a data.frame. Only the first 
-#' two columns will be used
+#' @param map In this case a data.frame. Only the first two columns will be
+#' used
 #' @param lag a (scalar) delay
 #' @param interpolation the interpolation, usually splinefun or approxfun
 #' @autocomment 

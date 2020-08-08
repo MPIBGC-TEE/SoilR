@@ -144,7 +144,7 @@ plot(
 C14Atm_NH,
 type="l",
 xlab="Year",
-ylab=expression(paste(Delta^14,"C ","(\\u2030)")),
+ylab=expression(paste(Delta^14,"C ","(\u2030)")),
 xlim=c(1940,2010)
 ) 
 lines(years, P.C14t[,1], col=4)
@@ -160,14 +160,14 @@ bty="n"
 )
 
 plot(C14Atm_NH,type="l",xlab="Year",
-ylab=expression(paste(Delta^14,"C ","(\\u2030)")),xlim=c(1940,2010)) 
+ylab=expression(paste(Delta^14,"C ","(\u2030)")),xlim=c(1940,2010)) 
 lines(years,P.C14m,col=4)
 lines(years,P.R14m,col=2)
 legend("topright",c("Atmosphere","Bulk SOM", "Respired C"),
 lty=c(1,1,1), col=c(1,4,2),bty="n")
 
 plot(C14Atm_NH,type="l",xlab="Year",
-ylab=expression(paste(Delta^14,"C ","(\\u2030)")),xlim=c(1940,2010)) 
+ylab=expression(paste(Delta^14,"C ","(\u2030)")),xlim=c(1940,2010)) 
 lines(years, S.C14t[,1], col=4)
 lines(years, S.C14t[,2],col=4,lwd=2)
 lines(years, S.C14t[,3],col=4,lwd=3)
@@ -175,14 +175,14 @@ legend("topright",c("Atmosphere", "Pool 1", "Pool 2", "Pool 3"),
 lty=rep(1,4),col=c(1,4,4,4),lwd=c(1,1,2,3),bty="n")
 
 plot(C14Atm_NH,type="l",xlab="Year",
-ylab=expression(paste(Delta^14,"C ","(\\u2030)")),xlim=c(1940,2010)) 
+ylab=expression(paste(Delta^14,"C ","(\u2030)")),xlim=c(1940,2010)) 
 lines(years,S.C14m,col=4)
 lines(years,S.R14m,col=2)
 legend("topright",c("Atmosphere","Bulk SOM", "Respired C"),
 lty=c(1,1,1), col=c(1,4,2),bty="n")
 
 plot(C14Atm_NH,type="l",xlab="Year",
-ylab=expression(paste(Delta^14,"C ","(\\u2030)")),xlim=c(1940,2010)) 
+ylab=expression(paste(Delta^14,"C ","(\u2030)")),xlim=c(1940,2010)) 
 lines(years, F.C14t[,1], col=4)
 lines(years, F.C14t[,2],col=4,lwd=2)
 lines(years, F.C14t[,3],col=4,lwd=3)
@@ -190,7 +190,7 @@ legend("topright",c("Atmosphere", "Pool 1", "Pool 2", "Pool 3"),
 lty=rep(1,4),col=c(1,4,4,4),lwd=c(1,1,2,3),bty="n")
 
 plot(C14Atm_NH,type="l",xlab="Year",
-ylab=expression(paste(Delta^14,"C ","(\\u2030)")),xlim=c(1940,2010)) 
+ylab=expression(paste(Delta^14,"C ","(\u2030)")),xlim=c(1940,2010)) 
 lines(years,F.C14m,col=4)
 lines(years,F.R14m,col=2)
 legend("topright",c("Atmosphere","Bulk SOM", "Respired C"),

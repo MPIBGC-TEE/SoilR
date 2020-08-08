@@ -4,14 +4,16 @@
 \name{IntCal09}
 \alias{IntCal09}
 \title{Northern Hemisphere atmospheric radiocarbon for the pre-bomb period}
-\format{A data frame with 3522 observations on the following 5 variables.
+\format{
+A data frame with 3522 observations on the following 5 variables.
   \describe{
     \item{\code{CAL.BP}}{Calibrated age in years Before Present (BP).}
     \item{\code{C14.age}}{C14 age in years BP.}
     \item{\code{Error}}{Error estimate for \code{C14.age}.}
     \item{\code{Delta.14C}}{Delta.14C value in per mil.}
     \item{\code{Sigma}}{Standard deviation of \code{Delta.14C} in per mil.}
-  }}
+  }
+}
 \usage{
 data(IntCal09)
 }

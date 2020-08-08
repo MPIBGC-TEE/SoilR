@@ -4,14 +4,16 @@
 \name{IntCal13}
 \alias{IntCal13}
 \title{Atmospheric radiocarbon for the 0-50,000 yr BP period}
-\format{A data frame with 5140 observations on the following 5 variables.
+\format{
+A data frame with 5140 observations on the following 5 variables.
   \describe{
     \item{\code{CAL.BP}}{Calibrated age in years Before Present (BP).}
     \item{\code{C14.age}}{C14 age in years BP.}
     \item{\code{Error}}{Error estimate for \code{C14.age}.}
     \item{\code{Delta.14C}}{Delta.14C value in per mil.}
     \item{\code{Sigma}}{Standard deviation of \code{Delta.14C} in per mil.}
-  }}
+  }
+}
 \usage{
 data(IntCal13)
 }
