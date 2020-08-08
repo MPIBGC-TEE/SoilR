@@ -118,7 +118,7 @@ CenturyModel<- function
             list(
                 StateIndependentInFlux_by_PoolIndex(
                     destinationIndex=PoolIndex(1)
-                    ,flux=ScalarTimeMap(timee=in_times,data=Fm*in_vals)
+                    ,flux=ScalarTimeMap(times=in_times,data=Fm*in_vals)
                 )
                 ,
                 StateIndependentInFlux_by_PoolIndex(

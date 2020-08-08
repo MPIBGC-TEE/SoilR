@@ -38,8 +38,8 @@ alltests <- defineTestSuite(
    #,testFuncRegexp = "^test.function_by_PoolIndex$"
    #,testFuncRegexp ="^test.timedependentInput$"
    #,testFuncRegexp ="^test.TimeMapFromListOfVectorAndListZeroLag$"
-   ,testFuncRegexp ="^test.ExtractionOfConstantLinDecompOpAndXi$"
-   #,testFuncRegexp ="^test.*$"
+   #,testFuncRegexp ="^test.ExtractionOfConstantLinDecompOpAndXi$"
+   ,testFuncRegexp ="^test.*$"
 
    ,rngKind = "Marsaglia-Multicarry"
    ,rngNormalKind = "Kinderman-Ramage"
