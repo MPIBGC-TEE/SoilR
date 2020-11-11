@@ -18,7 +18,7 @@ A data frame with 5140 observations on the following 5 variables.
 data(IntCal13)
 }
 \description{
-Atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP. This is the most recent update to the internationally agreed calibration curve and supersedes \code{\link{IntCal09}}.
+Atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP.
 }
 \details{
 \code{Deltal.14C} is age-corrected as per Stuiver and Polach (1977). All details about the derivation of this dataset are provided in Reimer et al. (2013).

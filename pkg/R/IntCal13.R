@@ -1,7 +1,7 @@
 #' Atmospheric radiocarbon for the 0-50,000 yr BP period
 #' 
 #' @description
-#' Atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP. This is the most recent update to the internationally agreed calibration curve and supersedes \code{\link{IntCal09}}.
+#' Atmospheric radiocarbon calibration curve for the period 0 to 50,000 yr BP. 
 #' 
 #' @usage data(IntCal13)
 #' @format
