@@ -1,7 +1,7 @@
 #' A non-autonomous version of the original Wang 3 pool model
 #' 
 #' An Example based on the original non-linear autonomous model as described in  
-#' \url{http://doi.org/10.5194/bg-11-1817-2014}
+#' Wang et al. (2014)
 #' with state_variables:
 #' \enumerate{
 #'  \item C_l
@@ -143,3 +143,9 @@ WangThreePoolNonAutonomous_sym<- function(
  )
  smod
 }
+
+#' @references
+#' Wang, Y. P., Chen, B. C., Wieder, W. R., Leite, M., Medlyn, B. E., Rasmussen, 
+#' M., Smith, M. J., Agusto, F. B., Hoffman, F., and Luo, Y. Q. 2014. Oscillatory 
+#' behavior of two nonlinear microbial models of soil carbon decomposition, 
+#' Biogeosciences, 11, 1817–1831, doi:10.5194/bg-11-1817-2014. 

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The IntCal20 northern hemisphere radiocarbon curve for the...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for IntCal20 {SoilR}"><tr><td>IntCal20 {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>The IntCal20 northern hemisphere radiocarbon curve for the 0-55,000 yr BP period</h2>
+
+<h3>Description</h3>
+
+<p>Atmospheric radiocarbon calibration curve for the period 0 to 55,000 yr BP for the northern hemosphere. This is the most recent update to the internationally agreed calibration curve and supersedes <code><a href="IntCal13.html">IntCal13</a></code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(IntCal20)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 9501 rows and 5 variables.
+</p>
+
+<dl>
+<dt><code>CAL.BP</code></dt><dd><p>Calibrated age in years Before Present (BP).</p>
+</dd>
+<dt><code>C14.age</code></dt><dd><p>C14 age in years BP.</p>
+</dd>
+<dt><code>Sigma.C14.age</code></dt><dd><p>Standard deviation for <code>C14.age</code>.</p>
+</dd>
+<dt><code>Delta.14C</code></dt><dd><p>Delta.14C value in per mil.</p>
+</dd>
+<dt><code>Sigma.Delta.14C</code></dt><dd><p>Standard deviation of <code>Delta.14C</code> in per mil.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>All details about the derivation of this dataset are provided in Reimer et al. (2020).
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Ingrid Chanca <a href="mailto:ichanca@bgc-jena.mpg.de">ichanca@bgc-jena.mpg.de</a>
+</p>
+
+
+<h3>Source</h3>
+
+<p>&lt;https://doi.org/10.1017/RDC.2020.41&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>Reimer, P., Austin, W., Bard, E., Bayliss, A., Blackwell, P., Bronk Ramsey, C., . . . Talamo, S. (2020). 
+The IntCal20 Northern Hemisphere Radiocarbon Age Calibration Curve (0–55 cal kBP). 
+Radiocarbon, 62(4), 725-757. doi:10.1017/RDC.2020.41
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+    plot(IntCal20$CAL.BP, IntCal20$Delta.14C, type="l", 
+         xlab="cal BP", ylab="Delta14C (per mil)")
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.105 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,7 +1,7 @@
 Package: SoilR
 Title: Models of Soil Organic Matter Decomposition
 Version: 1.2.105
-Date: 2020-08-04
+Date: 2020-11-11
 Author: Carlos A. Sierra, Markus Mueller
 Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
 Description: Functions for modeling Soil Organic Matter decomposition
@@ -78,7 +78,7 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         TwopSeriesModel14.R vecFuncMaker.R warnings.R Yasso07Model.R
         scalarFuncMaker.R apply_to_state_and_time.R YassoModel.R
         C14Atm_NH.R C14Atm.R Hua2013.R IntCal09.R IntCal13.R
-        incubation_experiment.R HarvardForest14CO2.R
+        IntCal20.R incubation_experiment.R HarvardForest14CO2.R
         getTransferMatrix.R SoilR-package.R IVP_maker.R ydot_maker.R
         WangThreePoolNonAutonomous_sym.R SymbolicModel_by_PoolName.R
         ICBM_N.R linearScalarModel.R

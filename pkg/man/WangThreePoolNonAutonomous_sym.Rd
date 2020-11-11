@@ -34,7 +34,7 @@ WangThreePoolNonAutonomous_sym(
 }
 \description{
 An Example based on the original non-linear autonomous model as described in  
-\url{http://doi.org/10.5194/bg-11-1817-2014}
+Wang et al. (2014)
 with state_variables:
 \enumerate{
  \item C_l
