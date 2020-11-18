@@ -77,7 +77,7 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         TwopParallelModel.R TwopParallelModel14.R TwopSeriesModel.R
         TwopSeriesModel14.R vecFuncMaker.R warnings.R Yasso07Model.R
         scalarFuncMaker.R apply_to_state_and_time.R YassoModel.R
-        C14Atm_NH.R C14Atm.R Hua2013.R IntCal09.R IntCal13.R
+        C14Atm_NH.R C14Atm.R Hua2013.R IntCal09.R IntCal13.R Graven2017.R
         IntCal20.R SHCal20.R incubation_experiment.R HarvardForest14CO2.R
         getTransferMatrix.R SoilR-package.R IVP_maker.R ydot_maker.R
         WangThreePoolNonAutonomous_sym.R SymbolicModel_by_PoolName.R

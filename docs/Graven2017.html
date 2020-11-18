@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Compiled records of radicarbon in atmospheric CO2 for...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Graven2017 {SoilR}"><tr><td>Graven2017 {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Compiled records of radicarbon in atmospheric CO2 for historical simulations in CMIP6</h2>
+
+<h3>Description</h3>
+
+<p>Historical Delta-14C in atmospheric CO2 used as forcing dataset for CMIP6 simulation experiments. 
+Data is reported for three hemispheric zones, for the period 1850-2015.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(Graven2017)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A data frame with 166 rows and 4 variables.
+</p>
+
+<dl>
+<dt><code>Year.AD</code></dt><dd><p>Year (AD).</p>
+</dd>
+<dt><code>NH</code></dt><dd><p>Delta14C for the northern hemisphere, betwen 30N to 90N latitude. Values in per mil.</p>
+</dd>
+<dt><code>Tropics</code></dt><dd><p>Delta14C for the tropics, between 30N to 30S latitude. Values in per mil.</p>
+</dd>
+<dt><code>SH</code></dt><dd><p>Delta14C for the southern hemisphere, between 30S to 90S latitude. Values in per mil.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>All details about the derivation of this dataset are provided in Graven et al. (2017)
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Carlos Sierra <a href="mailto:csierra@bgc-jena.mpg.de">csierra@bgc-jena.mpg.de</a>
+</p>
+
+
+<h3>Source</h3>
+
+<p>&lt;https://doi.org/10.22033/ESGF/input4MIPs.1602&gt;
+</p>
+
+
+<h3>References</h3>
+
+<p>Graven, Heather; Allison, Colin; Etheridge, David; Hammer, Samuel; Keeling, Ralph; Levin, Ingeborg; 
+Meijer, Harro A. J.; Rubino, Mauro; Tans, Pieter; Trudinger, Cathy; Vaughn, Bruce; White, James (2017). 
+Compiled Historical Record of Atmospheric Delta14CO2 version 2.0. Earth System Grid Federation. 
+https://doi.org/10.22033/ESGF/input4MIPs.1602
+</p>
+<p>Graven, H., Allison, C. E., Etheridge, D. M., Hammer, S., Keeling, R. F., Levin, I., Meijer, 
+H. A. J., Rubino, M., Tans, P. P., Trudinger, C. M., Vaughn, B. H., and White, J. W. C. 2017. 
+Compiled records of carbon isotopes in atmospheric CO2 for historical simulations in CMIP6, 
+Geosci. Model Dev., 10, 4405–4417, https://doi.org/10.5194/gmd-10-4405-2017.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+matplot(Graven2017[,1], Graven2017[,-1],type="l",
+       lty=1, xlab="Year AD", ylab="Delta14C (per mil)", bty="n")
+legend("topleft",names(Graven2017[,-1]), lty=1, col=1:3, bty="n")
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>SoilR</em> version 1.2.105 <a href="00Index.html">Index</a>]</div>
+</body></html>
