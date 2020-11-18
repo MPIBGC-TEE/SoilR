@@ -106,6 +106,7 @@ OnepModel14<- function
       initialValF=ConstFc(F0_Delta14C,"Delta14C"),
       inputFluxes=inputFluxes,
       inputFc,
+      Fc=NULL,
       di=lambda,
       pass=pass
     )
