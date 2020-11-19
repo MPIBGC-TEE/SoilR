@@ -1,60 +1,41 @@
-#' Estimation of the turnover time from a soil radiocarbon sample.
+#' Estimation of the turnover time from a radiocarbon sample.
 #' 
-#' This function finds the best possible value of turnover time from a soil
-#' radiocarbon sample assuming a one pool model and annual litter inputs.
+#' This function finds two possible values of turnover time from 
+#' radiocarbon sample assuming a one pool model with carbon at equilibrium.
 #' 
-#' This algorithm takes the observed values and a given amount of litter
-#' inputs, runs \code{\link{OnepModel14}}, calculates the squared difference
+#' This algorithm takes an observed radiocarbon value and 
+#' runs \code{\link{OnepModel14}}, calculates the squared difference
 #' between predictions and observations, and uses \code{\link{optimize}} to
-#' find the minimum difference. If the turnover time is relatively short (< 50
-#' yrs), it is safe to assume C0=0 because the soil will reach steady state
-#' within the simulation time. However, for longer turnover times it is
-#' recommended to use a value of C0 close to the steady state value.
+#' find the minimum difference. 
 #' 
-#' @param obsC14 a scalar with the observed radiocarbon value in Delta14C of
-#' the soil sample.
-#' @param obsyr a scalar with the year in which the soil sample was taken.
-#' @param In a scalar or data.frame with the annual amount of litter inputs to
-#' the soil.
-#' @param C0 a scalar with the initial amount of carbon stored at the beginning
-#' of the simulation.
+#' @param obsC14 a scalar with the observed radiocarbon value in Delta14C
+#' @param obsyr a scalar with the year in which the sample was taken.
 #' @param yr0 The year at which simulations will start.
-#' @param Zone the hemispheric zone of atmospheric radiocarbon. Possible values
-#' are NHZone1: northern hemisphere zone 1, NHZone2: northern hemisphere zone
-#' 2, NHZone3: northern hemisphere zone 3, SHZone12: southern hemisphere zones
-#' 1 and 2, SHZone3: southern hemisphere zone 3. See \code{\link{Hua2013}} for
-#' additional information.
+#' @param Fatm an atmospheric radiocarbon curve as data.frame. First column 
+#' must be time.
 #' @param plot logical. Should the function produce a plot?
 #' @param by numeric. The increment of the sequence of years used in the
 #' simulations.
-#' @return A scalar with the value of the turnover time that minimizes the
+#' @return A numeric vector with two values of the turnover time that minimize the
 #' difference between the prediction of a one pool model and the observed
 #' radiocarbon value.
 turnoverFit=structure(
      function 
      (obsC14, 
       obsyr, 
-      In, 
-      C0=0, 
-      yr0=1900, 
-      Zone="NHZone2", 
+      yr0, 
+      Fatm, 
       plot=TRUE, 
       by=0.5 
       )
      {
           if(length(obsC14) != 1) stop("obsC14 must be a numeric value of length 1")
           if(length(obsyr) != 1) stop("obsyr must be a numeric value of length 1")
-          if(length(C0) != 1) stop("C0 must be a numeric value of length 1")
-          if(Zone=="NHZone1") inputFc=bind.C14curves(prebomb=IntCal13,postbomb=Hua2013$NHZone1,time.scale="AD")
-          if(Zone=="NHZone2") inputFc=bind.C14curves(prebomb=IntCal13,postbomb=Hua2013$NHZone2,time.scale="AD")
-          if(Zone=="NHZone3") inputFc=bind.C14curves(prebomb=IntCal13,postbomb=Hua2013$NHZone3,time.scale="AD")
-          if(Zone=="SHZone12") inputFc=bind.C14curves(prebomb=IntCal13,postbomb=Hua2013$SHZone12,time.scale="AD")
-          if(Zone=="SHZone3") inputFc=bind.C14curves(prebomb=IntCal13,postbomb=Hua2013$SHZone3,time.scale="AD")
-          if(obsyr > tail(inputFc,1)$Year.AD) stop("The observed C14 datum must be from a year within the atmospheric radiocarbon period of the Hua et al (2012) dataset.")
-          years=seq(yr0,tail(inputFc,1)$Year.AD,by=by)
+          if(obsyr > tail(Fatm[,1],1)) stop("The observed C14 datum must be from a year within the atmospheric radiocarbon curve.")
+          years=seq(yr0,tail(Fatm[,1],1),by=by)
           C14cost=function(k){
-               tmp=OnepModel14(t=years,k=k,C0=C0,F0_Delta14C=inputFc[which(inputFc[,1]==yr0),2],
-                               In=In,inputFc=inputFc)
+               tmp=OnepModel14(t=years,k=k,C0=1,F0_Delta14C=k/(k+0.0001209681),
+                               In=k,inputFc=Fatm)
                C14t=getF14(tmp)
                predC14=C14t[which(years==round(obsyr,1))]
                res=(obsC14-predC14)^2
@@ -63,14 +44,14 @@ turnoverFit=structure(
           kest1=optimize(C14cost,interval=c(1/20,1))$minimum
           kest2=optimize(C14cost,interval=c(1/5000,1/30))$minimum
           if(plot==TRUE){
-               pred1=OnepModel14(t=years,k=kest1,C0=C0,F0_Delta14C=inputFc[which(inputFc[,1]==yr0),2],
-                                In=In,inputFc=inputFc)
-               pred2=OnepModel14(t=years,k=kest2,C0=C0,F0_Delta14C=inputFc[which(inputFc[,1]==yr0),2],
-                                 In=In,inputFc=inputFc)
+               pred1=OnepModel14(t=years,k=kest1,C0=1,F0_Delta14C=kest1/(kest1+0.0001209681),
+                                In=kest1,inputFc=Fatm)
+               pred2=OnepModel14(t=years,k=kest2,C0=1,F0_Delta14C=kest2/(kest2+0.0001209681),
+                                 In=kest2,inputFc=Fatm)
                C14test1=getF14(pred1)
                C14test2=getF14(pred2)
                par(mfrow=c(2,1),mar=c(4,5,1,1))
-               plot(inputFc[,1:2],type="l",xlim=c(1900,2010), xlab="Year AD",ylab=expression(paste(Delta^14,"C ","(\u2030)")))
+               plot(Fatm,type="l", xlab="Year AD",ylab=expression(paste(Delta^14,"C ","(\u2030)")))
                points(obsyr,obsC14,pch=19)
                lines(years,C14test1,col=2)
                lines(years,C14test2,col=4)
@@ -82,7 +63,7 @@ turnoverFit=structure(
                abline(v=kest2,lty=2)
                par(mfrow=c(1,1))
           }
-          return(list(tau1=1/kest1,tau2=1/kest2))
+          return(c(tau1=1/kest1,tau2=1/kest2))
      }
      ,
      ex=function(){

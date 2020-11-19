@@ -1,7 +1,7 @@
 test.turnoverFit=function(){
-     # Calculate the turnover time for a sample from a temperate forest soil
+     # Calculate the turnover time for a sample from a temperate soil
 
-     turnoverFit(obsC14=115.22, obsyr=2004.5, C0=2800, yr0=1900,
-                               In=473, Zone="NHZone2")
+     turnoverFit(obsC14=40, obsyr=2015, yr0=1850.5, Fatm=Graven2017[,1:2], 
+                  plot=FALSE)
      
 }

@@ -1,32 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Estimation of the turnover time from a soil radiocarbon...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Estimation of the turnover time from a radiocarbon sample.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for turnoverFit {SoilR}"><tr><td>turnoverFit {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Estimation of the turnover time from a soil radiocarbon sample.</h2>
+<h2>Estimation of the turnover time from a radiocarbon sample.</h2>
 
 <h3>Description</h3>
 
-<p>This function finds the best possible value of turnover time from a soil
-radiocarbon sample assuming a one pool model and annual litter inputs.
+<p>This function finds two possible values of turnover time from 
+radiocarbon sample assuming a one pool model with carbon at equilibrium.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-turnoverFit(
-  obsC14,
-  obsyr,
-  In,
-  C0 = 0,
-  yr0 = 1900,
-  Zone = "NHZone2",
-  plot = TRUE,
-  by = 0.5
-)
+turnoverFit(obsC14, obsyr, yr0, Fatm, plot = TRUE, by = 0.5)
 </pre>
 
 
@@ -35,34 +26,20 @@ turnoverFit(
 <table summary="R argblock">
 <tr valign="top"><td><code>obsC14</code></td>
 <td>
-<p>a scalar with the observed radiocarbon value in Delta14C of
-the soil sample.</p>
+<p>a scalar with the observed radiocarbon value in Delta14C</p>
 </td></tr>
 <tr valign="top"><td><code>obsyr</code></td>
 <td>
-<p>a scalar with the year in which the soil sample was taken.</p>
-</td></tr>
-<tr valign="top"><td><code>In</code></td>
-<td>
-<p>a scalar or data.frame with the annual amount of litter inputs to
-the soil.</p>
-</td></tr>
-<tr valign="top"><td><code>C0</code></td>
-<td>
-<p>a scalar with the initial amount of carbon stored at the beginning
-of the simulation.</p>
+<p>a scalar with the year in which the sample was taken.</p>
 </td></tr>
 <tr valign="top"><td><code>yr0</code></td>
 <td>
 <p>The year at which simulations will start.</p>
 </td></tr>
-<tr valign="top"><td><code>Zone</code></td>
+<tr valign="top"><td><code>Fatm</code></td>
 <td>
-<p>the hemispheric zone of atmospheric radiocarbon. Possible values
-are NHZone1: northern hemisphere zone 1, NHZone2: northern hemisphere zone
-2, NHZone3: northern hemisphere zone 3, SHZone12: southern hemisphere zones
-1 and 2, SHZone3: southern hemisphere zone 3. See <code><a href="Hua2013.html">Hua2013</a></code> for
-additional information.</p>
+<p>an atmospheric radiocarbon curve as data.frame. First column 
+must be time.</p>
 </td></tr>
 <tr valign="top"><td><code>plot</code></td>
 <td>
@@ -78,19 +55,16 @@ simulations.</p>
 
 <h3>Details</h3>
 
-<p>This algorithm takes the observed values and a given amount of litter
-inputs, runs <code><a href="OnepModel14.html">OnepModel14</a></code>, calculates the squared difference
+<p>This algorithm takes an observed radiocarbon value and 
+runs <code><a href="OnepModel14.html">OnepModel14</a></code>, calculates the squared difference
 between predictions and observations, and uses <code><a href="../../stats/html/optimize.html">optimize</a></code> to
-find the minimum difference. If the turnover time is relatively short (&lt; 50
-yrs), it is safe to assume C0=0 because the soil will reach steady state
-within the simulation time. However, for longer turnover times it is
-recommended to use a value of C0 close to the steady state value.
+find the minimum difference.
 </p>
 
 
 <h3>Value</h3>
 
-<p>A scalar with the value of the turnover time that minimizes the
+<p>A numeric vector with two values of the turnover time that minimize the
 difference between the prediction of a one pool model and the observed
 radiocarbon value.
 </p>
