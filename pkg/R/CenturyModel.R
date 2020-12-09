@@ -40,7 +40,6 @@
 #' C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter
 #' decomposition: the SoilR package version 1.0. Geoscientific Model
 #' Development 5, 1045-1060.
-#' @example ./inst/tests/src/runit.Century.R
 CenturyModel<- function 
   (t,      
    ks=c(k.STR=0.094,k.MET=0.35,k.ACT=0.14,k.SLW=0.0038,k.PAS=0.00013),  
@@ -59,15 +58,8 @@ CenturyModel<- function
     t_end=max(t)
     if(length(ks)!=5) stop("ks must be of length = 5")
     if(length(C0)!=5) stop("the vector with initial conditions must be of length = 5")
-    Fm=0.85-0.18*LN
+    Fm=0.85-0.018*LN
     Fs=1-Fm
-    #if(length(In)==1){
-    #  inputFluxes=BoundInFluxes(
-    #    function(t){matrix(nrow=5,ncol=1,c(In*Fm,In*Fs,0,0,0))},
-    #    t_start,
-    #    t_end
-    #  )
-    #}
    
     if(class(In)=='numeric') {
       if(length(In)==1){
@@ -90,27 +82,6 @@ CenturyModel<- function
         # we want to be as specific as possible
         # and especially retain the information that only
         # 2 of the 5 pools receive inputs.
-
-        # This would be lost in the old style description as a vector valued
-        # function, since R cannot detect which pools are permanently zero in 
-        # a vector:
-        # if(class(In)=="data.frame"){
-        #   x=In[,1]  
-        #   y=In[,2]  
-        #   inputFlux=splinefun(x,y)
-        #   inputFluxes=BoundInFluxes(
-        #     function(t){
-        #       matrix(
-        #        nrow=5,
-        #        ncol=1,
-        #        c(inputFlux(t)*Fm,inputFlux(t)*Fs,0,0,0)
-        #       ) 
-        #     },
-        #     min(x),
-        #     max(x)
-        #   )
-        # }
-
         # We therefore describe only the non zero fluxes
         in_times=In[,1]
         in_vals =In[,2]
