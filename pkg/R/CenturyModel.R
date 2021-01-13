@@ -6,12 +6,14 @@
 #' 
 #' @param t A vector containing the points in time where the solution is
 #' sought.
-#' @param ks A vector of length 5 containing the values of the decomposition
+#' @param ks A vector of length 7 containing the values of the decomposition
 #' rates for the different pools. Units in per week.
-#' @param C0 A vector of length 5 containing the initial amount of carbon for
-#' the 5 pools.
-#' @param In A scalar or data.frame object specifying the amount of litter
-#' inputs by time (mass per area per week).
+#' @param C0 A vector of length 7 containing the initial amount of carbon for
+#' the 7 pools.
+#' @param surfaceIn A scalar or data.frame object specifying the amount of aboveground litter
+#' inputs to the soil surface by time (mass per area per week).
+#' @param soilIn A scalar or data.frame object specifying the amount of belowground litter
+#' inputs to the soil by time (mass per area per week).
 #' @param LN A scalar representing the lignin to nitrogen ratio of the plant
 #' residue inputs.
 #' @param Ls A scalar representing the fraction of structural material that is
@@ -40,11 +42,29 @@
 #' C.A., M. Mueller, S.E. Trumbore. 2012. Models of soil organic matter
 #' decomposition: the SoilR package version 1.0. Geoscientific Model
 #' Development 5, 1045-1060.
+#' @examples
+#' mnths=seq(0,100)
+#' APPT=50 # Assume 50 cm annual precipitation
+#' Pmax=-40+7.7*APPT # Max aboveground production
+#' Rmax=100+7.0*APPT # Max belowground production
+#' abvgIn=Pmax/(Pmax+Rmax)
+#' blgIn=Rmax/(Pmax+Rmax)
+#' 
+#' cm=CenturyModel(t=mnths, surfaceIn = abvgIn, soilIn = blgIn, LN=0.5, Ls=0.1)
+#' Ct=getC(cm)
+#' 
+#' poolNames=c("Surface structural", "Surface metabolic", "Belowground structural",
+#'                "Belowground metabolic", "Active SOM", "Slow SOM", "Passive SOM")
+#' matplot(mnths,Ct, type="l", lty=1, col=1:7, xlab="Time (months)", ylab="Carbon stock ")
+#' legend("topleft", poolNames, lty=1, col=1:7, bty="n")
+
 CenturyModel<- function 
   (t,      
-   ks=c(k.STR=0.094,k.MET=0.35,k.ACT=0.14,k.SLW=0.0038,k.PAS=0.00013),  
-   C0=c(0,0,0,0,0),	
-   In,    
+   ks=c(STR.surface=0.076, MET.surface=0.28, STR.belowgroun=0.094,
+     MET.belowground=0.35,ACT=0.14,SLW=0.0038,PAS=0.00013),
+   C0=rep(0, 7),	
+   surfaceIn,    
+   soilIn,    
    LN, 
    Ls, 
    clay=0.2, 
@@ -56,45 +76,57 @@ CenturyModel<- function
   { 
     t_start=min(t)
     t_end=max(t)
-    if(length(ks)!=5) stop("ks must be of length = 5")
-    if(length(C0)!=5) stop("the vector with initial conditions must be of length = 5")
+    if(length(ks)!=7) stop("ks must be of length = 7")
+    if(length(C0)!=7) stop("the vector with initial conditions must be of length = 7")
     Fm=0.85-0.018*LN
     Fs=1-Fm
    
-    if(class(In)=='numeric') {
-      if(length(In)==1){
+    if(class(surfaceIn)=='numeric' && class(soilIn)=='numeric') {
+      if(length(surfaceIn)==1 && length(soilIn)==1){
         inputFluxes=ConstantInFluxList_by_PoolIndex(
             list(
                 ConstantInFlux_by_PoolIndex(
                     destinationIndex=1
-                    ,flux_constant=In*Fm
-                )
-                ,
+                    ,flux_constant=surfaceIn*Fs
+                ),
                 ConstantInFlux_by_PoolIndex(
                     destinationIndex=2
-                    ,flux_constant=In*Fs
+                    ,flux_constant=surfaceIn*Fm
+                ),
+                ConstantInFlux_by_PoolIndex(
+                    destinationIndex=3
+                    ,flux_constant=soilIn*Fs
+                ),
+                ConstantInFlux_by_PoolIndex(
+                    destinationIndex=4
+                    ,flux_constant=soilIn*Fm
                 )
             )
         )
       } 
     }
-    if(class(In)=="data.frame"){
-        # we want to be as specific as possible
-        # and especially retain the information that only
-        # 2 of the 5 pools receive inputs.
-        # We therefore describe only the non zero fluxes
-        in_times=In[,1]
-        in_vals =In[,2]
+    if(class(surfaceIn)=="data.frame" && class(soilIn)=='data.frame'){
+        in_times_surface=surfaceIn[,1]
+        in_times_soil=soilIn[,1]
+        in_vals_surface =surfaceIn[,2]
+        in_vals_soil =soilIn[,2]
         inputFluxes=StateIndependentInFluxList_by_PoolIndex(
             list(
                 StateIndependentInFlux_by_PoolIndex(
                     destinationIndex=PoolIndex(1)
-                    ,flux=ScalarTimeMap(times=in_times,data=Fm*in_vals)
-                )
-                ,
+                    ,flux=ScalarTimeMap(times=in_times_surface,data=Fs*in_vals_surface)
+                ),
                 StateIndependentInFlux_by_PoolIndex(
                     destinationIndex=PoolIndex(2)
-                    ,flux=ScalarTimeMap(times=in_times,data=Fs*in_vals)
+                    ,flux=ScalarTimeMap(times=in_times_surface,data=Fm*in_vals_surface)
+                ),
+                StateIndependentInFlux_by_PoolIndex(
+                    destinationIndex=PoolIndex(3)
+                    ,flux=ScalarTimeMap(times=in_times_soil,data=Fs*in_vals_soil)
+                ),
+                StateIndependentInFlux_by_PoolIndex(
+                    destinationIndex=PoolIndex(4)
+                    ,flux=ScalarTimeMap(times=in_times_soil,data=Fm*in_vals_soil)
                 )
             )
        )
@@ -102,25 +134,30 @@ CenturyModel<- function
     Txtr=clay+silt
     fTxtr=1-0.75*Txtr
     Es=0.85-0.68*Txtr
-    alpha31=0.45
-    alpha32=0.55
-    alpha34=0.42
-    alpha35=0.45
-    alpha41=0.3 
-    alpha53=0.004
-    alpha43=1-Es-alpha53
-    alpha54=0.03
-    A=-1*diag(abs(ks))
-    A[1,1]=A[1,1]*exp(-3*Ls)
-    A[3,3]=A[3,3]*fTxtr
-    A[3,1]=alpha31*abs(A[1,1])
-    A[3,2]=alpha32*abs(A[2,2])
-    A[3,4]=alpha34*abs(A[4,4])
-    A[3,5]=alpha35*abs(A[5,5])
-    A[4,1]=alpha41*abs(A[1,1])
-    A[4,3]=alpha43*abs(A[3,3])
-    A[5,3]=alpha53*abs(A[3,3])
-    A[5,4]=alpha54*abs(A[4,4])
+    alpha51=(1-Ls)*(1-0.45); alpha61=Ls*(1-0.3); alpha52=1-0.55
+    alpha53=(1-Ls)*(1-0.55); alpha54=1-0.55; alpha63=Ls*(1-0.3)
+    alpha65=1-Es-0.004; alpha75=0.004; alpha76=0.03; alpha56=0.42; alpha57=1-0.55
+
+    K=diag(ks)
+    K[1,1]=ks[1]*exp(-3*Ls)
+    K[3,3]=ks[3]*exp(-3*Ls)
+    K[5,5]=ks[5]*fTxtr
+
+    T=diag(-1,7,7)
+    T[5,1]=alpha51
+    T[6,1]=alpha61
+    T[5,2]=alpha52
+    T[5,3]=alpha53
+    T[5,4]=alpha54
+    T[6,3]=alpha63
+    T[6,5]=alpha65
+    T[7,5]=alpha75
+    T[7,6]=alpha76
+    T[5,6]=alpha56
+    T[5,7]=alpha57
+
+    A=T%*%K
+    
     # whatever format xi is given in we convert it to a time map object
     # (function,constant,data.frame,list considering also the xi_lag argument)
     if(class(xi) == 'numeric' && length(xi)==1){

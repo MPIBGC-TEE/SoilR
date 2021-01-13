@@ -6,9 +6,11 @@
 \usage{
 CenturyModel(
   t,
-  ks = c(k.STR = 0.094, k.MET = 0.35, k.ACT = 0.14, k.SLW = 0.0038, k.PAS = 0.00013),
-  C0 = c(0, 0, 0, 0, 0),
-  In,
+  ks = c(STR.surface = 0.076, MET.surface = 0.28, STR.belowgroun = 0.094,
+    MET.belowground = 0.35, ACT = 0.14, SLW = 0.0038, PAS = 0.00013),
+  C0 = rep(0, 7),
+  surfaceIn,
+  soilIn,
   LN,
   Ls,
   clay = 0.2,
@@ -22,14 +24,17 @@ CenturyModel(
 \item{t}{A vector containing the points in time where the solution is
 sought.}
 
-\item{ks}{A vector of length 5 containing the values of the decomposition
+\item{ks}{A vector of length 7 containing the values of the decomposition
 rates for the different pools. Units in per week.}
 
-\item{C0}{A vector of length 5 containing the initial amount of carbon for
-the 5 pools.}
+\item{C0}{A vector of length 7 containing the initial amount of carbon for
+the 7 pools.}
 
-\item{In}{A scalar or data.frame object specifying the amount of litter
-inputs by time (mass per area per week).}
+\item{surfaceIn}{A scalar or data.frame object specifying the amount of aboveground litter
+inputs to the soil surface by time (mass per area per week).}
+
+\item{soilIn}{A scalar or data.frame object specifying the amount of belowground litter
+inputs to the soil by time (mass per area per week).}
 
 \item{LN}{A scalar representing the lignin to nitrogen ratio of the plant
 residue inputs.}
@@ -63,6 +68,22 @@ This function implements the Century model as described in Parton et al.
 \details{
 This is one of the few examples that internally make use of
 the new infrastructure for flux based descriptions of models (see examples).
+}
+\examples{
+mnths=seq(0,100)
+APPT=50 # Assume 50 cm annual precipitation
+Pmax=-40+7.7*APPT # Max aboveground production
+Rmax=100+7.0*APPT # Max belowground production
+abvgIn=Pmax/(Pmax+Rmax)
+blgIn=Rmax/(Pmax+Rmax)
+
+cm=CenturyModel(t=mnths, surfaceIn = abvgIn, soilIn = blgIn, LN=0.5, Ls=0.1)
+Ct=getC(cm)
+
+poolNames=c("Surface structural", "Surface metabolic", "Belowground structural",
+               "Belowground metabolic", "Active SOM", "Slow SOM", "Passive SOM")
+matplot(mnths,Ct, type="l", lty=1, col=1:7, xlab="Time (months)", ylab="Carbon stock ")
+legend("topleft", poolNames, lty=1, col=1:7, bty="n")
 }
 \references{
 Parton, W.J, D.S. Schimel, C.V. Cole, and D.S. Ojima. 1987.
