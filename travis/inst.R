@@ -1,6 +1,7 @@
 #!/usr/bin/Rscript
 
 fromCran <- c(
+  'usethis',
   'devtools',
 	'testthat',
 	'argparse',
