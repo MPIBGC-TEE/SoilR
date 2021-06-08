@@ -7,7 +7,8 @@ test.ExtractionOfConstantLinDecompOpAndXi<-function(){
       t_model1,
 			LN=0.5,
 			Ls=0.1,
-			In=0.1,
+			surfaceIn=0.4,
+                        soilIn=0.5,
 			xi=xi_func,
 			xi_lag=lag
     )
@@ -98,12 +99,9 @@ test.ExtractionOfConstantLinDecompOpAndXi<-function(){
     # nonlinear models this includes the translation of scalar function arguments
     # to vector arguments
     poolNames <- c(
-      "Structural_litter",
-      "Metabolic_litter",
-      "Active_SOM",
-      "Slow_SOM",
-      "Passive_SOM"
-    )
+    "Surface.structural", "Surface.metabolic", "Belowground.structural",
+    "Belowground.metabolic", "Active.SOM", "Slow.SOM", "Passive.SOM"
+     )
     cintflrs_by_name <- by_PoolName(cintflrs_by_ind,poolNames)
     coflrs_by_name <- by_PoolName(coflrs_by_ind,poolNames)
     cifls_by_name<-by_PoolName(cifls_by_ind,poolNames)
@@ -148,7 +146,8 @@ test.withXiDataframe<-function(){
       t_model2,
 			LN=0.5,
 			Ls=0.1,
-			In=0.1,
+			surfaceIn=0.4,
+                        soilIn=0.5,
 			xi=xi_df,
 			xi_lag=lag
     )
@@ -157,82 +156,83 @@ test.withXiDataframe<-function(){
 
 }
 
-test.oldExample<-function(){
-  t <- seq(0,52*200,1) #200 years
-  LNcorn <- 0.17/0.004 # Values for corn clover reported in Parton et al. 1987
-  Ex<-CenturyModel(
-    t,
-		LN=0.5,
-		Ls=0.1,
-		In=0.1
-  )
-  Ct <- getC(Ex)
-  Rt <- getReleaseFlux(Ex)
-
-  matplot(
-    t,
-    Ct,
-    type="l",
-    col=1:5,
-    lty=1,
-    ylim=c(0,max(Ct)*2.5),
-    ylab=expression(paste("Carbon stores (kg C", ha^-1,")")),
-    xlab="Time (weeks)"
-  )
-  lines(
-    t,
-    rowSums(Ct),
-    lwd=2
-  )
-  legend(
-    "topright",
-    c(
-      "Structural litter",
-      "Metabolic litter",
-      "Active SOM",
-      "Slow SOM",
-      "Passive SOM",
-      "Total Carbon"
-    ),
-    lty=1,
-    lwd=c(rep(1,5),2),
-    col=c(1:5,1),
-    bty="n"
-  )
-
-  matplot(
-    t,
-		Rt,
-		type="l",
-		lty=1,
-		ylim=c(0, max(Rt)*3),
-		ylab="Respiration (kg C ha-1 week-1)",
-		xlab="Time"
-  )
-  lines(
-    t,
-    rowSums(Rt),
-    lwd=2
-  )
-  legend(
-    "topright",
-		c(
-      "Structural litter",
-		  "Metabolic litter",
-		  "Active SOM",
-      "Slow SOM",
-      "Passive SOM",
-      "Total Respiration"
-    ),
-    lty=1,
-    lwd=c(rep(1,5),2),
-    col=c(1:5,1),
-    bty="n"
-  )
-}
+# This test is obsolete. 
+#test.oldExample<-function(){
+#  t <- seq(0,52*200,1) #200 years
+#  LNcorn <- 0.17/0.004 # Values for corn clover reported in Parton et al. 1987
+#  Ex<-CenturyModel(
+#    t,
+#		LN=0.5,
+#		Ls=0.1,
+#		In=0.1
+#  )
+#  Ct <- getC(Ex)
+#  Rt <- getReleaseFlux(Ex)
+#
+#  matplot(
+#    t,
+#    Ct,
+#    type="l",
+#    col=1:5,
+#    lty=1,
+#    ylim=c(0,max(Ct)*2.5),
+#    ylab=expression(paste("Carbon stores (kg C", ha^-1,")")),
+#    xlab="Time (weeks)"
+#  )
+#  lines(
+#    t,
+#    rowSums(Ct),
+#    lwd=2
+#  )
+#  legend(
+#    "topright",
+#    c(
+#      "Structural litter",
+#      "Metabolic litter",
+#      "Active SOM",
+#      "Slow SOM",
+#      "Passive SOM",
+#      "Total Carbon"
+#    ),
+#    lty=1,
+#    lwd=c(rep(1,5),2),
+#    col=c(1:5,1),
+#    bty="n"
+#  )
+#
+#  matplot(
+#    t,
+#		Rt,
+#		type="l",
+#		lty=1,
+#		ylim=c(0, max(Rt)*3),
+#		ylab="Respiration (kg C ha-1 week-1)",
+#		xlab="Time"
+#  )
+#  lines(
+#    t,
+#    rowSums(Rt),
+#    lwd=2
+#  )
+#  legend(
+#    "topright",
+#		c(
+#      "Structural litter",
+#		  "Metabolic litter",
+#		  "Active SOM",
+#      "Slow SOM",
+#      "Passive SOM",
+#      "Total Respiration"
+#    ),
+#    lty=1,
+#    lwd=c(rep(1,5),2),
+#    col=c(1:5,1),
+#    bty="n"
+#  )
+#}
 
 test.user.Example<-function(){
-	C0 <- c(1, 2, 15, 8, 3)
+	C0 <- c(1, 0.5, 2, 1, 15, 8, 3)
 	time <- seq(0, 1, 1/12)
 	temp <- c(0, -7, 2, 5, 11, 12, 16, 13, 13, 8, 4, 3, 2)
 	rainfall <- c(63, 12, 33, 22, 24, 80, 52, 133, 57, 76, 55, 92, 71)
@@ -245,7 +245,8 @@ test.user.Example<-function(){
 		C0 = C0,
 		LN = 0.5,
 		Ls = 0.1,
-		In = 0,
+		surfaceIn = 0,
+                soilIn = 0,
 		clay = 0.1,
 		silt = 0.2,
 		xi = xi,
@@ -255,21 +256,23 @@ test.user.Example<-function(){
 }
 
 test.timedependentInput<-function(){
-	C0 <- c(1, 2, 15, 8, 3)
+	C0 <- c(1, 0.5, 2, 1, 15, 8, 3)
 	time <- seq(0, 1, 1/12)
 	temp <- c(0, -7, 2, 5, 11, 12, 16, 13, 13, 8, 4, 3, 2)
 	rainfall <- c(63, 12, 33, 22, 24, 80, 52, 133, 57, 76, 55, 92, 71)
 	pet <- c(35, 16, 48, 59, 115, 110, 139, 114, 103, 71, 47, 46, 42)
 	xi <- fT.Century1(temp) * fW.Century(rainfall, pet)
 	xi <- data.frame(time, xi=xi[1:length(time)])
-  ut <- data.frame(time, rep(10, length.out=length(time)))
-	
+        abvIn <- data.frame(time, rnorm(length(time), 0.4, 0.01))	
+        blgIn <- data.frame(time, rnorm(length(time), 0.5, 0.01))	
+
 	Century <- CenturyModel(
     t = time,
 		C0 = C0,
 		LN = 0.5,
 		Ls = 0.1,
-		In = ut,
+		surfaceIn = abvIn,
+                soilIn = blgIn,
 		clay = 0.1,
 		silt = 0.2,
 		xi = xi,
