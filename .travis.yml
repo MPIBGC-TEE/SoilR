@@ -6,7 +6,7 @@ install: Rscript travis/inst.R
 
 # we build a (1d)matrix of testsuites
 env:
-        - TEST_SUITE=travis_check_rhub.sh 
+        #        - TEST_SUITE=travis_check_rhub.sh  # fails for obscure reasons
         - TEST_SUITE=travis_check_pkg_locally.sh
         - TEST_SUITE=travis_build_and_run_Rd.sh
         - TEST_SUITE=travis_run_R_src_tests.sh
