@@ -1,0 +1,128 @@
+% This text is proprietary.
+% It's a part of presentation made by myself.
+% It may not used commercial.
+% The noncommercial use such as private and study is free
+% Sep. 2005 
+% Author: Sascha Frank 
+% University Freiburg 
+% www.informatik.uni-freiburg.de/~frank/
+
+
+\documentclass{beamer}
+\begin{document}
+\title{SoilR}   
+\subtitle{History and lessons learned}   
+\author{Markus Müller} 
+\date{\today} 
+
+\frame{\titlepage} 
+
+\frame{\frametitle{Table of contents}\tableofcontents} 
+
+
+\section{Aspects}
+\frame{\frametitle{Title} 
+Each frame should have a title.
+}
+\subsection{Introduction of Terms}
+\frame{
+  \frametitle{SoilR} 
+  \itemize{
+    \item R package, (A stable version on cran a development version SoilR-exp on github)
+    \item collections of soil models with 
+     \itemize{
+       \item Implementing function
+       \item Examples
+       \item (Extensive) Tests
+       \item Documentation
+    }
+  }
+}
+
+\frame{
+  \frametitle{ The DRY principle ( D on't R epeat Y ourself)}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+        We feel that the \emph{only} way to develop software \emph{reliably}, and to make our developments easier to understand and maintain, is to follow what we call the DRY principle:
+        \alert{Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.}
+    \end{column}
+    \begin{column}{0.5\textwidth}  
+      \begin{center}
+      %%%%% this is a minipage, so \textwidth is already adjusted to the size of the column
+      \includegraphics[width=\textwidth]{PragmaticProgrammer.jpg}
+     \end{center}
+    \end{column}
+  \end{columns}
+}
+
+\frame{
+  \frametitle{\emph{copy and paste} programming }
+        The alternative is to have the same thing expressed in two or more places. If you change one, you have to remember to change the others, \dots or your program will be brought to its knees by a contradiction. It isn't a question of whether you'll remember: it's a question of when you'll forget.
+}
+\frame{
+  \frametitle{Refactoring (how to DRY code }
+    Definition:\\
+    Restructure (the source code of an application or piece of software) so as to improve operation without altering functionality.
+    \\
+    \vspace{1cm}
+    Impacts: 
+    \begin{itemize}
+      \item Generalization 
+            $\rightarrow$ Reduction of Duplication $\rightarrow$ Removal of Contradictions 
+            $\rightarrow$ Consistency, Predictability for users
+     
+      \item Formalization of the Generalization $\rightarrow$ \alert{ feedback on scientific understanding }
+    \end{itemize}
+    \vspace{1cm}
+    Precondition:
+    \itemize{
+    \item test coverage (automated unit tests that run after every minor check in and cover most of the functionality)
+    }
+}
+\frame{
+  \frametitle{Refactoring (Generalization) tools used in Soil(R)}
+    \begin{itemize}
+      \item Object Oriented Programming OOP 
+      \itemize{
+         \item (S4) Classes
+         \item polymorphism
+         \item (limited) support for strict types
+         \item partly self implemented automatic documentation
+      }
+     
+    \end{itemize}
+}
+%\frame{
+%  \frametitle{}
+%}
+%\frame{
+%  \frametitle{}
+%}
+%\frame{
+%  \frametitle{}
+%}
+%\frame{
+%  \frametitle{}
+%}
+
+\section{historic development and generalization steps}
+\subsection{`GeneralModel' 0} 
+\frame{
+ \frametitle{first synthesis} 
+}
+\frame{
+ \frametitle{Model class} 
+ methods for ALL models
+ \itemize{
+  \item
+ }
+}
+\frame{
+ \frametitle{decomposition of A} 
+}
+\subsection{`Nonlinear GeneralModels'} 
+\subsection{ Coordinate free representation} 
+\
+\frametitle{Matrix approach without Matrices} 
+\end{document}
+
