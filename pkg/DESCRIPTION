@@ -81,6 +81,7 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         IntCal20.R SHCal20.R incubation_experiment.R HarvardForest14CO2.R
         getTransferMatrix.R SoilR-package.R IVP_maker.R ydot_maker.R
         WangThreePoolNonAutonomous_sym.R SymbolicModel_by_PoolName.R
-        ICBM_N.R linearScalarModel.R CenturyModel14.R
+        ICBM_N.R linearScalarModel.R CenturyModel14.R pathEntropy.R
+        entropyRatePerJump.R entropyRatePerTime.R
 RoxygenNote: 7.1.1.9000
 Encoding: UTF-8

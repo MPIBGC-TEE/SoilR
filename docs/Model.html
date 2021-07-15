@@ -5,11 +5,11 @@
 
 <table width="100%" summary="page for Model {SoilR}"><tr><td>Model {SoilR}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Constructor for class <a href="Model-class.html">Model</a></h2>
+<h2>Constructor for class <a href="../../SoilR/help/Model-class.html">Model</a></h2>
 
 <h3>Description</h3>
 
-<p>This function creates an object of class <a href="Model-class.html">Model</a>, The arguments
+<p>This function creates an object of class <a href="../../SoilR/help/Model-class.html">Model</a>, The arguments
 can be given in different form as long as they can be converted to the
 necessary internal building blocks.  (See the links)
 </p>
@@ -39,8 +39,8 @@ sought.</p>
 </td></tr>
 <tr valign="top"><td><code>A</code></td>
 <td>
-<p>something that can be converted by <a href="GeneralDecompOp.html">GeneralDecompOp</a> to any of
-the available subclasses of <code><a href="DecompOp-class.html">DecompOp</a></code>.</p>
+<p>something that can be converted by <a href="../../SoilR/help/GeneralDecompOp.html">GeneralDecompOp</a> to any of
+the available subclasses of <code><a href="../../SoilR/help/DecompOp-class.html">DecompOp</a></code>.</p>
 </td></tr>
 <tr valign="top"><td><code>ivList</code></td>
 <td>
@@ -50,13 +50,13 @@ is checked by an internal function.</p>
 </td></tr>
 <tr valign="top"><td><code>inputFluxes</code></td>
 <td>
-<p>something that can be converted by <a href="InFluxes.html">InFluxes</a>
-to any of the available subclasses of <a href="InFluxes-class.html">InFluxes</a>.</p>
+<p>something that can be converted by <a href="../../SoilR/help/InFluxes.html">InFluxes</a>
+to any of the available subclasses of <a href="../../SoilR/help/InFluxes-class.html">InFluxes</a>.</p>
 </td></tr>
 <tr valign="top"><td><code>solverfunc</code></td>
 <td>
 <p>The function used to actually solve the ODE system. The
-default is <code><a href="deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> but you can also provide your
+default is <code><a href="../../SoilR/help/deSolve.lsoda.wrapper.html">deSolve.lsoda.wrapper</a></code> but you can also provide your
 own function that the same interface.</p>
 </td></tr>
 <tr valign="top"><td><code>pass</code></td>
@@ -70,11 +70,11 @@ pass internal sanity checks</p>
 <h3>Details</h3>
 
 <p>This function <code>Model</code> wraps the internal constructor of class
-<a href="Model-class.html">Model</a>. The internal constructor requires the argument <code>A</code>
-to be of class <a href="DecompOp-class.html">DecompOp</a> and argument <code>inputFluxes</code> to be
-of class <a href="InFluxes-class.html">InFluxes</a>. Before calling the internal constructor
-<code>Model</code> calls <a href="GeneralDecompOp.html">GeneralDecompOp</a> on its argument <code>A</code> and
-<a href="InFluxes.html">InFluxes</a> on its argument <code>inputFluxes</code> to convert them into
+<a href="../../SoilR/help/Model-class.html">Model</a>. The internal constructor requires the argument <code>A</code>
+to be of class <a href="../../SoilR/help/DecompOp-class.html">DecompOp</a> and argument <code>inputFluxes</code> to be
+of class <a href="../../SoilR/help/InFluxes-class.html">InFluxes</a>. Before calling the internal constructor
+<code>Model</code> calls <a href="../../SoilR/help/GeneralDecompOp.html">GeneralDecompOp</a> on its argument <code>A</code> and
+<a href="../../SoilR/help/InFluxes.html">InFluxes</a> on its argument <code>inputFluxes</code> to convert them into
 the required classes. Both are generic functions. Follow the links to see
 for which kind of inputs conversion methods are available. The attempted
 conversion allows great flexibility with respect to arguments and
@@ -83,7 +83,7 @@ wrong argument the error will most likely occur in the delegate functions.
 If this happens inspect the error message (or use <code>traceback()</code>) to see
 which function was called and try to call the constructor of the desired
 subclass explicitly with your arguments.  The subclasses are linked in the
-class documentation <a href="DecompOp-class.html">DecompOp</a> or <a href="InFluxes-class.html">InFluxes</a>
+class documentation <a href="../../SoilR/help/DecompOp-class.html">DecompOp</a> or <a href="../../SoilR/help/InFluxes-class.html">InFluxes</a>
 respectively.
 </p>
 <p>Note also that this function checks its arguments quite elaborately and
@@ -108,17 +108,17 @@ check look at:
 
 <h3>Value</h3>
 
-<p>An object of class <a href="Model-class.html">Model</a> that can be queried by many
+<p>An object of class <a href="../../SoilR/help/Model-class.html">Model</a> that can be queried by many
 methods to be found there.
 </p>
 
 
 <h3>See Also</h3>
 
-<p>This function is called by many of the <a href="predefinedModels.html">predefinedModels</a>. <br />
+<p>This function is called by many of the <a href="../../SoilR/help/predefinedModels.html">predefinedModels</a>. <br />
 Package functions called in the examples:<br />
-<code><a href="example.2DInFluxes.Args.html">example.2DInFluxes.Args</a></code>,<br />
-<code><a href="example.2DGeneralDecompOpArgs.html">example.2DGeneralDecompOpArgs</a></code>,<br />
+<code><a href="../../SoilR/help/example.2DInFluxes.Args.html">example.2DInFluxes.Args</a></code>,<br />
+<code><a href="../../SoilR/help/example.2DGeneralDecompOpArgs.html">example.2DGeneralDecompOpArgs</a></code>,<br />
 </p>
 
 
