@@ -41,8 +41,8 @@ turnoverFit=structure(
                res=(obsC14-predC14)^2
                return(res)
           }
-          kest1=optimize(C14cost,interval=c(1/20,1))$minimum
-          kest2=optimize(C14cost,interval=c(1/5000,1/30))$minimum
+          kest1=optimize(C14cost,interval=c(1/30,1))$minimum
+          kest2=optimize(C14cost,interval=c(1/50000,1/30))$minimum
           if(plot==TRUE){
                pred1=OnepModel14(t=years,k=kest1,C0=1,F0_Delta14C=kest1/(kest1+0.0001209681),
                                 In=kest1,inputFc=Fatm)
@@ -51,7 +51,7 @@ turnoverFit=structure(
                C14test1=getF14(pred1)
                C14test2=getF14(pred2)
                par(mfrow=c(2,1),mar=c(4,5,1,1))
-               plot(Fatm,type="l", xlab="Year AD",ylab=expression(paste(Delta^14,"C ","(\u2030)")))
+               plot(Fatm,type="l", xlab="Year AD",ylab=expression(paste(Delta^14,"C ","(\u2030)")), ylim=c(min(0,obsC14),900))
                points(obsyr,obsC14,pch=19)
                lines(years,C14test1,col=2)
                lines(years,C14test2,col=4)
