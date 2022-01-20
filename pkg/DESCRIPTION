@@ -3,7 +3,7 @@ Title: Models of Soil Organic Matter Decomposition
 Version: 1.2.105
 Date: 2020-11-11
 Author: Carlos A. Sierra, Markus Mueller
-Maintainer: Markus Mueller <mamueller@bgc-jena.mpg.de>
+Maintainer: Carlos A. Sierra <csierra@bgc-jena.mpg.de>
 Description: Functions for modeling Soil Organic Matter decomposition
         in terrestrial ecosystems with linear and nonlinear models.
 License: GPL-3

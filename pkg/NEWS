@@ -1,3 +1,12 @@
+
+                                   Changes to version 1.1.105
+=============================================================================================
+- The two vignettes that were available in previous versions were removed because
+  they are now obsolete given the recent changes in model constructure functions.
+  These vignettes will be re-written and will be available in future versions.
+- Funtions to compute information theory metrics (entropy) were added for models
+  in equilibrium. 
+
                                    
 				   Changes to version 1.1.103
 ==============================================================================================

@@ -71,14 +71,14 @@ chk_local <- call2str(
   ,function(chk){capture.output(chk)}
 )
 
-chk_rhub_remote_rdevel <- call2str(
-  as.call(list(rhub::check_with_rdevel, path=p , show_status=TRUE))
-  ,rhub_remote_2str
-)  
-chk_rhub_remote_windows <- call2str(
-  as.call(list(rhub::check_on_windows, path=p ,show_status=TRUE))
-  ,rhub_remote_2str
-)
+#chk_rhub_remote_rdevel <- call2str(
+#  as.call(list(rhub::check_with_rdevel, path=p , show_status=TRUE))
+#  ,rhub_remote_2str
+#)  
+#chk_rhub_remote_windows <- call2str(
+#  as.call(list(rhub::check_on_windows, path=p ,show_status=TRUE))
+#  ,rhub_remote_2str
+#)
 
 #chk_rhub_local_debian_gcc_devel   <- call2str(
 #  as.call(list(rhub::local_check_linux, path=p ,image = "rhub/debian-gcc-devel"))
@@ -96,8 +96,8 @@ text=c(
   ,paste("OS version: ",as.character(Sys.info())[3])
   ,paste("R version: ", R.version$version.string)
   ,chk_local
-  ,"# remote Rhub checks"
-  ,c( chk_rhub_remote_rdevel ,chk_rhub_remote_windows)
+#  ,"# remote Rhub checks"
+#  ,c( chk_rhub_remote_rdevel ,chk_rhub_remote_windows)
 #  ,'# local Rhub containers'
 #  ,c(chk_rhub_local_debian_gcc_devel, chk_rhub_local_fedora_clang_devel)
 )
