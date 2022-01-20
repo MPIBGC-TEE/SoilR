@@ -80,25 +80,26 @@ chk_rhub_remote_windows <- call2str(
   ,rhub_remote_2str
 )
 
-chk_rhub_local_debian_gcc_devel   <- call2str(
-  as.call(list(rhub::local_check_linux, path=p ,image = "rhub/debian-gcc-devel"))
-  ,rhub_local_2str
-)
-chk_rhub_local_fedora_clang_devel <- call2str(
-  as.call(list(rhub::local_check_linux, path=p ,image ="rhub/fedora-clang-devel"))
-  ,rhub_local_2str
-)
+#chk_rhub_local_debian_gcc_devel   <- call2str(
+#  as.call(list(rhub::local_check_linux, path=p ,image = "rhub/debian-gcc-devel"))
+#  ,rhub_local_2str
+#)
+#chk_rhub_local_fedora_clang_devel <- call2str(
+#  as.call(list(rhub::local_check_linux, path=p ,image ="rhub/fedora-clang-devel"))
+#  ,rhub_local_2str
+#)
 text=c(
   paste("# Check report for: ",pkgTarName,collapse="")
   ,paste("# created automatically by the script: ",script.path,collapse=" ")
   ,paste("date:", as.character(Sys.Date()),collapse=" ")
-  ,"# local installation 
-  Ubuntu 18.04 LTS, R 3.6.1"
+  ,"# local installation" 
+  ,paste("OS version: ",as.character(Sys.info())[3])
+  ,paste("R version: ", R.version$version.string)
   ,chk_local
   ,"# remote Rhub checks"
   ,c( chk_rhub_remote_rdevel ,chk_rhub_remote_windows)
-  ,'# local Rhub containers'
-  ,c(chk_rhub_local_debian_gcc_devel, chk_rhub_local_fedora_clang_devel)
+#  ,'# local Rhub containers'
+#  ,c(chk_rhub_local_debian_gcc_devel, chk_rhub_local_fedora_clang_devel)
 )
 
 writeLines(
