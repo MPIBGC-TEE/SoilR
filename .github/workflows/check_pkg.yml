@@ -16,5 +16,7 @@ jobs:
          run: | 
           cd scripts
           Rscript install_dependencies.R
-       - name: Run tests
-         run: Rscript check_local.R
+       - name: Check package
+         run: |
+          cd scripts 
+          Rscript check_local.R
