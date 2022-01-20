@@ -10,6 +10,9 @@ fromCran <- c(
   'knitr',
   'rmarkdown',
   'rhub',
-  'FME'
+  'FME',
+  'igraph',
+  'expm',
+  'sets'
 )
 lapply(fromCran,install.packages,repos='https://cran.uni-muenster.de')
