@@ -21,7 +21,7 @@
 #' This dataset corresponds to Table S3 from Hua et al. (2013). For additional details see the original publication.
 #' 
 #' @source
-#' \url{https://journals.uair.arizona.edu/index.php/radiocarbon/article/view/16177}
+#' \doi{10.2458/azu_js_rc.v55i2.16177}
 #' 
 #' @references
 #' Hua Q., M. Barbetti, A. Z. Rakowski. 2013. Atmospheric radiocarbon for the period 1950-2010. Radiocarbon 55(4):2059-2072.

@@ -19,7 +19,7 @@ A \link{list} containing 5 data frames, each representing an atmospheric zone. T
   }
 }
 \source{
-\url{https://journals.uair.arizona.edu/index.php/radiocarbon/article/view/16177}
+\doi{10.2458/azu_js_rc.v55i2.16177}
 }
 \usage{
 data(Hua2013)

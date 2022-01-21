@@ -5,11 +5,8 @@ name: check-pkg
 
 jobs:
   check_all:
-     runs-on: 
-       - windows-latest
-       - macOS-latest
+     runs-on: windows-latest
      env:
-       RSPM: "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"
        GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
      steps: 
