@@ -18,7 +18,11 @@ jobs:
           Rscript install_dependencies.R
        - uses: r-lib/actions/setup-tinytex@v2
        - run: tlmgr install makeindex
-       - name: Check package
+       - name: Check source
          run: |
           cd scripts 
           Rscript check_local.R
+       - name: Check tar
+         run: |
+          cd scripts 
+          Rscript check_tar.R
