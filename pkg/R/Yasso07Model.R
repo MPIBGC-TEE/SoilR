@@ -66,7 +66,7 @@ Yasso07Model<- function
             t_end
         )
       }
-      if(class(In)=="data.frame"){
+      if(inherits(In, "data.frame")){
        inputFluxes=BoundInFluxes(In)
       }
       A1=abs(diag(ks))
@@ -89,7 +89,7 @@ Yasso07Model<- function
 	fX=function(t){xi}
 	Af=BoundLinDecompOp(function(t) fX(t)*A,t_start,t_end)
 	}
-      if(class(xi)=="data.frame"){
+      if(inherits(xi, "data.frame")){
 	      X=xi[,1]
       	Y=xi[,2]
         fX=splinefun(X,Y)

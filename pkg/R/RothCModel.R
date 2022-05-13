@@ -81,7 +81,7 @@ RothCModel<- function
         )
       }
       # Fix me. This code needs to be refactored to do interpolation by TimeMap instead of manually. 
-      if(class(In)=="data.frame"){
+      if(inherits(In, "data.frame")){
          inputFlux=splinefun(In[,1],In[,2])
          FYMflux=splinefun(FYM[,1],FYM[,2])
           inputFluxes=BoundInFluxes(
@@ -99,7 +99,7 @@ RothCModel<- function
       A[3,]=A[3,]+ai3
       A[4,]=A[4,]+ai4
       if(length(xi)==1) fX=function(t){xi}
-      if(class(xi)=="data.frame"){
+      if(inherits(xi, "data.frame")){
         X=xi[,1]
         Y=xi[,2]
         fX=splinefun(X,Y)

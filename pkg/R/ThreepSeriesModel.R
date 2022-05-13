@@ -73,7 +73,7 @@ ThreepSeriesModel<- function
             t_end
         )
       }
-      if(class(In)=="data.frame"){
+      if(inherits(In, "data.frame")){
          x=In[,1]  
          y=In[,2]  
          inputFlux=splinefun(x,y)
@@ -87,7 +87,7 @@ ThreepSeriesModel<- function
       A[2,1]=a21
       A[3,2]=a32
       if(length(xi)==1) fX=function(t){xi}
-      if(class(xi)=="data.frame"){
+      if(inherits(xi, "data.frame")){
         X=xi[,1]
         Y=xi[,2]
         fX=splinefun(X,Y)

@@ -47,7 +47,7 @@ setMethod(
         ){
         .Object@times=times
         .Object@DepComp=DepComp
-         if (class(inputFluxes)=="TimeMap"){
+         if (inherits(inputFluxes, "TimeMap")){
           warning(
             "The use of object of class TimeMap for the inputFlux argument is deprecated.
             At the moment we cast TimeMap objects to the new class BoundInFluxes

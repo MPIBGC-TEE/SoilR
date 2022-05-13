@@ -1,4 +1,10 @@
 
+
+                                   Changes to version 1.1.106
+=============================================================================================
+- The newest version of the radiocarbon bomb curve has been added and can be found in the 
+  function Hua2021. 
+
                                    Changes to version 1.1.105
 =============================================================================================
 - The two vignettes that were available in previous versions were removed because

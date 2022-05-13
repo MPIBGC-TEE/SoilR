@@ -86,7 +86,7 @@ OnepModel<- function
             t_end
         )
       }
-      if(class(In)=="data.frame"){
+      if(inherits(In, "data.frame")){
          x=In[,1]  
          y=In[,2]  
          inputFlux=splinefun(x,y)
@@ -98,7 +98,7 @@ OnepModel<- function
         }
       A=-1*abs(matrix(k,1,1))
       if(length(xi)==1) fX=function(t){xi}
-      if(class(xi)=="data.frame"){
+      if(inherits(xi, "data.frame")){
       X=xi[,1]
       Y=xi[,2]
       fX=splinefun(X,Y)

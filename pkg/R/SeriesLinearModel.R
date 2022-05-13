@@ -70,7 +70,7 @@ SeriesLinearModel<- function
             t_end
         )
       }
-      if(class(In)=="data.frame"){
+      if(inherits(In, "data.frame")){
          x=In[,1]  
          y=In[,2]  
          inputFlux=splinefun(x,y)
@@ -89,7 +89,7 @@ SeriesLinearModel<- function
         tAs=t_start
         tAe=t_end
       }
-      if(class(xi)=="data.frame"){
+      if(inherits(xi, "data.frame")){
         X=xi[,1]
         Y=xi[,2]
         fX=splinefun(X,Y)

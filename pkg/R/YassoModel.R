@@ -63,7 +63,7 @@ YassoModel<- function
         t_end
       )
     }
-    if(class(In)=="data.frame") stop("Inputs must be a vector of length 7")
+    if(inherits(In, "data.frame")) stop("Inputs must be a vector of length 7")
     A1=abs(diag(ks))
     Ap=diag(-1,7,7)
     Ap[3,1]=p[1]
@@ -81,7 +81,7 @@ YassoModel<- function
       fX=function(t){xi}
       Af=BoundLinDecompOp(function(t){fX(t)*A},t_start,t_end)
     }
-    if(class(xi)=="data.frame"){
+    if(inherits(xi, "data.frame")){
       X=xi[,1]
       Y=xi[,2]
       fX=splinefun(X,Y)

@@ -193,10 +193,10 @@ CenturyModel14<- function
     if(class(xi) == 'numeric' && length(xi)==1){
       xi=ScalarTimeMap(data=xi,lag=xi_lag)
     }
-    if(class(xi)=='data.frame') {
+    if(inherits(xi, 'data.frame')) {
      xi=ScalarTimeMap(map=xi, lag=xi_lag)
     }
-    if(class(xi)=='function') {
+    if(inherits(xi, 'function')) {
      xi=ScalarTimeMap(map=xi, lag=xi_lag)
     }
     #fX=getFunctionDefinition(xi)

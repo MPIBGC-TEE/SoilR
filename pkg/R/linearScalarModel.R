@@ -54,7 +54,7 @@ linearScalarModel<- function
         t_end
       )
     }
-    if(class(gamma)=="data.frame"){
+    if(inherits(gamma, "data.frame")){
       x=gamma[,1]  
       y=gamma[,2]  
       inputScalar=splinefun(x,y)
