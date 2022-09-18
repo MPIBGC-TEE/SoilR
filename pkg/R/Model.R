@@ -265,6 +265,7 @@ setMethod(
         itm=object@inputFluxes
         input=getFunctionDefinition(itm)
         ydot=NpYdot(A,input)
+        return(ydot)
     }
 )
 
