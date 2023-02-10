@@ -81,7 +81,7 @@ CenturyModel<- function
     Fm=0.85-0.018*LN
     Fs=1-Fm
    
-    if(class(surfaceIn)=='numeric' && class(soilIn)=='numeric') {
+    if(inherits(surfaceIn, 'numeric') && inherits(soilIn, 'numeric')) {
       if(length(surfaceIn)==1 && length(soilIn)==1){
         inputFluxes=ConstantInFluxList_by_PoolIndex(
             list(
@@ -105,7 +105,7 @@ CenturyModel<- function
         )
       } 
     }
-    if(class(surfaceIn)=="data.frame" && class(soilIn)=='data.frame'){
+    if(inherits(surfaceIn, "data.frame") && inherits(soilIn, 'data.frame')){
         in_times_surface=surfaceIn[,1]
         in_times_soil=soilIn[,1]
         in_vals_surface =surfaceIn[,2]
@@ -160,7 +160,7 @@ CenturyModel<- function
     
     # whatever format xi is given in we convert it to a time map object
     # (function,constant,data.frame,list considering also the xi_lag argument)
-    if(class(xi) == 'numeric' && length(xi)==1){
+    if(inherits(xi, 'numeric') && length(xi)==1){
       xi=ScalarTimeMap(data=xi,lag=xi_lag)
     }
     if(inherits(xi, 'data.frame')) {
