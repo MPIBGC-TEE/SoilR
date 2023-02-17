@@ -5,6 +5,7 @@ library(SoilR)
 source("VTLM.R") # Run this like if your working directory contains this file. Otherwise source the LVTM function from wheterever it is and make it available in the Global Environment
 source("collect_by_layer.R") # Idem
 source("collect_by_pool.R") # Idem
+source("solveVTLM.R")
 
 # Step 1. Prepare what you need for a SoilR pool model
 years<-seq(1941.5,2019,by=0.5)

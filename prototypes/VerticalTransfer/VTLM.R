@@ -10,13 +10,16 @@
 #' @param latIn A vector with the later inputs for the depth intervals. Must be of same size as lyrs
 #' @param d A scalar value with the downward transport rate
 #' @param u A scalar value with the upward transport rate
+#' @param ivalF14 A character string, "model" or "age". For "model" initial values are chosen 
+#' from those in original pool model, and for "age" they are based on a computation of the mean age of the pools at steady-state
 #' 
 VTLM<-function( 
     Model,
     lyrs,
     latIn,
     d,
-    u
+    u,
+    ivalF14
   ){
   
   nlyrs<-length(lyrs)
@@ -45,11 +48,15 @@ VTLM<-function(
   M<-D+V
   
   In<-matrix(c(Model@inputFluxes@map(Inf), rep(0,(nlyrs*npools)-npools)), ncol=1) + latIn
-  
   xss<-as.numeric(solve(-M)%*%In)
-  A<-systemAge(A=M,u=In)$meanPoolAge
-  ivF14<-ConstFc(as.numeric(Delta14C_from_AbsoluteFractionModern(exp(A/-8033))), "Delta14C")
-
+  
+  if(ivalF14 == "model"){
+    ivF14<-ConstFc(rep(Model@initialValF@values,nlyrs), "Delta14C")
+  }
+  if(ivalF14 == "age"){
+   A<-systemAge(A=M,u=In)$meanPoolAge
+   ivF14<-ConstFc(as.numeric(Delta14C_from_AbsoluteFractionModern(exp(A/-8033))), "Delta14C")
+  }
   
   SoilRModel<-Model_14(t=Model@times, A=M, ivList=xss, initialValF=ivF14, 
                        inputFluxes=as.numeric(In), inputFc=Model@c14Fraction)

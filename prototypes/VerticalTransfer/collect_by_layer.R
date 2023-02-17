@@ -10,7 +10,7 @@
 
 collect_by_layer<-function(Ct,P14t, nlayer, npool){
   AFM=AbsoluteFractionModern_from_Delta14C(P14t)
-  collect<-diag(nrow=nlayer,ncol=nlayer)%x%matrix(c(1,1),nrow=npool,ncol=1) 
+  collect<-diag(1,nrow=nlayer,ncol=nlayer)%x%matrix(1,nrow=npool,ncol=1) 
   Cl<-Ct%*%collect
   AFM_Ct<-AFM*Ct
   F14t_l<-(AFM_Ct%*%collect)/Cl
