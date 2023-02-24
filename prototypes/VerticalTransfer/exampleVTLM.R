@@ -28,9 +28,18 @@ rootInputs<-rep(0,times=length(depthLayers))
 downwardTransferRate<-0.05
 upwardTransferRate<-0
 
-TwopDepth<-VTLM(Model=PoolModel, lyrs=depthLayers, latIn = rootInputs, d=downwardTransferRate, u=upwardTransferRate)
+TwopDepth<-VTLM(Model=PoolModel, lyrs=depthLayers, latIn = rootInputs, vrm=exp(-depthLayers*2),
+                d=downwardTransferRate, u=upwardTransferRate, ivalF14 = "model")
 
-# Step 4. Solve the vertical transport model and aggregate by pool and layer
+# Step 4a. Solve using a new interface. Useful to see how the individual pools change with depth
+results<-solveVTLM(VTLM=TwopDepth, npool = 2, nlayer = length(depthLayers))
+
+targetYear<-which(years==2010)
+
+plot(results$C14[,1,targetYear], -depthLayers, type="l", xlim=c(0,300), xlab="Delta14C", ylab="Depth")
+lines(results$C14[,2,targetYear], -depthLayers, col=2)
+
+# Step 4b. Solve the vertical transport model and aggregate by pool and layer
 Cdt<-getC(TwopDepth)
 C14dt<-getF14(TwopDepth)
 

@@ -8,6 +8,8 @@
 #' @param Model A SoilR model of class Model_14
 #' @param lyrs A vector with the depth layers to simulate
 #' @param latIn A vector with the later inputs for the depth intervals. Must be of same size as lyrs
+#' @param vrm Optional vector with vertical rate modifiers that indicate the proportion by which original rates 
+#' should change over depth. Must be of same length as lyrs. Default is a scalar equals to 1.
 #' @param d A scalar value with the downward transport rate
 #' @param u A scalar value with the upward transport rate
 #' @param ivalF14 A character string, "model" or "age". For "model" initial values are chosen 
@@ -17,9 +19,10 @@ VTLM<-function(
     Model,
     lyrs,
     latIn,
+    vrm=1,
     d,
     u,
-    ivalF14
+    ivalF14="model"
   ){
   
   nlyrs<-length(lyrs)
@@ -31,7 +34,7 @@ VTLM<-function(
   else stop("Only SoilR models of class ConstLinDecompOp or BoundLinDecompOp are allowed")
   
   npools<-dim(P)[1]
-  L<-diag(1,nlyrs,nlyrs) # Identity matrix representing the layers
+  L<-diag(vrm,nlyrs,nlyrs) # Diagonal matrix representing the layers
   
   D<-L%x%P # Decomposition matrix with decomposition rates for the pools at each layer
   
