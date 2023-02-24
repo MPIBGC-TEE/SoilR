@@ -50,7 +50,14 @@ VTLM<-function(
   
   M<-D+V
   
-  In<-matrix(c(Model@inputFluxes@map(Inf), rep(0,(nlyrs*npools)-npools)), ncol=1) + latIn
+  #In<-matrix(c(Model@inputFluxes@map(Inf), rep(0,(nlyrs*npools)-npools)), ncol=1) + latIn
+  lyr1In<-Model@inputFluxes@map(Inf)
+  totalAbvgIn<-sum(lyr1In)
+  InAbvg<-matrix(c(lyr1In, rep(0,(nlyrs*npools)-npools)), ncol=1)
+  beta<-lyr1In/totalAbvgIn
+  InBg<-latIn%x%beta
+  In<-InAbvg+InBg
+  
   xss<-as.numeric(solve(-M)%*%In)
   
   if(ivalF14 == "model"){
