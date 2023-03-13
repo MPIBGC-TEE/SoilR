@@ -47,16 +47,16 @@ setMethod(
         ){
         .Object@times=times
         .Object@DepComp=DepComp
-         if (inherits(inputFluxes, "TimeMap")){
-          warning(
-            "The use of object of class TimeMap for the inputFlux argument is deprecated.
-            At the moment we cast TimeMap objects to the new class BoundInFluxes
-            which replaces TimeMap as class of the the inputFlux argument.
-            To get rid of this warning adapt your code to use a BoundInFluxes instead of a TimeMap.
-            Other classes may be implemented in the future." 
-            )
-            inputFluxes<- BoundInFluxes(inputFluxes)
-         }
+#         if (inherits(inputFluxes, "TimeMap")){
+#          warning(
+#            "The use of object of class TimeMap for the inputFlux argument is deprecated.
+#            At the moment we cast TimeMap objects to the new class BoundInFluxes
+#            which replaces TimeMap as class of the the inputFlux argument.
+#            To get rid of this warning adapt your code to use a BoundInFluxes instead of a TimeMap.
+#            Other classes may be implemented in the future." 
+#            )
+#            inputFluxes<- BoundInFluxes(inputFluxes)
+#         }
         .Object@initialValues=initialValues
         .Object@inputFluxes=inputFluxes
         .Object@solverfunc=solverfunc
