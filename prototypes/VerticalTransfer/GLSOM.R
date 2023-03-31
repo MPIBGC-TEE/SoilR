@@ -3,8 +3,13 @@
 #' This function implements a general linear second order model for representing vertical transport 
 #' at steady-state. It uses a second order differencing method to solve for the equilibrium state.
 #' given some boundary conditions. 
-
-
+#' @param x A vector with the spatial coordinates of the vertical profile
+#' @param h The size of the intervals in x. A scalar value
+#' @param D Diffusion coefficient. A scalar value
+#' @param a Advection rate. A scalar value
+#' @param c Reaction rate. A scalar value
+#' @param f A vector with the vertical input rate
+#' @param boundary A vector of length 2 with the upper and lower boundary conditions. These are Neumann boundary conditions with the input rate on the top layer as first element, and the bottom output rate as second element
 
 GLSOM<-function(x, h, D, a, c, f, boundary){
   
@@ -39,7 +44,7 @@ GLSOM<-function(x, h, D, a, c, f, boundary){
   A<-(h^(-2))*A
   
   U<- -1*solve(A)%*%F
-  Out<-list(U,A,F)
+  Out<-list(U[c(-1, -(m+2))], A[2:(m+1),2:(m+1)], F[c(-1, -(m+2))]) # Remove boundaries from solution and pack as list
   names(Out)<-c("U", "A", "F")
   return(Out)
 }
@@ -56,7 +61,7 @@ boundary<-c(fs,0)
 sol<-GLSOM(x=depth,h,D,A,c=-5,f=rootInputs, boundary)
 
 m=length(depth)
-plot(depth,sol$U[c(-1, -(m+2))],type="l", bty="n")
+plot(depth, sol$U,type="l", bty="n")
 
 peclet<- -D/A
 
