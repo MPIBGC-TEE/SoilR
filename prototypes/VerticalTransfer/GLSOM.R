@@ -49,19 +49,19 @@ GLSOM<-function(x, h, D, a, c, f, boundary){
   return(Out)
 }
 
-h<-0.01 # 1 cm steps
-depth<-seq(0,10, by=h) # 0 to 10 m
-D<- 1.48 # cm2 yr-1
-A<- -0.42*0.1 # mm yr-1 * 0.1 cm/mm * 1 cm -> cm2 yr-1
-fs<-0.17
-fd0=0.48; fd1=3.1 
-rootInputs<-fd0*exp(-fd1*depth)*h
-boundary<-c(fs,0)
-
-sol<-GLSOM(x=depth,h,D,A,c=-5,f=rootInputs, boundary)
-
-m=length(depth)
-plot(depth, sol$U,type="l", bty="n")
-
-peclet<- -D/A
+# h<-0.01 # 1 cm steps
+# depth<-seq(0,10, by=h) # 0 to 10 m
+# D<- 1.48 # cm2 yr-1
+# A<- -0.42*0.1 # mm yr-1 * 0.1 cm/mm * 1 cm -> cm2 yr-1
+# fs<-0.17
+# fd0=0.48; fd1=3.1 
+# rootInputs<-fd0*exp(-fd1*depth)*h
+# boundary<-c(fs,0)
+# 
+# sol<-GLSOM(x=depth,h,D,A,c=-5,f=rootInputs, boundary)
+# 
+# m=length(depth)
+# plot(depth, sol$U,type="l", bty="n")
+# 
+# peclet<- -D/A
 
