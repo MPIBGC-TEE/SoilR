@@ -18,9 +18,9 @@ GLSOM<-function(x, h, D, a, c, f, boundary){
   beta<-boundary[2]
   
   # Original formula from Leveque assuming Dirichlet boundary conditions at both ends
-  # F<-matrix(f,nrow=m, ncol=1)
-  # F[1]<- F[1]-((D/h^2) - (a/(2*h)))*alpha
-  # F[m]<- F[m]-((D/h^2) + (a/(2*h)))*beta
+  # F<-matrix(c(0,f),nrow=m+1, ncol=1)
+  # F[1]<- F[1]-((D/(h^2)) - (a/(2*h)))*alpha
+  # F[m+2]<- F[m+2]-((D/(h^2)) + (a/(2*h)))*beta
   
   # Assuming Neumann boundary condition at the top and bottom
   F<-matrix(c(0,f),nrow=m+1, ncol=1)
