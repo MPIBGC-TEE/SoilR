@@ -1,10 +1,10 @@
 citHeader("To cite package 'SoilR' in publications use:")
 
-citEntry(entry="Article",
+bibentry(bibtype="Article",
   title = "Models of soil organic matter decomposition: the SoilR package, version 1.0",
-  author = personList(as.person("Carlos A. Sierra"), 
-                      as.person("Markus Mueller"),
-                      as.person("Susan E. Trumbore")),
+  author = c(person(c("Carlos A."," Sierra")), 
+             person(c("Markus", "Mueller")),
+             person(c("Susan E.", "Trumbore"))),
   journal =	"Geoscientific Model Development",
   volume =	"5",
   number =	"4",
