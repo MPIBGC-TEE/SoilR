@@ -7,7 +7,7 @@
 \S4method{print}{NlModel}(x)
 }
 \arguments{
-\item{x}{object of class:\code{NlModel}, no manual documentation}
+\item{x}{no manual documentation}
 }
 \description{
 automatic title

@@ -10,12 +10,14 @@
   endtime = numeric(),
   numberOfPools = 1,
   alpha = list(),
-  f = function(t, O) {     t },
+  f = function(t, O) {
+     t
+ },
   lag = 0
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{TransportDecompositionOperator}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{starttime}{no manual documentation}
 

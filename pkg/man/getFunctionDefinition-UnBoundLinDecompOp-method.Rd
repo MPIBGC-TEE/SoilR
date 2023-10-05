@@ -7,7 +7,7 @@
 \S4method{getFunctionDefinition}{UnBoundLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundLinDecompOp}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 Extracts the time dependent matrix valued function (compartmental matrix)

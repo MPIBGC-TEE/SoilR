@@ -7,7 +7,7 @@
 \S4method{initialize}{ConstLinDecompOp}(.Object, mat = matrix())
 }
 \arguments{
-\item{.Object}{object of class:\code{ConstLinDecompOp}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{mat}{no manual documentation}
 }

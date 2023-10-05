@@ -6,16 +6,6 @@
 \usage{
 InFlux_by_PoolName(func, destinationName)
 }
-\arguments{
-\item{func}{see method arguments}
-
-\item{destinationName}{see method arguments}
-}
 \description{
 Generic constructor for an influx to a single pool from an ordered pair of PoolName (string like) and function  objects
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{InFlux_by_PoolName,function,character-method}}
-      }
 }

@@ -7,7 +7,7 @@
 \S4method{[[}{MCSim}(x, i)
 }
 \arguments{
-\item{x}{object of class:\code{MCSim}, no manual documentation}
+\item{x}{no manual documentation}
 
 \item{i}{no manual documentation}
 }

@@ -10,10 +10,3 @@ As time dependent scalar function which remembers its
 domain ( see \code{\linkS4class{ScalarTimeMap}}) and its
 format.
 }
-\section{S4-superclasses (in the package)}{
-      \itemize{
-        \item \code{\linkS4class{ScalarTimeMap}}
-        \item \code{\linkS4class{Fc}}
-        \item \code{\linkS4class{TimeMap}}
-      }
-}

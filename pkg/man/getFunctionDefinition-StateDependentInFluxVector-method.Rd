@@ -7,7 +7,7 @@
 \S4method{getFunctionDefinition}{StateDependentInFluxVector}(object)
 }
 \arguments{
-\item{object}{object of class:\code{StateDependentInFluxVector}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

@@ -7,7 +7,7 @@
 \S4method{getFunctionDefinition}{TimeMap}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TimeMap}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

@@ -12,22 +12,6 @@ ConstLinDecompOpWithLinearScalarFactor(
   xi
 )
 }
-\arguments{
-\item{mat}{see method arguments}
-
-\item{internal_flux_rates}{see method arguments}
-
-\item{out_flux_rates}{see method arguments}
-
-\item{numberOfPools}{see method arguments}
-
-\item{xi}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{ConstLinDecompOpWithLinearScalarFactor,matrix,missing,missing,missing,ScalarTimeMap-method}}
-      }
 }

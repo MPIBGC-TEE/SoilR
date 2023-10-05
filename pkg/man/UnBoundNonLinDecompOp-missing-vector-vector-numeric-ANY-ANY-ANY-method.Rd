@@ -7,11 +7,9 @@
 \S4method{UnBoundNonLinDecompOp}{missing,vector,vector,numeric,ANY,ANY,ANY}(internal_fluxes, out_fluxes, numberOfPools)
 }
 \arguments{
-\item{internal_fluxes}{object of class:\code{vector}, vector of elements of type InternalFlux_by_PoolName}
+\item{internal_fluxes}{vector of elements of type InternalFlux_by_PoolName}
 
-\item{out_fluxes}{object of class:\code{vector}, vector of elements of type OutFlux_by_PoolName}
-
-\item{numberOfPools}{object of class:\code{numeric}, no manual documentation}
+\item{out_fluxes}{vector of elements of type OutFlux_by_PoolName}
 }
 \description{
 Constructor for the class with the same name

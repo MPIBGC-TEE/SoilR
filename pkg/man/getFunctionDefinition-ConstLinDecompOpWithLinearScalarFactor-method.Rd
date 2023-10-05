@@ -6,9 +6,6 @@
 \usage{
 \S4method{getFunctionDefinition}{ConstLinDecompOpWithLinearScalarFactor}(object)
 }
-\arguments{
-\item{object}{object of class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation}
-}
 \description{
 helper function
 }

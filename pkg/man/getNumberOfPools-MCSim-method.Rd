@@ -7,7 +7,7 @@
 \S4method{getNumberOfPools}{MCSim}(object)
 }
 \arguments{
-\item{object}{object of class:\code{MCSim}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

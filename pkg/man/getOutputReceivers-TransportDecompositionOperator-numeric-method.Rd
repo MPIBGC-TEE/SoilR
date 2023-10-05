@@ -7,9 +7,9 @@
 \S4method{getOutputReceivers}{TransportDecompositionOperator,numeric}(object, i)
 }
 \arguments{
-\item{object}{object of class:\code{TransportDecompositionOperator}, no manual documentation}
+\item{object}{no manual documentation}
 
-\item{i}{object of class:\code{numeric}, no manual documentation}
+\item{i}{no manual documentation}
 }
 \description{
 automatic title

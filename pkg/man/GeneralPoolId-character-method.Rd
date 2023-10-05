@@ -7,7 +7,7 @@
 \S4method{GeneralPoolId}{character}(id)
 }
 \arguments{
-\item{id}{object of class:\code{character}, no manual documentation}
+\item{id}{no manual documentation}
 }
 \description{
 automatic title

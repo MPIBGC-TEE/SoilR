@@ -7,7 +7,7 @@
 \S4method{getLinearScaleFactor}{ConstLinDecompOpWithLinearScalarFactor}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOpWithLinearScalarFactor}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

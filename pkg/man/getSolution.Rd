@@ -20,10 +20,6 @@ for the contents of the pool consisting of
  \item{ The system of ordinary differential equations, as dictated by the fluxes}
  \item{ The times for which the solution of the IVP is evaluated.}
 }}
-
-\item{params}{see method arguments}
-
-\item{as.closures}{see method arguments}
 }
 \value{
 A matrix with columns representing the name of the statevariable, flux and accumulated flux for every time
@@ -32,9 +28,4 @@ as specified by the \code{times} of the model.
 }
 \description{
 Have a look at the methods for details.
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getSolution,Model_by_PoolNames-method}}
-      }
 }

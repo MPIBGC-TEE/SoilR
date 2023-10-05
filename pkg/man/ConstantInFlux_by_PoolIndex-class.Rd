@@ -7,10 +7,3 @@
 \description{
 class for a constant influx to a single pool identified by index
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{ConstantInFlux_by_PoolIndex} in their signature:}{
-      \itemize{
-        \item \code{\link{by_PoolName,ConstantInFlux_by_PoolIndex-method}}
-      }
-  }
-}

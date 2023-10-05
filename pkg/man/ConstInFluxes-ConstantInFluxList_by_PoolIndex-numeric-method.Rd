@@ -7,9 +7,9 @@
 \S4method{ConstInFluxes}{ConstantInFluxList_by_PoolIndex,numeric}(map, numberOfPools)
 }
 \arguments{
-\item{map}{object of class:\code{ConstantInFluxList_by_PoolIndex}, no manual documentation}
+\item{map}{no manual documentation}
 
-\item{numberOfPools}{object of class:\code{numeric}, no manual documentation}
+\item{numberOfPools}{no manual documentation}
 }
 \description{
 automatic title

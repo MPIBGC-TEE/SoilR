@@ -6,8 +6,8 @@
 \usage{
 GaudinskiModel14(
   t,
-  ks = c(kr = 1/1.5, koi = 1/1.5, koeal = 1/4, koeah = 1/80, kA1 = 1/3, kA2 = 1/75, kM
-    = 1/110),
+  ks = c(kr = 1/1.5, koi = 1/1.5, koeal = 1/4, koeah = 1/80, kA1 = 1/3, kA2 = 1/75, kM =
+    1/110),
   C0 = c(FR0 = 390, C10 = 220, C20 = 390, C30 = 1370, C40 = 90, C50 = 1800, C60 = 560),
   F0_Delta14C = rep(0, 7),
   LI = 150,

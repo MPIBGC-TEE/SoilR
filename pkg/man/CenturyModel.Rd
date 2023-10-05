@@ -6,8 +6,8 @@
 \usage{
 CenturyModel(
   t,
-  ks = c(STR.surface = 0.076, MET.surface = 0.28, STR.belowgroun = 0.094,
-    MET.belowground = 0.35, ACT = 0.14, SLW = 0.0038, PAS = 0.00013),
+  ks = c(STR.surface = 0.076, MET.surface = 0.28, STR.belowgroun = 0.094, MET.belowground
+    = 0.35, ACT = 0.14, SLW = 0.0038, PAS = 0.00013),
   C0 = rep(0, 7),
   surfaceIn,
   soilIn,

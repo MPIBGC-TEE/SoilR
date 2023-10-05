@@ -7,7 +7,7 @@
 \S4method{BoundFc}{character}(format, ...)
 }
 \arguments{
-\item{format}{object of class:\code{character}, no manual documentation}
+\item{format}{no manual documentation}
 
 \item{...}{no manual documentation}
 }

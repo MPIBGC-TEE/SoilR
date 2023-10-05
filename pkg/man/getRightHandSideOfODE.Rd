@@ -18,9 +18,3 @@ getRightHandSideOfODE(object, timeSymbol, poolNames, numberOfPools)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getRightHandSideOfODE,Model-method}}
-        \item \code{\link{getRightHandSideOfODE,Model_by_PoolNames-method}}
-      }
-}

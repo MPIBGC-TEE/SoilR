@@ -7,7 +7,7 @@
 \S4method{ScalarTimeMap}{data.frame,missing,missing,missing,missing}(map, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{map}{object of class:\code{data.frame}, In this case a data.frame. Only the first two columns will be
+\item{map}{In this case a data.frame. Only the first two columns will be
 used}
 
 \item{lag}{a (scalar) delay}

@@ -7,9 +7,9 @@
 \S4method{TimeMap}{missing,missing,missing,numeric,list}(times, data, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{times}{object of class:\code{numeric}, no manual documentation}
+\item{times}{no manual documentation}
 
-\item{data}{object of class:\code{list}, no manual documentation}
+\item{data}{no manual documentation}
 
 \item{lag}{no manual documentation}
 

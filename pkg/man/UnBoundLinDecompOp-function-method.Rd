@@ -7,7 +7,7 @@
 \S4method{UnBoundLinDecompOp}{`function`}(matFunc)
 }
 \arguments{
-\item{matFunc}{object of class:\code{function}, no manual documentation}
+\item{matFunc}{no manual documentation}
 }
 \description{
 Generic constructor for the class with the same name

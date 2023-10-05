@@ -7,7 +7,7 @@
 \S4method{Delta14C}{ConstFc}(F)
 }
 \arguments{
-\item{F}{object of class:\code{ConstFc}, no manual documentation}
+\item{F}{no manual documentation}
 }
 \description{
 automatic title

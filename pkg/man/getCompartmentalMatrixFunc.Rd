@@ -16,12 +16,3 @@ getCompartmentalMatrixFunc(object, timeSymbol, state_variable_names)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}}
-        \item \code{\link{getCompartmentalMatrixFunc,ConstLinDecompOp,ANY,ANY-method}}
-        \item \code{\link{getCompartmentalMatrixFunc,TransportDecompositionOperator,ANY,ANY-method}}
-        \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp_by_PoolNames,character,character-method}}
-        \item \code{\link{getCompartmentalMatrixFunc,UnBoundNonLinDecompOp,ANY,ANY-method}}
-      }
-}

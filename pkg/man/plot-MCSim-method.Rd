@@ -7,7 +7,7 @@
 \S4method{plot}{MCSim}(x, y, ...)
 }
 \arguments{
-\item{x}{object of class:\code{MCSim}, no manual documentation}
+\item{x}{no manual documentation}
 
 \item{y}{no manual documentation}
 

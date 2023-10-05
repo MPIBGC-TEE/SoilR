@@ -7,7 +7,7 @@
 \S4method{ConstantInFluxList_by_PoolIndex}{ConstInFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstInFluxes}, An object of class \linkS4class{ConstInFluxes}}
+\item{object}{An object of class \linkS4class{ConstInFluxes}}
 }
 \value{
 An object of class \linkS4class{ConstantInFluxList_by_PoolIndex}

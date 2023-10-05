@@ -8,12 +8,14 @@
   .Object,
   starttime = numeric(),
   endtime = numeric(),
-  map = function(t) {     t },
+  map = function(t) {
+     t
+ },
   lag = 0
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{DecompositionOperator}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{starttime}{no manual documentation}
 

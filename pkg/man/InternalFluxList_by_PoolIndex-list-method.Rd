@@ -6,9 +6,6 @@
 \usage{
 \S4method{InternalFluxList_by_PoolIndex}{list}(object)
 }
-\arguments{
-\item{object}{object of class:\code{list}, no manual documentation}
-}
 \description{
 after checking the elements
 }

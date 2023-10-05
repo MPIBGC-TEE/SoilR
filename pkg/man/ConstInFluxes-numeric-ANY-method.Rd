@@ -7,7 +7,7 @@
 \S4method{ConstInFluxes}{numeric,ANY}(map)
 }
 \arguments{
-\item{map}{object of class:\code{numeric}, no manual documentation}
+\item{map}{no manual documentation}
 }
 \description{
 automatic title

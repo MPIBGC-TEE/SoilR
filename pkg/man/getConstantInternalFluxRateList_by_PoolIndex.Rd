@@ -12,8 +12,3 @@ getConstantInternalFluxRateList_by_PoolIndex(object)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method}}
-      }
-}

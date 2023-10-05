@@ -6,9 +6,6 @@
 \usage{
 \S4method{PoolConnection_by_PoolIndex}{missing,missing,character}(src_to_dest)
 }
-\arguments{
-\item{src_to_dest}{object of class:\code{character}, no manual documentation}
-}
 \description{
 constructor from strings of the form '1_to_2'
 }

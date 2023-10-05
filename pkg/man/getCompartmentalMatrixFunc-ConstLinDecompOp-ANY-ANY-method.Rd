@@ -7,7 +7,7 @@
 \S4method{getCompartmentalMatrixFunc}{ConstLinDecompOp,ANY,ANY}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

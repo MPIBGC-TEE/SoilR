@@ -4,11 +4,14 @@
 \alias{initialize,UnBoundInFluxes-method}
 \title{automatic title}
 \usage{
-\S4method{initialize}{UnBoundInFluxes}(.Object, map = function() {
-})
+\S4method{initialize}{UnBoundInFluxes}(
+  .Object,
+  map = function() {
+ }
+)
 }
 \arguments{
-\item{.Object}{object of class:\code{UnBoundInFluxes}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{map}{no manual documentation}
 }

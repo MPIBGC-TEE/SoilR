@@ -6,17 +6,6 @@
 \usage{
 BoundLinDecompOp(map, ...)
 }
-\arguments{
-\item{map}{see method arguments}
-
-\item{...}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{BoundLinDecompOp,ANY-method}}
-        \item \code{\link{BoundLinDecompOp,UnBoundLinDecompOp-method}}
-      }
 }

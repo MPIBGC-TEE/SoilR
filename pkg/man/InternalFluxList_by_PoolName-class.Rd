@@ -7,12 +7,3 @@
 \description{
 S4-class for a list of internal fluxes with indexed by (source and destination pool) names
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{InternalFluxList_by_PoolName} in their signature:}{
-      \itemize{
-        \item \code{\link{as.numeric,InternalFluxList_by_PoolName-method}}
-        \item \code{\link{by_PoolIndex,InternalFluxList_by_PoolName,character,character-method}}
-        \item \code{\link{UnBoundNonLinDecompOp_by_PoolNames,InternalFluxList_by_PoolName,OutFluxList_by_PoolName,character-method}}
-      }
-  }
-}

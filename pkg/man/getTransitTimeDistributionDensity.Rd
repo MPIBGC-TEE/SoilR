@@ -16,8 +16,3 @@ getTransitTimeDistributionDensity(object, inputDistribution, times)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getTransitTimeDistributionDensity,ConstLinDecompOp-method}}
-      }
-}

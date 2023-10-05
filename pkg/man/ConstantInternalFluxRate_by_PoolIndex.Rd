@@ -11,21 +11,6 @@ ConstantInternalFluxRate_by_PoolIndex(
   rate_constant
 )
 }
-\arguments{
-\item{sourceIndex}{see method arguments}
-
-\item{destinationIndex}{see method arguments}
-
-\item{src_to_dest}{see method arguments}
-
-\item{rate_constant}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{ConstantInternalFluxRate_by_PoolIndex,missing,missing,character,numeric-method}}
-        \item \code{\link{ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method}}
-      }
 }

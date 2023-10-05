@@ -10,7 +10,7 @@
 \S4method{getFunctionDefinition}{InFluxList_by_PoolName}(object, timeSymbol, poolNames)
 }
 \arguments{
-\item{object}{object of class:\code{InFluxList_by_PoolName}, no manual documentation}
+\item{object}{no manual documentation}
 
 \item{timeSymbol}{no manual documentation}
 

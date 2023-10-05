@@ -12,8 +12,3 @@ getLinearScaleFactor(object)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method}}
-      }
-}

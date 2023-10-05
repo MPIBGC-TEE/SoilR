@@ -7,7 +7,7 @@
 \S4method{TimeMap}{TimeMap,ANY,ANY,ANY,ANY}(map)
 }
 \arguments{
-\item{map}{object of class:\code{TimeMap}, no manual documentation}
+\item{map}{no manual documentation}
 }
 \description{
 automatic title

@@ -6,11 +6,6 @@
 \usage{
 OutFlux(map, ...)
 }
-\arguments{
-\item{map}{see method arguments}
-
-\item{...}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
 }

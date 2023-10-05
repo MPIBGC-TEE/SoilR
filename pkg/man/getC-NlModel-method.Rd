@@ -7,7 +7,7 @@
 \S4method{getC}{NlModel}(object, as.closures = FALSE)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}, no manual documentation}
+\item{object}{no manual documentation}
 
 \item{as.closures}{If \code{TRUE} will return the result as a list of
 approximating functions of time indexed by the pool number.}

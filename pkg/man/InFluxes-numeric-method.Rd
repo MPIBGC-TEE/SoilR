@@ -7,7 +7,7 @@
 \S4method{InFluxes}{numeric}(object)
 }
 \arguments{
-\item{object}{object of class:\code{numeric}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

@@ -7,7 +7,7 @@
 \S4method{getMeanTransitTime}{ConstLinDecompOp}(object, inputDistribution)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}, no manual documentation}
+\item{object}{no manual documentation}
 
 \item{inputDistribution}{no manual documentation}
 }

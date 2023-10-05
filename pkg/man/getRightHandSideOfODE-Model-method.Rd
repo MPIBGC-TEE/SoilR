@@ -7,7 +7,7 @@
 \S4method{getRightHandSideOfODE}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \value{
 A function \eqn{f(t)}{f(t)}

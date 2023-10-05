@@ -7,7 +7,7 @@
 \S4method{getTimeRange}{UnBoundInFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundInFluxes}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

@@ -7,7 +7,7 @@
 \S4method{getTransferCoefficients}{NlModel}(object, as.closures = F)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}, no manual documentation}
+\item{object}{no manual documentation}
 
 \item{as.closures}{no manual documentation}
 }

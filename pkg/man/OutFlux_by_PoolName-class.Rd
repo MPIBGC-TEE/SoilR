@@ -7,10 +7,3 @@
 \description{
 S4 class for a single out-flux with source pool name
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{OutFlux_by_PoolName} in their signature:}{
-      \itemize{
-        \item \code{\link{by_PoolIndex,OutFlux_by_PoolName,character,character-method}}
-      }
-  }
-}

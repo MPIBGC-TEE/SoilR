@@ -15,25 +15,3 @@ and compartmental then the (unique) equilibrium can be computed.
 Accordingly a method with ConstInFluxes in the signature can be implemented, whereas 
 none would be available for a general InFluxes argument.
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{ConstInFluxes} in their signature:}{
-      \itemize{
-        \item \code{\link{ConstantInFluxList_by_PoolIndex,ConstInFluxes-method}}
-        \item \code{\link{getConstantInFluxVector,ConstInFluxes-method}}
-        \item \code{\link{getFunctionDefinition,ConstInFluxes-method}}
-        \item \code{\link{getTimeRange,ConstInFluxes-method}}
-      }
-  }
-  \subsection{S4-methods with superclasses (in the package) of class \code{ConstInFluxes} in their signature:}{
-    \subsection{superclass InFluxes}{
-      \itemize{
-        \item \code{\link{InFluxes,InFluxes-method}}
-      }
-    }
-  }
-}
-\section{S4-superclasses (in the package)}{
-      \itemize{
-        \item \code{\linkS4class{InFluxes}}
-      }
-}

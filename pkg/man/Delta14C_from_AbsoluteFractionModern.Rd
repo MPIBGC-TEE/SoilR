@@ -12,9 +12,3 @@ Delta14C_from_AbsoluteFractionModern(AbsoluteFractionModern)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{Delta14C_from_AbsoluteFractionModern,matrix-method}}
-        \item \code{\link{Delta14C_from_AbsoluteFractionModern,numeric-method}}
-      }
-}

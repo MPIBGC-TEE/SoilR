@@ -12,9 +12,3 @@ AbsoluteFractionModern(F)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{AbsoluteFractionModern,BoundFc-method}}
-        \item \code{\link{AbsoluteFractionModern,ConstFc-method}}
-      }
-}

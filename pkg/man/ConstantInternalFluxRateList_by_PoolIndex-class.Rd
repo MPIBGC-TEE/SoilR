@@ -9,12 +9,3 @@ The purpose is to avoid creation of lists that contain negative rates
 or in accidental confusion with list of fluxes.
 Instances are usually automatically created from data
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{ConstantInternalFluxRateList_by_PoolIndex} in their signature:}{
-      \itemize{
-        \item \code{\link{by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method}}
-        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolIndex,ConstantOutFluxRateList_by_PoolIndex,numeric,missing-method}}
-        \item \code{\link{ConstLinDecompOp,missing,ConstantInternalFluxRateList_by_PoolIndex,missing,numeric,missing-method}}
-      }
-  }
-}

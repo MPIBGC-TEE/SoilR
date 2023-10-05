@@ -85,5 +85,5 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         WangThreePoolNonAutonomous_sym.R SymbolicModel_by_PoolName.R
         ICBM_N.R linearScalarModel.R CenturyModel14.R pathEntropy.R
         entropyRatePerJump.R entropyRatePerTime.R Hua2021.R
-RoxygenNote: 7.1.1.9000
+RoxygenNote: 7.2.3.9000
 Encoding: UTF-8

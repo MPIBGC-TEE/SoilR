@@ -7,7 +7,7 @@
 \S4method{GeneralDecompOp}{DecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{DecompOp}, An object that already is of class \code{DecompOp}}
+\item{object}{An object that already is of class \code{DecompOp}}
 }
 \description{
 This method takes and returns an (identical) object that inherits 

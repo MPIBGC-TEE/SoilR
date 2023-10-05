@@ -7,9 +7,9 @@
 \S4method{ConstantOutFluxRate_by_PoolIndex}{numeric,numeric}(sourceIndex, rate_constant)
 }
 \arguments{
-\item{sourceIndex}{object of class:\code{numeric}, no manual documentation}
+\item{sourceIndex}{no manual documentation}
 
-\item{rate_constant}{object of class:\code{numeric}, no manual documentation}
+\item{rate_constant}{no manual documentation}
 }
 \description{
 automatic title

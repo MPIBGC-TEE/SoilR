@@ -7,7 +7,7 @@
 \S4method{InFluxes}{InFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{InFluxes}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

@@ -12,9 +12,3 @@ AbsoluteFractionModern_from_Delta14C(delta14C)
 \description{
 conversion
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{AbsoluteFractionModern_from_Delta14C,matrix-method}}
-        \item \code{\link{AbsoluteFractionModern_from_Delta14C,numeric-method}}
-      }
-}

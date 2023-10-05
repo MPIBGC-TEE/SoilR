@@ -6,9 +6,6 @@
 \usage{
 \S4method{getTimeRange}{TimeMap}(object)
 }
-\arguments{
-\item{object}{object of class:\code{TimeMap}, no manual documentation}
-}
 \description{
 The time interval where the function is defined
 }

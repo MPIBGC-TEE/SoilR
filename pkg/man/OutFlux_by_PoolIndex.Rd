@@ -6,16 +6,6 @@
 \usage{
 OutFlux_by_PoolIndex(func, sourceIndex)
 }
-\arguments{
-\item{func}{see method arguments}
-
-\item{sourceIndex}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{OutFlux_by_PoolIndex,function,numeric-method}}
-      }
 }

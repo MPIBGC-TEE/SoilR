@@ -9,10 +9,3 @@
 Subclass of list that is guaranteed to contain only elements of type
 \linkS4class{StateIndependentInFlux_by_PoolIndex}
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{StateIndependentInFluxList_by_PoolIndex} in their signature:}{
-      \itemize{
-        \item \code{\link{InFluxes,StateIndependentInFluxList_by_PoolIndex-method}}
-      }
-  }
-}

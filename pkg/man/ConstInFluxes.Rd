@@ -14,9 +14,3 @@ ConstInFluxes(map, numberOfPools)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}}
-        \item \code{\link{ConstInFluxes,numeric,ANY-method}}
-      }
-}

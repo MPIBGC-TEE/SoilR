@@ -7,7 +7,7 @@
 \S4method{getDotOut}{TransportDecompositionOperator}(object)
 }
 \arguments{
-\item{object}{object of class:\code{TransportDecompositionOperator}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

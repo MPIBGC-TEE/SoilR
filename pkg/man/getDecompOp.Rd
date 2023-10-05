@@ -12,9 +12,3 @@ getDecompOp(object)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getDecompOp,Model-method}}
-        \item \code{\link{getDecompOp,NlModel-method}}
-      }
-}

@@ -7,7 +7,7 @@
 \S4method{getValues}{ConstFc}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstFc}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

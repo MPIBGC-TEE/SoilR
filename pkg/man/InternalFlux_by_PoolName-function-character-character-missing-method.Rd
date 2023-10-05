@@ -8,12 +8,12 @@ subset of the state_variable_names}
 \S4method{InternalFlux_by_PoolName}{`function`,character,character,missing}(func, sourceName, destinationName)
 }
 \arguments{
-\item{func}{object of class:\code{function}, A real valued function describing the flux (mass/time)
+\item{func}{A real valued function describing the flux (mass/time)
 as function of (some of ) the state variables and time.}
 
-\item{sourceName}{object of class:\code{character}, A string identifying the source pool of the flux}
+\item{sourceName}{A string identifying the source pool of the flux}
 
-\item{destinationName}{object of class:\code{character}, A string identifying the destination pool of the flux}
+\item{destinationName}{A string identifying the destination pool of the flux}
 }
 \description{
 constructor from an ordered pair of PoolName (string like) objects and a function with the set of formal argument names forming a 

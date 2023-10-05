@@ -7,7 +7,7 @@
 \S4method{getFunctionDefinition}{InFluxList_by_PoolIndex}(object, numberOfPools)
 }
 \arguments{
-\item{object}{object of class:\code{InFluxList_by_PoolIndex}, no manual documentation}
+\item{object}{no manual documentation}
 
 \item{numberOfPools}{no manual documentation}
 }

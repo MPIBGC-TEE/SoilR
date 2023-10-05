@@ -16,7 +16,7 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{Model_by_PoolNames}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{times}{no manual documentation}
 

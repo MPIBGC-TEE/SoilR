@@ -4,11 +4,14 @@
 \alias{initialize,UnBoundLinDecompOp-method}
 \title{automatic title}
 \usage{
-\S4method{initialize}{UnBoundLinDecompOp}(.Object, matFunc = function() {
-})
+\S4method{initialize}{UnBoundLinDecompOp}(
+  .Object,
+  matFunc = function() {
+ }
+)
 }
 \arguments{
-\item{.Object}{object of class:\code{UnBoundLinDecompOp}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{matFunc}{no manual documentation}
 }

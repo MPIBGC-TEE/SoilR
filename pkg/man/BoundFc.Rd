@@ -14,9 +14,3 @@ BoundFc(format, ...)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{BoundFc,character-method}}
-        \item \code{\link{BoundFc,missing-method}}
-      }
-}

@@ -7,18 +7,24 @@
 \S4method{initialize}{NlModel}(
   .Object,
   times = c(0, 1),
-  DepComp = new(Class = "TransportDecompositionOperator", 0, 1, function(t) {    
-    return(matrix(nrow = 1, ncol = 1, 0)) }, function(t) {     return(matrix(nrow = 1,
-    ncol = 1, 0)) }),
+  DepComp = new(Class = "TransportDecompositionOperator", 0, 1, function(t) {
+    
+    return(matrix(nrow = 1, ncol = 1, 0))
+ }, function(t) {
+     return(matrix(nrow = 1,
+    ncol = 1, 0))
+ }),
   initialValues = numeric(),
-  inputFluxes = BoundInFluxes(function(t) {     return(matrix(nrow = 1, ncol = 1, 1))
+  inputFluxes = BoundInFluxes(function(t) {
+     return(matrix(nrow = 1, ncol = 1, 1))
+
     }, 0, 1),
   solverfunc = deSolve.lsoda.wrapper,
   pass = FALSE
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{NlModel}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{times}{no manual documentation}
 

@@ -12,14 +12,3 @@ getTimeRange(object)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getTimeRange,ConstInFluxes-method}}
-        \item \code{\link{getTimeRange,ConstLinDecompOp-method}}
-        \item \code{\link{getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method}}
-        \item \code{\link{getTimeRange,DecompositionOperator-method}}
-        \item \code{\link{getTimeRange,TimeMap-method}}
-        \item \code{\link{getTimeRange,UnBoundInFluxes-method}}
-        \item \code{\link{getTimeRange,UnBoundLinDecompOp-method}}
-      }
-}

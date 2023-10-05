@@ -7,7 +7,7 @@
 \S4method{Delta14C_from_AbsoluteFractionModern}{numeric}(AbsoluteFractionModern)
 }
 \arguments{
-\item{AbsoluteFractionModern}{object of class:\code{numeric}, no manual documentation}
+\item{AbsoluteFractionModern}{no manual documentation}
 }
 \description{
 automatic title

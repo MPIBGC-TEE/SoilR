@@ -14,28 +14,6 @@ UnBoundNonLinDecompOp(
   operator
 )
 }
-\arguments{
-\item{matFunc}{see method arguments}
-
-\item{internal_fluxes}{see method arguments}
-
-\item{out_fluxes}{see method arguments}
-
-\item{numberOfPools}{see method arguments}
-
-\item{state_variable_names}{see method arguments}
-
-\item{timeSymbol}{see method arguments}
-
-\item{operator}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{UnBoundNonLinDecompOp,function,missing,missing,missing,ANY,ANY,ANY-method}}
-        \item \code{\link{UnBoundNonLinDecompOp,missing,missing,missing,missing,character,character,UnBoundNonLinDecompOp_by_PoolNames-method}}
-        \item \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric,ANY,ANY,ANY-method}}
-      }
 }

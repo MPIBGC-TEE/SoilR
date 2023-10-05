@@ -7,7 +7,7 @@
 \S4method{TimeMap}{data.frame,missing,missing,missing,missing}(map, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{map}{object of class:\code{data.frame}, no manual documentation}
+\item{map}{no manual documentation}
 
 \item{lag}{no manual documentation}
 

@@ -7,7 +7,7 @@
 \S4method{initialize}{MCSim}(.Object, model = new(Class = "NlModel"), tasklist = list())
 }
 \arguments{
-\item{.Object}{object of class:\code{MCSim}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{model}{no manual documentation}
 

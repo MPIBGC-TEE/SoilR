@@ -12,9 +12,3 @@ Delta14C(F)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{Delta14C,BoundFc-method}}
-        \item \code{\link{Delta14C,ConstFc-method}}
-      }
-}

@@ -6,20 +6,6 @@
 \usage{
 InternalFlux_by_PoolIndex(func, sourceIndex, destinationIndex, src_to_dest)
 }
-\arguments{
-\item{func}{see method arguments}
-
-\item{sourceIndex}{see method arguments}
-
-\item{destinationIndex}{see method arguments}
-
-\item{src_to_dest}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{InternalFlux_by_PoolIndex,function,numeric,numeric,missing-method}}
-      }
 }

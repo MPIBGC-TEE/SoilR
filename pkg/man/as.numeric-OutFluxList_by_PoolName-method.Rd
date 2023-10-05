@@ -7,7 +7,7 @@
 \S4method{as.numeric}{OutFluxList_by_PoolName}(x, y, t, time_symbol, ...)
 }
 \arguments{
-\item{x}{object of class:\code{OutFluxList_by_PoolName}, The list of fluxes. Every element 
+\item{x}{The list of fluxes. Every element 
 contains a function that depends on a combination of
 of state variables and time.}
 
@@ -18,8 +18,6 @@ variables}
 
 \item{time_symbol}{The name of the time argument used 
 in the definition of the flux functions}
-
-\item{...}{no manual documentation}
 }
 \description{
 Convert to a numeric vector with the pool names as names

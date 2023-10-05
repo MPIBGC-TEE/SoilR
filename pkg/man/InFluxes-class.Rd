@@ -7,18 +7,3 @@
 \description{
 A virtual S4-class representing (different subclasses) of in-fluxes to the system
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{InFluxes} in their signature:}{
-      \itemize{
-        \item \code{\link{InFluxes,InFluxes-method}}
-      }
-  }
-}
-\section{S4-subclasses}{
-      \itemize{
-        \item \code{\linkS4class{StateDependentInFluxVector}}
-        \item \code{\linkS4class{ConstInFluxes}}
-        \item \code{\linkS4class{BoundInFluxes}}
-        \item \code{\linkS4class{UnBoundInFluxes}}
-      }
-}

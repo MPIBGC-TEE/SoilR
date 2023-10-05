@@ -7,9 +7,3 @@
 \description{
 examples for ids are index or name
 }
-\section{S4-subclasses}{
-      \itemize{
-        \item \code{\linkS4class{PoolIndex}}
-        \item \code{\linkS4class{PoolName}}
-      }
-}

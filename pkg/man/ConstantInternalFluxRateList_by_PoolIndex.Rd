@@ -6,15 +6,6 @@
 \usage{
 ConstantInternalFluxRateList_by_PoolIndex(object)
 }
-\arguments{
-\item{object}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{ConstantInternalFluxRateList_by_PoolIndex,list-method}}
-        \item \code{\link{ConstantInternalFluxRateList_by_PoolIndex,numeric-method}}
-      }
 }

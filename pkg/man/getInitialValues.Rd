@@ -12,8 +12,3 @@ getInitialValues(object)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getInitialValues,NlModel-method}}
-      }
-}

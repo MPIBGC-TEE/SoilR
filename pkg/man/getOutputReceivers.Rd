@@ -14,8 +14,3 @@ getOutputReceivers(object, i)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getOutputReceivers,TransportDecompositionOperator,numeric-method}}
-      }
-}

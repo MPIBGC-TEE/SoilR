@@ -7,7 +7,7 @@
 \S4method{getCompartmentalMatrixFunc}{BoundLinDecompOp,ANY,ANY}(object)
 }
 \arguments{
-\item{object}{object of class:\code{BoundLinDecompOp}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

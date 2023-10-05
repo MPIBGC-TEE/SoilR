@@ -6,15 +6,6 @@
 \usage{
 \S4method{ScalarTimeMap}{missing,missing,missing,missing,numeric}(starttime = -Inf, endtime = +Inf, data, lag = 0)
 }
-\arguments{
-\item{starttime}{object of class:\code{missing}, no manual documentation}
-
-\item{endtime}{object of class:\code{missing}, no manual documentation}
-
-\item{data}{object of class:\code{numeric}, no manual documentation}
-
-\item{lag}{no manual documentation}
-}
 \description{
 special case for a time map from a constant
 }

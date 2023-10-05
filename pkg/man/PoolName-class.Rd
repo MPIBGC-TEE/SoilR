@@ -8,16 +8,3 @@
 used to control the creation of PoolName objects which have to be valid R identifiers 
 and to dispatch pool name specific methods like conversion to pool indices
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{PoolName} in their signature:}{
-      \itemize{
-        \item \code{\link{PoolIndex,PoolName-method}}
-        \item \code{\link{PoolName,PoolName-method}}
-      }
-  }
-}
-\section{S4-superclasses (in the package)}{
-      \itemize{
-        \item \code{\linkS4class{PoolId}}
-      }
-}

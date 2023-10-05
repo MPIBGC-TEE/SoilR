@@ -6,9 +6,6 @@
 \usage{
 \S4method{PoolName}{character}(id)
 }
-\arguments{
-\item{id}{object of class:\code{character}, no manual documentation}
-}
 \description{
 construct from string with checks
 }

@@ -6,14 +6,6 @@
 \usage{
 InternalFluxList_by_PoolName(object)
 }
-\arguments{
-\item{object}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{InternalFluxList_by_PoolName,list-method}}
-      }
 }

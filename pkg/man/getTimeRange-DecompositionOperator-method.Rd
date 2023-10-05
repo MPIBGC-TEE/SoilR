@@ -7,7 +7,7 @@
 \S4method{getTimeRange}{DecompositionOperator}(object)
 }
 \arguments{
-\item{object}{object of class:\code{DecompositionOperator}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

@@ -6,11 +6,6 @@
 \usage{
 \S4method{ScalarTimeMap}{`function`,missing,missing,missing,missing}(map, lag = 0)
 }
-\arguments{
-\item{map}{object of class:\code{function}, no manual documentation}
-
-\item{lag}{no manual documentation}
-}
 \description{
 The interval will be set to [-Inf,Inf]
 }

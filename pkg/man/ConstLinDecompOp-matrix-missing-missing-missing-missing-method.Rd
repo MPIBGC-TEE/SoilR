@@ -6,9 +6,6 @@
 \usage{
 \S4method{ConstLinDecompOp}{matrix,missing,missing,missing,missing}(mat)
 }
-\arguments{
-\item{mat}{object of class:\code{matrix}, no manual documentation}
-}
 \description{
 Constructor
 }

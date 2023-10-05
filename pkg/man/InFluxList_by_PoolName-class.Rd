@@ -7,13 +7,3 @@
 \description{
 Class for a list of influxes indexed by the names of the target pools
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{InFluxList_by_PoolName} in their signature:}{
-      \itemize{
-        \item \code{\link{as.numeric,InFluxList_by_PoolName-method}}
-        \item \code{\link{by_PoolIndex,InFluxList_by_PoolName,character,character-method}}
-        \item \code{\link{getFunctionDefinition,InFluxList_by_PoolName-method}}
-        \item \code{\link{Model_by_PoolNames,missing,numeric,UnBoundNonLinDecompOp_by_PoolNames,numeric,InFluxList_by_PoolName,missing,missing,missing,missing-method}}
-      }
-  }
-}

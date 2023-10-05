@@ -7,7 +7,7 @@
 \S4method{getFormat}{Fc}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Fc}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

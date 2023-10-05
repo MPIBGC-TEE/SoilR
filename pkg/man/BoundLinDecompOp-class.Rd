@@ -9,36 +9,3 @@ defined on time interval}
 A S4 class to represent a linear compartmental operator 
 defined on time interval
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{BoundLinDecompOp} in their signature:}{
-      \itemize{
-        \item \code{\link{getCompartmentalMatrixFunc,BoundLinDecompOp,ANY,ANY-method}}
-      }
-  }
-  \subsection{S4-methods with superclasses (in the package) of class \code{BoundLinDecompOp} in their signature:}{
-    \subsection{superclass DecompOp}{
-      \itemize{
-        \item \code{\link{GeneralDecompOp,DecompOp-method}}
-      }
-    }
-    \subsection{superclass TimeMap}{
-      \itemize{
-        \item \code{\link{add_plot,TimeMap-method}}
-        \item \code{\link{as.character,TimeMap-method}}
-        \item \code{\link{GeneralDecompOp,TimeMap-method}}
-        \item \code{\link{getFunctionDefinition,TimeMap-method}}
-        \item \code{\link{getTimeRange,TimeMap-method}}
-        \item \code{\link{InFluxes,TimeMap-method}}
-        \item \code{\link{initialize,TimeMap-method}}
-        \item \code{\link{plot,TimeMap-method}}
-        \item \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
-      }
-    }
-  }
-}
-\section{S4-superclasses (in the package)}{
-      \itemize{
-        \item \code{\linkS4class{DecompOp}}
-        \item \code{\linkS4class{TimeMap}}
-      }
-}

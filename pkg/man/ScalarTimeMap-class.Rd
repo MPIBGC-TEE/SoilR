@@ -7,35 +7,3 @@
 \description{
 S4 class for a scalar time dependent function on a finite time interval
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{ScalarTimeMap} in their signature:}{
-      \itemize{
-        \item \code{\link{ConstLinDecompOpWithLinearScalarFactor,matrix,missing,missing,missing,ScalarTimeMap-method}}
-      }
-  }
-  \subsection{S4-methods with superclasses (in the package) of class \code{ScalarTimeMap} in their signature:}{
-    \subsection{superclass TimeMap}{
-      \itemize{
-        \item \code{\link{add_plot,TimeMap-method}}
-        \item \code{\link{as.character,TimeMap-method}}
-        \item \code{\link{GeneralDecompOp,TimeMap-method}}
-        \item \code{\link{getFunctionDefinition,TimeMap-method}}
-        \item \code{\link{getTimeRange,TimeMap-method}}
-        \item \code{\link{InFluxes,TimeMap-method}}
-        \item \code{\link{initialize,TimeMap-method}}
-        \item \code{\link{plot,TimeMap-method}}
-        \item \code{\link{TimeMap,TimeMap,ANY,ANY,ANY,ANY-method}}
-      }
-    }
-  }
-}
-\section{S4-subclasses}{
-      \itemize{
-        \item \code{\linkS4class{BoundFc}}
-      }
-}
-\section{S4-superclasses (in the package)}{
-      \itemize{
-        \item \code{\linkS4class{TimeMap}}
-      }
-}

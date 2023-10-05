@@ -7,7 +7,7 @@
 \S4method{UnBoundInFluxes}{`function`}(map)
 }
 \arguments{
-\item{map}{object of class:\code{function}, no manual documentation}
+\item{map}{no manual documentation}
 }
 \description{
 automatic title

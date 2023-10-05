@@ -7,7 +7,7 @@
 \S4method{getFunctionDefinition}{ConstLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

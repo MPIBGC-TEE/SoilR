@@ -7,7 +7,7 @@
 \S4method{BoundLinDecompOp}{UnBoundLinDecompOp}(map, starttime = -Inf, endtime = Inf)
 }
 \arguments{
-\item{map}{object of class:\code{UnBoundLinDecompOp}, An object of class UnBoundLinDecompOp}
+\item{map}{An object of class UnBoundLinDecompOp}
 
 \item{starttime}{Begin of time interval map will be restricted to}
 

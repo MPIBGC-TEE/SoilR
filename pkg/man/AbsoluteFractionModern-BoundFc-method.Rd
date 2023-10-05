@@ -7,7 +7,7 @@
 \S4method{AbsoluteFractionModern}{BoundFc}(F)
 }
 \arguments{
-\item{F}{object of class:\code{BoundFc}, no manual documentation}
+\item{F}{no manual documentation}
 }
 \description{
 automatic title

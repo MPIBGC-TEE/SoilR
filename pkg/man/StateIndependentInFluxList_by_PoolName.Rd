@@ -6,9 +6,6 @@
 \usage{
 StateIndependentInFluxList_by_PoolName(object)
 }
-\arguments{
-\item{object}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
 }

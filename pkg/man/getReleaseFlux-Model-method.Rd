@@ -7,7 +7,7 @@
 \S4method{getReleaseFlux}{Model}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model}, A modelrun as produced by the constructors: 
+\item{object}{A modelrun as produced by the constructors: 
  \code{\link{Model}},
  \code{\link{Model_by_PoolNames}},
  \code{\link{Model_14}}

@@ -7,9 +7,9 @@
 \S4method{InternalFlux_by_PoolName}{`function`,missing,missing,character}(func, src_to_dest)
 }
 \arguments{
-\item{func}{object of class:\code{function}, no manual documentation}
+\item{func}{no manual documentation}
 
-\item{src_to_dest}{object of class:\code{character}, no manual documentation}
+\item{src_to_dest}{no manual documentation}
 }
 \description{
 automatic title

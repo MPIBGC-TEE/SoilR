@@ -7,7 +7,7 @@
 \S4method{BoundFc}{missing}(format, ...)
 }
 \arguments{
-\item{format}{object of class:\code{missing}, no manual documentation}
+\item{format}{no manual documentation}
 
 \item{...}{no manual documentation}
 }

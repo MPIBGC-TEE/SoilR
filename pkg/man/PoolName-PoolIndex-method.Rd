@@ -6,11 +6,6 @@
 \usage{
 \S4method{PoolName}{PoolIndex}(id, poolNames)
 }
-\arguments{
-\item{id}{object of class:\code{PoolIndex}, no manual documentation}
-
-\item{poolNames}{no manual documentation}
-}
 \description{
 convert to string like object
 }

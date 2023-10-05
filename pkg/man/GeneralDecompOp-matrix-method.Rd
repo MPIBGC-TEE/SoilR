@@ -7,7 +7,7 @@
 \S4method{GeneralDecompOp}{matrix}(object)
 }
 \arguments{
-\item{object}{object of class:\code{matrix}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

@@ -8,11 +8,13 @@
   .Object,
   starttime = numeric(),
   endtime = numeric(),
-  map = function(t) {     t }
+  map = function(t) {
+     t
+ }
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{TimeMap}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{starttime}{no manual documentation}
 

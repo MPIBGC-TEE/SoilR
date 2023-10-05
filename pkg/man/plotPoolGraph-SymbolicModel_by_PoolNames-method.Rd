@@ -7,7 +7,7 @@
 \S4method{plotPoolGraph}{SymbolicModel_by_PoolNames}(x)
 }
 \arguments{
-\item{x}{object of class:\code{SymbolicModel_by_PoolNames}, The modelrun the connection graph of which is plotted}
+\item{x}{The modelrun the connection graph of which is plotted}
 }
 \description{
 Plot the graph of pool connections

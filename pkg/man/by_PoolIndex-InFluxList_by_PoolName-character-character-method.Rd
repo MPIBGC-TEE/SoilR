@@ -7,11 +7,11 @@
 \S4method{by_PoolIndex}{InFluxList_by_PoolName,character,character}(obj, poolNames, timeSymbol)
 }
 \arguments{
-\item{obj}{object of class:\code{InFluxList_by_PoolName}, no manual documentation}
+\item{obj}{no manual documentation}
 
-\item{poolNames}{object of class:\code{character}, no manual documentation}
+\item{poolNames}{no manual documentation}
 
-\item{timeSymbol}{object of class:\code{character}, no manual documentation}
+\item{timeSymbol}{no manual documentation}
 }
 \description{
 Transform pool names to indices

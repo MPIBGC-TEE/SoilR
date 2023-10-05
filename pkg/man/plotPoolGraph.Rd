@@ -12,8 +12,3 @@ plotPoolGraph(x)
 \description{
 Generic plotter
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{plotPoolGraph,SymbolicModel_by_PoolNames-method}}
-      }
-}

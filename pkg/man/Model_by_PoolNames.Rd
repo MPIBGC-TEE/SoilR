@@ -16,25 +16,6 @@ Model_by_PoolNames(
   solverfunc
 )
 }
-\arguments{
-\item{smod}{see method arguments}
-
-\item{times}{see method arguments}
-
-\item{mat}{see method arguments}
-
-\item{initialValues}{see method arguments}
-
-\item{inputFluxes}{see method arguments}
-
-\item{internal_fluxes}{see method arguments}
-
-\item{out_fluxes}{see method arguments}
-
-\item{timeSymbol}{see method arguments}
-
-\item{solverfunc}{see method arguments}
-}
 \value{
 A possibly nonlinear Model(run) that contains information about the
 pool names and connectivity of the pools and is therefore the preferred
@@ -42,10 +23,4 @@ representation for new code.
 }
 \description{
 Constructor for \code{\linkS4class{Model_by_PoolNames}}
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{Model_by_PoolNames,missing,numeric,UnBoundNonLinDecompOp_by_PoolNames,numeric,InFluxList_by_PoolName,missing,missing,missing,missing-method}}
-        \item \code{\link{Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method}}
-      }
 }

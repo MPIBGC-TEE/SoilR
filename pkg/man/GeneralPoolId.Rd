@@ -16,9 +16,3 @@ automatic title
 
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{GeneralPoolId,character-method}}
-        \item \code{\link{GeneralPoolId,numeric-method}}
-      }
-}

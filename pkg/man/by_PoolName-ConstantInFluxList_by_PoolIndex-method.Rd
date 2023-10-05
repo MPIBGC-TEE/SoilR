@@ -6,11 +6,6 @@
 \usage{
 \S4method{by_PoolName}{ConstantInFluxList_by_PoolIndex}(obj, poolNames)
 }
-\arguments{
-\item{obj}{object of class:\code{ConstantInFluxList_by_PoolIndex}, no manual documentation}
-
-\item{poolNames}{no manual documentation}
-}
 \description{
 convert to a list indexed by pool names
 }

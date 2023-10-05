@@ -7,9 +7,9 @@
 \S4method{check_pool_ids}{PoolConnection_by_PoolIndex,integer}(obj, pools)
 }
 \arguments{
-\item{obj}{object of class:\code{PoolConnection_by_PoolIndex}, no manual documentation}
+\item{obj}{no manual documentation}
 
-\item{pools}{object of class:\code{integer}, no manual documentation}
+\item{pools}{no manual documentation}
 }
 \description{
 automatic title

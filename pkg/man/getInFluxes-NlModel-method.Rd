@@ -7,7 +7,7 @@
 \S4method{getInFluxes}{NlModel}(object)
 }
 \arguments{
-\item{object}{object of class:\code{NlModel}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

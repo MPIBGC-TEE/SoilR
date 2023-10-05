@@ -7,7 +7,7 @@
 \S4method{InFluxes}{StateIndependentInFluxList_by_PoolIndex}(object, numberOfPools)
 }
 \arguments{
-\item{object}{object of class:\code{StateIndependentInFluxList_by_PoolIndex}, no manual documentation}
+\item{object}{no manual documentation}
 
 \item{numberOfPools}{no manual documentation
 basically produces a vector valued function from a list of scalar functions}

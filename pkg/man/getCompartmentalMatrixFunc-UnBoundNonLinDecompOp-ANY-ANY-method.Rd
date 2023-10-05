@@ -9,7 +9,7 @@
 \S4method{getCompartmentalMatrixFunc}{UnBoundNonLinDecompOp,ANY,ANY}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundNonLinDecompOp}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 Extract the matrix valued function of time and state vector for the compartmental matrix

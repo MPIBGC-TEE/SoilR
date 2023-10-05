@@ -9,12 +9,3 @@
 Subclass of list that is guaranteed to contain only elements of type
 \linkS4class{ConstantInFlux_by_PoolIndex}
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{ConstantInFluxList_by_PoolIndex} in their signature:}{
-      \itemize{
-        \item \code{\link{by_PoolName,ConstantInFluxList_by_PoolIndex-method}}
-        \item \code{\link{ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method}}
-        \item \code{\link{InFluxes,ConstantInFluxList_by_PoolIndex-method}}
-      }
-  }
-}

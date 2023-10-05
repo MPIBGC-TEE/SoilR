@@ -12,9 +12,3 @@ getInFluxes(object)
 \description{
 Extract the influxes
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getInFluxes,Model-method}}
-        \item \code{\link{getInFluxes,NlModel-method}}
-      }
-}

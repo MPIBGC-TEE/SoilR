@@ -6,11 +6,6 @@
 \usage{
 \S4method{PoolConnection_by_PoolIndex}{ANY,ANY,missing}(source, destination)
 }
-\arguments{
-\item{source}{no manual documentation}
-
-\item{destination}{no manual documentation}
-}
 \description{
 constructor from an ordered pair of PoolId objects
 }

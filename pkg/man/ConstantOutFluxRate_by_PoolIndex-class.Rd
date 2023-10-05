@@ -9,10 +9,3 @@ source pool specified by an index}
 S4 Class to represent a single constant out-flux rate with the 
 source pool specified by an index
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{ConstantOutFluxRate_by_PoolIndex} in their signature:}{
-      \itemize{
-        \item \code{\link{by_PoolName,ConstantOutFluxRate_by_PoolIndex-method}}
-      }
-  }
-}

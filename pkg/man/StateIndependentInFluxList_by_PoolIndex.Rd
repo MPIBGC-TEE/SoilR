@@ -6,14 +6,6 @@
 \usage{
 StateIndependentInFluxList_by_PoolIndex(object)
 }
-\arguments{
-\item{object}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{StateIndependentInFluxList_by_PoolIndex,list-method}}
-      }
 }

@@ -14,8 +14,3 @@ getMeanTransitTime(object, inputDistribution)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getMeanTransitTime,ConstLinDecompOp-method}}
-      }
-}

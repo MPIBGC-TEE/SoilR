@@ -7,7 +7,7 @@
 \S4method{ConstantInternalFluxRateList_by_PoolIndex}{numeric}(object)
 }
 \arguments{
-\item{object}{object of class:\code{numeric}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

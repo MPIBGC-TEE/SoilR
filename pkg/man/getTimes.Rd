@@ -12,10 +12,3 @@ getTimes(object)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getTimes,Model-method}}
-        \item \code{\link{getTimes,Model_by_PoolNames-method}}
-        \item \code{\link{getTimes,NlModel-method}}
-      }
-}

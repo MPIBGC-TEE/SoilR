@@ -6,14 +6,6 @@
 \usage{
 getF14C(object)
 }
-\arguments{
-\item{object}{see method arguments}
-}
 \description{
 Generic that yields the ^{14}C fraction for the cumulative content of all pools and all times
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getF14C,Model_14-method}}
-      }
 }

@@ -7,7 +7,7 @@
 \S4method{getTimeRange}{UnBoundLinDecompOp}(object)
 }
 \arguments{
-\item{object}{object of class:\code{UnBoundLinDecompOp}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 Extracts the time interval for which the function is valid.

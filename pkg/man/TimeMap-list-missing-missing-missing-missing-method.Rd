@@ -7,7 +7,7 @@
 \S4method{TimeMap}{list,missing,missing,missing,missing}(map, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{map}{object of class:\code{list}, A nested list of the form list(times=l1,data=l2)
+\item{map}{A nested list of the form list(times=l1,data=l2)
 where l1 is a vector or list of the time values
 and l2 is a list of numbers, vectors, matrices or arrays.}
 

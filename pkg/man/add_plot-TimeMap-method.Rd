@@ -7,7 +7,7 @@
 \S4method{add_plot}{TimeMap}(x, ...)
 }
 \arguments{
-\item{x}{object of class:\code{TimeMap}, no manual documentation}
+\item{x}{no manual documentation}
 
 \item{...}{no manual documentation}
 }

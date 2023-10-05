@@ -7,9 +7,9 @@
 \S4method{ScalarTimeMap}{missing,missing,missing,numeric,numeric}(times, data, lag = 0, interpolation = splinefun)
 }
 \arguments{
-\item{times}{object of class:\code{numeric}, (the times for the values in data)}
+\item{times}{(the times for the values in data)}
 
-\item{data}{object of class:\code{numeric}, the values at times}
+\item{data}{the values at times}
 
 \item{lag}{a (scalar) delay}
 

@@ -7,7 +7,7 @@
 \S4method{getReleaseFlux14}{Model_14}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model_14}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

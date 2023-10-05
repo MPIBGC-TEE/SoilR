@@ -7,7 +7,7 @@
 \S4method{$}{NlModel}(x, name)
 }
 \arguments{
-\item{x}{object of class:\code{NlModel}, no manual documentation}
+\item{x}{no manual documentation}
 
 \item{name}{no manual documentation}
 }

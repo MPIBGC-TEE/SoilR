@@ -7,7 +7,7 @@
 \S4method{InFluxes}{ConstantInFluxList_by_PoolIndex}(object, numberOfPools)
 }
 \arguments{
-\item{object}{object of class:\code{ConstantInFluxList_by_PoolIndex}, no manual documentation}
+\item{object}{no manual documentation}
 
 \item{numberOfPools}{no manual documentation}
 }

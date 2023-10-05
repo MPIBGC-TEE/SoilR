@@ -18,9 +18,3 @@ automatic title
 
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{getTransferCoefficients,NlModel-method}}
-        \item \code{\link{getTransferCoefficients,TransportDecompositionOperator-method}}
-      }
-}

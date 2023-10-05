@@ -7,7 +7,7 @@
 \S4method{getRightHandSideOfODE}{Model_by_PoolNames}(object)
 }
 \arguments{
-\item{object}{object of class:\code{Model_by_PoolNames}, The model}
+\item{object}{The model}
 }
 \description{
 This function is required by the ODE solvers.

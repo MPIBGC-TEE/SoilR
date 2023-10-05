@@ -7,7 +7,7 @@
 \S4method{getTimeRange}{ConstInFluxes}(object)
 }
 \arguments{
-\item{object}{object of class:\code{ConstInFluxes}, no manual documentation}
+\item{object}{no manual documentation}
 }
 \description{
 automatic title

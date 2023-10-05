@@ -9,11 +9,3 @@
 The set of flux functions along with the timesymbol
 is complete description of the structure
 }
-\section{S4-methods}{
-  \subsection{S4-methods with class \code{SymbolicModel_by_PoolNames} in their signature:}{
-      \itemize{
-        \item \code{\link{Model_by_PoolNames,SymbolicModel_by_PoolNames,numeric,missing,numeric,missing,missing,missing,missing,missing-method}}
-        \item \code{\link{plotPoolGraph,SymbolicModel_by_PoolNames-method}}
-      }
-  }
-}

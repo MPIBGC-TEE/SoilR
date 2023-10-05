@@ -14,8 +14,3 @@ add_plot(x, ...)
 \description{
 automatic title
 }
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{add_plot,TimeMap-method}}
-      }
-}

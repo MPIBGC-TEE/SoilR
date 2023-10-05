@@ -7,7 +7,7 @@
 \S4method{ConstantInFluxList_by_PoolIndex}{list}(object)
 }
 \arguments{
-\item{object}{object of class:\code{list}, A list. Either a list of elements of type
+\item{object}{A list. Either a list of elements of type
 \linkS4class{ConstantInFlux_by_PoolIndex} or 
 a list where the names of the elements are strings of the form
 '1->3' (for the flux rate from pool 1 to 2}

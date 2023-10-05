@@ -7,7 +7,7 @@
 \S4method{getTransitTimeDistributionDensity}{ConstLinDecompOp}(object, inputDistribution, times)
 }
 \arguments{
-\item{object}{object of class:\code{ConstLinDecompOp}, no manual documentation}
+\item{object}{no manual documentation}
 
 \item{inputDistribution}{no manual documentation}
 

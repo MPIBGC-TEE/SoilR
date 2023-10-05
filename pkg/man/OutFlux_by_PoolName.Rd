@@ -6,16 +6,6 @@
 \usage{
 OutFlux_by_PoolName(func, sourceName)
 }
-\arguments{
-\item{func}{see method arguments}
-
-\item{sourceName}{see method arguments}
-}
 \description{
 Generic constructor for the class with the same name
-}
-\section{S4-methods}{
-      \itemize{
-        \item \code{\link{OutFlux_by_PoolName,function,character-method}}
-      }
 }

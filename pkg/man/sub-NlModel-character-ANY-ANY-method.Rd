@@ -7,9 +7,9 @@
 \S4method{[}{NlModel,character,ANY,ANY}(x, i)
 }
 \arguments{
-\item{x}{object of class:\code{NlModel}, no manual documentation}
+\item{x}{no manual documentation}
 
-\item{i}{object of class:\code{character}, no manual documentation}
+\item{i}{no manual documentation}
 }
 \description{
 automatic title

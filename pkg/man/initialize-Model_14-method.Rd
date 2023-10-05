@@ -10,9 +10,13 @@
   mat = ConstLinDecompOp(matrix(nrow = 1, ncol = 1, 0)),
   initialValues = numeric(),
   initialValF = ConstFc(values = c(0), format = "Delta14C"),
-  inputFluxes = BoundInFluxes(function(t) {     return(matrix(nrow = 1, ncol = 1, 1))
+  inputFluxes = BoundInFluxes(function(t) {
+     return(matrix(nrow = 1, ncol = 1, 1))
+
     }, 0, 1),
-  c14Fraction = BoundFc(function(t) {     return(matrix(nrow = 1, ncol = 1, 1)) }, 0,
+  c14Fraction = BoundFc(function(t) {
+     return(matrix(nrow = 1, ncol = 1, 1))
+ }, 0,
     1),
   c14DecayRate = 0,
   solverfunc = deSolve.lsoda.wrapper,
@@ -20,7 +24,7 @@
 )
 }
 \arguments{
-\item{.Object}{object of class:\code{Model_14}, no manual documentation}
+\item{.Object}{no manual documentation}
 
 \item{times}{no manual documentation}
 

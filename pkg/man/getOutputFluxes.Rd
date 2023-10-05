@@ -6,11 +6,6 @@
 \usage{
 getOutputFluxes(object, as.closures = F)
 }
-\arguments{
-\item{object}{see method arguments}
-
-\item{as.closures}{see method arguments}
-}
 \description{
 Generic Function to obtain the fluxes out of of the pools
 }
