@@ -76,94 +76,94 @@ setMethod(
     }
 )
 
-#' Constructor 
-setMethod(
-    "ConstLinDecompOp"
-    ,signature=signature(
-        mat='missing'
-        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolIndex'
-        ,out_flux_rates='ConstantOutFluxRateList_by_PoolIndex'
-        ,numberOfPools='numeric'
-        ,poolNames='missing'
-    )
-    ,definition=function(
-         internal_flux_rates
-        ,out_flux_rates
-        ,numberOfPools
-    ){
-         from_integer_flux_lists_with_defaults(
-                internal_flux_rates=internal_flux_rates
-                ,out_flux_rates = out_flux_rates
-                ,numberOfPools = numberOfPools
-         )
-    }
-)
-
-#' Constructor 
-setMethod(
-    "ConstLinDecompOp"
-    ,signature=signature(
-        mat='missing'
-        ,internal_flux_rates='missing'
-        ,out_flux_rates='ConstantOutFluxRateList_by_PoolIndex'
-        ,numberOfPools='numeric'
-        ,poolNames='missing'
-    )
-    ,definition=function(
-         out_flux_rates
-        ,numberOfPools
-    ){
-         from_integer_flux_lists_with_defaults(
-                out_flux_rates = out_flux_rates
-                ,numberOfPools = numberOfPools
-         )
-    }
-)
-
-#' Constructor 
-setMethod(
-    "ConstLinDecompOp"
-    ,signature=signature(
-        mat='missing'
-        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolIndex'
-        ,out_flux_rates='missing'
-        ,numberOfPools='numeric'
-        ,poolNames='missing'
-    )
-    ,definition=function(
-         internal_flux_rates
-        ,numberOfPools
-    ){
-         from_integer_flux_lists_with_defaults(
-                internal_flux_rates=internal_flux_rates
-                ,numberOfPools = numberOfPools
-         )
-    }
-)
-
-#' alternative Constructor with pool names 
-setMethod(
-    'ConstLinDecompOp'
-    ,signature=signature(
-        mat='missing'
-        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolName'
-        ,out_flux_rates='ConstantOutFluxRateList_by_PoolName'
-        ,poolNames='character'
-        ,numberOfPools='missing'
-     )
-    ,definition=function(
-         internal_flux_rates
-        ,out_flux_rates
-        ,poolNames
-    ){
-        ConstLinDecompOp(
-            internal_flux_rates=by_PoolIndex(internal_flux_rates,poolNames)
-           , out_flux_rates=by_PoolIndex(out_flux_rates,poolNames)
-           ,numberOfPools=length(poolNames)
-        )
-
-    }
-)
+##' Constructor 
+#setMethod(
+#    "ConstLinDecompOp"
+#    ,signature=signature(
+#        mat='missing'
+#        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolIndex'
+#        ,out_flux_rates='ConstantOutFluxRateList_by_PoolIndex'
+#        ,numberOfPools='numeric'
+#        ,poolNames='missing'
+#    )
+#    ,definition=function(
+#         internal_flux_rates
+#        ,out_flux_rates
+#        ,numberOfPools
+#    ){
+#         from_integer_flux_lists_with_defaults(
+#                internal_flux_rates=internal_flux_rates
+#                ,out_flux_rates = out_flux_rates
+#                ,numberOfPools = numberOfPools
+#         )
+#    }
+#)
+#
+##' Constructor 
+#setMethod(
+#    "ConstLinDecompOp"
+#    ,signature=signature(
+#        mat='missing'
+#        ,internal_flux_rates='missing'
+#        ,out_flux_rates='ConstantOutFluxRateList_by_PoolIndex'
+#        ,numberOfPools='numeric'
+#        ,poolNames='missing'
+#    )
+#    ,definition=function(
+#         out_flux_rates
+#        ,numberOfPools
+#    ){
+#         from_integer_flux_lists_with_defaults(
+#                out_flux_rates = out_flux_rates
+#                ,numberOfPools = numberOfPools
+#         )
+#    }
+#)
+#
+##' Constructor 
+#setMethod(
+#    "ConstLinDecompOp"
+#    ,signature=signature(
+#        mat='missing'
+#        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolIndex'
+#        ,out_flux_rates='missing'
+#        ,numberOfPools='numeric'
+#        ,poolNames='missing'
+#    )
+#    ,definition=function(
+#         internal_flux_rates
+#        ,numberOfPools
+#    ){
+#         from_integer_flux_lists_with_defaults(
+#                internal_flux_rates=internal_flux_rates
+#                ,numberOfPools = numberOfPools
+#         )
+#    }
+#)
+#
+##' alternative Constructor with pool names 
+#setMethod(
+#    'ConstLinDecompOp'
+#    ,signature=signature(
+#        mat='missing'
+#        ,internal_flux_rates='ConstantInternalFluxRateList_by_PoolName'
+#        ,out_flux_rates='ConstantOutFluxRateList_by_PoolName'
+#        ,poolNames='character'
+#        ,numberOfPools='missing'
+#     )
+#    ,definition=function(
+#         internal_flux_rates
+#        ,out_flux_rates
+#        ,poolNames
+#    ){
+#        ConstLinDecompOp(
+#            internal_flux_rates=by_PoolIndex(internal_flux_rates,poolNames)
+#           , out_flux_rates=by_PoolIndex(out_flux_rates,poolNames)
+#           ,numberOfPools=length(poolNames)
+#        )
+#
+#    }
+#)
 
 #' helper function 
 #' @keywords internal

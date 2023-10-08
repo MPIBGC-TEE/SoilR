@@ -47,6 +47,7 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         NonAutonomousLinearModel.R AWBmodel.R bacwaveModel.R
         bind.C14curves.R BoundFc.R CenturyModel.R ConstFc.R
         ConstLinDecompOp.R ConstLinDecompOpWithLinearScaleFactor.R
+        SymbolicModel_by_PoolName.R
         UnBoundNonLinDecompOp_by_PoolNames.R cycling.R euler.R
         example.2DBoundInFluxesFromFunction.R
         example.2DBoundLinDecompOpFromFunction.R
@@ -82,7 +83,6 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         C14Atm_NH.R C14Atm.R Hua2013.R IntCal09.R IntCal13.R Graven2017.R
         IntCal20.R SHCal20.R incubation_experiment.R HarvardForest14CO2.R
         getTransferMatrix.R SoilR-package.R IVP_maker.R ydot_maker.R
-        WangThreePoolNonAutonomous_sym.R SymbolicModel_by_PoolName.R
         ICBM_N.R linearScalarModel.R CenturyModel14.R pathEntropy.R
         entropyRatePerJump.R entropyRatePerTime.R Hua2021.R
 RoxygenNote: 7.2.3.9000

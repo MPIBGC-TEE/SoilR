@@ -1,84 +1,84 @@
-#' Create a model(run) described by fluxes 
-#' @param smod \code{\link{SymbolicModel_by_PoolNames}}
-#' @param times A vector
-#' @param initialValues no manual documentation
-#' @template FluxBased-common
-#' @template Model_by_PoolNames_Result
-#' @autocomment 
-setMethod(
-  f= "Model_by_PoolNames"
-  ,signature= c(
-       smod='SymbolicModel_by_PoolNames'
-      ,times="numeric"
-      ,mat="missing"
-      ,initialValues="numeric"
-      ,inputFluxes="missing"
-      ,internal_fluxes="missing"
-      ,out_fluxes="missing" 
-      ,timeSymbol='missing'
-      #,pass="missing"
-      ,solverfunc="missing"
-   )
-  ,definition= function(
-        smod
-        ,times
-        ,initialValues
-  ){
-       obn<- UnBoundNonLinDecompOp_by_PoolNames(
-         internal_fluxes=smod@internal_fluxes
-         ,out_fluxes=smod@out_fluxes
-         ,timeSymbol=smod@timeSymbol
-       )
-       new(
-         'Model_by_PoolNames'
-         ,times=times
-         ,mat=obn
-         ,initialValues=initialValues
-         ,inputFluxes=smod@in_fluxes
-         ,timeSymbol=smod@timeSymbol
-       )
-    }
- )
+# #' Create a model(run) described by fluxes 
+# #' @param smod \code{\link{SymbolicModel_by_PoolNames}}
+# #' @param times A vector
+# #' @param initialValues no manual documentation
+# #' @template FluxBased-common
+# #' @template Model_by_PoolNames_Result
+# #' @autocomment 
+# setMethod(
+#   f= "Model_by_PoolNames"
+#   ,signature= c(
+#        smod='SymbolicModel_by_PoolNames'
+#       ,times="numeric"
+#       ,mat="missing"
+#       ,initialValues="numeric"
+#       ,inputFluxes="missing"
+#       ,internal_fluxes="missing"
+#       ,out_fluxes="missing" 
+#       ,timeSymbol='missing'
+#       #,pass="missing"
+#       ,solverfunc="missing"
+#    )
+#   ,definition= function(
+#         smod
+#         ,times
+#         ,initialValues
+#   ){
+#        obn<- UnBoundNonLinDecompOp_by_PoolNames(
+#          internal_fluxes=smod@internal_fluxes
+#          ,out_fluxes=smod@out_fluxes
+#          ,timeSymbol=smod@timeSymbol
+#        )
+#        new(
+#          'Model_by_PoolNames'
+#          ,times=times
+#          ,mat=obn
+#          ,initialValues=initialValues
+#          ,inputFluxes=smod@in_fluxes
+#          ,timeSymbol=smod@timeSymbol
+#        )
+#     }
+#  )
 
-#' Create a model(run) described by fluxes 
-#' 
-#' @param mat \code{\link{UnBoundNonLinDecompOp_by_PoolNames}}
-#' @param inputFluxes code{\link{InFluxList_by_PoolName}}
-#' @param times no manual documentation
-#' @param initialValues no manual documentation
-#' @template  FluxBased-common
-#' @template  Model_by_PoolNames_Result
-#' @autocomment 
-setMethod(
-  f= "Model_by_PoolNames"
-  ,signature= c(
-       smod='missing'
-      ,times="numeric"
-      ,mat="UnBoundNonLinDecompOp_by_PoolNames"
-      ,initialValues="numeric"
-      ,inputFluxes="InFluxList_by_PoolName"
-      ,internal_fluxes="missing"
-      ,out_fluxes="missing" 
-      ,timeSymbol='missing' # if we have this kind of mat we can infer the timeSymbol
-      #,pass="missing"
-      ,solverfunc="missing"
-   )
-  ,definition= function(
-        times
-        ,mat
-        ,initialValues
-        ,inputFluxes
-  ){
-      new(
-        'Model_by_PoolNames'
-        ,times=times
-        ,mat=mat
-        ,initialValues=initialValues
-        ,inputFluxes=inputFluxes
-        ,timeSymbol=mat@timeSymbol
-      )
-   }
- )
+# #' Create a model(run) described by fluxes 
+# #' 
+# #' @param mat \code{\link{UnBoundNonLinDecompOp_by_PoolNames}}
+# #' @param inputFluxes code{\link{InFluxList_by_PoolName}}
+# #' @param times no manual documentation
+# #' @param initialValues no manual documentation
+# #' @template  FluxBased-common
+# #' @template  Model_by_PoolNames_Result
+# #' @autocomment 
+# setMethod(
+#   f= "Model_by_PoolNames"
+#   ,signature= c(
+#        smod='missing'
+#       ,times="numeric"
+#       ,mat="UnBoundNonLinDecompOp_by_PoolNames"
+#       ,initialValues="numeric"
+#       ,inputFluxes="InFluxList_by_PoolName"
+#       ,internal_fluxes="missing"
+#       ,out_fluxes="missing" 
+#       ,timeSymbol='missing' # if we have this kind of mat we can infer the timeSymbol
+#       #,pass="missing"
+#       ,solverfunc="missing"
+#    )
+#   ,definition= function(
+#         times
+#         ,mat
+#         ,initialValues
+#         ,inputFluxes
+#   ){
+#       new(
+#         'Model_by_PoolNames'
+#         ,times=times
+#         ,mat=mat
+#         ,initialValues=initialValues
+#         ,inputFluxes=inputFluxes
+#         ,timeSymbol=mat@timeSymbol
+#       )
+#    }
+#  )
 
 #' Pool Contents for all times
 #' 

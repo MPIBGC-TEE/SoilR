@@ -158,19 +158,34 @@ CenturyModel<- function
 
     A=T%*%K
     
-    # whatever format xi is given in we convert it to a time map object
-    # (function,constant,data.frame,list considering also the xi_lag argument)
-    if(inherits(xi, 'numeric') && length(xi)==1){
-      xi=ScalarTimeMap(data=xi,lag=xi_lag)
-    }
-    if(inherits(xi, 'data.frame')) {
-     xi=ScalarTimeMap(map=xi, lag=xi_lag)
-    }
-    if(inherits(xi, 'function')) {
-     xi=ScalarTimeMap(map=xi, lag=xi_lag)
-    }
-    #fX=getFunctionDefinition(xi)
-    At=ConstLinDecompOpWithLinearScalarFactor(mat=A,xi=xi)
+#    # whatever format xi is given in we convert it to a time map object
+#    # (function,constant,data.frame,list considering also the xi_lag argument)
+#    if(inherits(xi, 'numeric') && length(xi)==1){
+#      xi=ScalarTimeMap(data=xi,lag=xi_lag)
+#    }
+#    if(inherits(xi, 'data.frame')) {
+#     xi=ScalarTimeMap(map=xi, lag=xi_lag)
+#    }
+#    if(inherits(xi, 'function')) {
+#     xi=ScalarTimeMap(map=xi, lag=xi_lag)
+#    }
+#    #fX=getFunctionDefinition(xi)
+#    At=ConstLinDecompOpWithLinearScalarFactor(mat=A,xi=xi)
+
+# I had to disable the previous functionality above and return to the old functionality.
+# Tests have to be implemented to make sure the new functionality works and can compile documentation.
+      if(length(xi)==1) fX=function(t){xi}
+      if(inherits(xi, "data.frame")){
+        X=xi[,1]
+        Y=xi[,2]
+        fX=function(t){as.numeric(spline(X,Y,xout=t)[2])}
+       }
+      At=BoundLinDecompOp(
+        function(t){fX(t)*A},
+        t_start,
+        t_end
+      )
+
     
     # At the moment we still create an old style Matrix vector based model 
     # but with the ingredients provided in this more specific form we can later

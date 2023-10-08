@@ -2,10 +2,14 @@
 % Please edit documentation in R/ConstLinDecompOpWithLinearScaleFactor.R
 \name{getFunctionDefinition,ConstLinDecompOpWithLinearScalarFactor-method}
 \alias{getFunctionDefinition,ConstLinDecompOpWithLinearScalarFactor-method}
-\title{helper function}
+\title{convert names of  vectors or lists to class ConstantOutFluxRate 
+convert names of  vectors or lists to class ConstantInternalFluxRate 
+helper function}
 \usage{
 \S4method{getFunctionDefinition}{ConstLinDecompOpWithLinearScalarFactor}(object)
 }
 \description{
+convert names of  vectors or lists to class ConstantOutFluxRate 
+convert names of  vectors or lists to class ConstantInternalFluxRate 
 helper function
 }

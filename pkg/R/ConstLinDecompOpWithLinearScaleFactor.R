@@ -58,26 +58,27 @@
 #)
 #
 
-setMethod(
-      f="ConstLinDecompOpWithLinearScalarFactor",
-      signature=c(
-         mat="matrix"
-        ,internal_flux_rates='missing'
-        ,out_flux_rates='missing'
-        ,numberOfPools='missing'
-        ,xi='ScalarTimeMap'
-      ),
-      definition=function 
-      (mat,xi){
-        r <- nrow(mat)
-        c <- ncol(mat)
-        if (r!=c){
-           stop(sprintf('The matrix has to be quadratic!. Your matrix has %s rows and %s columns',r,c))
-        }
-        clo<-ConstLinDecompOp(mat=mat)
-        new("ConstLinDecompOpWithLinearScalarFactor",clo=clo,xi=xi)
-     }
-)
+#setMethod(
+#      f="ConstLinDecompOpWithLinearScalarFactor",
+#      signature=c(
+#         mat="matrix"
+#        ,internal_flux_rates='missing'
+#        ,out_flux_rates='missing'
+#        ,numberOfPools='missing'
+#        ,xi='ScalarTimeMap'
+#      ),
+#      definition=function 
+#      (mat,xi){
+#        r <- nrow(mat)
+#        c <- ncol(mat)
+#        if (r!=c){
+#           stop(sprintf('The matrix has to be quadratic!. Your matrix has %s rows and %s columns',r,c))
+#        }
+#        clo<-ConstLinDecompOp(mat=mat)
+#        new("ConstLinDecompOpWithLinearScalarFactor",clo=clo,xi=xi)
+#     }
+#)
+
 #
 ##' helper function 
 #mat_from_integer_flux_lists=function(
