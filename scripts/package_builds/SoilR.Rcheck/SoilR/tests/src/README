@@ -1,0 +1,7 @@
+Tests in this directory do not need the SoilR package to be installed 
+This achieves greater test independence since the test here can be run
+even if the package can not be installed.
+They sometimes test functions that are not exported by SoilR namespace.
+The tests contain information about the files they have to source 
+before they can be run.
+This makes it possible to test them without the need of integrating them## into the package.

@@ -1,0 +1,17 @@
+vecFuncMaker=function
+(
+funcs,	
+arg1,   
+arg2	
+)
+{
+	function(arg1,arg2){
+		matrix(byrow=TRUE,
+			nrow=length(funcs),
+			mapply(
+				function(fun){fun(arg1,arg2)},
+				funcs
+			)
+		)
+	}
+}

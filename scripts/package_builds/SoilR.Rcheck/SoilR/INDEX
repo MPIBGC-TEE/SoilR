@@ -1,0 +1,963 @@
+$,NlModel-method        automatic title
+AWBmodel                Implementation of the microbial model AWB
+                        (Allison, Wallenstein, Bradford, 2010)
+AbsoluteFractionModern
+                        Conversion of radiocarbon values
+AbsoluteFractionModern,BoundFc-method
+                        automatic title
+AbsoluteFractionModern,ConstFc-method
+                        automatic title
+AbsoluteFractionModern_from_Delta14C
+                        Conversion of radiocarbon values
+AbsoluteFractionModern_from_Delta14C,matrix-method
+                        Conversion of radiocarbon values
+AbsoluteFractionModern_from_Delta14C,numeric-method
+                        Conversion of radiocarbon values, from Delta14C
+                        to absolute fraction modern
+BoundFc                 Bound Fc object
+BoundFc,character-method
+                        automatic title
+BoundFc,missing-method
+                        automatic title
+BoundFc-class           S4-class to represent atmospheric 14C
+                        concentration as scalar function of time.
+BoundInFluxes           constructor for BoundInFluxes
+BoundInFluxes-class     automatic title
+BoundLinDecompOp        Generic constructor for the class with the same
+                        name
+BoundLinDecompOp,ANY-method
+                        Creates an object of class BoundLinDecompOp
+BoundLinDecompOp,UnBoundLinDecompOp-method
+                        A converter
+BoundLinDecompOp-class
+                        A S4 class to represent a linear compartmental
+                        operator defined on time interval
+C14Atm                  Atmospheric 14C fraction
+C14Atm_NH               Post-bomb atmospheric 14C fraction
+CenturyModel            Implementation of the Century model
+CenturyModel14          Implementation of a radiocarbon version of the
+                        Century model
+ConstFc                 creates an object containing the initial values
+                        for the 14C fraction needed to create models in
+                        SoilR
+ConstFc-class           S4 class representing a constant ^14C fraction
+ConstInFluxes           Constant input fluxes
+ConstInFluxes,ConstantInFluxList_by_PoolIndex,numeric-method
+                        automatic title
+ConstInFluxes,numeric,ANY-method
+                        automatic title
+ConstInFluxes-class     S4 class for a constant influx vector
+ConstLinDecompOp        Generic constructor for the class with the same
+                        name
+ConstLinDecompOp,matrix,missing,missing,missing,missing-method
+                        Constructor
+ConstLinDecompOp-class
+                        A class to represent a constant
+                        (=nonautonomous,linear) compartmental matrix or
+                        equivalently a combination of ordered constant
+                        internal flux rates and constant out flux
+                        rates.
+ConstLinDecompOpWithLinearScalarFactor
+                        Generic constructor for the class with the same
+                        name
+ConstLinDecompOpWithLinearScalarFactor-class
+                        A class to represent a constant
+                        (=nonautonomous,linear) compartmental matrix
+                        with a time dependent (linear) scalar pre
+                        factor This is a special case of a linear
+                        compartmental operator/matrix
+ConstLinDecompOp_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+ConstantInFluxList_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+ConstantInFluxList_by_PoolIndex,ConstInFluxes-method
+                        constructor from ConstInFluxes
+ConstantInFluxList_by_PoolIndex,list-method
+                        constructor from a normal list
+ConstantInFluxList_by_PoolIndex,numeric-method
+                        constructor from numeric vector
+ConstantInFluxList_by_PoolIndex-class
+                        Subclass of list that is guaranteed to contain
+                        only elements of type
+                        ConstantInFlux_by_PoolIndex
+ConstantInFluxList_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+ConstantInFluxList_by_PoolName-class
+                        Subclass of list that is guaranteed to contain
+                        only elements of type
+                        ConstantInFlux_by_PoolName
+ConstantInFluxRate_by_PoolIndex-class
+                        Describes a flux rates.
+ConstantInFluxRate_by_PoolName
+                        Constructor for the class with the same name
+ConstantInFluxRate_by_PoolName-class
+                        Describes a flux rates.
+ConstantInFlux_by_PoolIndex-class
+                        class for a constant influx to a single pool
+                        identified by index
+ConstantInFlux_by_PoolName-class
+                        class for a constant influx to a single pool
+                        identified by pool name
+ConstantInternalFluxRateList_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+ConstantInternalFluxRateList_by_PoolIndex,list-method
+                        constructor from a normal list
+ConstantInternalFluxRateList_by_PoolIndex,numeric-method
+                        automatic title
+ConstantInternalFluxRateList_by_PoolIndex-class
+                        Describes a list of flux rates.
+ConstantInternalFluxRateList_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+ConstantInternalFluxRateList_by_PoolName,list-method
+                        Constructor from a normal list of fluxes
+ConstantInternalFluxRateList_by_PoolName-class
+                        Describes a list of flux rates.
+ConstantInternalFluxRate_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+ConstantInternalFluxRate_by_PoolIndex,missing,missing,character,numeric-method
+                        constructor from strings of the form '1_to_2'
+ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method
+                        automatic title
+ConstantInternalFluxRate_by_PoolIndex-class
+                        S4 class representing a constant internal flux
+                        rate
+ConstantInternalFluxRate_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+ConstantInternalFluxRate_by_PoolName,character,character,missing,numeric-method
+                        constructor with argument conversion
+ConstantInternalFluxRate_by_PoolName,missing,missing,character,numeric-method
+                        constructor from strings of the form 'a->b'
+ConstantInternalFluxRate_by_PoolName-class
+                        S4-class to represent a constant internal flux
+                        rate with source and target indexed by name
+ConstantOutFluxRateList_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+ConstantOutFluxRateList_by_PoolIndex,list-method
+                        constructor from a normal list
+ConstantOutFluxRateList_by_PoolIndex,numeric-method
+                        automatic title
+ConstantOutFluxRateList_by_PoolIndex-class
+                        Describes a list of flux rates.
+ConstantOutFluxRateList_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+ConstantOutFluxRateList_by_PoolName,list-method
+                        constructor from a normal list
+ConstantOutFluxRateList_by_PoolName,numeric-method
+                        automatic title
+ConstantOutFluxRateList_by_PoolName-class
+                        Describes a list of flux rates.
+ConstantOutFluxRate_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+ConstantOutFluxRate_by_PoolIndex,numeric,numeric-method
+                        automatic title
+ConstantOutFluxRate_by_PoolIndex-class
+                        S4 Class to represent a single constant
+                        out-flux rate with the source pool specified by
+                        an index
+ConstantOutFluxRate_by_PoolName-class
+                        S4 Class to represent a single constant
+                        out-flux rate with the source pool specified by
+                        name
+DecompOp-class          S4-class to represent compartmental operators
+DecompositionOperator-class
+                        automatic title
+Delta14C                Conversion of radiocarbon values
+Delta14C,BoundFc-method
+                        automatic title
+Delta14C,ConstFc-method
+                        automatic title
+Delta14C_from_AbsoluteFractionModern
+                        Conversion of radiocarbon values
+Delta14C_from_AbsoluteFractionModern,matrix-method
+                        Conversion of radiocarbon values
+Delta14C_from_AbsoluteFractionModern,numeric-method
+                        Conversion of radiocarbon values
+Fc-class                automatic title
+FcAtm.from.Dataframe    FcAtm.from.Dataframe
+GaudinskiModel14        Implementation of a the six-pool C14 model
+                        proposed by Gaudinski et al. 2000
+GeneralDecompOp         A generic factory for subclasses of
+                        GeneralDecompOp
+GeneralDecompOp,DecompOp-method
+                        Pass through factory for objects of subclasses
+                        of DecompOp
+GeneralDecompOp,TimeMap-method
+                        automatic title
+GeneralDecompOp,function-method
+                        automatic title
+GeneralDecompOp,list-method
+                        automatic title
+GeneralDecompOp,matrix-method
+                        automatic title
+GeneralModel            additional function to create Models
+GeneralModel_14         create objects of class Model_14
+GeneralNlModel          Use this function to create objects of class
+                        NlModel.
+GeneralPoolId           automatic title
+GeneralPoolId,character-method
+                        automatic title
+GeneralPoolId,numeric-method
+                        generic factory for this virtual class
+Graven2017              Compiled records of radicarbon in atmospheric
+                        CO2 for historical simulations in CMIP6
+HarvardForest14CO2      Delta14C in soil CO2 efflux from Harvard Forest
+Hua2013                 Atmospheric radiocarbon for the period
+                        1950-2010 from Hua et al. (2013)
+Hua2021                 Atmospheric radiocarbon for the period
+                        1950-2019 from Hua et al. (2021)
+ICBMModel               Implementation of the Introductory Carbon
+                        Balance Model (ICBM)
+ICBM_N                  Implementation of the ICBM/N model
+InFlux                  Generic constructor for the class with the same
+                        name
+InFluxList_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+InFluxList_by_PoolIndex,list-method
+                        constructor from a normal list
+InFluxList_by_PoolIndex-class
+                        Describes a list of flux rates.
+InFluxList_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+InFluxList_by_PoolName,list-method
+                        constructor from a normal list
+InFluxList_by_PoolName-class
+                        Class for a list of influxes indexed by the
+                        names of the target pools
+InFlux_by_PoolIndex     Generic constructor for the class with the same
+                        name
+InFlux_by_PoolIndex,function,numeric-method
+                        constructor from an ordered pair of PoolIndex
+                        (integer like) objects
+InFlux_by_PoolIndex-class
+                        S4 class for the influx to a single pool
+                        identified by the index
+InFlux_by_PoolName      Generic constructor for an influx to a single
+                        pool from an ordered pair of PoolName (string
+                        like) and function objects
+InFlux_by_PoolName,function,character-method
+                        Constructor from an ordered pair of PoolName
+                        (string like) and function objects
+InFlux_by_PoolName-class
+                        S4 class for the influx to a single pool
+                        identified by the name
+InFluxes                A generic factory for subclasses of InFluxes
+InFluxes,ConstantInFluxList_by_PoolIndex-method
+                        automatic title
+InFluxes,InFluxes-method
+                        automatic title
+InFluxes,StateIndependentInFluxList_by_PoolIndex-method
+                        automatic title
+InFluxes,TimeMap-method
+                        automatic title
+InFluxes,function-method
+                        automatic title
+InFluxes,list-method    automatic title
+InFluxes,numeric-method
+                        automatic title
+InFluxes-class          A virtual S4-class representing (different
+                        subclasses) of in-fluxes to the system
+IntCal09                Northern Hemisphere atmospheric radiocarbon for
+                        the pre-bomb period
+IntCal13                Atmospheric radiocarbon for the 0-50,000 yr BP
+                        period
+IntCal20                The IntCal20 northern hemisphere radiocarbon
+                        curve for the 0-55,000 yr BP period
+InternalFluxList_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+InternalFluxList_by_PoolIndex,list-method
+                        constructor from a normal list
+InternalFluxList_by_PoolIndex-class
+                        S4-class for a list of internal fluxes with
+                        source and destination pool inidices
+InternalFluxList_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+InternalFluxList_by_PoolName,list-method
+                        constructor from a normal list
+InternalFluxList_by_PoolName-class
+                        S4-class for a list of internal fluxes with
+                        indexed by (source and destination pool) names
+InternalFlux_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+InternalFlux_by_PoolIndex,function,numeric,numeric,missing-method
+                        constructor from an ordered pair of PoolIndex
+                        (integer like) objects and a function with
+                        vector argument
+InternalFlux_by_PoolIndex-class
+                        S4-class for a single internal flux with source
+                        and destination pools specified by indices
+InternalFlux_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+InternalFlux_by_PoolName,function,character,character,missing-method
+                        constructor from an ordered pair of PoolName
+                        (string like) objects and a function with the
+                        set of formal argument names forming a subset
+                        of the state_variable_names
+InternalFlux_by_PoolName,function,missing,missing,character-method
+                        automatic title
+InternalFlux_by_PoolName-class
+                        S4-class for a single internal flux with source
+                        and destination pools specified by name
+MCSim-class             Experimental Class for a Monte Carlo Simulation
+                        of particles leaving the pool
+Model                   Constructor for class Model
+Model-class             S4 class representing a model run
+Model_14                general constructor for class Model_14
+Model_14-class          S4-class to represent a ^14C model run
+Model_by_PoolNames      Constructor for 'Model_by_PoolNames'
+Model_by_PoolNames-class
+                        A model run based on flux functions
+NlModel-class           deprecated class for a non-linear model run.
+OnepModel               Implementation of a one pool model
+OnepModel14             Implementation of a one-pool C14 model
+OutFlux                 Generic constructor for the class with the same
+                        name
+OutFluxList_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+OutFluxList_by_PoolIndex,list-method
+                        constructor from a normal list
+OutFluxList_by_PoolIndex-class
+                        A list of outfluxes
+OutFluxList_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+OutFluxList_by_PoolName,list-method
+                        constructor from a normal list
+OutFluxList_by_PoolName-class
+                        S4 class for a list of out-fluxes indexed by
+                        source pool name
+OutFlux_by_PoolIndex    Generic constructor for the class with the same
+                        name
+OutFlux_by_PoolIndex,function,numeric-method
+                        constructor from a PoolIndex (integer like)
+                        objects and a function with vector argument
+OutFlux_by_PoolIndex-class
+                        S4 class for a single out-flux with source pool
+                        index
+OutFlux_by_PoolName     Generic constructor for the class with the same
+                        name
+OutFlux_by_PoolName,function,character-method
+                        constructor from a PoolName (integer like)
+                        object and a function
+OutFlux_by_PoolName-class
+                        S4 class for a single out-flux with source pool
+                        name
+ParallelModel           models for unconnected pools
+PoolConnection_by_PoolIndex
+                        automatic title
+PoolConnection_by_PoolIndex,ANY,ANY,missing-method
+                        constructor from an ordered pair of PoolId
+                        objects
+PoolConnection_by_PoolIndex,missing,missing,character-method
+                        constructor from strings of the form '1_to_2'
+PoolConnection_by_PoolIndex-class
+                        Objects that have a source and a destination
+                        described by integer like objects ( of class
+                        PoolIndex)
+PoolConnection_by_PoolName
+                        automatic title
+PoolConnection_by_PoolName,ANY,ANY,missing-method
+                        constructor from an ordered pair of PoolName
+                        objects
+PoolConnection_by_PoolName-class
+                        Objects that have a source and a destination
+                        determined by a string like object of class
+                        PoolName
+PoolId-class            common class for pool ids
+PoolIndex               automatic title
+PoolIndex,PoolIndex-method
+                        pass through constructor fron an object of the
+                        same class
+PoolIndex,PoolName-method
+                        convert to number like object
+PoolIndex,character-method
+                        construct from number string like '1' or '3'
+PoolIndex,numeric-method
+                        construct from number
+PoolIndex-class         S4 class for pool indices
+PoolName                automatic title
+PoolName,PoolIndex-method
+                        convert to string like object
+PoolName,PoolName-method
+                        pass through constructor fron an object of the
+                        same class
+PoolName,character-method
+                        construct from string with checks
+PoolName-class          class for pool-name-strings
+RespirationCoefficients
+                        helper function to compute respiration
+                        coefficients
+RothCModel              Implementation of the RothCModel
+SHCal20                 The SHCal20 southern hemisphere radiocarbon
+                        curve for the 0-55,000 yr BP period
+ScalarTimeMap           Constructor for 'ScalarTimeMap-class'
+ScalarTimeMap,data.frame,missing,missing,missing,missing-method
+                        constructor for data given as 2 column
+                        data.frame
+ScalarTimeMap,function,missing,missing,missing,missing-method
+                        manual constructor for just a function
+ScalarTimeMap,function,numeric,numeric,missing,missing-method
+                        manual constructor for a function and an
+                        interval
+ScalarTimeMap,missing,missing,missing,missing,numeric-method
+                        special case for a time map from a constant
+ScalarTimeMap,missing,missing,missing,numeric,numeric-method
+                        constructor for data and times given as vectors
+ScalarTimeMap-class     S4 class for a scalar time dependent function
+                        on a finite time interval
+SeriesLinearModel       General m-pool linear model with series
+                        structure
+SeriesLinearModel14     General m-pool linear C14 model with series
+                        structure
+SoilR-package           SoilR
+SoilR.F0.new            deprecated function that used to create an
+                        object of class SoilR.F0
+StateDependentInFluxVector-class
+                        Input vector that is a function of the pool
+                        contenst and time
+StateIndependentInFluxList_by_PoolIndex
+                        Generic constructor for the class with the same
+                        name
+StateIndependentInFluxList_by_PoolIndex,list-method
+                        constructor from a normal list
+StateIndependentInFluxList_by_PoolIndex-class
+                        Subclass of list that is guaranteed to contain
+                        only elements of type
+                        StateIndependentInFlux_by_PoolIndex
+StateIndependentInFluxList_by_PoolName
+                        Generic constructor for the class with the same
+                        name
+StateIndependentInFlux_by_PoolIndex-class
+                        Constructor for the class with the same name
+SymbolicModel_by_PoolNames-class
+                        A symbolic model description based on flux
+                        functions
+ThreepFeedbackModel     Implementation of a three pool model with
+                        feedback structure
+ThreepFeedbackModel14   Implementation of a three-pool C14 model with
+                        feedback structure
+ThreepParallelModel     Implementation of a three pool model with
+                        parallel structure
+ThreepParallelModel14   Implementation of a three-pool C14 model with
+                        parallel structure
+ThreepSeriesModel       Implementation of a three pool model with
+                        series structure
+ThreepSeriesModel14     Implementation of a three-pool C14 model with
+                        series structure
+ThreepairMMmodel        Implementation of a 6-pool Michaelis-Menten
+                        model
+TimeMap                 Constructor for 'TimeMap-class'
+TimeMap,TimeMap,ANY,ANY,ANY,ANY-method
+                        automatic title
+TimeMap,data.frame,missing,missing,missing,missing-method
+                        automatic title
+TimeMap,function,missing,missing,missing,missing-method
+                        manual constructor for just a function
+TimeMap,function,numeric,numeric,missing,missing-method
+                        manual constructor for a function and an
+                        interval
+TimeMap,list,missing,missing,missing,missing-method
+                        automatic title
+TimeMap,missing,missing,missing,numeric,array-method
+                        automatic title
+TimeMap,missing,missing,missing,numeric,list-method
+                        automatic title
+TimeMap,missing,missing,missing,numeric,matrix-method
+                        automatic title
+TimeMap,missing,missing,missing,numeric,numeric-method
+                        automatic title
+TimeMap-class           S4 class for a time dependent function
+TimeMap.from.Dataframe
+                        TimeMap.from.Dataframe
+TimeMap.new             deprecated constructor of the class TimeMap.
+TimeRangeIntersection   The time interval where both functions are
+                        defined
+TransportDecompositionOperator-class
+                        automatic title
+TwopFeedbackModel       Implementation of a two pool model with
+                        feedback structure
+TwopFeedbackModel14     Implementation of a two-pool C14 model with
+                        feedback structure
+TwopMMmodel             Implementation of a two-pool Michaelis-Menten
+                        model
+TwopParallelModel       Implementation of a linear two pool model with
+                        parallel structure
+TwopParallelModel14     Implementation of a two-pool C14 model with
+                        parallel structure
+TwopSeriesModel         Implementation of a two pool model with series
+                        structure
+TwopSeriesModel14       Implementation of a two-pool C14 model with
+                        series structure
+UnBoundInFluxes         Unbound input fluxes
+UnBoundInFluxes,function-method
+                        automatic title
+UnBoundInFluxes-class   automatic title
+UnBoundLinDecompOp      Generic constructor for the class with the same
+                        name
+UnBoundLinDecompOp,function-method
+                        Generic constructor for the class with the same
+                        name
+UnBoundLinDecompOp-class
+                        An S4 class to represent a linear nonautonomous
+                        compartmental matrix
+UnBoundNonLinDecompOp   Generic constructor for the class with the same
+                        name
+UnBoundNonLinDecompOp,function,missing,missing,missing-method
+                        Constructor for the class with the same name
+UnBoundNonLinDecompOp,missing,vector,vector,numeric-method
+                        Constructor for the class with the same name
+UnBoundNonLinDecompOp-class
+                        An S4 class to represent a nonlinear
+                        nonautonomous compartmental matrix
+UnBoundNonLinDecompOp_by_PoolNames
+                        Generic constructor for the class with the same
+                        name
+UnBoundNonLinDecompOp_by_PoolNames-class
+                        An S4 class to represent the of nonlinear
+                        nonautonomous compartmental system
+                        independently of the order of state variables
+Yasso07Model            Implementation of the Yasso07 model
+YassoModel              Implementation of the Yasso model.
+[,Model,character,missing,missing-method
+                        Experimentally overloaded index operator
+[,NlModel,character,ANY,ANY-method
+                        automatic title
+[[,MCSim-method         automatic title
+[[<-,MCSim-method       automatic title
+add_plot                automatic title
+add_plot,TimeMap-method
+                        automatic title
+as.character,TimeMap-method
+                        automatic title
+as.numeric,InFluxList_by_PoolName-method
+                        Convert to a numeric vector with the pool names
+                        as names
+as.numeric,InternalFluxList_by_PoolName-method
+                        Convert to a numeric vector with names of the
+                        form 'a->b'
+as.numeric,InternalFlux_by_PoolName-method
+                        Convert to a numeric value with name of the
+                        form 'a->b'
+as.numeric,OutFluxList_by_PoolName-method
+                        Convert to a numeric vector with the pool names
+                        as names
+availableParticleProperties
+                        Available particle properties
+availableParticleProperties,MCSim-method
+                        automatic title
+availableParticleSets   Available particle sets
+availableParticleSets,MCSim-method
+                        automatic title
+availableResidentSets   Available resident sets
+availableResidentSets,MCSim-method
+                        automatic title
+bacwaveModel            Implementation of the microbial model Bacwave
+                        (bacterial waves)
+bind.C14curves          Binding of pre- and post-bomb Delta14C curves
+by_PoolIndex            automatic title
+by_PoolIndex,ConstantInFluxRate_by_PoolName,ANY,ANY-method
+                        new object with the source pool id converted to
+                        a PoolIndex if necessary
+by_PoolIndex,ConstantInternalFluxRateList_by_PoolName,ANY,ANY-method
+                        convert to a list indexed by pool names
+by_PoolIndex,ConstantInternalFluxRate_by_PoolName,ANY,ANY-method
+                        new object with the source pool id converted to
+                        a PoolName if necessary
+by_PoolIndex,ConstantOutFluxRateList_by_PoolName,ANY,ANY-method
+                        convert to a list indexed by pool names
+by_PoolIndex,ConstantOutFluxRate_by_PoolName,ANY,ANY-method
+                        new object with the source pool id converted to
+                        a PoolIndex if necessary
+by_PoolIndex,InFluxList_by_PoolName,character,character-method
+                        Transform pool names to indices
+by_PoolIndex,InFlux_by_PoolName,character,character-method
+                        Convert the pool names to indices
+by_PoolIndex,InternalFluxList_by_PoolName,character,character-method
+                        automatic title
+by_PoolIndex,InternalFlux_by_PoolName,character,character-method
+                        automatic title
+by_PoolIndex,OutFluxList_by_PoolName,character,character-method
+                        automatic title
+by_PoolIndex,OutFlux_by_PoolName,character,character-method
+                        automatic title
+by_PoolIndex,PoolConnection_by_PoolName,ANY,ANY-method
+                        constructor from strings of the form 'x->y' new
+                        object with the source pool id and the
+                        destination pool id guaranteed to be of class
+                        PoolIndex
+by_PoolIndex,function,character,character-method
+                        convert a function f of to f_vec
+by_PoolName             automatic title
+by_PoolName,ConstantInFluxList_by_PoolIndex-method
+                        convert to a list indexed by pool names
+by_PoolName,ConstantInFluxRate_by_PoolIndex-method
+                        new object with the source pool id converted to
+                        a PoolIndex if necessary
+by_PoolName,ConstantInFlux_by_PoolIndex-method
+                        new object with the source pool id converted to
+                        a PoolIndex if necessary
+by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method
+                        convert to a list indexed by pool names
+by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method
+                        new object with the source pool id converted to
+                        a PoolIndex if necessary
+by_PoolName,ConstantOutFluxRateList_by_PoolIndex-method
+                        convert to a list indexed by pool names
+by_PoolName,ConstantOutFluxRate_by_PoolIndex-method
+                        new object with the source pool id converted to
+                        a PoolName if necessary
+check_duplicate_pool_names
+                        helper function
+check_id_length         helper function to check that the length of the
+                        argument is exactly 1
+check_pool_ids          automatic title
+check_pool_ids,PoolConnection_by_PoolIndex,integer-method
+                        automatic title
+computeResults          Computes results
+computeResults,MCSim-method
+                        automatic title
+cycling                 Cycling analysis of compartmental matrices
+deSolve.lsoda.wrapper   deSolve.lsoda.wrapper
+eCO2                    Soil CO2 efflux from an incubation experiment
+entropyRatePerJump      Entropy rate per jump
+entropyRatePerTime      Entropy rate per time
+euler                   euler
+example.2DBoundInFluxesFromFunction
+                        example.2DBoundInFluxesFromFunction
+example.2DBoundLinDecompOpFromFunction
+                        example.2DBoundLinDecompOpFromFunction
+example.2DConstFc.Args
+                        example.2DConstFc.Args
+example.2DConstInFluxesFromVector
+                        2D example for constant Influx
+example.2DGeneralDecompOpArgs
+                        example.2DGeneralDecompOpArgs
+example.2DInFluxes.Args
+                        example.2DInFluxes.Args
+example.2DUnBoundLinDecompOpFromFunction
+                        example.2DUnBoundLinDecompOpFromFunction
+example.ConstlinDecompOpFromMatrix
+                        example.ConstlinDecompOpFromMatrix
+example.Time2DArrayList
+                        create an example TimeMap from 2D array
+example.Time3DArrayList
+                        create an example TimeFrame from 3D array
+example.TimeMapFromArray
+                        create an example TimeFrame from 3D array
+example.nestedTime2DMatrixList
+                        create an example nested list that can be
+fT.Arrhenius            Effects of temperature on decomposition rates
+                        according the Arrhenius equation
+fT.Century1             Effects of temperature on decomposition rates
+                        according the the CENTURY model
+fT.Century2             Effects of temperature on decomposition rates
+                        according the the CENTURY model
+fT.Daycent1             Effects of temperature on decomposition rates
+                        according to the DAYCENT model
+fT.Daycent2             Effects of temperature on decomposition rates
+                        according to the DAYCENT model
+fT.Demeter              Effects of temperature on decomposition rates
+                        according to the DEMETER model
+fT.KB                   Effects of temperature on decomposition rates
+                        according to a model proposed by M. Kirschbaum
+                        (1995)
+fT.LandT                Effects of temperature on decomposition rates
+                        according to a function proposed by Lloyd and
+                        Taylor (1994)
+fT.Q10                  Effects of temperature on decomposition rates
+                        according to a Q10 function
+fT.RothC                Effects of temperature on decomposition rates
+                        according to the functions included in the
+                        RothC model
+fT.Standcarb            Effects of temperature on decomposition rates
+                        according to the StandCarb model
+fT.linear               Effects of temperature on decomposition rates
+                        according to a linear model
+fW.Candy                Effects of moisture on decomposition rates
+                        according to the Candy model
+fW.Century              Effects of moisture on decomposition rates
+                        according to the CENTURY model
+fW.Daycent1             Effects of moisture on decomposition rates
+                        according to the DAYCENT model
+fW.Daycent2             Effects of moisture on decomposition rates
+                        according to the DAYCENT model
+fW.Demeter              Effects of moisture on decomposition rates
+                        according to the DEMETER model
+fW.Gompertz             Effects of moisture on decomposition rates
+                        according to the Gompertz function
+fW.Moyano               Effects of moisture on decomposition rates
+                        according to the function proposed by Moyano et
+                        al. (2013)
+fW.RothC                Effects of moisture on decomposition rates
+                        according to the RothC model
+fW.Skopp                Effects of moisture on decomposition rates
+                        according to the function proposed by Skopp et
+                        al. 1990
+fW.Standcarb            Effects of moisture on decomposition rates
+                        according to the StandCarb model
+getAccumulatedRelease   Accumulated release flux out of the pools
+getAccumulatedRelease,Model-method
+                        Compute the time integral of the relaese fluxes
+                        over time
+getC                    Calculates the content of the pools
+getC,Model-method       Pool Contents for all times
+getC,Model_by_PoolNames-method
+                        Pool Contents for all times
+getC,NlModel-method     Pool Contents for all times
+getC14                  Generic that yields the ^14C content for all
+                        pools and all times
+getC14,Model_14-method
+                        automatic title
+getCompartmentalMatrixFunc
+                        Compartmental matrix function
+getCompartmentalMatrixFunc,BoundLinDecompOp-method
+                        automatic title
+getCompartmentalMatrixFunc,ConstLinDecompOp-method
+                        automatic title
+getCompartmentalMatrixFunc,TransportDecompositionOperator-method
+                        automatic title
+getCompartmentalMatrixFunc,UnBoundNonLinDecompOp-method
+                        Extract the matrix valued function of time and
+                        state vector for the compartmental matrix
+getConstLinDecompOp     Constant linear decomposition operator
+getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method
+                        automatic title
+getConstantCompartmentalMatrix
+                        Constant compartmental matrix
+getConstantCompartmentalMatrix,ConstLinDecompOp-method
+                        automatic title
+getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method
+                        automatic title
+getConstantInFluxVector
+                        Input flux vector
+getConstantInFluxVector,ConstInFluxes-method
+                        automatic title
+getConstantInternalFluxRateList_by_PoolIndex
+                        Constant internal flux rate list by pool index
+getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method
+                        automatic title
+getConstantOutFluxRateList_by_PoolIndex
+                        Constant out flux rate list by pool index
+getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method
+                        automatic title
+getCumulativeC          Cummulative pool contents
+getCumulativeC,NlModel-method
+                        automatic title
+getDecompOp             Decomposition operator of a model
+getDecompOp,Model-method
+                        Extract the Compartmental Operator
+getDecompOp,NlModel-method
+                        Extract the Compartmental Operator
+getDotOut               Dot out
+getDotOut,TransportDecompositionOperator-method
+                        automatic title
+getF14                  Generic that yields the ^14C fraction for the
+                        content all pools and all times
+getF14,Model_14-method
+                        automatic title
+getF14C                 Generic that yields the ^14C fraction for the
+                        cumulative content of all pools and all times
+getF14C,Model_14-method
+                        automatic title
+getF14R                 Generic that yields the ^14C fraction for the
+                        release flux of all pools and all times
+getF14R,Model_14-method
+                        automatic title
+getFormat               Get format of SoilR object
+getFormat,Fc-method     automatic title
+getFunctionDefinition   Function definition of SoilR model
+getFunctionDefinition,ConstInFluxes-method
+                        automatic title
+getFunctionDefinition,ConstLinDecompOp-method
+                        automatic title
+getFunctionDefinition,ConstLinDecompOpWithLinearScalarFactor-method
+                        convert names of vectors or lists to class
+                        ConstantOutFluxRate convert names of vectors or
+                        lists to class ConstantInternalFluxRate helper
+                        function
+getFunctionDefinition,DecompositionOperator-method
+                        automatic title
+getFunctionDefinition,InFluxList_by_PoolIndex-method
+                        automatic title
+getFunctionDefinition,InFluxList_by_PoolName-method
+                        automatic title
+getFunctionDefinition,StateDependentInFluxVector-method
+                        automatic title
+getFunctionDefinition,TimeMap-method
+                        automatic title
+getFunctionDefinition,TransportDecompositionOperator-method
+                        automatic title
+getFunctionDefinition,UnBoundInFluxes-method
+                        automatic title
+getFunctionDefinition,UnBoundLinDecompOp-method
+                        Extracts the time dependent matrix valued
+                        function (compartmental matrix)
+getInFluxes             Extract the influxes
+getInFluxes,Model-method
+                        Extract the InFluxes as provided during
+                        creation of the model
+getInFluxes,NlModel-method
+                        automatic title
+getInitialValues        Initial values of SoilR object
+getInitialValues,NlModel-method
+                        automatic title
+getLinearScaleFactor    Linear scale factor
+getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method
+                        automatic title
+getMeanTransitTime      Mean transit time for SoilR objects
+getMeanTransitTime,ConstLinDecompOp-method
+                        automatic title
+getNumberOfPools        Number of pools in a model
+getNumberOfPools,MCSim-method
+                        automatic title
+getNumberOfPools,NlModel-method
+                        automatic title
+getNumberOfPools,TransportDecompositionOperator-method
+                        automatic title
+getOutputFluxes         Generic Function to obtain the fluxes out of of
+                        the pools
+getOutputFluxes,NlModel-method
+                        automatic title
+getOutputReceivers      Pools receiving outputs from other pools
+getOutputReceivers,TransportDecompositionOperator,numeric-method
+                        automatic title
+getParticleMonteCarloSimulator
+                        automatic title
+getParticleMonteCarloSimulator,NlModel-method
+                        automatic title
+getReleaseFlux          Generic Function to obtain the vector of
+                        release fluxes out of the pools for all times.
+getReleaseFlux,Model-method
+                        The release fluxes [content]/[time] for all
+                        pools.
+getReleaseFlux,Model_by_PoolNames-method
+                        automatic title
+getReleaseFlux,NlModel-method
+                        automatic title
+getReleaseFlux14        Generic that yields the ^14C fraction in the
+                        release flux
+getReleaseFlux14,Model_14-method
+                        automatic title
+getRightHandSideOfODE   Right hand side of ODE of a SoilR model
+getRightHandSideOfODE,Model-method
+                        Derivative of the state variables as function
+getRightHandSideOfODE,Model_by_PoolNames-method
+                        Provide the (vector valued) derivative of the
+                        stocks with respect to time
+getSolution             Calculates all stocks all fluxes to ,in and out
+                        of the compartment system and also their
+                        integrals over time
+getSolution,Model_by_PoolNames-method
+                        All Fluxes and stocks for all times
+getTimeRange            Time range of a model simulation
+getTimeRange,ConstInFluxes-method
+                        automatic title
+getTimeRange,ConstLinDecompOp-method
+                        automatic title
+getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method
+                        automatic title
+getTimeRange,DecompositionOperator-method
+                        automatic title
+getTimeRange,TimeMap-method
+                        The time interval where the function is defined
+getTimeRange,UnBoundInFluxes-method
+                        automatic title
+getTimeRange,UnBoundLinDecompOp-method
+                        Extracts the time interval for which the
+                        function is valid.
+getTimes                Time vector of SoilR object
+getTimes,Model-method   Extract the times vector
+getTimes,Model_by_PoolNames-method
+                        Extract the times vector
+getTimes,NlModel-method
+                        automatic title
+getTransferCoefficients
+                        Transfer coefficients
+getTransferCoefficients,NlModel-method
+                        automatic title
+getTransferCoefficients,TransportDecompositionOperator-method
+                        automatic title
+getTransferMatrix       deprecated, use getTransferMatrixFunc instead
+getTransferMatrixFunc   Transfer matrix function
+getTransferMatrixFunc,TransportDecompositionOperator-method
+                        automatic title
+getTransitTimeDistributionDensity
+                        Transit time distribution for SoilR objects
+getTransitTimeDistributionDensity,ConstLinDecompOp-method
+                        automatic title
+getValues               Get values of SoilR object
+getValues,ConstFc-method
+                        automatic title
+incubation_experiment   Soil CO2 efflux from an incubation experiment,
+                        along with the soil mass and carbon
+                        concentration measurements.
+initialize,ConstLinDecompOp-method
+                        automatic title
+initialize,DecompositionOperator-method
+                        automatic title
+initialize,MCSim-method
+                        automatic title
+initialize,Model-method
+                        Internal method to supervise creation of
+                        objects of this class
+initialize,Model_14-method
+                        Internal method to supervise creation of
+                        objects of this class
+initialize,Model_by_PoolNames-method
+                        automatic title
+initialize,NlModel-method
+                        automatic title
+initialize,TimeMap-method
+                        automatic title
+initialize,TransportDecompositionOperator-method
+                        automatic title
+initialize,UnBoundInFluxes-method
+                        automatic title
+initialize,UnBoundLinDecompOp-method
+                        automatic title
+linearScalarModel       Implementation of a general model for linear
+                        non-autonomous systems with scalar modifiers
+linesCPool              Add lines with the output of 'getC14', 'getC',
+                        or 'getReleaseFlux' to an existing plot
+listProduct             tensor product of lists
+pathEntropy             Path Entropy
+plot,MCSim-method       automatic title
+plot,Model-method       Create an overview plot
+plot,Model_by_PoolNames-method
+                        Plot the graph of pool connections
+plot,NlModel-method     automatic title
+plot,TimeMap-method     automatic title
+plotC14Pool             Plots the output of 'getF14' for each pool over
+                        time
+plotCPool               Plots the output of 'getC' or 'getReleaseFlux'
+                        for each pool over time
+plotPoolGraph           Generic plotter
+plotPoolGraph,SymbolicModel_by_PoolNames-method
+                        Plot the graph of pool connections
+plotPoolGraphFromTupleLists
+                        Helper function to draw connectivity graphs
+predefinedModels        PREDEFINED MODELS
+print,NlModel-method    automatic title
+show,NlModel-method     automatic title
+state_variable_names    determine the minimum set of statevariables
+systemAge               System and pool age for constant compartment
+                        models
+transitTime             Transit times for compartment models
+turnoverFit             Estimation of the turnover time from a
+                        radiocarbon sample.

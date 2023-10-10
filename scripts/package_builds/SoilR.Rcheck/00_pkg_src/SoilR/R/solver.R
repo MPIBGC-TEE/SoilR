@@ -1,0 +1,11 @@
+solver=function
+(
+ times,			
+ ydot,			
+ startValues,		
+ solverFunc=deSolve.lsoda.wrapper		
+ )
+ {
+   Y=solverFunc(times,ydot,startValues) 
+   return(Y)
+}

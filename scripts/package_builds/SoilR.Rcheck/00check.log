@@ -1,0 +1,315 @@
+* using log directory ‘/Users/csierra/MPIBGC-TEE/SoilR-exp/scripts/package_builds/SoilR.Rcheck’
+* using R version 4.3.1 (2023-06-16)
+* using platform: x86_64-apple-darwin20 (64-bit)
+* R was compiled by
+    Apple clang version 14.0.3 (clang-1403.0.22.14.1)
+    GNU Fortran (GCC) 12.2.0
+* running under: macOS Ventura 13.4.1
+* using session charset: UTF-8
+* checking for file ‘SoilR/DESCRIPTION’ ... OK
+* this is package ‘SoilR’ version ‘1.2.106’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘SoilR’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'ConstLinDecompOp,matrix,missing,missing,missing,missing-method'
+  ‘mat’
+
+Undocumented arguments in documentation object 'ConstLinDecompOp'
+  ‘mat’ ‘internal_flux_rates’ ‘out_flux_rates’ ‘numberOfPools’
+  ‘poolNames’
+
+Undocumented arguments in documentation object 'ConstLinDecompOpWithLinearScalarFactor'
+  ‘mat’ ‘internal_flux_rates’ ‘out_flux_rates’ ‘numberOfPools’ ‘xi’
+
+Undocumented arguments in documentation object 'ConstLinDecompOp_by_PoolName'
+  ‘internal_flux_rates’ ‘out_flux_rates’ ‘poolNames’
+
+Undocumented arguments in documentation object 'ConstantInFluxList_by_PoolIndex'
+  ‘object’
+
+Undocumented arguments in documentation object 'ConstantInFluxList_by_PoolName'
+  ‘object’
+
+Undocumented arguments in documentation object 'ConstantInternalFluxRateList_by_PoolIndex'
+  ‘object’
+
+Undocumented arguments in documentation object 'ConstantInternalFluxRateList_by_PoolName'
+  ‘object’
+
+Undocumented arguments in documentation object 'ConstantInternalFluxRate_by_PoolIndex,missing,missing,character,numeric-method'
+  ‘src_to_dest’ ‘rate_constant’
+
+Undocumented arguments in documentation object 'ConstantInternalFluxRate_by_PoolIndex'
+  ‘sourceIndex’ ‘destinationIndex’ ‘src_to_dest’ ‘rate_constant’
+
+Undocumented arguments in documentation object 'ConstantInternalFluxRate_by_PoolName,character,character,missing,numeric-method'
+  ‘sourceName’ ‘destinationName’ ‘rate_constant’
+
+Undocumented arguments in documentation object 'ConstantInternalFluxRate_by_PoolName,missing,missing,character,numeric-method'
+  ‘src_to_dest’ ‘rate_constant’
+
+Undocumented arguments in documentation object 'ConstantInternalFluxRate_by_PoolName'
+  ‘sourceName’ ‘destinationName’ ‘src_to_dest’ ‘rate_constant’
+
+Undocumented arguments in documentation object 'ConstantOutFluxRateList_by_PoolIndex'
+  ‘object’
+
+Undocumented arguments in documentation object 'ConstantOutFluxRateList_by_PoolName'
+  ‘object’
+
+Undocumented arguments in documentation object 'ConstantOutFluxRate_by_PoolIndex'
+  ‘sourceIndex’ ‘rate_constant’
+
+Undocumented arguments in documentation object 'GeneralPoolId,numeric-method'
+  ‘id’
+
+Undocumented arguments in documentation object 'InFlux'
+  ‘map’ ‘...’
+
+Undocumented arguments in documentation object 'InFluxList_by_PoolIndex,list-method'
+  ‘object’
+
+Undocumented arguments in documentation object 'InFluxList_by_PoolIndex'
+  ‘object’
+
+Undocumented arguments in documentation object 'InFluxList_by_PoolName,list-method'
+  ‘object’
+
+Undocumented arguments in documentation object 'InFluxList_by_PoolName'
+  ‘object’
+
+Undocumented arguments in documentation object 'InFlux_by_PoolIndex,function,numeric-method'
+  ‘destinationIndex’
+
+Undocumented arguments in documentation object 'InFlux_by_PoolIndex'
+  ‘func’ ‘destinationIndex’
+
+Undocumented arguments in documentation object 'InFlux_by_PoolName'
+  ‘func’ ‘destinationName’
+
+Undocumented arguments in documentation object 'InternalFluxList_by_PoolIndex,list-method'
+  ‘object’
+
+Undocumented arguments in documentation object 'InternalFluxList_by_PoolIndex'
+  ‘object’
+
+Undocumented arguments in documentation object 'InternalFluxList_by_PoolName'
+  ‘object’
+
+Undocumented arguments in documentation object 'InternalFlux_by_PoolIndex,function,numeric,numeric,missing-method'
+  ‘sourceIndex’ ‘destinationIndex’
+
+Undocumented arguments in documentation object 'InternalFlux_by_PoolIndex'
+  ‘func’ ‘sourceIndex’ ‘destinationIndex’ ‘src_to_dest’
+
+Undocumented arguments in documentation object 'InternalFlux_by_PoolName'
+  ‘func’ ‘sourceName’ ‘destinationName’ ‘src_to_dest’
+
+Undocumented arguments in documentation object 'Model_by_PoolNames'
+  ‘smod’ ‘times’ ‘mat’ ‘initialValues’ ‘inputFluxes’ ‘internal_fluxes’
+  ‘out_fluxes’ ‘timeSymbol’ ‘solverfunc’
+
+Undocumented arguments in documentation object 'OutFlux'
+  ‘map’ ‘...’
+
+Undocumented arguments in documentation object 'OutFluxList_by_PoolIndex,list-method'
+  ‘object’
+
+Undocumented arguments in documentation object 'OutFluxList_by_PoolIndex'
+  ‘object’
+
+Undocumented arguments in documentation object 'OutFluxList_by_PoolName'
+  ‘object’
+
+Undocumented arguments in documentation object 'OutFlux_by_PoolIndex,function,numeric-method'
+  ‘sourceIndex’
+
+Undocumented arguments in documentation object 'OutFlux_by_PoolIndex'
+  ‘func’ ‘sourceIndex’
+
+Undocumented arguments in documentation object 'OutFlux_by_PoolName,function,character-method'
+  ‘sourceName’
+
+Undocumented arguments in documentation object 'OutFlux_by_PoolName'
+  ‘func’ ‘sourceName’
+
+Undocumented arguments in documentation object 'PoolConnection_by_PoolIndex,ANY,ANY,missing-method'
+  ‘source’ ‘destination’
+
+Undocumented arguments in documentation object 'PoolConnection_by_PoolIndex,missing,missing,character-method'
+  ‘src_to_dest’
+
+Undocumented arguments in documentation object 'PoolConnection_by_PoolName,ANY,ANY,missing-method'
+  ‘source’ ‘destination’
+
+Undocumented arguments in documentation object 'PoolIndex,PoolIndex-method'
+  ‘id’ ‘poolNames’
+
+Undocumented arguments in documentation object 'PoolIndex,PoolName-method'
+  ‘id’ ‘poolNames’
+
+Undocumented arguments in documentation object 'PoolIndex,character-method'
+  ‘id’
+
+Undocumented arguments in documentation object 'PoolIndex,numeric-method'
+  ‘id’
+
+Undocumented arguments in documentation object 'PoolName,PoolIndex-method'
+  ‘id’ ‘poolNames’
+
+Undocumented arguments in documentation object 'PoolName,PoolName-method'
+  ‘id’ ‘poolNames’
+
+Undocumented arguments in documentation object 'PoolName,character-method'
+  ‘id’
+
+Undocumented arguments in documentation object 'ScalarTimeMap,function,missing,missing,missing,missing-method'
+  ‘map’ ‘lag’
+
+Undocumented arguments in documentation object 'ScalarTimeMap,function,numeric,numeric,missing,missing-method'
+  ‘map’ ‘starttime’ ‘endtime’ ‘lag’
+
+Undocumented arguments in documentation object 'ScalarTimeMap,missing,missing,missing,missing,numeric-method'
+  ‘starttime’ ‘endtime’ ‘data’ ‘lag’
+
+Undocumented arguments in documentation object 'StateIndependentInFluxList_by_PoolIndex'
+  ‘object’
+
+Undocumented arguments in documentation object 'StateIndependentInFluxList_by_PoolName'
+  ‘object’
+
+Undocumented arguments in documentation object 'TimeMap,function,missing,missing,missing,missing-method'
+  ‘map’ ‘lag’
+
+Undocumented arguments in documentation object 'TimeMap,function,numeric,numeric,missing,missing-method'
+  ‘map’ ‘starttime’ ‘endtime’ ‘lag’
+
+Undocumented arguments in documentation object 'UnBoundLinDecompOp'
+  ‘matFunc’
+
+Undocumented arguments in documentation object 'UnBoundNonLinDecompOp,missing,vector,vector,numeric-method'
+  ‘numberOfPools’
+
+Undocumented arguments in documentation object 'UnBoundNonLinDecompOp'
+  ‘matFunc’ ‘internal_fluxes’ ‘out_fluxes’ ‘numberOfPools’
+  ‘state_variable_names’ ‘timeSymbol’ ‘operator’
+
+Undocumented arguments in documentation object 'UnBoundNonLinDecompOp_by_PoolNames'
+  ‘internal_fluxes’ ‘out_fluxes’ ‘timeSymbol’
+
+Undocumented arguments in documentation object 'as.numeric,InFluxList_by_PoolName-method'
+  ‘...’
+
+Undocumented arguments in documentation object 'as.numeric,InternalFluxList_by_PoolName-method'
+  ‘...’
+
+Undocumented arguments in documentation object 'as.numeric,InternalFlux_by_PoolName-method'
+  ‘...’
+
+Undocumented arguments in documentation object 'as.numeric,OutFluxList_by_PoolName-method'
+  ‘...’
+
+Undocumented arguments in documentation object 'by_PoolIndex,ConstantInFluxRate_by_PoolName,ANY,ANY-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolIndex,ConstantInternalFluxRateList_by_PoolName,ANY,ANY-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolIndex,ConstantInternalFluxRate_by_PoolName,ANY,ANY-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolIndex,ConstantOutFluxRateList_by_PoolName,ANY,ANY-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolIndex,ConstantOutFluxRate_by_PoolName,ANY,ANY-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolIndex,PoolConnection_by_PoolName,ANY,ANY-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolName,ConstantInFluxList_by_PoolIndex-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolName,ConstantInFluxRate_by_PoolIndex-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolName,ConstantInFlux_by_PoolIndex-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolName,ConstantOutFluxRateList_by_PoolIndex-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'by_PoolName,ConstantOutFluxRate_by_PoolIndex-method'
+  ‘obj’ ‘poolNames’
+
+Undocumented arguments in documentation object 'getC'
+  ‘as.closures’
+
+Undocumented arguments in documentation object 'getFunctionDefinition,ConstLinDecompOpWithLinearScalarFactor-method'
+  ‘object’
+
+Undocumented arguments in documentation object 'getOutputFluxes'
+  ‘as.closures’
+
+Undocumented arguments in documentation object 'getSolution,Model_by_PoolNames-method'
+  ‘params’
+
+Undocumented arguments in documentation object 'getSolution'
+  ‘params’ ‘as.closures’
+
+Undocumented arguments in documentation object 'getTimeRange,TimeMap-method'
+  ‘object’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking examples ... OK
+* checking PDF version of manual ... OK
+* DONE
+Status: 1 WARNING

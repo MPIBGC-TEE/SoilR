@@ -1,0 +1,10 @@
+NpYdot=function
+(A	
+,
+inputrates 
+ ){
+   ydot=function(y,t){
+      D=(A(t)%*%y)+inputrates(t)
+   }
+   return(ydot)
+}

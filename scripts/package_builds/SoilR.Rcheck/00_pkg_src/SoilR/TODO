@@ -1,0 +1,1 @@
+The new constructors Model , Model_14 and NlModel can rename their parameters. The old functions GeneralModel GeneralModel_14 guarantee that old code still runs.

@@ -1,0 +1,29 @@
+MeanTT=function
+(OdotLin,	
+times		
+){
+   	 tstart=min(times)
+   	 tend=max(times)
+   	 impulsiveInputSolution=splinefun(times,solver(times,OdotLin,1))
+	 c=c("black","red","green","blue")
+   	 lts=c(1,2)
+   	 lws=c(8,4)
+   	 phi=function(t){-OdotLin(impulsiveInputSolution(t),t)}
+   	 phis=splinefun(times,sapply(times,phi))
+	 plot(times,phis(times))
+   	 phiOde=function(Y,t){phis(t)}
+   	 p=function(ta){integrate(phis,lower=ta,upper=tend)$value}
+   	 plot(times,impulsiveInputSolution(times),type="l",lwd=lws[1],col=c[1],lty=lts[1])
+   	 lines(times,sapply(times,p),lwd=lws[2],col=c[2],lty=lts[2],ylim=c(0,1))
+   	 plot(times,sapply(times,p),lwd=lws[2],col=c[2],lty=lts[2],ylim=c(0,1))
+	 legend(
+   	 "topright",
+   	   c( "solution of linear system for impulsive Input","P(t<age<tmax)"),
+   	   lty=lts,
+   	   col=c(c[1],c[2])
+   	 )
+   	 phiTT=function(Y,tt){phiOde(Y,tt)*tt}
+   	 mean_TT=solver(times,phiTT,0)
+   	 plot(times,mean_TT,col=c[4],lty=lts[1])
+	 return(mean_TT)
+   }
