@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{GeneralPoolId}
 \alias{GeneralPoolId}
-\title{automatic title}
+\title{General pool Id}
 \usage{
 GeneralPoolId(id)
 
@@ -12,7 +12,7 @@ GeneralPoolId(id)
 \item{id}{see method arguments}
 }
 \description{
-automatic title
+General pool Id
 
-automatic title
+General pool Id
 }

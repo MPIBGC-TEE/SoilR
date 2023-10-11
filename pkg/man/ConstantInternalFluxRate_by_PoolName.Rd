@@ -11,6 +11,15 @@ ConstantInternalFluxRate_by_PoolName(
   rate_constant
 )
 }
+\arguments{
+\item{sourceName}{name of the source pool}
+
+\item{destinationName}{name of the destination pool}
+
+\item{src_to_dest}{flux rate}
+
+\item{rate_constant}{rate constant}
+}
 \description{
 Generic constructor for the class with the same name
 }

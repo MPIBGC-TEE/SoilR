@@ -12,6 +12,8 @@ setClass(
 )
 
 #' constructor from an ordered pair of PoolName objects
+#' @param source name of source pool
+#' @param destination name of destination pool
 setMethod(
   f="PoolConnection_by_PoolName",
   signature=c(src_to_dest='missing'),
@@ -53,6 +55,8 @@ setMethod(
 #'
 #' converts the ids if necessary otherwise returns an 
 #' identical object
+#' @param obj an object of class PoolConnection_by_PoolName
+#' @param poolNames names of pools
 setMethod(
   f="by_PoolIndex",
   signature=c(obj='PoolConnection_by_PoolName'),

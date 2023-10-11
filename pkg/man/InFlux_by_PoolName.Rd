@@ -6,6 +6,11 @@
 \usage{
 InFlux_by_PoolName(func, destinationName)
 }
+\arguments{
+\item{func}{function with input flux}
+
+\item{destinationName}{name of the destination pool}
+}
 \description{
 Generic constructor for an influx to a single pool from an ordered pair of PoolName (string like) and function  objects
 }

@@ -6,6 +6,11 @@
 \usage{
 \S4method{by_PoolName}{ConstantInFlux_by_PoolIndex}(obj, poolNames)
 }
+\arguments{
+\item{obj}{an object of class ConstantInFlux_by_PoolIndex}
+
+\item{poolNames}{names of pools}
+}
 \description{
 new object with the source pool id converted to a PoolIndex if necessary
 }

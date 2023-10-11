@@ -6,6 +6,15 @@
 \usage{
 \S4method{ScalarTimeMap}{missing,missing,missing,missing,numeric}(starttime = -Inf, endtime = +Inf, data, lag = 0)
 }
+\arguments{
+\item{starttime}{initial time of simulation}
+
+\item{endtime}{end time of simulation}
+
+\item{data}{data}
+
+\item{lag}{a time lag}
+}
 \description{
 special case for a time map from a constant
 }

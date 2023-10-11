@@ -6,6 +6,11 @@
 \usage{
 \S4method{PoolIndex}{PoolName}(id, poolNames)
 }
+\arguments{
+\item{id}{pool id}
+
+\item{poolNames}{names of pools}
+}
 \description{
 convert to number like object
 }

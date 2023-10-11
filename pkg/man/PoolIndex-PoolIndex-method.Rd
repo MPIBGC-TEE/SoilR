@@ -6,6 +6,11 @@
 \usage{
 \S4method{PoolIndex}{PoolIndex}(id, poolNames)
 }
+\arguments{
+\item{id}{pool id}
+
+\item{poolNames}{names of pools}
+}
 \description{
 This is here to be able to call PoolIndex on a PoolIndex object without
 having to check before if it is necessary.

@@ -12,6 +12,17 @@ ConstLinDecompOp(
   poolNames
 )
 }
+\arguments{
+\item{mat}{a square compartmental matrix}
+
+\item{internal_flux_rates}{rates of internal transfers among pools}
+
+\item{out_flux_rates}{rates of transfer out of poolss}
+
+\item{numberOfPools}{total number of pools in the system}
+
+\item{poolNames}{names of all pools}
+}
 \description{
 Generic constructor for the class with the same name
 }

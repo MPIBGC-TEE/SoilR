@@ -68,6 +68,8 @@ setMethod(
 
 #' convert to a list indexed by pool names
 #'
+#' @param obj object of class ConstantInFluxList_by_PoolIndex
+#' @param poolNames names of pools
 setMethod("by_PoolName",
     signature=signature(obj="ConstantInFluxList_by_PoolIndex"),
     definition=function(obj,poolNames){

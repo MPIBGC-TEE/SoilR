@@ -6,6 +6,9 @@
 \usage{
 UnBoundLinDecompOp(matFunc)
 }
+\arguments{
+\item{matFunc}{function providing a compartmental matrix}
+}
 \description{
 Generic constructor for the class with the same name
 }

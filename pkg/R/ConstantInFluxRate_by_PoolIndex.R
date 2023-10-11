@@ -26,6 +26,8 @@ ConstantInFluxRate_by_PoolIndex<-function(destinationIndex,rate_constant){
 }
 
 #' new object with the source pool id converted to a PoolIndex if necessary 
+#' @param obj an object of class ConstantInFluxRate_by_PoolIndex
+#' @param poolNames names of pools
 setMethod(
     f="by_PoolName",
     signature=c(obj='ConstantInFluxRate_by_PoolIndex'),

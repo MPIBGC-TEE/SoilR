@@ -6,6 +6,9 @@
 \usage{
 ConstantInternalFluxRateList_by_PoolIndex(object)
 }
+\arguments{
+\item{object}{see methods}
+}
 \description{
 Generic constructor for the class with the same name
 }

@@ -6,6 +6,15 @@
 \usage{
 InternalFlux_by_PoolIndex(func, sourceIndex, destinationIndex, src_to_dest)
 }
+\arguments{
+\item{func}{function with flux rate}
+
+\item{sourceIndex}{index of the source pool}
+
+\item{destinationIndex}{index of the destination pool}
+
+\item{src_to_dest}{source to destination}
+}
 \description{
 Generic constructor for the class with the same name
 }

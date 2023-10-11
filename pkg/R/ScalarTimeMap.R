@@ -74,6 +74,10 @@ setMethod(
 
 #' manual constructor for a function and an interval
 #'
+#' @param map a function
+#' @param starttime initial time of simulation
+#' @param endtime end time of simulation
+#' @param lag a time lag
 setMethod(
     f="ScalarTimeMap",
     signature=signature(
@@ -103,6 +107,8 @@ setMethod(
 #' manual constructor for just a function 
 #'
 #' The interval will be set to [-Inf,Inf]
+#' @param map a function
+#' @param lag a time lag
 setMethod(
     f="ScalarTimeMap",
     signature=signature(
@@ -126,6 +132,10 @@ setMethod(
 
 #' special case for a time map from a constant 
 #'
+#' @param starttime initial time of simulation
+#' @param endtime end time of simulation
+#' @param data data
+#' @param lag a time lag
 setMethod(
   f="ScalarTimeMap",
   signature=signature(

@@ -1,7 +1,7 @@
 #' constructor from a normal list
 #'
 #' after checking the elements
-
+#' @param object no documentation
 setMethod("InFluxList_by_PoolName",
     signature=signature(object="list"),
     definition=function(object){
@@ -73,6 +73,7 @@ setMethod("getFunctionDefinition",
 #' Convert to a numeric vector with the pool names as names
 #'
 #' @template FluxListAsNumeric
+#' @param ... additional arguments
 setMethod("as.numeric",
     signature(x = "InFluxList_by_PoolName"),
     function (x,y,t,time_symbol,...) {

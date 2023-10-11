@@ -6,6 +6,11 @@
 \usage{
 InFlux_by_PoolIndex(func, destinationIndex)
 }
+\arguments{
+\item{func}{function with influx}
+
+\item{destinationIndex}{index of destination pool}
+}
 \description{
 Generic constructor for the class with the same name
 }

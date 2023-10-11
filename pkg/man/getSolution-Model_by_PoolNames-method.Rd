@@ -20,6 +20,8 @@ for the contents of the pool consisting of
  \item{ The system of ordinary differential equations, as dictated by the fluxes}
  \item{ The times for which the solution of the IVP is evaluated.}
 }}
+
+\item{params}{parameter values}
 }
 \value{
 A matrix with as many columns as there are pools 

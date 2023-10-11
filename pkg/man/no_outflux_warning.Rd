@@ -2,18 +2,12 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{no_outflux_warning}
 \alias{no_outflux_warning}
-\title{Constructor 
-Constructor 
-Constructor 
-alternative Constructor with pool names 
+\title{alternative Constructor with pool names 
 helper function}
 \usage{
 no_outflux_warning()
 }
 \description{
-Constructor 
-Constructor 
-Constructor 
 alternative Constructor with pool names 
 helper function
 }

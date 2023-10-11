@@ -6,6 +6,9 @@
 \usage{
 InternalFluxList_by_PoolName(object)
 }
+\arguments{
+\item{object}{see methods}
+}
 \description{
 Generic constructor for the class with the same name
 }

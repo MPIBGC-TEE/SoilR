@@ -2,10 +2,15 @@
 % Please edit documentation in R/InFluxList_by_PoolIndex.R
 \name{InFluxList_by_PoolIndex,list-method}
 \alias{InFluxList_by_PoolIndex,list-method}
-\title{constructor from a normal list}
+\title{constructor from a normal list
+after checking the elements}
 \usage{
 \S4method{InFluxList_by_PoolIndex}{list}(object)
 }
+\arguments{
+\item{object}{list}
+}
 \description{
+constructor from a normal list
 after checking the elements
 }

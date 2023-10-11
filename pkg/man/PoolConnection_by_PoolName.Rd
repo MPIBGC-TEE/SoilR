@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{PoolConnection_by_PoolName}
 \alias{PoolConnection_by_PoolName}
-\title{automatic title}
+\title{Pool connection by pool name}
 \usage{
 PoolConnection_by_PoolName(source, destination, src_to_dest)
 }
@@ -14,5 +14,5 @@ PoolConnection_by_PoolName(source, destination, src_to_dest)
 \item{src_to_dest}{see method arguments}
 }
 \description{
-automatic title
+Pool connection by pool name
 }

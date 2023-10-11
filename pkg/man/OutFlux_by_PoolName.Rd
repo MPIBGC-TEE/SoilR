@@ -6,6 +6,11 @@
 \usage{
 OutFlux_by_PoolName(func, sourceName)
 }
+\arguments{
+\item{func}{function with output flux}
+
+\item{sourceName}{name of the source pool}
+}
 \description{
 Generic constructor for the class with the same name
 }

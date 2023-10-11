@@ -23,6 +23,7 @@ check_duplicate_pool_names<-function(poolNames){
 #' generic factory for this virtual class
 #'
 #' the class returned depends on the method dispatched depending on the supplied arguments 
+#' @param id a numerical id
 setMethod(
     f="GeneralPoolId",
     signature=c(id='numeric'),

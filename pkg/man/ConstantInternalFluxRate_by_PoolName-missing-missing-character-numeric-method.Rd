@@ -6,6 +6,11 @@
 \usage{
 \S4method{ConstantInternalFluxRate_by_PoolName}{missing,missing,character,numeric}(src_to_dest, rate_constant)
 }
+\arguments{
+\item{src_to_dest}{a string indicating the source to destination pools}
+
+\item{rate_constant}{a value of the rate constant}
+}
 \description{
 constructor from strings of the form 'a->b'
 }

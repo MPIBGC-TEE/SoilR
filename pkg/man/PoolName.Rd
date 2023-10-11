@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{PoolName}
 \alias{PoolName}
-\title{automatic title}
+\title{Pool name}
 \usage{
 PoolName(id, ...)
 }
@@ -12,5 +12,5 @@ PoolName(id, ...)
 \item{...}{see method arguments}
 }
 \description{
-automatic title
+Pool name
 }

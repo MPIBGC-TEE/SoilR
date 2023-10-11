@@ -7,7 +7,7 @@
 \S4method{plot}{Model_by_PoolNames}(x)
 }
 \arguments{
-\item{x}{The model (run) the results of which are plotted}
+\item{x}{a model}
 }
 \description{
 Plot the graph of pool connections

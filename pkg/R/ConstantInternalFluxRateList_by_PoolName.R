@@ -47,6 +47,8 @@ setMethod("ConstantInternalFluxRateList_by_PoolName",
 
 #' convert to a list indexed by pool names
 #'
+#' @param obj object of class ConstantInternalFluxRateList_by_PoolName
+#' @param poolNames names of pools
 setMethod("by_PoolIndex",
     signature=signature(obj="ConstantInternalFluxRateList_by_PoolName"),
     definition=function(obj,poolNames){

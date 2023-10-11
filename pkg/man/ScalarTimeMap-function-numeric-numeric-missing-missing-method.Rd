@@ -6,6 +6,15 @@
 \usage{
 \S4method{ScalarTimeMap}{`function`,numeric,numeric,missing,missing}(map, starttime, endtime, lag = 0)
 }
+\arguments{
+\item{map}{a function}
+
+\item{starttime}{initial time of simulation}
+
+\item{endtime}{end time of simulation}
+
+\item{lag}{a time lag}
+}
 \description{
 manual constructor for a function and an interval
 }

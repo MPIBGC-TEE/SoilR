@@ -56,6 +56,8 @@ ConstantInFluxRate_by_PoolName<-function(destinationName,rate_constant){
 }
 
 #' new object with the source pool id converted to a PoolIndex if necessary 
+#' @param obj and object of class ConstantInFluxRate_by_PoolName
+#' @param poolNames names of pools
 setMethod(
   f="by_PoolIndex",
   signature=c(obj='ConstantInFluxRate_by_PoolName'),
@@ -67,17 +69,19 @@ setMethod(
       )
   }
 )
-setMethod(
-  f="by_PoolIndex",
-  signature=c(obj='ConstantInFluxRate_by_PoolName'),
-  def=function(obj,poolNames){
-      new(
-        "ConstantInFluxRate_by_PoolIndex"
-        ,destinationIndex=PoolIndex(id=obj@destinationName,poolNames)
-        ,rate_constant=obj@rate_constant
-      )
-  }
-)
+
+# This method seems to be identical to the previous one. It's now commented out but eventually should be removed 
+# setMethod(
+#   f="by_PoolIndex",
+#   signature=c(obj='ConstantInFluxRate_by_PoolName'),
+#   def=function(obj,poolNames){
+#       new(
+#         "ConstantInFluxRate_by_PoolIndex"
+#         ,destinationIndex=PoolIndex(id=obj@destinationName,poolNames)
+#         ,rate_constant=obj@rate_constant
+#       )
+#   }
+# )
 
 #' @template FluxRateList
 #'
@@ -106,18 +110,18 @@ ConstantInFluxRate_by_PoolName<-function(destinationName,rate_constant){
     )
 }
 
-#' new object with the source pool id converted to a PoolIndex if necessary 
-setMethod(
-  f="by_PoolIndex",
-  signature=c(obj='ConstantInFluxRate_by_PoolName'),
-  def=function(obj,poolNames){
-      new(
-        "ConstantInFluxRate_by_PoolIndex"
-        ,destinationIndex=PoolIndex(id=obj@destinationName,poolNames)
-        ,rate_constant=obj@rate_constant
-      )
-  }
-)
+# #' new object with the source pool id converted to a PoolIndex if necessary 
+# setMethod(
+#   f="by_PoolIndex",
+#   signature=c(obj='ConstantInFluxRate_by_PoolName'),
+#   def=function(obj,poolNames){
+#       new(
+#         "ConstantInFluxRate_by_PoolIndex"
+#         ,destinationIndex=PoolIndex(id=obj@destinationName,poolNames)
+#         ,rate_constant=obj@rate_constant
+#       )
+#   }
+# )
 
 #' @template FluxRateList
 #'
@@ -215,6 +219,8 @@ setMethod("ConstantInternalFluxRateList_by_PoolIndex",
 
 #' convert to a list indexed by pool names
 #'
+#' @param obj an object of class ConstantInternalFluxRateList_by_PoolIndex
+#' @param poolNames names of pools
 setMethod("by_PoolName",
     signature=signature(obj="ConstantInternalFluxRateList_by_PoolIndex"),
     definition=function(obj,poolNames){

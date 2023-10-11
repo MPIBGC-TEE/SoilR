@@ -8,12 +8,13 @@
 \S4method{by_PoolIndex}{ConstantInFluxRate_by_PoolName,ANY,ANY}(obj, poolNames)
 
 \S4method{by_PoolIndex}{ConstantInFluxRate_by_PoolName,ANY,ANY}(obj, poolNames)
+}
+\arguments{
+\item{obj}{and object of class ConstantInFluxRate_by_PoolName}
 
-\S4method{by_PoolIndex}{ConstantInFluxRate_by_PoolName,ANY,ANY}(obj, poolNames)
+\item{poolNames}{names of pools}
 }
 \description{
-new object with the source pool id converted to a PoolIndex if necessary
-
 new object with the source pool id converted to a PoolIndex if necessary
 
 new object with the source pool id converted to a PoolIndex if necessary

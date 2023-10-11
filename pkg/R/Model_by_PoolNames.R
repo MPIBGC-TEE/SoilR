@@ -39,7 +39,7 @@
 #        )
 #     }
 #  )
-
+# 
 # #' Create a model(run) described by fluxes 
 # #' 
 # #' @param mat \code{\link{UnBoundNonLinDecompOp_by_PoolNames}}
@@ -111,6 +111,7 @@ setMethod(
 #' 
 #' @template Model-param
 #' @template PoolWiseReturnMatrix
+#' @param params parameter values
 setMethod(
     f= "getSolution"
     ,signature= "Model_by_PoolNames"
@@ -250,9 +251,9 @@ setMethod(
 #)
 
 #' Create an overview plot 
-#' 
 #' The method solves the model and plots the solutions
 #' It is intended to provide a quick overview.
+#' @param x a model
 #' @autocomment 
 setMethod(
    f= "plot",
