@@ -3,7 +3,7 @@
 \docType{class}
 \name{Model_14-class}
 \alias{Model_14-class}
-\title{S4-class to represent a ^{14}C model run}
+\title{S4-class to represent a 14C model run}
 \description{
-S4-class to represent a ^{14}C model run
+S4-class to represent a 14C model run
 }

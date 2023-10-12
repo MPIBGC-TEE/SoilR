@@ -321,7 +321,7 @@ setGeneric (
 	 }
 )
 
-#' Generic that yields the ^{14}C content for all pools and all times
+#' Generic that yields the 14C content for all pools and all times
 #'
 #' @param object a SoilR object
 #' @s4methods
@@ -346,7 +346,7 @@ setGeneric (
 	){standardGeneric("getCumulativeC")}
 )
 
-#' Generic that yields the ^{14}C fraction for the content all pools and all times
+#' Generic that yields the 14C fraction for the content all pools and all times
 #'
 #' @param object A SoilR object of class Model14
 #' @s4methods
@@ -359,7 +359,7 @@ setGeneric (
 
 
 
-#' Generic that yields the ^{14}C fraction in the release flux
+#' Generic that yields the 14C fraction in the release flux
 #' 
 #' @param object see method arguments
 #' @s4methods
@@ -371,7 +371,7 @@ setGeneric (
 	){standardGeneric("getReleaseFlux14")}
 )
 
-#' Generic that yields the ^{14}C fraction for the release flux of all pools and all times
+#' Generic that yields the 14C fraction for the release flux of all pools and all times
 #'
 #' @param object a SoilR object of class Model14
 #' @s4methods
@@ -382,7 +382,7 @@ setGeneric (
 	 ){standardGeneric("getF14R")}
   )
 
-#' Generic that yields the ^{14}C fraction for the cumulative content of all pools and all times
+#' Generic that yields the 14C fraction for the cumulative content of all pools and all times
 #'
 #' @param object a SoilR object of class Model 14
 #' @s4methods

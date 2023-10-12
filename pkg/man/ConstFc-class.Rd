@@ -3,7 +3,7 @@
 \docType{class}
 \name{ConstFc-class}
 \alias{ConstFc-class}
-\title{S4 class representing a constant ^{14}C fraction}
+\title{S4 class representing a constant 14C fraction}
 \description{
-S4 class representing a constant ^{14}C fraction
+S4 class representing a constant 14C fraction
 }

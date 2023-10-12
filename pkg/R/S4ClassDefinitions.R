@@ -758,7 +758,7 @@ setClass(
    validity=correctnessOfModel 
 )
 
-#' S4 class representing a constant ^{14}C fraction
+#' S4 class representing a constant 14C fraction
 #'
 #' @s4superclasses
 #' @s4subclasses
@@ -787,7 +787,7 @@ tA_max=getTimeRange(atm_c14)["t_max"]
     }
 }
 
-#' S4-class to represent a ^{14}C model run 
+#' S4-class to represent a 14C model run 
 #'
 #' @s4superclasses
 #' @s4subclasses

@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{getReleaseFlux14}
 \alias{getReleaseFlux14}
-\title{Generic that yields the ^{14}C fraction in the release flux}
+\title{Generic that yields the 14C fraction in the release flux}
 \usage{
 getReleaseFlux14(object)
 }
@@ -10,5 +10,5 @@ getReleaseFlux14(object)
 \item{object}{see method arguments}
 }
 \description{
-Generic that yields the ^{14}C fraction in the release flux
+Generic that yields the 14C fraction in the release flux
 }
