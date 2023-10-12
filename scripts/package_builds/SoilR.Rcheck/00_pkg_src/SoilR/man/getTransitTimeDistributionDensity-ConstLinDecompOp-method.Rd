@@ -2,17 +2,17 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
 \alias{getTransitTimeDistributionDensity,ConstLinDecompOp-method}
-\title{automatic title}
+\title{Transit time distribution obtained through a numerical simulation. It introduces numerical errors. We recommend to use the function transitTime instead}
 \usage{
 \S4method{getTransitTimeDistributionDensity}{ConstLinDecompOp}(object, inputDistribution, times)
 }
 \arguments{
-\item{object}{no manual documentation}
+\item{object}{a ConstLinDecompOp object}
 
-\item{inputDistribution}{no manual documentation}
+\item{inputDistribution}{an input distribution among pools}
 
-\item{times}{no manual documentation}
+\item{times}{a variable with times to obtain the distribution}
 }
 \description{
-automatic title
+Transit time distribution obtained through a numerical simulation. It introduces numerical errors. We recommend to use the function transitTime instead
 }

@@ -18,6 +18,8 @@ variables}
 
 \item{time_symbol}{The name of the time argument used 
 in the definition of the flux functions}
+
+\item{...}{additional arguments}
 }
 \description{
 Convert to a numeric value with name of the form 'a->b'

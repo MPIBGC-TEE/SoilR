@@ -10,6 +10,13 @@
   rate_constant
 )
 }
+\arguments{
+\item{sourceName}{name of source pool}
+
+\item{destinationName}{name of destination pool}
+
+\item{rate_constant}{a value of the rate constant}
+}
 \description{
 constructor with argument conversion
 }

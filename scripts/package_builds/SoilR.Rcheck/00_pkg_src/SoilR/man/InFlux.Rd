@@ -6,6 +6,11 @@
 \usage{
 InFlux(map, ...)
 }
+\arguments{
+\item{map}{a SoilR map}
+
+\item{...}{additional arguments to function}
+}
 \description{
 Generic constructor for the class with the same name
 }

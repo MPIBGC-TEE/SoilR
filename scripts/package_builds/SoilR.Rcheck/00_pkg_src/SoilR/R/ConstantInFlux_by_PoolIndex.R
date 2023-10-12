@@ -19,7 +19,10 @@ ConstantInFlux_by_PoolIndex<-function(
     )    
     
 }
+
 #' new object with the source pool id converted to a PoolIndex if necessary 
+#' @param obj an object of class ConstantInFlux_by_PoolIndex
+#' @param poolNames names of pools
 setMethod(
     f="by_PoolName",
     signature=c(obj='ConstantInFlux_by_PoolIndex'),

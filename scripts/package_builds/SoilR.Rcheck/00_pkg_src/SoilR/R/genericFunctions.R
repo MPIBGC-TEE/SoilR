@@ -227,6 +227,7 @@ setGeneric (
 #' Generic Function to obtain the fluxes out of of the pools 
 #'
 #' @param object a SoilR object
+#' @param as.closures a logical variable. Default to FALSE
 setGeneric ( 
 	name= "getOutputFluxes",
 	def=function
@@ -243,6 +244,7 @@ setGeneric (
 #' In the original (and most of the present) Models these are Carbon pools hence the name.
 #' Have a look at the methods for details.
 #' @template Model-param
+#' @param as.closures a logical variable. Default to FALSE
 #' @return A matrix with m columns representing where m is the number of pools, and n rows where n is the number times 
 #' as specified by the \code{times} of the model. 
 #' @s4methods
@@ -259,6 +261,8 @@ setGeneric (
 #'
 #' Have a look at the methods for details.
 #' @template Model-param
+#' @param as.closures a logical variable. Default to FALSE
+#' @param params parameter values
 #' @return A matrix with columns representing the name of the statevariable, flux and accumulated flux for every time
 #' 
 #' as specified by the \code{times} of the model. 
@@ -724,6 +728,15 @@ setGeneric(
 
 #' Constructor for \code{\linkS4class{Model_by_PoolNames}}
 #' 
+#' @param smod see methods
+#' @param times a vector of times
+#' @param mat a compartmental matrix
+#' @param initialValues a vector of initial values
+#' @param inputFluxes a vector of input fluxes
+#' @param internal_fluxes flux rate among pools
+#' @param out_fluxes flux rates out of pools
+#' @param timeSymbol character symbol used to represent time
+#' @param solverfunc function used to solve system of ODEs
 #' @template  Model_by_PoolNames_Result
 #' @s4methods
 #' @autocomment 
@@ -883,6 +896,10 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param sourceName name of the source pool
+#' @param destinationName name of the destination pool
+#' @param src_to_dest flux rate
+#' @param rate_constant rate constant
 #' @s4methods
 setGeneric(
 	 name="ConstantInternalFluxRate_by_PoolName",
@@ -893,7 +910,11 @@ setGeneric(
 )
 
 #' Generic constructor for the class with the same name
-#'
+#' 
+#' @param sourceIndex index of source pool
+#' @param destinationIndex index of destination pool
+#' @param src_to_dest flux rate
+#' @param rate_constant rate constant
 #' @s4methods
 setGeneric(
 	 name="ConstantInternalFluxRate_by_PoolIndex",
@@ -905,6 +926,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
      name='ConstantInFluxList_by_PoolName',
@@ -916,6 +938,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
      name='StateIndependentInFluxList_by_PoolIndex',
@@ -927,6 +950,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
      name='StateIndependentInFluxList_by_PoolName',
@@ -938,6 +962,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
      name='ConstantInFluxList_by_PoolIndex',
@@ -949,6 +974,10 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param func function with flux rate
+#' @param sourceIndex index of the source pool
+#' @param destinationIndex index of the destination pool
+#' @param src_to_dest source to destination
 #' @s4methods
 setGeneric(
 	 name="InternalFlux_by_PoolIndex",
@@ -960,6 +989,10 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param func function with flux rate
+#' @param sourceName name of source pool
+#' @param destinationName name of destination pool
+#' @param src_to_dest source to destination
 #' @s4methods
 setGeneric(
 	 name="InternalFlux_by_PoolName",
@@ -971,6 +1004,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="InternalFluxList_by_PoolName",
@@ -981,6 +1015,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="InternalFluxList_by_PoolIndex",
@@ -992,6 +1027,8 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param func function with influx
+#' @param destinationIndex index of destination pool
 #' @s4methods
 setGeneric(
 	 name="InFlux_by_PoolIndex",
@@ -1003,6 +1040,8 @@ setGeneric(
 
 #' Generic constructor for an influx to a single pool from an ordered pair of PoolName (string like) and function  objects 
 #'
+#' @param func function with input flux
+#' @param destinationName name of the destination pool
 #' @s4methods
 setGeneric(
 	 name="InFlux_by_PoolName",
@@ -1014,6 +1053,8 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param func function with output flux
+#' @param sourceIndex index of the source pool
 #' @s4methods
 setGeneric(
 	 name="OutFlux_by_PoolIndex",
@@ -1025,6 +1066,8 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param func function with output flux
+#' @param sourceName name of the source pool
 #' @s4methods
 setGeneric(
 	 name="OutFlux_by_PoolName",
@@ -1036,6 +1079,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="InFluxList_by_PoolName",
@@ -1047,6 +1091,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="InFluxList_by_PoolIndex",
@@ -1058,6 +1103,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="OutFluxList_by_PoolName",
@@ -1069,6 +1115,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="ConstantOutFluxRateList_by_PoolName",
@@ -1080,6 +1127,8 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param sourceIndex index of the source pool
+#' @param rate_constant rate of output flux
 #' @s4methods
 setGeneric(
 	 name="ConstantOutFluxRate_by_PoolIndex",
@@ -1091,6 +1140,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="ConstantOutFluxRateList_by_PoolIndex",
@@ -1102,6 +1152,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="ConstantInternalFluxRateList_by_PoolName",
@@ -1112,6 +1163,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="ConstantInternalFluxRateList_by_PoolIndex",
@@ -1122,6 +1174,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param object see methods
 #' @s4methods
 setGeneric(
 	 name="OutFluxList_by_PoolIndex",
@@ -1132,6 +1185,8 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param map a SoilR map
+#' @param ... additional arguments to function
 #' @s4methods
 setGeneric(
 	 name="InFlux",
@@ -1142,6 +1197,8 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param map a SoilR map
+#' @param ... additional arguments
 #' @s4methods
 setGeneric(
 	 name="OutFlux",
@@ -1153,6 +1210,11 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param mat a square compartmental matrix
+#' @param internal_flux_rates rates of internal transfers among pools
+#' @param out_flux_rates rates of transfer out of poolss
+#' @param numberOfPools total number of pools in the system
+#' @param poolNames names of all pools
 #' @s4methods
 setGeneric(
 	 name="ConstLinDecompOp",
@@ -1169,6 +1231,9 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param internal_flux_rates rates of transfer among pools
+#' @param out_flux_rates rates out of pools
+#' @param poolNames names of the pools
 #' @s4methods
 setGeneric(
 	 name="ConstLinDecompOp_by_PoolName",
@@ -1179,6 +1244,11 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param mat a square compartmental matrix
+#' @param internal_flux_rates internal transfer rates among pools
+#' @param out_flux_rates rates out of pools
+#' @param numberOfPools number of pools in the system
+#' @param xi rate modifier for the entire matrix
 #' @s4methods
 setGeneric(
 	 name="ConstLinDecompOpWithLinearScalarFactor",
@@ -1197,6 +1267,7 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param matFunc function providing a compartmental matrix
 #' @s4methods
 setGeneric(
 	 name="UnBoundLinDecompOp",
@@ -1226,6 +1297,13 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param matFunc function providing a compartmental matrix
+#' @param internal_fluxes fluxes among pools
+#' @param out_fluxes fluxes out of the pools
+#' @param numberOfPools number of pools in the system
+#' @param state_variable_names names of the pools
+#' @param timeSymbol character used to represent time
+#' @param operator a SoilR operator
 #' @s4methods
 setGeneric(
 	 name="UnBoundNonLinDecompOp",
@@ -1244,6 +1322,9 @@ setGeneric(
 
 #' Generic constructor for the class with the same name
 #'
+#' @param internal_fluxes flux rates among pools
+#' @param out_fluxes output flux rates from pools
+#' @param timeSymbol character used to represent time
 #' @s4methods
 setGeneric(
 	 name="UnBoundNonLinDecompOp_by_PoolNames",
@@ -1266,7 +1347,7 @@ setGeneric(
 	 }
 )
 
-#' automatic title
+#' Add elements to plot
 #' 
 #' @param x see method arguments
 #' @param ... see method arguments
@@ -1286,7 +1367,7 @@ setGeneric(
 
 
 
-#' automatic title
+#' General pool Id
 #' 
 #' @param id see method arguments
 #' @s4methods
@@ -1300,7 +1381,7 @@ setGeneric(
 
 
 
-#' automatic title
+#' Pool connection by pool index
 #' 
 #' @param source see method arguments
 #' @param destination see method arguments
@@ -1318,7 +1399,7 @@ setGeneric(
 
 
 
-#' automatic title
+#' Pool connection by pool name
 #' 
 #' @param source see method arguments
 #' @param destination see method arguments
@@ -1336,7 +1417,7 @@ setGeneric(
 
 
 
-#' automatic title
+#' Pool name
 #' 
 #' @param id see method arguments
 #' @param ... see method arguments
@@ -1351,7 +1432,7 @@ setGeneric(
 
 
 
-#' automatic title
+#' Pool index
 #' 
 #' @param id see method arguments
 #' @param ... see method arguments
@@ -1366,7 +1447,7 @@ setGeneric(
 
 
 
-#' automatic title
+#' Check pool ids
 #' 
 #' @param obj see method arguments
 #' @param pools see method arguments
@@ -1381,7 +1462,7 @@ setGeneric(
 
 
 
-#' automatic title
+#' General pool Id
 #' 
 #' @param id see method arguments
 #' @s4methods

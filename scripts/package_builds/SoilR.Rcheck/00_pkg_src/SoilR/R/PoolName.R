@@ -1,5 +1,6 @@
 
 #' construct from string with checks
+#' @param id pool id
 setMethod(
     f="PoolName",
     signature=c(id='character'),
@@ -15,7 +16,10 @@ setMethod(
 #'
 #' This is here to be able to call PoolName on a PoolName object without
 #' having to test before if we have to. 
-# This makes the calling code easier to read. 
+#' This makes the calling code easier to read. 
+
+#' @param id pool id
+#' @param poolNames names of pools
 setMethod(
     f="PoolName",
     signature=c(id='PoolName'),
@@ -23,6 +27,8 @@ setMethod(
 )
 
 #' convert to number like object
+#' @param id pool id
+#' @param poolNames names of pools
 setMethod(
     f="PoolIndex",
     signature=c(id='PoolName'),

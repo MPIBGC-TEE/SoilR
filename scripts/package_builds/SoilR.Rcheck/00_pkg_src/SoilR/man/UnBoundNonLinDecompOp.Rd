@@ -14,6 +14,21 @@ UnBoundNonLinDecompOp(
   operator
 )
 }
+\arguments{
+\item{matFunc}{function providing a compartmental matrix}
+
+\item{internal_fluxes}{fluxes among pools}
+
+\item{out_fluxes}{fluxes out of the pools}
+
+\item{numberOfPools}{number of pools in the system}
+
+\item{state_variable_names}{names of the pools}
+
+\item{timeSymbol}{character used to represent time}
+
+\item{operator}{a SoilR operator}
+}
 \description{
 Generic constructor for the class with the same name
 }

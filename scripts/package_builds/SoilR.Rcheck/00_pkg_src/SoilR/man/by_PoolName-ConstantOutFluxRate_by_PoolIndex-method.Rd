@@ -6,6 +6,11 @@
 \usage{
 \S4method{by_PoolName}{ConstantOutFluxRate_by_PoolIndex}(obj, poolNames)
 }
+\arguments{
+\item{obj}{an object of class ConstantOutFluxRate_by_PoolIndex}
+
+\item{poolNames}{names of pools}
+}
 \description{
 This method exists only for classes that do not contain functions of 
 the state_variables since we cannot automatically translate functions 

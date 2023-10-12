@@ -50,7 +50,7 @@ ConstInFluxes-class     S4 class for a constant influx vector
 ConstLinDecompOp        Generic constructor for the class with the same
                         name
 ConstLinDecompOp,matrix,missing,missing,missing,missing-method
-                        Constructor
+                        Constructor of object of ConstLinDecompOp class
 ConstLinDecompOp-class
                         A class to represent a constant
                         (=nonautonomous,linear) compartmental matrix or
@@ -120,8 +120,6 @@ ConstantInternalFluxRateList_by_PoolName-class
 ConstantInternalFluxRate_by_PoolIndex
                         Generic constructor for the class with the same
                         name
-ConstantInternalFluxRate_by_PoolIndex,missing,missing,character,numeric-method
-                        constructor from strings of the form '1_to_2'
 ConstantInternalFluxRate_by_PoolIndex,numeric,numeric,missing,numeric-method
                         automatic title
 ConstantInternalFluxRate_by_PoolIndex-class
@@ -203,7 +201,7 @@ GeneralModel            additional function to create Models
 GeneralModel_14         create objects of class Model_14
 GeneralNlModel          Use this function to create objects of class
                         NlModel.
-GeneralPoolId           automatic title
+GeneralPoolId           General pool Id
 GeneralPoolId,character-method
                         automatic title
 GeneralPoolId,numeric-method
@@ -224,7 +222,8 @@ InFluxList_by_PoolIndex
                         Generic constructor for the class with the same
                         name
 InFluxList_by_PoolIndex,list-method
-                        constructor from a normal list
+                        constructor from a normal list after checking
+                        the elements
 InFluxList_by_PoolIndex-class
                         Describes a list of flux rates.
 InFluxList_by_PoolName
@@ -238,7 +237,7 @@ InFluxList_by_PoolName-class
 InFlux_by_PoolIndex     Generic constructor for the class with the same
                         name
 InFlux_by_PoolIndex,function,numeric-method
-                        constructor from an ordered pair of PoolIndex
+                        Constructor from an ordered pair of PoolIndex
                         (integer like) objects
 InFlux_by_PoolIndex-class
                         S4 class for the influx to a single pool
@@ -278,7 +277,8 @@ InternalFluxList_by_PoolIndex
                         Generic constructor for the class with the same
                         name
 InternalFluxList_by_PoolIndex,list-method
-                        constructor from a normal list
+                        Constructor from a normal list after checking
+                        the elements
 InternalFluxList_by_PoolIndex-class
                         S4-class for a list of internal fluxes with
                         source and destination pool inidices
@@ -360,7 +360,7 @@ OutFlux_by_PoolName-class
                         name
 ParallelModel           models for unconnected pools
 PoolConnection_by_PoolIndex
-                        automatic title
+                        Pool connection by pool index
 PoolConnection_by_PoolIndex,ANY,ANY,missing-method
                         constructor from an ordered pair of PoolId
                         objects
@@ -371,7 +371,7 @@ PoolConnection_by_PoolIndex-class
                         described by integer like objects ( of class
                         PoolIndex)
 PoolConnection_by_PoolName
-                        automatic title
+                        Pool connection by pool name
 PoolConnection_by_PoolName,ANY,ANY,missing-method
                         constructor from an ordered pair of PoolName
                         objects
@@ -380,7 +380,7 @@ PoolConnection_by_PoolName-class
                         determined by a string like object of class
                         PoolName
 PoolId-class            common class for pool ids
-PoolIndex               automatic title
+PoolIndex               Pool index
 PoolIndex,PoolIndex-method
                         pass through constructor fron an object of the
                         same class
@@ -391,7 +391,7 @@ PoolIndex,character-method
 PoolIndex,numeric-method
                         construct from number
 PoolIndex-class         S4 class for pool indices
-PoolName                automatic title
+PoolName                Pool name
 PoolName,PoolIndex-method
                         convert to string like object
 PoolName,PoolName-method
@@ -540,7 +540,7 @@ YassoModel              Implementation of the Yasso model.
                         automatic title
 [[,MCSim-method         automatic title
 [[<-,MCSim-method       automatic title
-add_plot                automatic title
+add_plot                Add elements to plot
 add_plot,TimeMap-method
                         automatic title
 as.character,TimeMap-method
@@ -614,9 +614,6 @@ by_PoolName,ConstantInFlux_by_PoolIndex-method
                         a PoolIndex if necessary
 by_PoolName,ConstantInternalFluxRateList_by_PoolIndex-method
                         convert to a list indexed by pool names
-by_PoolName,ConstantInternalFluxRate_by_PoolIndex-method
-                        new object with the source pool id converted to
-                        a PoolIndex if necessary
 by_PoolName,ConstantOutFluxRateList_by_PoolIndex-method
                         convert to a list indexed by pool names
 by_PoolName,ConstantOutFluxRate_by_PoolIndex-method
@@ -626,7 +623,7 @@ check_duplicate_pool_names
                         helper function
 check_id_length         helper function to check that the length of the
                         argument is exactly 1
-check_pool_ids          automatic title
+check_pool_ids          Check pool ids
 check_pool_ids,PoolConnection_by_PoolIndex,integer-method
                         automatic title
 computeResults          Computes results
@@ -729,7 +726,7 @@ getCompartmentalMatrixFunc
 getCompartmentalMatrixFunc,BoundLinDecompOp-method
                         automatic title
 getCompartmentalMatrixFunc,ConstLinDecompOp-method
-                        automatic title
+                        Compartmental matrix function
 getCompartmentalMatrixFunc,TransportDecompositionOperator-method
                         automatic title
 getCompartmentalMatrixFunc,UnBoundNonLinDecompOp-method
@@ -741,7 +738,7 @@ getConstLinDecompOp,ConstLinDecompOpWithLinearScalarFactor-method
 getConstantCompartmentalMatrix
                         Constant compartmental matrix
 getConstantCompartmentalMatrix,ConstLinDecompOp-method
-                        automatic title
+                        Constant compartmental matrix
 getConstantCompartmentalMatrix,ConstLinDecompOpWithLinearScalarFactor-method
                         automatic title
 getConstantInFluxVector
@@ -751,11 +748,11 @@ getConstantInFluxVector,ConstInFluxes-method
 getConstantInternalFluxRateList_by_PoolIndex
                         Constant internal flux rate list by pool index
 getConstantInternalFluxRateList_by_PoolIndex,ConstLinDecompOp-method
-                        automatic title
+                        Constant internal flux rate list by pool index
 getConstantOutFluxRateList_by_PoolIndex
                         Constant out flux rate list by pool index
 getConstantOutFluxRateList_by_PoolIndex,ConstLinDecompOp-method
-                        automatic title
+                        Constant out flux rate list by pool index
 getCumulativeC          Cummulative pool contents
 getCumulativeC,NlModel-method
                         automatic title
@@ -785,7 +782,8 @@ getFunctionDefinition   Function definition of SoilR model
 getFunctionDefinition,ConstInFluxes-method
                         automatic title
 getFunctionDefinition,ConstLinDecompOp-method
-                        automatic title
+                        Function describing an object of class
+                        ConstLinDecompOp
 getFunctionDefinition,ConstLinDecompOpWithLinearScalarFactor-method
                         convert names of vectors or lists to class
                         ConstantOutFluxRate convert names of vectors or
@@ -822,7 +820,10 @@ getLinearScaleFactor,ConstLinDecompOpWithLinearScalarFactor-method
                         automatic title
 getMeanTransitTime      Mean transit time for SoilR objects
 getMeanTransitTime,ConstLinDecompOp-method
-                        automatic title
+                        Mean transit time obtained through a numerical
+                        simulation. It produces an estimate with
+                        numerical errors. We recommend to use the
+                        function transitTime instead.
 getNumberOfPools        Number of pools in a model
 getNumberOfPools,MCSim-method
                         automatic title
@@ -869,7 +870,8 @@ getTimeRange            Time range of a model simulation
 getTimeRange,ConstInFluxes-method
                         automatic title
 getTimeRange,ConstLinDecompOp-method
-                        automatic title
+                        Time range of a simulation described in an
+                        object of class ConstLinDecompOp
 getTimeRange,ConstLinDecompOpWithLinearScalarFactor-method
                         automatic title
 getTimeRange,DecompositionOperator-method
@@ -900,7 +902,10 @@ getTransferMatrixFunc,TransportDecompositionOperator-method
 getTransitTimeDistributionDensity
                         Transit time distribution for SoilR objects
 getTransitTimeDistributionDensity,ConstLinDecompOp-method
-                        automatic title
+                        Transit time distribution obtained through a
+                        numerical simulation. It introduces numerical
+                        errors. We recommend to use the function
+                        transitTime instead
 getValues               Get values of SoilR object
 getValues,ConstFc-method
                         automatic title

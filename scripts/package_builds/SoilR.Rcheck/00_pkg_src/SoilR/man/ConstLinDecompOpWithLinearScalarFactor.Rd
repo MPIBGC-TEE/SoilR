@@ -12,6 +12,17 @@ ConstLinDecompOpWithLinearScalarFactor(
   xi
 )
 }
+\arguments{
+\item{mat}{a square compartmental matrix}
+
+\item{internal_flux_rates}{internal transfer rates among pools}
+
+\item{out_flux_rates}{rates out of pools}
+
+\item{numberOfPools}{number of pools in the system}
+
+\item{xi}{rate modifier for the entire matrix}
+}
 \description{
 Generic constructor for the class with the same name
 }

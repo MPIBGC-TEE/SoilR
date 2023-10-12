@@ -6,6 +6,13 @@
 \usage{
 ConstLinDecompOp_by_PoolName(internal_flux_rates, out_flux_rates, poolNames)
 }
+\arguments{
+\item{internal_flux_rates}{rates of transfer among pools}
+
+\item{out_flux_rates}{rates out of pools}
+
+\item{poolNames}{names of the pools}
+}
 \description{
 Generic constructor for the class with the same name
 }

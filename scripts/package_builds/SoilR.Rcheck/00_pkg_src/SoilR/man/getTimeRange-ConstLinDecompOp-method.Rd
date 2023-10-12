@@ -2,7 +2,7 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getTimeRange,ConstLinDecompOp-method}
 \alias{getTimeRange,ConstLinDecompOp-method}
-\title{automatic title}
+\title{Time range of a simulation described in an object of class ConstLinDecompOp}
 \usage{
 \S4method{getTimeRange}{ConstLinDecompOp}(object)
 }
@@ -10,5 +10,5 @@
 \item{object}{no manual documentation}
 }
 \description{
-automatic title
+Time range of a simulation described in an object of class ConstLinDecompOp
 }

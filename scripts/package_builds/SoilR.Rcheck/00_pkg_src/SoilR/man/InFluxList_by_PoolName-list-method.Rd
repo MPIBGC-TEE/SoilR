@@ -6,6 +6,9 @@
 \usage{
 \S4method{InFluxList_by_PoolName}{list}(object)
 }
+\arguments{
+\item{object}{no documentation}
+}
 \description{
 after checking the elements
 }

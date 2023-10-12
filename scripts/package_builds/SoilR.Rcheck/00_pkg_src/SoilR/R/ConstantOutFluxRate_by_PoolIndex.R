@@ -45,6 +45,8 @@ setMethod(
 #' The reverse direction is always possible and is therefore 
 #' the preferred way to input 
 #' rate functions that depend on state variables.
+#' @param obj an object of class ConstantOutFluxRate_by_PoolIndex
+#' @param poolNames names of pools
 setMethod(
   f="by_PoolName",
   signature=c(obj='ConstantOutFluxRate_by_PoolIndex'),

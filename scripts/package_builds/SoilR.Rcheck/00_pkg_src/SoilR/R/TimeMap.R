@@ -503,6 +503,10 @@ setMethod(
 
 #' manual constructor for a function and an interval
 #'
+#' @param map a function
+#' @param starttime start time of simulation
+#' @param endtime end time of simulation
+#' @param lag a time lag
 setMethod(
     f="TimeMap",
     signature=signature(
@@ -532,6 +536,8 @@ setMethod(
 #' manual constructor for just a function
 #'
 #' The interval will be set to [-Inf,Inf]
+#' @param map a function
+#' @param lag a time lag
 setMethod(
     f="TimeMap",
     signature=signature(
@@ -611,6 +617,7 @@ setMethod(
 )
 
 #' The time interval where the function is defined
+#' @param object a TimeMap object
 setMethod(
     f="getTimeRange",
     signature="TimeMap",

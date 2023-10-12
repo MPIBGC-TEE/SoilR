@@ -18,6 +18,9 @@
 #' vector argument form needed for the solvers.
 
 #' constructor from an ordered pair of PoolIndex (integer like) objects 
+#' @param func function
+#' @param sourceIndex index of source pool
+#' @param destinationIndex index of destination pool
 setMethod(
   f="InternalFlux_by_PoolIndex",
   signature=c(

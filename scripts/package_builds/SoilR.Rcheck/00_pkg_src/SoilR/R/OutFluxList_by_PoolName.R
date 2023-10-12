@@ -67,6 +67,7 @@ setMethod(
 #' Convert to a numeric vector with the pool names as names
 #'
 #' @template FluxListAsNumeric
+#' @param ... additional arguments
 setMethod("as.numeric",
     signature(x = "OutFluxList_by_PoolName"),
     function (x,y,t,time_symbol,...) {

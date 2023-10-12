@@ -2,7 +2,7 @@
 % Please edit documentation in R/genericFunctions.R
 \name{check_pool_ids}
 \alias{check_pool_ids}
-\title{automatic title}
+\title{Check pool ids}
 \usage{
 check_pool_ids(obj, pools)
 }
@@ -12,5 +12,5 @@ check_pool_ids(obj, pools)
 \item{pools}{see method arguments}
 }
 \description{
-automatic title
+Check pool ids
 }

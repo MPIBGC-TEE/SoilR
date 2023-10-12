@@ -16,6 +16,25 @@ Model_by_PoolNames(
   solverfunc
 )
 }
+\arguments{
+\item{smod}{see methods}
+
+\item{times}{a vector of times}
+
+\item{mat}{a compartmental matrix}
+
+\item{initialValues}{a vector of initial values}
+
+\item{inputFluxes}{a vector of input fluxes}
+
+\item{internal_fluxes}{flux rate among pools}
+
+\item{out_fluxes}{flux rates out of pools}
+
+\item{timeSymbol}{character symbol used to represent time}
+
+\item{solverfunc}{function used to solve system of ODEs}
+}
 \value{
 A possibly nonlinear Model(run) that contains information about the
 pool names and connectivity of the pools and is therefore the preferred

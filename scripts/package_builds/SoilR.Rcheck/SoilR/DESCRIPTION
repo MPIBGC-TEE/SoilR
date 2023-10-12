@@ -89,5 +89,5 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
 RoxygenNote: 7.2.3.9000
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2023-10-10 14:00:31 UTC; csierra
-Built: R 4.3.1; ; 2023-10-10 14:00:54 UTC; unix
+Packaged: 2023-10-12 08:25:29 UTC; csierra
+Built: R 4.3.1; ; 2023-10-12 08:26:08 UTC; unix

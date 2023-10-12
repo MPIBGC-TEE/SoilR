@@ -2,15 +2,15 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getMeanTransitTime,ConstLinDecompOp-method}
 \alias{getMeanTransitTime,ConstLinDecompOp-method}
-\title{automatic title}
+\title{Mean transit time obtained through a numerical simulation. It produces an estimate with numerical errors. We recommend to use the function transitTime instead.}
 \usage{
 \S4method{getMeanTransitTime}{ConstLinDecompOp}(object, inputDistribution)
 }
 \arguments{
-\item{object}{no manual documentation}
+\item{object}{a ConstLinDecompOp object}
 
-\item{inputDistribution}{no manual documentation}
+\item{inputDistribution}{a distribution of input contents among pools}
 }
 \description{
-automatic title
+Mean transit time obtained through a numerical simulation. It produces an estimate with numerical errors. We recommend to use the function transitTime instead.
 }

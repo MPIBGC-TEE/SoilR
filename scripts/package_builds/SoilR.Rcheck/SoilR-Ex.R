@@ -1,6 +1,18 @@
 pkgname <- "SoilR"
 source(file.path(R.home("share"), "R", "examples-header.R"))
 options(warn = 1)
+base::assign(".ExTimings", "SoilR-Ex.timings", pos = 'CheckExEnv')
+base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+base::assign(".format_ptime",
+function(x) {
+  if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
+  if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
+  options(OutDec = '.')
+  format(x[1L:3L], digits = 7L)
+},
+pos = 'CheckExEnv')
+
+### * </HEADER>
 library('SoilR')
 
 base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
@@ -11,6 +23,7 @@ nameEx("AWBmodel")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: AWBmodel
 ### Title: Implementation of the microbial model AWB (Allison, Wallenstein,
 ###   Bradford, 2010)
@@ -32,12 +45,15 @@ plot(as.data.frame(Cpools))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("AWBmodel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("C14Atm")
 ### * C14Atm
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: C14Atm
 ### Title: Atmospheric 14C fraction
 ### Aliases: C14Atm
@@ -54,12 +70,15 @@ lines(C14Atm,col=2)
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("C14Atm", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("C14Atm_NH")
 ### * C14Atm_NH
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: C14Atm_NH
 ### Title: Post-bomb atmospheric 14C fraction
 ### Aliases: C14Atm_NH
@@ -71,12 +90,15 @@ plot(C14Atm_NH,type="l")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("C14Atm_NH", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("CenturyModel")
 ### * CenturyModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CenturyModel
 ### Title: Implementation of the Century model
 ### Aliases: CenturyModel
@@ -100,12 +122,15 @@ legend("topleft", poolNames, lty=1, col=1:7, bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("CenturyModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("CenturyModel14")
 ### * CenturyModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CenturyModel14
 ### Title: Implementation of a radiocarbon version of the Century model
 ### Aliases: CenturyModel14
@@ -132,12 +157,15 @@ legend("topleft", poolNames, lty=1, col=2:8, bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("CenturyModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("GaudinskiModel14")
 ### * GaudinskiModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: GaudinskiModel14
 ### Title: Implementation of a the six-pool C14 model proposed by Gaudinski
 ###   et al. 2000
@@ -190,12 +218,15 @@ pass=TRUE
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("GaudinskiModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("GeneralNlModel")
 ### * GeneralNlModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: GeneralNlModel
 ### Title: Use this function to create objects of class NlModel.
 ### Aliases: GeneralNlModel
@@ -246,12 +277,15 @@ c( 2,  2)
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("GeneralNlModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("Graven2017")
 ### * Graven2017
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: Graven2017
 ### Title: Compiled records of radicarbon in atmospheric CO2 for historical
 ###   simulations in CMIP6
@@ -267,12 +301,15 @@ legend("topleft",names(Graven2017[,-1]), lty=1, col=1:3, bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("Graven2017", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("HarvardForest14CO2")
 ### * HarvardForest14CO2
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: HarvardForest14CO2
 ### Title: Delta14C in soil CO2 efflux from Harvard Forest
 ### Aliases: HarvardForest14CO2
@@ -285,12 +322,15 @@ plot(HarvardForest14CO2[,1:2])
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("HarvardForest14CO2", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("Hua2013")
 ### * Hua2013
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: Hua2013
 ### Title: Atmospheric radiocarbon for the period 1950-2010 from Hua et al.
 ###   (2013)
@@ -322,12 +362,15 @@ legend(
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("Hua2013", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("Hua2021")
 ### * Hua2021
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: Hua2021
 ### Title: Atmospheric radiocarbon for the period 1950-2019 from Hua et al.
 ###   (2021)
@@ -346,12 +389,15 @@ legend("topright",names(Hua2021), col=1:5,lty=1,bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("Hua2021", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("ICBMModel")
 ### * ICBMModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ICBMModel
 ### Title: Implementation of the Introductory Carbon Balance Model (ICBM)
 ### Aliases: ICBMModel
@@ -418,12 +464,15 @@ flush(stderr()); flush(stdout())
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ICBMModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("IntCal09")
 ### * IntCal09
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: IntCal09
 ### Title: Northern Hemisphere atmospheric radiocarbon for the pre-bomb
 ###   period
@@ -449,6 +498,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("IntCal09", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("IntCal13")
@@ -456,6 +507,7 @@ nameEx("IntCal13")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: IntCal13
 ### Title: Atmospheric radiocarbon for the 0-50,000 yr BP period
 ### Aliases: IntCal13
@@ -474,12 +526,15 @@ flush(stderr()); flush(stdout())
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("IntCal13", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("IntCal20")
 ### * IntCal20
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: IntCal20
 ### Title: The IntCal20 northern hemisphere radiocarbon curve for the
 ###   0-55,000 yr BP period
@@ -494,12 +549,15 @@ flush(stderr()); flush(stdout())
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("IntCal20", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("Model")
 ### * Model
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: Model
 ### Title: Constructor for class Model
 ### Aliases: Model
@@ -557,12 +615,15 @@ test.all.possible.Model.arguments <- function(){
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("Model", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("Model_14")
 ### * Model_14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: Model_14
 ### Title: general constructor for class Model_14
 ### Aliases: Model_14
@@ -702,12 +763,15 @@ flush(stderr()); flush(stdout())
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("Model_14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("OnepModel")
 ### * OnepModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: OnepModel
 ### Title: Implementation of a one pool model
 ### Aliases: OnepModel
@@ -758,12 +822,15 @@ lwd=2
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("OnepModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("OnepModel14")
 ### * OnepModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: OnepModel14
 ### Title: Implementation of a one-pool C14 model
 ### Aliases: OnepModel14
@@ -789,12 +856,15 @@ bty="n"
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("OnepModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("ParallelModel")
 ### * ParallelModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ParallelModel
 ### Title: models for unconnected pools
 ### Aliases: ParallelModel
@@ -843,12 +913,15 @@ legend("topright",c("R1","R2","R3"),lty=c(lt1,lt2,lt3),col=c(col1,col2,col3))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ParallelModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("RothCModel")
 ### * RothCModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: RothCModel
 ### Title: Implementation of the RothCModel
 ### Aliases: RothCModel
@@ -879,12 +952,15 @@ bty="n"
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("RothCModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("SHCal20")
 ### * SHCal20
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: SHCal20
 ### Title: The SHCal20 southern hemisphere radiocarbon curve for the
 ###   0-55,000 yr BP period
@@ -899,12 +975,15 @@ flush(stderr()); flush(stdout())
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("SHCal20", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("SeriesLinearModel")
 ### * SeriesLinearModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: SeriesLinearModel
 ### Title: General m-pool linear model with series structure
 ### Aliases: SeriesLinearModel
@@ -933,12 +1012,15 @@ lty=1,col=1:6,lwd=c(2,rep(1,5)),bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("SeriesLinearModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("SeriesLinearModel14")
 ### * SeriesLinearModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: SeriesLinearModel14
 ### Title: General m-pool linear C14 model with series structure
 ### Aliases: SeriesLinearModel14
@@ -977,6 +1059,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("SeriesLinearModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("ThreepFeedbackModel")
@@ -984,6 +1068,7 @@ nameEx("ThreepFeedbackModel")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ThreepFeedbackModel
 ### Title: Implementation of a three pool model with feedback structure
 ### Aliases: ThreepFeedbackModel
@@ -1092,12 +1177,15 @@ bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ThreepFeedbackModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("ThreepFeedbackModel14")
 ### * ThreepFeedbackModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ThreepFeedbackModel14
 ### Title: Implementation of a three-pool C14 model with feedback structure
 ### Aliases: ThreepFeedbackModel14
@@ -1220,6 +1308,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ThreepFeedbackModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("ThreepParallelModel")
@@ -1227,6 +1317,7 @@ nameEx("ThreepParallelModel")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ThreepParallelModel
 ### Title: Implementation of a three pool model with parallel structure
 ### Aliases: ThreepParallelModel
@@ -1263,12 +1354,15 @@ lty=c(1,1,1,1),col=c(1,2,4,3),lwd=c(2,1,1,1),bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ThreepParallelModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("ThreepParallelModel14")
 ### * ThreepParallelModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ThreepParallelModel14
 ### Title: Implementation of a three-pool C14 model with parallel structure
 ### Aliases: ThreepParallelModel14
@@ -1321,6 +1415,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ThreepParallelModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("ThreepSeriesModel")
@@ -1328,6 +1424,7 @@ nameEx("ThreepSeriesModel")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ThreepSeriesModel
 ### Title: Implementation of a three pool model with series structure
 ### Aliases: ThreepSeriesModel
@@ -1357,12 +1454,15 @@ lty=c(1,1,1,1),col=c(1,2,4,3),lwd=c(2,1,1,1),bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ThreepSeriesModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("ThreepSeriesModel14")
 ### * ThreepSeriesModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ThreepSeriesModel14
 ### Title: Implementation of a three-pool C14 model with series structure
 ### Aliases: ThreepSeriesModel14
@@ -1401,6 +1501,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ThreepSeriesModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("ThreepairMMmodel")
@@ -1408,6 +1510,7 @@ nameEx("ThreepairMMmodel")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: ThreepairMMmodel
 ### Title: Implementation of a 6-pool Michaelis-Menten model
 ### Aliases: ThreepairMMmodel
@@ -1440,12 +1543,15 @@ plot(days,Cpools[,2],type="l",col=2,xlab="Days",ylab="Microbial biomass")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ThreepairMMmodel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("TwopFeedbackModel")
 ### * TwopFeedbackModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: TwopFeedbackModel
 ### Title: Implementation of a two pool model with feedback structure
 ### Aliases: TwopFeedbackModel
@@ -1495,6 +1601,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("TwopFeedbackModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("TwopFeedbackModel14")
@@ -1502,6 +1610,7 @@ nameEx("TwopFeedbackModel14")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: TwopFeedbackModel14
 ### Title: Implementation of a two-pool C14 model with feedback structure
 ### Aliases: TwopFeedbackModel14
@@ -1533,6 +1642,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("TwopFeedbackModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("TwopMMmodel")
@@ -1540,6 +1651,7 @@ nameEx("TwopMMmodel")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: TwopMMmodel
 ### Title: Implementation of a two-pool Michaelis-Menten model
 ### Aliases: TwopMMmodel
@@ -1581,12 +1693,15 @@ plot(days,Cpools[,2],type="l",col=2,xlab="Days",ylab="Microbial biomass")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("TwopMMmodel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("TwopParallelModel")
 ### * TwopParallelModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: TwopParallelModel
 ### Title: Implementation of a linear two pool model with parallel
 ###   structure
@@ -1618,12 +1733,15 @@ lty=c(1,1,1),col=c(1,2,4),lwd=c(2,1,1),bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("TwopParallelModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("TwopParallelModel14")
 ### * TwopParallelModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: TwopParallelModel14
 ### Title: Implementation of a two-pool C14 model with parallel structure
 ### Aliases: TwopParallelModel14
@@ -1653,6 +1771,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("TwopParallelModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("TwopSeriesModel")
@@ -1660,6 +1780,7 @@ nameEx("TwopSeriesModel")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: TwopSeriesModel
 ### Title: Implementation of a two pool model with series structure
 ### Aliases: TwopSeriesModel
@@ -1692,12 +1813,15 @@ lty=c(1,1,1),col=c(1,2,4),lwd=c(2,1,1),bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("TwopSeriesModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("TwopSeriesModel14")
 ### * TwopSeriesModel14
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: TwopSeriesModel14
 ### Title: Implementation of a two-pool C14 model with series structure
 ### Aliases: TwopSeriesModel14
@@ -1731,6 +1855,8 @@ par(mfrow=c(1,1))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("TwopSeriesModel14", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 cleanEx()
 nameEx("Yasso07Model")
@@ -1738,6 +1864,7 @@ nameEx("Yasso07Model")
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: Yasso07Model
 ### Title: Implementation of the Yasso07 model
 ### Aliases: Yasso07Model
@@ -1761,12 +1888,15 @@ legend("topright",c("xA","xW","xE","xN","xH"),lty=1,col=1:5,bty="n")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("Yasso07Model", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("YassoModel")
 ### * YassoModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: YassoModel
 ### Title: Implementation of the Yasso model.
 ### Aliases: YassoModel
@@ -1788,12 +1918,15 @@ legend("topright",c("fwl","cwl","ext","cel","lig","hum1","hum2"),lty=1,col=1:7,b
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("YassoModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("bacwaveModel")
 ### * bacwaveModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: bacwaveModel
 ### Title: Implementation of the microbial model Bacwave (bacterial waves)
 ### Aliases: bacwaveModel
@@ -1818,12 +1951,15 @@ plot(hours,Cpools[,2],type="l",col=2,xlab="Hours",ylab="Microbial biomass")
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("bacwaveModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("by_PoolIndex-function-character-character-method")
 ### * by_PoolIndex-function-character-character-method
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: by_PoolIndex,function,character,character-method
 ### Title: convert a function f of to f_vec
 ### Aliases: by_PoolIndex,function,character,character-method
@@ -1844,12 +1980,15 @@ leaf_resp_vec(c(1,27,3,1),5)
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("by_PoolIndex-function-character-character-method", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("eCO2")
 ### * eCO2
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: eCO2
 ### Title: Soil CO2 efflux from an incubation experiment
 ### Aliases: eCO2
@@ -1865,12 +2004,15 @@ arrows(eCO2[,1],eCO2[,2]-eCO2[,3],eCO2[,1],eCO2[,2]+eCO2[,3], angle=90,length=0.
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("eCO2", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("entropyRatePerJump")
 ### * entropyRatePerJump
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: entropyRatePerJump
 ### Title: Entropy rate per jump
 ### Aliases: entropyRatePerJump
@@ -1882,12 +2024,15 @@ entropyRatePerJump(A=B6, u=u6)
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("entropyRatePerJump", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("entropyRatePerTime")
 ### * entropyRatePerTime
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: entropyRatePerTime
 ### Title: Entropy rate per time
 ### Aliases: entropyRatePerTime
@@ -1899,12 +2044,15 @@ entropyRatePerTime(A=B6, u=u6)
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("entropyRatePerTime", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("incubation_experiment")
 ### * incubation_experiment
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: incubation_experiment
 ### Title: Soil CO2 efflux from an incubation experiment, along with the
 ###   soil mass and carbon concentration measurements.
@@ -1922,12 +2070,15 @@ arrows(eCO2[,1],eCO2[,2]-eCO2[,3],eCO2[,1],eCO2[,2]+eCO2[,3], angle=90,length=0.
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("incubation_experiment", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("linearScalarModel")
 ### * linearScalarModel
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: linearScalarModel
 ### Title: Implementation of a general model for linear non-autonomous
 ###   systems with scalar modifiers
@@ -1939,12 +2090,15 @@ t=seq(0,52*200,1) # Fix me! Add an example.
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("linearScalarModel", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("listProduct")
 ### * listProduct
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: listProduct
 ### Title: tensor product of lists
 ### Aliases: listProduct
@@ -1955,12 +2109,15 @@ listProduct(list('a','b'),list(1,2))
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("listProduct", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("pathEntropy")
 ### * pathEntropy
 
 flush(stderr()); flush(stdout())
 
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: pathEntropy
 ### Title: Path Entropy
 ### Aliases: pathEntropy
@@ -1972,6 +2129,8 @@ pathEntropy(A=B6, u=u6)
 
 
 
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("pathEntropy", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 ### * <FOOTER>
 ###
 cleanEx()

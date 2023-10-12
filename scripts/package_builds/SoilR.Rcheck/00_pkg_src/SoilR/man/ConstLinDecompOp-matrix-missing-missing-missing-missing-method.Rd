@@ -2,10 +2,13 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{ConstLinDecompOp,matrix,missing,missing,missing,missing-method}
 \alias{ConstLinDecompOp,matrix,missing,missing,missing,missing-method}
-\title{Constructor}
+\title{Constructor of object of ConstLinDecompOp class}
 \usage{
 \S4method{ConstLinDecompOp}{matrix,missing,missing,missing,missing}(mat)
 }
+\arguments{
+\item{mat}{a compartmental matrix}
+}
 \description{
-Constructor
+Constructor of object of ConstLinDecompOp class
 }

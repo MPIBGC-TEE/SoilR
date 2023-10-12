@@ -9,3 +9,4 @@ scripts/spellchecking/argNames
 scripts/spellchecking/manually_maintained_list_of_ignored_words.rds
 scripts/spellchecking/possibly_mis-spelled_words
 scripts/SoilR.Rcheck/
+scripts/package_builds/SoilR.Rcheck/

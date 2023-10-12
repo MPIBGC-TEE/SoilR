@@ -6,6 +6,11 @@
 \usage{
 ConstantOutFluxRate_by_PoolIndex(sourceIndex, rate_constant)
 }
+\arguments{
+\item{sourceIndex}{index of the source pool}
+
+\item{rate_constant}{rate of output flux}
+}
 \description{
 Generic constructor for the class with the same name
 }

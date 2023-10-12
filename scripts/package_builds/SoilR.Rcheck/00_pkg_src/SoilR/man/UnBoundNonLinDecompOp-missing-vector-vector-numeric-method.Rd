@@ -10,6 +10,8 @@
 \item{internal_fluxes}{vector of elements of type InternalFlux_by_PoolName}
 
 \item{out_fluxes}{vector of elements of type OutFlux_by_PoolName}
+
+\item{numberOfPools}{number of pools in a model}
 }
 \description{
 Constructor for the class with the same name

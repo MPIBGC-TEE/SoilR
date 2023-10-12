@@ -8,6 +8,9 @@ helper function}
 \usage{
 \S4method{getFunctionDefinition}{ConstLinDecompOpWithLinearScalarFactor}(object)
 }
+\arguments{
+\item{object}{an object of class ConstLinDecompOpWithLinearScalarFactor}
+}
 \description{
 convert names of  vectors or lists to class ConstantOutFluxRate 
 convert names of  vectors or lists to class ConstantInternalFluxRate 

@@ -58,6 +58,7 @@ setMethod(
 #' Convert to a numeric vector with names of the form 'a->b'
 #'
 #' @template FluxListAsNumeric
+#' @param ... additional arguments
 setMethod("as.numeric",
     signature(x = "InternalFluxList_by_PoolName"),
     function (x,y,t,time_symbol,...) {

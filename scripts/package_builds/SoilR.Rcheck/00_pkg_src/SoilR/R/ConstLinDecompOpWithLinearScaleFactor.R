@@ -257,6 +257,7 @@
 #
 #
 
+#' @param object an object of class ConstLinDecompOpWithLinearScalarFactor
 setMethod(
     f="getFunctionDefinition",
     signature="ConstLinDecompOpWithLinearScalarFactor",

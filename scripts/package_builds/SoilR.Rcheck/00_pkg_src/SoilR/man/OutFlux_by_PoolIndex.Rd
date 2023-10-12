@@ -6,6 +6,11 @@
 \usage{
 OutFlux_by_PoolIndex(func, sourceIndex)
 }
+\arguments{
+\item{func}{function with output flux}
+
+\item{sourceIndex}{index of the source pool}
+}
 \description{
 Generic constructor for the class with the same name
 }

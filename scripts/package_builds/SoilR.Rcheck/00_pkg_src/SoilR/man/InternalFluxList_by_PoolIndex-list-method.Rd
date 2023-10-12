@@ -2,10 +2,15 @@
 % Please edit documentation in R/InternalFluxList_by_PoolIndex.R
 \name{InternalFluxList_by_PoolIndex,list-method}
 \alias{InternalFluxList_by_PoolIndex,list-method}
-\title{constructor from a normal list}
+\title{Constructor from a normal list
+after checking the elements}
 \usage{
 \S4method{InternalFluxList_by_PoolIndex}{list}(object)
 }
+\arguments{
+\item{object}{a list}
+}
 \description{
+Constructor from a normal list
 after checking the elements
 }

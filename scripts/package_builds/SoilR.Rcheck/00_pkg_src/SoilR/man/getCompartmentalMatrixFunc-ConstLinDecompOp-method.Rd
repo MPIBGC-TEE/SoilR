@@ -2,13 +2,13 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getCompartmentalMatrixFunc,ConstLinDecompOp-method}
 \alias{getCompartmentalMatrixFunc,ConstLinDecompOp-method}
-\title{automatic title}
+\title{Compartmental matrix function}
 \usage{
 \S4method{getCompartmentalMatrixFunc}{ConstLinDecompOp}(object)
 }
 \arguments{
-\item{object}{no manual documentation}
+\item{object}{a ConstLinDecompOp object}
 }
 \description{
-automatic title
+Compartmental matrix function
 }

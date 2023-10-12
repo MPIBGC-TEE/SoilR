@@ -49,6 +49,7 @@ setMethod(
 #' @family UnBoundNonLinDecompOp_constructor
 #' @param internal_fluxes vector of elements of type InternalFlux_by_PoolName
 #' @param out_fluxes vector of elements of type OutFlux_by_PoolName
+#' @param numberOfPools number of pools in a model
                     #if (dest> numberOfPools){stop("The index of the destination pool must be smaller than the number of pools")}
                     #if (src_int> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}
                     # if (src_o> numberOfPools){stop("The index of the source pool must be smaller than the number of pools")}

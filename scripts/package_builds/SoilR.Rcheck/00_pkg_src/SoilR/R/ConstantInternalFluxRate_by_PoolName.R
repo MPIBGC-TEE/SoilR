@@ -1,4 +1,7 @@
 #' constructor with argument conversion 
+#' @param sourceName name of source pool
+#' @param destinationName name of destination pool
+#' @param rate_constant a value of the rate constant
 setMethod(
     f='ConstantInternalFluxRate_by_PoolName'
     ,signature=signature(
@@ -16,7 +19,10 @@ setMethod(
         )
   }
 )
+
 #' constructor from strings of the form 'a->b'
+#' @param src_to_dest a string indicating the source to destination pools
+#' @param rate_constant a value of the rate constant 
 setMethod(
   f="ConstantInternalFluxRate_by_PoolName",
   signature=signature(
@@ -34,7 +40,10 @@ setMethod(
       )
   }
 )
+
 #' new object with the source pool id converted to a PoolName if necessary 
+#' @param obj an object of class ConstantInternalFluxRate_by_PoolName
+#' @param poolNames names of the pools
 setMethod(
   f="by_PoolIndex",
   signature=c(obj='ConstantInternalFluxRate_by_PoolName'),

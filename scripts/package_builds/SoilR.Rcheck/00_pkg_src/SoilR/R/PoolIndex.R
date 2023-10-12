@@ -1,4 +1,5 @@
 #' construct from number 
+#' @param id pool id
 setMethod(
     f="PoolIndex",
     signature=c(id='numeric'),
@@ -10,7 +11,7 @@ setMethod(
 
 ##' construct from number string like '1' or '3'
 ##'
-##'
+##'@param id pool id
 setMethod(
     f="PoolIndex",
     signature=c(id='character'),
@@ -29,6 +30,8 @@ setMethod(
 #' This is here to be able to call PoolIndex on a PoolIndex object without
 #' having to check before if it is necessary.
 #' the unnecessary poolNames argument will be ignored.
+#' @param id pool id
+#' @param poolNames names of pools
 setMethod(
     f="PoolIndex",
     signature=c(id='PoolIndex'),
@@ -36,6 +39,8 @@ setMethod(
 )
 
 #' convert to string like object  
+#' @param id pool id
+#' @param poolNames name of pools
 setMethod(
     f="PoolName",
     signature=c(id='PoolIndex'),

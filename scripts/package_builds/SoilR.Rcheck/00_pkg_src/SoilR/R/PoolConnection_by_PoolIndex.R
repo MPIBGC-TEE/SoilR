@@ -12,6 +12,8 @@ setClass(
 )
 
 #' constructor from an ordered pair of PoolId objects
+#' @param source index of source pool
+#' @param destination index of destination pool
 setMethod(
   f="PoolConnection_by_PoolIndex",
   signature=c(src_to_dest='missing'),
@@ -25,6 +27,7 @@ setMethod(
 )
 
 #' constructor from strings of the form '1_to_2'
+#' @param src_to_dest charcter string describing the source to destination pools
 setMethod(
   f="PoolConnection_by_PoolIndex",
   signature=c(source='missing',destination='missing',src_to_dest='character'),

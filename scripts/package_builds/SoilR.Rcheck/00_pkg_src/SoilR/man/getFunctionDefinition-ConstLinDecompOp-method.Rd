@@ -2,13 +2,13 @@
 % Please edit documentation in R/ConstLinDecompOp.R
 \name{getFunctionDefinition,ConstLinDecompOp-method}
 \alias{getFunctionDefinition,ConstLinDecompOp-method}
-\title{automatic title}
+\title{Function describing an object of class ConstLinDecompOp}
 \usage{
 \S4method{getFunctionDefinition}{ConstLinDecompOp}(object)
 }
 \arguments{
-\item{object}{no manual documentation}
+\item{object}{object of class ConstLinDecompOp}
 }
 \description{
-automatic title
+Function describing an object of class ConstLinDecompOp
 }

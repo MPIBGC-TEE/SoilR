@@ -6,6 +6,13 @@
 \usage{
 UnBoundNonLinDecompOp_by_PoolNames(internal_fluxes, out_fluxes, timeSymbol)
 }
+\arguments{
+\item{internal_fluxes}{flux rates among pools}
+
+\item{out_fluxes}{output flux rates from pools}
+
+\item{timeSymbol}{character used to represent time}
+}
 \description{
 Generic constructor for the class with the same name
 }
