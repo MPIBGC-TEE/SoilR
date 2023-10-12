@@ -17,7 +17,7 @@ Check out the [Example](newStyleExample) .
 -->
 
 ## Documentation
-* The latest build of the package documentation can be found [here:](https://mpibgc-tee.github.io/SoilR-exp/).
+* The latest build of the package documentation can be found [here:](https://mpibgc-tee.github.io/SoilR/).
 * To find examples you can also look at the [workflows](https://www.bgc-jena.mpg.de/TEE/software/soilr/).
 
 
@@ -34,29 +34,29 @@ install.packages("devtools")
 After installing `devtools`, you only need to run
 
 ```r
-devtools::install_github('MPIBGC-TEE/SoilR-exp/pkg')
+devtools::install_github('MPIBGC-TEE/SoilR/pkg')
 ```
 
 2. Download package file (this might be slightly older) 
-  go to the [package_builds](https://github.com/MPIBGC-TEE/SoilR-exp/blob/master/scripts/package_builds) directory
+  go to the [package_builds](https://github.com/MPIBGC-TEE/SoilR/blob/master/scripts/package_builds) directory
   and download the latest SoilR_\*.tar.gz file
   and install it with 
   ```r
   devtools::install_local("/path/to/the/downloaded/SoilR\*.tar.gz",repos=NULL)
   ```
   If you do not want to or cannot use ```devtools``` you can install the dependencies by copying the contents of the script
-  [install_dependencies.R](https://github.com/MPIBGC-TEE/SoilR-exp/blob/master/scripts/install_dependencies.R)
+  [install_dependencies.R](https://github.com/MPIBGC-TEE/SoilR/blob/master/scripts/install_dependencies.R)
 
 3. Clone the repository [Source](#source)
   possibly change files and install the package 
   either 
   * directly with devtools
     ```r
-    devtools::install('path/to/SoilR-exp/pkg')
+    devtools::install('path/to/SoilR/pkg')
     ```
   * or after building it with 
     ```sh
-    R CMD build path/to/SoilR-exp/pkg
+    R CMD build path/to/SoilR/pkg
     ```
 
 ## Source code and contributing
@@ -65,7 +65,7 @@ devtools::install_github('MPIBGC-TEE/SoilR-exp/pkg')
 1. You can download the source code of `SoilR` by cloning this repository
 <a name='source'></a>
 ```
-git clone https://github.com/MPIBGC-TEE/SoilR-exp.git
+git clone https://github.com/MPIBGC-TEE/SoilR.git
 ```
 2. If you are already contributing and want to update a vignette or correct a typo in the documentation 
 look at the [tools for package maintenance](scripts/README.md).
