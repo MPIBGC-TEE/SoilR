@@ -28,7 +28,7 @@
 #' 
 #' @examples
 #' plot(Hua2013$NHZone1$Year.AD, Hua2013$NHZone1$mean.Delta14C, 
-#'      type="l",xlab="Year AD",ylab=expression(paste(Delta^14,"C (\u2030)")))
+#'      type="l",xlab="Year AD",ylab=expression(paste(Delta^14,"C (per mille)")))
 #' lines(Hua2013$NHZone2$Year.AD,Hua2013$NHZone2$mean.Delta14C,col=2)
 #' lines(Hua2013$NHZone3$Year.AD,Hua2013$NHZone3$mean.Delta14C,col=3)
 #' lines(Hua2013$SHZone12$Year.AD,Hua2013$SHZone12$mean.Delta14C,col=4)

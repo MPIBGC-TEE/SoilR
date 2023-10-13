@@ -56,7 +56,7 @@
 #' C14Atm_NH,
 #' type="l",
 #' xlab="Year",
-#' ylab=expression(paste(Delta^14,"C (per mil)")),
+#' ylab=expression(paste(Delta^14,"C (per mille)")),
 #' xlim=c(1940,2010)
 #' ) 
 #' lines(years,C14m,col=4)

@@ -51,7 +51,7 @@ turnoverFit=structure(
                C14test1=getF14(pred1)
                C14test2=getF14(pred2)
                par(mfrow=c(2,1),mar=c(4,5,1,1))
-               plot(Fatm,type="l", xlab="Year AD",ylab=expression(paste(Delta^14,"C ","(\u2030)")), ylim=c(min(0,obsC14),900))
+               plot(Fatm,type="l", xlab="Year AD",ylab=expression(paste(Delta^14,"C ","(per mille)")), ylim=c(min(0,obsC14),900))
                points(obsyr,obsC14,pch=19)
                lines(years,C14test1,col=2)
                lines(years,C14test2,col=4)
