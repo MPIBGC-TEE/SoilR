@@ -3,7 +3,7 @@
 #' @docType data 
 #' @description
 #' Atmospheric radiocarbon for the period 1950-2019 reported by Hua et al. (2020) for 5 atmospheric zones.
-#' @usage data(Hua2013)
+#' @usage data(Hua2021)
 #' @format
 #'   A \link{list} containing 5 data frames, each representing an atmospheric zone. The zones are: 
 #'   NHZone1: northern hemisphere zone 1, NHZone2: northern hemisphere zone 2,

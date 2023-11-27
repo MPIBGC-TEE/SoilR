@@ -2,6 +2,7 @@
 % Please edit documentation in R/SoilR-package.R
 \docType{package}
 \name{SoilR-package}
+\alias{SoilR}
 \alias{SoilR-package}
 \title{SoilR}
 \description{

@@ -22,7 +22,7 @@ A \link{list} containing 5 data frames, each representing an atmospheric zone. T
 \doi{10.1017/RDC.2021.95}
 }
 \usage{
-data(Hua2013)
+data(Hua2021)
 }
 \description{
 Atmospheric radiocarbon for the period 1950-2019 reported by Hua et al. (2020) for 5 atmospheric zones.
