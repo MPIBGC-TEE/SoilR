@@ -4,7 +4,7 @@
 \alias{UnBoundNonLinDecompOp,function,missing,missing,missing-method}
 \title{Constructor for the class with the same name}
 \usage{
-\S4method{UnBoundNonLinDecompOp}{`function`,missing,missing,missing}(matFunc)
+\S4method{UnBoundNonLinDecompOp}{function,missing,missing,missing}(matFunc)
 }
 \arguments{
 \item{matFunc}{A matrix valued function of the state vector and time}

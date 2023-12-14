@@ -4,7 +4,7 @@
 \alias{OutFlux_by_PoolName,function,character-method}
 \title{constructor from a PoolName (integer like) object and a function}
 \usage{
-\S4method{OutFlux_by_PoolName}{`function`,character}(func, sourceName)
+\S4method{OutFlux_by_PoolName}{function,character}(func, sourceName)
 }
 \arguments{
 \item{func}{A function. The names of the formal arguments have to be a subset of the state variable names and the time symbol}

@@ -4,7 +4,7 @@
 \alias{InFlux_by_PoolIndex,function,numeric-method}
 \title{Constructor from an ordered pair of PoolIndex (integer like) objects}
 \usage{
-\S4method{InFlux_by_PoolIndex}{`function`,numeric}(func, destinationIndex)
+\S4method{InFlux_by_PoolIndex}{function,numeric}(func, destinationIndex)
 }
 \arguments{
 \item{func}{A function f(X,t) where X is a vector of the state variables.}

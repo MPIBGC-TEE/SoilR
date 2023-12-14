@@ -4,7 +4,7 @@
 \alias{InFluxes,function-method}
 \title{automatic title}
 \usage{
-\S4method{InFluxes}{`function`}(object)
+\S4method{InFluxes}{function}(object)
 }
 \arguments{
 \item{object}{no manual documentation}

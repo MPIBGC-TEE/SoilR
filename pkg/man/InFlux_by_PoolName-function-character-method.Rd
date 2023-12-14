@@ -4,7 +4,7 @@
 \alias{InFlux_by_PoolName,function,character-method}
 \title{Constructor from an ordered pair of PoolName (string like) and function  objects}
 \usage{
-\S4method{InFlux_by_PoolName}{`function`,character}(func, destinationName)
+\S4method{InFlux_by_PoolName}{function,character}(func, destinationName)
 }
 \arguments{
 \item{func}{A function. The names of the formal arguments have to be a subset of the state variable names and the time symbol 

@@ -4,7 +4,7 @@
 \alias{UnBoundLinDecompOp,function-method}
 \title{Generic constructor for the class with the same name}
 \usage{
-\S4method{UnBoundLinDecompOp}{`function`}(matFunc)
+\S4method{UnBoundLinDecompOp}{function}(matFunc)
 }
 \arguments{
 \item{matFunc}{no manual documentation}

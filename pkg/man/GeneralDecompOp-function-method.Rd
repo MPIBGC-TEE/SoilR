@@ -4,7 +4,7 @@
 \alias{GeneralDecompOp,function-method}
 \title{automatic title}
 \usage{
-\S4method{GeneralDecompOp}{`function`}(object)
+\S4method{GeneralDecompOp}{function}(object)
 }
 \arguments{
 \item{object}{no manual documentation}

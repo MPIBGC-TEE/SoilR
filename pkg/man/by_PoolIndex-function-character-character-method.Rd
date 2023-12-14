@@ -4,7 +4,7 @@
 \alias{by_PoolIndex,function,character,character-method}
 \title{convert a function f of to f_vec}
 \usage{
-\S4method{by_PoolIndex}{`function`,character,character}(obj, poolNames, timeSymbol)
+\S4method{by_PoolIndex}{function,character,character}(obj, poolNames, timeSymbol)
 }
 \arguments{
 \item{obj}{For this method a function, whose formal arguments must have names that are elements of the union of poolNames and timeSymbol}

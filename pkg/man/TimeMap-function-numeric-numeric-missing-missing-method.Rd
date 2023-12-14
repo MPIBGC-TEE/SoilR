@@ -4,7 +4,7 @@
 \alias{TimeMap,function,numeric,numeric,missing,missing-method}
 \title{manual constructor for a function and an interval}
 \usage{
-\S4method{TimeMap}{`function`,numeric,numeric,missing,missing}(map, starttime, endtime, lag = 0)
+\S4method{TimeMap}{function,numeric,numeric,missing,missing}(map, starttime, endtime, lag = 0)
 }
 \arguments{
 \item{map}{a function}

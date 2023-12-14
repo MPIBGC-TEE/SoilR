@@ -5,7 +5,7 @@
 \title{constructor from an ordered pair of PoolName (string like) objects and a function with the set of formal argument names forming a 
 subset of the state_variable_names}
 \usage{
-\S4method{InternalFlux_by_PoolName}{`function`,character,character,missing}(func, sourceName, destinationName)
+\S4method{InternalFlux_by_PoolName}{function,character,character,missing}(func, sourceName, destinationName)
 }
 \arguments{
 \item{func}{A real valued function describing the flux (mass/time)

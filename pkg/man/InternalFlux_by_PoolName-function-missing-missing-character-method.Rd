@@ -4,7 +4,7 @@
 \alias{InternalFlux_by_PoolName,function,missing,missing,character-method}
 \title{automatic title}
 \usage{
-\S4method{InternalFlux_by_PoolName}{`function`,missing,missing,character}(func, src_to_dest)
+\S4method{InternalFlux_by_PoolName}{function,missing,missing,character}(func, src_to_dest)
 }
 \arguments{
 \item{func}{no manual documentation}

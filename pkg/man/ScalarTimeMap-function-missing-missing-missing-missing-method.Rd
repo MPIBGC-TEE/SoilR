@@ -4,7 +4,7 @@
 \alias{ScalarTimeMap,function,missing,missing,missing,missing-method}
 \title{manual constructor for just a function}
 \usage{
-\S4method{ScalarTimeMap}{`function`,missing,missing,missing,missing}(map, lag = 0)
+\S4method{ScalarTimeMap}{function,missing,missing,missing,missing}(map, lag = 0)
 }
 \arguments{
 \item{map}{a function}

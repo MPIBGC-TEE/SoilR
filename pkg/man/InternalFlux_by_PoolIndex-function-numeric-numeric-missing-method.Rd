@@ -4,7 +4,7 @@
 \alias{InternalFlux_by_PoolIndex,function,numeric,numeric,missing-method}
 \title{constructor from an ordered pair of PoolIndex (integer like) objects and a function with vector argument}
 \usage{
-\S4method{InternalFlux_by_PoolIndex}{`function`,numeric,numeric,missing}(func, sourceIndex, destinationIndex)
+\S4method{InternalFlux_by_PoolIndex}{function,numeric,numeric,missing}(func, sourceIndex, destinationIndex)
 }
 \arguments{
 \item{func}{function}

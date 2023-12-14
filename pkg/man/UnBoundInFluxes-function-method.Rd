@@ -4,7 +4,7 @@
 \alias{UnBoundInFluxes,function-method}
 \title{automatic title}
 \usage{
-\S4method{UnBoundInFluxes}{`function`}(map)
+\S4method{UnBoundInFluxes}{function}(map)
 }
 \arguments{
 \item{map}{no manual documentation}

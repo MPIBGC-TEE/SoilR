@@ -4,7 +4,7 @@
 \alias{OutFlux_by_PoolIndex,function,numeric-method}
 \title{constructor from a PoolIndex (integer like) objects and a function with vector argument}
 \usage{
-\S4method{OutFlux_by_PoolIndex}{`function`,numeric}(func, sourceIndex)
+\S4method{OutFlux_by_PoolIndex}{function,numeric}(func, sourceIndex)
 }
 \arguments{
 \item{func}{A function f(X,t) where X is a vector of the state variables.}

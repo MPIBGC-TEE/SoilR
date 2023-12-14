@@ -30,6 +30,14 @@ and the rate modifying factor b.
 Calculates the effects of moisture (precipitation and pan evaporation) on
 decomposition rates according to the RothC model.
 }
+\examples{
+P=c(74,59,62,51,52,57,34,55,58,56,75,71)
+E=c(8,10,27,49,83,99,103,91,69,34,16,8)
+Rothamsted=fW.RothC(P,E)
+data.frame(Month=month.name,Rainfall=P,
+Evaporation=E, pE= (E*0.75), SMD=(P-0.75*E),Rothamsted)
+
+}
 \references{
 Coleman, K., and D. S. Jenkinson (1999), RothC-26.3 A model for
 the turnover of carbon in soil: model description and windows user guide
