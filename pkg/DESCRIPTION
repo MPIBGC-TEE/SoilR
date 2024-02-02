@@ -14,6 +14,8 @@ License: GPL-3
 Depends: R (>= 3.5.0), deSolve,methods
 Imports: igraph,assertthat,parallel,expm,sets,purrr
 Suggests: FME,lattice,MASS,knitr,rmarkdown,getopt,tinytex
+URL: https://github.com/MPIBGC-TEE/SoilR
+BugReports: https://github.com/MPIBGC-TEE/SoilR/issues
 LazyData: TRUE
 Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         S4ClassDefinitions.R TimeMap.R ScalarTimeMap.R PoolId.R
