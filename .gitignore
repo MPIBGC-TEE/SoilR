@@ -1,6 +1,7 @@
 pkg/inst/tests/runit.*.pdf
 .*.swp
 .Rhistory
+.DS_Store
 builds/.Rhistory
 python/Jacobian/__pycache__
 buildbot/sympy/
