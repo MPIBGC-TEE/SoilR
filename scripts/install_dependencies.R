@@ -2,6 +2,7 @@
 
 fromCran <- c(
   'devtools',
+  'assertthat',
 	'testthat',
 	'argparse',
 	'stringr',
