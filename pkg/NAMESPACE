@@ -143,7 +143,8 @@ ICBM_N,
 linearScalarModel,
 pathEntropy,
 entropyRatePerJump,
-entropyRatePerTime
+entropyRatePerTime,
+is.compartmental
 )
 exportClasses(
 NlModel,
