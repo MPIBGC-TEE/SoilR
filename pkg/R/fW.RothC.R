@@ -35,7 +35,8 @@ fW.RothC<-function(
      )
     {  
      B=ifelse(bare == FALSE,1,1.8)
-     Max.TSMD=-(20+1.3*pClay-0.01*(pClay^2))*(S.Thick/23)*(1/B)
+     Max.TSMD=-(20+1.3*pClay-0.01*(pClay^2))*(S.Thick/23)
+     TSMD.limit=Max.TSMD*(1/B)
      M=P-E*pE
      Acc.TSMD=NULL
        for(i in 2:length(M)){
@@ -44,8 +45,8 @@ fW.RothC<-function(
              Acc.TSMD[i]=Acc.TSMD[i-1]+M[i]
           }
             else(Acc.TSMD[i]=0)
-         if(Acc.TSMD[i]<=Max.TSMD) {
-            Acc.TSMD[i]=Max.TSMD
+         if(Acc.TSMD[i]<=TSMD.limit) {
+            Acc.TSMD[i]=TSMD.limit
          }
        }
      b=ifelse(test=Acc.TSMD > 0.444*Max.TSMD, # test uses < instead of > because values are negative
