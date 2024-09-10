@@ -30,3 +30,11 @@ By convention they have the same name as the class and are described here:
    \item{  \code{\link{Model_14}} }.
 }
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/MPIBGC-TEE/SoilR}
+  \item Report bugs at \url{https://github.com/MPIBGC-TEE/SoilR/issues}
+}
+
+}

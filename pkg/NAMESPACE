@@ -144,7 +144,8 @@ linearScalarModel,
 pathEntropy,
 entropyRatePerJump,
 entropyRatePerTime,
-is.compartmental
+is.compartmental,
+x14CO2
 )
 exportClasses(
 NlModel,
