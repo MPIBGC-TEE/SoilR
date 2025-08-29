@@ -675,7 +675,7 @@ correctnessOfModel <- function(object){
     positions=grep("TRUE",truthv)
     res=TRUE
     if (length(positions)>0){
-       stop(simpleError("The following columns contain unreasonable entries that lead to negative respirations for these pools. Please check your matrix as function of time."))
+       stop(simpleError("The matrix of exit and transfer rates is not compartmental."))
         }
     tA_min=getTimeRange(Atm)["t_min"]
     tA_max=getTimeRange(Atm)["t_max"]
