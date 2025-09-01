@@ -2,7 +2,7 @@
 
 library(SoilR)
 
-source("VTLM.R") # Run this like if your working directory contains this file. Otherwise source the LVTM function from wheterever it is and make it available in the Global Environment
+source("VTLM.R") # Run this if your working directory contains this file. Otherwise, source the LVTM function from where it is stored and make it available in the Global Environment
 source("collect_by_layer.R") # Idem
 source("collect_by_pool.R") # Idem
 source("solveVTLM.R")
@@ -47,16 +47,17 @@ L14t<-collect_by_layer(Cdt,C14dt,nlayer=10,npool=2)
 P14t<-collect_by_pool(Cdt,C14dt,nlayer=10,npool=2)
 
 # Step 5. Plot the results
-plot(AtmF14, type="l", lty=1)
+plot(AtmF14, type="l", ylab="Mean Delta14C in permil", lty=1)
 matlines(TwopDepth@times,L14t$F14C, lty=1, col=2:11) # Find a better color palette
+legend("topright", paste("Layer", 1:10), lty=1, col=2:11, bty="n")
 
-matplot(TwopDepth@times, L14t$C, type="l", lty=1, col=2:11)
+matplot(TwopDepth@times, L14t$C, type="l", lty=1, col=2:11, ylim=c(5000, 10000), 
+        xlab="Year", ylab="Carbon stock")
+legend("bottomright", paste("Layer", 1:10), lty=1, col=2:11, bty="n")
 
-plot(tail(L14t$C, 1), -depthLayers, xlab="C stock", ylab="Depth")
-plot(tail(L14t$F14C, 1), -depthLayers, xlab="Delta14C", ylab="Depth")
+plot(tail(L14t$C, 1), -depthLayers, xlab="C stock", ylab="Depth", type="b")
+plot(tail(L14t$F14C, 1), -depthLayers, xlab="Delta14C", ylab="Depth", type="b")
 
-plot(tail(L14t$C, 1), tail(L14t$F14C, 1), xlab="C stock", ylab="Delta14C")
-
-plot(AtmF14, type="l", lty=1)
+plot(AtmF14, type="l", lty=1, ylab="Mean Delta14C in permil")
 matlines(TwopDepth@times,P14t$F14C, lty=1, col=2:3)
-legend("topright", c("Fast pool", "Slow pool"), lty=1, col=2:3)
+legend("topright", c("Fast pool", "Slow pool"), lty=1, col=2:3, bty="n")
