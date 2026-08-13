@@ -109,6 +109,12 @@ AWBmodel<- function
     alpha[["4_to_1"]]=function(C,t){
       epsilon_0+epsilon_s*Temp2
     }
+    alpha[["2_to_4"]]=function(C,t){
+      1
+    }
+    alpha[["3_to_4"]]=function(C,t){
+      1
+    }
     Anl=new("TransportDecompositionOperator",t_start,Inf,nr,alpha,f)
     inputrates=BoundInFluxes(
       function(t){
