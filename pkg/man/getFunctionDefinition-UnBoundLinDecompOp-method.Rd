@@ -13,7 +13,7 @@
 Extracts the time dependent matrix valued function (compartmental matrix)
 }
 \seealso{
-Other UnBoundLinDecompOp_constructor: 
+Other UnBoundLinDecompOp_constructor:
 \code{\link{UnBoundLinDecompOp,function-method}}
 }
 \concept{UnBoundLinDecompOp_constructor}

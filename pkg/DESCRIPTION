@@ -89,5 +89,5 @@ Collate: setGlobalVariables.R setOldClasses.R genericFunctions.R
         ICBM_N.R linearScalarModel.R CenturyModel14.R pathEntropy.R
         entropyRatePerJump.R entropyRatePerTime.R Hua2021.R is.compartmental.R
         x14CO2.R
-RoxygenNote: 7.3.2.9000
 Encoding: UTF-8
+Config/roxygen2/version: 8.0.0

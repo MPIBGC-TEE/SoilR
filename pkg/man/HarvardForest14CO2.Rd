@@ -18,7 +18,7 @@ A data frame with the following 3 variables.
 }
 }
 \usage{
-HarvardForest14CO2
+data(HarvardForest14CO2)
 }
 \description{
 Measurements of Delta14C in soil CO2 efflux conducted at Harvard Forest,

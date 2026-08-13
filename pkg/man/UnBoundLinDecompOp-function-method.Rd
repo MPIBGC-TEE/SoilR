@@ -13,7 +13,7 @@
 Generic constructor for the class with the same name
 }
 \seealso{
-Other UnBoundLinDecompOp_constructor: 
+Other UnBoundLinDecompOp_constructor:
 \code{\link{getFunctionDefinition,UnBoundLinDecompOp-method}}
 }
 \concept{UnBoundLinDecompOp_constructor}

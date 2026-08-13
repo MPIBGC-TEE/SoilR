@@ -16,4 +16,4 @@ fromCran <- c(
   'expm',
   'sets'
 )
-lapply(fromCran,install.packages,repos='https://cran.uni-muenster.de')
+lapply(fromCran,install.packages,repos='https://ftp.gwdg.de/pub/misc/cran/')

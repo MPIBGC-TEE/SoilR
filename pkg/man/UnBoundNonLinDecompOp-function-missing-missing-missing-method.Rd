@@ -13,7 +13,7 @@
 Constructor for the class with the same name
 }
 \seealso{
-Other UnBoundNonLinDecompOp_constructor: 
+Other UnBoundNonLinDecompOp_constructor:
 \code{\link{UnBoundNonLinDecompOp,missing,vector,vector,numeric-method}}
 }
 \concept{UnBoundNonLinDecompOp_constructor}

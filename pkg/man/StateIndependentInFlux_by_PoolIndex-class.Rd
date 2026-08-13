@@ -8,11 +8,3 @@
 \description{
 Constructor for the class with the same name
 }
-\section{Slots}{
-
-\describe{
-\item{\code{destinationIndex}}{}
-
-\item{\code{flux}}{}
-}}
-

@@ -17,7 +17,7 @@
 Constructor for the class with the same name
 }
 \seealso{
-Other UnBoundNonLinDecompOp_constructor: 
+Other UnBoundNonLinDecompOp_constructor:
 \code{\link{UnBoundNonLinDecompOp,function,missing,missing,missing-method}}
 }
 \concept{UnBoundNonLinDecompOp_constructor}
