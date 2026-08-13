@@ -69,15 +69,15 @@ AWBmodel<- function
    epsilon_s=-0.016, 
    Km_0=500, 
    Km_u0=0.1, 
-   Km_s=0.5, 
-   Km_us=0.1, 
+   Km_s=5, 
+   Km_us=0.01, 
    Ea=47, 
    R=0.008314, 
    Temp1=20, 
    Temp2=20, 
    ival=c(B=2.19159, E=0.0109579, S=111.876, D=0.00144928), 
-   I_S=0.005, 
-   I_D=0.005 
+   I_S=0.0005, 
+   I_D=0.0005 
   )
 {
     t_start=min(t)
